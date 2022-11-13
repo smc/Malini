@@ -1,0 +1,218 @@
+name: Malini
+styles: [
+  "Regular",
+  "Black",
+  "Bold",
+  "Thin",
+  "Light",
+  "Oblique",
+  "Oblique-Thin",
+  "Condensed",
+  "Expanded"
+]
+version: 0.160
+unitsPerEm: 1024
+ascender: 819
+descender: 205
+source: https://gitlab.com/smc/fonts/Malini
+author:
+  name: Santhosh Thottingal
+  email: santhosh.thottingal@gmail.com
+  url: https://thottingal.in
+license:
+  text: "This Font Software is licensed under the SIL Open Font License, Version 1.1. This licens is available with a FAQ at: https://scripts.sil.org/OFL"
+  url: https://scripts.sil.org/OFL
+manufacturer:
+  name: SMC
+  url: https://smc.org.in
+sources: sources
+build: fonts
+proofs: proofs
+tests: tests
+glyphs:
+  classes:
+    LC_ALL: abcdefghijklmnopqrstuvwxyz
+    UC_ALL: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    LATIN_EXTRA: [
+      "Á","Ǽ","Â","Ä","À","Ā","Å","Ã","Ǎ","Ă", "Ą",
+      "Ć","Č","Ç","Ĉ","Ċ",
+      "Ď",
+      "É","Ě","Ê","Ë","Ė","È","Ē", "Ę",
+      "Ĝ","Ġ","Ģ", "Ğ",
+      "Ĥ",
+      "Í","Î","Ï","Ì","Ī","Ĩ", "Į", "İ",
+      "Ķ",
+      "Ĺ", "Ļ", "Ľ",
+      "Ń","Ň","Ñ","Ņ",
+      "Ó","Ô","Ö","Ò","Ō","Õ", "Ő",
+      "Ŕ","Ř","Ŗ",
+      "Ś","Š","Ş","Ŝ", "Ș",
+      "̆̆Ť", "Ț", "Ť",
+      "Ú","Ǔ","Û","Ü","Ù","Ū","Ů","Ũ","Ų", "Ű", "Ŭ",
+      "Ŵ","Ẁ","Ẃ","Ẅ",
+      "Ý","Ŷ","Ỳ","Ÿ",
+      "Ž","Ż","Ź",
+      "á","ǽ","â","ä","à","ā","å","ã","̆ă", "ą", "ă", "ǎ",
+      "ć","č","ç","ĉ","ċ",
+      "ď",
+      "é","ě","ê","ë","ė","è","ē", "ę",
+      "ĝ","ġ","ğ", "ģ",
+      "ĥ",
+      "í","î","ï","ì","ī","ĩ", "į",
+      "ķ",
+      "ĺ", "ļ", "ľ",
+      "ń","ň","ñ", "ņ",
+      "ó","ǒ","ô","ö","ò","ō","õ", "ő",
+      "ŕ","ř", "ŗ",
+      "ś","š","ş","ŝ", "ș",
+      "ť", "ț",
+      "ú","ǔ","û","ü","ù","ū","ů","ũ", "ŭ", "ų", "ű",
+      "ŵ","ẃ", "ẁ", "ẅ",
+      "ý","ŷ","ÿ", "ỳ",
+      "ź","ž","ż",
+    ]
+    LATIN_LIGATURES:  ["ff", "tt", "ft"] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+    LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
+    LC_RIGHT_ROUND: bop
+    UC_LEFT_ROUND: OQ
+    UC_RIGHT_ROUND: OQDP
+    UC_RIGHT_MOUTH: K
+    LC_RIGHT_SLANT: ["v", "f", "ff", "k"]
+    LC_LEFT_SLANT: ["v"]
+    UC_LEFT_SLANT: ["A", "V", "Y", "T"]
+    UC_RIGHT_SLANT: TYV
+    UC_RIGHT_LEG: ["L"]
+    UC_RIGHT_ARM: ["T"]
+    LC_RIGHT_ARM: rf
+    UC_LEFT_LEG: ["J"]
+    LC_LEFT_LEG: ["j"]
+    LC_RIGHT_LEG: ["t","tt"]
+    LC_RIGHT_MOUTHS: adqu
+    LC_BOTTOM_GAP: abcdefhiklmnopqrstuvwxz
+    QUOTES: ["'","\"","‘","’","“","”"]
+    PARANTHESIS: "()"
+    ML_CONSONANTS: കഖഗഘങചഛജഝഞടഠഡഢണതഥദധനപഫബഭമയരലവറശഷസഹളഴ
+    ML_VOWEL_SIGNS: ['ാ', 'ി','ീ', "ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ", "െ", "േ", "ൈ", "ൊ", "ോ","ൌ", "ൗ"]
+    ML_VOWEL_SIGNS_CONJOINING: ["ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ"]
+    ML_I_SIGNS: ['ി','ീ']
+    ML_CONS_CONJUNCTS: ["ക്ക", "ക്ഷ", "ഗ്ഗ", "ഗ്ദ", "ഗ്ദ്ധ", "ഗ്ന", "ഗ്മ", "ങ്ങ", "ക്ത", "ങ്ക",
+                     "ച്ച", "ച്ഛ", "ജ്ജ", "ഞ്ച", "ഞ്ജ", "ജ്ഞ", "ഞ്ഞ",
+                     "ട്ട", "ണ്ണ", "ണ്ഡ", "ണ്ട", "ണ്മ", "ണ്ഠ", "ഡ്ഡ", "ഡ്ഢ",
+                     "ത്ത", "ത്ഥ", "ത്ന", "ത്ഭ", "ദ്ദ", "ദ്ധ", "ന്ന", "ത്സ", "ത്മ", "ന്ത", "ന്ഥ", "ന്ദ", "ന്ധ", "ന്മ", "ന്റ", "ൻ്റ",
+                     "പ്പ", "പ്ഫ", "ബ്ബ", "ബ്ദ", "മ്മ", "മ്പ", "പ്ന",
+                     "യ്യ", "ല്ല", "ല്പ", "വ്വ",
+                     "ശ്ച", "ശ്ശ", "ശ്ന",
+                     "സ്സ", "സ്റ്റ", "സ്ഥ", "സ്ത", "സ്ന",
+                     "ഷ്ട", "ഷ്പ",
+                     "ഹ്ന", "ഹ്മ",
+                     "ള്ള", "റ്റ"]
+    ML_REPH_CONJUNCTS: ["ക്ര", "ക്ക്ര", "ക്ത്ര", "ഗ്ര", "ഗ്ദ്ധ്ര", "ഘ്ര", "ങ്ക്ര",
+                     "ച്ര", "ജ്ര", "ട്ര", "ഡ്ര", "ഢ്ര", "ണ്ട്ര",
+                     "ത്ര", "ത്ത്ര", "ത്സ്ര",
+                     "ദ്ര", "ധ്ര", "ന്ത്ര", "ന്ദ്ര", "ന്ധ്ര", "ദ്ധ്ര",
+                     "പ്ര", "ഫ്ര", "ബ്ര", "ഭ്ര", "മ്ര", "മ്പ്ര",
+                     "വ്ര", "ശ്ര", "സ്ര", "സ്ത്ര",
+                     "ഹ്ര", "ഷ്ര", "ഷ്ട്ര", "റ്റ്ര"]
+    ML_PREVENT_CONJUNCTS: ["ഗ്ഗു", "ഗ്ഗൂ",
+                     "ച്ഛു", "ച്ഛൂ",
+                     "ത്ഭൂ", "ല്പു", "ല്പൂ", "ഷ്പു","ഷ്പൂ",
+                     "ത്നു", "ത്നൂ", "ക്തു", "ക്തൂ",
+                     "ണ്ഠു", "ണ്ഠൂ",
+                     "ഡ്ഡു", "ഡ്ഡൂ",  "ഡ്ഢു","ഡ്ഢൂ",
+                     "പ്നു","പ്നൂ",
+                     "ബ്ദു", "ബ്ദൂ",
+                     "സ്തു","സ്തൂ", "സ്ത്രു","സ്ത്രൂ", "സ്നു", "സ്നൂ", "സ്റ്റു","സ്റ്റൂ",
+                     "ശ്നു", "ശ്നൂ",
+                     "ഷ്ടു", "ഷ്ടൂ", "ഷ്ട്രു", "ഷ്ട്രൂ",
+                    ]
+    ML_LA_CONJUNCTS: ["ക്ല", "ഗ്ല", "ത്ല", "പ്ല", "ഫ്ല", "ബ്ല", "മ്ല", "വ്ല", "സ്ല", "ശ്ല", "ഹ്ല"]
+    ML_TOP_MARKS: ["ൎ", "ഀ"]
+    ML_BOTTOM_MARKS: [ "ൢ", "ൣ"]
+
+  # Kern pairs
+  kern:
+    latin: # script
+      - ["@UC_RIGHT_ROUND", "@UC_LEFT_SLANT", -50]
+      - ["@UC_RIGHT_ROUND", "@LC_LEFT_ROUND", -20]
+      - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -20]
+      - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -100]
+      - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_MOUTH", "@LC_LEFT_SLANT", -50]
+      - ["@UC_RIGHT_MOUTH", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_LEG", "@UC_RIGHT_SLANT", -80]
+      - ["@UC_RIGHT_LEG", "@LC_LEFT_SLANT", -80]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]
+      - ["@LC_RIGHT_ARM", "@LC_LEFT_ROUND", -80]
+      - ["@LC_BOTTOM_GAP", "@LC_LEFT_LEG", -100]
+      - ["A", ["V", "Y", "T", "v"], -80 ]
+      - ["Y", ["A"], -80 ]
+      - ["L", ["V"], -80 ]
+    malayalam:
+      - ['്',"@QUOTES", 100 ]
+      - ['്',"@PARANTHESIS", 100 ]
+      - ['്',"!", 100 ]
+      - [['ഷ','ക്ഷ'],"സ", -80 ]
+      - [['ആ',"ക", "ഷ", 'ക്ഷ', "ദ"],["ന", "ൻ", "നു", "ന്റ", "നൂ"], -50 ]
+      - [['പ',"പു", 'പൂ', "വ", "വു", "വൂ"],["ന", "ൻ", "നു", "ന്റ", "നൂ"], -30 ]
+      - [['പ',"പു", 'പൂ', "വ", "വു", "വൂ","യ", "യു", "യൂ"],['പ',"പു", 'പൂ', "വ", "വു", "വൂ","യ", "യു", "യൂ"], -30 ]
+      - ['മൂ',"സ", -20 ]
+      - ['ല',"സ", -20 ]
+      - [['ത', 'ന', 'നു', 'ന്ന'],"ം", -30 ]
+      - [['സ', 'ഗ'],"ം", -20 ]
+      - [ "ം", ['ന', 'നു', 'നൂ', 'സ','സു', 'സൂ'], -30 ]
+      - [['ത', 'സ', 'ന', 'നു', 'ന്ന'],["ക","കു","കൂ","കൃ"], -30 ]
+      - [['ന്റ', 'ൻ്റ'], "്", 40 ]
+  calts:
+    malayalam:
+      - ['ന', "ി", 'wrap' ]
+variablefonts:
+  Malini:
+    designspace: Malini.designspace
+    stat:
+      axes:
+        - tag: slnt
+          name: Slant
+          values:
+            - value: 0
+              name: Upright
+              flags: 2
+            - value: -15
+              name: Oblique
+        - tag: wght
+          name: Weight
+          values:
+            - value: 100
+              name: Thin
+            - value: 200
+              name: ExtraLight
+            - value: 300
+              name: Light
+            - value: 400
+              name: Regular
+              flags: 2
+              linkedValue: 700
+            - value: 500
+              name: Medium
+            - value: 600
+              name: SemiBold
+            - value: 700
+              name: Bold
+            - value: 800
+              name: ExtraBold
+            - value: 900
+              name: Black
+        - tag: wdth
+          name: Width
+          values:
+            - value: 75
+              name: Condensed
+            - value: 87.5
+              name: SemiCondensed
+              flags: 2
+            - value: 100
+              name: Normal
+            - value: 112.5
+              name: SemiExpanded
+            - value: 125
+              name: Expanded

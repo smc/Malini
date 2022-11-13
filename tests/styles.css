@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Malini";
+  src: url(../fonts/Malini/webfonts/Malini-VF.woff2) format("woff2-variations"),
+    url(../fonts/Malini/otf-variable/Malini-VF.otf) format("opentype-variations"),
+    url(../fonts/Malini/otf/Malini-Regular.otf) format("opentype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg -15deg;
+}
+
+
+:root {
+  --weight: 400;
+  --slant: 0;
+  --soft: 50;
+  --width: 100;
+  --font: 'Malini';
+  --font-size: 90px;
+  --font-letter-spacing: 0;
+  --font-line-height: 1.5;
+  color-scheme: light dark;
+}
+
+body {
+  font-size: 100%;
+  color: #fff;
+  background-color: #2E3440;
+  line-height: 1.2;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20rem;
+  overflow: auto;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font), sans;
+  line-height: var(--font-line-height);
+  letter-spacing: var(--font-letter-spacing);
+  font-size: var(--font-size);
+  padding: 0.5em;
+  outline: none;
+  font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width);
+}
+
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  overflow: auto;
+  font-size: 1em;
+  position: absolute;
+  right: 1em;
+}
+
+.controls {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+}
+
+.controls.testcontent li {
+  cursor: pointer;
+  text-align: left;
+  padding: 0 5px 0 0;
+}
+
+.controls.align {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  fill: #fff;
+}
+
+.controls.align li {
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+footer {
+  height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  color: white;
+}
+
+.outline-text {
+  color: orange;
+  line-height: 1.5;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.rows {
+  display: grid;
+  column-gap: 1px;
+  row-gap: 1em;
+  margin: 1em 0;
+  align-items: center;
+}
+
+.rows > div {
+  display: contents;
+  margin-bottom: 1em;
+}
+
+.rows-2 {
+  grid-template-columns: 2fr 5fr;
+}
+
+.rows-3 {
+  grid-template-columns: 2fr 2fr 1fr;
+}
+
+.rows-1 {
+  grid-template-columns: auto;
+}
+
+.val-input {
+  width: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+#font-version:empty {
+  display: none;
+}
+
+input[type="range"] {
+  height: 2px;
+}
+
+.font-color {
+  width: 18px;
+  border: 0;
+}
+
+label {
+  white-space: nowrap;
+}
+select {
+  color: inherit;
+}
+option {
+  color: initial;
+}

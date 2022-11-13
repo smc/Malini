@@ -1,0 +1,229 @@
+<html>
+
+	<head>
+		<title>Malini Font Demo Page </title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="styles.css">
+		<script src="main.js" async="true" important="high"></script>
+	</head>
+
+	<body>
+
+		<main>
+			<div contenteditable class="content">
+			</div>
+			<details open class="tools">
+				<summary>Font options</summary>
+				<h5 id="font-version"></h5>
+				<section class="rows rows-2">
+					<div class="primitive-input">
+						<label for="font-name">Font</label>
+						<select class="controls fontname" id="test-font">
+							<option value="Malini">Malini</option>
+						</select>
+					</div>
+				</section>
+
+				<section class="rows" style="grid-template-columns: 3fr 3fr;">
+
+					<label for="font-fontColor">Font color
+					<input type="button" class="font-color" data-id="fontColor" id="font-fontColor"></label>
+
+					<label for="background-color">Background
+					<input type="button" class="font-color background-color val-input" data-id="background-color" id="background-color"></label>
+
+				</section>
+				<section class="rows rows-3">
+					<div class="primitive-input">
+						<label for="font-fontSize">Font Size</label>
+						<div id="font-size" class="slider">
+							<input type="range" data-id="fontSize" value="90" min="8" step="1" max="512">
+						</div>
+						<input type="number" class="font-size val-input" data-id="fontSize" value="90" min="8" step="1"
+							max="120" id="font-fontSize">
+					</div>
+				</section>
+				<section id="var-values" class="rows rows-3">
+					<div  id="var-weight" class="primitive-input">
+						<label for="font-fontSize">Weight</label>
+						<div id="font-weight" class="slider">
+							<input type="range" data-id="fontWeight" value="400" min="100" step="1" max="900">
+
+						</div>
+						<input type="number" class="font-weight val-input" data-id="fontWeight" value="400" min="1" step="1"
+							max="900" id="font-fontWeight">
+					</div>
+					<div id="var-width" class="primitive-input">
+						<label for="font-fontWidth">Width</label>
+						<div id="font-width" class="slider">
+							<input type="range" data-id="fontWidth" value="100" min="75" step="1" max="125">
+
+						</div>
+						<input type="number" class="font-width val-input" data-id="fontWidth" value="100" min="1" step="1"
+							max="125" id="font-fontWidth">
+					</div>
+					<div id="var-slant" class="primitive-input">
+						<label for="font-fontSlant">Slant</label>
+						<div id="font-slant" class="slider">
+							<input type="range" data-id="fontSlant" value="0" min="-15" step="1" max="0">
+
+						</div>
+						<input type="number" class="font-slant val-input" data-id="fontSlant" value="0" min="-15" step="1"
+							max="0" id="font-fontSlant">
+					</div>
+
+				</section>
+				<section  class="rows rows-3">
+					<div class="primitive-input">
+						<label for="font-lineHeight">Line Height</label>
+						<div id="line-height" class="slider">
+							<input type="range" data-id="lineHeight" value="1" min="0" max="3" step="0.01">
+							<div class="progress" style="width: 50%"></div>
+						</div>
+						<input type="number" class="line-height val-input" value="1.5" data-id="lineHeight" min="0"
+							max="3" step="0.1" id="font-lineHeight">
+					</div>
+
+					<div class="primitive-input">
+						<label for="font-letterSpacing">Letter Spacing</label>
+						<div id="letter-spacing" class="slider">
+							<input type="range" data-id="letterSpacing" value="0" min="-7" max="7" step="0.01">
+							<div class="progress" style="width: 50%"></div>
+						</div>
+						<input type="number" class="letter-spacing val-input" value="0" data-id="letterSpacing" min="-7"
+							max="7" step="0.1" id="font-letterSpacing">
+					</div>
+					<div>
+						<label for="test-content">Sample</label>
+						<select class="controls testcontent" id="test-content">
+							<option value="paragraphsMl">ഖണ്ഡികകൾ</option>
+							<option value="paragraphsEn">Paragraphs</option>
+							<option value="lines" selected>സിനിമാപ്പേരുകൾ</option>
+							<option value="pangrams">Pangrams</option>
+							<option value="kerning">Kerning</option>
+							<option value="ligaturesMl">കൂട്ടക്ഷരങ്ങൾ</option>
+						</select>
+						<span >
+						<span id="prev-test" style="cursor: pointer;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+							</svg>
+						</span>
+						<span id="next-test" style="cursor: pointer;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/></svg>
+						</span>
+						</span>
+					</div>
+				</section>
+
+
+				<section class="rows rows-2">
+					<div>
+						<label for="font-align">Text align</label>
+						<ul class="controls align" id="font-align">
+							<li data-align="left">
+								<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16.25 3.75H7.5V5H16.25V3.75Z"></path>
+									<path d="M13.75 7.5H7.5V8.75H13.75V7.5Z"></path>
+									<path d="M16.25 11.25H7.5V12.5H16.25V11.25Z"></path>
+									<path d="M13.75 15H7.5V16.25H13.75V15Z"></path>
+									<path d="M5 2.5H3.75V17.5H5V2.5Z"></path>
+								</svg>
+							</li>
+							<li data-align="center">
+								<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16.25 3.75H3.75V5H16.25V3.75Z"></path>
+									<path d="M13.75 7.5H6.25V8.75H13.75V7.5Z"></path>
+									<path d="M16.25 11.25H3.75V12.5H16.25V11.25Z"></path>
+									<path d="M13.75 15H6.25V16.25H13.75V15Z"></path>
+								</svg>
+							</li>
+							<li data-align="right">
+								<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.5 3.75H3.75V5H12.5V3.75Z"></path>
+									<path d="M12.5 7.5H6.25V8.75H12.5V7.5Z"></path>
+									<path d="M12.5 11.25H3.75V12.5H12.5V11.25Z"></path>
+									<path d="M12.5 15H6.25V16.25H12.5V15Z"></path>
+									<path d="M16.25 2.5H15V17.5H16.25V2.5Z"></path>
+								</svg>
+							</li>
+						</ul>
+					</div>
+
+				</section>
+				<h5>Opentype features</h5>
+				<section class="rows" style="grid-template-columns: 3fr auto;">
+					<div>
+						<label for="kern"><input type="checkbox" id="kern" name="opentype" value="kern" checked>
+							Kerning</label>
+						<span>kern</span>
+					</div>
+					<div>
+						<label for="blwf"><input type="checkbox" id="blwf" name="opentype" value="blwf" checked>
+							Below-base forms</label>
+						<span>blwf</span>
+					</div>
+					<div>
+						<label for="blws"><input type="checkbox" id="blws" name="opentype" value="blws" checked>
+							Below-base substitutions</label>
+						<span>blws</span>
+					</div>
+					<div>
+						<label for="akhn"><input type="checkbox" id="akhn" name="opentype" value="akhn" checked> Akhand
+							ligatures</label>
+						<span>akhn</span>
+					</div>
+					<div>
+						<label for="pref"><input type="checkbox" id="pref" name="opentype" value="pref" checked>
+							Pre-base forms</label>
+						<span>pref</span>
+					</div>
+					<div>
+						<label for="pres"><input type="checkbox" id="pres" name="opentype" value="pres" checked>
+							Pre-base substitutions</label>
+						<span>pres</span>
+					</div>
+					<div>
+						<label for="pstf"><input type="checkbox" id="pstf" name="opentype" value="pstf" checked>
+							Post-base forms</label>
+						<span>pstf</span>
+					</div>
+					<div>
+						<label for="psts"><input type="checkbox" id="psts" name="opentype" value="psts" checked>
+							Post-base substitutions</label>
+						<span>psts</span>
+					</div>
+					<div>
+						<label for="abvm"><input type="checkbox" id="abvm" name="opentype" value="abvm" checked>
+							Above-base Mark Positioning</label>
+						<span>abvm</span>
+					</div>
+					<div>
+						<label for="blwm"><input type="checkbox" id="blwm" name="opentype" value="blwm" checked>
+							Below-base Mark Positioning</label>
+						<span>blwm</span>
+					</div>
+					<div>
+						<label for="calt"><input type="checkbox" id="calt" name="opentype" value="calt" checked>
+							Contextual Alternates</label>
+						<span>calt</span>
+					</div>
+					<div>
+						<label for="liga"><input type="checkbox" id="liga" name="opentype" value="liga" checked>
+							Standard Ligatures</label>
+						<span>liga</span>
+					</div>
+					<div>
+						<label for="salt">Style sets</label>
+						<select id="salt" name="salt" value="1" class="controls">
+							<option value="1">ss01</option>
+							<option value="2">ss02</option>
+						</select>
+					</div>
+				</section>
+			</div>
+		</main>
+
+</html>
