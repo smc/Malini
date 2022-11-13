@@ -8,13 +8,16 @@ z4 = (x5 + mw/3, y5 + .2m);
 z5 = (x2 + mw/3, 0);
 z6 = (x2, y1-y0);
 
-paths[0] = z0..z1..z2..z3..z4..z5..z6;
+paths[0] = z0..z1..z2..{right}z3{right}..z4..z5..z6;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1,3,5)
-    nib(thinnib rotated 0 )(2,4)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0 )
-    nib(terminalnib rotated terminalangle infinity of paths[0] )(infinity )
+   nib(start_up_nib)(0)
+   nib(top_nib)(1)
+   nib(middle_up_nib)(2)
+   nib(thick_vertical_nib rotated 90)(3)
+   nib(middle_up_nib)(4)
+   nib(top_nib)(5)
+   nib(start_up_nib)(6)
 )(paths[0])(strokes[0]);
 
 anchor( "vc", z1);

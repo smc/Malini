@@ -11,7 +11,7 @@ paths[0] = z0..z1.. z2.. {down}z3---z4 ;
 
 clearxy;
 z0=point 4 of paths[0] + (thick*0.60/2, 0);
-z1=(x0, m*0.6); % Top of second arch
+z1=(x0, m*0.6);
 z2=((x1+x3)/2, m); % Top of second arch
 x3-x1 = mw*0.75;
 z3=(x3, m-m/1.6);
