@@ -58,63 +58,7 @@ vardef thinterminalnib =
     fi
 enddef;
 
-vardef outlinepath (expr p, thickness ) =
-    pen outlinenib;  outlinenib := makepen(unitsquare scaled thickness) ;
-    draw p withpen outlinenib withcolor glyphcolor;
-enddef;
 
-vardef shadowpath(expr p, d, offset) =
-    save shadownpen;
-    pen shadowpen ;
-    shadowpen := makepen ((0,0)--(offset, 0) rotated d) ;
-    fill envelope shadowpen of p withcolor black;
-enddef;
-
-primarydef pct along pat = (arctime (pct * (arclength pat)) of pat) of pat enddef ;
-primarydef len on pat = (arctime len of pat) of pat enddef ;
-
-vardef dottedpath(expr p) =
-    l:=(arclength p)/100;
-    % Division by 100 to avoid value of l going beyong "infinity(4095)
-    % Reduce 200 to have more dots. Increase it for spaced dots
-    for j = 0 step u/200 until l :
-        % FIXME: Fullcircle has more points than needed here. Construct a simple 4point
-        % circle? Or use a rectangle?
-        fill fullcircle scaled (u/5) shifted (point j*100 on p) withcolor glyphcolor;
-    endfor;
-enddef;
-
-vardef arrowpath(expr p, i) =
-    pen arrowpen; arrowpen = makepen(fix_nib(u/10,u/10,0));
-    % Override internal arrow head size
-    ahlength := 30;
-    for j=0 upto length(p):
-        drawarrow rightarrow (p, point j of p, arclength subpath(j,j+1) of p*3/4)  withpen arrowpen withcolor arrowcolor;
-    endfor;
-    if i=0:
-        fill fullcircle scaled (u/5) shifted (point 0 of p) withcolor arrowcolor;
-    fi;
-    if i=length(p):
-        fill fullcircle scaled (u/5) shifted (point infinity of p) withcolor arrowcolor;
-    fi;
-enddef;
-
-vardef pointarrow (expr pat, loc, len, off) =
-    save l, r, s, t ; path l, r ; numeric s ; pair t ;
-    t := if pair loc : loc else : point loc along pat fi ;
-    s := len/2 - off ; if s<=0 : s := 0 elseif s>len : s := len fi ;
-    r := pat cutbefore t ;
-    r := (r cutafter point (arctime s of r) of r) ;
-    s := len/2 + off ; if s<=0 : s := 0 elseif s>len : s := len fi ;
-    l := reverse (pat cutafter t) ;
-    l := (reverse (l cutafter point (arctime s of l) of l)) ;
-    (l..r)
-enddef ;
-
-
-def centerarrow(expr p,t,l) = pointarrow(p,t,l, 0) enddef ;
-def rightarrow (expr p,t,l) = pointarrow(p,t,l,-l) enddef ;
-def leftarrow (expr p,t,l) = pointarrow(p,t,l,+l) enddef ;
 
 vardef show_coordinates (expr p ) =
     % Debug points are hard to see. Change the fontsize
@@ -159,21 +103,7 @@ enddef;
 
 def endglyph =
     path softpath;
-    if known drawshadow:
-        for i=0 upto 10:
-            if known strokes[i]:
-                shadowpath(strokes[i], shadowdirection, shadowoffset);
-            fi;
-        endfor;
-    fi;
 
-    if known drawoutline:
-        for i=0 upto 10:
-            if known strokes[i]:
-                outlinepath(strokes[i], outlinethickness);
-            fi;
-        endfor;
-    fi;
 
     for i=0 upto 10:
         if varstroke = 1:
@@ -204,9 +134,7 @@ def endglyph =
 
 
         if known paths[i]:
-            if known calligraphic:
-                draw paths[i] withpen calligraphicpen withcolor glyphcolor;
-            fi;
+
             if show_paths = 1:
                 draw paths[i] withpen nib scaled 2 withcolor 0.8white;
             fi;

@@ -16,20 +16,17 @@ pen_stroke(
 
 
 clearxy;
-slant_ := tand(-8);
-height_correction := thick/4;
-z0=(0, m/2);
-z1=(x0 + mw/3, m - height_correction);
-z2=(x1 + mw/3, y0);
-z3=(x2 - mw/3,  height_correction);
-paths[1] = z0 .. z1.. z2 .. z3 ..  cycle;
-paths[1] := paths[1] xyscaled(1,1) slanted slant_;
-paths[1]:= paths[1] shifted (-slant_*m/2, 0);
-paths[1]:= subpath(.3, 2.9) of paths[1]   ..  {dir 120}(x0, y0 - m/4);
-paths[1]:= paths[1] shifted (xpart(point 5 of paths[0]) + 2thick,0);
+z0=(0, 3/4m);
+z1=(x0 + mw/3, m);
+z2=(x1 + mw/3, (y1+y3)/2);
+z3=(x1, 0);
+z4=(x0, m/4);
+paths[1] = z0..z1..z2..z3..z4;
+paths[1] := paths[1] shifted (xpart(point 5 of paths[0]) + 2thick,0);
 pen_stroke(
-    nib(thinnib rotated 0 )(2 )
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(middle_up_nib)(0, 4)
+    nib(middle_down_nib)(2)
+    nib(top_nib)(1)
+    nib(down_nib)(3)
 )(paths[1])(strokes[1]);
 endglyph;
