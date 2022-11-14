@@ -7,7 +7,7 @@ z2 = (x1 + mw/4, y0);
 z3 = (x1, m/2);
 z4 = (x3, m);
 
-paths[0] = z0{down} ..  z1 ..  z2{up} ..z3..z4;
+paths[0] = z0{down} ..  z1{right} ..  z2{up} ..{dir 100}z3..z4;
 paths[0] := paths[0] shifted(-x3,0);
 pen_stroke(
     nib(middle_down_nib)(0)
