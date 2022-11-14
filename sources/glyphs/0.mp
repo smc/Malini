@@ -10,7 +10,8 @@ z4=(x0, y2);
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1, 3 )
-    nib(thinnib rotated 0 )(0,2, 4)
+   nib(middle_down_nib)(0, 2, 4)
+   nib(top_nib)(1)
+   nib(down_nib)(3)
 )(paths[0])(strokes[0]);
 endglyph;

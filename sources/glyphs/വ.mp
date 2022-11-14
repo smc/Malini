@@ -28,7 +28,7 @@ z0=(0, 0);
 z1=(x0, m);
 
 paths[2]:= z0--z1;
-paths[2]:= paths[2] shifted (xpart(point 1 of paths[1]), 0) ;
+paths[2]:= paths[2] shifted (xpart(point 1 of paths[1]), 0);
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)

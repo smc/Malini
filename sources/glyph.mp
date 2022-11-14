@@ -32,6 +32,7 @@ rbearing := rbearing * condense;
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
 
+vardef thick_nib = fix_nib(thick, 0, 0) enddef;
 vardef start_up_nib = fix_nib(thick*0.60, 0, 0) rotated 45 enddef;
 vardef middle_up_nib = fix_nib(thick*0.70, 0, 0) enddef;
 vardef top_nib = fix_nib(thick*0.80, 0, 90) enddef;

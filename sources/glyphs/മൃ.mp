@@ -1,47 +1,50 @@
 input glyph;
 beginglyph;
-
 clearxy;
-z0=(0, 0);
-z1=( mw - thick/2, 0);
-z2= (x1, y1 + m/3);
-z3= (x2, y2 + m/2);
-
-paths[1] = z0{dir 20}..{dir 20}z1{dir 20}.. z2.. z3;
-
-clearxy;
-z0 = (mw/4, m/4);
-z1 = (0, 2/3m);
-z2 = (mw/2, m);
-z3 = (x2 + mw/3, y1);
-z4=  point 0.2 of paths[1];
-paths[0] = z0..z1..z2..z3{dir -100}..{dir 200}z4;
-
+z0= (0, 0);
+z1= (x0, m/2);
+z2= ((x1+x3)/2, m);
+z3= (x0 + mw, y1);
+z4= (x3, y0);
+paths[0] = z0---z1.. z2.. z3---z4;
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2 )
-    nib(thinnib rotated 0 )(1, 3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3,4)
 )(paths[0])(strokes[0]);
+
+clearxy;
+z0=point 0 of paths[0] + (0, thick*0.6/2);
+z1=(xpart(point 4 of paths[0]), y0);
+paths[1] = z0---z1;
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 4 )
-    nib(thinnib rotated 0 )(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thick_horizontal_nib)(0)
+    nib(thick_horizontal_nib)(1)
 )(paths[1])(strokes[1]);
 
 clearxy;
+z0= point 1.8 of paths[0];
+z1= point 0 of paths[1];
+paths[2] = z0{dir -20}..{dir 190}z1;
+pen_stroke(
+    nib(middle_down_nib rotated 20)(0)
+    nib(end_nib rotated -45)(1)
+)(paths[2])(strokes[2]);
+
+clearxy;
 % ഋ sign
-z0 = point 1.5 of paths[1];
+z0 = point 1 of paths[1];
 z1 = (x0 - mw/2, -descent - thick);
 z2 = (x1 - mw/3, -descent * .8);
 z3 = (x0 - mw/4, -descent);
-paths[2] = z0{dir -80}..z1..z2{dir 75}..{dir -45}z3;
+paths[3] = z0{down}..z1..z2{dir 75}..{dir -45}z3;
 pen_stroke(
-    nib(thinnib rotated 0 )(2, 4)
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
+    nib(middle_down_nib)(0)
+    nib(down_nib)(1)
+    nib(middle_up_nib)(2)
+    nib(end_nib rotated 90)(3)
+)(paths[3])(strokes[3]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
 anchor( "bottom", point 1 of paths[1]);
