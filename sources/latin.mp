@@ -7,8 +7,8 @@ latin_loop_slant := tand(8);
 
 vardef base_loop =
     z0 = (0, s/2);
-    z1 = (x0 + sw/3, s - thick/4 );
-    z2 = (x1 + sw/3, y1 - s/2 );
+    z1 = (x0 + sw/3, s - thick/4);
+    z2 = (x1 + sw/3, y1 - s/2);
     z3 = (x2 - sw/3, thick/4);
     z0..z1..z2..z3..cycle
 enddef;
@@ -38,7 +38,7 @@ vardef n_arch =
     r=0.75;
     z0=(0, 0);
     z1=(r*sw/6, 0.6s);
-    z2=(r*sw*0.9, s-thick/4 );
+    z2=(r*sw*0.9, s-thick/4);
     z3=(x2 + 0.2r*sw, s/2);
     z4=(x3, y0);
 

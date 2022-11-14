@@ -48,7 +48,7 @@ z2 = (x1 - mw/3, -descent * .8);
 z3 = (x0 - mw/4, -descent);
 paths[2] = z0{down}..z1..z2{dir 75}..{dir -45}z3;
 pen_stroke(
-    nib(thinnib rotated 0 )(2, 4)
+    nib(thinnib)(2, 4)
     nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);

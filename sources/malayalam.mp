@@ -9,8 +9,8 @@ vardef ml_base_loop_ac =
     hr = mw/3; % Horizontal radius
     vr = m/2; % Vertical radius
     z0 = (0, m - vr);
-    z1 = (x0 + hr, y0 + vr );
-    z2 = (x1 +  hr,  y0 );
+    z1 = (x0 + hr, y0 + vr);
+    z2 = (x1 +  hr,  y0);
     z3 = (x1,  y2 - vr);
     z0..z1..z2..z3..cycle
 enddef;
@@ -23,8 +23,8 @@ vardef ml_base_loop_c =
     hr = mw/3; % Horizontal radius
     vr = m/2; % Vertical radius
     z0 = (hr, 0);
-    z1 = (x0 - hr, y0 + vr );
-    z2 = (x1 +  hr*right_sweep_corr,  y1 + vr );
+    z1 = (x0 - hr, y0 + vr);
+    z2 = (x1 +  hr*right_sweep_corr,  y1 + vr);
     z3 = (x2 + hr,  y2 - vr);
     z0..z1..z2 ..z3..z0
 enddef;
@@ -36,8 +36,8 @@ vardef ml_base_loop_short_c =
     hr = mw/3; % Horizontal radius
     vr = 0.9*m/2; % Vertical radius
     z0 = (hr, 0);
-    z1 = (x0 - hr, y0 + vr );
-    z2 = (x1 +  hr,  y1 + vr );
+    z1 = (x0 - hr, y0 + vr);
+    z2 = (x1 +  hr,  y1 + vr);
     z3 = (x2 + hr,  y2 - vr);
     z0{left}..z1{up}..z2{right}..z3{down}..{left}z0
 enddef;
@@ -83,8 +83,8 @@ vardef top_arch_c =
     hr = mw/3 * 0.8; % Horizontal radius
     vr = m/4; % Vertical radius
     z0 = (mw/3*0.25, vr + m/2);
-    z1 = (x0 + hr, y0 + vr );
-    z2 = (x1 +  hr,  y1 - vr );
+    z1 = (x0 + hr, y0 + vr);
+    z2 = (x1 +  hr,  y1 - vr);
     z3 = (x2 - hr,  y2 - vr);
 
     z0{up}..{left}z1..{down}z2..{right}z3..{up}z0
@@ -98,8 +98,8 @@ vardef top_arch_ac =
     hr = mw/3 * 0.9; % Horizontal radius
     vr = m/4; % Vertical radius
     z0 = (2*mw/3, vr + m/2);
-    z1 = (x0 - hr, y0 + vr );
-    z2 = (x1  - hr,  y1 - vr );
+    z1 = (x0 - hr, y0 + vr);
+    z2 = (x1  - hr,  y1 - vr);
     z3 = (x2 + hr,  y2 - vr);
 
     z0{up}..{left}z1..{down}z2..{right}z3..{up}z0
@@ -113,8 +113,8 @@ vardef bottom_arch =
     hr = mw/3; % Horizontal radius
     vr = m/4; % Vertical radius
     z0 = (0, vr);
-    z1 = (x0 + hr, y0 + vr );
-    z2 = (x1 + hr,  y1 - vr );
+    z1 = (x0 + hr, y0 + vr);
+    z2 = (x1 + hr,  y1 - vr);
     z3 = (x2 - hr,  y2 - vr);
     z0{up}..z1..z2..z3..{up}z0
 enddef;
@@ -203,7 +203,7 @@ vardef left_arch_with_eye =
     path p;
     loop_slant=tand(-4);
     z0 =(x3, y3);
-    z1=(x0 + mw/2, y3 - m/6 );
+    z1=(x0 + mw/2, y3 - m/6);
     z2=(x1 - mw/5,  thick/2);
     z3=(0, m/2);
     z4=(x3 + mw/3, m);

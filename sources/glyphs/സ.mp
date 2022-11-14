@@ -3,7 +3,7 @@ beginglyph;
 
 z0=(x1+mw/4, 0);
 z1=(0, m-m/1.6);
-z2=((x1+x3)/2, m);
+z2=((x1+x3)/2, 0.975m);
 x3-x1 = mw*0.75;
 z3=(x3, m*0.6);
 z4=(x3,  y0); % bottom of piller
@@ -19,7 +19,7 @@ pen_stroke(
 clearxy;
 z0=point 4 of paths[0] + (thick*0.60/2, 0);
 z1=(x0, m*0.6);
-z2=((x1+x3)/2, m); % Top of arch
+z2=((x1+x3)/2, 0.975m); % Top of arch
 x3-x1 = mw*0.6;
 z3=(x3, m-m/3);
 z4=(x3, m/3);

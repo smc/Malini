@@ -10,7 +10,7 @@ z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 
 paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
-paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}.. {dir -82}z7 ) slanted tand(8);
+paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}.. {dir -82}z7) slanted tand(8);
 paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 
 z8 = (x7 - mw/2, -descent - thick);
@@ -19,8 +19,8 @@ z10 = (x9 + 0.66mw, -descent*.8);
 paths[0] := paths[0]{dir -90}..z8..z9{dir 75}..{dir -45}z10;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4,6, )
-    nib(thinnib rotated 0 )(1, 3, 5, 7, 9)
+    nib(thicknib)(0, 2, 4,6,)
+    nib(thinnib)(1, 3, 5, 7, 9)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

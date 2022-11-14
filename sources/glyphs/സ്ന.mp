@@ -62,14 +62,14 @@ paths[2] := paths[2] shifted(m, -0.9m) xscaled 0.75 yscaled 0.75;
 paths[3] := paths[3] shifted(m, -0.9m)  xscaled 0.75 yscaled 0.75;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2)
-    nib(thinnib rotated 0 )(1, 3)
+    nib(thicknib)(0, 2)
+    nib(thinnib)(1, 3)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 pen_stroke(
-    nib(thicknib rotated 0 )(1, 3, 5, 7)
-    nib(thinnib rotated 0 )(2, 4, 6)
+    nib(thicknib)(1, 3, 5, 7)
+    nib(thinnib)(2, 4, 6)
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);

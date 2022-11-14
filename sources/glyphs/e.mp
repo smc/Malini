@@ -13,10 +13,10 @@ z5 = point 1.8 of paths[0];
 paths[0]:=z5{dir -20}..paths[0];
 
 pen_stroke(
-    nib(thicknib rotated 0 )(2,4)
-    nib(thinnib rotated 0 )(1,3)
+    nib(thicknib)(2,4)
+    nib(thinnib)(1,3)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
-anchor( "top", (xpart(point 2 of paths[0]), X) );
+anchor( "top", (xpart(point 2 of paths[0]), X));
 endglyph;

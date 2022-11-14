@@ -19,7 +19,7 @@ z7 =  (x6+0.1Xw, y6 - 0.2X);
 z8 =  (x7+0.1Xw, y7 - 0.2X);
 paths[1] = z6--z8;
 pen_stroke(
-    nib(thick_nib rotated 0)(0 )
-    nib(thick_nib rotated 0)(1)
+    nib(thick_nib)(0)
+    nib(thick_nib)(1)
 )(paths[1])(strokes[1]);
 endglyph;

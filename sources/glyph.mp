@@ -61,7 +61,7 @@ enddef;
 
 
 
-vardef show_coordinates (expr p ) =
+vardef show_coordinates (expr p) =
     % Debug points are hard to see. Change the fontsize
     defaultscale := 2;
 
@@ -118,14 +118,14 @@ def endglyph =
                 % We could use 'cycle p' of metapost here.
                 % But for some reason it is not returning true when it should.
                 % So here we are checking if first point is same as last point.
-                soft_:=(soften>0) and (point 0 of paths[i] <> point infinity of paths[i] );
+                soft_:=(soften>0) and (point 0 of paths[i] <> point infinity of paths[i]);
                 if soft_ and known strokes[i]b:
                     softpath := soften_nodes(strokes[i], cornerradius)(
                         0,
                         length(strokes[i]l),
                         length(strokes[i]l) + length(strokes[i]e),
                         length(strokes[i]l) + length(strokes[i]r) + length(strokes[i]e)
-                    );
+                   );
                     fill softpath withcolor glyphcolor;
                 else:
                     fill strokes[i] withcolor glyphcolor;
@@ -157,7 +157,7 @@ def endglyph =
         currentpicture := currentpicture slanted tand(slant);
         % After slanting the width of currentpicture will increase. Find current x-maximum
         % The difference in width change is the slant shift
-        slant_xshift := ( xpart (urcorner currentpicture) ) - xmax;
+        slant_xshift := ( xpart (urcorner currentpicture)) - xmax;
         % Cancel the slant shift
         rbearing := rbearing - slant_xshift;
     fi;
@@ -190,8 +190,8 @@ def endglyph =
         pair w; w:=urcorner currentpicture;
         dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
-        dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
-        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur +  lbearing + rbearing,  descent))  withcolor debugcolor;
+        dotlabel.lrt( "(" & decimal(lbearing) & ",0 )", (lbearing,  descent))  withcolor debugcolor;
+        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0 )", (xpart ur +  lbearing + rbearing,  descent))  withcolor debugcolor;
     fi;
     shipit;
     endgroup

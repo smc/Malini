@@ -8,7 +8,7 @@ z3=(x2 - mw/3, y2 - m/2);
 z4=(x3 - mw/3, y3 + 0.5m);
 z5=(x4 - mw/4, 0);
 z6=(x5 - mw/4, y5 + 0.2m);
-z7=(x6 + mw/4, y6 + 0.3m);
+z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2 + mw/6, y7);
 z9=(x8 + mw/4, y8 - 0.3m);
 z10=(x9 - mw/3, 0);
@@ -20,7 +20,7 @@ pen_stroke(
    nib(middle_down_nib)(2)
    nib(top_nib)(3)
    nib(middle_up_nib)(4)
-   nib(down_nib rotated -45)(5)
+   nib(down_nib)(5)
    nib(middle_up_nib)(6)
    nib(thick_vertical_nib rotated 90)(7)
    nib(thick_vertical_nib rotated 90)(8)
@@ -29,6 +29,6 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 anchor( "vc", z1);
-anchor( "bottom", (xpart(point 9.5 of paths[0]), 0 ) );
+anchor( "bottom", (xpart(point 9.5 of paths[0]), 0));
 
 endglyph;

@@ -12,7 +12,7 @@ z3 = (x1 + thick/2, 0);
 paths[2] = z2 .. {dir -30}z3;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 2)
+    nib(thinnib)(1, 2)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

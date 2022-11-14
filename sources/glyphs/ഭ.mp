@@ -12,7 +12,7 @@ z7 = ( xpart(point infinity of paths[0]) - mw/6, 0);
 paths[0] := paths[0].. z3 ..z4  .. z5{right} ..z6..{dir 160}z7;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 3, 5, 6)
+    nib(thinnib)(1, 3, 5, 6)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

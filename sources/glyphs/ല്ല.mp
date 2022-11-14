@@ -4,7 +4,7 @@ beginglyph;
 
 clearxy;
 z0=(0, 0.45m);
-z1=(x0 + 0.75mw, y0 );
+z1=(x0 + 0.75mw, y0);
 
 paths[0] = z0 --z1 ;
 pen_stroke(
@@ -21,9 +21,9 @@ z4=(0, 0);
 
 paths[1]:= z0{up}..z1..{left}z2... z3---z4;
 pen_stroke(
-    nib(middle_up_nib  )(0,1 )
-    nib(top_nib)(2 )
-    nib(thick_vertical_nib)(3, 4 )
+    nib(middle_up_nib )(0,1)
+    nib(top_nib)(2)
+    nib(thick_vertical_nib)(3, 4)
 )(paths[1])(strokes[1]);
 
 clearxy;
@@ -48,7 +48,7 @@ pen_stroke(
 
 paths[4] = la_sign shifted (xpart(point 0.2 of paths[2]), 0);
 pen_stroke(
-    nib(thinnib rotated 0 )(2,4,6,8)
+    nib(thinnib)(2,4,6,8)
     nib(thinterminalnib rotated terminalangle 0 of paths[4])(0)
     nib(terminalnib rotated terminalangle infinity of paths[4])(infinity)
 )(paths[4])(strokes[4]);

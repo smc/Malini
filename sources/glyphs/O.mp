@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0=(0, X/2 );
+z0=(0, X/2);
 z1=(x0 + 0.4Xw, y0 + 0.5X - thick/4);
 z2=(x1 + 0.4Xw, y0);
 z3=(x1, thick/4);
@@ -13,5 +13,5 @@ pen_stroke(
    nib(top_nib)(1)
    nib(down_nib)(3)
 )(paths[0])(strokes[0]);
-anchor( "top", (xpart(point 1 of paths[0]), 1.2X) );
+anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
 endglyph;

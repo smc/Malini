@@ -62,7 +62,7 @@ paths[2] := paths[2] ..z9{dir 190}..z10.. {dir 60}z11  ;
 paths[2] := paths[2] shifted(m*1.2, -m*0.85) xscaled 0.8 yscaled 0.66;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 2, 3, 5, 7, 9)
+    nib(thinnib)(1, 2, 3, 5, 7, 9)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);

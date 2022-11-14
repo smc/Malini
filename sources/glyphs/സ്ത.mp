@@ -55,8 +55,8 @@ paths[2] := paths[2] && (z4{left}.. z5 ..z6{right}..z7..z8) slanted tand(8);
 paths[2] := paths[2] shifted(m*0.75,-0.9m) xscaled 0.8 yscaled 0.7;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4,6, )
-    nib(thinnib rotated 0 )(1, 3, 5, 7)
+    nib(thicknib)(0, 2, 4,6,)
+    nib(thinnib)(1, 3, 5, 7)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);

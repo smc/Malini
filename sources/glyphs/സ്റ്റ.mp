@@ -43,8 +43,8 @@ pen_stroke(
 
 % Ra
 paths[2] = ra;
-paths[2] := paths[2] shifted (mw/3, -y2  ) xscaled 0.8 yscaled 0.8;
-paths[3] := paths[2] shifted (mw, 0 );
+paths[2] := paths[2] shifted (mw/3, -y2 ) xscaled 0.8 yscaled 0.8;
+paths[3] := paths[2] shifted (mw, 0);
 
 pen_stroke(
    nib(start_up_nib)(0)

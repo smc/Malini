@@ -4,14 +4,14 @@ paths[0] := pa_mouth;
 paths[1] := pa_tail shifted(xpart(point infinity of paths[0]), 0);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )
-    nib(thinnib rotated 0 )(1,3)
+    nib(thicknib)(0, 2, 4, 5, 6)
+    nib(thinnib)(1,3)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thicknib rotated 0 )( 1, 3)
-    nib(thinnib rotated 0 )(2)
+    nib(thicknib)( 1, 3)
+    nib(thinnib)(2)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
@@ -39,14 +39,14 @@ paths[2] := paths[2] shifted(0.2m, -0.95m) xscaled 0.75 yscaled 0.7;
 paths[3] := paths[3] shifted(0.2m, -0.95m)  xscaled 0.75 yscaled 0.7;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2)
-    nib(thinnib rotated 0 )(1, 3)
+    nib(thicknib)(0, 2)
+    nib(thinnib)(1, 3)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 pen_stroke(
-    nib(thicknib rotated 0 )(1, 3, 5, 7)
-    nib(thinnib rotated 0 )(2, 4, 6)
+    nib(thicknib)(1, 3, 5, 7)
+    nib(thinnib)(2, 4, 6)
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);

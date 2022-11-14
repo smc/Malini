@@ -16,9 +16,9 @@ z4=(xpart(point 1/3 of paths[1]) , thick*0.6/2);
 paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -90} .. {dir 200}z4;
 
 pen_stroke(
-    nib(start_up_nib)(0  )
-    nib(middle_up_nib)(1 )
-    nib(top_nib)(2 )
+    nib(start_up_nib)(0 )
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
     nib(middle_down_nib)(3)
     nib(down_nib rotated 45)(4)
 )(paths[0])(strokes[0]);

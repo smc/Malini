@@ -10,10 +10,10 @@ z4=( x3 + Xw/3, y3 + 0.2X);
 paths[0] = z0 ..z1..z2..z3..{dir 80}z4 ;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(2)
+    nib(thinnib)(2)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
-anchor( "top", (xpart(point 1 of paths[0]), 1.2X) );
-anchor( "bottom", (xpart(point 3 of paths[0]), 0) );
+anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
+anchor( "bottom", (xpart(point 3 of paths[0]), 0));
 endglyph;

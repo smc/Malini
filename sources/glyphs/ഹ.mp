@@ -14,7 +14,7 @@ pen_stroke(
     nib(end_nib)(4)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thinnib rotated 0 )(2,4,6)
+    nib(thinnib)(2,4,6)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated (terminalangle infinity of paths[1]))(infinity)
 )(paths[1])(strokes[1]);

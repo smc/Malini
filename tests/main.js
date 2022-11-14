@@ -126,7 +126,7 @@ function listen() {
         contentArea.innerHTML = testContents[++currentTestIndex];
     });
     document.getElementById('prev-test').addEventListener('click', () => {
-        if (currentTestIndex -1 <= 0 ) {
+        if (currentTestIndex -1 <= 0) {
             currentTestIndex = testContents.length;
         }
         contentArea.innerHTML = testContents[--currentTestIndex];

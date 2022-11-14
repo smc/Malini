@@ -90,7 +90,7 @@ def decimal primary n =
    ori_decimal(greenpart(n)) & " " & ori_decimal(bluepart(n))
   elseif pair n: ori_decimal(xpart(n)) & " " & ori_decimal(ypart(n))
   else: ori_decimal(n) fi
- )
+)
 enddef;
 %% \--------------------------------------------------------------------
 %% \descriptioncomments
@@ -1169,8 +1169,8 @@ vardef feasible_time(suffix p)(expr t) =
   i_:=i_+1;
   exitif (unknown p[i_]) or (not b_);
   b_:=b_ if (abs(p[i_]-t)<1) or (abs(p[i_]-t)>length(p)-1): % optimization?
-   and (arclength( pos_subpath(p[i_],t) of p ) > acc_eps)
-   and (arclength( pos_subpath(t,p[i_]) of p ) > acc_eps)
+   and (arclength( pos_subpath(p[i_],t) of p) > acc_eps)
+   and (arclength( pos_subpath(t,p[i_]) of p) > acc_eps)
   fi;
  endfor
  b_
