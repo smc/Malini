@@ -7,7 +7,7 @@ z2=((x1+x3)/2, m);
 x3-x1 = mw*0.75;
 z3=(x3, m*0.6);
 z4=(x3,  y0); % bottom of piller
-paths[0] = z0..z1.. z2.. {down}z3---z4 ;
+paths[0] = z0..z1..z2..{down}z3---z4 ;
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)
@@ -46,7 +46,7 @@ z1=(0, y0 + m/2);
 z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3,  y3 -m/4); % bottom of piller
-paths[2] = z0..z1.. z2.. {down}z3---z4 ;
+paths[2] = z0..z1..z2..{down}z3---z4 ;
 
 
 clearxy;

@@ -6,7 +6,7 @@ z1=(0, 0.6X);
 z2=(x1 + w_/2, 0);
 z3=(x2 + w_/2, y1);
 z4=(x3 - 0.01s, X);
-paths[0] = z0..z1 ..{right}z2{right}..z3 ..z4 ;
+paths[0] = z0..z1..{right}z2{right}..z3..z4 ;
 pen_stroke(
     nib(thicknib)(2)
     nib(thinnib)(1,3)

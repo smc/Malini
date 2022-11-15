@@ -26,7 +26,7 @@ clearxy;
 z0 = (xpart(point 6 of paths[0]), m/2);
 z1 = (x0+ mw/4, m);
 z2 = point 0 of paths[0];
-paths[1] := z0{dir 110}.. z1..{down}z2;
+paths[1] := z0{dir 110}..z1..{down}z2;
 pen_stroke(
     nib(thicknib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)

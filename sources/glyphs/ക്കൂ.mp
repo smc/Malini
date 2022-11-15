@@ -17,7 +17,7 @@ z12=(x11 + mw/2, y11 + m/2);
 z13=(x12 + mw/3, y12 - m/4);
 z14=(x13 - mw/4, y13 - m/4);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18} .. z8{dir -18}..z9..z10..z11..z12..z13 ..z14 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18}..z8{dir -18}..z9..z10..z11..z12..z13..z14 ;
 
 
 pen_stroke(

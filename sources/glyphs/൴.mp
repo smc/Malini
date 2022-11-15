@@ -12,7 +12,7 @@ z7=(x6 - mw/4, m/2);
 z8=(x7 + mw/4, y7+m/3);
 z9=( x8, ascent + .1m);
 
-paths[0]:=z0{dir 30} .. z1{down}..z2{left}..z3.. z4..z5..z6..z7..z8{dir 60}..z9;
+paths[0]:=z0{dir 30}..z1{down}..z2{left}..z3..z4..z5..z6..z7..z8{dir 60}..z9;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4, 6)

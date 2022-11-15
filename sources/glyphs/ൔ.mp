@@ -6,7 +6,7 @@ z0=(0, 0);
 z1=( mw - thick/2, 0);
 z2= (x1, m/2);
 z3= (x2, ascent);
-paths[1] = z0{dir 20}..{dir 20}z1{dir 20}.. z2..  z3;
+paths[1] = z0{dir 20}..{dir 20}z1{dir 20}..z2..z3;
 
 clearxy;
 z0 = (mw/4, m/4);

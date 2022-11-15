@@ -8,10 +8,10 @@ z2=(x4,  0);
 z3=(0, m/2) - (thick*0.15, 0);
 z4=(x3 + m/3, m);
 
-paths[0] = z0  .. z1..  z2.. {up}z3 ..z4  ;
+paths[0] = z0..z1..z2..{up}z3..z4  ;
 paths[0]:=paths[0] slanted loop_slant;
 paths[0]:=paths[0] shifted (-loop_slant*m/2,0);
-paths[0]:=paths[0]   .. subpath(3, 6) of da shifted (xpart(z4), 0) ;
+paths[0]:=paths[0]..subpath(3, 6) of da shifted (xpart(z4), 0) ;
 pen_stroke(
     nib(thicknib)( 2, 4)
     nib(thinnib)( 1,3,5,7)

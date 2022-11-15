@@ -9,7 +9,7 @@ z2=( x1-w/2, y1 - 0.5m);
 
 paths[0] = z0..z1..z2 ;
 paths[1] = paths[0] shifted (m/3, 0) ;
-paths[2] = (0, m/3){dir 10} .. {dir 10}(0.8mw, m/3);
+paths[2] = (0, m/3){dir 10}..{dir 10}(0.8mw, m/3);
 paths[3] = paths[2] shifted (0, m/3);
 
 pen_stroke(

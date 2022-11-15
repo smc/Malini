@@ -4,7 +4,7 @@ z0=(0, X);
 z1=(x0, X/2);
 z2=(x1, 0);
 
-paths[0] = z0{down} ..z1..{down}z2;
+paths[0] = z0{down}..z1..{down}z2;
 
 z3=(xpart(point 2 of l_vstem), thick*thin/2);
 z4=(x3 + Xw/2, y3);

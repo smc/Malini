@@ -17,7 +17,7 @@ pen_stroke(
 clearxy;
 z0=point infinity of paths[1];
 z1=(x0-s/3, -descent);
-paths[2]=z0{dir -95} ..{left}z1;
+paths[2]=z0{dir -95}..{left}z1;
 pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)

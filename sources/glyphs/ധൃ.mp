@@ -10,7 +10,7 @@ z6=(x5 +  mw/3, y5 - m/2); % Top of second arch
 z7=(x6 +  mw/3, y6 + m/2);
 z8=(x7 -  mw/3, y7 + m/2);
 
-paths[0] = z0..z1..{dir 10}z2.. z3---z4;
+paths[0] = z0..z1..{dir 10}z2..z3---z4;
 paths[1] = z4---z5..z6{dir -10}..z7..z8;
 pen_stroke(
     nib(thicknib)(0, 2)

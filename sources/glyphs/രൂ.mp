@@ -16,7 +16,7 @@ z1=(x0 - mw/2, -descent*1.2);
 z2=(x1 - 0.6mw, y1);
 z3=(xpart(point 1 of paths[0]) - mw/3, m/3);
 z4=(x3 + mw/6, m);
-paths[0] := paths[0]{right}..z0 ..{dir 190}z1..{dir 170}z2..z3..z4;
+paths[0] := paths[0]{right}..z0..{dir 190}z1..{dir 170}z2..z3..z4;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4, 6, 8)

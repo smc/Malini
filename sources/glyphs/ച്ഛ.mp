@@ -15,7 +15,7 @@ z2=(x1 + mw/3, 0.85m);
 z3=(x0 + mw/2, y0 + m/6);
 z4=point 0 of paths[1];
 
-paths[0] = z0{dir 135}..z1..{dir -10}z2..z3 .. {dir 200}z4;
+paths[0] = z0{dir 135}..z1..{dir -10}z2..z3..{dir 200}z4;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
@@ -38,7 +38,7 @@ z2=(x1 + mw/4, y1 + m/4);
 z3=(x2 + mw/4, y2 - m/4);
 z4=(x0, thick/5);
 
-paths[2] = z0{dir 130}..z1..{right}z2..z3 .. {dir 200}z4;
+paths[2] = z0{dir 130}..z1..{right}z2..z3..{dir 200}z4;
 paths[2] := paths[2] slanted tand(8);
 paths[2] := paths[2] shifted (mw/8, 0);
 paths[2] := paths[2] xscaled 0.8 yscaled 0.7 shifted (-0.1m, -0.7m);

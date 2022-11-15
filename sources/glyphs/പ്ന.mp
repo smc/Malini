@@ -23,7 +23,7 @@ z1=(0, y0 + m/2);
 z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3,  y3 -m/4); % bottom of piller
-paths[2] = z0..z1.. z2.. {down}z3---z4 ;
+paths[2] = z0..z1..z2..{down}z3---z4 ;
 
 
 clearxy;

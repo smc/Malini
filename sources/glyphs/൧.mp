@@ -8,7 +8,7 @@ z15=(x14 - mw/3, m);
 z16=(x15 - mw/3, y15 - m/2);
 z17=(x16, y12);
 
-paths[0] = z11{up}..z12{dir 20} .. z13{dir 20}..z14  .. z15..z16.. z17;
+paths[0] = z11{up}..z12{dir 20}..z13{dir 20}..z14..z15..z16..z17;
 pen_stroke(
     nib(thicknib)(2,4,6)
     nib(thinnib)(1,3,5)

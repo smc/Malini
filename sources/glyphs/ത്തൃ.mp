@@ -9,7 +9,7 @@ z5 = ( x4 - mw/4, y4 +  m/3);
 z6 = ( x5 + mw/2, 0.9m); % second top
 z7 = ( x6 + mw/3,  y6 - m/2);
 z8 = ( x7,  m/6); %
-paths[0] = z0  ..z1..z2 .. z3..z4..z5 ..z6 .. z7 --- z8;
+paths[0] = z0..z1..z2..z3..z4..z5..z6..z7 --- z8;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4,6 )
@@ -24,7 +24,7 @@ clearxy;
 z0 = (xpart(point 7 of paths[1]) - mw/2, -descent*1.2);
 z1 = (x0 - mw/2, -descent * .8);
 z2 = (x1 + 0.66mw, -descent*.8);
-paths[1] := paths[1] .. z0..z1{dir 75}..{dir -45}z2;
+paths[1] := paths[1]..z0..z1{dir 75}..{dir -45}z2;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4, 6 )

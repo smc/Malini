@@ -12,12 +12,12 @@ z7 = ( x6 + mw/3, 0);
 
 
 paths[0] = subpath(0,2) of da;
-paths[0] := paths[0].. z3 ..{left}z4  .. z5 ..z6{right}..z7;
+paths[0] := paths[0]..z3..{left}z4..z5..z6{right}..z7;
 
 z8=(xpart(point 2 of paths[0]), -descent);
 z9=(xpart(point 1 of paths[0]) - mw/3, m/3);
 z10=(x9 + mw/6, m);
-paths[0] := paths[0]  ..{left}z8{left} ..z9..{dir 60}z10;
+paths[0] := paths[0]..{left}z8{left}..z9..{dir 60}z10;
 paths[0] := paths[0] shifted (mw/3, 0);
 
 pen_stroke(

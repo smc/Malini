@@ -7,7 +7,7 @@ z2=((x1+x3)/2, m);
 x3-x1 = mw*0.75;
 z3=(x3, m*0.6);
 z4=(x3,  y0); % bottom of piller
-paths[0] = z0..z1.. z2.. {down}z3---z4 ;
+paths[0] = z0..z1..z2..{down}z3---z4 ;
 paths[0] := paths[0] shifted (mw/3,0);
 pen_stroke(
     nib(start_up_nib)(0)
@@ -51,14 +51,14 @@ z5 = ( x4 - mw/3, y4 + m/2 - thick/2);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
-paths[2] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
-paths[2] := paths[2] && (z4{left}.. z5 ..z6{right}..{dir -80}z7) slanted tand(8);
+paths[2] = (z0..z1..z2{right}..z3..{left}z4) slanted tand(-8);
+paths[2] := paths[2] && (z4{left}..z5..z6{right}..{dir -80}z7) slanted tand(8);
 
 z9 = ( x4,  -descent); % ra sign starts
 z10 = (x1 - mw*1.2, y1 + m);
 z11 = (x10 + mw/4, y10 + m*0.85);
 
-paths[2] := paths[2] ..z9{dir 190}..z10.. {dir 60}z11  ;
+paths[2] := paths[2]..z9{dir 190}..z10..{dir 60}z11  ;
 paths[2] := paths[2] shifted(m*1.2, -m*0.85) xscaled 0.8 yscaled 0.66;
 
 pen_stroke(

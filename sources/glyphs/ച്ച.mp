@@ -12,7 +12,7 @@ z2=((x1 + x3)/2, 0.85m);
 z3=(x0 + mw/2, y0 + m/6);
 z4=(x0, thick*0.6/2);
 
-paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -100} .. {dir 180}z4;
+paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -100}..{dir 180}z4;
 
 pen_stroke(
     nib(start_up_nib)(0 )

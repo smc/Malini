@@ -26,8 +26,8 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-paths[3] = (0.1s, 0.6s){dir 10} .. {dir 10}(xpart(point 0 of paths[1])*0.9, 0.6s);
-paths[4] = (0.1s, s/3){dir 10} .. {dir 10}(xpart(point 0 of paths[1])*0.9, s/3);
+paths[3] = (0.1s, 0.6s){dir 10}..{dir 10}(xpart(point 0 of paths[1])*0.9, 0.6s);
+paths[4] = (0.1s, s/3){dir 10}..{dir 10}(xpart(point 0 of paths[1])*0.9, s/3);
 pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)

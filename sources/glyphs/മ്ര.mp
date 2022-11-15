@@ -8,7 +8,7 @@ z1=( mw - thick/2, 0);
 z2= (x1, y1 + m/3);
 z3= (x2, y2 + m/2);
 
-paths[1] = z0{dir 20}..{dir 20}z1{dir 20}.. z2.. z3;
+paths[1] = z0{dir 20}..{dir 20}z1{dir 20}..z2..z3;
 paths[1]  := paths[1] shifted (mw/3, 0);
 
 clearxy;
@@ -39,7 +39,7 @@ z1 = (xpart(point 2 of paths[0]), -descent - thick/2 );
 z2 = (xpart(point 0 of paths[1]) - mw/3, m/3);
 z3 = (x2 + mw/10, m);
 
-paths[2] = z0{dir -80} .. z1  .. z2 .. z3;
+paths[2] = z0{dir -80}..z1..z2..z3;
 pen_stroke(
     nib(thinnib)(2)
     nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)

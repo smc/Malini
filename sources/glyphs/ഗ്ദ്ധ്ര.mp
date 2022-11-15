@@ -49,7 +49,7 @@ z1 = (xpart(point 1 of paths[1]), -descent - thick/2 );
 z2 = (xpart(point 2.25 of paths[0]), -descent - thick/2);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
-paths[3] =  z0{dir -90} ..{dir 200}z1 ..{dir 160}z2  ..z3..z4;
+paths[3] =  z0{dir -90}..{dir 200}z1..{dir 160}z2..z3..z4;
 
 pen_stroke(
     nib(thinnib)(3)

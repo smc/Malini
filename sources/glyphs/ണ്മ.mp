@@ -43,7 +43,7 @@ z6=( xpart(point 2 of paths[2])  + thick/2, 0);
 z7= (x6, y6 + m/3);
 z8= (x7, y7 + m/2);
 
-paths[3] = z5{dir 20}..{dir 20}z6{dir 20}.. z7.. z8;
+paths[3] = z5{dir 20}..{dir 20}z6{dir 20}..z7..z8;
 
 pen_stroke(
     nib(thicknib)(3)

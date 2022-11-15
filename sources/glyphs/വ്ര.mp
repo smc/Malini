@@ -8,7 +8,7 @@ z12 = (x11+0.1mw, y11- 0.6m);
 z13 = (xpart(point 2 of paths[0]), -descent*1.2);
 z14 = (0, m/2);
 z15 = (x14+0.2mw, m);
-paths[2] = z11{dir -60}..z12..{dir 180}z13..z14 ..  z15;
+paths[2] = z11{dir -60}..z12..{dir 180}z13..z14..z15;
 pen_stroke(
     nib(thicknib)(0, 2, 5, 6)
     nib(thinnib)(1,3)

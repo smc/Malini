@@ -10,7 +10,7 @@ z11=(x10 + 0.2mw, y10 - 0.25m);
 z12=(x11 - 0.2mw, y11 - 0.25m);
 z13=(x12 - 0.2mw, y12 + 0.25m);
 z14=(x13 + 0.2mw, y13 + 0.25m);
-paths[0] = z0 ..z1..  z2..z3;
+paths[0] = z0..z1..z2..z3;
 paths[1] = z10...z11{down}...z12{left}..{up}z13...z14  ;
 pen_stroke(
     nib(thicknib)(0)

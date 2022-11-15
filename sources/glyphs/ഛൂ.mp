@@ -7,7 +7,7 @@ z2=(x1 + mw/4, y1 + m/4);
 z3=(x2 + mw/4, y2 - m/4);
 z4=(x0, thick/5);
 
-paths[0] = z0{dir 130}..z1..{right}z2..z3 .. {dir 200}z4;
+paths[0] = z0{dir 130}..z1..{right}z2..z3..{dir 200}z4;
 paths[0] := paths[0] slanted tand(8);
 paths[0] := paths[0] shifted (mw/8, 0);
 

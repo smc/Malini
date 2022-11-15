@@ -25,7 +25,7 @@ z23 = (x22, y22- 0.6m);
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..z8..z9..{dir 185}z10 ;
 paths[1] = z15{dir 20}..{dir 20}z16{dir 20}..z17...{dir 60}z18;
-paths[2] = z19{dir 250}..z20 ..z21 ..{down}z22..z23;
+paths[2] = z19{dir 250}..z20..z21..{down}z22..z23;
 pen_stroke(
     nib(thicknib)(1, 3)
     nib(thinnib)(0,2, 4, 6, 9)

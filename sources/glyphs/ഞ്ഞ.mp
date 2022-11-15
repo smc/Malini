@@ -21,7 +21,7 @@ z16 = ( x15 + mw/2, y15 +  m/2); % second top
 z17 = ( x16 + mw/3, y16-m/2);
 z18 = ( x17, y17-m/3); %
 
-paths[1] = z10{up} ..z12 .. z13..z14..z15 ..z16 ..z17---z18;
+paths[1] = z10{up}..z12..z13..z14..z15..z16..z17---z18;
 pen_stroke(
     nib(thicknib)(1, 3, 5, 7,)
     nib(thinnib)(0, 2, 4,6)
@@ -39,7 +39,7 @@ z26 = ( x25 + mw/2, y25 +  m/2); % second top
 z27 = ( x26 + mw/2.5, y26-m/2);
 z28 = ( x27 - mw/3, y27-m/2); %
 
-paths[2] = z20{up} ..z22 .. z23..z24..z25 ..z26 ..z27..z28;
+paths[2] = z20{up}..z22..z23..z24..z25..z26..z27..z28;
 pen_stroke(
     nib(thicknib)(1, 3, 5, 7,)
     nib(thinnib)(0, 2, 4,6)

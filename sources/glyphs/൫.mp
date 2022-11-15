@@ -9,7 +9,7 @@ z2=(xpart(point 1 of paths[0]) - mw/3, m/2);
 z3=(x2 + 0.6mw, ascent);
 z4=(x3 + 0.6mw, m/2);
 
-paths[0] := paths[0]{right}..z0 ..{left}z1{left}..z2..z3..z4;
+paths[0] := paths[0]{right}..z0..{left}z1{left}..z2..z3..z4;
 
 pen_stroke(
     nib(thicknib)( 0, 2,4,6)

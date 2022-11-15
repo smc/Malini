@@ -19,7 +19,7 @@ z11 = (x10 - 0.3mw, y10 + 0.5m);
 z12 = (x11 + 0.3mw, y11 - 0.4m);
 z13 = (x12, y12- 0.6m);
 
-paths[2] = z9{dir 260}..z10 ..z11 ..{down}z12..z13;
+paths[2] = z9{dir 260}..z10..z11..{down}z12..z13;
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
     nib(thinnib)(1,3)

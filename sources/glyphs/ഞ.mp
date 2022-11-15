@@ -23,7 +23,7 @@ z5 = ( x4 + mw/2, y4 +  m/2); % second top
 z6 = ( x5 + m/2.5, y5-m/2);
 z7 = ( x6 - m/3, y6-m/2); %
 
-paths[1] = z0{up} ..z1{right}.. z2..z3..z4 ..z5{right}..z6..z7;
+paths[1] = z0{up}..z1{right}..z2..z3..z4..z5{right}..z6..z7;
 pen_stroke(
     nib(thicknib)(1, 3, 5, 7,)
     nib(thinnib)(0, 2, 4,6)

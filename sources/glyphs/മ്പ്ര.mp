@@ -7,7 +7,7 @@ z3=(x2 + mw/3, m/3);
 z4=(x3, y3-m/4);
 
 
-paths[0] = z0  ..z1..{right}z2..z3 ---z4;
+paths[0] = z0..z1..{right}z2..z3 ---z4;
 paths[0] := paths[0] shifted (mw/3, 0);
 
 pen_stroke(
@@ -47,7 +47,7 @@ z2 = (xpart(point 0 of paths[0]), -descent - thick/4);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
 
-paths[3] = z0{dir -75} ..{dir 190}z1  ..z2{dir 170} ..z3..z4;
+paths[3] = z0{dir -75}..{dir 190}z1..z2{dir 170}..z3..z4;
 pen_stroke(
     nib(thinnib)(3)
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)

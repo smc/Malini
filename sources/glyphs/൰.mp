@@ -9,7 +9,7 @@ z4=(x3, y3 - m/2);
 z5=(x4 +  mw/3, y4 - m/2);
 z6=(x5 +  mw/3, y5+ m/2);
 z7=(x6, y6+m/3); % top of pillar
-paths[0] = z0{right}..z2..{up}z3{down}..z4{down}..{dir 10}z5.. z6---z7;
+paths[0] = z0{right}..z2..{up}z3{down}..z4{down}..{dir 10}z5..z6---z7;
 pen_stroke(
     nib(thicknib)(0, 2)
     nib(thinnib)(1, 3,5)

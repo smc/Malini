@@ -7,7 +7,7 @@ z3=(0, 0.5m);
 z4=(x3 + mw/2, m);
 z5=(x4 + mw/2.4, m/2);
 z6=(x5 - mw/6, 0);
-paths[0]:=z0  .. z1{down}..z2{left}..z3.. z4..{down}z5..z6;
+paths[0]:=z0..z1{down}..z2{left}..z3..z4..{down}z5..z6;
 pen_stroke(
     nib(thinnib)(1,3,5)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)

@@ -11,7 +11,7 @@ z4 = (x0-0.25sw,s);
 z5 = (x4 + sw*1.3,y4);
 
 paths[1] := paths[0] shifted(xpart(point 3 of paths[0]), 0);
-paths[2] = z4{dir 10}.. z5;
+paths[2] = z4{dir 10}..z5;
 
 pen_stroke(
     nib(thicknib)(0)

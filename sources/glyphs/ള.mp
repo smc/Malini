@@ -8,13 +8,13 @@ z2=(x4,  0);
 z3=(0, m/2);
 z4=(x3 + mw/3, m);
 
-paths[0] = z0  .. z1..  z2.. {up}z3 ..z4  ;
+paths[0] = z0..z1..z2..{up}z3..z4  ;
 paths[0]:=paths[0] slanted loop_slant;
 paths[0]:=paths[0] shifted (-loop_slant*m/2,0);
-paths[0]:=paths[0] .. subpath(3, 5) of da shifted (xpart(z4), 0) ;
+paths[0]:=paths[0]..subpath(3, 5) of da shifted (xpart(z4), 0) ;
 z10 = (xpart (point 4.5 of paths[0]), -m/12);
 z11 = (xpart (point 0 of paths[0]), -descent);
-paths[0] := paths[0]..z10 .. {dir 200}z11;
+paths[0] := paths[0]..z10..{dir 200}z11;
 % Tail
 z12 = (xpart (point 0 of paths[0]), -descent);
 z13 = (x12 + 0.6mw, y12);

@@ -9,7 +9,7 @@ pen_stroke(
     nib(thin_vertical_nib)(4)
 )(paths[0])(strokes[0]);
 
-paths[1] := right_arch_with_eye shifted (xpart(point infinity of paths[0]), 0);;
+paths[1] := right_arch_with_eye shifted (xpart(point infinity of paths[0]), 0);
 
 pen_stroke(
     nib(thin_vertical_nib)(0)

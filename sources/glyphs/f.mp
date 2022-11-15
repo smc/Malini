@@ -5,16 +5,16 @@ z1=(x0 - 0.5sw, 0.9X);
 z2=(x1, 3/4s);
 z3=(x1, 0);
 path head;
-head = z0{dir 120} ..{dir 250}z1;
+head = z0{dir 120}..{dir 250}z1;
 head := head slanted .16;
 head := head shifted (-sw/6, 0);
-paths[0] = head.. z2 ..  {dir 260}z3;
+paths[0] = head..z2..{dir 260}z3;
 
 %bar
 z4 = (0, s);
 z5 = (x0, y4);
 
-paths[1] = z4{dir 10}.. z5;
+paths[1] = z4{dir 10}..z5;
 pen_stroke(
     nib(thicknib)(0)
     nib(thinnib)(1, 2)

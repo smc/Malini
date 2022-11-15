@@ -14,7 +14,7 @@ z14 = (x12 - mw/3, m/2);
 z15 = (x14 + mw/2, m);
 z16 = (x15 + mw/2, y15 - 0.5m);
 z17 = (x16 - mw/6, -0.2m);
-paths[2] = z11{down}..z12 ... z14  .. z15  ..z16 ..z17;
+paths[2] = z11{down}..z12...z14..z15..z16..z17;
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
     nib(thinnib)(1,3)

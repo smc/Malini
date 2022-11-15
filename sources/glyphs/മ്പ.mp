@@ -11,7 +11,7 @@ z6 = (x5 + mw/3, y2- thick);
 z7 = (x6 + mw/3, y6 - m/3);
 z8 = (x7 - mw/3, y7 - m/2);
 
-paths[0] = z0  ..z1..{right}z2..z3 ---z4;
+paths[0] = z0..z1..{right}z2..z3 ---z4;
 paths[1] = z5{up}..z6..z7..{dir 200}z8;
 paths[2] = va_tail shifted(z8);
 pen_stroke(

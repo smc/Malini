@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 z0 = (thick/2, m/6);
 z1 = (x0 - 0.05sw, y0 - m/3);
-paths[0] = z0.. {down}z1;
+paths[0] = z0..{down}z1;
 paths[1] := paths[0] shifted(sw/4, 0);
 pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)

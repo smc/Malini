@@ -5,10 +5,10 @@ z1=(x0 - 0.45sw, 0.9X);
 z2=(x1, 3/4s);
 z3=(x2, 0);
 path head;
-head = z0{dir 120} ..{dir 250}z1;
+head = z0{dir 120}..{dir 250}z1;
 head := head slanted .16;
 head := head shifted (-sw/6, 0);
-paths[0] = head.. z2 ..  {dir 260}z3;
+paths[0] = head..z2..{dir 260}z3;
 
 paths[1] = paths[0] shifted (0.66sw, 0);
 %bar

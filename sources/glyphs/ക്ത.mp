@@ -13,7 +13,7 @@ z8=(x2 + mw/4, y7);
 z9=(x8 + mw/4, y8 - 0.3m);
 z10=(x9 - mw/3, y9 - 0.2m);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18} .. z8{dir -18}..z9..z10 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18}..z8{dir -18}..z9..z10 ;
 paths[0]:=subpath(0, 8) of paths[0];
 
 pen_stroke(
@@ -34,8 +34,8 @@ z5 = ( x4 - mw/3, y4 + m/2 - thick/2);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
-paths[1] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
-paths[1] := paths[1] && (z4{left}.. z5 ..z6{right}..z7..z8) slanted tand(8);
+paths[1] = (z0..z1..z2{right}..z3..{left}z4) slanted tand(-8);
+paths[1] := paths[1] && (z4{left}..z5..z6{right}..z7..z8) slanted tand(8);
 paths[1] := paths[1] shifted(-tand(-8)*m/2,0);
 
 pen_stroke(

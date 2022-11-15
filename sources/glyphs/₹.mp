@@ -7,7 +7,7 @@ z3 = (x2 + mw/3, X/4);
 z4 = (x3 + mw/3, 0);
 
 
-paths[0] = z0{right}..z1{dir -100}..{left}z2{dir -30}.. z3 ..  {dir -30}z4;
+paths[0] = z0{right}..z1{dir -100}..{left}z2{dir -30}..z3..{dir -30}z4;
 
 z5 = (0, y0);
 z6 = (x4,y0);

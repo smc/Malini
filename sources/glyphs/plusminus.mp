@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-paths[0] = (0, s/2){dir 10} .. {dir 10}(0.75sw, s/2);
+paths[0] = (0, s/2){dir 10}..{dir 10}(0.75sw, s/2);
 paths[1] := paths[0] crotated 90;
 paths[2] := paths[0] shifted(0, -s/2);
 pen_stroke(

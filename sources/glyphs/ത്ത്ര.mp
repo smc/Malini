@@ -9,7 +9,7 @@ z5 = ( x4 - mw/4, y4 +  m/3);
 z6 = ( x5 + mw/2, 0.9m); % second top
 z7 = ( x6 + mw/3,  y6 - m/2);
 z8 = ( x7,  m/6); %
-paths[0] = z0  ..z1..z2 .. z3..z4..z5 ..z6 .. z7 --- z8;
+paths[0] = z0..z1..z2..z3..z4..z5..z6..z7 --- z8;
 paths[0]:= paths[0] shifted(mw/3, 0);
 paths[1] =  reverse( paths[0] reflectedabout((.5,-1),(.5,+1)) shifted (xpart(point 7 of paths[0]) *2,0));
 paths[1] := subpath(0,7) of paths[1];
@@ -32,7 +32,7 @@ z1 = (xpart(point 4 of paths[1]), -descent - thick/2 );
 z2 = (xpart(point 2.25 of paths[0]), -descent - thick/2);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
-paths[3] =  z0{dir -90} .. {dir 190}z1  ..z2{dir 170}   ..z3..z4;
+paths[3] =  z0{dir -90}..{dir 190}z1..z2{dir 170}..z3..z4;
 
 pen_stroke(
     nib(thinnib)(3)

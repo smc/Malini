@@ -21,7 +21,7 @@ z16 = ( x15 + mw/2, y15 +  m/3); % second top
 z17 = ( x16 + m/2.5, y16-m/2);
 z18 = ( x17 - m/3, 0); %
 
-paths[1] = z10{up} ..z12{right}.. z13..z14..z15 ..z16{right}..z17..{dir 210}z18;
+paths[1] = z10{up}..z12{right}..z13..z14..z15..z16{right}..z17..{dir 210}z18;
 pen_stroke(
     nib(thicknib)(1, 3, 5, 7,)
     nib(thinnib)(0, 2, 4,6)

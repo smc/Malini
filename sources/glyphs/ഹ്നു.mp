@@ -25,7 +25,7 @@ z1=(0, y0 + m/2);
 z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3,  y3 -m/4); % bottom of piller
-paths[2] = z0..z1.. z2.. {down}z3---z4 ;
+paths[2] = z0..z1..z2..{down}z3---z4 ;
 paths[2] := paths[2] shifted(xpart(point infinity of paths[1]) - mw/3, 0);
 pen_stroke(
     nib(thicknib)(0, 2)
@@ -43,7 +43,7 @@ z3= ( x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);
 z5= ( x2 - thick*0.13, y2);
 
-paths[3] = z0{up}..z1..z2..z3..z4.. z5;
+paths[3] = z0{up}..z1..z2..z3..z4..z5;
 paths[3]:= paths[3] slanted tand(8) shifted (-tand(8)*mw/3, 0);
 
 pen_stroke(

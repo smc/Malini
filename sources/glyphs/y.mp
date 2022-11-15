@@ -8,7 +8,7 @@ z0 = (xpart(point 4 of u_arch) , s);
 z1 = (x0, ypart(point 3 of u_arch));
 z2 = (x1 - sw/6 , -descent - thick/2);
 z3 = (xpart(point 0 of u_arch), -descent);
-paths[1] = z0{dir -100} ..z1  ..  {dir 225}z2.. {dir 120}z3;
+paths[1] = z0{dir -100}..z1..{dir 225}z2..{dir 120}z3;
 
 pen_stroke(
     nib(thinnib)(1,3)

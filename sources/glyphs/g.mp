@@ -7,7 +7,7 @@ z0 = (xpart(point 0 of paths[0]) , s);
 z1 = (x0, ypart(point 3 of paths[0]));
 z2 = (x1 - sw/6 , -descent - thick/2);
 z3 = (xpart(point 2 of paths[0]), -descent);
-paths[1] = z0{dir -100} ..z1  ..  {dir 225}z2.. {dir 120}z3;
+paths[1] = z0{dir -100}..z1..{dir 225}z2..{dir 120}z3;
 pen_stroke(
     nib(thicknib)(1,3)
     nib(thinnib)(2)

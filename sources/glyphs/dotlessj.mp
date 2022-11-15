@@ -7,7 +7,7 @@ z2=( x3 + r*sw/3, 0);
 z3=( x4 + r*sw/3, -descent);
 z4=( 0, -descent/3);
 
-paths[0] = z0{dir -110}..  z1..  z2..z3{left}.. z4;
+paths[0] = z0{dir -110}..z1..z2..z3{left}..z4;
 
 pen_stroke(
     nib(thinnib)(1, 2)

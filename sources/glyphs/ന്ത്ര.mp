@@ -7,7 +7,7 @@ z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3, y3 - m/4); % bottom of piller
 
-paths[0] = z0..z1.. z2.. z3---z4 ;
+paths[0] = z0..z1..z2..z3---z4 ;
 paths[0] := paths[0] shifted (mw/3, 0);
 
 pen_stroke(
@@ -26,7 +26,7 @@ z16 = ( x15 + mw/2, m); % second top
 z17 = ( x16 + mw/2.5, y16 - m/2);
 z18 = ( x17 - mw/4, y0);
 
-paths[1] =z11{up}..z12{dir 10}.. z13..z14..z15 ..z16{dir 10}..{down}z17;
+paths[1] =z11{up}..z12{dir 10}..z13..z14..z15..z16{dir 10}..{down}z17;
 
 pen_stroke(
     nib(thinnib)(2, 4, 6, 8)
@@ -41,7 +41,7 @@ z1 = (xpart(point 1 of paths[1]), -descent*1.2);
 z2 = (xpart(point 2.25 of paths[0]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
-paths[2] =  z0{dir -90} ..{dir 190}z1  ..{dir 170}z2  ..z3..z4;
+paths[2] =  z0{dir -90}..{dir 190}z1..{dir 170}z2..z3..z4;
 
 pen_stroke(
     nib(thinnib)(3)

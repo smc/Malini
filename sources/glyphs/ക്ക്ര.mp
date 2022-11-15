@@ -17,7 +17,7 @@ z12=(x11 + mw/3, y11 + m/2);
 z13=(x12 + mw/2, y12 - m/2);
 z14=(x13 - mw/6, y13 - m/2);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18} .. z8{dir -18}..z9..z10..z11..z12..z13..z14 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18}..z8{dir -18}..z9..z10..z11..z12..z13..z14 ;
 paths[0]:=subpath(0, 13) of paths[0];
 paths[0] :=paths[0] shifted (mw/3, 0);
 
@@ -37,7 +37,7 @@ z2 = (xpart(point 4 of paths[0]), y1);
 z3 = (xpart(point 6 of paths[0]) - mw/3, ypart(point 6 of paths[0]));
 z4 = (x3 + mw/4, m);
 
-paths[1] = z0{down} ..{dir 190}z1 ..{dir 170}z2..z3..z4;
+paths[1] = z0{down}..{dir 190}z1..{dir 170}z2..z3..z4;
 pen_stroke(
     nib(thinnib)(3)
     nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)

@@ -22,7 +22,7 @@ z1=( x0 + mw - thick/2, 0);
 z2= (x1, y1 + m/3);
 z3= (x2, y2 + m/2);
 
-paths[1] = z0{dir 20}..{dir 20}z1{dir 20}.. z2.. z3;
+paths[1] = z0{dir 20}..{dir 20}z1{dir 20}..z2..z3;
 pen_stroke(
     nib(thicknib)(0, 4)
     nib(thinnib)(2)

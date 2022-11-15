@@ -6,7 +6,7 @@ z2 = (0, y4);
 z3 = (x2 + mw/4, -m/4);
 z4 = (x3 + mw/3, y3 + m/4);
 
-paths[0] := z0 ..  z1..z2.. z3.. z4;
+paths[0] := z0..z1..z2..z3..z4;
 soften:=0;
 paths[1] = fullcircle scaled (thick*1.5)  shifted(x1, m);
 

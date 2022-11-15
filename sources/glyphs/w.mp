@@ -25,7 +25,7 @@ z1 = (x0, s/2);
 z2 = (x1 + sw/3, thick/4);
 z3 = (x2 + sw/3, y1);
 z4 = (x2, s);
-paths[2] = z0{down} ..z1..z2{dir 10}..z3{dir 90}.. z4;
+paths[2] = z0{down}..z1..z2{dir 10}..z3{dir 90}..z4;
 
 
 pen_stroke(

@@ -18,7 +18,7 @@ z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 
-paths[2] = z0{dir -90} ..z1..{dir -90}z2; ;
+paths[2] = z0{dir -90}..z1..{dir -90}z2; ;
 paths[2] := paths[2] shifted(xpart(point 2 of paths[0]), 0);
 z3 = (xpart(point 0 of paths[2]), ypart(point 0 of paths[2]) - 0.05X);
 z4 = (x3 + Xw/1.6, y3);

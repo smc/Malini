@@ -13,7 +13,7 @@ z2=((x1 + x3)/2, 0.8m);
 z3=(x0 + mw/2, 0.6y2);
 z4=(xpart(point 1/3 of paths[1]) , thick*0.6/2);
 
-paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -90} .. {dir 200}z4;
+paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -90}..{dir 200}z4;
 
 pen_stroke(
     nib(start_up_nib)(0 )

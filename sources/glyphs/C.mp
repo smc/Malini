@@ -7,7 +7,7 @@ z2=( x1 - Xw/3, X/2);
 z3=( x1, thick/4);
 z4=( x3 + Xw/3, y3 + 0.2X);
 
-paths[0] = z0 ..z1..z2..z3..{dir 80}z4 ;
+paths[0] = z0..z1..z2..z3..{dir 80}z4 ;
 
 pen_stroke(
     nib(thinnib)(2)

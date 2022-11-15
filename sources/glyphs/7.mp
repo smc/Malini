@@ -4,7 +4,7 @@ z0=(0, .9X);
 z1=(x0 + .6Xw, X);
 z2=(x1 - mw/3, 0);
 
-paths[0] = z0{right} ..{dir 30}z1;
+paths[0] = z0{right}..{dir 30}z1;
 paths[1] = z1..{down}z2;
 
 pen_stroke(

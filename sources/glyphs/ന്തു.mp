@@ -7,7 +7,7 @@ z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3, y3 - m/4); % bottom of piller
 
-paths[0] = z0..z1.. z2.. z3---z4 ;
+paths[0] = z0..z1..z2..z3---z4 ;
 
 pen_stroke(
     nib(thicknib)(0, 2)
@@ -27,7 +27,7 @@ z5 = ( x4 + mw/2, m); % second top
 z6= ( x5 + mw/2.5, m/3);
 z7 = ( x4, -descent);
 
-paths[1] =z0{up}..z1{dir 10}.. z2..z3..z4 ..z5{dir 10}..z6..{dir 200}z7;
+paths[1] =z0{up}..z1{dir 10}..z2..z3..z4..z5{dir 10}..z6..{dir 200}z7;
 
 pen_stroke(
     nib(thinnib)(2, 4, 6, 8)

@@ -97,7 +97,7 @@ enddef;
 % The definition of |postdir| and |predir| given below is
 % based on the following observation, being the consequence
 % of the de~l'H\^ospital's rule: consider a~B\'ezier segment
-% |a .. controls b and c .. d|; normally, the vector $\vec{ab}$
+% |a..controls b and c..d|; normally, the vector $\vec{ab}$
 % determines the ``post'' direction at node~$a$; if $b$
 % coincides with $a$, then the vector $\vec{ac}$ determines
 % the direction; if also $c$ coincides coincides with~$a$,
@@ -109,7 +109,7 @@ enddef;
 %% \descriptioncomments
 % Definicje makr |postdir| i~|predir| wykorzystuj/a nast/epuj/ac/a
 % obserwacj/e, b/ed/ac/a prost/a konsekwencj/a regu/ly de~l'H\^ospitala:
-% rozwa/zmy segment |a .. controls b and c .. d|; w~normalnej sytuacji
+% rozwa/zmy segment |a..controls b and c..d|; w~normalnej sytuacji
 % kierunek ,,post'' w~punkcie~$a$ jest okre/slony przez
 % wektor $\vec{ab}$; je/zeli punkty $a$ i~$b$ si/e pokrywaj/a,
 % kierunek ,,post'' w~punkcie~$a$ jest okre/slony przez
@@ -173,13 +173,13 @@ enddef;
 %
 vardef posttension expr t of p = % ``The \MF{}book'', ex. 14.15
  save q_; path q_;
- q_=point t of p {direction t of p} .. {direction t+1 of p} point t+1 of p;
+ q_=point t of p {direction t of p}..{direction t+1 of p} point t+1 of p;
  length(postcontrol 0 of q_ - point 0 of q_)/
  length(postcontrol t of p - point t of p)% doesn't work for ``straight lines''
 enddef;
 vardef pretension expr t of p = % ditto
  save q_; path q_;
- q_=point t-1 of p {direction t-1 of p} .. {direction t of p} point t of p;
+ q_=point t-1 of p {direction t-1 of p}..{direction t of p} point t of p;
  length(precontrol 1 of q_ - point 1 of q_)/
  length(precontrol t of p - point t of p)% doesn't work for ``straight lines''
 enddef;
@@ -296,8 +296,8 @@ def is_suffix_ suffix $ = the_suffix_:= str $; killtext enddef;
 def && = amp_amp_ whatever enddef;
 tertiarydef p amp_amp_ q =
  if not pair p:
-  (subpath(0,length(p)-1) of p) .. controls (postcontrol length(p)-1 of p)
-   and (precontrol length(p) of p) ..
+  (subpath(0,length(p)-1) of p)..controls (postcontrol length(p)-1 of p)
+   and (precontrol length(p) of p)..
  fi
 enddef;
 %% \--------------------------------------------------------------------
@@ -468,8 +468,8 @@ enddef;
 % (chocia/z trywialnych) /scie/zek~jak:%
 %% \LINE{%
 %% \descriptioncomments
-%  |(0,0) .. controls (0,0) and (100,0) .. (100,0)| \quad or\quad
-%  |(0,0) .. controls (100,0) and (0,0) .. (100,0)|
+%  |(0,0)..controls (0,0) and (100,0)..(100,0)| \quad or\quad
+%  |(0,0)..controls (100,0) and (0,0)..(100,0)|
 %% \unskip}
 %% \--------------------------------------------------------------------
 vardef extrapolate expr t of b = % |t| pair, |b| B\'ezier segment
@@ -478,7 +478,7 @@ vardef extrapolate expr t of b = % |t| pair, |b| B\'ezier segment
  Casteljau(1/3[xpart(t),ypart(t)]) = point 1/3 of b;
  Casteljau(2/3[xpart(t),ypart(t)]) = point 2/3 of b;
  Casteljau(ypart(t)) = point 1 of b;
- z0 .. controls z1 and z2 .. z3
+ z0..controls z1 and z2..z3
 enddef;
 %
 def Casteljau(expr t) =
@@ -739,8 +739,8 @@ enddef;
 %% \medskip
 %% \--------------------------------------------------------------------
 %% {\descriptioncomments
-% The macro |quicksort| sorts |@#||s.i ... @#||s.j| along with
-% |@#|.|$i ... @#|.|$j| for |$| $\in$ |t|, using Tony Hoare's ``quick sort''
+% The macro |quicksort| sorts |@#||s.i...@#||s.j| along with
+% |@#|.|$i...@#|.|$j| for |$| $\in$ |t|, using Tony Hoare's ``quick sort''
 % method; suffix |s| must must not occur in the |t| list (no checking
 % is performed); if both |s| and |t| are empty, |t| is ignored.
 %% }
@@ -755,8 +755,8 @@ enddef;
 %% }
 %% \-
 %% {\descriptioncomments
-% Makro |quicksort| sortuje |@#||s.i ... @#||s.j| wraz
-% z~|@#|.|$i ... @#|.|$j| dla |$| $\in$ |t|, z~u/zyciem algorytmu
+% Makro |quicksort| sortuje |@#||s.i...@#||s.j| wraz
+% z~|@#|.|$i...@#|.|$j| dla |$| $\in$ |t|, z~u/zyciem algorytmu
 % ``quick sort'', kt/orego autorem jest Tony Hoare;
 % sufiks |s| nie mo/ze wyst/api/c w~li/scie |t| list (za/lo/zenie to
 % nie jest sprawdzane); je/sli parametry |s| i~|t| s/a r/ownocze/snie
@@ -993,8 +993,8 @@ vardef delete_nodes(expr p)(text node_list) = % |p| is cyclic
  for i_:=o_ upto n_-1+o_:
   hide(j_:=i_ mod n_; j__:=(i_+1) mod n_)
   if known z_[j_]: z_[j_] fi
-  if known z_[j_]a: .. controls z_[j_]a fi
-  if known z_[j__]b: and \\ z_[j__]b .. fi
+  if known z_[j_]a:..controls z_[j_]a fi
+  if known z_[j__]b: and \\ z_[j__]b..fi
  endfor \\ z_[o_] & cycle
 enddef;
 %% \--------------------------------------------------------------------
@@ -1464,8 +1464,8 @@ vardef pen_join(expr a,b,c,nib)=
      if arclength(subpath (0,1) of p_)<1/4ignore_nib_limit:
       % cf. the comment concerning |1/4ignore_nib_limit| in
       % |pen_stroke_edge| below
-      p_:=(point 0 of p_) .. controls (postcontrol 1 of p_) and
-        (precontrol 2 of p_) .. subpath (2,infinity) of p_;
+      p_:=(point 0 of p_)..controls (postcontrol 1 of p_) and
+        (precontrol 2 of p_)..subpath (2,infinity) of p_;
     fi
    fi
    endfor
@@ -1536,7 +1536,7 @@ vardef force_convex_edge(expr za, zb, zc, zd) =
  a_:=length(zd-za); b_:=length(zb-za); c_:=length(zc-zb); d_:=length(zd-zc);
  if (-a_+b_+c_+d_ > a_/infinity):
   if pen_stroke_method=2:
-   za .. controls zb and zc .. zd
+   za..controls zb and zc..zd
   else:
    if (a_>0.01) and (b_>0.01) and (c_>0.01) and (d_>0.01): % no degeneration...
     a_:=signum((za-zd) rotated -90 dotnorm (zb-za));
@@ -1546,14 +1546,14 @@ vardef force_convex_edge(expr za, zb, zc, zd) =
     if ((a_<>b_) or (b_<>c_)) and (a_=d_):
      numeric b_, c_; pair z_;
      z_=b_[za,zb]=c_[zd,zc];
-     za .. controls
+     za..controls
       if b_<1: z_ else: zb fi and if c_<1: z_ else: zc fi
-     .. zd
+  ..zd
     else:
-     za .. controls zb and zc .. zd
+     za..controls zb and zc..zd
     fi
    else:
-    za .. controls zb and zc .. zd
+    za..controls zb and zc..zd
    fi
   fi
  else:
@@ -1569,11 +1569,11 @@ vardef pen_stroke_edge_(expr b,b_nib,e_nib) = % |b| -- B\'ezier segment
  qa_=pa_ + tangent_point(sa_, b_nib);
  qb_=pb_ + tangent_point(sb_, e_nib);
  if pen_stroke_method=0:
-  qa_ {sa_} ... {sb_} qb_
+  qa_ {sa_}...{sb_} qb_
  elseif (pen_stroke_method=1) or (pen_stroke_method=2):
   save lp_,lq_; lp_=length(pb_-pa_); lq_=length(qb_-qa_);
   if 2lp_<lq_: % heuresis -- too close nodes
-   qa_ {sa_} ... {sb_} qb_
+   qa_ {sa_}...{sb_} qb_
   else:
    force_convex_edge(qa_, qa_+lq_/lp_*ra_, qb_+lq_/lp_*rb_, qb_)
   fi
@@ -1670,10 +1670,10 @@ vardef pen_stroke_edge@#(expr p) =
     --
    else:
     if pen_stroke_method=0:
-     if not ignore_dir_@#(i_): {postdir 0 of e_[i_]} fi ... % |@#| added 19.04.2013
+     if not ignore_dir_@#(i_): {postdir 0 of e_[i_]} fi...% |@#| added 19.04.2013
      if not ignore_dir_@#(i_+1): {predir 1 of e_[i_]} fi    % ditto
     elseif (pen_stroke_method=1) or (pen_stroke_method=2):
-     .. controls (postcontrol 0 of e_[i_]) and (precontrol 1 of e_[i_]) ..
+  ..controls (postcontrol 0 of e_[i_]) and (precontrol 1 of e_[i_])..
     fi
    fi
  endfor
@@ -2077,11 +2077,11 @@ vardef correct_close_triplets(expr p, acc) =
  save i_; i_:=1;
  forever:
   if arclength(subpath(i_-1,i_+1) of p)<=acc:
-   (point i_ of p) ..
-    controls (postcontrol incr(i_) of p) and (precontrol incr(i_) of p) ..
+   (point i_ of p)..
+    controls (postcontrol incr(i_) of p) and (precontrol incr(i_) of p)..
   else:
-   (point i_-1 of p) ..
-    controls (postcontrol i_-1 of p) and (precontrol  i_ of p) ..
+   (point i_-1 of p)..
+    controls (postcontrol i_-1 of p) and (precontrol  i_ of p)..
   fi
   exitif incr(i_)=length(p)+1;
  endfor

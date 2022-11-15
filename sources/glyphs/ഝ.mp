@@ -8,8 +8,8 @@ z4 = ( x3 - mw/3, y3 - m/2 + thick/2); % bottom middle
 z5 = ( x4 - mw/3, y4 + m/2 - thick/2);
 z6 = ( x5 + mw/2, 0.9m); % second top
 z7 = ( x6 + mw/3, y1);
-paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
-paths[0] := paths[0] && (z4{left}.. z5 ..z6 .. {dir -82}z7) slanted tand(8);
+paths[0] = (z0..z1..z2{right}..z3..{left}z4) slanted tand(-8);
+paths[0] := paths[0] && (z4{left}..z5..z6..{dir -82}z7) slanted tand(8);
 paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 
 pen_stroke(

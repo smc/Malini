@@ -6,7 +6,7 @@ z1=(0, y0 + m/2);
 z2=(x1 + mw/3, m);
 z3=(x2 + mw/3, m/2);
 z4=(x3, m/6); % bottom of piller
-paths[0] = z0..z1.. z2.. {down}z3---z4 ;
+paths[0] = z0..z1..z2..{down}z3---z4 ;
 
 clearxy;
 z0= point 3 of paths[0];

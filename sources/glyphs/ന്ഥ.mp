@@ -6,7 +6,7 @@ z1=(0, y0 + m/2);
 z2=(x1 + mw/3, y1 +  0.4m);
 z3=(x2 + mw/3, m/3);
 z4=(x3,  y3 -m/4); % bottom of piller
-paths[0] = z0..z1.. z2.. {down}z3---z4 ;
+paths[0] = z0..z1..z2..{down}z3---z4 ;
 
 clearxy;
 z0=point 3 of paths[0];
@@ -38,7 +38,7 @@ z3=(x2 - mw/3, y2 + m/2);
 z4=(x3 - mw/3, y3 - m/2);
 z5=(x4, y0);
 
-paths[2] = z0{dir 30} ..  z1 .. z2 .. z3..z4..{dir -85}z5;
+paths[2] = z0{dir 30}..z1..z2..z3..z4..{dir -85}z5;
 pen_stroke(
     nib(thicknib)(0, 2, 3, 5)
     nib(thinnib)( 2,4)

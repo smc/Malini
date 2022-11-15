@@ -24,7 +24,7 @@ z1=( x0 + mw - thick/2, 0);
 z2= (x1, y1 + m/3);
 z3= (x2, y2 + m/2);
 
-paths[2] = z0{dir 0}..{dir 20}z1{dir 20}.. z2.. z3;
+paths[2] = z0{dir 0}..{dir 20}z1{dir 20}..z2..z3;
 
 clearxy;
 z0 = (x1 + mw/4, m/4);

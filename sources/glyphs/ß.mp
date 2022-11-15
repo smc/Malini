@@ -10,7 +10,7 @@ z2 = ((x0 + x1)/2, y1 + .25s);
 z3=  (x0 + thick/4, y2 + .25s);
 z4=  (x1 - thick/4, 0.85s);
 
-paths[1] = z0{dir -40}  ..z1.. z2 ..z3..{dir -40}z4 ;
+paths[1] = z0{dir -40}..z1..z2..z3..{dir -40}z4 ;
 paths[1]:=subpath(0,3.6) of paths[1] shifted(s/3, 0) xscaled 0.9 yscaled 0.9;
 pen_stroke(
     nib(thinnib)(1, 3)

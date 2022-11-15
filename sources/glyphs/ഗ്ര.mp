@@ -10,7 +10,7 @@ paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4..{down}z5;
 z6=(xpart(point 3 of paths[0]), -descent);
 z7=(0, m/4);
 z8=(x7 + thick/2, m);
-paths[0] := paths[0] .. z6..z7..{dir 60}z8;
+paths[0] := paths[0]..z6..z7..{dir 60}z8;
 
 pen_stroke(
     nib(thicknib)(0, 2)

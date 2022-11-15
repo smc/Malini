@@ -9,7 +9,7 @@ z5= ( x4 + mw/3, y4 - .2m);
 z6 = ( x5 + mw/6, y5 - .15m);
 z7 = ( xpart(point infinity of paths[0]) - mw/6, 0);
 
-paths[0] := paths[0].. z3 ..z4  .. z5{right} ..z6..{dir 160}z7;
+paths[0] := paths[0]..z3..z4..z5{right}..z6..{dir 160}z7;
 
 pen_stroke(
     nib(thinnib)(1, 3, 5, 6)

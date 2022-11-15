@@ -26,7 +26,7 @@ vardef ml_base_loop_c =
     z1 = (x0 - hr, y0 + vr);
     z2 = (x1 +  hr*right_sweep_corr,  y1 + vr);
     z3 = (x2 + hr,  y2 - vr);
-    z0..z1..z2 ..z3..z0
+    z0..z1..z2..z3..z0
 enddef;
 
 % Clockwise loop
@@ -50,7 +50,7 @@ vardef left_arch =
     x3-x1 = 2/3*mw;
     z3=(x3, m*0.6);
     z4=(x3, y0); % bottom of piller
-    z0..z1.. z2.. {down}z3---z4
+    z0..z1..z2..{down}z3---z4
 enddef;
 
 vardef right_arch =
@@ -153,7 +153,7 @@ vardef la =
     z4=(x3 + mw/3, 0);
     z5=(x4 + 2/3mw, y3);
     z6=(x5 - mw/8, y2);
-    z0 ..z1.. z2..z3 .. z4 ..z5.. z6
+    z0..z1..z2..z3..z4..z5..z6
 enddef;
 
 vardef ra =
@@ -165,7 +165,7 @@ vardef ra =
     x3-x1 = mw*0.95;
     z3=(x3, y1);
     z4=(x3 - mw/3, 0);
-    z0 ..z1.. z2 ..z3 ..z4
+    z0..z1..z2..z3..z4
 enddef;
 
 vardef pa_mouth =
@@ -175,7 +175,7 @@ vardef pa_mouth =
     z2=(x0 + mw/5, y1 + m/4);
     z3=(x2 + mw/4, y2 - m/4);
     z4=(x2, 0);
-    z0{dir 135}..z1.. z2{right}..z3{dir 260}..z4
+    z0{dir 135}..z1..z2{right}..z3{dir 260}..z4
 enddef;
 
 vardef pa_tail =
@@ -219,7 +219,7 @@ vardef left_arch_with_eye =
     z6=(x5 + mw/3, 0.975m);
     z7=(x6 + mw/2, m/2);
     z8=(x7, 0);
-    z0{up} .. z1{right}..z2{down}..z3{left}..{up}z4---z5{up}..z6..{down}z7 ---z8
+    z0{up}..z1{right}..z2{down}..z3{left}..{up}z4---z5{up}..z6..{down}z7 ---z8
 enddef;
 
 vardef right_arch_with_eye =
@@ -232,7 +232,7 @@ vardef right_arch_with_eye =
     z3=(x3, m/2);
     z4= (x3 - mw/4, thick*0.5/2);
     z5=(x4 - mw/4, y4 + m/3.2);
-    l=z0---z1..z2..z3{dir -85}..z4.. {dir 80}z5;
+    l=z0---z1..z2..z3{dir -85}..z4..{dir 80}z5;
     l..point 2.8 of l
 enddef;
 

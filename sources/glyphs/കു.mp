@@ -15,7 +15,7 @@ z10=(x8, y8 - m/3); % <
 z11=(x10 + mw/3, (y10 + y12)/2);
 z12=(x8, y10 - m/3);
 
-paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7 .. z8 ..z9{down}..{left}z10{right}..z11..{dir 150}z12 ;
+paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..z8..z9{down}..{left}z10{right}..z11..{dir 150}z12 ;
 pen_stroke(
     nib(thicknib)(1, 3)
     nib(thinnib)(0,2, 4, 6, 9, 11)

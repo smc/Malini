@@ -12,11 +12,11 @@ z8 = ( x7 - mw/5, y7-m/4);
 z9 = ( x8 + mw/3, y8-m/4);
 z10 = ( x9 - mw/6, y9-m/3);
 
-paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
-paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}..z7..{left}z8{right}..z9..z10) slanted tand(8);
+paths[0] = (z0..z1..z2{right}..z3..{left}z4) slanted tand(-8);
+paths[0] := paths[0] && (z4{left}..z5..z6{right}..z7..{left}z8{right}..z9..z10) slanted tand(8);
 paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 
-paths[0]:= paths[0] .. ( xpart (point 5 of paths[0]),  -descent);;
+paths[0]:= paths[0]..( xpart (point 5 of paths[0]),  -descent);
 pen_stroke(
     nib(thicknib)(0, 2, 4,6,)
     nib(thinnib)(1, 3, 5, 7, 9,10)

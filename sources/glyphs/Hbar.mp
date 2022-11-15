@@ -5,12 +5,12 @@ z0=(0, X);
 z1=(x0, X/2);
 z2=(x1, 0);
 
-paths[0] = z0{down} ..z1..{down}z2;
+paths[0] = z0{down}..z1..{down}z2;
 paths[0] := paths[0] shifted (sw/4, 0);
 z3=(xpart(point 0 of paths[0]) + 0.6X, X);
 z4=(x3, X/2);
 z5=(x4, 0);
-paths[1] = z3{down} ..z4..{down}z5;
+paths[1] = z3{down}..z4..{down}z5;
 
 clearxy;
 z0 = point 1 of paths[0];
@@ -34,7 +34,7 @@ pen_stroke(
 % Bar
 clearxy;
 z0 = point 0.5 of paths[0] - (sw/4, 0);
-z1 = point 0.5 of paths[1] + (sw/4, 0);;
+z1 = point 0.5 of paths[1] + (sw/4, 0);
 paths[3]:= z0..z1;
 pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[3])(0)

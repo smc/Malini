@@ -3,7 +3,7 @@ beginglyph;
 z0=(x1- thick/4, X);
 z1=(0, X/2);
 z2=(x1  ,0);
-paths[0] := z0{dir -60}..z1.. z2;
+paths[0] := z0{dir -60}..z1..z2;
 paths[1] := p_loop shifted(  xpart(point 0 of paths[0]),0);
 pen_stroke(
     nib(thinnib)(1)

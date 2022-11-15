@@ -11,7 +11,7 @@ z6=(x5 - mw/3, m/3);
 % confuse outline calculation.
 z7=(x6 + mw/6, y3+0.05m);
 
-paths[0] = z0 ..z1..{dir -10}z2..z3{dir 10}..z4..z5..z6..z7;
+paths[0] = z0..z1..{dir -10}z2..z3{dir 10}..z4..z5..z6..z7;
 pen_stroke(
     nib(thicknib)(2, 3, 4)
     nib(thinnib)(1, 4, 6)

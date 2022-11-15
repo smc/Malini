@@ -8,7 +8,7 @@ z2=(0, s/3);
 z3=( 0.4*sw*r, thick/4);
 z4= (sw*r, s/4);
 
-paths[0] = z0{dir 120}..z1{dir 195}.. z2{dir -75}..z3 ..{dir 60}z4;
+paths[0] = z0{dir 120}..z1{dir 195}..z2{dir -75}..z3..{dir 60}z4;
 paths[0] := paths[0] shifted (sw/3, s/3) xscaled 0.8 yscaled 0.85;
 pen_stroke(
     nib(thicknib)(1,3)

@@ -14,7 +14,7 @@ z10=(x9 - mw/4, y9-m/4);
 z11=(x10 + mw/3, y10-m/4);
 z12=(x7, -descent);
 
-paths[0] = z0..z1{down} ..{right}z2{right} ..z3..z4..z5  ..z6..z7.. z8..z9..{left}z10{right}..z11..{dir 190}z12;
+paths[0] = z0..z1{down}..{right}z2{right}..z3..z4..z5..z6..z7..z8..z9..{left}z10{right}..z11..{dir 190}z12;
 
 pen_stroke(
     nib(thicknib)(0, 2, 4, 6, 8)

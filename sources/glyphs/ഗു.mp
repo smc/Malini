@@ -7,7 +7,7 @@ z3=(x2 + mw/4, y1);
 z4=(x3 + mw/2, m);
 z5=(x4 + mw/3, m/2);
 z6=(x3, -descent);
-paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4..{dir -100}z5.. z6;
+paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4..{dir -100}z5..z6;
 
 pen_stroke(
     nib(thicknib)(0, 2)

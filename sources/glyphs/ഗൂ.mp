@@ -10,7 +10,7 @@ z6=(x5 - mw/4, y5 -m/4); % <
 z7=(x6 + mw/3, y6-m/4);
 z8=(x7 - mw/4, y7-m/3);
 z9=(x3, -descent);
-paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4.. z5.. {left}z6{right}..z7..z8..{dir 200}z9;
+paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4..z5..{left}z6{right}..z7..z8..{dir 200}z9;
 
 pen_stroke(
     nib(thicknib)(0, 2)

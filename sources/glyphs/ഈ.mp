@@ -9,7 +9,7 @@ z4=(0, y0 );
 z5=(x4 + mw/3, 0.975m);
 z6=(x5 + mw/2, m/2);
 z7=(x6, m/6);
-paths[0]:=z0{up} .. z1{right}..z2{down}..z3{left}..z4.. z5..{down}z6 ---z7;
+paths[0]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6 ---z7;
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
@@ -51,7 +51,7 @@ z2 = (x1 + mw/4, m);
 z3 = (x2 + mw/4, .66m);
 z4 = (x3, .45m);
 
-paths[3] = z0.. z1..z2{dir -8}..{down}z3---z4 ;
+paths[3] = z0..z1..z2{dir -8}..{down}z3---z4 ;
 paths[3]:= paths[3] shifted(xpart(point infinity of paths[1]) + 2rbearing, 0);
 pen_stroke(
     nib(thinnib)(1, 3)
@@ -65,7 +65,7 @@ z1 = (x0 + mw/3, m);
 z2 = (x1 + mw/4, m/2);
 z3 = (x2 - 0.6mw, 0);
 
-paths[4] = z0{dir 80}..z1{dir -10}..z2.. z3;
+paths[4] = z0{dir 80}..z1{dir -10}..z2..z3;
 
 pen_stroke(
     nib(thicknib)(1)

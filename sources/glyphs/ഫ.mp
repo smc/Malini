@@ -8,7 +8,7 @@ z7=(x6+0.2mw, y6 + m/2);
 z8=(x7-mw/3, y7 + m/2);
 z9=(x8-mw/3, y8 - m/2);
 z10=(x9, y5);
-paths[1] := z5{dir 30}..z6..z7..z8..z9.. {dir -85}z10;
+paths[1] := z5{dir 30}..z6..z7..z8..z9..{dir -85}z10;
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
     nib(thinnib)(1,3)

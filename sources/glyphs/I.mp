@@ -5,7 +5,7 @@ z0=(thick/2, X);
 z1=(x0,y0 - X/2);
 z2=(x1, 0);
 
-paths[0] = z0{dir -90}..z1..  {dir -90}z2  ;
+paths[0] = z0{dir -90}..z1..{dir -90}z2  ;
 
 pen_stroke(
     nib(thicknib)(0, 2)

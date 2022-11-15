@@ -24,7 +24,7 @@ clearxy;
 z0= (0, 0.8m);
 z1= (xpart(point 3 of paths[0]), y0);
 z2= point 2.5 of paths[1];
-paths[2] := z0{dir 45} ..z1{dir -45} .. {dir 45} z2;
+paths[2] := z0{dir 45}..z1{dir -45}..{dir 45} z2;
 
 pen_stroke(
     nib(thinnib)(1)

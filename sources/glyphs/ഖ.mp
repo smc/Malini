@@ -7,7 +7,7 @@ z3=(0, m/2);
 z4=(x3 + mw/2, m);
 z5=(x4 + mw/2, m/2);
 z6=(x5 - mw/3, 0);
-paths[0] = z0 .. z1{down}..z2{left}..z3.. z4..{down}z5 ..{dir 210}z6;
+paths[0] = z0..z1{down}..z2{left}..z3..z4..{down}z5..{dir 210}z6;
 paths[1] := va_tail shifted point infinity of paths[0];
 
 pen_stroke(

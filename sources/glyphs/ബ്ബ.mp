@@ -33,7 +33,7 @@ z20 = (xpart(point 1 of paths[2]) + thick/2, ypart(point 1 of paths[2]));
 z21 = (x20, y20 - m/3);
 z22 = (xpart(point 0 of paths[2]), y21);
 z23 = (x22 + mw/4, 0);
-paths[3] = z20--z21--z22{dir 30}.. z23;
+paths[3] = z20--z21--z22{dir 30}..z23;
 pen_stroke(
     nib(thicknib)(  3)
     nib(thinnib)(1,2)

@@ -18,7 +18,7 @@ z3= ( x2 - 0.75mw, -descent);
 z4= (0, m/3);
 z5= (mw/6, m);
 
-paths[1] = z0{up}..z1..z2..z3..z4 .. z5;
+paths[1] = z0{up}..z1..z2..z3..z4..z5;
 
 pen_stroke(
     nib(thicknib)( 3, 6)

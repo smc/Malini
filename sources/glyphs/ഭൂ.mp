@@ -13,7 +13,7 @@ z8 = ( x6 , 0);
 z9 = ( x5 , thick/2);
 
 paths[0] = subpath(0,2) of da;
-paths[0] := paths[0]..z3 ..{left}z4  .. z5 ..z6{right}..z7.. z8..{dir 150}z9;
+paths[0] := paths[0]..z3..{left}z4..z5..z6{right}..z7..z8..{dir 150}z9;
 paths[0] := paths[0] shifted (mw/3, 0);
 pen_stroke(
     nib(thicknib)(1, 3, 4 )
@@ -30,7 +30,7 @@ z17=(xpart(point 8 of paths[0]), -descent-thick);
 z18=(xpart(point 1 of paths[0]) - mw/3, m/3);
 z19=(x18 + mw/6, m);
 
-paths[1] := z15{dir -5}..z16 ..{left}z17 ..z18..z19 ;
+paths[1] := z15{dir -5}..z16..{left}z17..z18..z19 ;
 
 
 pen_stroke(

@@ -11,7 +11,7 @@ z7 = ( x6 - mw/4, y6 + m/2.5);
 z8 = ( x7 + mw/2.5, m*0.975);   % top
 z9 = ( x8 + mw/2, y8-m/2.5);
 z10 = ( x9, 0);
-paths[0] = z0..z1 .. z2..z3..{left}z4{right}..z5..z6..{up}z7..z8..{down}z9---z10;
+paths[0] = z0..z1..z2..z3..{left}z4{right}..z5..z6..{up}z7..z8..{down}z9---z10;
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)
@@ -26,7 +26,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = (0,0) + (xpart(point infinity of paths[0]), 0) + + (thick*0.60/2, 0);;
+z0 = (0,0) + (xpart(point infinity of paths[0]), 0) + (thick*0.60/2, 0);
 z1= ( x0 , m/2);
 z2= ( x1 + mw/2, m);
 z3= ( x2 + mw/2.5, y1);

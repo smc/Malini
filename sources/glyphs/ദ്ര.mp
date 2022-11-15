@@ -6,7 +6,7 @@ z6=(xpart(point infinity of paths[0]) + 0.4mw, 0);
 z7=(xpart(point 1.8 of paths[0]), -descent);
 z8=(xpart(point 1 of paths[0]) - mw/3, m/3);
 z9=(x8 + mw/6, m);
-paths[0] := paths[0]{right}..z6 ..{left}z7{left}..z8..{dir 60}z9;
+paths[0] := paths[0]{right}..z6..{left}z7{left}..z8..{dir 60}z9;
 
 pen_stroke(
     nib(thicknib)( 0, 2,4,6)

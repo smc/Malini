@@ -9,8 +9,8 @@ z4=(x3, X/2);
 z5=(x4, 0);
 
 
-paths[0] = z0{down} ..z1..{down}z2;
-paths[1] = z3{down} ..z4..{down}z5;
+paths[0] = z0{down}..z1..{down}z2;
+paths[1] = z3{down}..z4..{down}z5;
 z6 = point 1 of paths[0];
 z7 = point 1 of paths[1];
 paths[2]:= z6..z7;

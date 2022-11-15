@@ -10,7 +10,7 @@ z6=(x5 +  mw/3, y5 - m/2); % Top of second arch
 z7=(x6 +  mw/3, y6 + m/2);
 z8=(x7 -  mw/3, y7 + m/2);
 
-paths[0] = z0..z1..{dir 10}z2.. z3---z4;
+paths[0] = z0..z1..{dir 10}z2..z3---z4;
 paths[0]  := paths[0] shifted (mw/3, 0);
 paths[1] = z4---z5..z6{dir -10}..z7..z8;
 paths[1]  := paths[1] shifted (mw/3, 0);
@@ -35,7 +35,7 @@ z1 = (xpart(point 4 of paths[0]), -descent );
 z2 = (xpart(point 1 of paths[0]) - mw/3, m/3);
 z3 = (x2 + mw/6, m);
 
-paths[2] = z0{dir -80} .. z1  .. z2 .. z3;
+paths[2] = z0{dir -80}..z1..z2..z3;
 pen_stroke(
     nib(thinnib)(2)
     nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)

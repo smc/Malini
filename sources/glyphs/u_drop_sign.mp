@@ -7,7 +7,7 @@ z2=(x1 - 0.2mw, y1 - 0.25m);
 z3=(x2 - 0.2mw, y2 + 0.25m);
 z4=(x3 + 0.2mw, y3 + 0.25m);
 
-paths[0] = z0..tension 1.2..z1 ..z2{left}.. z3..tension 1.2..z4 ;
+paths[0] = z0..tension 1.2..z1..z2{left}..z3..tension 1.2..z4 ;
 pen_stroke(
     nib(thicknib)(2)
     nib(thinnib)(0, 1, 3, 4)

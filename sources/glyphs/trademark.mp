@@ -6,7 +6,7 @@ z2=(x1, 0);
 z3 = (0, y0-thick/4) ;
 z4 = (x0 + Xw/3, y3) ;
 paths[0] = (z0{down}..z1..{down}z2) xyscaled(0.5, 0.5) shifted (0,0.8s);
-paths[1] = (z3 .. z4) xyscaled(0.5, 0.5) shifted (0,0.8s);
+paths[1] = (z3..z4) xyscaled(0.5, 0.5) shifted (0,0.8s);
 pen_stroke(
     nib(thicknib)(0, 2)
     nib(thinnib)(1)
@@ -28,10 +28,10 @@ z6 = (x4 +  0.66X/2, y0);
 z7 = (x6, y1);
 z8 = (x7, y2);
 
-paths[2] = (z0{down}..z1..  {down}z2) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);
+paths[2] = (z0{down}..z1..{down}z2) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);
 paths[3] = (z3..z4) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);
 paths[4] = (z5..z6) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);
-paths[5] = (z6{down}..z7 .. {down}z8) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);;
+paths[5] = (z6{down}..z7..{down}z8) xyscaled(0.5, 0.5) shifted (0.6s,0.8s);
 pen_stroke(
     nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)

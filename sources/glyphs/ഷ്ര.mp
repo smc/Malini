@@ -14,7 +14,7 @@ z6 = (x5 - 0.35mw, y5 + 0.5m);
 z7 = (x6 + 0.3mw, y6 - 0.4m);
 z8 = (x7, y7- 0.6m);
 paths[1] = z0{dir 30}..{dir 30}z1{dir 30}..z2...{dir 80}z3;
-paths[2] = z4{dir 260}..z5 ..z6 ..{down}z7..z8;
+paths[2] = z4{dir 260}..z5..z6..{down}z7..z8;
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
     nib(thinnib)(1,3)
@@ -41,7 +41,7 @@ z0 = point 1.7 of paths[1];
 z1 = ( xpart(point 0.6 of paths[1]), -descent - thick);
 z2 = (0, m/3);
 z3 = (xpart(point 1 of paths[0])-mw/4, m);
-paths[3] = z0{dir -75}..z1..z2 .. {dir 60}z3;
+paths[3] = z0{dir -75}..z1..z2..{dir 60}z3;
 pen_stroke(
     nib(thinnib)(2, 4)
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)

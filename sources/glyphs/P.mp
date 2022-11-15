@@ -5,7 +5,7 @@ z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 
-paths[0] = z0{dir -90}..z1..  {dir -90}z2 ;
+paths[0] = z0{dir -90}..z1..{dir -90}z2 ;
 
 clearxy;
 

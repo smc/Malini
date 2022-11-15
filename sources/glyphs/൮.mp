@@ -21,7 +21,7 @@ z11 = point 1.6 of paths[1];
 z12 = (x11, -descent/2);
 z13 = (x12 - mw/2, -descent);
 
-paths[2] = z11{dir -80}..z12 .. {dir 150}z13 ;
+paths[2] = z11{dir -80}..z12..{dir 150}z13 ;
 pen_stroke(
     nib(thinnib)(1)
     nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)

@@ -6,7 +6,7 @@ z5=point infinity of paths[0];
 z6=(x5 + 0.75mw, y5);
 
 paths[1] := z5{dir 20}..{dir 20}z6 && ra shifted (xpart(z6) - mw/4, -thick/4);
-paths[1] := paths[1] .. {dir 210}(xpart(point 2 of paths[1]), -descent);
+paths[1] := paths[1]..{dir 210}(xpart(point 2 of paths[1]), -descent);
 pen_stroke(
     nib(thicknib)(0, 2, 4, 5, 6)
     nib(thinnib)(1,3)

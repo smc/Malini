@@ -19,7 +19,7 @@ z4=(x3 - mw/4, y3 + m/2);
 z5=(x4 + mw/4, y4 + m/2);
 z6=(x4, ascent + .1m);
 
-paths[1] = z0{up}..z1..z2..z3 .. z4..{up}z5{up}..{dir 150}z6;
+paths[1] = z0{up}..z1..z2..z3..z4..{up}z5{up}..{dir 150}z6;
 paths[1] := paths[1] slanted tand(8) shifted (-tand(8)*mw/2, 0);
 pen_stroke(
     nib(thicknib)(1, 3)

@@ -14,7 +14,7 @@ z10=(x8, y8 - 0.35m);
 z11=(x10 + mw/3, y10 - 0.17m);
 z12=(x2, y10 - 0.35m);
 
-paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7 .. z8 ..z9{down}..{left}z10{right}..z11..{dir 150}z12 ;
+paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..z8..z9{down}..{left}z10{right}..z11..{dir 150}z12 ;
 pen_stroke(
     nib(thicknib)(1, 3)
     nib(thinnib)(0,2, 4, 6, 9, 11)
@@ -28,7 +28,7 @@ clearxy;
 z0 = (xpart(point 6 of paths[0]), m/2);
 z1 = (x0+ mw/4, m);
 z2 = point 0 of paths[0];
-paths[1] := z0{dir 110}.. z1..{down}z2;
+paths[1] := z0{dir 110}..z1..{down}z2;
 pen_stroke(
     nib(thicknib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)

@@ -13,7 +13,7 @@ z9 = z7;
 z10 =(x9+ mw/3, 0);
 z11 =(x10+ mw/2, y10+ m/2);
 z12 =(x9, ascent);
-paths[0] = z0..z1..{dir 10}z2.. z3---z4;
+paths[0] = z0..z1..{dir 10}z2..z3---z4;
 paths[1] = z4---z5..z6{dir -10}..z7---z8;
 paths[2] = z9{down}..z10..z11..z12;
 

@@ -20,7 +20,7 @@ z5 = ( x4 + mw/2, m); % second top
 z6= ( x5 + mw/2.5, y5 - m/2);
 z7 = ( x6- mw/3, 0);
 
-paths[1] =z0{up}..z1{dir 10}.. z2..z3..z4 ..z5{dir 10}..z6..{dir 200}z7;
+paths[1] =z0{up}..z1{dir 10}..z2..z3..z4..z5{dir 10}..z6..{dir 200}z7;
 
 pen_stroke(
     nib(thinnib)(2, 4, 6, 8)

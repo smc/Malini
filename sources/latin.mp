@@ -44,7 +44,7 @@ vardef n_arch =
 
     z5 =(0.24sw*r, 0.7s);
     z6 =(0.5sw*r, 1.1s);
-    z0{dir 90}.. z1 ..controls z5 and z6.. z2 .. z3..{dir -75}z4
+    z0{dir 90}..z1..controls z5 and z6..z2..z3..{dir -75}z4
 enddef;
 
 vardef u_arch =
@@ -65,7 +65,7 @@ vardef p_loop =
     z2=(r*sw, 2/3s);
     z3=(0.5*r*sw, 0.05s);
     z4=(x0 + sw/12, y0 + s/10);
-    z0{dir 80}..z1..{dir -80}z2{dir -80}..z3 ..{dir 140}z4
+    z0{dir 80}..z1..{dir -80}z2{dir -80}..z3..{dir 140}z4
 enddef;
 
 vardef a_loop =
@@ -77,6 +77,6 @@ vardef a_loop =
     z2=(0, s/3);
     z3=(r*sw/3, thick/4);
     z4=(x0, y0);
-    z0..z1{dir 190}..{dir -80}z2{dir -80}..z3 ..{dir 80}z4
+    z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4
 enddef;
 

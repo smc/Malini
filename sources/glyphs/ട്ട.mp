@@ -7,14 +7,14 @@ z3 = (x1, y2 + .3m);
 z4=  (x0, y3 + .275m);
 z5=  (x1, m);
 z6=  (x2, 0.8m);
-paths[0] = z0..z1..z2 ..z3..z4..z5.. z6 ;
+paths[0] = z0..z1..z2..z3..z4..z5..z6 ;
 
 z10 = z1;
 z11 = (x2  + thick/2, y10 - m/4);
 z12 = (x3, y11 - m/4);
 z13 = (x0 - thick/2, -descent);
 
-paths[1] = z10{right}  ..z11..z12 .. z13 ;
+paths[1] = z10{right}..z11..z12..z13 ;
 
 pen_stroke(
     nib(thicknib)(0,1, 3)

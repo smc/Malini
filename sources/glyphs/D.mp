@@ -10,7 +10,7 @@ z5 = (x4 + 0.4*sw, 0.5X);
 z6 = (x4,  thick/2);
 z7 = (0, 0);
 paths[0] = z0..z1..z2;
-paths[1] = z3{right}..z4..z5.. z6 ..{left}z7 ;
+paths[1] = z3{right}..z4..z5..z6..{left}z7 ;
 
 pen_stroke(
     nib(thinnib)(1, 2)

@@ -8,7 +8,7 @@ z3 = (x2 + sw/3, y2 - m/4);
 z4 = (x2, y3 - m/4);
 
 paths[0] = z0 -- z1;
-paths[1] = z2{right}   ..z3.. z4;
+paths[1] = z2{right}..z3..z4;
 
 paths[0] := paths[0] crotated -20;
 

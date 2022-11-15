@@ -9,7 +9,7 @@ z1 = (xpart(point 2 of paths[1])  - sw/3, s/2);
 z2 = (xpart(point 1 of paths[1]), ascent*0.95);
 z3 = (xpart(point 0 of paths[1]) + sw/2, s/2);
 z4 = (xpart(point 0 of paths[0]) + sw/4, ypart(point 0 of paths[0]) - sw/6);
-paths[0] := z0.. z1..z2{right}..z3{down}..z4..paths[0];
+paths[0] := z0..z1..z2{right}..z3{down}..z4..paths[0];
 pen_stroke(
     nib(thinnib)(1,3,6)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
