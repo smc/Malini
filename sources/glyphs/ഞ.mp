@@ -3,14 +3,18 @@ beginglyph;
 
 paths[0] := left_arch_with_eye;
 pen_stroke(
-    nib(thicknib)(0, 2, 4, 6)
-    nib(thinnib)(1,3, 5)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib)(0)
+    nib(top_nib)(1)
+    nib(middle_down_nib)(2)
+    nib(down_nib)(3)
+    nib(middle_up_nib)(4)
+    nib(middle_up_nib)(5)
+    nib(top_nib)(6)
+    nib(thin_vertical_nib)(7,8)
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = point 5 of paths[0];
+z0 = point 7 of paths[0];
 z1 = ( x0 + m/3, y0 + m/2); % top
 z2 = ( x1 + mw/2, y1 - m/2);
 z3 = ( x2 - mw/4, y2 - m/3); % bottom middle

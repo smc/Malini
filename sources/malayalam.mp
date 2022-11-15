@@ -44,24 +44,35 @@ enddef;
 
 vardef left_arch =
     clearxy;
-    save l,slant;
-    path l;
-    slant := tand(-8);
-    l:= ml_base_loop_c;
-    l:=l slanted slant;
-    l:=l shifted (-slant*mw/2, 0);
-    l
+    z0=(x1+mw/4, 0);
+    z1=(0, m-m/1.6);
+    z2=((x1+x3)/2,  0.975m);
+    x3-x1 = 2/3*mw;
+    z3=(x3, m*0.6);
+    z4=(x3, y0); % bottom of piller
+    z0..z1.. z2.. {down}z3---z4
 enddef;
 
 vardef right_arch =
     clearxy;
-    save l,slant;
-    path l;
-    slant:= tand(8);
-    l:= ml_base_loop_c;
-    l:=l slanted slant;
-    l:=l shifted (-slant*m/2, 0);
-    l
+    z0=(thick*0.60/2, 0);
+    z1=(x0, m*0.6);
+    z2=((x1+x3)/2, 0.975m); % Top of arch
+    x3-x1 = 2/3*mw;
+    z3=(x3, m-m/1.6);
+    z4= (x3 - mw/4, 0);
+    z0---z1..z2..z3..z4
+enddef;
+
+vardef middle_arch =
+    clearxy;
+    z0=(thick*0.60/2, 0);
+    z1=(x0, m*0.6);
+    z2=((x1+x3)/2, 0.975m); % Top of arch
+    x3-x1 = 0.6mw;
+    z3=(x3, y1);
+    z4=(x3, y0);
+    z0---z1..z2..z3---z4
 enddef;
 
 vardef right_arch_short =
@@ -199,19 +210,42 @@ enddef;
 
 vardef left_arch_with_eye =
     clearxy;
-    save p,loop_slant;
-    path p;
-    loop_slant=tand(-4);
-    z0 =(x3, y3);
-    z1=(x0 + mw/2, y3 - m/6);
-    z2=(x1 - mw/5,  thick/2);
-    z3=(0, m/2);
-    z4=(x3 + mw/3, m);
-    z5=(x4 + mw/2, m/2);
-    z6=(x5, m/6);
-    p:=z0{dir 30} .. z1{down}..z2{left}..z3.. z4..{down}z5;
-    p:=p slanted loop_slant;
-    p:=p shifted (-loop_slant*m/2,0);
-    p:=p{down} ---z6;
-    p
+    z0 =(0, (y1 + y3)/2);
+    z1 =(x0 + mw/4, y3+0.55m);
+    z2=(x1 + mw/4, y0);
+    z3=(x2 - mw/4, thick*0.6/2);
+    z4=(x0, y0);
+    z5=(x0, m/2);
+    z6=(x5 + mw/3, 0.975m);
+    z7=(x6 + mw/2, m/2);
+    z8=(x7, 0);
+    z0{up} .. z1{right}..z2{down}..z3{left}..{up}z4---z5{up}..z6..{down}z7 ---z8
+enddef;
+
+vardef right_arch_with_eye =
+    clearxy;
+    path l;
+    z0 = (thick*0.60/2, 0);
+    z1=(x0, m*0.6);
+    z2=((x1+x3)/2, 0.975m);
+    x3-x1 = 0.8mw;
+    z3=(x3, m/2);
+    z4= (x3 - mw/4, thick*0.5/2);
+    z5=(x4 - mw/4, y4 + m/3.2);
+    l=z0---z1..z2..z3{dir -85}..z4.. {dir 80}z5;
+    l..point 2.8 of l
+enddef;
+
+vardef right_arch_with_tail =
+    clearxy;
+    z0 = (thick*0.60/2, 0);
+    z1= ( x0 , m/2);
+    z2= ( x1 + mw/2, m);
+    z3= ( x2 + mw/2.5, y1);
+    z4= ( x3 - mw/3, thick*0.5/2);
+    z5= ( x4 - mw/4, y4 + m/3);
+    z6= ( x4 + mw/4, y3 + m/6);
+    z7= ( x5 + mw*0.9, y6 - m/2);
+    z8= ( x4, -descent);
+    z0---z1..z2..z3..z4..z5..z6..z7..z8
 enddef;

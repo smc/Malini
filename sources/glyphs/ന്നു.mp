@@ -1,44 +1,38 @@
 input glyph;
 beginglyph;
 
-z0=(x1+mw/3, 0);
-z1=(0, y0 + m/2);
-z2=(x1 + mw/3, y1 +  0.4m);
-z3=(x2 + mw/3, m/3);
-z4=(x3,  y3 -m/4); % bottom of piller
-paths[0] = z0..z1.. z2.. {down}z3---z4 ;
-% Second arch
-z11 = z3;
-z12 = (x11 + mw/4, y11 + m/3);
-z13 = (x12 + mw/4, y3);
-z14 = (x13, y4);
-paths[1] = z11{up}..z12..z13---z14;
 
-z15=z13;
-z16=(x15 + mw/2, m);
-z17=(x16 + mw/3, y16 - m/2);
-z18=(x17 - mw/3, y17 - m/2);
-z19= ( x18 - mw/4, y18 + .3m);
-
-
-paths[2] = z15{up}..z16..z17...z18..z19..{dir -30}z17;
-paths[2] := paths[2] slanted tand(8) shifted (-tand(8)*mw/3, 0);
+paths[0] =left_arch;
 pen_stroke(
-    nib(thicknib)(0, 2,4,6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(start_up_nib)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(thin_vertical_nib)(3)
+    nib(thin_vertical_nib)(4)
 )(paths[0])(strokes[0]);
+
+% Second arch
+
+paths[1] = middle_arch shifted (xpart(point infinity of paths[0]), 0);
+
 pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(2)
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thin_vertical_nib)(0)
+    nib(thin_vertical_nib)(1)
+    nib(top_nib)(2)
+    nib(thin_vertical_nib)(3)
+    nib(thin_vertical_nib)(4)
 )(paths[1])(strokes[1]);
+
+paths[2] = right_arch_with_eye shifted (xpart(point infinity of paths[1]), 0);
+
 pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(0, 2,4, 6)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+    nib(thin_vertical_nib)(0)
+    nib(thin_vertical_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(down_nib)(4)
+    nib(middle_up_nib)(5)
+    nib(top_nib)(6)
 )(paths[2])(strokes[2]);
 anchor( "vc", (xpart(point 1 of paths[1]),0));
 endglyph;
