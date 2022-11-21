@@ -6,8 +6,8 @@ z1=(x0 + 0.75mw, y0);
 
 paths[0] = z0 --z1 ;
 pen_stroke(
-    nib(thick_horizontal_nib)(0)
-    nib(thick_horizontal_nib)(1)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[0])(strokes[0]);
 
 clearxy;
@@ -29,8 +29,8 @@ z0=(0, thick*0.6/2);
 z1=(x0 + mw*1.2, y0);
 paths[2]:= z0--z1;
 pen_stroke(
-    nib(thick_horizontal_nib)(0)
-    nib(thick_horizontal_nib)(1)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[2])(strokes[2]);
 
 clearxy;
@@ -46,6 +46,6 @@ pen_stroke(
 
 anchor( "vc", point 0.5 of paths[2]);
 anchor( "bottom", point 0 of paths[3]);
-anchor( "right", point 0 of paths[3]);
+anchor( "right", point 0 of paths[3] - (mw/5,0) );
 
 endglyph;

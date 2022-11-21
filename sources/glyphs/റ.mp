@@ -9,4 +9,5 @@ pen_stroke(
     nib(end_nib)(4)
 )(paths[0])(strokes[0]);
 
+anchor( "right", point 4 of paths[0] );
 endglyph;

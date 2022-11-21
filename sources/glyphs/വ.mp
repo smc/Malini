@@ -16,11 +16,11 @@ z1=(x0 + 0.7mw, y0);
 z2=(x1, m);
 
 paths[1]:= z0--z1 ;
-paths[1]:= paths[1] shifted ( xpart(point 4 of paths[0]), (thick*0.60)/2);
+paths[1]:= paths[1] shifted ( xpart(point 4 of paths[0]) +  thick*0.5, (thick*0.60)/2);
 
 pen_stroke(
-    nib(thick_horizontal_nib)(0)
-    nib(thick_horizontal_nib)(1)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[1])(strokes[1]);
 
 clearxy;
@@ -36,7 +36,7 @@ pen_stroke(
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
 anchor( "bottom", (xpart(point 1 of paths[1]),0));
-anchor( "right", (xpart(point 1 of paths[1]),0));
+anchor( "right", (xpart(point 1 of paths[1])-mw/5,0));
 
 
 endglyph;

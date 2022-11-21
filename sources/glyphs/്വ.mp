@@ -13,7 +13,7 @@ paths[0] := paths[0] shifted(-x2 + thick, 0);
 paths[1] := paths[1] shifted(-x2 + thick ,0);
 
 pen_stroke(
-    nib(thick_horizontal_nib)( 0,1)
+    nib(thin_horizontal_nib)( 0,1)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thick_vertical_nib)( 0,1)

@@ -24,7 +24,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thick_horizontal_nib)(0,1)
+    nib(thin_horizontal_nib)(0,1)
 )(paths[1])(strokes[1]);
 
 clearxy;

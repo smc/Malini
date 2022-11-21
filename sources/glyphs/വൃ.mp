@@ -20,8 +20,8 @@ paths[1]:= z0--z1 ;
 paths[1]:= paths[1] shifted ( xpart(point 4 of paths[0]), (thick*0.60)/2);
 
 pen_stroke(
-    nib(thick_horizontal_nib)(0)
-    nib(thick_horizontal_nib)(1)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[1])(strokes[1]);
 
 clearxy;

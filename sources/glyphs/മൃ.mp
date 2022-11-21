@@ -19,8 +19,8 @@ z0=point 0 of paths[0] + (0, thick*0.6/2);
 z1=(xpart(point 4 of paths[0]), y0);
 paths[1] = z0---z1;
 pen_stroke(
-    nib(thick_horizontal_nib)(0)
-    nib(thick_horizontal_nib)(1)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[1])(strokes[1]);
 
 clearxy;
