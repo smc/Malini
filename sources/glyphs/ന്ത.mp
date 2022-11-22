@@ -10,26 +10,18 @@ pen_stroke(
     nib(thin_vertical_nib)(4)
 )(paths[0])(strokes[0]);
 
-clearxy;
-z0 = point 3 of paths[0];
-z1 = ( x0 + mw/2.4, m-thick/2); % top
-z2 = ( x1 + mw/3, y1 - m/2);
-z3 = ( x2 - mw/4, thick/2); % bottom middle
-z4 = ( x3 - mw/4, y3 + m/2.5);
-z5 = ( x4 + mw/2, m); % second top
-z6= ( x5 + mw/2.5, y5 - m/2);
-z7 = ( x6- mw/3, 0);
-
-paths[1] =z0{up}..z1{dir 10}..z2..z3..z4..z5{dir 10}..z6..{dir 200}z7;
+paths[1] = right_tha_arch shifted (xpart(point infinity of paths[0]), 0);
 
 pen_stroke(
-    nib(thinnib)(2, 4, 6, 8)
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thin_vertical_nib)(0)
+    nib(thin_vertical_nib)(1)
+    nib(top_nib)(2,6)
+    nib(middle_down_nib)(3, 7)
+    nib(down_nib)(4)
+    nib(middle_up_nib)(5)
+    nib(end_nib)(8)
 )(paths[1])(strokes[1]);
 
 anchor( "vc", point 0 of paths[1]);
-anchor( "bottom", point 6 of paths[1]);
-anchor( "right", point 6 of paths[1]);
 
 endglyph;

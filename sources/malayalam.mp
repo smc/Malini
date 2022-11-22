@@ -86,6 +86,50 @@ vardef right_arch_short =
     l
 enddef;
 
+vardef right_tha_arch =
+    clearxy;
+    z0=(thick*0.60/2, 0);
+    z1= (x0, m*0.6);
+    z2 = ( x1 + mw/2.75, 0.975m); % top
+    z3 = ( x2 + mw/2, m/2);
+    z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
+    z5 = ( x4 - mw/4, y3);
+    z6 = ( x5 + mw/2, y2); % second top
+    z7 = ( x6 + mw/2, y3);
+    z8 = ( x7 - mw/3, y0);
+    z0---z1..z2..z3..{left}z4{left}..z5..z6{right}..z7..z8
+enddef;
+
+vardef middle_tha_arch =
+    clearxy;
+    z0=(thick*0.60/2, 0);
+    z1= (x0, m*0.6);
+    z2 = ( x1 + mw/2.75, 0.975m); % top
+    z3 = ( x2 + mw/2, m/2);
+    z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
+    z5 = ( x4 - mw/4, y3);
+    z6 = ( x5 + mw/2, y2); % second top
+    z7 = ( x6 + mw/2.5, m*0.6);
+    z8 = ( x7, y0);
+    z0---z1..z2..z3..{left}z4{left}..z5..z6{right}..z7---z8
+enddef;
+
+
+vardef left_tha_arch =
+    clearxy;
+    z0= (x1 + mw/3, 0);
+    z1= (0, y0 + mw/2);
+    z2 = ( x1 + mw/2, 0.975m); % top
+    z3 = ( x2 + mw/2, y1);
+    z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
+    z5 = ( x4 - mw/4, y3);
+    z6 = ( x5 + mw/2, y2); % second top
+    z7 = ( x6 + mw/2.5, m*0.6);
+    z8 = ( x7, y0);
+    z0..z1..z2..z3..{left}z4{left}..z5..z6{right}..z7---z8
+enddef;
+
+
 % Clockwise top loop sits on top of mid horizontal line
 vardef top_arch_c =
     clearxy;
@@ -197,7 +241,7 @@ vardef va_tail =
 enddef;
 
 vardef da =
-   clearxy;
+    clearxy;
     z0 = ( x1 + mw/4 , 0);
     z1 = ( 0, (y0 + y2)/2);
     z2 = ( x1 + mw/2, m); % top
@@ -206,6 +250,19 @@ vardef da =
     z5 = ( x3+ mw/10, y4-m/4);
     z6 = ( x4, y0 + m/20);
     z0..z1{up}..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
+enddef;
+
+
+vardef right_da =
+    clearxy;
+    z0=(thick*0.60/2, 0);
+    z1= (x0, m*0.6);
+    z2 = ( x1 + mw/2.5, m); % top
+    z3 = ( x2 + mw/3, y2 - m/4);
+    z4 = ( x3 - mw/3, y3 - m/4); % <
+    z5 = ( x3+ mw/10, y4-m/4);
+    z6 = ( x4, y0 + m/20);
+    z0---z1..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
 enddef;
 
 vardef left_arch_with_eye =
