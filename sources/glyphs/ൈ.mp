@@ -33,8 +33,8 @@ pen_stroke(
     nib(end_nib)(4)
 )(paths[1])(strokes[1]);
 
-paths[2]:= paths[0] shifted(xpart(point 3 of paths[1]) + thick, 0);
-paths[3]:= paths[1] shifted(xpart(point 3 of paths[1]) + thick, 0);
+paths[2]:= paths[0] shifted(xpart(point 3 of paths[1]) + mw/4, 0);
+paths[3]:= paths[1] shifted(xpart(point 3 of paths[1]) + mw/4, 0);
 
 pen_stroke(
     nib(middle_up_nib)(0)
