@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-paths[0] = subpath(0, 4) of ra;
+paths[0] = ra;
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)

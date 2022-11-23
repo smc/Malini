@@ -17,8 +17,8 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=  (0,0);
-z1=(x0 + 0.9mw, y0);
+z0=(0,0);
+z1=(x0 + mw, y0);
 z2=(x1, m);
 
 paths[1]:= z0--z1 ;

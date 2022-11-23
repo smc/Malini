@@ -18,7 +18,7 @@ pen_stroke(
 clearxy;
 z0=point 0 of paths[0] + (0, thick*0.6/2);
 z1=(xpart(point 4 of paths[0]), y0);
-paths[1] = z0---z1;
+paths[1] = z0--z1;
 pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(thin_horizontal_nib)(1)
@@ -34,6 +34,6 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 anchor( "right", point 1 of paths[1] - (mw/5,0));
-
+anchor( "bottom", point 1 of paths[1]);
 
 endglyph;

@@ -11,4 +11,6 @@ pen_stroke(
     nib(end_nib rotated -45)(6)
 )(paths[0])(strokes[0]);
 
+anchor( "right", (xpart(point 5.5 of paths[0]),0));
+
 endglyph;
