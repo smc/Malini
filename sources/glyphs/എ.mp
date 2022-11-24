@@ -1,36 +1,62 @@
 input glyph;
 beginglyph;
-paths[0] = pa_mouth;
-z5= point infinity of paths[0];
-z6=(x5 + mw, y5);
-z7=(x6, y6 + m/3);
-z8=(x7, 0.8m);
-
-paths[1] := z5{dir 20}..{dir 20}z6{dir 20}..z7..{dir 60}z8;
-z11 = point 1.4 of paths[1];
-z12 = (x11 - mw/4, -descent);
-% z13 = (x12 - mw/3, y12);
-z14 = (x12 - mw/3, m/2);
-z15 = (x14 + mw/2, m);
-z16 = (x15 + mw/2, y15 - 0.5m);
-z17 = (x16 - mw/6, -0.2m);
-paths[2] = z11{down}..z12...z14..z15..z16..z17;
+z0=(x1 + mw/6 , 0);
+y2 - y1 = y2/1.6;
+z1=(0, y1);
+z2=((x1+x3)/2, m/2);
+x3-x1 = mw*0.5;
+z3=(x3, y1);
+z4=(x3 - mw/6, 0);
+paths[0] := z0..z1..z2..z3..z4;
 pen_stroke(
-    nib(thicknib)(0, 2, 4, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated (terminalangle infinity of paths[0]))(infinity)
+    nib(start_up_nib)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(end_nib rotated 45)(4)
 )(paths[0])(strokes[0]);
+
+clearxy;
+z0=  (0,0);
+z1=(x0 + mw, y0);
+z2=(x1, m);
+
+paths[1]:= z0--z1 ;
+paths[1]:= paths[1] shifted ( point 4 of paths[0] + ( thick*0.5, (thick*0.60)/2) );
+
 pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated (terminalangle infinity of paths[1]))(infinity)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[1])(strokes[1]);
+
+clearxy;
+z0=(0, 0);
+z1=(x0, 0.8m);
+
+paths[2]:= z0--z1;
+paths[2]:= paths[2] shifted (xpart(point 1 of paths[1]), 0);
 pen_stroke(
-    nib(thicknib)( 1, 3, 5)
-    nib(thinnib)(0,2, 4)
-    nib(terminalnib rotated (terminalangle infinity of paths[2]))(infinity)
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
 )(paths[2])(strokes[2]);
+
+
+clearxy;
+z0=(0, 0);
+z1=((x0  + x2)/2, -descent*0.9);
+z2=(x0 - mw/2, (y1+y3)/2);
+z3=(x0, m*0.975);
+z4=(x0 + mw/2, y2);
+z5=(x4 - mw/4, y1);
+
+paths[3]:= z0{down}..z1..{up}z2..z3{right}..z4..z5;
+paths[3]:= paths[3] shifted (xpart(point 0 of paths[2]), 0);
+pen_stroke(
+    nib(middle_down_nib)(0,4)
+    nib(down_nib)(1)
+    nib(middle_up_nib)(2)
+    nib(top_nib)(3)
+    nib(end_nib)(infinity)
+)(paths[3])(strokes[3]);
 
 endglyph;
