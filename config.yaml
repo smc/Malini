@@ -12,8 +12,8 @@ styles: [
 ]
 version: 0.160
 unitsPerEm: 1024
-ascender: 819
-descender: 205
+ascender: 768
+descender: 256
 source: https://gitlab.com/smc/fonts/Malini
 author:
   name: Santhosh Thottingal

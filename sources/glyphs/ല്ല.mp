@@ -48,9 +48,12 @@ pen_stroke(
 
 paths[4] = la_sign shifted (xpart(point 0.2 of paths[2]), 0);
 pen_stroke(
-    nib(thinnib)(2,4,6,8)
-    nib(thinterminalnib rotated terminalangle 0 of paths[4])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[4])(infinity)
+    nib(middle_up_nib)(0, 1, 7)
+    nib(down_nib)(2, 6)
+    nib(middle_up_nib)(3)
+    nib(top_nib)(4)
+    nib(middle_down_nib)(5)
+    nib(end_nib rotated -90)(8)
 )(paths[4])(strokes[4]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));

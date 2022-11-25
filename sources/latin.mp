@@ -17,9 +17,9 @@ vardef l_vstem =
     clearxy;
     path stem;
     z0=(0,X);
-    z1=(x0 + thick/4,X/2);
+    z1=(x0,X/2);
     z2=(x1, 0);
-    z0{dir -60}..z1..{dir -80}z2
+    z0---z1---z2
 enddef;
 
 vardef r_vstem =

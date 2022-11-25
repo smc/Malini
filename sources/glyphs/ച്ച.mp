@@ -37,7 +37,7 @@ pen_stroke(
 % Shoe
 clearxy;
 z0 = point .5 of paths[1];
-z1 = (x0 - mw/3, -descent*1.2) ;
+z1 = (x0 - mw/3, -descent) ;
 z2 = (xpart(point 1 of paths[1]), y1) ;
 z3 = point 1.6 of paths[1];
 paths[3] := z0--z1--z2--z3;
