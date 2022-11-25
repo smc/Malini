@@ -5,10 +5,6 @@ z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
 z3=(x2 - mw/4, thick*0.6/2);
 z4=(x0, y0);
-z5=(x0, m/2);
-z6=(x5 + mw/3, 0.975m);
-z7=(x6 + mw/2, m/2);
-z8=(x7, 0);
 paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..{up}z4;
 pen_stroke(
     nib(middle_up_nib)(0)

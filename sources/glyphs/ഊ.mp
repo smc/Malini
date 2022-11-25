@@ -11,7 +11,7 @@ z6=(x5 + mw/2, m/2);
 z7=(x5, 0);
 z8=(x3, y7);
 z9= (x0, (y8+y10)/2);
-z10= (x5, -descent);
+z10= (x8, -descent*0.75);
 z11= (x6 + thick/2, y10);
 
 paths[0]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6..z7---z8..z9..z10---z11;

@@ -29,7 +29,7 @@ z3=(x3, m-m/1.6);
 z4= (x3-mw/2, 0);
 z5= (xpart(point 1 of paths[0]), 0);
 z6= (xpart(point 0 of paths[0]), (y5+y7)/2);
-z7= (x5, -descent);
+z7= (x5, -descent*0.75);
 z8= (x3 + thick/2, y7);
 
 paths[1] = z0---z1..z2..z3..z4---z5..z6..z7---z8;
