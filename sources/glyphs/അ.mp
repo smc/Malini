@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 z0 = ( x1 + mw/4 , 0);
 z1 = ( 0, (y0 + y2)/2);
-z2 = ( x1 + mw/2, m); % top
+z2 = ( x1 + mw/1.8, m); % top
 z3 = ( x2 + mw/3, y2 - m/4);
 z4 = ( x3 - mw/4, y3 - m/4); % <
 z5 = ( x4 + mw/3, y4-m/4);

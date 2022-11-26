@@ -28,7 +28,7 @@ z5 = ( x3+ mw/10, y4-m/4);
 z6 = ( x4, 0);
 z7 = ( xpart(point 1 of paths[0]), y6);
 z8 = (xpart(point 0 of paths[0]), (y7+y9)/2);
-z9= (x7, -descent);
+z9= (x7, -descent*0.75);
 z10 = (x5+ mw/2, y9);
 paths[1]= z0..z1..z2..z3..{left}z4{right}..z5..z6---z7..z8..z9---z10;
 

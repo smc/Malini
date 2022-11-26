@@ -303,7 +303,7 @@ vardef right_arch_with_tail =
     z4= ( x3 - mw/3, thick*0.5/2);
     z5= ( x4 - mw/4, y4 + m/3);
     z6= ( x4 + mw/4, y3 + m/6);
-    z7= ( x5 + mw*0.9, y6 - m/2);
-    z8= ( x4, -descent);
+    z7= ( x5 + mw*0.9, (y6 + y8)/2);
+    z8= ( x4, y6-m);
     z0---z1..z2..z3..z4..z5..z6..z7..z8
 enddef;

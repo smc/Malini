@@ -1,6 +1,7 @@
 input glyph;
 beginglyph;
-paths[0] :=left_arch_with_eye;
+
+paths[0] := left_arch_with_eye;
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
@@ -12,39 +13,43 @@ pen_stroke(
     nib(thin_vertical_nib)(7,8)
 )(paths[0])(strokes[0]);
 
-z10 = point 7 of paths[0];
-z12 = ( x10 + m/3, y10 + m/2); % top
-z13 = ( x12 + mw/2, y12 - m/3);
-z14 = ( x13 - mw/4, y13 - m/3); % bottom middle
-z15 = ( x14 - mw/4, y14 +  m/3);
-z16 = ( x15 + mw/2, y15 +  m/3); % second top
-z17 = ( x16 + m/2.5, y16-m/2);
-z18 = ( x17 - m/3, 0); %
+paths[1] := right_tha_arch shifted (xpart(point infinity of paths[0]), 0);
 
-paths[1] = z10{up}..z12{right}..z13..z14..z15..z16{right}..z17..{dir 210}z18;
 pen_stroke(
-    nib(thicknib)(1, 3, 5, 7,)
-    nib(thinnib)(0, 2, 4,6)
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thin_vertical_nib)(0)
+    nib(thin_vertical_nib)(1)
+    nib(top_nib)(2,6)
+    nib(middle_down_nib)(3, 7)
+    nib(down_nib)(4)
+    nib(middle_up_nib)(5)
+    nib(end_nib rotated 45)(8)
 )(paths[1])(strokes[1]);
 
-z24=(x18, 0);
-z25=(x24 - mw/2, 0);
-z26=(x24 + 0.6mw, y25);
-z27=(x26, y26 + m*0.5);
-z28=(x27, y27 + m*0.5);
+clearxy;
+z0=  (0,0);
+z1=(x0 + 0.7mw, y0);
+z2=(x1, m);
 
-paths[2] := z25{dir 30}..{dir30}z26{dir 30}..z27...{dir 60}z28;
+paths[2]:= z0--z1 ;
+paths[2]:= paths[2] shifted ( xpart(point 8 of paths[1]) +  thick*0.5, (thick*0.60)/2);
+
 pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
 )(paths[2])(strokes[2]);
 
-anchor( "vc", z12);
-anchor( "bottom", z26);
-anchor( "right", z26);
+clearxy;
+z0=(0, 0);
+z1=(x0, m);
+
+paths[3]:= z0--z1;
+paths[3]:= paths[3] shifted (xpart(point 1 of paths[2]), 0);
+pen_stroke(
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
+)(paths[3])(strokes[3]);
+anchor( "vc", (xpart(point 4 of paths[1]),0));
+anchor( "bottom", (xpart(point 1 of paths[2]),0));
+anchor( "right", (xpart(point 1 of paths[2])-mw/5,0));
 
 endglyph;
