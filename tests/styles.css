@@ -12,7 +12,6 @@
 :root {
   --weight: 400;
   --slant: 0;
-  --soft: 50;
   --width: 100;
   --font: 'Malini';
   --font-size: 90px;
@@ -46,7 +45,7 @@ main {
   font-size: var(--font-size);
   padding: 0.5em;
   outline: none;
-  font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width);
+  font-variation-settings: 'wght' var(--weight), 'slnt' var(--slant), 'wdth' var(--width);
 }
 
 
