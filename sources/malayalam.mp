@@ -129,6 +129,25 @@ vardef left_tha_arch =
     z0..z1..z2..z3..{left}z4{left}..z5..z6{right}..z7---z8
 enddef;
 
+vardef left_arch_dha =
+    clearxy;
+    z0=(x1+mw/4, m);
+    z1=(0, y0 - m/2);
+    z2=((x1+x3)/2, y1 - m/2 + thick*0.6/2);
+    z3=(x2 +  mw/3, 1/3m);
+    z4=(x3, m);
+     z0..z1..z2..z3---z4
+enddef;
+
+vardef right_arch_dha =
+    clearxy;
+    z0=(thick*0.60/2, m);
+    z1=(x0, 1/3m);
+    z2=(x1 +  mw/3, thick*0.6/2);
+    z3=(x2 +  mw/3, y2 + m/2);
+    z4=(x3 -  mw/4, m);
+    z0---z1..z2..z3..z4
+enddef;
 
 % Clockwise top loop sits on top of mid horizontal line
 vardef top_arch_c =

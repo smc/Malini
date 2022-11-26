@@ -1,41 +1,37 @@
 input glyph;
 beginglyph;
-z0 = (x1 + mw/3, 0);
-z1 = (0,  m/2);
-z2 = ( x1 + mw/3, y1 + m/2);
-z3 = ( x2 + mw/3, m/2);
-z4 = ( x3 + mw/4, 0);
-z5 = (x4 + mw/3, m/2);
-
-loop_slant=tand(8);
-paths[0] := z0{dir 140}..z1..z2..z3{dir -100}..z4..{up}z5;
-paths[0]:=paths[0] slanted loop_slant;
-paths[0]:=paths[0] shifted (-loop_slant*m/2,0);
-
+p=0;
+paths[p] = subpath(0, 3.26) of left_arch;
 pen_stroke(
-    nib(thicknib)( 0, 2,4,6)
-    nib(thinnib)( 1, 3, 5)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+    nib(start_up_nib)(0)
+    nib(top_nib)(2,6)
+    nib(middle_down_nib)(3, 7)
+    nib(down_nib)(4)
+    nib(middle_up_nib)(1,5)
+    nib(middle_down_nib)(8)
+)(paths[p])(strokes[p]);
 
+p:=p+1;
+paths[p]:=subpath(1, infinity) of left_arch_dha xscaled 0.9 shifted (xpart(point infinity of paths[p-1]), 0);
+pen_stroke(
+    nib(middle_down_nib)(0)
+    nib(down_nib)(1)
+    nib(thin_vertical_nib)(2)
+    nib(thin_vertical_nib)(3)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[0]), m-m/6); % top of piller
-z1=(x0, m/2);
-z2=(x1 +  mw/3, y1 - m/2); % Top of second arch
-z3=(x2 +  mw/3, y2 + m/2);
-z4=(x3 -  mw/3, y3 + m/2);
-
-paths[1] = z0---z1..z2{dir -10}..z3{dir 100}..z4;
+paths[p]=right_arch_dha;
+paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 pen_stroke(
-    nib(thicknib)(1, 3, 5, 7)
-    nib(thinnib)(1,3,5)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(thin_vertical_nib)(0)
+    nib(thin_vertical_nib)(1)
+    nib(down_nib)(2)
+    nib(middle_up_nib)(3)
+    nib(top_nib)(4)
+)(paths[p])(strokes[p]);
 
-anchor( "vc", point 5 of paths[0]);
-anchor( "bottom", point 2.3 of paths[1]);
-anchor( "right", point 2.3 of paths[1]);
-
+anchor( "vc", (xpart( point infinity of paths[0]),0));
+anchor( "right", point 2.2 of paths[p]);
 endglyph;
