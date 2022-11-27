@@ -22,8 +22,8 @@
 
 body {
   font-size: 100%;
-  color: #fff;
-  background-color: #2E3440;
+  color: #333;
+  background-color: #FFFFF0;
   line-height: 1.2;
 }
 
@@ -44,7 +44,10 @@ main {
   letter-spacing: var(--font-letter-spacing);
   font-size: var(--font-size);
   padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
   outline: none;
+  max-width: 70ch;
   font-variation-settings: 'wght' var(--weight), 'slnt' var(--slant), 'wdth' var(--width);
 }
 
@@ -56,6 +59,7 @@ main {
   overflow: auto;
   font-size: 1em;
   position: absolute;
+  top: 0;
   right: 1em;
 }
 
@@ -75,7 +79,6 @@ main {
   list-style: none;
   display: flex;
   flex-direction: row;
-  fill: #fff;
 }
 
 .controls.align li {
@@ -151,4 +154,17 @@ select {
 }
 option {
   color: initial;
+}
+
+@media print {
+  body{
+    color: #333;
+    background-color: #FFFFFF;
+  }
+  .tools {
+    display: none;
+  }
+  main {
+    grid-template-columns: auto;
+  }
 }
