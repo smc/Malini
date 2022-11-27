@@ -23,5 +23,5 @@ pen_stroke(
    nib(middle_up_nib)(8)
    nib(top_nib)(9)
 )(paths[0])(strokes[0]);
-
+anchor( "bottom", (xpart(point 6 of paths[0]), 0));
 endglyph;

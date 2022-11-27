@@ -20,6 +20,6 @@ pen_stroke(
     nib(end_nib rotated -90)(8)
 )(paths[0])(strokes[0]);
 
-anchor( "bottom", (xpart(point 6.5 of paths[0]),0));
-anchor( "right", (xpart(point 6.5 of paths[0]),0));
+anchor( "bottom", (xpart(point 7 of paths[0]),0));
+anchor( "right", point 6.5 of paths[0]);
 endglyph;
