@@ -9,10 +9,10 @@ z5 = ( x4 - mw/4, y3);
 z6 = ( (x5 + x7)/2, y2); % second top
 z7 = ( x5 + mw*1.2, y1);
 z8 = ( x7 - mw/4, y4);
-z9 = ( x8 - mw/4, y8+m/3);
-z10 = (x9 + mw/3, y6);
+z9 = ( x8 - mw/4, (y8+y10)/2);
+z10 = (x9 + mw/3, (y9+y11)/2);
 z11= (x9, ascent);
-z12= (x11-mw/4, 1.2m);
+z12= (x11-mw/4,  y11 - m/6);
 paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6..z7..z8..z9..z10..z11..z12;
 
 pen_stroke(

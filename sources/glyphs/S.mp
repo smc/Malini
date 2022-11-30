@@ -8,12 +8,13 @@ z2 = ((x0 + x1)/2, y1 + .25X);
 z3=  (x0 + thick/4, y2 + .25X);
 z4=  (x1 - thick/4, 0.9X);
 
-paths[0] = z0{dir -40}..z1..z2..z3..{dir -45}z4 ;
+paths[0] = z0{dir -40}..z1..z2..z3..{dir -40}z4 ;
 
 pen_stroke(
-    nib(thinnib)(1, 3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+  nib(middle_down_nib)(1, 3,5)
+   nib(thick_vertical_nib rotated 90)(2)
+   nib(end_nib rotated 120)(0)
+   nib(start_up_nib)(4)
 )(paths[0])(strokes[0]);
 
 anchor( "top", (xpart(point 2 of paths[0]), 1.2X));

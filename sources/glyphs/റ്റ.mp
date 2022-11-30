@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 paths[0] := ra;
-paths[1] = ra shifted (0.1mw, -m ) xscaled 0.8 yscaled 0.8;
+paths[1] = ra shifted (0.15mw, -m ) xscaled 0.75 yscaled 0.75;
 
 pen_stroke(
     nib(start_up_nib)(0)

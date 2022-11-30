@@ -1,31 +1,59 @@
 input glyph;
 beginglyph;
-paths[0] := ra;
-paths[1] := va_tail shifted (point 4 of paths[0]) ;
+p=0;
+paths[p] = ra;
 pen_stroke(
-    nib(thicknib)(0, 2, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
-pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(start_up_nib)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(end_nib rotated 45)(4)
+)(paths[p])(strokes[p]);
 
-% Shoe
-z10 = (point 1 of paths[1]) + (thick/2,thick);
-z11 = (x10, -descent- thick/2)  ;
-z12 = (xpart(point 0 of paths[1]), y11);
-z13 = (x12 + mw/3, ypart(point 1 of paths[1]));
-paths[2] = z10{dir 250}..{dir -70}z11{left}..{left}z12{dir 30}..{dir 60}z13;
+p:=p+1;
+clearxy;
+z0=  (0,0);
+z1=(x0 + 0.7mw, y0);
+z2=(x1, m);
+
+paths[p]:= z0--z1 ;
+paths[p]:= paths[p] shifted ( xpart(point 4 of paths[p-1]) +  thick*0.5, (thick*0.60)/2);
+
 pen_stroke(
-    nib(thicknib)( 3)
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
-anchor( "vc", (xpart(point 2 of paths[0]),0));
-anchor( "right", point 1 of paths[2]);
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+clearxy;
+z0=(0, 0);
+z1=(x0, m);
+
+paths[p]:= z0--z1;
+paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
+pen_stroke(
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
+)(paths[p])(strokes[p]);
+% Shoe
+clearxy;
+p:=p+1;
+z0 = point .5 of paths[1];
+z1 = (x0 - mw/3, -descent) ;
+z2 = (xpart(point 1 of paths[1]), y1) ;
+paths[p] := z0{down}..z1--z2;
+pen_stroke(
+    nib(top_nib rotated 45)(0,1,2)
+)(paths[p])(strokes[p]);
+
+clearxy;
+p:=p+1;
+z0=point infinity of paths[p-1] - (0, thick*0.6/2);
+z1 = point 1.6 of paths[1];
+paths[p] := z0--z1;
+pen_stroke(
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
+anchor( "vc", point 2 of paths[0]);
+anchor( "right", point 2 of paths[p-1] - (mw/5, 0));
 endglyph;

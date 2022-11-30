@@ -11,7 +11,7 @@ paths[0]:= paths[0] shifted (0, -y1);
 pen_stroke(
    nib(middle_up_nib)(0,4)
    nib(middle_down_nib)(2)
-   nib(top_nib)(1)
+   nib(top_nib scaled 0.75)(1)
    nib(down_nib)(3)
 )(paths[0])(strokes[0]);
 

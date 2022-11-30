@@ -19,7 +19,7 @@ pen_stroke(
 clearxy;
 z0 = point 3.8 of paths[0];
 z1 = ( x0, (y0 + y2)/2);
-z2 = ( x1 + mw/1.66, m); % top
+z2 = ( x1 + mw/1.66, m- thick*0.6/2); % top
 z3 = ( x2 + mw/3, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);

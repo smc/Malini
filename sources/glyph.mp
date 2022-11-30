@@ -139,12 +139,6 @@ def endglyph =
             if show_paths = 1:
                 draw paths[i] withpen nib scaled 2 withcolor 0.8white;
             fi;
-            if show_arrows = 1:
-                arrowpath(paths[i],i);
-            fi;
-            if show_dots = 1:
-                dottedpath(paths[i]);
-            fi;
             if showcoords = 1:
                 show_coordinates(paths[i]);
             fi;

@@ -3,8 +3,8 @@ beginglyph;
 z0=(x1 + mw/6 , 0);
 y2 - y1 = y2/1.6;
 z1=(0, y1);
-z2=((x1+x3)/2, m/2);
-x3-x1 = mw*0.5;
+z2=((x1+x3)/2, 0.6m);
+x3-x1 = mw*0.6;
 z3=(x3, y1);
 z4=(x3 - mw/6, 0);
 paths[0] := z0..z1..z2..z3..z4;
@@ -17,7 +17,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=  (0,0);
+z0=(0,0);
 z1=(x0 + mw, y0);
 z2=(x1, m);
 
@@ -44,7 +44,7 @@ pen_stroke(
 clearxy;
 z0=(0, 0);
 z1=((x0  + x2)/2, -descent*0.9);
-z2=(x0 - mw/2, (y1+y3)/2);
+z2=(x0 - mw/1.8, (y1+y3)/2);
 z3=(x0, m*0.975);
 z4=(x0 + mw/2, y2);
 z5=(x4 - mw/4, y1);

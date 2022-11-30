@@ -42,13 +42,13 @@ z0=(0, 0);
 z1=(x0, m);
 
 paths[p]:= z0--z1;
-paths[p]:= paths[p] shifted (xpart(point infinity of paths[p-1]), 0) ;
+paths[p]:= paths[p] shifted (xpart(point infinity of paths[2]), 0) ;
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
 
-anchor( "vc", point 0.5 of paths[p-1]);
+anchor( "vc", point 0.5 of paths[2]);
 anchor( "bottom", point 0 of paths[p]);
 anchor( "right", point 0 of paths[p] - (mw/5,0) );
 

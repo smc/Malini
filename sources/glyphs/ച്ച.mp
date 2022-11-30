@@ -1,52 +1,62 @@
 input glyph;
 beginglyph;
+p:=0;
 clearxy;
-z0=(0, thick*0.6/2);
-z1=(x0 + 1.25mw, y0);
-paths[1] := z0--z1;
+z0=(x1 + mw/12, y2-m/2);
+z1=(mw/4, y0 + m/4);
+z2=((x1 + x3)/2, 0.8m);
+z3=(x0 + mw/2, 0.6y2);
+z4=(x1, thick*0.6/2);
 
-clearxy;
-z0=(x1 + mw/10, m/3);
-z1=(mw/6, y0 + m/4);
-z2=((x1 + x3)/2, 0.85m);
-z3=(x0 + mw/2, y0 + m/6);
-z4=(x0, thick*0.6/2);
-
-paths[0] = z0{dir 135}..{up}z1..{right}z2..z3{dir -100}..{dir 180}z4;
+paths[0] = z0..z1..z2..z3..{left}z4 ;
 
 pen_stroke(
     nib(start_up_nib)(0 )
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
-)(paths[0])(strokes[0]);
+    nib(down_nib rotated 45)(4)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+clearxy;
+z0=(0, ypart(point infinity of paths[p-1]));
+z1=(x0 + 1.25mw, y0);
+paths[p] := z0--z1;
 
 pen_stroke(
-    nib(thin_horizontal_nib)(0,1)
-)(paths[1])(strokes[1]);
+    nib(down_nib)(0,1)
+)(paths[p])(strokes[p]);
 
 clearxy;
+p:=p+1;
 z0=(xpart(point infinity of paths[1]), 0);
 z1=(x0, m);
-paths[2] := z0--z1;
+paths[p] := z0--z1;
 
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
-)(paths[2])(strokes[2]);
+)(paths[p])(strokes[p]);
+
 % Shoe
 clearxy;
-z0 = point .5 of paths[1];
+p:=p+1;
+z0 = (xpart(point 3 of paths[0]), thick*0.6/2);
 z1 = (x0 - mw/3, -descent) ;
 z2 = (xpart(point 1 of paths[1]), y1) ;
-z3 = point 1.6 of paths[1];
-paths[3] := z0--z1--z2--z3;
+paths[p] := z0{down}..z1--z2;
 pen_stroke(
-    nib(thick_vertical_nib rotated -45)(0,1,2)
-    nib(thick_vertical_nib)(3)
-)(paths[3])(strokes[3]);
+    nib(top_nib rotated 45)(0,1,2)
+)(paths[p])(strokes[p]);
 
+clearxy;
+p:=p+1;
+z0=point infinity of paths[p-1] - (0, thick*0.6/2);
+z1 = point 1.6 of paths[1];
+paths[p] := z0--z1;
+pen_stroke(
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
 anchor( "vc", point 2 of paths[0]);
-anchor( "bottom", point 2 of paths[3]);
-anchor( "right", point 2 of paths[3]);
+anchor( "right", point 2 of paths[p-1] - (mw/5, 0));
 endglyph;

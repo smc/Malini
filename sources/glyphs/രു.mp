@@ -2,18 +2,18 @@ input glyph;
 beginglyph;
 z0=(x1 + 0.3mw, 0);
 z1=(0, y0 + 0.5m);
-z2=(x1 + mw/2, y1 + m/2);
+z2=(x1 + mw/2, y1 + m/2 - thick*0.5/2);
 z3=(x2 + mw/2, y1);
 z4=(x3 - mw/3, thick*0.5/2);
 z5=(x4 - mw/4, y4 + m/3);
 
 paths[0] = z0..z1..z2{right}..z3..z4..{dir 90}z5;
-z6=(x5 + mw/2, m);
-z7 = ( x6 + mw/2, y6-m/4);
+z6=(x5 + mw/1.8, m - thick*0.5/2);
+z7 = ( x6 + mw/1.8, y6-m/4);
 z8 = ( x7 - mw/4, y7-m/4);
-z9 = ( x8 + mw/2.5, y8-m/4);
-z10 = ( x8, y0); %
-paths[0] := paths[0].. z6..z7..{left}z8{right}..z9..{dir 160}z10;
+z9 = ( x8 + mw/3, y8-m/4);
+z10 = ( x9 - mw/2, y0+thick/2); %
+paths[0] := paths[0].. z6{dir 10}..z7..{left}z8{right}..z9..{dir 150}z10;
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)

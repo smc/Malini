@@ -12,8 +12,8 @@ paths[0] := paths[0] shifted (-x2+thick/2, 0);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
-    nib(thick_vertical_nib)(2)
-    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib scaled 1.1)(2)
+    nib(thick_vertical_nib scaled 1.1)(3)
 )(paths[0])(strokes[0]);
 
 endglyph;

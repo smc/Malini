@@ -11,10 +11,11 @@ z3 = (x2 - mw/3, y2 - m/2);
 paths[1] = z0{up}..z1..z2..z3;
 paths[2] = va_tail shifted (point 4 of paths[1]) ;
 pen_stroke(
-    nib(thicknib)(0, 2, 4, 6)
-    nib(thinnib)(1,3, 5)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib)(0,4)
+    nib(top_nib)(1,5)
+    nib(middle_down_nib)(2)
+    nib(down_nib)(3)
+    nib(thin_vertical_nib)(6,7,8)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thicknib)( 1, 3)

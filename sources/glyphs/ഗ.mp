@@ -19,5 +19,5 @@ pen_stroke(
    nib(top_nib)(5)
    nib(end_nib)(7)
 )(paths[0])(strokes[0]);
-
+anchor( "bottom", (xpart(point 6 of paths[0]),0));
 endglyph;
