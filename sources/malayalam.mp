@@ -195,17 +195,21 @@ enddef;
 
 vardef la_sign =
     clearxy;
+    path l;
+    z0 =(0, (y1 + y3)/2);
+    z1 =(x0 + mw/4, y3+0.55m);
+    z2=(x1 + mw/4, y0);
+    z3=(x2 - mw/4, thick*0.6/2);
+    z4=(x0, y0);
+    z5=(x4 + mw/3, 0.975m);
+    z6=(x5 + mw/2, 0.6m);
+    z7=(x6, 0.4m);
+    z8=(x7 + mw/3, y3);
+    z9=(x8 + mw/3, m/2);
+    z10=(x9 - mw/4, y5);
 
-    z0=(0, -descent);
-    z1=(x0 + mw/3, y0+mw/10);
-    z2=((x1 + x0)/2, -m/2);
-    z3=(x0, y2 + m/4);
-    z4=(x3 + mw/3.5, 0);
-    z5=(x4 + mw/3.5, y4 - m/4);
-    z6=(x5 + mw/4, y5 - m/4);
-    z7=(x6 + mw/4, y6 + m/4);
-    z8=(x7 - mw/4, y7 + m/4);
-    z0{up}..z1{dir -70}...z2{left}..{up}z3..z4{right}..z5{dir -80}..z6..z7..z8
+    l=z0{dir 80}..z1..z2..z3..z4..z5..{down}z6..z7..z8..z9..z10;
+    l shifted(0,-m*1.1) xscaled 0.8 yscaled 2/3
 enddef;
 
 vardef la =

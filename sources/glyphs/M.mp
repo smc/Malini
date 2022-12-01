@@ -10,31 +10,22 @@ z6 = (x4 +  0.66X/2, y0);
 z7 = (x6, y1);
 z8 = (x7, y2);
 
-paths[0] = z0{down}..z1..{down}z2 ;
-paths[1] = z3..z4;
-paths[2] = z5..z6;
-paths[3] = z6{down}..z7..{down}z8;
+paths[0] = z0--z2 ;
+paths[1] = z3--z4;
+paths[2] = z5--z6;
+paths[3] = z6--z8;
+
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(thick_vertical_nib)(0,1)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thicknib)(2)
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thick_vertical_nib)(0,1)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(thicknib)(2)
-    nib(thinnib)(1)
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+    nib(thick_vertical_nib)(0,1)
 )(paths[2])(strokes[2]);
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[3])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
+    nib(thick_vertical_nib)(0,1)
 )(paths[3])(strokes[3]);
 
 endglyph;

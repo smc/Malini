@@ -46,17 +46,16 @@ pen_stroke(
     nib(thick_vertical_nib)(1)
 )(paths[3])(strokes[3]);
 
-paths[4] = la_sign shifted (xpart(point 0.2 of paths[2]), 0);
+paths[4] = la_sign;
 pen_stroke(
-    nib(middle_up_nib)(0, 1, 7)
-    nib(down_nib)(2, 6)
-    nib(middle_up_nib)(3)
-    nib(top_nib)(4)
-    nib(middle_down_nib)(5)
-    nib(end_nib rotated -90)(8)
+    nib(middle_up_nib)(0,4, 9)
+    nib(top_nib)(1,5)
+    nib(middle_down_nib)(2,6,7)
+    nib(down_nib)(3,8)
+    nib(top_nib)(10)
 )(paths[4])(strokes[4]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
-anchor( "right", point 6.5 of paths[4]);
+anchor( "right", point 8.5 of paths[4]);
 
 endglyph;

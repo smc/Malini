@@ -59,13 +59,14 @@ function listen() {
     fetch('./content.txt').then(response => response.text()).then((content) => {
         testLines = shuffle(content.split("\n"));
         testLines = testLines.filter(testLine => !!testLine.trim())
-        testContents = testLines;
-        contentArea.innerHTML = testLines[currentTestIndex];
+
     })
 
     fetch('./paragraphs.malayalam.txt').then(response => response.text()).then((content) => {
         paragraphsMl = shuffle(content.split("\n"));
         paragraphsMl = paragraphsMl.filter(paragraph => !!paragraph.trim())
+        testContents = paragraphsMl;
+        contentArea.innerHTML = paragraphsMl[currentTestIndex];
     });
 
     fetch('./paragraphs.english.txt').then(response => response.text()).then((content) => {

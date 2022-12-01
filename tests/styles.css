@@ -14,7 +14,7 @@
   --slant: 0;
   --width: 100;
   --font: 'Malini';
-  --font-size: 90px;
+  --font-size: 20px;
   --font-letter-spacing: 0;
   --font-line-height: 1.5;
   color-scheme: light dark;
@@ -38,7 +38,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   font-family: var(--font), sans;
   line-height: var(--font-line-height);
   letter-spacing: var(--font-letter-spacing);

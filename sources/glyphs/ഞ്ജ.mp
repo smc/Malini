@@ -9,7 +9,7 @@ pen_stroke(
     nib(thin_vertical_nib)(6,7,8)
 )(paths[0])(strokes[0]);
 clearxy;
-z0 = point 7 of paths[0];
+z0 = point 6 of paths[0];
 z1 = ( x0 + m/2, y0 + m/2); % top
 
 paths[1] = z0{up}..z1{right} ;
