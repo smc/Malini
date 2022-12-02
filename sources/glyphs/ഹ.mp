@@ -13,14 +13,14 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[0])(strokes[0]);
 
 clearxy;
 z0=point infinity of paths[0];
 z1=z0 + (mw*0.75,0);
 paths[1] := z0--z1;
-paths[1] := paths[1] shifted (0, thick*0.6/2);
+paths[1] := paths[1] shifted (0, thick*sind(45)/2);
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

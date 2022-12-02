@@ -6,7 +6,7 @@ z1=(0, m-m/1.6);
 z2=((x1+x3)/2, 0.975m);
 x3-x1 = mw*0.75;
 z3=(x3, m*0.6);
-z4=(x3,  y0); % bottom of piller
+z4=(x3,  0.1m); % bottom of piller
 paths[p] = z0..z1..z2..{down}z3---z4 ;
 pen_stroke(
     nib(start_up_nib)(0)
@@ -18,7 +18,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] + (thick*0.60/2, 0);
+z0=(xpart(point infinity of paths[p-1]) + thick*0.60/2, 0);
 z1=(x0, m*0.6);
 z2=((x1+x3)/2, 0.975m); % Top of arch
 x3-x1 = mw*0.6;
@@ -29,6 +29,8 @@ z6= ( x5 + mw/3, (y5+y7)/2);
 z7= ( x2 + 3/4mw, y2);
 
 paths[p] = z0---z1..z2..z3---z4..z5..z6..z7;
+% Shift to accommodate the ത below
+paths[p]:=paths[p] yscaled 0.9 shifted (0, m*0.1);
 
 pen_stroke(
    nib(thin_vertical_nib)(0)
@@ -54,7 +56,8 @@ z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
 paths[p] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8;
-paths[p]:=paths[p] xscaled 0.8 yscaled 0.7 shifted (0.8mw, -.7m);
+
+paths[p]:=paths[p] xscaled 0.75 yscaled 0.7 shifted (0.9mw, -2/3m);
 pen_stroke(
     nib(start_up_nib)(0)
     nib(top_nib)(2,6)

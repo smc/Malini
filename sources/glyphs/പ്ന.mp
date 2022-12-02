@@ -14,7 +14,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -24,7 +24,7 @@ z1=(x0 + 0.75mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[1] shifted ( point 4 of paths[p-1] + ( thick*0.5, (thick*0.60)/2) );
+paths[p]:= paths[1] shifted ( point 4 of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -49,8 +49,8 @@ clearxy;
 paths[p] = left_arch;
 p:=p+1;
 paths[p] = right_arch shifted (xpart(point infinity of paths[p-1]), 0);
-paths[p-1] := paths[p-1] shifted(0.25m, -0.95m) xscaled 0.7 yscaled 0.6;
-paths[p] := paths[p] shifted(0.25m, -0.95m)  xscaled 0.7 yscaled 0.6;
+paths[p-1] := paths[p-1] shifted(0.43m, -1.1m) xscaled 0.7 yscaled 0.6;
+paths[p] := paths[p] shifted(0.4m, -1.1m) xscaled 0.7 yscaled 0.6;
 
 pen_stroke(
     nib(start_up_nib)(0)

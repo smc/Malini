@@ -23,15 +23,15 @@ z2 = ( x1 + mw/1.66, m - thick*0.6/2); % top
 z3 = ( x2 + mw/3, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);
-z6 = ( x4,  m/20);
-paths[1]= z0..z1..z2..z3..{left}z4{right}..z5..{dir 150}z6;
+z6 = ( x4, m/15);
+paths[1]= z0..z1..z2..z3..{left}z4{right}..z5..{dir 160}z6;
 
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib rotated 90)(4)
+    nib(end_nib rotated 90)(4)
     nib(middle_down_nib)(5)
-    nib(end_nib rotated -60)(6)
+    nib(end_nib rotated 60)(6)
 )(paths[1])(strokes[1]);
 endglyph;

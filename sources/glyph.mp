@@ -38,8 +38,8 @@ vardef middle_up_nib = fix_nib(thick*0.70, 0, 0) enddef;
 vardef top_nib = fix_nib(thick*0.80, 0, 90) enddef;
 vardef middle_down_nib = fix_nib(thick, 0, 0) enddef;
 vardef down_nib = fix_nib(thick*0.80, 0, 90) enddef;
-vardef end_nib = fix_nib(thick*0.80, 0, -45) enddef;
-vardef thin_horizontal_nib = fix_nib(0, thick, -50) enddef;
+vardef end_nib = fix_nib(thick*0.75, 0, 0) enddef;
+vardef thin_horizontal_nib = fix_nib(0, thick, -45) enddef;
 vardef thick_vertical_nib = fix_nib(thick, 0, 0) enddef;
 vardef thin_vertical_nib = fix_nib(thick*0.80, 0, 0) enddef;
 

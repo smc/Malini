@@ -13,7 +13,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*0.6/2);
+z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*sind(45)/2);
 z1=(x0, 0.6m);
 z2=(xpart(point 0.5 of paths[0]), m);
 z3=(0, y1);
@@ -28,7 +28,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(0, thick*0.6/2);
+z0=(0, thick*sind(45)/2);
 z1=(x0 + mw*1.2, y0);
 paths[p]:= z0--z1;
 pen_stroke(
@@ -68,7 +68,7 @@ z1=(x0 + 0.75mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point 4 of paths[p-1] + ( thick*0.5, (thick*0.60)/2) );
+paths[p]:= paths[p] shifted ( point 4 of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
 
 p:=p+1;
 clearxy;
@@ -88,7 +88,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p-2])(strokes[p-2]);
 pen_stroke(
     nib(thin_horizontal_nib)(0)

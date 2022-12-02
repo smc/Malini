@@ -17,7 +17,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[1])(strokes[1]);
 
 clearxy;
@@ -26,7 +26,7 @@ z1=(x0 + 0.7mw, y0);
 z2=(x1, m);
 
 paths[2]:= z0--z1 ;
-paths[2]:= paths[2] shifted ( xpart(point 4 of paths[1]) +  thick*0.5, (thick*0.60)/2);
+paths[2]:= paths[2] shifted ( xpart(point 4 of paths[1]) +  thick*0.5, thick*sind(45)/2);
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

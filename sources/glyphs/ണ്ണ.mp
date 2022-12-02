@@ -29,7 +29,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib rotated 120)(4)
 )(paths[2])(strokes[2]);
 
 xshift := 0.6mw;
@@ -56,7 +56,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib  rotated 120)(4)
 )(paths[5])(strokes[5]);
 rbearing:=0;
 endglyph;

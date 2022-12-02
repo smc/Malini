@@ -10,7 +10,7 @@ z5 = ( x4 - mw/4, y3);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
-paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7;
+paths[p] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7;
 
 z9 = (x3 - mw/8,  -descent*0.75); % ra sign starts
 z10 = (x5,  y9); % ra sign starts

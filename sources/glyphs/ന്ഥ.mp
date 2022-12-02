@@ -18,7 +18,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib  rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -48,4 +48,5 @@ pen_stroke(
     nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 
+anchor( "right", point 1 of paths[p-1] - (mw/5,0));
 endglyph;

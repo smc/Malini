@@ -22,7 +22,7 @@ z1=(x0 + 0.9mw, y0);
 z2=(x1, m);
 
 paths[1]:= z0--z1 ;
-paths[1]:= paths[1] shifted ( point 4 of paths[0] + ( thick*0.5, (thick*0.60)/2) );
+paths[1]:= paths[1] shifted ( point 4 of paths[0] + ( thick*0.5, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

@@ -10,7 +10,7 @@ ascent  :=      7.5u;         % Ascender Height
 descent :=      2.5u;         % Descender Height
 xheight :=      0.75*ascent;  % Height of English small letters
 mheight :=      0.75*ascent;  % Height of Malayalam letters
-Xheight :=      8u;           % Height of English capital letters
+Xheight :=      ascent;       % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines

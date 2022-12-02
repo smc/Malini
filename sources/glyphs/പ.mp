@@ -14,7 +14,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p])(strokes[p]);
 p:=p+1;
 clearxy;
@@ -23,7 +23,7 @@ z1=(x0 + 0.75mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point 4 of paths[p-1] + ( thick*0.5, (thick*0.60)/2) );
+paths[p]:= paths[p] shifted ( point 4 of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -44,7 +44,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
-anchor( "bottom", (xpart(point 1 of paths[1]),0));
+anchor( "bottom", point 1 of paths[1]);
 anchor( "right", (xpart(point 1 of paths[1]) - mw/5,0));
 
 endglyph;

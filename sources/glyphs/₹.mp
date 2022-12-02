@@ -7,7 +7,7 @@ z3 = (x2 + mw/3, X/4);
 z4 = (x3 + mw/3, 0);
 
 
-paths[0] = z0{right}..z1{dir -100}..{left}z2{dir -30}..z3..{dir -30}z4;
+paths[0] = z0{right}..z1{dir -100}..{left}z2--z4;
 
 z5 = (0, y0);
 z6 = (x4,y0);
@@ -17,18 +17,15 @@ z8 = (x4,y1);
 paths[2] = z7--z8;
 
 pen_stroke(
-    nib(thicknib)(0,2,4)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated 90)(2)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(top_nib)(0,2)
+    nib(middle_down_nib)(1)
+    nib(middle_down_nib)(3)
+    nib(down_nib)(4)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(top_nib rotated -15)(0,1)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+   nib(top_nib rotated -15)(0,1)
 )(paths[2])(strokes[2]);
 endglyph;

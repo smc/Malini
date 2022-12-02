@@ -6,7 +6,7 @@ z0=(x1 + mw/12, y2-m/2);
 z1=(mw/4, y0 + m/4);
 z2=((x1 + x3)/2, 0.8m);
 z3=(x0 + mw/2, 0.6y2);
-z4=(x1, thick*0.6/2);
+z4=(x1, thick*sind(45)/2);
 
 paths[0] = z0..z1..z2..z3..{left}z4 ;
 
@@ -15,7 +15,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(down_nib rotated 45)(4)
+    nib(end_nib rotated 45)(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

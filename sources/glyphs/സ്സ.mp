@@ -42,11 +42,10 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 
-paths[2] := paths[0] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.75 ;
-paths[3] := paths[1] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.75;
-
+paths[2] := paths[0] shifted (0.95mw, -0.85m) xscaled 0.7 yscaled 0.75 ;
+paths[3] := paths[1] shifted (0.95mw, -0.85m) xscaled 0.7 yscaled 0.75;
 pen_stroke(
-   nib(start_up_nib)(0)
+    nib(start_up_nib)(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)
