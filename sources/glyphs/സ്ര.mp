@@ -10,7 +10,7 @@ z4=(x3,  y0); % bottom of piller
 paths[p] = z0..z1..z2..{down}z3---z4 ;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)

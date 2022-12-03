@@ -11,7 +11,7 @@ z4=(x1, thick*sind(45)/2);
 paths[0] = z0..z1..z2..z3..{left}z4 ;
 
 pen_stroke(
-    nib(start_up_nib)(0 )
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0 )
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
@@ -21,7 +21,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0=(0, ypart(point infinity of paths[p-1]));
-z1=(x0 + 1.25mw, y0);
+z1=(x0 + 1.3mw, y0);
 paths[p] := z0--z1;
 
 pen_stroke(

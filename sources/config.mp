@@ -19,14 +19,14 @@ subthick :=     0.666u;       % Thickness of thickest lines in subscribed charac
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
-lbearing :=     0.5u;         % Default left bearing
-rbearing :=     0.5u;         % Default right bearing
+lbearing :=     0.45u;        % Default left bearing
+rbearing :=     0.45u;        % Default right bearing
 
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
 soften :=       0;            % Whether sharp corners need to be softened using cornerradius
 cornerradius := 10;           % Corner radius. Used when soften=1.
-terminalround:= 0;         % Terminal roundness. Give 1 for round terminals. 0 for razor cuts
+terminalround:= 0;            % Terminal roundness. Give 1 for round terminals. 0 for razor cuts
 
 outputformat := "svg";        % Output format
 

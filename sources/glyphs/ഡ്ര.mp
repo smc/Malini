@@ -4,7 +4,7 @@ p=0;
 paths[p] = subpath(0, 3.26) of left_arch;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)

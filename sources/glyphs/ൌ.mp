@@ -44,7 +44,7 @@ paths[2] = z0..z1..z2{dir -8}..{down}z3---z4 ;
 paths[2]:= paths[2] shifted ((point infinity of paths[1]) + (mw/2, 0));
 
 pen_stroke(
-   nib(start_up_nib)(0)
+   nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)

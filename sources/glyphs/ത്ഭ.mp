@@ -3,7 +3,7 @@ beginglyph;
 p=0;
 paths[p] = left_tha_arch;
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3)
     nib(down_nib)(4)

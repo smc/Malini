@@ -8,7 +8,7 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2,6,7)
     nib(down_nib)(3,8)
-    nib(top_nib)(10)
+    nib(top_nib rotated -45)(10)
 )(paths[p])(strokes[p]);
 
 anchor( "bottom", (xpart(point 8.5 of paths[0]),0));

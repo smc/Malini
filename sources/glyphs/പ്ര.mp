@@ -1,9 +1,10 @@
 input glyph;
 beginglyph;
 p:=0;
-paths[p] := ra scaled 0.6;
+paths[p] :=pa_mouth;
+paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

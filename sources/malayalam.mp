@@ -227,9 +227,9 @@ enddef;
 vardef ra =
     clearxy;
     z0=(x1 + mw/3 , 0);
-    y2 - y1 = y2/1.6;
+    y2 - y1 = y2/2;
     z1=(0, y1);
-    z2=((x1+x3)/2, m);
+    z2=((x1+x3)/2, m-thick*sind(55)/4);
     x3-x1 = mw*0.95;
     z3=(x3, y1);
     z4=(x3 - mw/3, 0);
@@ -238,12 +238,14 @@ enddef;
 
 vardef pa_mouth =
     clearxy;
-    z0=(x1 + mw/8, 0);
-    z1=(0,  m/3);
-    z2=(x0 + mw/5, y1 + m/4);
-    z3=(x2 + mw/4, y2 - m/4);
-    z4=(x2, 0);
-    z0{dir 135}..z1..z2{right}..z3{dir 260}..z4
+    z0=(x1 + mw/3 , 0);
+    y2 - y1 = y2/2;
+    z1=(0, y1);
+    z2=(x1 + mw*0.95/2, m);
+    z3=(x2 + mw/2, y1);
+    z4=(x3 - mw/3, y0 );
+
+    (z0..z1..z2..z3.. z4 ) scaled 0.6
 enddef;
 
 vardef pa_tail =

@@ -9,7 +9,7 @@ z3=(x3, m*0.6);
 z4=(x3,  y0); % bottom of piller
 paths[p] = z0..z1..z2..{down}z3---z4 ;
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)
@@ -45,7 +45,7 @@ pen_stroke(
 paths[2] := paths[0] shifted (0.95mw, -0.85m) xscaled 0.7 yscaled 0.75 ;
 paths[3] := paths[1] shifted (0.95mw, -0.85m) xscaled 0.7 yscaled 0.75;
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)

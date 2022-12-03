@@ -33,7 +33,7 @@ paths[p-1] := paths[p-1] xscaled 0.8 yscaled 0.7 shifted (0.4mw, -.666m);
 paths[p] := paths[p] xscaled 0.8 yscaled 0.7 shifted (0.4mw, -.666m);
 
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)

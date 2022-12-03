@@ -33,15 +33,15 @@ vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
 
 vardef thick_nib = fix_nib(thick, 0, 0) enddef;
-vardef start_up_nib = fix_nib(thick*0.60, 0, 0) rotated 45 enddef;
-vardef middle_up_nib = fix_nib(thick*0.70, 0, 0) enddef;
-vardef top_nib = fix_nib(thick*0.80, 0, 90) enddef;
-vardef middle_down_nib = fix_nib(thick, 0, 0) enddef;
-vardef down_nib = fix_nib(thick*0.80, 0, 90) enddef;
-vardef end_nib = fix_nib(thick*0.75, 0, 0) enddef;
-vardef thin_horizontal_nib = fix_nib(0, thick, -45) enddef;
-vardef thick_vertical_nib = fix_nib(thick, 0, 0) enddef;
-vardef thin_vertical_nib = fix_nib(thick*0.80, 0, 0) enddef;
+vardef start_up_nib = fix_nib(thick*sind(35), 0, 0) enddef;
+vardef middle_up_nib = fix_nib(thick*sind(45), 0, 0) rotated 0 enddef;
+vardef top_nib = fix_nib(thick*sind(55), 0, 90) enddef;
+vardef middle_down_nib = fix_nib(thick*sind(90), 0, 0) enddef;
+vardef down_nib = fix_nib(thick*sind(55), 0, 90) enddef;
+vardef end_nib = fix_nib(thick*sind(50), 0, 0) enddef;
+vardef thin_horizontal_nib = fix_nib(0, thick, 0)  rotated -45 enddef;
+vardef thick_vertical_nib = fix_nib(thick*sind(90), 0, 0) enddef;
+vardef thin_vertical_nib = fix_nib(thick*sind(54), 0, 0) enddef;
 
 vardef terminalnib =
     if terminalround = 0:

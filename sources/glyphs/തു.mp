@@ -15,7 +15,7 @@ z11 = ( x9, -descent);
 z12 = ( x7+thick, y11);
 paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8---z9..z10..z11---z12;
 pen_stroke(
-    nib(start_up_nib)(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)
