@@ -52,7 +52,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib  rotated -45)(4)
 )(paths[p])(strokes[p]);
 p:=p+1;
 paths[p] := paths[p-1] shifted (mw, 0);
@@ -62,7 +62,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib  rotated -45)(4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 3 of paths[0]);

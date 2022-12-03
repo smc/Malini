@@ -1,14 +1,7 @@
 input glyph;
 beginglyph;
-z0=(x1 + mw/6 , 0);
-y2 - y1 = y2/1.6;
-z1=(0, y1);
-z2=((x1+x3)/2, 0.6m);
-x3-x1 = mw*0.6;
-z3=(x3, y1);
-z4=(x3 - mw/6, 0);
-paths[0] := z0..z1..z2..z3..z4;
-paths[0] := paths[0] shifted (mw/3,0);
+p:=0;
+paths[p] := ra scaled 0.6;
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)

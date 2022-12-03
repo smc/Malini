@@ -38,7 +38,7 @@ pen_stroke(
     nib(middle_down_nib)(4)
     nib(down_nib)(5)
     nib(middle_up_nib)(6)
-    nib(top_nib rotated -45)(7)
+    nib(end_nib rotated 45)(7)
 )(paths[p])(strokes[p]);
 
 

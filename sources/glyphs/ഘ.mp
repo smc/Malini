@@ -1,19 +1,13 @@
 input glyph;
 beginglyph;
 p=0;
-z0=(x1 + mw/6 , m/3);
-z1=(0, y0+m/3);
-z2=((x1+x3)/2, y0+0.6m);
-x3-x1 = mw*0.6;
-z3=(x3, y1);
-z4=(x3 - mw/6, y0);
-paths[p] := z0..z1..z2..z3..z4;
+paths[p] := ra scaled 0.6 shifted (0, 0.4m);
 pen_stroke(
     nib(start_up_nib)(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p])(strokes[p]);
 p:=p+1;
 clearxy;
@@ -31,8 +25,8 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[p-1]), m/3);
-z1=(x0, y0+m/4);
+z0=point infinity of paths[p-1] - (0, thick*sind(45)/2);
+z1=(x0, y0+m/6);
 z2=((x1+x3)/2, m);
 z3=(x0 - mw*0.8, y1);
 z4=(x3,0);
