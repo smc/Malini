@@ -1,21 +1,21 @@
 input glyph;
 beginglyph;
-save r;
+save r,e;
 r=0.8;
-z0=(0.9*sw*r, 0.8s);
-z1=(0.4sw*r,s-thick/4);
-z2=(0, s/3);
-z3=( 0.4*sw*r, thick/4);
-z4= (sw*r, s/4);
-
-paths[0] = z0{dir 120}..z1{dir 195}..z2{dir -75}..z3..{dir 60}z4;
+z0 = (r*sw, 0.7s);
+z1 = ((x0 + x2)/2, s - thick/4);
+z2 = (0, s/2);
+z3 = (x1, thick/4);
+z4 = (x0, 0.25s);
+paths[0]:=z0..{left}z1..{down}z2..z3{right}..z4;
 
 pen_stroke(
-    nib(thicknib)(1,3)
-    nib(thinnib)(2,4)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib rotated 30)(0)
+    nib(middle_down_nib)(2)
+    nib(top_nib)(1)
+    nib(down_nib)(3)
+    nib(end_nib rotated 120)(4)
 )(paths[0])(strokes[0]);
+
 anchor( "top", (xpart(point 1 of paths[0]), X));
-anchor( "bottom", (xpart(point 3 of paths[0]), 0));
 endglyph;

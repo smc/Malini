@@ -1,29 +1,23 @@
 input glyph;
 beginglyph;
 
-z0= (0, X);
-z1=( x0, y0 - 0.5X);
-z2=( x1, y1 - 0.5X);
-
-paths[0] = z0{dir -90}..z1..{dir -90}z2 ;
+paths[0] = l_vstem ;
 
 clearxy;
-
-z0 = (xpart (point 0 of paths[0]) - X/10, 0.9X);
-z1 = (x0 + Xw/3, ypart (point 0 of paths[0]) - thick/4);
-z2 = (x1 + Xw/4, m);
-z3 = point 1.25 of paths[0];
-paths[1] = z0..z1{right}..z2{down}..{left}z3;
+z0 = (xpart (point 0 of paths[0]), X-thick*sind(55)/2);
+z1 = (x0 + Xw/6, y0);
+z2 = (x1 + Xw/3, (y1+y3)/2);
+z3 = (x1, y4);
+z4 = point 1.25 of paths[0];
+paths[1] = z0--z1{right}..z2{down}..{left}z3--z4;
 
 pen_stroke(
-    nib(thinnib)(1, 2)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+  nib(thick_vertical_nib)(0,1,2)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(top_nib)(0,1)
+    nib(end_nib rotated 90)(3,4)
+    nib(middle_down_nib)(2)
 )(paths[1])(strokes[1]);
 
 endglyph;

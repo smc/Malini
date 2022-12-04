@@ -14,12 +14,12 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point infinity of paths[0];
-z1=(x0 + 0.8mw, mw/2);
+z0=point 5.75 of paths[0];
+z1=(x0 + 0.68mw, 0.4m);
 z2=(x1, m);
-paths[1] = z0{dir -20}..{up}z1---z2;
+paths[1] = z0{dir -10}..{up}z1---z2;
 pen_stroke(
-    nib(down_nib rotated -30)(0)
+    nib(down_nib scaled 0.75)(0)
     nib(thin_vertical_nib)(1)
     nib(thin_vertical_nib)(2)
 )(paths[1])(strokes[1]);

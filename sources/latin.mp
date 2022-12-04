@@ -26,25 +26,18 @@ vardef r_vstem =
     clearxy;
     path stem;
     z0=(0, s);
-    z1=(x0 + thick/2,s/2);
+    z1=(x0,s/2);
     z2=(x1, 0);
-    stem:=z0{dir -60}..{down}z1{down}..z2;
-    stem
+    z0--z1--z2
 enddef;
 
 vardef n_arch =
     clearxy;
-    save r;
-    r=0.75;
-    z0=(0, 0);
-    z1=(r*sw/6, 0.6s);
-    z2=(r*sw*0.9, s-thick/4);
-    z3=(x2 + 0.2r*sw, s/2);
-    z4=(x3, y0);
-
-    z5 =(0.24sw*r, 0.7s);
-    z6 =(0.5sw*r, 1.1s);
-    z0{dir 90}..z1..controls z5 and z6..z2..z3..{dir -75}z4
+    z1=(0, 0.6s);
+    z2=((x1 + x3)/2, s-thick/4);
+    z3=(x1 + 0.75sw, s/2);
+    z4=(x3, 0);
+    z1{dir 70}..z2{right}..z3---z4
 enddef;
 
 vardef u_arch =
@@ -52,20 +45,20 @@ vardef u_arch =
 enddef;
 
 vardef r_arch =
-    (n_arch cutafter point 2 of n_arch) xyscaled(0.8, 1)
+    (n_arch cutafter point 1.3 of n_arch)
 enddef;
 
 % For the loops of p and b
 vardef p_loop =
     clearxy;
     path p;
-    r=0.85;
-    z0=(0, thick/2);
-    z1=(r*2/3sw, 0.95s);
-    z2=(r*sw, 2/3s);
-    z3=(0.5*r*sw, 0.05s);
-    z4=(x0 + sw/12, y0 + s/10);
-    z0{dir 80}..z1..{dir -80}z2{dir -80}..z3..{dir 140}z4
+    r=0.8;
+    z0 = (0, s/2);
+    z1 = (x0 + r*sw/2, s - thick/4);
+    z2 = (x1 + r*sw/2, y0);
+    z3 = (x2 - r*sw/2, thick/4);
+    z4 = (x0, y0);
+    z0{up}..{right}z1..{down}z2..z3{left}..{up}z4
 enddef;
 
 vardef a_loop =

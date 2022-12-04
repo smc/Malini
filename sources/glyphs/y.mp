@@ -1,25 +1,26 @@
 input glyph;
 beginglyph;
 
-paths[0] := subpath(0, 3.75) of u_arch;
+paths[0] := u_arch;
 
 clearxy;
-z0 = (xpart(point 4 of u_arch) , s);
-z1 = (x0, ypart(point 3 of u_arch));
-z2 = (x1 - sw/6 , -descent - thick/2);
-z3 = (xpart(point 0 of u_arch), -descent);
-paths[1] = z0{dir -100}..z1..{dir 225}z2..{dir 120}z3;
-
+z0=(0, s);
+z1=(0, y0-X/2);
+z2=(x0, 0);
+z3=(x2 - sw/4, -descent);
+z4=(x3 - sw/2, y3 + s/4);
+paths[1] = z0--z1{down}..z2..z3..z4;
+paths[1] := paths[1] shifted(xpart(point 3 of paths[0]),0);
 pen_stroke(
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib)(3)
+    nib(top_nib)(1)
+    nib(middle_down_nib)(0,1)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thick_vertical_nib)(0,1,2)
+    nib(down_nib rotated( 90 + terminalangle 3 of paths[1]))(3)
+    nib(end_nib rotated terminalangle 4 of paths[1])(4)
 )(paths[1])(strokes[1]);
 anchor( "top", (xpart(point 2.5 of paths[0]), X));
 endglyph;
