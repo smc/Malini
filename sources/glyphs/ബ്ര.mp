@@ -20,7 +20,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 45)(4)
+    nib(end_nib)(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -59,9 +59,9 @@ paths[p] = z0{down}..{dir 190}z1..z2{dir 170}..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(thicknib)(1,2)
+    nib(down_nib)(1,2)
     nib(middle_up_nib)(3)
-    nib(top_nib rotated 45)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart(point 5 of paths[0]),0));

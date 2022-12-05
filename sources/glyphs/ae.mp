@@ -2,9 +2,11 @@ input glyph;
 beginglyph;
 paths[0] := a_loop;
 pen_stroke(
-    nib(thinnib)(2)
-    nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(top_nib)(1)
+    nib(middle_down_nib)(2)
+    nib(down_nib)(3)
+    nib(end_nib rotated terminalangle 4 of paths[0])(4)
 )(paths[0])(strokes[0]);
 clearxy;
 save r,e;
@@ -21,9 +23,11 @@ paths[1]:=z5{dir -20}..paths[1];
 paths[1]:=paths[1] shifted(xpart(point 0 of paths[0])-thick/2,0);
 
 pen_stroke(
-    nib(thicknib)(2,4)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(end_nib rotated terminalangle 0 of paths[1])(0)
+    nib(middle_down_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(down_nib)(4)
+    nib(end_nib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 endglyph;

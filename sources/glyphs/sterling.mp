@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0 = (0.75s, 0.8X);
+z0 = (0.75s, 0.9X);
 z1 = (x0-s/3, X);
 z2 = (x1-s/3, s);
 z3 = (x2+s/6, s/2);
@@ -12,9 +12,8 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
-paths[1]=(0,0.75s){dir 20}..(x0,0.8s);
+paths[1]=(0,0.75s)--(x0,0.75s);
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
+   nib(end_nib rotated 90)(0,1)
 )(paths[1])(strokes[1]);
 endglyph;

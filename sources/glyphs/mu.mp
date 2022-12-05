@@ -7,19 +7,18 @@ paths[2] := r_vstem xyscaled(-1, -1) shifted(xpart(point 4 of paths[1]) + xpart(
 
 
 pen_stroke(
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(thick_vertical_nib)(0,1,2)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(middle_up_nib)(infinity)
+    nib(top_nib)(3)
+    nib(middle_down_nib)(1,2)
+    nib(end_nib scaled 3)(0)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+    nib(end_nib scaled 0.5 rotated terminalangle 0 of paths[2])(0)
+    nib(thick_vertical_nib)(1,2)
+    nib(end_nib scaled 3)(infinity)
 )(paths[2])(strokes[2]);
 
 endglyph;

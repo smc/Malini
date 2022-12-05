@@ -1,36 +1,65 @@
 input glyph;
 beginglyph;
-z0=(x1 + mw/6, m);
-z1=(0, m/2);
-z2=(x1 + mw/4, thick/2);
-z3=(x2 + mw/4, y1);
-z4=(x3 + mw/2, m);
-z5=(x4 + mw/3, 2/3m);
-z6=(x3, 0);
-paths[0] = z0..z1{down}..{right}z2{right}..z3..{dir -10}z4..z5..{dir 200}z6;
+p:=0;
+z0 = (x1 + mw/4, m);
+z1 = (0, y0 - m/2);
+z2 = (x1 + mw/3, thick*0.5/2);
+z3 = (x2 + mw/3, 0.4m);
+z4 = (x3, y5-0.4m);
+z5 = (x4 + mw/3, y0-thick*0.5/2);
+z6 = (x5 + mw/3, y1);
+z7 = (x6, 0);
+
+paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6---z7;
 
 pen_stroke(
-    nib(thicknib)(0, 2)
-    nib(thinnib)(1,3, 5,7)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])( strokes[0]);
+   nib(top_nib)(0)
+   nib(middle_up_nib)(1)
+   nib(down_nib)(2)
+   nib(middle_down_nib)(3)
+   nib(top_nib)(5)
+   nib(thin_vertical_nib)(6,7)
+)(paths[p])(strokes[p]);
+
+% മ
+clearxy;
+p:=p+1;
+z0= (0, 0);
+z1= (x0, m/2);
+z2= ((x1+x3)/2, m);
+z3= (x0+ mw, y1);
+z4= (x3, y0);
+paths[p] = z0---z1..z2..z3---z4;
+paths[p] := paths[p] shifted point infinity of paths[p-1];
+pen_stroke(
+    nib(middle_up_nib)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3,4)
+)(paths[p])(strokes[p]);
 
 clearxy;
-z0= point infinity of paths[0];
-z1=( x0 + mw - thick/2, 0);
-z2= (x1, y1 + m/3);
-z3= (x2, y2 + m/2);
-
-paths[1] = z0{dir 20}..{dir 20}z1{dir 20}..z2..z3;
+p:=p+1;
+z0=point 0 of paths[p-1] + (0, thick*sind(45)/2);
+z1=(xpart(point 4 of paths[p-1]), y0);
+paths[p] = z0--z1;
 pen_stroke(
-    nib(thicknib)(0, 4)
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
+)(paths[p])(strokes[p]);
 
-anchor( "vc", point 3.5 of paths[0]);
-anchor( "bottom", point 1 of paths[1]);
-anchor( "right", point 1 of paths[1]);
+clearxy;
+p:=p+1;
+z0= point 1.8 of paths[p-2];
+z1= point 0 of paths[p-1];
+paths[p] = z0{dir -20}..{dir 190}z1;
+pen_stroke(
+    nib(middle_down_nib rotated 20)(0)
+    nib(end_nib rotated -45)(1)
+)(paths[p])(strokes[p]);
+
+
+
+anchor( "vc", point 4 of paths[p]);
+anchor( "bottom", (xpart(point 6 of paths[p]),0));
 endglyph;

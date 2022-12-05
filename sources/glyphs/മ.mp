@@ -17,8 +17,8 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point 0 of paths[0] + (0, thick*sind(45)/2);
-z1=(xpart(point 4 of paths[0]), y0);
+z0=point 0 of paths[p-1] + (0, thick*sind(45)/2);
+z1=(xpart(point 4 of paths[p-1]), y0);
 paths[p] = z0--z1;
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -27,8 +27,8 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0= point 1.8 of paths[0];
-z1= point 0 of paths[1];
+z0= point 1.8 of paths[p-2];
+z1= point 0 of paths[p-1];
 paths[p] = z0{dir -20}..{dir 190}z1;
 pen_stroke(
     nib(middle_down_nib rotated 20)(0)

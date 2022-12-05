@@ -25,19 +25,21 @@ enddef;
 vardef r_vstem =
     clearxy;
     path stem;
-    z0=(0, s);
-    z1=(x0,s/2);
-    z2=(x1, 0);
-    z0--z1--z2
+    z0=(x1-thick, s);
+    z1=(0,y0-thick);
+    z2=(0, y3+thick/2);
+    z3=(x1,0);
+    z0{right}..z1---z2---z3
 enddef;
 
 vardef n_arch =
     clearxy;
-    z1=(0, 0.6s);
-    z2=((x1 + x3)/2, s-thick/4);
-    z3=(x1 + 0.75sw, s/2);
-    z4=(x3, 0);
-    z1{dir 70}..z2{right}..z3---z4
+    z0=(0, 0.6s);
+    z1=(0.6x2, s-thick/4);
+    z2=(x0 + 0.75sw, s/2);
+    z3=(x2, y4+thick/2);
+    z4=(x2, 0);
+    z0{dir 60}..z1{right}..z2---z3---z4
 enddef;
 
 vardef u_arch =
@@ -51,14 +53,12 @@ enddef;
 % For the loops of p and b
 vardef p_loop =
     clearxy;
-    path p;
-    r=0.8;
-    z0 = (0, s/2);
-    z1 = (x0 + r*sw/2, s - thick/4);
-    z2 = (x1 + r*sw/2, y0);
-    z3 = (x2 - r*sw/2, thick/4);
-    z4 = (x0, y0);
-    z0{up}..{right}z1..{down}z2..z3{left}..{up}z4
+    z0=(0, 0.6s);
+    z1=(0.6x2, s-thick/4);
+    z2=(x0 + 0.75sw, s/2);
+    z3=(x2/2, thick/4);
+    z4=(x0, y3 + 0.2s);
+    z0{dir 60}..z1{right}..z2{down}..z3..z4
 enddef;
 
 vardef a_loop =
@@ -73,3 +73,10 @@ vardef a_loop =
     z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4
 enddef;
 
+vardef serif_top_left =
+    clearxy;
+    z0=(-thick*sind(50)/4, y1 -thick );
+    z1=(x0-thick, -thick*sind(50)/4);
+    z2=(x0, y1);
+    z0{up}..{left}z1--z2
+enddef;

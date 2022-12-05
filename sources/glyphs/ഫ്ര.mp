@@ -2,6 +2,7 @@ input glyph;
 beginglyph;
 p=0;
 paths[p] :=pa_mouth;
+paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
@@ -50,9 +51,9 @@ paths[p] = z0{down}..{dir 190}z1..z2{dir 170}..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(thicknib)(1,2)
+    nib(down_nib)(1,2)
     nib(middle_up_nib)(3)
-    nib(top_nib rotated 45)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
