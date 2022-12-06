@@ -75,8 +75,17 @@ enddef;
 
 vardef serif_top_left =
     clearxy;
-    z0=(-thick*sind(50)/4, y1 -thick );
+    z0=(-thick*sind(50)/3, y1 -thick );
     z1=(x0-thick, -thick*sind(50)/4);
     z2=(x0, y1);
     z0{up}..{left}z1--z2
 enddef;
+
+vardef serif_bottom_right =
+    clearxy;
+    z0=(thick*sind(50)/3, y1+ thick );
+    z1=(x0+thick, thick*sind(50)/4);
+    z2=(x0, y1);
+    z0{down}..{right}z1--z2
+enddef;
+

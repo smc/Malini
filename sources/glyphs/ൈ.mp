@@ -30,7 +30,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib rotated terminalangle 4 of paths[1])(4)
 )(paths[1])(strokes[1]);
 
 paths[2]:= paths[0] shifted(xpart(point 3 of paths[1]) + mw/4, 0);
@@ -48,6 +48,6 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib rotated terminalangle 4 of paths[3])(4)
 )(paths[3])(strokes[3]);
 endglyph;

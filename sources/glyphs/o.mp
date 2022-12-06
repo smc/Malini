@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 save r;
-r=0.8;
+r=0.85;
 z0 = (0, s/2);
-z1 = (x0 + r*sw/2, s - thick/4);
-z2 = (x1 + r*sw/2, y0);
-z3 = (x2 - r*sw/2, thick/4);
+z1 = ((x0 + x2)/2, s - thick/4);
+z2 = (x0 + r*sw, y0);
+z3 = (x1, thick/4);
 z4 = (x0, y0);
 paths[0]:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 

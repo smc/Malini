@@ -71,16 +71,16 @@ glyphs:
       "ý","ŷ","ÿ", "ỳ",
       "ź","ž","ż",
     ]
-    LATIN_LIGATURES:  ["ff", "tt", "ft"] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+    LATIN_LIGATURES:  [ "ff" ] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
     LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
     LC_RIGHT_ROUND: bop
     UC_LEFT_ROUND: OQ
     UC_RIGHT_ROUND: OQDP
     UC_RIGHT_MOUTH: K
-    LC_RIGHT_SLANT: ["v", "f", "ff", "k"]
+    LC_RIGHT_SLANT: ["v", "w", "f", "ff", "k"]
     LC_LEFT_SLANT: ["v"]
-    UC_LEFT_SLANT: ["A", "V", "Y", "T"]
-    UC_RIGHT_SLANT: TYV
+    UC_LEFT_SLANT: ["A", "V", "W", "Y", "T"]
+    UC_RIGHT_SLANT: TYVW
     UC_RIGHT_LEG: ["L"]
     UC_RIGHT_ARM: ["T"]
     LC_RIGHT_ARM: rf

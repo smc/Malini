@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0=(0, 1.1X);
+z0=(0, X);
 z1=(x0, y2+2/3thick);
 z2=(x0,  0);
 paths[p] := z0--z1--z2;
