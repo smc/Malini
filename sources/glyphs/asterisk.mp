@@ -1,40 +1,14 @@
 input glyph;
 beginglyph;
-% It is easy to imagine an asterisk as 3 lines going through a center point
-% in different angles. But that would be a dull asterisk
-% Here we add a little bit curviness to all the lines to get a 'warm' star
-z0 = (0.1s, s);
-z1 = (s*0.9, 0);
 
-z2 = (x1, y0);
-z3 = (x0, y1);
-
-z4 = (0, s/2);
-z5 = (s*1.05, y4);
-% The center points
-z6 = (0.55s, 0.55s);
-z7 = (0.55s, 0.45s);
-% Top left to bottom right
-paths[0] := z0..z6..z1;
-% Top right to bottom left
-paths[1] := z2..z7..z3;
-% Left to right at middle
-paths[2] := z4..z6..z5;
-
-pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
-pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
-pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
+z0 = (s/2, s/2);
+z1 = (x0, s);
+for i=0 upto 5:
+    paths[i]:=z0--z1 rotatedaround (z0, i*360/5);
+    pen_stroke(
+        nib(thick_nib scaled 1/2 rotated terminalangle 0 of paths[i])(0)
+        nib(thick_nib rotated terminalangle 0 of paths[i])(1)
+    )(paths[i])(strokes[i]);
+endfor;
 
 endglyph;
