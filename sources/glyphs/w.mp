@@ -44,4 +44,7 @@ pen_stroke(
      nib(end_nib scaled 3)(2)
 
 )(paths[p])(strokes[p]);
+
+rbearing:=0;
+lbearing:=0;
 endglyph;

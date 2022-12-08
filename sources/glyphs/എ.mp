@@ -49,7 +49,7 @@ pen_stroke(
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(top_nib)(3)
-    nib(end_nib)(infinity)
+    nib(end_nib rotated terminalangle 5 of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
 endglyph;

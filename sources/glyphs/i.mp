@@ -2,12 +2,10 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(0, s);
-z1=(x0, y2+2/3thick);
-z2=(x0  ,0);
-paths[p] := z0--z1--z2;
+z1=(x0  ,0);
+paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
-    nib(end_nib scaled 3)(infinity)
 )(paths[p])(strokes[p]);
 
 %serif
@@ -22,4 +20,13 @@ p:=p+1;
 paths[p] = fullcircle scaled (thick*1.5) shifted(x1, 1.33s);
 
 strokes[p] = paths[p];
+
+% Serifs
+p:=p+1;
+strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0];
+p:=p+1;
+strokes[p]:=paths[p] := serif_bottom_left shifted point 1 of paths[0];
+p:=p+1;
+strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[0];
+
 endglyph;

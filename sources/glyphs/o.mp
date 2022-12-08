@@ -14,5 +14,7 @@ pen_stroke(
    nib(top_nib)(1)
    nib(down_nib)(3)
 )(paths[0])(strokes[0]);
+lbearing:=0.5lbearing;
+rbearing:=0.5rbearing;
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

@@ -29,15 +29,17 @@ Xw  := X * condense; % Width of Latin capital letters
 lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 
+% Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
 
+% Razor nibs
 vardef thick_nib = fix_nib(thick, 0, 0) enddef;
 vardef start_up_nib = fix_nib(thick*sind(35), 0, 0) enddef;
-vardef middle_up_nib = fix_nib(thick*sind(45), 0, 0) rotated 0 enddef;
-vardef top_nib = fix_nib(thick*sind(55), 0, 90) enddef;
+vardef middle_up_nib = fix_nib(thick*sind(40), 0, 0) rotated 0 enddef;
+vardef top_nib = fix_nib(thick*sind(50), 0, 90) enddef;
 vardef middle_down_nib = fix_nib(thick*sind(90), 0, 0) enddef;
-vardef down_nib = fix_nib(thick*sind(55), 0, 90) enddef;
+vardef down_nib = fix_nib(thick*sind(50), 0, 90) enddef;
 vardef end_nib = fix_nib(thick*sind(50), 0, 0) enddef;
 vardef thin_horizontal_nib = fix_nib(0, thick, 0)  rotated -45 enddef;
 vardef thick_vertical_nib = fix_nib(thick*sind(90), 0, 0) enddef;
@@ -141,6 +143,7 @@ def endglyph =
             fi;
             if showcoords = 1:
                 show_coordinates(paths[i]);
+                % show_coordinates(strokes[i]);
             fi;
         fi;
     endfor;

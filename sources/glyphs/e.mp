@@ -10,7 +10,7 @@ z4 = (x0+thick*sind(50)/2, y3+ s/4);
 paths[0]:=z0{up}..{left}z1..{down}z2..z3{right}..z4;
 
 pen_stroke(
-    nib(middle_down_nib)(0)
+    nib(middle_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_down_nib)(2)
     nib(top_nib)(1)
     nib(down_nib)(3)
@@ -23,5 +23,6 @@ paths[1]:=z0--z1;
 pen_stroke(
     nib(end_nib rotated 90)(0,1)
 )(paths[1])(strokes[1]);
+lbearing:=0.75lbearing;
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

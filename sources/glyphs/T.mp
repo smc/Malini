@@ -1,24 +1,35 @@
 input glyph;
 beginglyph;
-z0=(Xw/3, X );
-z1=(x0, y0- .5X);
-z2=(x1, y3+2/3thick);
-z3=(x1, 0);
+p:=0;
+z0=(Xw/2.25, X );
+z1=(x0, 0);
 
-paths[0] = z0--z1--z2--z3;
+paths[0] = z0--z1;
 
 pen_stroke(
-    nib(thick_vertical_nib)(0,1,2)
-    nib(end_nib scaled 3)(infinity)
-)(paths[0])(strokes[0]);
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
 
 clearxy;
-z0 = (0, y1) ;
-z1 = (xpart(point 0 of paths[0]) + Xw/3, ypart(point 0 of paths[0])) ;
-paths[1] = z0--z1;
+p:=p+1;
+z0 = (0, X) ;
+z1 = (xpart(point 0 of paths[0]) + Xw/2.25, ypart(point 0 of paths[0])) ;
+paths[p] = z0--z1;
 pen_stroke(
    nib(end_nib rotated 90)(0,1)
-)(paths[1])(strokes[1]);
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+strokes[p]:=paths[p] := serif_bottom_left shifted point 1 of paths[0];
+p:=p+1;
+strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[0];
+
+p:=p+1;
+strokes[p]:=paths[p] := serif_hanging_top_left shifted point 0 of paths[1];
+p:=p+1;
+strokes[p]:=paths[p] := serif_hanging_top_right shifted point 1 of paths[1];
+
+
 anchor( "top", (xpart(point 0 of paths[0]), 1.2X));
 anchor( "bottom", (xpart(point 0 of paths[0]), 0));
 endglyph;
