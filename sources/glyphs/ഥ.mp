@@ -11,7 +11,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, thick*0.60/2);
+z0=(0, thick*(1 - sind(50)));
 z1=(m*1.25, y0);
 paths[p]:= z0--z1 ;
 pen_stroke(

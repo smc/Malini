@@ -9,12 +9,14 @@ z4=  (x2, X);
 z5=  (x1*0.9, y3);
 z6=  (x2, y2);
 
-paths[0] =  z2..(x3, y1)..z0..z1..z2..z3..z4..z5..z6 ;
+paths[0] =  z2{left}..(x3, y1){down}..z0{right}..z1..z2..z3..z4{right}..z5..{left}z6 ;
 
 pen_stroke(
-    nib(thinnib)(1,3,5,7)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(middle_down_nib)(1, 3,5)
+    nib(top_nib)(6)
+    nib(end_nib rotated terminalangle 0 of paths[0])(0)
+    nib(end_nib rotated terminalangle 0 of paths[0])(8)
+    nib(down_nib)(2)
 )(paths[0])(strokes[0]);
 
 endglyph;

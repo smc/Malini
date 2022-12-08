@@ -26,7 +26,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = (0,0) + (xpart(point infinity of paths[0]), 0) + (thick*0.60/2, 0);
+z0 = (0,0) + (xpart(point infinity of paths[0]), 0) + (thick*(1 - sind(50)), 0);
 z1= ( x0 , m/2);
 z2= ( x1 + mw/2, m);
 z3= ( x2 + mw/2.5, y1);

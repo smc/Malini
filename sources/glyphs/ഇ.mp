@@ -21,7 +21,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=point 7 of paths[0] + (thick*0.60/2, 0);
+z0=point 7 of paths[0] + (thick*(1 - sind(50)), 0);
 z1=(x0, m*0.6);
 z2=((x1+x3)/2, ypart(point 5 of paths[0])); % Top of second arch
 x3-x1 = mw*0.75;

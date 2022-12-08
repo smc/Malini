@@ -55,7 +55,7 @@ enddef;
 
 vardef right_arch =
     clearxy;
-    z0=(thick*0.60/2, 0);
+    z0=(thick*(1 - sind(50)), 0);
     z1=(x0, m*0.6);
     z2=((x1+x3)/2, 0.975m); % Top of arch
     x3-x1 = 2/3*mw;
@@ -66,7 +66,7 @@ enddef;
 
 vardef middle_arch =
     clearxy;
-    z0=(thick*0.60/2, 0);
+    z0=(thick*(1 - sind(50)), 0);
     z1=(x0, m*0.6);
     z2=((x1+x3)/2, 0.975m); % Top of arch
     x3-x1 = 0.6mw;
@@ -88,7 +88,7 @@ enddef;
 
 vardef right_tha_arch =
     clearxy;
-    z0=(thick*0.60/2, 0);
+    z0=(thick*(1 - sind(50)), 0);
     z1= (x0, m*0.6);
     z2 = ( x1 + mw/2.75, 0.975m); % top
     z3 = ( x2 + mw/2, m/2);
@@ -102,7 +102,7 @@ enddef;
 
 vardef middle_tha_arch =
     clearxy;
-    z0=(thick*0.60/2, 0);
+    z0=(thick*(1 - sind(50)), 0);
     z1= (x0, m*0.6);
     z2 = ( x1 + mw/2.75, 0.975m); % top
     z3 = ( x2 + mw/2, m/2);
@@ -141,7 +141,7 @@ enddef;
 
 vardef right_arch_dha =
     clearxy;
-    z0=(thick*0.60/2, m);
+    z0=(thick*(1 - sind(50)), m);
     z1=(x0, 1/3m);
     z2=(x1 +  mw/3, thick*0.6/2);
     z3=(x2 +  mw/3, y2 + m/2);
@@ -281,7 +281,7 @@ enddef;
 
 vardef right_da =
     clearxy;
-    z0=(thick*0.60/2, 0);
+    z0=(thick*(1 - sind(50)), 0);
     z1= (x0, m*0.6);
     z2 = ( x1 + mw/2.5, m); % top
     z3 = ( x2 + mw/3, y2 - m/4);
@@ -307,7 +307,7 @@ enddef;
 vardef right_arch_with_eye =
     clearxy;
     path l;
-    z0 = (thick*0.60/2, 0);
+    z0 = (thick*(1 - sind(50)), 0);
     z1=(x0, m*0.6);
     z2=((x1+x3)/2, 0.975m);
     x3-x1 = 0.8mw;
@@ -320,7 +320,7 @@ enddef;
 
 vardef right_arch_with_tail =
     clearxy;
-    z0 = (thick*0.60/2, 0);
+    z0 = (thick*(1 - sind(50)), 0);
     z1= ( x0 , m/2);
     z2= ( x1 + mw/2, m);
     z3= ( x2 + mw/2.5, y1);

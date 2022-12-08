@@ -12,7 +12,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(thick*0.60/2, 0) + (xpart(point infinity of paths[p-1]), 0);
+z0=(thick*(1 - sind(50)), 0) + (xpart(point infinity of paths[p-1]), 0);
 z1= (x0, m*0.6);
 z2 = ( x1 + mw/2.75, 0.975m); % top
 z3 = ( x2 + mw/2, y1);

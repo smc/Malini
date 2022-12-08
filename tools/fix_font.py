@@ -32,7 +32,6 @@ def fix_unhinted_font(ttFont: ttLib.TTFont):
 
     prep = ttLib.newTable("prep")
     prep.program = program
-    ttFont['post'].blueValues = [-12, 12, 525, 549, 756, 780]
     ttFont["gasp"] = gasp
     ttFont["prep"] = prep
 

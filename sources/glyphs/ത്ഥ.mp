@@ -23,7 +23,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, thick*0.60/2);
+z0=(0, thick*(1 - sind(50)));
 z1=(m*1.5, y0);
 paths[p]:= z0--z1 ;
 paths[p]:=paths[p] shifted (point infinity of paths[p-1]  + ( thick*0.5, 0)) ;
