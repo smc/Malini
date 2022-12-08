@@ -3,7 +3,7 @@ import traceback
 import unicodedata
 import xml.etree.ElementTree as etree
 
-from defcon import Glyph, Guideline
+from ufoLib2.objects import Glyph
 from fontTools import agl, ttLib
 from fontTools.pens.pointPen import SegmentToPointPen
 from fontTools.svgLib import SVGPath
@@ -75,8 +75,7 @@ class SVGGlyph:
         If 'transform' is provided, apply a transformation matrix before the
         conversion (must be tuple of 6 floats, or a FontTools Transform object).
         """
-        glyph = Glyph()
-        glyph.name = name
+        glyph = Glyph(name=name)
         glyph.width = width
         glyph.height = height
         glyph.unicodes = unicodes or []
