@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 save r,e;
 r=0.8;
-z0 = (r*sw, .7s);
+z0 = (r*sw, .8s);
 z1 = ((x0 + x2)/2, s - thick/4);
 z2 = (0, s/2);
 z3 = (x1, thick/4);

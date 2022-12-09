@@ -12,7 +12,7 @@ pen_stroke(
 p:=p+1;
 paths[p] := n_arch shifted(xpart(point 0 of l_vstem),0);
 pen_stroke(
-    nib(middle_up_nib)(0)
+    nib(end_nib scaled 2/3 rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(1)
     nib(middle_down_nib)(2,3)
 )(paths[p])(strokes[p]);
