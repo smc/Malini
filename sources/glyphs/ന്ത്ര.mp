@@ -35,9 +35,9 @@ paths[p] =  z0{dir -80}..{dir 190}z1..z2{dir 170}..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(thicknib)(1,2)
+    nib(down_nib)(1,2)
     nib(middle_up_nib)(3)
-    nib(top_nib rotated 90)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 0 of paths[1]);

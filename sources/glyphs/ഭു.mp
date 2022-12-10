@@ -20,9 +20,9 @@ paths[p] := z0..z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{right} ..z7..z8-
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
-    nib(middle_up_nib)(1)
+    nib(middle_up_nib)(1, 10)
     nib(top_nib)(2)
-    nib(middle_down_nib)(3,5, 7, 10)
+    nib(middle_down_nib)(3,5, 7)
     nib(down_nib)(8, 9)
     nib(top_nib)(4, 6)
     nib(thick_vertical_nib rotated 90)(11,12)

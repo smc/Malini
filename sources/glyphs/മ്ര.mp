@@ -46,7 +46,7 @@ paths[p] =  z0{down}..{left}z1..z2..z3;
 
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(thicknib)(1)
+    nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(top_nib rotated 45)(3)
 )(paths[p])(strokes[p]);
