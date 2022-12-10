@@ -2,8 +2,8 @@ input glyph;
 beginglyph;
 clearxy;
 p:=0;
-z0=(0, X);
-z1=(0, y0-X/2);
+z0=(0, s);
+z1=(0, y0-s/2);
 z2=(x0, 0);
 z3=(x2 - sw/4, -descent);
 z4=(x3 - sw/3, y3 + s/4);
@@ -19,6 +19,6 @@ pen_stroke(
 p:=p+1;
 paths[p] := serif_top_left shifted (point 0 of paths[p-1]);
 strokes[p] := paths[p];
-
+rbearing:=2rbearing;
 anchor( "top", (xpart(point 0 of paths[0]), X));
 endglyph;

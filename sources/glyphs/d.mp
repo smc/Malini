@@ -6,10 +6,12 @@ paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 p:=0;
 clearxy;
 z0=(0, X);
-z1=(x0  ,0);
-paths[p] := z0--z1;
+z1=(x0  ,y2 + thick);
+z2=(x0+thick/4  ,0);
+paths[p] := z0--z1--z2;
 paths[p] :=paths[p] shifted (xpart(point 0 of paths[1]), 0);
 pen_stroke(
+     nib(thick_vertical_nib rotated terminalangle 2 of paths[p])(2)
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
 
@@ -27,7 +29,7 @@ p:=p+1;
 strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0];
 
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[0];
+strokes[p]:=paths[p] := serif_bottom_right rotated 14 shifted point 2 of paths[0];
 
 
 anchor( "top", (xpart(point 1 of paths[1]), X));

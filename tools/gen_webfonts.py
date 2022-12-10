@@ -9,3 +9,4 @@ if __name__ == "__main__":
         fontname = os.path.splitext(os.path.basename(filepath))[0] + ".woff2"
         dest = os.path.join(os.path.dirname(filepath), '../', 'webfonts', fontname)
         f.save(dest)
+

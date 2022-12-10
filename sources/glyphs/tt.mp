@@ -1,13 +1,14 @@
 input glyph;
 beginglyph;
-z0=(0, 0.9X);
-z1=(x0 , s/4);
-z2=(x1 + sw/3, s/8);
-paths[0] = z0---z1{down}..{dir 45}z2;
+z0=(0+thick/4, 0.9X);
+z1=(0, s);
+z2=(x1 , s/4);
+z3=(x1 + sw/3, s/8);
+paths[0] = z0--z1---z2{down}..{dir 45}z3;
 pen_stroke(
-     nib(thick_vertical_nib)(0)
-     nib(thick_vertical_nib)(1)
-     nib(end_nib rotated terminalangle 2 of paths[0])(2)
+     nib(end_nib scaled 2/3)(0)
+     nib(thick_vertical_nib)(1,2)
+     nib(end_nib rotated terminalangle 3 of paths[0])(3)
 )(paths[0])(strokes[0]);
 
 %bar
@@ -22,9 +23,9 @@ pen_stroke(
 
 paths[2] := paths[0] shifted(xpart(point 3 of paths[0]) + sw/5, 0);
 pen_stroke(
-     nib(thick_vertical_nib)(0)
-     nib(thick_vertical_nib)(1)
-     nib(end_nib rotated terminalangle 3 of paths[0])(2)
+     nib(end_nib scaled 2/3)(0)
+     nib(thick_vertical_nib)(1,2)
+     nib(end_nib rotated terminalangle 3 of paths[0])(3)
 )(paths[2])(strokes[2]);
 
 endglyph;

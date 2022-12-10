@@ -38,10 +38,10 @@ pen_stroke(
 
 clearxy;
 z0 = point 1 of paths[1];
-z1 = (xpart(point 0.5 of paths[1]), -descent  );
+z1 = (xpart(point 0.5 of paths[1]), -descent*0.75  );
 z2 = (xpart(point 2 of paths[0]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
-z4 = (xpart(point 1 of paths[0]), m);
+z4 = (x3 + mw/4, m);
 paths[3] =  z0{down}..{dir 190}z1..z2{dir 170}..z3..z4;
 
 pen_stroke(

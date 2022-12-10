@@ -75,8 +75,8 @@ enddef;
 vardef serif_top_left =
     clearxy;
     serif_size:=thick;
-    z0=(x3-thick/2, y3-serif_size );
-    z1=(x0 - serif_size, 0.2y0);
+    z0=(x3-serif_size/2, y3-serif_size );
+    z1=(x0 - serif_size, y0/3);
     z2=(x1, y3);
     z3=(0, 0);
     reverse (z0{up}..{left}z1--z2---z3--cycle)
