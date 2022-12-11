@@ -64,16 +64,16 @@ z12 = (x11 + mw/8, y2);
 paths[p] := paths[p]..{dir 190}z9..z10{dir 170}..z11..z12  ;
 paths[p] := paths[p] shifted (mw/3,0);
 
-paths[p]:=paths[p] xscaled 0.75 yscaled 0.7 shifted (0.7mw, -2/3m);
+paths[p]:=paths[p] shifted (0.9mw, -m) xscaled 0.75 yscaled 0.7;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
-    nib(thicknib)(8,9)
+    nib(down_nib)(8,9)
     nib(middle_up_nib)(10)
-    nib(end_nib)(11)
+    nib(end_nib rotated terminalangle 11 of paths[p])(11)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (x3,0));

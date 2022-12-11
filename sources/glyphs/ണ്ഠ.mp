@@ -39,7 +39,7 @@ z3=(x2 - 0.4mw, y2 - m/2);
 z4=z0;
 
 paths[3] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4;
-paths[3] := paths[3] shifted(xpart(point 0 of paths[2]), -m) xscaled 0.9 yscaled 0.8;
+paths[3] := paths[3] shifted(xpart(point 2 of paths[2]), -m) xscaled 0.8 yscaled 0.7;
 
 pen_stroke(
     nib(middle_up_nib)(0,4)

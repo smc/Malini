@@ -4,7 +4,7 @@ p:=0;
 
 paths[p] =left_arch_dha;
 pen_stroke(
-    nib(top_nib)(0)
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_down_nib)(1)
     nib(down_nib)(2)
     nib(thin_vertical_nib)(3)
@@ -21,7 +21,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(down_nib)(2)
     nib(middle_up_nib)(3)
-    nib(top_nib)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 
