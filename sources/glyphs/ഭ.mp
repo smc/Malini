@@ -19,7 +19,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(middle_down_nib)(3,5, 7)
     nib(top_nib)(4, 6)
-    nib(end_nib rotated 60)(8)
+    nib(end_nib rotated terminalangle 8 of paths[0])(8)
 )(paths[0])(strokes[0]);
 
 endglyph;
