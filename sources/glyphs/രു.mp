@@ -16,7 +16,7 @@ z9 = ( x8 + mw/3, y8-m/4);
 z10 = ( x9 - mw/2, y0+thick/2); %
 paths[p] := paths[0].. z6{dir 10}..z7..{left}z8{right}..z9..{dir 150}z10;
 pen_stroke(
-    nib(start_up_nib )(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3,7,9)

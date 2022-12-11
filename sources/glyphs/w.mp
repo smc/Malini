@@ -53,6 +53,6 @@ strokes[p]:=paths[p] := serif_top_left shifted point 1 of paths[3];
 p:=p+1;
 strokes[p]:=paths[p] := serif_top_right xscaled 0.75 slanted 0.55  shifted point 1 of paths[3];
 
-lbearing:=0;
-rbearing:=0;
+lbearing:=lbearing/2;
+rbearing:=rbearing/2;
 endglyph;

@@ -74,6 +74,13 @@
         <dimension name="slant" xvalue="-15"/>
       </location>
     </source>
+    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique-Thin.ufo" name="ObliqueThin">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </source>
 </sources>
 <instances>
   <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin.ufo" stylename="Thin">
@@ -84,7 +91,7 @@
       <dimension name="slant" xvalue="0"/>
       <dimension name="width" xvalue="100"/>    </location>
   </instance>
-  <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Italic-Thin.ufo" stylename="Thin Italic">
+  <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Oblique-Thin.ufo" stylename="Oblique Thin">
     <info />
     <kerning />
     <location>
