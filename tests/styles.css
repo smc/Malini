@@ -22,8 +22,8 @@
 
 body {
   font-size: 100%;
-  color: #333;
-  background-color: #FFFFF0;
+  color: hsl(60, 100%, 5%);
+  background-color:hsl(60, 100%, 97%);
   line-height: 1.2;
 }
 

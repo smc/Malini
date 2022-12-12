@@ -246,6 +246,7 @@ function listen() {
             // Input / output Options
             interaction: {
                 hex: true,
+                hsla: true,
                 input: true,
             }
         }
@@ -267,6 +268,7 @@ function listen() {
             // Input / output Options
             interaction: {
                 hex: true,
+                hsla: true,
                 input: true,
             }
         }
