@@ -72,7 +72,7 @@ glyphs:
       "ź","ž","ż",
     ]
     LATIN_LIGATURES:  [ "tt", "ff" ] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
-    LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
+    LC_LEFT_ROUND: ["e", "ee", "c", "d", "o", "q", "g"]
     LC_RIGHT_ROUND: bop
     UC_LEFT_ROUND: OQ
     UC_RIGHT_ROUND: OQDP

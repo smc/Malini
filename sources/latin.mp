@@ -74,12 +74,12 @@ enddef;
 
 vardef serif_top_left =
     clearxy;
-    serif_size:=thick;
-    z0=(x3-serif_size/2, y3-serif_size );
-    z1=(x0 - serif_size, y0/3);
-    z2=(x1, y3);
-    z3=(0, 0);
-    reverse (z0{up}..{left}z1--z2---z3--cycle)
+    z0=(x4-thick/2, y3-u );
+    z1=(x0 - u/2, y0/3);
+    z2=(x1 - u/2, y1);
+    z3=(x2, y4);
+    z4=(0, 0);
+    reverse (z0{up}..{left}z1--z2---z3--z4--cycle)
 enddef;
 
 vardef serif_bottom_left =
@@ -100,4 +100,18 @@ enddef;
 
 vardef serif_hanging_top_right =
    serif_bottom_left crotated(95) shifted  (thick/4, -thick)
+enddef;
+
+vardef serif_top_left_slanted =
+    clearxy;
+    z0= (thick*cosd(50)*sind(45)/2, thick*sind(50)*sind(45)/2 );
+    z1= (x0-thick/2 - u, y0-thick/2);
+    z0{dir -135}..{left}z1
+enddef;
+
+vardef serif_bottom_right_slanted =
+    clearxy;
+    z0= (-thick*cosd(50)*sind(45)/2, -thick*sind(50)*sind(45)/2 );
+    z1= (x0+thick/2+ u, y0+thick/2);
+    z0{dir 45}..{right}z1
 enddef;

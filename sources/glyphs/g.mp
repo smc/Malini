@@ -2,9 +2,9 @@ input glyph;
 beginglyph;
 p=0;
 z0 =(x4, (y1 + y3)/2);
-z1 =(x0 + mw/3.5, s-thick/4);
-z2=(x1 + mw/3.5, y0);
-z3=(x2 - mw/3.5, m/2.5);
+z1 =(x0 + sw/3, s-thick/4);
+z2=(x1 + sw/3, y0);
+z3=(x2 - sw/3, m/2.5);
 z4=(0, y0 );
 paths[p]:=z0{up}..z1{right}..z2{down}..z3{left}..{up}z4;
 pen_stroke(
@@ -18,7 +18,7 @@ pen_stroke(
 p:= p+1;
 clearxy;
 z0 = point 1.4 of paths[p-1];
-z1 = (x0+sw/4, s);
+z1 = (x0+sw/3, s);
 paths[p]:=z0..z1;
 
 pen_stroke(
@@ -30,9 +30,9 @@ p:= p+1;
 clearxy;
 z0 = point 3.2 of paths[p-2];
 z1 = (0, y0 -s/6);
-z2 = (x1+s/4, y1-s/6);
-z3 = (x2+s/6, y2);
-z4 = (x3+s/4, y3-s/4);
+z2 = (x1+sw/4, y1-s/6);
+z3 = (x2+sw/6, y2);
+z4 = (x3+sw/2.75, y3-s/4);
 z5 = (x2, y4-s/4);
 z6 = (x1-thick/4, y4);
 z7 = z2;
@@ -45,5 +45,5 @@ pen_stroke(
     nib(down_nib)(5)
     nib(middle_up_nib)(4)
 )(paths[p])(strokes[p]);
-
+rbearing:=0.5rbearing;
 endglyph;

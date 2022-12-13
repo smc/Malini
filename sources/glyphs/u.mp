@@ -30,5 +30,7 @@ strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[1];
 p:=p+1;
 strokes[p]:=paths[p] := serif_bottom_right rotated 14 shifted point 2 of paths[1];
 
+lbearing:=2lbearing;
+rbearing:=0;
 anchor( "top", (xpart(point 3 of paths[0]), X));
 endglyph;
