@@ -18,6 +18,7 @@ pen_stroke(
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)
     nib(thicknib rotated terminalangle 0 of paths[0])(0)
+    ignore_directions(1, 2)
 )(paths[0])(strokes[0]);
 pen_stroke(
    nib(end_nib rotated 90)(0,1)

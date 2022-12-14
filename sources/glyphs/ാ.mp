@@ -9,9 +9,11 @@ z4=(x0, m-y0);
 paths[0] = z0..z1..z2..z3..z4;
 
 pen_stroke(
-    nib(end_nib)(0, 4)
-    nib(middle_down_nib)(2)
+    cut(end_nib, rel 90)(0)
+    cut(end_nib, rel 90)(4)
     nib(top_nib)(1)
-    nib(down_nib)(3)
+    nib(middle_down_nib)(2)
+    nib(middle_down_nib rotated 90 scaled 0.9)(3)
+    ignore_directions(3)
 )(paths[0])(strokes[0]);
 endglyph;

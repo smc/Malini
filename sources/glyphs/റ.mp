@@ -7,6 +7,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
     nib(end_nib rotated terminalangle 4 of paths[0])(4)
+    ignore_directions(1,2, 3)
 )(paths[0])(strokes[0]);
 
 anchor( "right", point 4 of paths[0] );

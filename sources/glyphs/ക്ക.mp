@@ -25,7 +25,7 @@ pen_stroke(
    nib(middle_down_nib)(2)
    nib(down_nib)(3)
    nib(middle_up_nib)(4)
-   nib(down_nib)(6)
+   nib(down_nib)(5)
    nib(middle_down_nib)(6, 9)
    nib(thin_vertical_nib rotated 90)(7, 8)
    nib(middle_down_nib)(9)
@@ -34,6 +34,7 @@ pen_stroke(
    nib(top_nib)(12)
    nib(middle_down_nib)(13)
    nib(end_nib rotated -45)(14)
+   ignore_directions(1,2, 3, 6, 9, 10, 11, 12, 13)
 )(paths[0])(strokes[0]);
 
 anchor( "vc", point 1 of paths[0]);

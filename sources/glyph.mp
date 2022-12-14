@@ -35,12 +35,12 @@ vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
 
 % Razor nibs
 vardef thick_nib = fix_nib(thick, 0, 0) enddef;
-vardef start_up_nib = fix_nib(thick*sind(35), 0, 0) enddef;
-vardef middle_up_nib = fix_nib(thick*sind(45), 0, 0) rotated 0 enddef;
-vardef top_nib = fix_nib(thick*sind(50), 0, 90) enddef;
-vardef middle_down_nib = fix_nib(thick*sind(90), 0, 0) enddef;
-vardef down_nib = fix_nib(thick*sind(50), 0, 90) enddef;
-vardef end_nib = fix_nib(thick*sind(50), 0, 0) enddef;
+vardef start_up_nib = fix_nib(thick*sind(35), 0, 0) enddef; % 0.57
+vardef middle_up_nib = fix_nib(thick*sind(40), 0, 0) rotated 0 enddef; % 0.70
+vardef top_nib = fix_nib(thick*sind(50), 0, 0) rotated 90 enddef; % 0.766
+vardef middle_down_nib = fix_nib(thick*sind(90), 0, 0) enddef; % 1.00
+vardef down_nib = fix_nib(thick*sind(50), 0, 90) enddef;  % 0.766
+vardef end_nib = fix_nib(thick*sind(50), 0, 0) enddef;  % 0.766
 vardef thin_horizontal_nib = fix_nib(0, thick, 0)  rotated -45 enddef;
 vardef thick_vertical_nib = fix_nib(thick*sind(90), 0, 0) enddef;
 vardef thin_vertical_nib = fix_nib(thick*sind(50), 0, 0) enddef;
