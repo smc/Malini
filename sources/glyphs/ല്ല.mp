@@ -52,7 +52,7 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2,6,7)
     nib(down_nib)(3,8)
-    nib(top_nib)(10)
+    nib(end_nib rotated terminalangle 10 of paths[4])(10)
 )(paths[4])(strokes[4]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));

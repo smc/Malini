@@ -19,11 +19,12 @@ z2=(xpart(point 0.5 of paths[0]), m);
 z3=(0, y1);
 z4=(0, 0);
 
-paths[p]:= z0{up}..z1..{left}z2...z3---z4;
+paths[p]:= z0{up}..z1{up}..{left}z2...z3---z4;
 pen_stroke(
     nib(middle_up_nib )(0,1)
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3, 4)
+    ignore_directions(2)
 )(paths[p])(strokes[p]);
 
 clearxy;

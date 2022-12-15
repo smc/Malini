@@ -14,6 +14,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(thin_vertical_nib)(3)
     nib(thin_vertical_nib)(4)
+    ignore_directions(1,2)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -38,7 +39,9 @@ pen_stroke(
     nib(middle_down_nib)(4)
     nib(down_nib)(5)
     nib(middle_up_nib)(6)
-    nib(end_nib rotated 45)(7)
+    nib(end_nib rotated terminalangle 7 of paths[p])(7)
+    cut(end_nib, rel 90)(7)
+    ignore_directions(2,5,6)
 )(paths[p])(strokes[p]);
 
 

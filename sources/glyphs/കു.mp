@@ -23,7 +23,7 @@ pen_stroke(
    nib(down_nib)(3)
    nib(middle_up_nib)(4)
    nib(down_nib)(5)
-   nib(middle_down_nib)(6, 9, 11)
+   nib(middle_down_nib scaled 0.9)(6, 9, 11)
    nib(thin_vertical_nib rotated 90)(7, 8)
    nib(end_nib rotated 90)(10)
    nib(end_nib rotated 90)(12)

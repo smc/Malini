@@ -912,7 +912,8 @@ class MalayalamFont(Font):
         # postscript metrics
         self.info.postscriptBlueValues= [
             -24, 0,
-            int(self.info.xHeight-24), int(self.info.xHeight+24),
+            int(self.info.xHeight+12), int(self.info.xHeight+42),
+            int(self.info.xHeight-60), int(self.info.xHeight-30),
             int(self.info.ascender-24), int(self.info.ascender+24)
         ]
         # self.info.postscriptFamilyBlues = []

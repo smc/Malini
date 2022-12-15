@@ -8,6 +8,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
     nib(end_nib )(4)
+    ignore_directions(1,2,3)
 )(paths[p])(strokes[p]);
 p:=p+1;
 clearxy;

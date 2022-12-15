@@ -40,7 +40,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(down_nib)(2)
     nib(middle_up_nib)(3)
-    nib(top_nib)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

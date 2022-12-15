@@ -14,6 +14,7 @@ pen_stroke(
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(middle_down_nib)(3,4)
+    ignore_directions(1,2, 3)
 )(paths[p])(strokes[p]);
 anchor( "right", point 1.5 of paths[p]);
 endglyph;
