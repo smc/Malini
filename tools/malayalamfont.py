@@ -912,9 +912,10 @@ class MalayalamFont(Font):
         # postscript metrics
         self.info.postscriptBlueValues= [
             -24, 0,
-            int(self.info.xHeight+12), int(self.info.xHeight+42),
-            int(self.info.xHeight-60), int(self.info.xHeight-30),
-            int(self.info.ascender-24), int(self.info.ascender+24)
+            int(self.info.xHeight-12), int(self.info.xHeight+12),
+            int(self.info.xHeight/2-12), int(self.info.xHeight/2+12),
+            int(self.info.ascender-12), int(self.info.ascender+12),
+            int(-self.info.descender), int(-self.info.descender+12)
         ]
         self.info.guidelines=[
             Guideline(name='xheight', y=self.info.xHeight),
