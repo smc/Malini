@@ -26,7 +26,7 @@ z5 = ( x4 + mw/3, y4-m/4);
 z6 = ( x5 - mw/3, thick*0.5/2);
 z7 = ( x6 - mw/4, y6 + m/2.5);
 z8 = ( x7 + mw/2.5, m*0.975);   % top
-z9 = ( x8 + mw/2, y8-m/2.5);
+z9 = ( x8 + mw/2,2/3m);
 z10 = ( x9, 0);
 paths[1] = z0..z1..z2..z3..{left}z4{right}..z5..z6..{up}z7..z8..{down}z9---z10;
 pen_stroke(
