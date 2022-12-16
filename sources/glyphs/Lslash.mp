@@ -7,7 +7,7 @@ z2=(x1, 0);
 paths[0] = z0{down}..z1..{down}z2;
 paths[0] := paths[0] shifted (sw/4,0);
 
-z3=(xpart(point 2 of l_vstem), thick*thin/2);
+z3=(xpart(point 2 of l_vstem), thin/2);
 z4=(x3 + Xw/2, y3);
 
 paths[1] = z3{dir 10}..{dir 10}z4;

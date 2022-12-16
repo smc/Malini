@@ -8,8 +8,8 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
-    nib(thin_vertical_nib)(7)
-    nib(thin_vertical_nib)(8)
+    nib(thick_vertical_nib)(7)
+    nib(thick_vertical_nib)(8)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

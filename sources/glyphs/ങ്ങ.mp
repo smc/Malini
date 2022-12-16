@@ -39,8 +39,8 @@ pen_stroke(
     nib(down_nib)(6)
     nib(middle_up_nib)(7)
     nib(top_nib scaled 0.9)(8)
-    nib(thin_vertical_nib)(9)
-    nib(thin_vertical_nib)(10)
+    nib(thick_vertical_nib)(9)
+    nib(thick_vertical_nib)(10)
     ignore_directions(2,3,5,7,8)
 )(paths[1])(strokes[1]);
 

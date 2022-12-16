@@ -7,7 +7,7 @@ z2=(x1 + mw/4, y0);
 z3=(x2 - mw/4, m/6);
 z4=(0, y0 );
 z5=(x4 + mw/3, 0.975m);
-z6=(x5 + mw/2, m/2);
+z6=(x5 + mw/2, 2/3m);
 z7=(x6, m/6);
 paths[0]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6 ---z7;
 pen_stroke(
@@ -17,13 +17,13 @@ pen_stroke(
     nib(down_nib)(3)
     nib(middle_down_nib)(2)
     nib(middle_up_nib)(4)
-    nib(thin_vertical_nib)(6,7)
+    nib(thick_vertical_nib)(6,7)
     ignore_directions(1, 2, 3 , 4, 5)
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=point 7 of paths[0] + (thick*(1 - sind(50)), 0);
-z1=(x0, m*0.6);
+z0=point 7 of paths[0] + (thin/2, 0);
+z1=(x0, 2/3m);
 z2=((x1+x3)/2, ypart(point 5 of paths[0])); % Top of second arch
 x3-x1 = mw*0.75;
 z3=(x3, m-m/1.6);

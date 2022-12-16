@@ -5,8 +5,8 @@ pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[0])(strokes[0]);
 
 paths[1] = right_arch_with_tail shifted (xpart(point infinity of paths[0]), 0);

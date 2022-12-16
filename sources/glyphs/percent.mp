@@ -2,33 +2,40 @@ input glyph;
 beginglyph;
 % This glyph does not slant. Reset slant value
 slant := 0;
-z0= (X/2, X);
-z1=( X/4, y0 - 0.5X);
-z2=( 0, y1 - 0.5X);
+p:=0;
+z0=(0, X/6);
+z1=((x2+x0)/2, y0 + X/6);
+z2=(x1 + Xw/6, y0);
+z3=(x1, 0);
+z4=(x0, y0);
 
-paths[0] = z0{dir 255}..z1..{dir 255}z2 ;
+paths[p] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
+paths[p] := paths[p] shifted (0, X-2X/6);
 
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
-radius:=0.2sw;
+   nib(middle_down_nib scaled 0.75)(0,4)
+   nib(middle_up_nib)(2)
+   nib(top_nib)(1)
+   nib(down_nib)(3)
+)(paths[p])(strokes[p]);
 clearxy;
-z0=(0, X*0.8);
-z1=(x0 + radius, y0 + radius);
-z2=(x1 + radius, y1 - radius);
-z3=(x2 - radius, y2 - radius);
-z4=(x3 - radius, y3 + radius);
+p:=p+1;
+z0=(0.55X,X);
+z1=(X/6,0);
+paths[p] := z0--z1;
 
-paths[1] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
-paths[2] = paths[1] shifted(X/3, -0.5X);
 pen_stroke(
-    nib(thicknib)(1, 3)
-    nib(thinnib)(0, 2, 4)
-)(paths[1])(strokes[1]);
+   nib(thin_nib)(0,1)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+paths[p] := paths[0] shifted (0.4X, -X + 2X/6);
+
 pen_stroke(
-    nib(thicknib)(1, 3)
-    nib(thinnib)(0, 2, 4)
-)(paths[2])(strokes[2]);
+   nib(middle_down_nib scaled 0.75)(0,4)
+   nib(middle_up_nib)(2)
+   nib(top_nib)(1)
+   nib(down_nib)(3)
+)(paths[p])(strokes[p]);
+
 endglyph;

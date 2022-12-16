@@ -15,7 +15,7 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
-    nib(thin_vertical_nib )(6)
+    nib(middle_down_nib )(6)
     nib(end_nib rotated terminalangle 7 of paths[0])(7)
 )(paths[0])(strokes[0]);
 

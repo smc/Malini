@@ -5,8 +5,8 @@ pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[0])(strokes[0]);
 
 clearxy;
@@ -15,7 +15,7 @@ z1=(x0, m*0.6);
 z2=((x1+x3)/2, 0.975m); % Top of arch
 x3-x1 = 0.8*mw;
 z3=(x3, m/2);
-z4= (x3 - mw/4, thick*(1 - sind(50)));
+z4= (x3 - mw/4,thin/2);
 z5= (x4 - mw/4, m/2);
 z6= (x5 + mw/3, y5 + m/2);
 z7= (x2, y6 + m/3);

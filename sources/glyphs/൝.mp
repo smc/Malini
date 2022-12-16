@@ -5,7 +5,7 @@ beginglyph;
 z0=(0,0);
 z1=(x0 +mw/4, m/3);
 z2=(x1 + mw/6, m);
-z3=(x2 - mw/15, m/2);
+z3=(x2, m/2);
 z4=(x3 + mw/3, 0);
 z5=(x4 + mw/4, y0 + m/2);
 z6=(x5 + mw/3, m);
@@ -19,16 +19,16 @@ z13=(x12 + mw/3, m/2);
 z14=(x13 - mw/4 , m);
 
 paths[0] = z0..z1..z2;
-paths[1]= z2..z3..z4..z5..z6..z7..z8..z9..z10..z11..z12..z13..z14 ;
+paths[1]= z2---z3..z4..z5..z6..z7..z8..z9..z10..z11..z12..z13..z14 ;
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+   nib(end_nib rotated terminalangle 0 of paths[0])(0)
+   nib(middle_down_nib)(1, 2)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thinnib)(1, 3,5,7,9,11,13)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(middle_down_nib)(0, 1, 3,5,7,9, 11)
+    nib(top_nib)(4,8)
+    nib(down_nib)(2, 6, 10)
+    nib(end_nib rotated terminalangle 12 of paths[1])(12)
 )(paths[1])(strokes[1]);
 
 endglyph;

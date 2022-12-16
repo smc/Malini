@@ -14,7 +14,7 @@ Xheight :=      ascent;       % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines
-thin :=         0.7;          % Thickness of thinnest lines (same as thick when no modulation)
+thin :=         0.56*thick;   % Thickness of thinnest lines
 subthick :=     0.666u;       % Thickness of thickest lines in subscribed characters
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values

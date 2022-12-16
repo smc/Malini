@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-
+% Malayalam Sign Chandrabindu
 z0 = (0, y1 + m/3);
 z1=(x0 + mw/3, m);
 z2=(x1 + mw/3, y0);

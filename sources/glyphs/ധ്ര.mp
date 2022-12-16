@@ -18,8 +18,8 @@ paths[p] =right_arch_dha;
 paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
-    nib(thin_vertical_nib)(1)
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
     nib(down_nib)(2)
     nib(middle_up_nib)(3)
     nib(end_nib rotated terminalangle 4 of paths[p])(4)

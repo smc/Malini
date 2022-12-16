@@ -8,7 +8,7 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
-    nib(thin_vertical_nib)(6,7,8)
+    nib(thick_vertical_nib)(6,7,8)
 )(paths[p])(strokes[p]);
 
 
@@ -21,8 +21,8 @@ pen_stroke(
     nib(thin_vertical_nib)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 
 % the connector curve
@@ -48,11 +48,11 @@ p:=p+1;
 paths[p]=right_arch_dha;
 paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 pen_stroke(
-    nib(thin_vertical_nib)(0)
-    nib(thin_vertical_nib)(1)
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
     nib(down_nib)(2)
     nib(middle_up_nib)(3)
-    nib(top_nib)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 anchor( "vc", (xpart(point 1 of paths[2]),0));
 anchor( "right", point 2.25 of paths[3]);

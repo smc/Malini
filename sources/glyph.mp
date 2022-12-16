@@ -31,19 +31,21 @@ rbearing := rbearing * condense;
 
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
-vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
+vardef thinnib = fix_nib(thin, thin, 0) enddef;
 
 % Razor nibs
 vardef thick_nib = fix_nib(thick, 0, 0) enddef;
-vardef start_up_nib = fix_nib(thick*sind(35), 0, 0) enddef; % 0.57
-vardef middle_up_nib = fix_nib(thick*sind(40), 0, 0) rotated 0 enddef; % 0.70
-vardef top_nib = fix_nib(thick*sind(50), 0, 0) rotated 90 enddef; % 0.766
-vardef middle_down_nib = fix_nib(thick*sind(90), 0, 0) enddef; % 1.00
-vardef down_nib = fix_nib(thick*sind(50), 0, 90) enddef;  % 0.766
-vardef end_nib = fix_nib(thick*sind(50), 0, 0) enddef;  % 0.766
-vardef thin_horizontal_nib = fix_nib(0, thick, 0)  rotated -45 enddef;
-vardef thick_vertical_nib = fix_nib(thick*sind(90), 0, 0) enddef;
-vardef thin_vertical_nib = fix_nib(thick*sind(50), 0, 0) enddef;
+vardef thin_nib = fix_nib(thin, 0, 0) enddef;
+
+vardef start_up_nib = thin_nib enddef;
+vardef middle_up_nib = thin_nib scaled 1.1 enddef;
+vardef top_nib = thin_nib scaled 1.2 rotated 90 enddef;
+vardef middle_down_nib = thick_nib scaled 1.05 enddef;
+vardef down_nib = thick_nib scaled 0.77 rotated 90 enddef;
+vardef end_nib = thin_nib scaled 1.2 enddef;
+vardef thin_horizontal_nib = fix_nib(0, thick, 0) rotated -45 enddef;
+vardef thick_vertical_nib = thick_nib enddef;
+vardef thin_vertical_nib = thin_nib enddef;
 
 vardef terminalnib =
     if terminalround = 0:
@@ -55,9 +57,9 @@ enddef;
 
 vardef thinterminalnib =
     if terminalround = 0:
-        fix_nib(thick*thin, 0, 0)
+        fix_nib(thin, 0, 0)
     else:
-        fix_nib(thick*thin, thick*terminalround, 0)
+        fix_nib(thin, thick*terminalround, 0)
     fi
 enddef;
 

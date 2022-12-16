@@ -12,13 +12,13 @@ pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
+z0=point infinity of paths[p-1] + (thin/2, 0);
 z1=(x0, m*0.6);
 z2=((x1+x3)/2, 0.975m); % Top of arch
 x3-x1 = mw*0.6;
@@ -43,7 +43,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, thick*(1 - sind(50)));
+z0=(0,thin/2);
 z1=(m*1.5, y0);
 paths[p]:= z0--z1 ;
 paths[p]:=paths[p] shifted (point 5 of paths[p-1]  + ( thick*0.5, 0)) ;
@@ -64,8 +64,7 @@ pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(thick_vertical_nib)(4)
+    nib(middle_down_nib)(3,4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart( point 4 of paths[p]),0));

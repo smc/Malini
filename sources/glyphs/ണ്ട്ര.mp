@@ -9,7 +9,7 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
-    nib(thin_vertical_nib)(6,7,8)
+    nib(thick_vertical_nib)(6,7,8)
 )(paths[p])(strokes[p]);
 
 % Second arch
@@ -21,15 +21,15 @@ pen_stroke(
     nib(thin_vertical_nib)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 % Third arch
 
 p := p+1;
 clearxy;
 z0 = point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
-z1 = ( x0, (y0 + y2)/2);
+z1 = ( x0, 2/3m);
 z2 = ( x1 + mw/2.2, 0.975m); % top
 z3 = ( x2 + mw/3, y4 + m/8);
 z4= ( x3 - mw/5, y5 + m/6);

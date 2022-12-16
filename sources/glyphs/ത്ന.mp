@@ -7,8 +7,8 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
-    nib(thin_vertical_nib)(7)
-    nib(thin_vertical_nib)(8)
+    nib(thick_vertical_nib)(7)
+    nib(thick_vertical_nib)(8)
 )(paths[0])(strokes[0]);
 
 paths[1] = right_arch shifted (xpart(point infinity of paths[0]), 0);

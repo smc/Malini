@@ -11,7 +11,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, thick*(1 - sind(50)));
+z0=(0,thin/2);
 z1=(m*1.25, y0);
 paths[p]:= z0--z1 ;
 pen_stroke(
@@ -31,8 +31,7 @@ pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(thick_vertical_nib)(4)
+    nib(middle_down_nib)(3,4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart( point 4 of paths[p]),0));

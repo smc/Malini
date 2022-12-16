@@ -25,8 +25,8 @@ p:=p+1;
 clearxy;
 z0 = point 6 of paths[p-1];
 z1 = (xpart(point 5 of paths[p-1]) + thick/4, (y0+ y2)/2);
-z2 = (xpart(point 1 of paths[p-1]), -descent*1.1);
-z3 = (xpart(point 2 of paths[p-1])- thick/3, y1);
+z2 = (xpart(point 1 of paths[p-1]), -descent);
+z3 = (xpart(point 2 of paths[p-1])- thick/3, (y0+ y2)/1.5);
 
 paths[p] = z0{dir -5}..z1..z2..z3 ;
 
@@ -34,7 +34,7 @@ pen_stroke(
     nib(top_nib)(0)
     nib(middle_down_nib)(1)
     nib(down_nib)(2)
-    nib(end_nib rotated 60)(3)
+    nib(end_nib rotated terminalangle 3 of paths[p] )(3)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 1 of paths[0]);
