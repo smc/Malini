@@ -36,7 +36,7 @@ vardef n_arch =
     clearxy;
     z0=(0, 0.6s);
     z1=(0.6x2, s-thick/4);
-    z2=(x0 + 0.75sw, s/2);
+    z2=(x0 + 0.75sw, 2/3s);
     z3=(x2, 0);
     z0{dir 60}..z1{right}..z2---z3
 enddef;
@@ -104,14 +104,14 @@ enddef;
 
 vardef serif_top_left_slanted =
     clearxy;
-    z0= (thick*cosd(50)*sind(45)/2, thick*sind(50)*sind(45)/2 );
+    z0= (thin*1.2*sind(45)/2, thin*1.2*sind(45)/2 );
     z1= (x0-thick/2 - u, y0-thick/2);
     z0{dir -135}..{left}z1
 enddef;
 
 vardef serif_bottom_right_slanted =
     clearxy;
-    z0= (-thick*cosd(50)*sind(45)/2, -thick*sind(50)*sind(45)/2 );
+    z0= (-thin*1.2*sind(45)/2, -thin*1.2*sind(45)/2 );
     z1= (x0+thick/2+ u, y0+thick/2);
     z0{dir 45}..{right}z1
 enddef;

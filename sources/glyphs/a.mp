@@ -10,7 +10,7 @@ z3=(x2, thick/4);
 paths[p] := z0{dir 60}..z1..z2---z3;
 
 pen_stroke(
-    nib(end_nib )(0)
+    nib(end_nib rotated terminalangle 0 of paths[p] )(0)
     nib(top_nib)(1)
     nib(middle_down_nib)(2,3)
     nib(thick_vertical_nib)(infinity)
@@ -35,9 +35,9 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Serifs
-p:=p+1;
-paths[p] = fullcircle scaled (thick)  shifted (point 0 of paths[0] + (0, -thick/3));
-strokes[p] = paths[p];
+% p:=p+1;
+% paths[p] = fullcircle scaled (thick)  shifted (point 0 of paths[0] + (0, -thick/3));
+% strokes[p] = paths[p];
 
 
 p:=p+1;

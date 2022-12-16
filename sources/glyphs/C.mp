@@ -7,7 +7,7 @@ z0 = (r*Xw, .8X);
 z1 = ((x0 + x2)/2, X - thick/4);
 z2 = (0, X/2);
 z3 = (x1, thick/4);
-z4 = (x0+thick*sind(50)/2, 0.2X);
+z4 = (x0+thin*1.2/2, 0.2X);
 paths[p]:=z0{dir 120}..z1..z2..z3..z4;
 
 pen_stroke(

@@ -15,7 +15,7 @@ pen_stroke(
     cut(end_nib scaled 2/3, rel 90)(0)
     nib(top_nib)(1)
     nib(middle_down_nib)(2,3)
-    ignore_directions(1, 3)
+    ignore_directions(1)
 )(paths[p])(strokes[p]);
 
 % Serifs

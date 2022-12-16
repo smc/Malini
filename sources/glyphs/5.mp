@@ -10,7 +10,7 @@ paths[0] = z0--z1;
 paths[1] = z0--z3{dir 45}..z4..{dir 150}z5;
 
 pen_stroke(
-    nib(top_nib)(0,1)
+    nib(thick_horizontal_nib)(0,1)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
