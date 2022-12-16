@@ -3,7 +3,7 @@ input glyph;
 beginglyph;
 
 z0 = (mw*0.6 , 0.6m);
-z1 = (x0 + mw/3, m-thick*0.8/4);
+z1 = (x0 + mw/3, m);
 z2 = (x1 + mw/4, y1 - m/2);
 z3 = ((x2 + x4)/2, thick*0.6/2);
 x2-x4 = mw*1.12;

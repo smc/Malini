@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import List
 from itertools import product
-from ufoLib2.objects import Font, Glyph, Anchor, Component
+from ufoLib2.objects import Font, Glyph, Anchor, Component, Guideline
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
@@ -915,6 +915,10 @@ class MalayalamFont(Font):
             int(self.info.xHeight+12), int(self.info.xHeight+42),
             int(self.info.xHeight-60), int(self.info.xHeight-30),
             int(self.info.ascender-24), int(self.info.ascender+24)
+        ]
+        self.info.guidelines=[
+            Guideline(name='xheight', y=self.info.xHeight),
+            Guideline(name='mid', y=self.info.xHeight/2)
         ]
         # self.info.postscriptFamilyBlues = []
         # self.info.postscriptFamilyOtherBlues = []

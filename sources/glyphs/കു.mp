@@ -3,7 +3,7 @@ beginglyph;
 p:=0;
 clearxy;
 z0=(mw/2, 0.5m);
-z1=(x0 + mw/3, m-thick*0.8/4);
+z1=(x0 + mw/3, m);
 z2=(x1 + mw/3, (y1 + y3)/2);
 z3=(x2 - mw/3, y2 - m/2 + thick*0.8/4);
 z4=(x3 - mw/3, y0);
