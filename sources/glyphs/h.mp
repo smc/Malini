@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-
 p:=0;
 z0=(0, X);
 z1=(x0  ,0);
@@ -30,7 +29,6 @@ p:=p+1;
 strokes[p]:=paths[p] := serif_bottom_left shifted point 1 of paths[0];
 p:=p+1;
 strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[0];
-
 
 p:=p+1;
 strokes[p]:=paths[p] := serif_bottom_right shifted point infinity of paths[1];

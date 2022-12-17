@@ -28,13 +28,18 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0= point 1.8 of paths[0];
-z1= point 0 of paths[1];
-paths[p] = z0{dir -20}..{dir 190}z1;
+z0= point 1.8 of paths[p-2];
+z1= (xpart point 2.1 of paths[p-2] , ypart point 1 of paths[p-2]);
+z2= point 0 of paths[p-1];
+
+paths[p] = z0{dir -10}..z1{dir -110}..{dir 200}z2;
 pen_stroke(
-    nib(middle_down_nib rotated 20)(0)
-    nib(end_nib rotated -45)(1)
+    nib(end_nib scaled 0.8 rotated terminalangle 0 of paths[p]  )(0)
+    nib(middle_down_nib )(1)
+    nib(end_nib rotated terminalangle 2 of paths[p] )(2)
 )(paths[p])(strokes[p]);
+
+
 
 p:=p+1;
 clearxy;

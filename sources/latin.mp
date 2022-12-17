@@ -15,7 +15,6 @@ enddef;
 
 vardef l_vstem =
     clearxy;
-    path stem;
     z0=(0,X);
     z1=(x0,X/2);
     z2=(x1, 0);
@@ -80,7 +79,13 @@ vardef serif_top_left =
     z2=(x1 - u/2, y1);
     z3=(x2, y2 + serif_thickness);
     z4=(0, 0);
-    reverse (z0{up}..{left}z1--z2---z3--z4--cycle)
+    path serif_path;
+    serif_path := z0{up}..{left}z1--z2---z3--z4--cycle;
+    if soften > 0 :
+        reverse soften_nodes(serif_path,cornerradius)(2, 3)
+    else:
+        reverse serif_path
+    fi
 enddef;
 
 vardef serif_bottom_left =
