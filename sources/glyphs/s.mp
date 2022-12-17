@@ -22,24 +22,28 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 % Serif
+
 p:=p+1;
 clearxy;
-z0=(xpart(point 0 of paths[0]) , s);
-z1=(x0, ypart(point 0 of paths[0])  - thick/5);
-paths[p]=z0---z1;
+z0=(x1 - sw/10, (y1+y2)/2);
+z1=(xpart(point 0 of paths[0]), s);
+z2=(x1, ypart(point 0 of paths[0])  - thin/4);
+paths[p]=z0{right}..{up}z1--z2;
 pen_stroke(
-    nib(middle_down_nib scaled 2/3 rotated terminalangle 1 of paths[p])(0,1)
+    nib(thin_vertical_nib rotated terminalangle 0 of paths[p])(0 )
+    nib(thin_vertical_nib )(1,2 )
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[0]), 0);
-z1=(x0, ypart(point infinity of paths[0])+thick/5);
-paths[p]=z0---z1;
+z0=(x1 + sw/10, (y1+y2)/2);
+z1=(xpart(point infinity of paths[0]), 0);
+z2=(x1, ypart(point infinity of paths[0])+thick/5);
+paths[p]=z0{left}..{down}z1--z2;
 pen_stroke(
-    nib(middle_down_nib scaled 2/3 rotated terminalangle 1 of paths[p])(0,1)
+    nib(thin_vertical_nib rotated terminalangle 0 of paths[p])(0 )
+    nib(thin_vertical_nib )(1,2 )
 )(paths[p])(strokes[p]);
-
 
 anchor( "top", (xpart(point 1 of paths[0]), X));
 anchor( "bottom", (xpart(point 1 of paths[0]), 0));

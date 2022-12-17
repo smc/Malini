@@ -22,13 +22,15 @@ pen_stroke(
 % Serif
 p:=p+1;
 clearxy;
-z0=(xpart(point 0 of paths[0]), X);
-z1=(x0, ypart(point 0 of paths[0])-thick/4);
-paths[p]=z0--z1;
+z0=(x1 - sw/10, (y1+y2)/2);
+z1=(xpart(point 0 of paths[0]), X);
+z2=(x1, ypart(point 0 of paths[0])  - thin/4);
+paths[p]=z0{right}..{up}z1--z2;
 pen_stroke(
-    nib(end_nib scaled 0.8)(0)
-    nib(middle_down_nib scaled 0.8)(1)
+    nib(serif_nib rotated terminalangle 0 of paths[p])(0 )
+    nib(serif_nib )(1,2 )
 )(paths[p])(strokes[p]);
+
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
 anchor( "bottom", (xpart(point 3 of paths[0]), 0));
 endglyph;

@@ -47,6 +47,7 @@ vardef thick_horizontal_nib = fix_nib(0, thick, 0) enddef;
 vardef thin_horizontal_nib = fix_nib(0, thick, 0) rotated -45 enddef;
 vardef thick_vertical_nib = thick_nib enddef;
 vardef thin_vertical_nib = thin_nib enddef;
+vardef serif_nib = thin_nib enddef;
 
 vardef terminalnib =
     if terminalround = 0:

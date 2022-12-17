@@ -12,7 +12,7 @@ z8 = (x7, y2);
 p:=0;
 paths[0] = z0--z2 ;
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+    nib(thin_vertical_nib)(0,1)
 )(paths[0])(strokes[0]);
 
 p:=p+1;
@@ -38,11 +38,11 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0] ;
+strokes[p]:=paths[p] := serif_top_left shifted (point 0 of paths[0]  + (thin/2, 0));
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point 2 of paths[0];
+strokes[p]:=paths[p] := serif_bottom_left shifted (point 2 of paths[0] + (thin/2, 0));
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point 2 of paths[0];
+strokes[p]:=paths[p] := serif_bottom_right shifted (point 2 of paths[0] - (thin/2, 0));
 
 p:=p+1;
 strokes[p]:=paths[p] := serif_top_right shifted point 2 of paths[2];

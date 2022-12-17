@@ -4,39 +4,57 @@ p:=0;
 z0= (thick/2, X);
 z1=( x0, X/2);
 z2=( x1, 0);
-z3 = (x0, y0);
-z4 = (x3 + 0.66*X/2, y1);
-z5 = (x4 + 0.66*X/2, y2);
-z6 = z5;
-z7 = (x6, y1);
-z8 = (x6, y0);
-paths[p] = z0{down}..z1..{down} z2 ;
+
+
+paths[p] = z0--z1--z2 ;
 pen_stroke(
     nib(thin_vertical_nib)(0,1,2)
 )(paths[0])(strokes[0]);
 p:=p+1;
-paths[p] = z3--z4--z5;
+
+z3 = (x0, y0);
+z4 = (x3 + 0.66*X/2, y1);
+z5 = (x4 + 0.66*X/2, y2 + thin*1.5);
+paths[p] = z3--z5;
 pen_stroke(
-    nib(thick_vertical_nib)(0,1,2)
+    nib(thick_vertical_nib scaled 1.5)(0)
+    nib(thick_vertical_nib scaled 1.75 rotated 90)(1)
 )(paths[1])(strokes[1]);
 p:=p+1;
-paths[p] = z6{up}..z7..{up}z8;
+z6 = (x5 -thin/2, thin*1.5);
+z7 = (x6, y1);
+z8 = (x6, y0);
+paths[p] = z6--z7--z8;
 pen_stroke(
     nib(thin_vertical_nib)(0,1,2)
 )(paths[2])(strokes[2]);
 
 % Serifs
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0] ;
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point 2 of paths[0];
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point 2 of paths[0];
+strokes[p]:=paths[p] := serif_top_left shifted (point 0 of paths[0] +  (thin/2, 0));
+
 
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_left shifted point 2 of paths[2];
+clearxy;
+z0=(-thin/2 + thin/2, y1+ thick/2);
+z1 = (- thick/2 - 3/4u , thin/2);
+z2 = (+ thick/2 + 3/4u , y1);
+z3 = (thin/2 - thin/2, y0);
+paths[p] = z0{down}..{left}z1 -- z2{left}..{up}z3 ;
+paths[p] := paths[p] shifted (point 2 of paths[0]);
+pen_stroke(
+     nib(serif_nib rotated terminalangle 0  of paths[p])(0)
+     nib(serif_nib rotated terminalangle 1  of paths[p])(1)
+     nib(serif_nib rotated terminalangle 2  of paths[p])(2)
+     nib(serif_nib rotated terminalangle 3  of paths[p])(3)
+)(paths[p])(strokes[p]);
+
+
+
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_right shifted point 2 of paths[2];
+strokes[p]:=paths[p] := serif_top_left shifted (point 2 of paths[2] +  (thin/2, 0));
+p:=p+1;
+strokes[p]:=paths[p] := serif_top_right shifted (point 2 of paths[2] -  (thin/2, 0));
 
 
 anchor( "top", (xpart(point 1 of paths[1]), 1.2X));
