@@ -69,7 +69,7 @@ $(FONTSDIR)/%/ttf: %.designspace
 		--verbose WARNING \
 		--output-dir $@  \
 		--output ttf  \
-		--optimize-cff 1
+		--optimize-cff 0
 	$(PY) tools/fix_font.py $(FONTSDIR)/$*/ttf/*.ttf
 
 # Create otf instances if a designspace exist
@@ -80,10 +80,16 @@ $(FONTSDIR)/%/otf : %.designspace
 		--filter DecomposeTransformedComponentsFilter  \
 		--filter "ufo2ft.filters.dottedCircleFilter::DottedCircleFilter(pre=True, dots=10)" \
 		--interpolate  \
-		--optimize-cff 1 \
+		--optimize-cff 0 \
 		--output-dir $@ \
 		--output otf
 	$(PY) tools/fix_font.py $@/*.otf
+	for f in $@/*.otf; do \
+		echo "Autohinting $(basename $${f})"; \
+		psautohint $${f} -o $${f}.hinted; \
+		python -m cffsubr $${f}.hinted -o $${f}; \
+		rm $${f}.hinted; \
+	done
 
 # Create ttf variablefont from the given designspace
 $(FONTSDIR)/%/ttf-variable: %.designspace
