@@ -74,10 +74,11 @@ enddef;
 
 vardef serif_top_left =
     clearxy;
-    z0=(x4-thick/2, y3-u );
-    z1=(x0 - u/2, y0/3);
+    serif_thickness := thin * 1.2 * 2/3;
+    z0=(x4-thick/2, y4 - u/4 - serif_thickness );
+    z1=(x0 - u/4, y0  + u/4);
     z2=(x1 - u/2, y1);
-    z3=(x2, y4);
+    z3=(x2, y2 + serif_thickness);
     z4=(0, 0);
     reverse (z0{up}..{left}z1--z2---z3--z4--cycle)
 enddef;
@@ -104,14 +105,14 @@ enddef;
 
 vardef serif_top_left_slanted =
     clearxy;
-    z0= (thin*1.2*sind(45)/2, thin*1.2*sind(45)/2 );
+    z0= (thick/2-thin*1.2*sind(45)/2, thin*1.2*sind(45)/2 );
     z1= (x0-thick/2 - u, y0-thick/2);
     z0{dir -135}..{left}z1
 enddef;
 
 vardef serif_bottom_right_slanted =
     clearxy;
-    z0= (-thin*1.2*sind(45)/2, -thin*1.2*sind(45)/2 );
+    z0= ( - thick/2 + thin*1.2*sind(45)/2, -thin*1.2*sind(45)/2 );
     z1= (x0+thick/2+ u, y0+thick/2);
     z0{dir 45}..{right}z1
 enddef;
