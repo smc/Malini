@@ -25,8 +25,7 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point 1 of paths[1];
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[1];
+paths[p] := serif_bottom_thick shifted (point infinity of paths[1]);
+strokes[p] := serif_stroke(paths[p]);
 
 endglyph;

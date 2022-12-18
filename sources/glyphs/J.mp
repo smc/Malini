@@ -17,11 +17,11 @@ pen_stroke(
 
 %serif
 p:=p+1;
-paths[p] := serif_top_left shifted (point 0 of paths[p-1]);
-strokes[p] := paths[p];
+paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 lbearing:=2lbearing;
-
 rbearing:=2rbearing;
+
 anchor( "top", (xpart(point 0 of paths[0]), X));
 endglyph;

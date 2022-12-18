@@ -11,7 +11,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0 = (xpart (point 0 of paths[0]), X-thick*sind(55)/2);
+z0 = (xpart (point 0 of paths[0]), X-thin/2);
 z1 = (x0 + Xw/4, y0);
 z2 = (x1 + Xw/3.5, (y1+y3)/2);
 z3 = (x1, y4);
@@ -19,7 +19,7 @@ z4 = point 0.6 of paths[0];
 paths[p]  = z0--z1{right}..z2{down}..{left}z3--z4;
 
 pen_stroke(
-    nib(top_nib)(0,1)
+    nib(thin_nib rotated 90)(0,1)
     nib(end_nib rotated 90)(3,4)
     nib(middle_down_nib)(2)
     ignore_directions(2)
@@ -27,24 +27,12 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0];
-p:=p+1;
+paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
-clearxy;
-z0=(-thick/2 + thin/2, y1+ thick/2);
-z1 = (- thick/2 - 3/4u , thin/2);
-z2 = (+ thick/2 + 3/4u , y1);
-z3 = (thick/2 - thin/2, y0);
-paths[p] = z0{down}..{left}z1 -- z2{left}..{up}z3 ;
-paths[p] := paths[p] shifted (point 1 of paths[0]);
-pen_stroke(
-     nib(serif_nib rotated terminalangle 0  of paths[p])(0)
-     nib(serif_nib rotated terminalangle 1  of paths[p])(1)
-     nib(serif_nib rotated terminalangle 2  of paths[p])(2)
-     nib(serif_nib rotated terminalangle 3  of paths[p])(3)
-)(paths[p])(strokes[p]);
-
+paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 
 endglyph;

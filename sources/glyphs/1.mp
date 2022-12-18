@@ -22,9 +22,9 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point 1 of paths[0];
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point 1 of paths[0];
+paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
+
 lbearing:=2lbearing;
 
 lbearing:=2*lbearing;

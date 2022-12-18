@@ -33,15 +33,12 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point infinity of paths[0];
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point infinity of paths[0];
-
+paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_left shifted point infinity of paths[2];
-p:=p+1;
-strokes[p]:=paths[p] := serif_bottom_right shifted point infinity of paths[2];
+paths[p] := serif_bottom_thick shifted (point infinity of paths[2]);
+strokes[p] := serif_stroke(paths[p]);
 
 rbearing:=0.5*rbearing;
 lbearing:=0;

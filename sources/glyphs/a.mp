@@ -6,7 +6,7 @@ p:=0;
 z0=(0, y1-s/6);
 z1=((x0+x2)/2, s-thick*sind(45)/4);
 z2=(x0+0.75sw, 2/3s);
-z3=(x2, thick/4);
+z3=(x2, thick/2);
 paths[p] := z0{dir 60}..z1..z2---z3;
 
 pen_stroke(
@@ -41,11 +41,8 @@ pen_stroke(
 
 
 p:=p+1;
-paths[p] := serif_bottom_right_slanted shifted point infinity of paths[0];
-pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(end_nib scaled 3/4 rotated terminalangle 1 of paths[p])(1)
-)(paths[p])(strokes[p]);
-rbearing:=0;
+paths[p] := serif_bottom_slanted shifted point infinity of paths[0];
+strokes[p] := serif_stroke_slanted(paths[p]);
+
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

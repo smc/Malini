@@ -16,13 +16,12 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_left shifted point 0 of paths[0];
+paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
+
 p:=p+1;
-strokes[p]:=paths[p] := serif_top_right shifted point 0 of paths[0];
-p:=p+1;
-strokes[p]:=paths[p] := serif_top_left xscaled 0.75 shifted point infinity of paths[0];
-p:=p+1;
-strokes[p]:=paths[p] := serif_top_right xscaled 0.75 shifted point infinity of paths[0];
+paths[p] := serif_top_thin shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 anchor( "top", (xpart(point 2 of paths[0]), 1.2X));
 endglyph;

@@ -40,14 +40,6 @@ vardef n_arch =
     z0{dir 60}..z1{right}..z2---z3
 enddef;
 
-vardef u_arch =
-    reverse n_arch xyscaled(-1, -1) shifted(xpart(point 4 of n_arch), s)
-enddef;
-
-vardef r_arch =
-    (n_arch cutafter point 1.3 of n_arch)
-enddef;
-
 % For the loops of p and b
 vardef p_loop =
     clearxy;
@@ -71,30 +63,74 @@ vardef a_loop =
     z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4
 enddef;
 
-vardef serif_top_left =
+vardef serif_bottom_thick =
     clearxy;
-    serif_thickness := thin * 1.2 * 2/3;
-    z0=(x4-thick/2, y4 - u/4 - serif_thickness );
-    z1=(x0 - u/4, y0  + u/4);
-    z2=(x1 - u/2, y1);
-    z3=(x2, y2 + serif_thickness);
-    z4=(0, 0);
-    path serif_path;
-    serif_path := z0{up}..{left}z1--z2---z3--z4--cycle;
-    if soften > 0 :
-        reverse soften_nodes(serif_path,cornerradius)(2, 3)
-    else:
-        reverse serif_path
-    fi
+    z0=(-thick/2 + thin/2, y1+ thick/2);
+    z1 = (- thick/2 - 3/4u , thin/2);
+    z2 = (+ thick/2 + 3/4u , y1);
+    z3 = (thick/2 - thin/2, y0);
+    z0{down}..{left}z1 -- z2{left}..{up}z3
 enddef;
 
-vardef serif_bottom_left =
-    reverse serif_top_left xyscaled(1,-1)
+vardef serif_top_slanted =
+    clearxy;
+    z0 = (thick/2, thin/2);
+    z1 = (x0 - thick/4, y0);
+    z2 = (x1 - thick/2 - u, y1 - 0.1s);
+    z3 = (-thick + thin/2, y2);
+    z4 = (-thick/2 + thin/2, y3-thin);
+    z5 = (x4, y4-thin);
+
+    z0--z1..{left}z2--z3{right}..{down}z4---z5
 enddef;
 
-vardef serif_top_right =
-    reverse serif_top_left xyscaled(-1,1)
+vardef serif_bottom_slanted =
+    serif_top_slanted rotated 180
 enddef;
+
+
+vardef serif_top_thick =
+    serif_bottom_thick rotated 180
+enddef;
+
+vardef serif_top_thin =
+    serif_bottom_thin rotated 180
+enddef;
+
+vardef serif_stroke (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(serif_nib rotated terminalangle 0  of spath)(0)
+        nib(serif_nib rotated terminalangle 1  of spath)(1)
+        nib(serif_nib rotated terminalangle 2  of spath)(2)
+        nib(serif_nib rotated terminalangle 3  of spath)(3)
+    )(spath)(s_stroke);
+    s_stroke
+enddef;
+
+
+vardef serif_stroke_slanted (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(serif_nib rotated terminalangle 0  of spath)(0, 1)
+        nib(serif_nib rotated terminalangle 2  of spath)(2)
+        nib(serif_nib rotated terminalangle 3  of spath)(3)
+        nib(serif_nib)(4,5)
+    )(spath)(s_stroke);
+    s_stroke
+enddef;
+
+vardef serif_bottom_thin =
+    clearxy;
+    z0=(-thin/2 + thin/2, y1+ thick/2);
+    z1 = (- thick/2 - 3/4u , thin/2);
+    z2 = (+ thick/2 + 3/4u , y1);
+    z3 = (thin/2 - thin/2, y0);
+    z0{down}..{left}z1 -- z2{left}..{up}z3
+enddef;
+
 
 vardef serif_bottom_right =
     reverse serif_top_right xyscaled(1,-1)
@@ -106,13 +142,6 @@ enddef;
 
 vardef serif_hanging_top_right =
    serif_bottom_left crotated(95) shifted  (thick/4, -thick)
-enddef;
-
-vardef serif_top_left_slanted =
-    clearxy;
-    z0= (thick/2-thin*1.2*sind(45)/2, thin*1.2*sind(45)/2 );
-    z1= (x0-thick/2 - u, y0-thick/2);
-    z0{dir -135}..{left}z1
 enddef;
 
 vardef serif_bottom_right_slanted =

@@ -1,44 +1,41 @@
 input glyph;
 beginglyph;
-
+p:=0;
 z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
-
-
-paths[0] = z0{dir -90}..z1..{dir -90}z2; ;
+paths[p] = z0{dir -90}..z1..{dir -90}z2; ;
 pen_stroke(
    nib(thick_vertical_nib)(0,1,2)
-)(paths[0])(strokes[0]);
+)(paths[p])(strokes[p]);
 
-
+p:=p+1;
 z3 = (x0, y0 - thin/2);
 z4 = (x3 + Xw/1.6, y3);
-
-
-paths[1] = z3--z4;
+paths[p] = z3--z4;
 pen_stroke(
     nib(thin_nib rotated 90)(0,1)
-)(paths[1])(strokes[1]);
+)(paths[p])(strokes[p]);
 
+p:=p+1;
 z5 = (x0, y1);
 z6 = (x5 +  Xw/2, y5);
 paths[2] = z5--z6;
 pen_stroke(
    nib(thin_nib rotated 90)(0,1)
-)(paths[2])(strokes[2]);
+)(paths[p])(strokes[p]);
 
+p:=p+1;
 z7 = (xpart(point 2 of paths[0]), thin/2);
 z8 = (x4, y7);
-paths[3] = z7--z8;
-
+paths[p] = z7--z8;
 pen_stroke(
    nib(thin_nib rotated 90)(0,1)
-)(paths[3])(strokes[3]);
+)(paths[p])(strokes[p]);
 
 % Serifs
 
-p:=4;
+p:=p+1;
 clearxy;
 z0=(-thick/2 + thin/2, y1 -thick/2);
 z1 = (- thick/2 - 3/4u , -thin/2);
@@ -53,20 +50,9 @@ pen_stroke(
      nib(serif_nib rotated terminalangle 3  of paths[p])(3)
 )(paths[p])(strokes[p]);
 
-p:=5;
-clearxy;
-z0=(-thick/2 + thin/2, y1+ thick/2);
-z1 = (- thick/2 - 3/4u , thin/2);
-z2 = (+ thick/2 + 3/4u , y1);
-z3 = (thick/2 - thin/2, y0);
-paths[p] = z0{down}..{left}z1 -- z2{left}..{up}z3 ;
-paths[p] := paths[p] shifted (point 2 of paths[0]);
-pen_stroke(
-     nib(serif_nib rotated terminalangle 0  of paths[p])(0)
-     nib(serif_nib rotated terminalangle 1  of paths[p])(1)
-     nib(serif_nib rotated terminalangle 2  of paths[p])(2)
-     nib(serif_nib rotated terminalangle 3  of paths[p])(3)
-)(paths[p])(strokes[p]);
+p:=p+1;
+paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
 
 clearxy;
 p:=p+1;
@@ -78,8 +64,9 @@ pen_stroke(
     nib(serif_nib scaled 1.5 rotated terminalangle 1 of paths[p])(1 )
 )(paths[p])(strokes[p]);
 
-strokes[7]:=paths[7] := serif_top_left rotated -90 shifted (point 1 of paths[2] - (0, thin/2));
-strokes[8]:=paths[8] := serif_top_right rotated -90 shifted( point 1 of paths[2] + (0, thin/2));
+p:=p+1;
+paths[p] := serif_bottom_thin rotated 90 shifted (point infinity of paths[2]);
+strokes[p] := serif_stroke(paths[p]);
 
 clearxy;
 p:=9;
