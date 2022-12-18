@@ -309,12 +309,11 @@ vardef right_arch_with_eye =
     path l;
     z0 = (thin/2, 0);
     z1=(x0, 2/3m);
-    z2=((x1+x3)/2, m);
-    x3-x1 = 0.8mw;
-    z3=(x3, m/2);
-    z4= (x3 - mw/4, thick*0.5/2);
+    z2=(x1 + mw/2.25, m);
+    z3=(x2 + mw/2.25, m/2);
+    z4=(x3 - mw/3, thick*0.5/2);
     z5=(x4 - mw/4, y4 + m/3.2);
-    l=z0---z1..z2..z3{dir -85}..z4..{dir 80}z5;
+    l=z0---z1..z2..z3..z4..{dir 80}z5;
     l..point 2.8 of l
 enddef;
 
@@ -322,12 +321,12 @@ vardef right_arch_with_tail =
     clearxy;
     z0 = (thin/2, 0);
     z1= ( x0 , 2/3m);
-    z2= ( x1 + mw/2, m);
-    z3= ( x2 + mw/2.5, m/2);
+    z2= ( x1 + mw/2.25, m);
+    z3= ( x2 + mw/2.25, m/2);
     z4= ( x3 - mw/3, thick*0.5/2);
     z5= ( x4 - mw/4, y4 + m/3);
     z6= ( x4 + mw/4, y3 + m/6);
     z7= ( x5 + mw*0.9, (y6 + y8)/2);
-    z8= ( x4, y6-m);
+    z8= ( x5 + mw*0.2, y6-m);
     z0---z1..z2..z3..z4..z5..z6..z7..z8
 enddef;

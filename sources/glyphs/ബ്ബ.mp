@@ -53,7 +53,7 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0 = point .5 of paths[p-2];
-z1 = (x0 - mw/3, -descent) ;
+z1 = (x0 - mw/3, -descent*0.8) ;
 z2 = (xpart(point 2 of paths[p-2]), y1) ;
 paths[p] := z0{down}..z1--z2;
 pen_stroke(
@@ -62,7 +62,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point infinity of paths[p-1] - (0, thick*0.6/2);
+z0=point infinity of paths[p-1] - (0, thick*0.5/2);
 z1 = point 1.6 of paths[p-2];
 paths[p] := z0--z1;
 pen_stroke(
