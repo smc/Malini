@@ -911,8 +911,15 @@ class MalayalamFont(Font):
 
         # postscript metrics
         self.info.postscriptBlueValues= [
-            -24, 0,
-            int(self.info.xHeight-12), int(self.info.xHeight+12),
+            # Base zone
+            -5, 5,
+            # xheight zone
+            int(self.info.xHeight-5), int(self.info.xHeight+5),
+            # overshoot zone
+            int(self.info.xHeight+24), int(self.info.xHeight+48),
+            # below-curves zone
+            -10, -30,
+            # Midline
             int(self.info.xHeight/2-12), int(self.info.xHeight/2+12),
             int(self.info.ascender-12), int(self.info.ascender+12),
             int(-self.info.descender), int(-self.info.descender+12)
@@ -923,7 +930,10 @@ class MalayalamFont(Font):
         ]
         # self.info.postscriptFamilyBlues = []
         # self.info.postscriptFamilyOtherBlues = []
-        # self.info.postscriptOtherBlues = []
+        self.info.postscriptOtherBlues = [
+            55, 75,
+            int(self.info.xHeight-48), int(self.info.xHeight-24),
+        ]
         # self.info.postscriptSlantAngle = 0
         self.info.postscriptStemSnapH = [42]
         self.info.postscriptStemSnapV= [92]
