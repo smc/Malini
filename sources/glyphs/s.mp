@@ -2,11 +2,11 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0 = (2/3sw, y1 - 0.15s);
+z0 = (0.6sw, y1 - 0.15s);
 z1 = ((x0+x2)/1.5, s-thick/3);
 z2 = (x6+0.05sw, y1 - .2s);
 z3 = ((x2+x4)/2, (y2 + y4)/2);
-z4 = (x0, y5 + .2s);
+z4 = (2/3sw, y5 + .2s);
 z5 = ((x4+x6)/2.5, thick/4);
 z6 = (0, y5+0.15s);
 
