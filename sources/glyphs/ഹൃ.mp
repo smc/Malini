@@ -1,12 +1,8 @@
 input glyph;
 beginglyph;
-paths[0] = pa_mouth;
-pen_stroke(
-    nib(thicknib)(0, 2, 4, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+p:=0;
+paths[p] := pa_mouth;
+strokes[p] := va_mouth_stroke(paths[p]);
 
 z5=point infinity of paths[0];
 z6=(x5 + 0.75mw, y5);

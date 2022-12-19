@@ -2,13 +2,7 @@ input glyph;
 beginglyph;
 p=0;
 paths[p] :=pa_mouth shifted (0, 0.4m);
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib)(4)
-)(paths[p])(strokes[p]);
+strokes[p] := va_mouth_stroke(paths[p]);
 p:=p+1;
 clearxy;
 z0=  (0,0);

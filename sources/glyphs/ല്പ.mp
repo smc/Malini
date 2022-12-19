@@ -51,7 +51,8 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-paths[p] :=ra scaled 0.6;
+paths[p] := pa_mouth;
+
 
 p:=p+1;
 clearxy;
@@ -60,7 +61,7 @@ z1=(x0 + 0.75mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point 4 of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
+paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
 
 p:=p+1;
 clearxy;
@@ -74,14 +75,7 @@ paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
 paths[p-2] := paths[p-2] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
 paths[p-1] := paths[p-1] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
 paths[p] := paths[p] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.77 ;
-
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib)(4)
-)(paths[p-2])(strokes[p-2]);
+strokes[p-2] := va_mouth_stroke(paths[p-2]);
 pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(thin_horizontal_nib)(1)
