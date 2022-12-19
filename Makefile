@@ -62,10 +62,10 @@ Malini: $(FONTSDIR)/Malini/ttf-variable\
 # Create ttf instances if a designspace exist
 $(FONTSDIR)/%/ttf: %.designspace
 	fontmake --mm-designspace $*.designspace \
-		--interpolate \
-		--flatten-components  \
 		--filter DecomposeTransformedComponentsFilter  \
 		--filter "ufo2ft.filters.dottedCircleFilter::DottedCircleFilter(pre=True, dots=10)" \
+		--interpolate \
+		--flatten-components  \
 		--verbose WARNING \
 		--output-dir $@  \
 		--output ttf  \
@@ -76,9 +76,9 @@ $(FONTSDIR)/%/ttf: %.designspace
 $(FONTSDIR)/%/otf : %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--verbose WARNING \
-		--flatten-components  \
 		--filter DecomposeTransformedComponentsFilter  \
 		--filter "ufo2ft.filters.dottedCircleFilter::DottedCircleFilter(pre=True, dots=10)" \
+		--flatten-components  \
 		--interpolate  \
 		--optimize-cff 0 \
 		--output-dir $@ \
@@ -99,7 +99,6 @@ $(FONTSDIR)/%/ttf-variable: %.designspace
 		--flatten-components \
 		--verbose WARNING \
 		--output-dir $@ \
-		--optimize-cff 1 \
 		--output variable
 	$(PY) tools/fix_font.py $@/*.ttf
 	$(PY) tools/stat.py $* $@/*.ttf
@@ -107,10 +106,10 @@ $(FONTSDIR)/%/ttf-variable: %.designspace
 # Create otf variablefont from the given designspace
 $(FONTSDIR)/%/otf-variable : %.designspace
 	fontmake --mm-designspace $*.designspace \
-		--output-dir $@ \
-		--flatten-components \
 		--filter DecomposeTransformedComponentsFilter  \
 		--filter "ufo2ft.filters.dottedCircleFilter::DottedCircleFilter(pre=True, dots=10)" \
+		--flatten-components \
+		--output-dir $@ \
 		--verbose WARNING \
 		--optimize-cff 1 \
 		--output variable-cff2

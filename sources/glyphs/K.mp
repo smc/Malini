@@ -39,4 +39,12 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
 strokes[p] := serif_stroke(paths[p]);
 
+p:=p+1;
+paths[p] := serif_top_thick shifted (point infinity of paths[1] - (thick/2,0));
+strokes[p] := serif_stroke(paths[p]);
+
+p:=p+1;
+paths[p] := serif_bottom_thick shifted (point infinity of paths[2] - (thick/2,0));
+strokes[p] := serif_stroke(paths[p]);
+
 endglyph;

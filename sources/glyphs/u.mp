@@ -3,7 +3,7 @@ beginglyph;
 p:=0;
 z0=(0, s-thin);
 z1=(x0, 1/3s);
-z2=(0.4*x3, thick/4);
+z2=(0.4*x3, thin*1.2/4);
 z3=(x0 + 0.75sw, 0.4s);
 paths[p] := z0---z1..{right}z2..{dir 60}z3;
 pen_stroke(

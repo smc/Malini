@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 p:=0;
-paths[p] := p_loop xyscaled(-1, 1) shifted (xpart(point 2 of p_loop), 0);
+paths[p] := p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 pen_stroke(
     nib(middle_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(1)
@@ -13,13 +13,15 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(0, s);
-z1=(x0, -descent);
-paths[p] := z0---z1;
+z0=(1/2thin, s);
+z1=(0, 0.85s);
+z2=(x1, -descent);
+paths[p] := z0{dir 225}..{down}z1---z2;
 paths[p] := paths[p] shifted(xpart(point 0 of paths[0]),0);
 
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+    nib(thin_nib)(0)
+    nib(thick_vertical_nib)(1,2)
 )(paths[p])(strokes[p]);
 
 
