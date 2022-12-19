@@ -3,32 +3,6 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
-% Anticlockwise loop
-vardef ml_base_loop_ac =
-    save hr, vr;
-    hr = mw/3; % Horizontal radius
-    vr = m/2; % Vertical radius
-    z0 = (0, m - vr);
-    z1 = (x0 + hr, y0 + vr);
-    z2 = (x1 +  hr,  y0);
-    z3 = (x1,  y2 - vr);
-    z0..z1..z2..z3..cycle
-enddef;
-
-% Clockwise loop
-vardef ml_base_loop_c =
-    clearxy;
-    save hr, vr;
-    right_sweep_corr := 1.2;
-    hr = mw/3; % Horizontal radius
-    vr = m/2; % Vertical radius
-    z0 = (hr, 0);
-    z1 = (x0 - hr, y0 + vr);
-    z2 = (x1 +  hr*right_sweep_corr,  y1 + vr);
-    z3 = (x2 + hr,  y2 - vr);
-    z0..z1..z2..z3..z0
-enddef;
-
 % Clockwise loop
 vardef ml_base_loop_short_c =
     clearxy;
