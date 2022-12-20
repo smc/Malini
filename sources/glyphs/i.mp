@@ -23,6 +23,5 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
 strokes[p] := serif_stroke(paths[p]);
 
-lbearing:=2lbearing;
-rbearing:=0;
+lbearing:=serif_width-lbearing;
 endglyph;

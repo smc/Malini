@@ -29,6 +29,9 @@ Xw  := X * condense; % Width of Latin capital letters
 lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 
+serif_height := thick*0.4;
+serif_width :=  thick/2 + serif_height*2;
+
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thin, thin, 0) enddef;
@@ -47,7 +50,7 @@ vardef thick_horizontal_nib = fix_nib(0, thick, 0) enddef;
 vardef thin_horizontal_nib = fix_nib(0, thick, 0) rotated -45 enddef;
 vardef thick_vertical_nib = thick_nib enddef;
 vardef thin_vertical_nib = thin_nib enddef;
-vardef serif_nib = thin_nib enddef;
+vardef serif_nib = fix_nib(serif_height, 0, 0) enddef;
 
 vardef terminalnib =
     if terminalround = 0:

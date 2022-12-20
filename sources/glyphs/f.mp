@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(x2 + Xw/3, y1-thick/2);
-z1=((x0+x2)/2, X-thick/4);
+z1=((x0+x2)/2, 1.05X-thick/4);
 z2=(x4  , 0.8X);
 z3=(x4, 3/4s);
 z4=(sw/4, 0);
@@ -28,6 +28,4 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
 strokes[p] := serif_stroke(paths[p]);
 
-rbearing:=0.5*rbearing;
-lbearing:=0;
 endglyph;

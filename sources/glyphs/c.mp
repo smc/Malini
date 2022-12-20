@@ -18,6 +18,6 @@ pen_stroke(
     ignore_directions(1, 2, 3)
 )(paths[0])(strokes[0]);
 
-lbearing:=0.75lbearing;
+
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

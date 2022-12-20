@@ -4,14 +4,14 @@ p:=0;
 save r,e;
 r=0.8;
 z0 = (r*sw, 0.5s);
-z1 = ((x0 + x2)/2, s - thick/4);
-z2 = (0, s/2);
-z3 = (x1, thick/4);
-z4 = (x0+thin*1.2/4, y3+ s/4);
-paths[p]:=z0{up}..{left}z1..{down}z2..z3{right}..z4;
+z1 = ((x0 + x2)/2.2, s - thin*1.2/4);
+z2 = (0, 0.45s);
+z3 = (x1, thin*1.2/4);
+z4 = (x0+thick/3, y3+ s/4);
+paths[p]:=z0{up}..{left}z1..z2..z3..z4;
 
 pen_stroke(
-    nib(middle_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(middle_down_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_down_nib)(2)
     nib(top_nib)(1)
     nib(down_nib)(3)
@@ -26,6 +26,6 @@ paths[p]:=z0--z1;
 pen_stroke(
     nib(end_nib rotated 90)(0,1)
 )(paths[p])(strokes[p]);
-lbearing:=0.75lbearing;
+
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

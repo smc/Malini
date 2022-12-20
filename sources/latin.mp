@@ -47,20 +47,20 @@ enddef;
 
 vardef serif_bottom_thick =
     clearxy;
-    z0=(-thick/2 + thin/2, y1+ thick/2);
-    z1 = (- thick/2 - 3/4u , thin/2);
-    z2 = (+ thick/2 + 3/4u , y1);
-    z3 = (thick/2 - thin/2, y0);
+    z0=(-thick/2 + serif_height/2, 2serif_height);
+    z1 = (-serif_width , serif_height/2);
+    z2 = (serif_width , y1);
+    z3 = (thick/2 - serif_height/2, y0);
     z0{down}..{left}z1 -- z2{left}..{up}z3
 enddef;
 
 vardef serif_top_slanted =
     clearxy;
-    z0 = (thick/2, thin/2);
+    z0 = (thick/2, serif_height/2);
     z1 = (x0 - thick/4, y0);
-    z2 = (x1 - thick/2 - u, y1 - 0.1s);
-    z3 = (-thick + thin/2, y2);
-    z4 = (-thick/2 + thin/2, y3-thin);
+    z2 = (-serif_width, y1 - serif_height);
+    z3 = (-thick + serif_height/2, y2);
+    z4 = (-thick/2 + serif_height/2, y3-serif_height);
     z5 = (x4, y4-thin);
 
     z0--z1..{left}z2--z3{right}..{down}z4---z5
@@ -106,10 +106,10 @@ enddef;
 
 vardef serif_bottom_thin =
     clearxy;
-    z0=(-thin/2 + thin/2, y1+ thick/2);
-    z1 = (- thick/2 - 3/4u , thin/2);
-    z2 = (+ thick/2 + 3/4u , y1);
-    z3 = (thin/2 - thin/2, y0);
+    z0=(-thin/2 + serif_height/2,  2serif_height);
+    z1 = (- thick/2 - 3/4u , serif_height/2);
+    z2 = (thick/2 + 3/4u , y1);
+    z3 = (thin/2 - serif_height/2, y0);
     z0{down}..{left}z1 -- z2{left}..{up}z3
 enddef;
 

@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0=(0, X);
+z0=(0, 1.05X);
 z1=(x0,  0);
 paths[p] := z0--z1;
 pen_stroke(
@@ -29,6 +29,6 @@ pen_stroke(
      nib(serif_nib rotated terminalangle 3  of paths[p])(3)
 )(paths[p])(strokes[p]);
 
-lbearing:=2lbearing;
+lbearing:=serif_width-lbearing;
 anchor( "top", (xpart(point 0 of paths[0]), X));
 endglyph;

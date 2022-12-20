@@ -5,7 +5,7 @@ paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 
 p:=0;
 clearxy;
-z0=(0, X);
+z0=(0, 1.05X);
 z1=(x0, thick/2);
 
 paths[p] := z0--z1;
@@ -34,6 +34,5 @@ p:=p+1;
 paths[p] := serif_bottom_slanted shifted point infinity of paths[0] ;
 strokes[p] := serif_stroke_slanted(paths[p]);
 
-rbearing:=0;
 anchor( "top", (xpart(point 1 of paths[1]), X));
 endglyph;

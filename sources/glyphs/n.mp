@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 p:=0;
-z0=(0, s-thin);
+z0=(0, s-serif_height/2);
 z1=(x0, 0);
 paths[p] := z0--z1;
 pen_stroke(
@@ -32,7 +32,7 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[1]);
 strokes[p] := serif_stroke(paths[p]);
 
-lbearing:=2lbearing;
+lbearing:=serif_width-lbearing;
 
 anchor( "top", (xpart(point 1 of paths[1]), X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));

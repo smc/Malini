@@ -2,13 +2,12 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0=(0, s-thin);
+z0=(0, s-serif_height/2);
 z1=(x0, 0);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
-
 
 p:=p+1;
 paths[p] := n_arch shifted(xpart(point 1 of paths[p-1]), 0) xyscaled(0.9, 1);
@@ -47,6 +46,5 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[2]);
 strokes[p] := serif_stroke(paths[p]);
 
-lbearing:=2lbearing;
-rbearing:=0;
+lbearing:=serif_width-lbearing;
 endglyph;

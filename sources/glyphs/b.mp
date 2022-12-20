@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 p:=0;
-z0=(0, X);
+z0=(0, 1.05X);
 z1=(x0, 0.23s);
 paths[p] := z0--z1;
 pen_stroke(
@@ -32,8 +32,6 @@ p:=p+1;
 paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
 strokes[p] := serif_stroke_slanted(paths[p]);
 
-
-lbearing:=2lbearing;
-
+lbearing:=serif_width-lbearing;
 anchor( "top", (xpart(point 1 of paths[1]), X));
 endglyph;
