@@ -150,7 +150,7 @@ function listen() {
         }
         contentArea.innerHTML = testContents[--currentTestIndex];
     });
-    document.querySelectorAll('.controls.align > li').forEach((element) => {
+    document.querySelectorAll('.alignments > span').forEach((element) => {
         element.addEventListener('click', () => {
             contentArea.style.textAlign = element.dataset.align;
         });
@@ -252,6 +252,8 @@ function listen() {
         }
     }).on('change', (color, source, instance) => {
         document.body.style.color = color.toHEXA();
+        document.getElementById('font-fontColor').style.backgroundColor = color.toHEXA();
+
     })
 
     new Pickr({
@@ -274,6 +276,8 @@ function listen() {
         }
     }).on('change', (color, source, instance) => {
         document.body.style.backgroundColor = color.toHEXA();
+        document.getElementById('background-color').style.backgroundColor = color.toHEXA();
+
     })
 
 
@@ -292,7 +296,7 @@ function listen() {
     });
 
 
-    document.getElementById('font-fontColor').style.color = '#FFFFFF'
+    document.getElementById('font-fontColor').style.backgroundColor = '#FFFFFF'
     document.getElementById('background-color').style.backgroundColor = '#2E3440'
 
 }

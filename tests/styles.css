@@ -10,6 +10,9 @@
 
 
 :root {
+  --primary-h: 220;
+  --primary-s: 16%;
+  --primary-l: 22%;
   --weight: 400;
   --slant: 0;
   --width: 100;
@@ -17,6 +20,8 @@
   --font-size: 20px;
   --font-letter-spacing: 0;
   --font-line-height: 1.5;
+  --controls-color: hsl(var(--primary-h), var(--primary-s), 98%);
+  --controls-background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
   color-scheme: light dark;
 }
 
@@ -25,67 +30,99 @@ body {
   color: hsl(60, 100%, 5%);
   background-color:hsl(60, 100%, 97%);
   line-height: 1.2;
+  margin: 0;
+  overflow: hidden;
+}
+
+header {
+  padding: 10px;
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-columns:  1fr 1fr 1fr;
+  gap: 1em;
+  font-size: 10pt;
+  background-color: var(--controls-background-color);
+  color: var(--controls-color);
+  align-items: center;
+
+}
+
+.font-colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.text-samples {
+  display: grid;
+  grid-template-columns: 3fr 7fr 2fr;
+  align-items: center;
+}
+
+.opentype-features > div {
+  line-height: 2;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  align-items: center;
+  max-width: 400px;
 }
 
 main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 20rem;
+  grid-template-columns: 1fr;
   overflow: auto;
   height: 100%;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  align-content: start;
   text-align: left;
   font-family: var(--font), sans;
   line-height: var(--font-line-height);
   letter-spacing: var(--font-letter-spacing);
   font-size: var(--font-size);
-  padding: 0.5em;
+  padding: 4rem;
   margin-left: auto;
   margin-right: auto;
   outline: none;
-  max-width: 70ch;
+  max-width: 75%;
+  width: 75%;
   font-variation-settings: 'wght' var(--weight), 'slnt' var(--slant), 'wdth' var(--width);
+  hyphens: auto;
+  -webkit-hyphenate-character: '';
 }
 
-
-.tools {
-  display: flex;
-  flex-direction: column;
-  font-family: monospace;
-  overflow: auto;
-  font-size: 1em;
-  position: absolute;
-  top: 0;
-  right: 1em;
+.font-name {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  align-items: center;
 }
 
-.controls {
-  margin: 0;
-  padding: 0;
-  background: inherit;
+.text-align {
+  display: grid;
+  grid-template-columns: 4fr 9fr;
+  align-items: center;
 }
 
-.controls.testcontent li {
-  cursor: pointer;
-  text-align: left;
-  padding: 0 5px 0 0;
-}
-
-.controls.align {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-}
-
-.controls.align li {
+.text-align .alignments span {
+  background-color: hsl(var(--primary-h), var(--primary-s), 35%);
   width: 1.2em;
   height: 1.2em;
+  padding: 4px;
   cursor: pointer;
   margin-right: 1em;
+  border: .5px solid hsla(var(--primary-h), var(--primary-s), 98%, 0.5);
+  display: inline-grid;
+  border-radius: 4px;
+}
+
+.sample-nav svg,
+.text-align svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: var(--controls-color);
 }
 
 footer {
@@ -95,36 +132,10 @@ footer {
   color: white;
 }
 
-.outline-text {
-  color: orange;
-  line-height: 1.5;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.rows {
+.cols-3 {
   display: grid;
-  column-gap: 1px;
-  row-gap: 1em;
-  margin: 1em 0;
+  grid-template-columns: 3fr 6fr 1fr;
   align-items: center;
-}
-
-.rows > div {
-  display: contents;
-  margin-bottom: 1em;
-}
-
-.rows-2 {
-  grid-template-columns: 2fr 5fr;
-}
-
-.rows-3 {
-  grid-template-columns: 2fr 2fr 1fr;
-}
-
-.rows-1 {
-  grid-template-columns: auto;
 }
 
 .val-input {
@@ -149,11 +160,11 @@ input[type="range"] {
 label {
   white-space: nowrap;
 }
-select {
-  color: inherit;
-}
-option {
-  color: initial;
+
+::-webkit-scrollbar {
+  /* height: 12px; */
+  width: 5px;
+  background: var(--controls-background-color);
 }
 
 @media print {
@@ -166,5 +177,16 @@ option {
   }
   main {
     grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    padding: 1px;
+    width: 99%;
+    max-width: 99%;
   }
 }
