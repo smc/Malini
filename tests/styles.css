@@ -27,8 +27,8 @@
 
 body {
   font-size: 100%;
-  color: hsl(60, 100%, 5%);
-  background-color:hsl(60, 100%, 97%);
+  color: var(--controls-background-color);
+  background-color: var(--controls-color);
   line-height: 1.2;
   margin: 0;
   overflow: hidden;
@@ -108,20 +108,19 @@ main {
 
 .text-align .alignments span {
   background-color: hsl(var(--primary-h), var(--primary-s), 35%);
-  width: 1.2em;
-  height: 1.2em;
+  width: 20px;
+  height: 20px;
   padding: 4px;
   cursor: pointer;
   margin-right: 1em;
-  border: .5px solid hsla(var(--primary-h), var(--primary-s), 98%, 0.5);
   display: inline-grid;
   border-radius: 4px;
 }
 
 .sample-nav svg,
 .text-align svg {
-  width: 1.2em;
-  height: 1.2em;
+  width: 20px;
+  height: 20px;
   fill: var(--controls-color);
 }
 
@@ -157,6 +156,11 @@ input[type="range"] {
   border: 0;
 }
 
+.sample-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 label {
   white-space: nowrap;
 }
@@ -189,4 +193,21 @@ label {
     width: 99%;
     max-width: 99%;
   }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+  }
+  header {
+    align-items: start;
+    height: 100%;
+    align-content: start;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    line-height: 2;
+    order: 2;
+  }
+
 }
