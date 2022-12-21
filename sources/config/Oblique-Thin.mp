@@ -1,2 +1,2 @@
-input ./config/Thin;
 input ./config/Oblique;
+input ./config/Thin;
