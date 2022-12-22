@@ -70,7 +70,7 @@ vardef right_tha_arch =
     z5 = ( x4 - mw/4, y3);
     z6 = ( x5 + mw/2, y2); % second top
     z7 = ( x6 + mw/2, y3);
-    z8 = ( x7 - mw/3, y0);
+    z8 = ( x7 - mw/4, y0);
     z0---z1..z2..z3..{left}z4{left}..z5..z6{right}..z7..z8
 enddef;
 
@@ -91,7 +91,7 @@ enddef;
 
 vardef left_tha_arch =
     clearxy;
-    z0= (x1 + mw/3, 0);
+    z0= (x1 + mw/4, 0);
     z1= (0, y0 + mw/2);
     z2 = ( x1 + mw/2, m); % top
     z3 = ( x2 + mw/2, y1);
@@ -107,7 +107,7 @@ vardef left_arch_dha =
     clearxy;
     z0=(x1+mw/4, m);
     z1=(0, y0 - m/2);
-    z2=((x1+x3)/2, y1 - m/2 + thick*0.6/2);
+    z2=((x1+x3)/2, 0);
     z3=(x2 +  mw/3, 1/3m);
     z4=(x3, m);
      z0..z1..z2..z3---z4
@@ -117,7 +117,7 @@ vardef right_arch_dha =
     clearxy;
     z0=(thin/2, m);
     z1=(x0, 1/3m);
-    z2=(x1 +  mw/3, thick*0.6/2);
+    z2=(x1 +  mw/3, 0);
     z3=(x2 +  mw/3, y2 + m/2);
     z4=(x3 -  mw/4, m);
     z0---z1..z2..z3..z4
@@ -212,10 +212,10 @@ enddef;
 
 vardef va_mouth =
     clearxy;
-    z0=(x1 + mw/3 , 0);
+    z0=(x1 + mw/4 , thin/4);
     y2 - y1 = y2/2;
     z1=(0, y1);
-    z2=((x1+x3)/2, m-thick*sind(55)/4);
+    z2=((x1+x3)/2, m);
     x3-x1 = mw*0.95;
     z3=(x3, y1);
     z4=(x3 - mw/3 + thin*1.2/2, thin/2);
@@ -239,8 +239,19 @@ vardef va_mouth_stroke (expr va_path) =
 enddef;
 
 vardef pa_mouth =
-   va_mouth scaled 0.6
+    clearxy;
+    z0=(x1 + mw/6 , thin/4);
+    y2 - y1 = y2/2;
+    z1=(0, y1);
+    z2=((x1+x3)/2, 0.6m);
+    x3-x1 = mw*0.6;
+    z3=(x3, y1);
+    z4=(x3 - mw/4 + thin*1.2/2, thin/2);
+    z5=(x4, 0);
+
+    z0..z1..z2..z3..z4--z5
 enddef;
+
 
 vardef pa_tail =
     clearxy;
@@ -262,13 +273,13 @@ enddef;
 
 vardef da =
     clearxy;
-    z0 = ( x1 + mw/4 , 0);
+    z0 = ( x1 + mw/8 , 0);
     z1 = ( 0, (y0 + y2)/2);
     z2 = ( x1 + mw/2, m); % top
     z3 = ( x2 + mw/3, y2 - m/4);
     z4 = ( x3 - mw/3, y3 - m/4); % <
     z5 = ( x3+ mw/10, y4-m/4);
-    z6 = ( x4, y0 + m/20);
+    z6 = ( x4, thin);
     z0..z1{up}..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
 enddef;
 

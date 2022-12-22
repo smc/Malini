@@ -1,18 +1,15 @@
 input glyph;
 beginglyph;
-paths[0] = pa_mouth;
+p:=0;
+paths[p] := pa_mouth;
+strokes[p] := va_mouth_stroke(paths[p]);
 
 clearxy;
 z0=point infinity of paths[0];
 z1=(x0 + mw, y0);
 
 paths[1] := z0{dir 20}..{dir 20}z1;
-pen_stroke(
-    nib(thicknib)(0, 2, 4, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+
 pen_stroke(
     nib(thinnib)(2,4,6)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)

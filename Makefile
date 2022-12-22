@@ -167,14 +167,14 @@ clean:
 proofs:
 	@mkdir -p ${PROOFDIR}
 	hb-view $(FONTSDIR)/Malini/otf/Malini-Regular.otf \
-		--font-size 24 \
+		--font-ptem 10 \
 		--margin 100 \
 		--line-space 2.4 \
 		--foreground=333333 \
 		--text-file $(TESTSDIR)/ligatures.txt \
 		--output-file $(PROOFDIR)/ligatures.pdf;
 	hb-view $(FONTSDIR)/Malini/otf/Malini-Regular.otf \
-		--font-size 24 \
+		--font-ptem 10 \
 		--margin 100 \
 		--line-space 2.4 \
 		--foreground=333333 \
@@ -182,19 +182,18 @@ proofs:
 		--output-file $(PROOFDIR)/content.pdf;
 
 	hb-view $(FONTSDIR)/Malini/otf/Malini-Regular.otf \
-		--font-size 24 \
+		--font-ptem 10 \
 		--margin 100 \
 		--line-space 2.4 \
 		--foreground=333333 \
 		--text-file $(TESTSDIR)/kerning.txt \
 		--output-file $(PROOFDIR)/kerning.pdf ;
-	hb-view $(FONTSDIR)/Malini/otf/Malini-Regular.otf \
-		--font-size 24 \
+	cat $(TESTSDIR)/paragraphs.english.txt | fold -sw 80 | hb-view $(FONTSDIR)/Malini/otf/Malini-Regular.otf \
+		--font-ptem 10 \
 		--margin 100 \
 		--line-space 2.4 \
 		--foreground=333333 \
-		--text-file $(TESTSDIR)/latin.txt \
-		--output-file $(PROOFDIR)/latin.pdf ;
+		--output-file $(PROOFDIR)/paragraphs.english.pdf ;
 
 test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed

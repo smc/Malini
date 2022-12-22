@@ -57,11 +57,11 @@ paths[p] := pa_mouth;
 p:=p+1;
 clearxy;
 z0= (0,0);
-z1=(x0 + 0.75mw, y0);
+z1=(x0 + 0.9mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
+paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( 0, thick*sind(45)/2) );
 
 p:=p+1;
 clearxy;
@@ -72,9 +72,9 @@ z1=(x0, m);
 paths[p]:= z0--z1;
 paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
 
-paths[p-2] := paths[p-2] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
-paths[p-1] := paths[p-1] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
-paths[p] := paths[p] shifted (0.3mw, -0.75m) xscaled 0.8 yscaled 0.77 ;
+paths[p-2] := paths[p-2] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
+paths[p-1] := paths[p-1] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
+paths[p] := paths[p] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.77 ;
 strokes[p-2] := va_mouth_stroke(paths[p-2]);
 pen_stroke(
     nib(thin_horizontal_nib)(0)

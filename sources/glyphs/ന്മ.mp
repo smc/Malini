@@ -32,7 +32,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point 0 of paths[1] + (0, thick*0.6/2);
+z0=point 0 of paths[1] + (0, thick*sind(45)/2);
 z1=(xpart(point 4 of paths[p-1]), y0);
 paths[p] = z0--z1;
 pen_stroke(

@@ -11,7 +11,7 @@ z1=(x0 + mw*1.2, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[1] shifted ( point infinity of paths[p-1] + ( thick*0.5, thick*sind(45)/2) );
+paths[p]:= paths[1] shifted ( point infinity of paths[p-1] + ( 0, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -50,6 +50,6 @@ pen_stroke(
 
 anchor( "vc", point 0.5 of paths[1]);
 
-anchor( "right", (xpart(point 1 of paths[1]) - mw/5,0));
+anchor( "right", point infinity of paths[1] - (mw/5,0) );
 
 endglyph;

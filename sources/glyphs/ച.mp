@@ -40,6 +40,7 @@ pen_stroke(
 
 anchor( "vc", point 2 of paths[0]);
 anchor( "bottom", point 1 of paths[1]);
-anchor( "right", point 1 of paths[1] - (mw/5, 0) );
+
+anchor( "right", point infinity of paths[1] - (mw/5,0) );
 lbearing:=0;
 endglyph;

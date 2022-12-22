@@ -14,9 +14,9 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
+z0=point infinity of paths[p-1] + (thin/2, 0);
 z1=(x0, m*0.6);
-z2=((x1+x3)/2, 0.975m); % Top of arch
+z2=((x1+x3)/2, m); % Top of arch
 x3-x1 = mw*0.6;
 z3=(x3, m-m/3);
 z4=(x3, m/3);

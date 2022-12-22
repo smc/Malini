@@ -1,10 +1,10 @@
 input glyph;
 beginglyph;
-z0= (x1 + mw/3, 0);
+z0= (x1 + mw/4, 0);
 z1= (0, y0 + mw/2);
-z2 = ( x1 + mw/2, 0.975m); % top
+z2 = ( x1 + mw/2, m); % top
 z3 = ( x2 + mw/2, y1);
-z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
+z4 = ( x3 - mw/4, thick/4); % bottom middle
 z5 = ( x4 - mw/4, y3);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y6-m/4);
@@ -15,7 +15,7 @@ z11 = ( x8 - 3/4mw, y10);
 z12 = ( x1, (y11+y13)/2);
 z13 = ( x11, -descent);
 z14 = ( x7+thick, y13);
-paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{dir 10}..z7{down}..{left}z8{right}..z9{down}..z10---z11..z12..z13---z14;
+paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{dir 10}..z7{down}..{left}z8{right}..z9..z10---z11..z12..z13---z14;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
@@ -25,7 +25,7 @@ pen_stroke(
     nib(thin_vertical_nib rotated 90)(8)
     nib(down_nib)(10)
     nib(down_nib)(11)
-    nib(middle_up_nib)(12)
+    nib(down_nib rotated 90)(12)
     nib(thick_vertical_nib rotated 90)(13,14)
 )(paths[0])(strokes[0]);
 rbearing:=rbearing - thick;

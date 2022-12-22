@@ -6,7 +6,7 @@ z1 =(x0 + mw/5, y3+0.4m);
 z2=(x1 + mw/5, y0);
 z3=(x2 - mw/5, m/2.5);
 z4=(0, y0 );
-z5=((x4 + x6)/2, 0.975m);
+z5=((x4 + x6)/2, m);
 z6=(x4 + mw*0.75, y2);
 z7=(x6, y3);
 paths[p]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6--z7;
@@ -15,8 +15,9 @@ pen_stroke(
     nib(top_nib)(1)
     nib(top_nib)(5)
     nib(down_nib)(3)
-    nib(middle_down_nib)(2)
     nib(middle_up_nib)(4)
+    nib(middle_down_nib)(2)
+    nib(down_nib rotated 90)(6)
     nib(thin_vertical_nib)(6)
     nib(thin_vertical_nib)(7)
 )(paths[p])(strokes[p]);
@@ -25,15 +26,15 @@ p:=p+1;
 clearxy;
 z0=point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
 z1=(x0, m*0.6);
-z2=((x1+x3)/2, 0.975m); % Top of arch
+z2=((x1+x3)/2, m); % Top of arch
 x3-x1 = mw*0.7;
 z3=(x3, (y2 + y4)/2);
-z4=(x2, ypart(point 3 of paths[p-1]) - m/12);
+z4=(x2, ypart(point 3 of paths[p-1]) - m/10);
 z5=(xpart(point 1 of paths[p-1]), y4 - m/12);
 z6=(xpart(point 0 of paths[p-1]), (y5+y7)/2);
 z7=(x5, -m/12);
 z8=(x3 + mw/4, m/2.5);
-paths[p] = z0---z1..z2..z3..z4..z5..z6..z7..{dir 30}z8 ;
+paths[p] = z0---z1..z2..z3..z4..z5..z6..z7..{dir 45}z8 ;
 
 pen_stroke(
    nib(thin_vertical_nib)(0)
@@ -44,7 +45,7 @@ pen_stroke(
     nib(down_nib)(5)
     nib(middle_up_nib)(6)
     nib(down_nib)(7)
-    nib(top_nib)(8)
+    nib(end_nib rotated terminalangle 8 of paths[p])(8)
 )(paths[p])(strokes[p]);
 
 % Bottom eye of ജ is not needed

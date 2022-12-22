@@ -1,21 +1,8 @@
 input glyph;
 beginglyph;
 p:=0;
-z0=(x1 + mw/6 , 0);
-y2 - y1 = y2/1.6;
-z1=(0, y1);
-z2=((x1+x3)/2, 0.6m);
-x3-x1 = mw*0.6;
-z3=(x3, y1);
-z4=(x3 - mw/6, 0);
-paths[p] := z0..z1..z2..z3..z4;
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib)(4)
-)(paths[p])(strokes[p]);
+paths[p] := pa_mouth;
+strokes[p] := va_mouth_stroke(paths[p]);
 
 clearxy;
 p:=p+1;

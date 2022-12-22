@@ -8,7 +8,7 @@ z3=(x2 - mw/3, y2 - m/2 + thick*0.8/4);
 z4=(x3 - mw/3, y0);
 z5=(x4 - mw/4, y3);
 z6=(x5 - mw/4, y5 + 0.25m);
-z7=(x5, y6 + 0.3m);
+z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2  + mw/6, y7);
 z9=(x8 + mw/4, y8 - m/6);
 z10=(x9 - mw/4, y9 - m/6);
@@ -31,7 +31,7 @@ pen_stroke(
     nib(thin_vertical_nib rotated 90)(10)
     nib(down_nib)(12)
     nib(down_nib)(13)
-    nib(middle_up_nib)(14)
+    nib(down_nib rotated 90)(14)
     nib(thick_vertical_nib rotated 90)(15,16)
 )(paths[0])(strokes[0]);
 rbearing:=rbearing - thick;

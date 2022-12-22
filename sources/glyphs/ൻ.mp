@@ -14,7 +14,7 @@ p:=p+1;
 clearxy;
 z0=(thick*(1 - sind(50)), 0);
 z1=(x0, m*0.6);
-z2=((x1+x3)/2, 0.975m); % Top of arch
+z2=((x1+x3)/2, m); % Top of arch
 x3-x1 = 0.8*mw;
 z3=(x3, m/2);
 z4= (x3 - mw/4,thin/2);

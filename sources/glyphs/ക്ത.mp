@@ -8,7 +8,7 @@ z3=(x2 - mw/3, y2 - m/2 + thick*0.8/4);
 z4=(x3 - mw/3, y0);
 z5=(x4 - mw/4, y3);
 z6=(x5 - mw/4, y5 + 0.25m);
-z7=(x5, y6 + 0.3m);
+z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2  + mw/3, y7);
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8;
@@ -26,7 +26,7 @@ pen_stroke(
 clearxy;
 z0= (x1 + mw/3, 0);
 z1= (0, y0 + mw/2);
-z2 = ( x1 + mw/2, 0.975m); % top
+z2 = ( x1 + mw/2, m); % top
 z3 = ( x2 + mw/2, y1);
 z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
 z5 = ( x4 - mw/4, y3);
