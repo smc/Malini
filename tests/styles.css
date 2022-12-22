@@ -22,13 +22,15 @@
   --font-line-height: 1.5;
   --controls-color: hsl(var(--primary-h), var(--primary-s), 98%);
   --controls-background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --text-color: hsl(210, 29%, 24.3%);
+  --text-background-color: hsla(0, 0%, 100%, 1);
   color-scheme: light dark;
 }
 
 body {
   font-size: 100%;
-  color: var(--controls-background-color);
-  background-color: var(--controls-color);
+  background-color: var(--text-background-color);
+  color: var(--text-color);
   line-height: 1.2;
   margin: 0;
   overflow: hidden;
@@ -45,7 +47,7 @@ header {
   background-color: var(--controls-background-color);
   color: var(--controls-color);
   align-items: center;
-
+  font-family: sans-serif;
 }
 
 .font-colors {
@@ -63,7 +65,7 @@ header {
 .opentype-features > div {
   line-height: 2;
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  grid-template-columns: 10fr 2fr;
   align-items: center;
   max-width: 400px;
 }
@@ -92,6 +94,10 @@ main {
   font-variation-settings: 'wght' var(--weight), 'slnt' var(--slant), 'wdth' var(--width);
   hyphens: auto;
   -webkit-hyphenate-character: '';
+  direction: ltr;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
 }
 
 .font-name {
@@ -154,6 +160,11 @@ input[type="range"] {
 .font-color {
   width: 18px;
   border: 0;
+  background: var(--text-color);
+}
+
+.background-color {
+  background: var(--text-background-color);
 }
 
 .sample-nav {

@@ -251,9 +251,7 @@ function listen() {
             }
         }
     }).on('change', (color, source, instance) => {
-        document.body.style.color = color.toHEXA();
-        document.getElementById('font-fontColor').style.backgroundColor = color.toHEXA();
-
+        root.style.setProperty('--text-color', color.toHEXA());
     })
 
     new Pickr({
@@ -261,7 +259,7 @@ function listen() {
         theme: 'nano',
         useAsButton: true,
         defaultRepresentation: 'HEX',
-        default: '#fff',
+        default: '#2c3e50',
         swatches,
         components: {
             preview: true,
@@ -275,9 +273,7 @@ function listen() {
             }
         }
     }).on('change', (color, source, instance) => {
-        document.body.style.backgroundColor = color.toHEXA();
-        document.getElementById('background-color').style.backgroundColor = color.toHEXA();
-
+        root.style.setProperty('--text-background-color', color.toHEXA());
     })
 
 
@@ -294,10 +290,6 @@ function listen() {
             contentArea.style.fontFeatureSettings = fontFeatureSettings.join(',');
         });
     });
-
-
-    document.getElementById('font-fontColor').style.backgroundColor = '#FFFFFF'
-    document.getElementById('background-color').style.backgroundColor = '#2E3440'
 
 }
 
