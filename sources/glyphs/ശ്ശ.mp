@@ -34,7 +34,7 @@ pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_up_nib)(1)
    nib(down_nib)(2)
-   nib(middle_down_nib)(3,6)
+   nib(middle_down_nib scaled 0.8)(3,4, 6)
    nib(top_nib)(5)
    nib(down_nib)(7)
    nib(middle_up_nib)(8)

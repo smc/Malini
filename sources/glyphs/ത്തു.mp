@@ -39,7 +39,7 @@ pen_stroke(
     nib(down_nib)(8)
     nib(down_nib)(9)
     nib(middle_up_nib)(10)
-    nib(thick_vertical_nib rotated 90)(11,12)
+    nib(thick_horizontal_nib)(11,12)
 )(paths[p])(strokes[p]);
 rbearing:=rbearing - thick;
 

@@ -16,7 +16,7 @@ z11 = (x6, -m/6);
 z12 = (x0, y11);
 z13 = (x1, (y12+y14)/2);
 z14 = (x12, -descent);
-z15 = (x10+thick, y14);
+z15 = (x10+thick/2, y14);
 paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6.. z7..{dir 60}z8..z9..z10{down}..z11---z12..z13..z14---z15;
 
 pen_stroke(
@@ -29,8 +29,8 @@ pen_stroke(
     nib(middle_up_nib)(8)
     nib(top_nib)(9)
     nib(down_nib)(11,12)
-    nib(middle_up_nib)(13)
-    nib(thick_vertical_nib rotated 90)(14,15)
+    nib(down_nib rotated 90)(13)
+    nib(thick_horizontal_nib)(14,15)
 )(paths[p])(strokes[p]);
 rbearing:=rbearing - thick;
 endglyph;

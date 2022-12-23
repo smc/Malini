@@ -57,11 +57,11 @@ z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
 paths[p] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8;
 
-paths[p]:=paths[p] xscaled 0.75 yscaled 0.7 shifted (0.9mw, -2/3m);
+paths[p]:=paths[p] shifted (1.25mw, -m)  xscaled 0.75 yscaled 0.7 ;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(top_nib)(2,6)
-    nib(middle_down_nib)(3, 7)
+    nib(middle_down_nib scaled 0.8)(3, 7)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
     nib(end_nib rotated terminalangle 8 of paths[p])(8)

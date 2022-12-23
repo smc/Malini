@@ -41,7 +41,7 @@ pen_stroke(
     nib(down_nib)(6)
     nib(down_nib)(7)
     nib(middle_up_nib)(8)
-    nib(thick_vertical_nib rotated 90)(9,10)
+    nib(thick_horizontal_nib)(9,10)
 )(paths[1])(strokes[1]);
 
 shift = xpart(point infinity of paths[1]) - mw/3;
@@ -65,7 +65,7 @@ pen_stroke(
     nib(down_nib)(6)
     nib(down_nib)(7)
     nib(middle_up_nib)(8)
-    nib(thick_vertical_nib rotated 90)(9,10)
+    nib(thick_horizontal_nib)(9,10)
 )(paths[3])(strokes[3]);
 
 anchor( "vc", (xpart(point 0 of paths[2]),0));

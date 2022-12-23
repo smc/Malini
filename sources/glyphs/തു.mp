@@ -23,7 +23,7 @@ pen_stroke(
     nib(down_nib)(8)
     nib(down_nib)(9)
     nib(down_nib rotated 90)(10)
-    nib(thick_vertical_nib rotated 90)(11,12)
+    nib(thick_horizontal_nib)(11,12)
 )(paths[0])(strokes[0]);
 rbearing:=rbearing - thick;
 endglyph;

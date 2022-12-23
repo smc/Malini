@@ -42,7 +42,7 @@ pen_stroke(
     nib(down_nib)(4)
     nib(down_nib)(5)
     nib(middle_up_nib)(6)
-    nib(thick_vertical_nib rotated 90)(7,8)
+    nib(thick_horizontal_nib)(7,8)
     ignore_directions(2, 3)
 )(paths[1])(strokes[1]);
 
