@@ -13,8 +13,8 @@ z6 = (x0, y0);
 z7 = (x6 + 0.05mw, m*0.4);
 z8 = ((x7 + x9)/2, thick/4);
 z9 = (x8 + mw/2.1, m/2);
-z10 = (x9 - mw/6, y1);
-paths[p] = z0{up}..z1..z2..z3..z4{dir 100}..z5..z6..z7..z8..z9{up}..z10;
+z10 = (x9 - mw/8, y1);
+paths[p] = z0{up}..z1..z2..z3..z4{dir 100}..z5..z6..z7..z8..z9..z10;
 
 pen_stroke(
    nib(middle_up_nib)(0)

@@ -33,7 +33,7 @@ z5=(xpart(point 1.5 of paths[p-1]), y4);
 z6=(xpart(point 0 of paths[p-1]), (y5+y7)/2);
 z7=(x5, -thin/4);
 z8=(x2 , y4  );
-paths[p] = z0---z1..z2..z3..z4---z5..z6..z7..{dir 20}z8 ;
+paths[p] = z0---z1..z2..z3..z4---z5..z6..z7{dir 10}..{dir 20}z8 ;
 
 pen_stroke(
    nib(thin_vertical_nib)(0)
