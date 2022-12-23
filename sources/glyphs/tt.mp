@@ -15,7 +15,7 @@ pen_stroke(
 %bar
 
 z5 = (x0 - thick*1.25, s);
-z6 = (x5 + sw, y5);
+z6 = (x5 + sw*1.25, y5);
 
 
 paths[1] = z5--z6;
@@ -24,7 +24,7 @@ pen_stroke(
      nib(end_nib rotated 90)(0,1)
 )(paths[1])(strokes[1]);
 
-paths[2] := paths[0] shifted(xpart(point 4 of paths[0]) + sw/5, 0);
+paths[2] := paths[0] shifted(xpart(point 4 of paths[0]) + sw/3, 0);
 pen_stroke(
      nib(end_nib scaled 2/3)(0)
      nib(thick_vertical_nib)(1,2)

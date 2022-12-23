@@ -1,32 +1,48 @@
 input glyph;
 beginglyph;
+clearxy;
+paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 
-paths[1] := a_loop;
+p:=0;
+clearxy;
+z0=(0, 1.05X);
+z1=(x0, thin/4);
 
-z0=(thick/2, X);
-z1=(x0,  y0 - X/2);
-z2=(x1, 0);
-
-paths[0] = z0{dir -80}..z1..{dir -80}z2 ;
-paths[0] := paths[0] shifted(xpart(point 0 of paths[1]) - thick/2 , 0);
+paths[p] := z0--z1;
+paths[p] :=paths[p] shifted (xpart(point 0 of paths[1]), 0);
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
 pen_stroke(
-    nib(thinnib)(2)
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(middle_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(top_nib)(1)
+    nib(middle_down_nib)(2)
+    nib(down_nib)(3)
+    nib(end_nib rotated terminalangle 4 of paths[0])(4)
+    ignore_directions(1, 2, 3)
+)(paths[p])(strokes[p]);
 
 % cross
 clearxy;
-z0=(xpart(point 0.75 of paths[1]), ypart(point 0.4 of paths[0]));
+p:=p+1;
+z0=(xpart(point 0.6 of paths[1]), ypart(point 0.2 of paths[0]));
 z1=(x0+sw/2, y0);
-paths[2]=z0..z1;
+paths[p]=z0--z1;
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
+    nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
+)(paths[p])(strokes[p]);
+
+% Serifs
+p:=p+1;
+clearxy;
+paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
+strokes[p] := serif_stroke_slanted(paths[p]);
+
+p:=p+1;
+paths[p] := serif_bottom_slanted shifted point infinity of paths[0] ;
+strokes[p] := serif_stroke_slanted(paths[p]);
+
 endglyph;
