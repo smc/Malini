@@ -8,11 +8,11 @@ pen_stroke(
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
-    nib(thin_vertical_nib)(6,7,8)
+    nib(thick_vertical_nib)(6,7,8)
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=point 8 of paths[0];
+z0=point 7 of paths[0];
 z1=(x0 + mw/2, y0 + m/2); % Top of third arch
 z2=(x1 + mw/2.5, y1 - m/2);
 z3= ( x2 - 0.75mw, -descent);

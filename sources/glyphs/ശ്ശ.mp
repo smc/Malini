@@ -28,7 +28,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] := paths[p-1]  shifted (0.35mw, -m) xscaled 0.8 yscaled 0.7;
+paths[p] := paths[p-1]  shifted (0.35mw, -m) xscaled 0.8 yscaled 0.8;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)

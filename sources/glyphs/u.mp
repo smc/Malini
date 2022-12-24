@@ -38,5 +38,5 @@ paths[p] := serif_bottom_slanted shifted point infinity of paths[1];
 strokes[p] := serif_stroke_slanted(paths[p]);
 
 lbearing:=serif_width-lbearing;
-anchor( "top", (xpart(point 3 of paths[0]), X));
+anchor( "top", (xpart(point 2.25 of paths[0]), X));
 endglyph;

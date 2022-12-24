@@ -26,7 +26,7 @@ z8 = ( x3, y0 - m/8); %
 z9 = ( xpart(point 0 of paths[0]), y8);
 z10 = ( x9 - mw/3, (y9+y11)/2);
 z11 = ( x9, -descent);
-z12 = ( x7+thick, y11);
+z12 = ( x7+thick/2, y11);
 paths[p] = z0---z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8---z9..z10..z11---z12;
 
 pen_stroke(
@@ -38,7 +38,7 @@ pen_stroke(
     nib(middle_up_nib)(5)
     nib(down_nib)(8)
     nib(down_nib)(9)
-    nib(middle_up_nib)(10)
+    nib(down_nib rotated 90)(10)
     nib(thick_horizontal_nib)(11,12)
 )(paths[p])(strokes[p]);
 rbearing:=rbearing - thick;
