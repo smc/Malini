@@ -29,14 +29,14 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 120)(4)
+    nib(end_nib rotated terminalangle 4 of paths[2])(4)
 )(paths[2])(strokes[2]);
 
 xshift := 0.6mw;
-yshift := -.85m;
-paths[3] = paths[0] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
-paths[4] = paths[1] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
-paths[5] = paths[2] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
+yshift := -m;
+paths[3] = paths[0] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
+paths[4] = paths[1] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
+paths[5] = paths[2] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     nib(middle_up_nib)(0,4)
     nib(top_nib)(1,5)
@@ -56,7 +56,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib  rotated 120)(4)
+    nib(end_nib  rotated terminalangle 4 of paths[5])(4)
 )(paths[5])(strokes[5]);
 rbearing:=0;
 endglyph;
