@@ -4,32 +4,48 @@ p:=0;
 paths[p] := pa_mouth;
 strokes[p] := va_mouth_stroke(paths[p]);
 
-z5=point infinity of paths[0];
-z6=(x5 + 0.75mw, y5);
-
-paths[1] := z5{dir 20}..{dir 20}z6 && subpath(0, 2.9) of ra shifted (xpart(z6) - mw/4, -thick/4);
+clearxy;
+p:=p+1;
+z0=point infinity of paths[0];
+z1=z0 + (mw*0.75,0);
+z2=(x1 + mw*0.2, -thin*1.2/4);
+paths[p] := z0--z1--z2;
+paths[p] := paths[1] shifted (0, thick*sind(45)/2);
 
 pen_stroke(
-    nib(thinnib)(2,4,6)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated (terminalangle infinity of paths[1]))(infinity)
-)(paths[1])(strokes[1]);
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
+    nib(end_nib scaled 0.5 rotated 90)(2)
+)(paths[p])(strokes[p]);
 
+p:=p+1;
+paths[p] := subpath(0, 3) of ra shifted (xpart(point 1 of paths[p-1]) - mw/8, thin/2);
+
+pen_stroke(
+    nib(start_up_nib rotated 90)(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+)(paths[p])(strokes[p]);
+
+
+p:=p+1;
 clearxy;
 % ഋ sign
-z0 = point 4 of paths[1];
-z1 = ( xpart(point 1 of paths[1]), -descent*1.5);
-z2 = (x1 - mw/3, -descent);
-z3 = (x2 + mw*0.7 , y2);
-paths[2] = z0{dir -95}..z1{left}..z2{dir 90}..{dir -30}z3;
+z0 = point infinity of paths[p-1];
+z1 = (x0 - 0.75mw, -descent*1.2);
+z2 = (x1 - mw/3, (y1+y3)/2);
+z3 = (x1, y2+m/6);
+z4 = (x1 + mw/3, y2);
+paths[p] = z0{dir angle(direction infinity of paths[p-1]) }.. {left}z1..z2..z3..z4;
 pen_stroke(
-    nib(thinnib)(2, 4)
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
-
+    nib(thick_vertical_nib)(0)
+    nib(down_nib)(1)
+    nib(middle_down_nib)(2)
+    nib(top_nib)(3)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
+)(paths[p])(strokes[p]);
 
 anchor( "vc", point 0.5 of paths[1]);
-anchor( "bottom", point infinity of paths[1]);
-anchor( "right", point infinity of paths[1]);
+
 endglyph;
