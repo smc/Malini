@@ -23,7 +23,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0 = (x1 + mw/8, 0.5m);
+z0 = (x1 + thin, 0.5m);
 z1 = (0, 0.75m);
 z2 = (x1 + mw/4, m - thick*0.6/2);
 z3 = (x2 + mw/4, .66m);
@@ -36,8 +36,8 @@ pen_stroke(
    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib)(3)
-    nib(thin_vertical_nib)(4)
+    nib(thick_vertical_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 
 clearxy;
@@ -55,6 +55,6 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib rotated 90)(4)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 endglyph;

@@ -1,17 +1,20 @@
 input glyph;
 beginglyph;
-z0= (mw, m);
-z1=(x0 , y0 - 0.5m);
-z2= (x1, y1 - 0.6m);
-z3=( x2 - mw/4, y2 - m/3);
-z4=( x3 - mw/2, y3 + m/6);
-z5=( x4 + mw/3, y4 + m/6);
-z6=( x5 + mw/3 - thick/4, y5 - .1m);
-
-paths[0] = z0---z1--z2..z3..z4  ;
-paths[0] := paths[0] shifted(-mw, 0);
+p:=0;
+clearxy;
+% ഋ sign
+z0 = (0,m);
+z1 = (x0 - 0.5mw, -descent*1.2);
+z2 = (x1 - mw/3, (y1+y3)/2);
+z3 = (x1, y2+m/6);
+z4 = (x1 + mw/3, y2);
+paths[p] = z0{dir -80}.. {left}z1..z2..z3..z4;
 pen_stroke(
-    nib(middle_down_nib)(0,1,2,4,5,6)
-)(paths[0])(strokes[0]);
+    nib(thick_vertical_nib)(0)
+    nib(down_nib)(1)
+    nib(middle_down_nib)(2)
+    nib(top_nib)(3)
+    nib(end_nib rotated 30)(4)
+)(paths[p])(strokes[p]);
 
 endglyph;
