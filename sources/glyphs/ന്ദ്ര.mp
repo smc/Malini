@@ -18,7 +18,7 @@ z0=(xpart(point infinity of paths[p]) - mw/2 , -m/3);
 z1=(xpart(point 2 of paths[p-1]) , y0);
 z2=(xpart(point 1 of paths[p-1]) - mw/3 , ypart(point 1 of paths[p-1]));
 z3=(x2 + mw/6 , ypart(point 2 of paths[p-1]));
-paths[p]:=paths[p]..{dir 190}z0..{dir 170}z1..z2..z3;
+paths[p]:=paths[p]{dir -80}..{dir 190}z0..{dir 170}z1..z2..z3;
 pen_stroke(
     nib(thin_vertical_nib)(0)
     nib(thin_vertical_nib)(1)

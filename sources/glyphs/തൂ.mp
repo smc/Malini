@@ -3,13 +3,13 @@ beginglyph;
 z0= (x1 + mw/4, 0);
 z1= (0, y0 + mw/2);
 z2 = ( x1 + mw/2, m); % top
-z3 = ( x2 + mw/2, y1);
+z3 = ( x2 + mw/2, 0.4m);
 z4 = ( x3 - mw/4, thick/4); % bottom middle
-z5 = ( x4 - mw/4, y3);
+z5 = ( x4 - mw/4, y1);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y6-m/4);
 z8 = ( x7 - mw/3, y7-m/4);
-z9 = ( x8 + mw/2.5, y8-m/4);
+z9 = ( x8 + mw/2.5, y8-m/3);
 z10 = ( x6, y0 - m/8); %
 z11 = ( x8 - 3/4mw, y10);
 z12 = ( x1, (y11+y13)/2);

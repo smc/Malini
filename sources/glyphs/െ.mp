@@ -7,7 +7,7 @@ z3=(x2 - mw/4, thick*0.6/2);
 z4=(x0, y0);
 z5=(x4 + mw/2, m);
 z6=(x5 + mw/2, m/2);
-z7=(x6-mw/4, 0);
+z7=(x6 - mw/4, 0);
 paths[0] = z0{dir 80}..z1..z2..z3..z4..z5..{down}z6..z7;
 
 pen_stroke(

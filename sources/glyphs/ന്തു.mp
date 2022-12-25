@@ -16,11 +16,11 @@ clearxy;
 z0=(thick*(1 - sind(50)), 0) + (xpart(point infinity of paths[p-1]), 0);
 z1= (x0, m*0.6);
 z2 = ( x1 + mw/2.75, m); % top
-z3 = ( x2 + mw/2, y1);
+z3 = ( x2 + mw/2, 0.4m);
 z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
-z5 = ( x4 - mw/4, y3);
+z5 = ( x4 - mw/4, m/2);
 z6 = ( x5 + mw/2, y2); % second top
-z7 = ( x6 + mw/2, y1);
+z7 = ( x6 + mw/2, y3);
 z8 = ( x3, y0 - m/8); %
 z9 = ( xpart(point 0 of paths[0]), y8);
 z10 = ( xpart(point 1 of paths[0]), (y9+y11)/2);

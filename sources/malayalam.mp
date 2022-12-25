@@ -19,7 +19,7 @@ enddef;
 vardef left_arch =
     clearxy;
     z0=(x1+mw/4, 0);
-    z1=(0, m-m/1.6);
+    z1=(0, 0.5m);
     z2=((x1+x3)/2,  m);
     x3-x1 = 2/3*mw;
     z3=(x3, 2/3m);
@@ -33,7 +33,7 @@ vardef right_arch =
     z1=(x0, 2/3m);
     z2=((x1+x3)/2, m); % Top of arch
     x3-x1 = 2/3*mw;
-    z3=(x3, m-m/1.6);
+    z3=(x3, 0.4m);
     z4= (x3 - mw/4, 0);
     z0---z1..z2..z3..z4
 enddef;
@@ -65,9 +65,9 @@ vardef right_tha_arch =
     z0=(thin/2, 0);
     z1= (x0, 2/3m);
     z2 = ( x1 + mw/2.75, m); % top
-    z3 = ( x2 + mw/2, m/2);
+    z3 = ( x2 + mw/2, 0.4m);
     z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
-    z5 = ( x4 - mw/4, y3);
+    z5 = ( x4 - mw/4, m/2);
     z6 = ( x5 + mw/2, y2); % second top
     z7 = ( x6 + mw/2, y3);
     z8 = ( x7 - mw/4, y0);
@@ -94,9 +94,9 @@ vardef left_tha_arch =
     z0= (x1 + mw/4, 0);
     z1= (0, y0 + mw/2);
     z2 = ( x1 + mw/2, m); % top
-    z3 = ( x2 + mw/2, y1);
+    z3 = ( x2 + mw/2, 0.4m);
     z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
-    z5 = ( x4 - mw/4, y3);
+    z5 = ( x4 - mw/4, m/2);
     z6 = ( x5 + mw/2, y2); % second top
     z7 = ( x6 + mw/2.5, 2/3m);
     z8 = ( x7, y0);
