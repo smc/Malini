@@ -1,49 +1,55 @@
 input glyph;
 beginglyph;
-z0=(x1 + mw/6, m);
-z1=(0, m/2);
-z2=(x1 + mw/4, thick/2);
-z3=(x2 + mw/4, y1);
-z4=(x3 + mw/2, m);
-z5=(x4 + mw/3, y4-m/4);
-z6=(x5 - mw/3, y5-m/4);
-z7=(x6 + mw/2.5, y6-m/4);
-z8=(x7 - mw/2, y7-m/4);
-paths[0] = z0..z1{down}..{right}z2{right}..z3..{right}z4..z5..{left}z6{right}..z7..{dir 160}z8;
+p:=0;
+z0 = (x1 + mw/4, m);
+z1 = (0, y0 - m/2);
+z2 = (x1 + mw/3, thick*0.5/2);
+z3 = (x2 + mw/3, 0.4m);
+z4 = (x3, y0-0.4m);
+
+
+
+paths[p] = z0{dir 215}..z1..z2..z3 --- z4 ;
+paths[p] :=paths[p] .. {right}subpath(2, infinity) of da shifted (mw/2, 0);
 
 pen_stroke(
-    nib(thicknib)(0, 2)
-    nib(thinnib)(1,3, 5,7)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle 6 of paths[0])(6)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])( strokes[0]);
+   nib(end_nib rotated terminalangle 0 of paths[0])(0)
+   nib(middle_up_nib)(1)
+   nib(down_nib)(2)
+   nib(middle_down_nib)(3, 4)
+   nib(top_nib)(5)
+    nib(end_nib rotated 90)(9)
+    nib(middle_down_nib scaled 0.9)(6,8)
+    nib(end_nib rotated terminalangle 7 of paths[p])(7)
+   ignore_directions(1, 6)
+)(paths[p])(strokes[p]);
 
 
+% Connector
 clearxy;
-z0=point 7.9 of paths[0];
-z1=(x0 + 0.8mw, mw/2);
-paths[1] = z0{dir -20}..{up}z1;
+p:=p+1;
+z0=point 8.5 of paths[0];
+z1=(x0 + 0.5mw, 0.4m);
+z2=(x1, m);
+paths[1] = z0{right}..{up}z1---z2;
 pen_stroke(
-     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
-clearxy;
-z0=(xpart(point infinity of paths[1]), m-m/6); % top of piller
-z1=(x0, m/2);
-z2=(x1 +  mw/3, y1 - m/2); % Top of second arch
-z3=(x2 +  mw/3, y2 + m/2);
-z4=(x3 -  mw/3, y3 + m/2);
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
+    nib(thin_vertical_nib)(1)
+    nib(thin_vertical_nib)(2)
+)(paths[p])(strokes[p]);
 
-paths[2] = z0---z1..z2{dir -10}..z3{dir 100}..z4;
+p:=p+1;
+paths[p] = right_arch_dha;
+paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+
 pen_stroke(
-    nib(thicknib)(1, 3, 5, 7)
-    nib(thinnib)(1,3,5)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
+    nib(thick_vertical_nib)(0)
+    nib(thick_vertical_nib)(1)
+    nib(down_nib)(2)
+    nib(middle_up_nib)(3)
+    nib(top_nib rotated -45)(4)
 )(paths[2])(strokes[2]);
 
 anchor( "vc", point 5 of paths[0]);
-anchor( "bottom", point 2.3 of paths[2]);
 anchor( "right", point 2.3 of paths[2]);
 endglyph;

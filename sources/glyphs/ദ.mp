@@ -8,7 +8,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(end_nib rotated 90)(4)
     nib(middle_down_nib)(5)
-    nib(end_nib rotated 60)(6)
+    nib(end_nib rotated terminalangle 6 of paths[p])(6)
 )(paths[p])(strokes[p]);
 
 anchor( "right", (xpart(point 5.5 of paths[0]),0));

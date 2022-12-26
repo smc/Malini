@@ -279,7 +279,7 @@ vardef da =
     z3 = ( x2 + mw/3, y2 - m/4);
     z4 = ( x3 - mw/3, y3 - m/4); % <
     z5 = ( x3+ mw/10, y4-m/4);
-    z6 = ( x4, thin);
+    z6 = ( x4, thin/2);
     z0..z1{up}..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
 enddef;
 
