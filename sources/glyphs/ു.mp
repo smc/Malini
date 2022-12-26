@@ -2,14 +2,14 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(mw/12, m);
-z1=(x0 + mw/4, 0.6m);
+z1=(x0 + mw/4, m/2);
 z2=(x1 - mw/8, 0);
 paths[0] = z0 ..z1..z2;
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_down_nib scaled 0.9)(1)
+   nib(middle_down_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
+   nib(middle_up_nib )(1)
    nib(end_nib rotated terminalangle 2 of paths[p])(2)
-    ignore_directions(1)
+   ignore_directions(1)
 )(paths[0])(strokes[0]);
 
 clearxy;
