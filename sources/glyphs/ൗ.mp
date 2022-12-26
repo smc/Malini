@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 z0 = (x1 + thin, 0.5m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/4, m - thick*0.6/2);
+z2 = (x1 + mw/4, m);
 z3 = (x2 + mw/4, .66m);
 z4 = (x3, .4m);
 
@@ -18,9 +18,9 @@ pen_stroke(
 clearxy;
 z0 =  point 4 of paths[0] + (thick*0.5/2, 0);
 z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m - thick*0.6/2);
+z2 = (x1 + mw/3, m);
 z3 = (x2 + mw/4, m/2);
-z4 = (x3 - 0.8mw, thick*0.6/2);
+z4 = (x3 - 0.8mw, 0);
 
 paths[1] = z0 --- z1 ..z2..z3..z4;
 

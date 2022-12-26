@@ -3,7 +3,7 @@ beginglyph;
 p:=0;
 z0=(mw*0.45, m-y2);
 z1=(0, (y0 + y2)/2);
-z2=(x0, thick*0.6/2);
+z2=(x0, 0);
 paths[p] = z0{dir 170}..z1{down}..{dir 10}z2;
 
 pen_stroke(
@@ -45,15 +45,16 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, 2/3m);
+z0=(0, 0.75m);
 z1=(x0 + mw/3, m-y3);
 z2=(x1 + mw/3, (y1+y3)/2);
-z3=(x1, thick*0.6/2);
+z3=(x1,  0);
 z4=(x0, m-y0);
 paths[p] = z0..z1..z2..z3..z4;
 paths[p]:= paths[p] shifted(xpart(point 2 of paths[0]) + mw/2, 0);
 pen_stroke(
-    nib(middle_up_nib)(0,4)
+   cut(end_nib, rel 90)(0)
+    cut(end_nib, rel 90)(4)
     nib(middle_down_nib)(2)
     nib(top_nib)(1)
     nib(down_nib)(3)

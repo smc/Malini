@@ -19,12 +19,12 @@ pen_stroke(
 clearxy;
 z0 = point 3.8 of paths[0];
 z1 = ( x0, (y0 + y2)/2);
-z2 = ( x1 + mw/1.66, m- thick*0.6/2); % top
-z3 = ( x2 + mw/3, y2 - m/4);
+z2 = ( x1 + mw/1.666, m); % top
+z3 = ( x2 + mw/2.4, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);
 z6 = ( x4, m/15);
-paths[1]= z0..z1..z2..z3..{left}z4{right}..z5..{dir 160}z6;
+paths[1]= z0..z1..z2{dir 5}..z3..{left}z4{right}..z5..{dir 160}z6;
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[1])(0)
@@ -39,7 +39,7 @@ pen_stroke(
 clearxy;
 z0 = (x1 + mw/8, 0.5m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/4, m - thick*0.6/2);
+z2 = (x1 + mw/4, m);
 z3 = (x2 + mw/4, .66m);
 z4 = (x3, .4m);
 
@@ -56,7 +56,7 @@ pen_stroke(
 clearxy;
 z0 =  point 4 of paths[2] + (thick*0.5/2, 0);
 z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m - thick*0.6/2);
+z2 = (x1 + mw/3, m);
 z3 = (x2 + mw/4, m/2);
 z4 = (x3 - 0.8mw, thick*0.6/2);
 

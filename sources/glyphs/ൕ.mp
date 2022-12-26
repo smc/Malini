@@ -14,7 +14,7 @@ z7 = (x6 + 0.05mw, m*0.4);
 z8 = ((x7 + x9)/2, thick/4);
 z9 = (x8 + mw/2.1, m/2);
 z10 = (x9 - mw/8, (y9 + y11)/2);
-z11 = (x10 + mw/4, ascent-thick/2);
+z11 = (x10 + mw/4, 0.95ascent);
 paths[0] = z0{up}..z1..z2..z3..z4{dir 100}..z5..z6..z7..z8..z9..z10..z11;
 
 pen_stroke(

@@ -3,7 +3,7 @@ beginglyph;
 z0 =(0, (y1 + y3)/2);
 z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
-z3=(x2 - mw/4, thick*0.6/2);
+z3=(x2 - mw/4, 0);
 z4=(x0, y0);
 z5=(x4 + mw/2, m);
 z6=(x5 + mw/2, m/2);

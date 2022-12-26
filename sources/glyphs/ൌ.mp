@@ -4,7 +4,7 @@ p:=0;
 z0 =(0, (y1 + y3)/2);
 z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
-z3=(x2 - mw/4, thick*0.6/2);
+z3=(x2 - mw/4, 0);
 z4=(x0, y0);
 z5=(x4 + mw/2, m);
 z6=(x5 + mw/2, m/2);
@@ -25,7 +25,7 @@ clearxy;
 p:=p+1;
 z0 = (x1 + thin, 0.5m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/4, m - thick*0.6/2);
+z2 = (x1 + mw/4, m);
 z3 = (x2 + mw/4, .66m);
 z4 = (x3, .4m);
 
@@ -44,7 +44,7 @@ clearxy;
 p:=p+1;
 z0 =  point 4 of paths[p-1] + (thick*0.5/2, 0);
 z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m - thick*0.6/2);
+z2 = (x1 + mw/3, m);
 z3 = (x2 + mw/4, m/2);
 z4 = (x3 - 0.8mw, thick*0.6/2);
 
