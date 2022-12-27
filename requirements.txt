@@ -85,7 +85,6 @@ fonttools[lxml,ufo,unicode]==4.38.0
     #   fontmath
     #   glyphsets
     #   glyphslib
-    #   psautohint
     #   ufo2ft
     #   ufolib2
     #   ufolint
@@ -146,8 +145,6 @@ protobuf==3.20.3
     #   axisregistry
     #   fontbakery
     #   gflanguages
-psautohint==2.4.0
-    # via -r requirements.in
 pyclipper==1.3.0.post4
     # via
     #   beziers

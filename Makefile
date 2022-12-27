@@ -84,12 +84,7 @@ $(FONTSDIR)/%/otf : %.designspace
 		--output-dir $@ \
 		--output otf
 	$(PY) tools/fix_font.py $@/*.otf
-	for f in $@/*.otf; do \
-		echo "Autohinting $(basename $${f})"; \
-		psautohint $${f} -o $${f}.hinted; \
-		$(PY) -m cffsubr $${f}.hinted -o $${f}; \
-		rm $${f}.hinted; \
-	done
+
 
 # Create ttf variablefont from the given designspace
 $(FONTSDIR)/%/ttf-variable: %.designspace
@@ -113,10 +108,7 @@ $(FONTSDIR)/%/otf-variable : %.designspace
 		--verbose WARNING \
 		--optimize-cff 0 \
 		--output variable-cff2
-	echo "Autohinting  $@/$(FAMILY)-VF.otf"; \
-	psautohint $@/$(FAMILY)-VF.otf -o $@/$(FAMILY)-VF.otf.hinted; \
-	$(PY) -m cffsubr $@/$(FAMILY)-VF.otf.hinted -o $@/$(FAMILY)-VF.otf; \
-	rm $@/$(FAMILY)-VF.otf.hinted; \
+
 	$(PY) tools/fix_font.py $@/*.otf
 	$(PY) tools/stat.py $* $@/*.otf
 
