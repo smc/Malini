@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
-z0 =(0, y1 + .4m);
-z1 =(0, m*1.1);
-paths[0] = z0..z1;
+z0 =(0, y1 + m/3);
+z1 =(0, m*1.2);
+paths[0] = z0--z1;
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(thicknib scaled 1.1 rotated terminalangle 0 of paths[0])(0)
+    nib(thin_nib scaled 2/3 rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 rbearing:= 0;
 lbearing:= 0;
