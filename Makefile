@@ -87,7 +87,7 @@ $(FONTSDIR)/%/otf : %.designspace
 	for f in $@/*.otf; do \
 		echo "Autohinting $(basename $${f})"; \
 		psautohint $${f} -o $${f}.hinted; \
-		python -m cffsubr $${f}.hinted -o $${f}; \
+		$(PY) -m cffsubr $${f}.hinted -o $${f}; \
 		rm $${f}.hinted; \
 	done
 
@@ -111,8 +111,12 @@ $(FONTSDIR)/%/otf-variable : %.designspace
 		--flatten-components \
 		--output-dir $@ \
 		--verbose WARNING \
-		--optimize-cff 1 \
+		--optimize-cff 0 \
 		--output variable-cff2
+	echo "Autohinting  $@/$(FAMILY)-VF.otf"; \
+	psautohint $@/$(FAMILY)-VF.otf -o $@/$(FAMILY)-VF.otf.hinted; \
+	$(PY) -m cffsubr $@/$(FAMILY)-VF.otf.hinted -o $@/$(FAMILY)-VF.otf; \
+	rm $@/$(FAMILY)-VF.otf.hinted; \
 	$(PY) tools/fix_font.py $@/*.otf
 	$(PY) tools/stat.py $* $@/*.otf
 
