@@ -37,7 +37,7 @@ pen_stroke(
     nib(middle_down_nib)(3, 7, 9)
     nib(down_nib)(4)
     nib(middle_up_nib)(5)
-    nib(thin_vertical_nib rotated 90)(8)
+    nib(end_nib rotated 90)(8)
     nib(down_nib)(10)
     nib(down_nib)(11)
     nib(down_nib rotated 90)(12)
