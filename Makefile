@@ -153,12 +153,12 @@ $(FONTSDIR)/%/ttf: ${UFODIR}/%.ufo
 $(FONTSDIR)/%/ufo: ${UFODIR}/%.ufo
 	@cp -r $</ $@/
 
-# Create woff2 formatted webfonts for all the ttfs available
+# Create woff2 formatted webfonts for all the otfs available
 # Could be done using fonttools but using a python script to avoid hassles of loop
 # and filename mangling in Makefile
 $(FONTSDIR)/%/webfonts:
 	@mkdir -p  $@
-	$(PY) tools/gen_webfonts.py $(FONTSDIR)/$*/**/*.ttf
+	$(PY) tools/gen_webfonts.py $(FONTSDIR)/$*/**/*.otf
 
 clean:
 	@find -iname "*.pyc" -delete
