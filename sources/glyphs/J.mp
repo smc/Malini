@@ -11,13 +11,13 @@ paths[p] = z0--z1{down}..z2..z3..z4;
 paths[p] := paths[p] shifted (thick, 0);
 pen_stroke(
     nib(thick_vertical_nib)(0,1,2)
-    nib(down_nib rotated( 90 + terminalangle 3 of paths[0]))(3)
-    nib(end_nib rotated terminalangle 4 of paths[0])(4)
+    nib(down_nib rotated( 90 + terminalangle 3 of paths[p]))(3)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 %serif
 p:=p+1;
-paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+paths[p] := serif_top_thick shifted (point 0 of paths[p-1]);
 strokes[p] := serif_stroke(paths[p]);
 
 lbearing:=2lbearing;
