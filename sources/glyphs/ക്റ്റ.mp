@@ -36,21 +36,21 @@ p:=p+1;
 paths[p] = ra;
 paths[p] := paths[p] shifted (0, -1.05m ) xscaled 0.75 yscaled 0.75;
 pen_stroke(
-   nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+   nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib  rotated -45)(4)
+    nib(end_nib  rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 p:=p+1;
 paths[p] := paths[p-1] shifted (mw, 0);
 
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib  rotated -45)(4)
+    nib(end_nib  rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 1 of paths[p]);

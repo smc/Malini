@@ -1,15 +1,15 @@
 input glyph;
 beginglyph;
 z0 = ( x1 + mw/4 , 0);
-z1 = ( 0, (y0 + y2)/2);
+z1 = ( 0, (y0 + y2)/2.2);
 z2 = ( x1 + mw/1.8, m); % top
 z3 = ( x2 + mw/3, y2 - m/4);
 z4 = ( x3 - mw/4, y3 - m/4); % <
 z5 = ( x4 + mw/3, y4-m/4);
-z6 = ( x5 - mw/3, y0 + thick*0.5/2);
-z7 = ( x6 - mw/4, y6 + m/2.5);
-z8 = ( x7 + mw/2.5, m*0.95);   % top
-z9 = ( x8 + mw/2, 2/3m);
+z6 = ( (x5 + x7)/1.85, y0 + thick*0.5/2);
+z7 = ( x5 - mw/1.75, y6 + m/2.5);
+z8 = ( (x7 + x9)/1.8, m*0.95);   % top
+z9 = ( x7 + 0.9mw, 2/3m);
 z10 = ( x9, 0);
 paths[0] = z0..z1..z2..z3..{left}z4{right}..z5..z6..{up}z7..z8..{down}z9---z10;
 pen_stroke(
