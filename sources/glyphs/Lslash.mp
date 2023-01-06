@@ -1,35 +1,51 @@
 input glyph;
 beginglyph;
-z0=(0, X);
-z1=(x0, X/2);
-z2=(x1, 0);
 
-paths[0] = z0{down}..z1..{down}z2;
-paths[0] := paths[0] shifted (sw/4,0);
+p:=0;
+z0=(thick/2, X);
+z1=(x0,0);
+paths[p] := z0--z1;
+pen_stroke(
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
 
-z3=(xpart(point 2 of paths[0]), thin/2);
+p:=p+1;
+clearxy;
+z3=(xpart(point 0 of paths[p-1]), thin*1.2/2);
 z4=(x3 + Xw/2, y3);
 
-paths[1] = z3{dir 10}..{dir 10}z4;
-paths[1] := paths[1] shifted (sw/4,0);
+paths[p] = z3--z4;
 pen_stroke(
-    nib(thicknib)(0, 2, 3, 5)
-    nib(thinnib)(1,2)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+   nib(end_nib rotated 90)(0,1)
+)(paths[p])(strokes[p]);
+
+% Serifs
+p:=p+1;
+paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
+
+p:=p+1;
+paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+strokes[p] := serif_stroke(paths[p]);
+
+p:=p+1;
+z0=(xpart(point 1 of paths[1]), y1  + thick/2 + u);
+z1=(x0-serif_width/4, ypart(point 1 of paths[1]));
+paths[p]=z0--z1;
 pen_stroke(
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(serif_nib rotated terminalangle 0 of paths[p])(0 )
+    nib(serif_nib scaled 1.5 rotated terminalangle 1 of paths[p])(1 )
+)(paths[p])(strokes[p]);
 
 % Slash
 clearxy;
-z0=(0, ypart(point 1 of paths[0]));
+p:=p+1;
+z0=(-serif_width*0.5, ypart(point 0.5 of paths[0]));
 z1=(x0+sw/2, y0 +s/4);
-paths[2]=z0..z1;
+paths[p]=z0--z1;
 pen_stroke(
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
+    nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
+)(paths[p])(strokes[p]);
+lbearing:=serif_width-lbearing;
 endglyph;

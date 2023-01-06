@@ -30,7 +30,7 @@ strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
 z0=(xpart(point 1 of paths[1]), y1  + thick/2 + u);
-z1=(x0-thick/2, ypart(point 1 of paths[1]));
+z1=(x0-serif_width/4, ypart(point 1 of paths[1]));
 paths[p]=z0--z1;
 pen_stroke(
     nib(serif_nib rotated terminalangle 0 of paths[p])(0 )

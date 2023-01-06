@@ -1,58 +1,68 @@
 input glyph;
 beginglyph;
+p:=0;
+clearxy;
+z0=(x1 + 0.05mw, y2-m/2);
+z1=(mw/3, (y0 + y2)/2);
+z2=((x1 + x3)/2, 0.8m);
+z3=(x2 + mw/3.25, 0.6y2);
+z4=(x1, thick*sind(45)/2);
 
-z0=(x1 + 0.1mw, 0.3m);
-z1=(0, y0 + m/4);
-z2=(x1 + mw/4, y1 + m/4);
-z3=(x2 + mw/4, y2 - m/4);
-z4=(x0, thick/5);
-
-paths[0] = z0{dir 130}..z1..{right}z2..z3..{dir 200}z4;
-paths[0] := paths[0] slanted tand(8);
-paths[0] := paths[0] shifted (mw/8, 0);
-
-pen_stroke(
-    nib(thicknib)(0, 2, 4, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
-
-z5=(0, 0);
-z6=(x5 + mw*1.2, y5);
-
-z10=(x11 - 0.3mw, 0);
-z11=(x6 - mw/4, y10 + 0.5m);
-z12=(x11 + 0.5mw, y11 + 0.5m);
-z13=(x12 + 0.5mw, y12 - 0.5m);
-z14=(x13 - 0.3mw, y13 - 0.5m);
-z15=(x14 - mw/4, y14 + m/3);
-z16=(x15 + mw/2, y15 + m/3);
-z17=(x16 + mw/2, y16 - m/4);
-z18=(x17 - mw/4, y17 - m/6);
-z19=(x18 + mw/3, y18 - m/6);
-z20=(x15, -descent*1.2);
-
-paths[1] :=z5{dir 20}..{dir 20}z6{dir 135}..z11..z12..z13..z14..{dir 80}z15..z16..z17..{left}z18{right}..z19{dir -80}..{dir 190}z20;
+paths[0] = z0..z1..z2..z3..{left}z4 ;
 
 pen_stroke(
-    nib(thinnib)(2, 4, 6, 8, 10)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle 9 of paths[1])(9)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(start_up_nib rotated terminalangle 0 of paths[0])(0 )
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(end_nib rotated 45)(4)
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+clearxy;
+z0=(0, ypart(point infinity of paths[p-1]));
+z1=(x0 + 1.5mw, y0);
+paths[p] := z0--z1;
+
+pen_stroke(
+    nib(down_nib)(0,1)
+)(paths[p])(strokes[p]);
 
 clearxy;
-z0 = point infinity of paths[1] ;
-z1 = ((x0+ x2)/2, y0);
-z2 = (xpart(point 8 of paths[1])+ thick/2, y0);
-paths[2] :=  z0{dir 20}..z1..{dir 20}z2;
-pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
-rbearing:=rbearing - mw/10;
-anchor( "vc", point 3 of paths[0]);
+p:=p+1;
+z0=(x1 + mw/4, thick/4)  ;
+z1=(0, y0 + 0.5m) + (xpart(point infinity of paths[p-1]) - 0.22mw, 0);
+z2=(x1 + mw/2, y1 + m/2);
+z3=(x2 + mw/2, y1);
+z4=(x3 - mw/3, thick*0.5/2);
+z5=(x4 - mw/4, y4 + m/3);
+z6 = (x5 + mw/2, y5 + m/3);
+z7 = (x6 + mw/2, (y6+y8)/2);
+z8 = (x7 - mw/4, (y7+y9)/2);
+z9 = (x8 + mw/3, (y8+y10)/2);
+z10 = (x6, -m/6);
+z11 = (xpart point 0 of paths[0], y10);
+z12 = (xpart point 0 of paths[1] + thick/2, (y11+y13)/2);
+z13 = (x11, -descent);
+z14 = (x7+thick/2, y13);
 
+paths[p] = z0..z1..z2{right}..z3..z4..z5..z6{right}..z7..{left}z8{right}..z9..z10---z11..z12..z13---z14;
+pen_stroke(
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(down_nib)(4)
+    nib(middle_up_nib)(5)
+    nib(top_nib)(6)
+    nib(middle_down_nib scaled 0.9)(7, 9)
+    nib(end_nib rotated 90)(8)
+    nib(down_nib)(10,11)
+    nib(down_nib rotated 90)(12)
+    nib(thick_horizontal_nib)(13,14)
+)(paths[p])(strokes[p]);
+
+anchor( "vc", point 2 of paths[0]);
+
+lbearing:=0;
 endglyph;
