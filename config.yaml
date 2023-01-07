@@ -11,16 +11,16 @@ styles: [
   "Expanded"
 ]
 version: 0.160
-unitsPerEm: 1024
-ascender: 768
-descender: 256
+unitsPerEm: 1000
+ascender: 750
+descender: 250
 source: https://gitlab.com/smc/fonts/Malini
 author:
   name: Santhosh Thottingal
   email: santhosh.thottingal@gmail.com
   url: https://thottingal.in
 license:
-  text: "This Font Software is licensed under the SIL Open Font License, Version 1.1. This licens is available with a FAQ at: https://scripts.sil.org/OFL"
+  text: "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
   url: https://scripts.sil.org/OFL
 manufacturer:
   name: SMC
