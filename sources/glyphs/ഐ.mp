@@ -3,35 +3,29 @@ beginglyph;
 z0 =(0, (y1 + y3)/2);
 z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
-z3=(x2 - mw/4, 0);
+z3=(x2 - mw/4, undershoot);
 z4=(x0, y0);
-paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..{up}z4;
+z5=(x4 + mw/2, m-overshoot);
+z6=(x5 + mw/2, (y5+y7)/2);
+z7=(x6 - mw/4, 0);
+% Dummy path
+paths[0] = z0{dir 80}..z1..z2..z3..z4{dir 100}..z5{right}..{down}z6..z7;
+% Get the point for extrema
+z8=point 4.1 of paths[0];
+paths[0] := z0{dir 80}..z1..z2..z3..z8{up}..z5{right}..{down}z6..z7;
 pen_stroke(
-    nib(middle_up_nib scaled 0.5)(0)
-    nib(top_nib)(1)
+   nib(middle_up_nib)(0,4)
+    nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
-    nib(middle_up_nib)(4)
+    nib(middle_down_nib )(6)
+    nib(end_nib rotated terminalangle 7 of paths[0])(7)
 )(paths[0])(strokes[0]);
-clearxy;
-z4=(point 3.8 of paths[0]);
-z5=(0, m/2);
-z6=(x5 + mw/2, m);
-z7=(x6 + mw/2, m/2);
-z8=(x7 - mw/4, 0);
-paths[1]= z4..z5 ..z6..{down}z7..z8;
-pen_stroke(
-    nib(middle_up_nib)(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib rotated -45)(4)
-)(paths[1])(strokes[1]);
 
 % എ
 clearxy;
 paths[3] :=pa_mouth;
-paths[3]:=paths[3] shifted (xpart(point 3 of paths[1]) + lbearing + 2rbearing,0);
+paths[3]:=paths[3] shifted (xpart(point 6 of paths[0]) + lbearing + 2rbearing,0);
 
 
 strokes[3] := va_mouth_stroke(paths[3]);
@@ -65,7 +59,7 @@ clearxy;
 z0=(0, 0);
 z1=((x0  + x2)/2, -descent*0.8);
 z2=(x0 - mw/1.8, (y1+y3)/2);
-z3=(x0, m*0.975);
+z3=(x0, m-overshoot);
 z4=(x0 + mw/2, y2);
 z5=(x4 - mw/4, y1);
 
@@ -76,7 +70,7 @@ pen_stroke(
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(top_nib)(3)
-    nib(end_nib)(infinity)
+    nib(end_nib rotated terminalangle infinity of paths[6])(infinity)
 )(paths[6])(strokes[6]);
 
 endglyph;

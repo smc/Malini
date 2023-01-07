@@ -25,7 +25,7 @@ p:=p+1;
 clearxy;
 z0=  (0,0);
 z1=(x0 + 0.7mw, y0);
-z2=(x1, m);
+
 
 paths[p]:= z0--z1 ;
 paths[p]:= paths[2] shifted ( xpart(point 4 of paths[p-1]) +  thick*0.5, thick*sind(45)/2);

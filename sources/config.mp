@@ -34,7 +34,7 @@ varstroke :=     1;           % Stroke modulation. Uses pen_strokes
 
 
 color glyphcolor; glyphcolor := (.1, .37,.71);
-color debugcolor; debugcolor := (.90, .38,.0);
+color debugcolor; debugcolor := 0.8green;
 color gridcolor; gridcolor := (.47, .46,.48);
 color arrowcolor; arrowcolor := (.90, .38,.0);
 

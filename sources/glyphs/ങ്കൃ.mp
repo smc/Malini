@@ -3,10 +3,10 @@ beginglyph;
 p:=1;
 clearxy;
 z0=(mw/2, 0.5m);
-z1=(x0 + mw/3, m);
-z2=(x1 + mw/3, (y1 + y3)/2);
-z3=(x2 - mw/3, y2 - m/2);
-z4=(x3 - mw/3, y0);
+z1=((x0 + x2)/1.96, m-overshoot);
+z2=(x0 + 2/3mw, (y1 + y3)/2);
+z3=(x1, undershoot);
+z4=(x0, y0);
 z5=(x4 - mw/4, y3);
 z6=(x5 - mw/4, y5 + 0.25m);
 z7=(x6 + mw/3, y6 + 0.3m);
@@ -22,7 +22,6 @@ pen_stroke(
    nib(down_nib)(5)
    nib(middle_down_nib scaled 0.9)(6, 9)
    nib(thin_vertical_nib rotated 90)(7, 8)
-
 )(paths[p])(strokes[p]);
 
 

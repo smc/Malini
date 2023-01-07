@@ -3,10 +3,10 @@ beginglyph;
 p:=0;
 z0 = (x1 + mw/4, m);
 z1 = (0, y0 - m/2);
-z2 = (x1 + mw/3, thick*0.5/2);
+z2 = (x1 + mw/3, undershoot);
 z3 = (x2 + mw/3, 0.4m);
 z4 = (x3, y5-0.4m);
-z5 = (x4 + mw/3, y0-thick*0.5/2);
+z5 = (x4 + mw/3, m-overshoot);
 z6 = (x5 + mw/3, y1);
 
 

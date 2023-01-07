@@ -14,7 +14,7 @@ p:=p+1;
 clearxy;
 z0=(thick*(1 - sind(50)), 0);
 z1=(x0, m*0.6);
-z2=(x1+mw/3, m); % Top of arch
+z2=(x1+mw/3, m - overshoot); % Top of arch
 z3=(x2+mw/2, 0.4m);
 z4= (x3 - mw/4,thin/2);
 z5= (x4 - mw/4, (y4 + y7)/3);

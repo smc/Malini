@@ -16,7 +16,7 @@ pen_stroke(
 
 clearxy;
 z0=point 3 of paths[0];
-z1=(x0 + mw/2, y0 + .6m); % Top of second arch
+z1=(x0 + mw/2, y0 + .6m - overshoot); % top of second arch
 z2=(x1 + mw/3, y1 - m/2);
 z3= ( x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);

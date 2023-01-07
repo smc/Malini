@@ -4,7 +4,7 @@ beginglyph;
 p:=0;
 z0 = ( x1 + mw/6 , 0);
 z1 = ( 0, (y0 + y2)/2);
-z2 = ( x1 + mw/2, m); % top
+z2 = ( x1 + mw/2, m - overshoot); % top
 z3 = ( x2 + mw/3, y4 + m/8);
 z4= ( x3 - mw/5, y5 + m/6);
 z5= ( x4 - mw/5, m/2);

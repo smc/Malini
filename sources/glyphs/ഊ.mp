@@ -6,7 +6,7 @@ z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
 z3=(x2 - mw/4, m/6);
 z4=(0, y0 );
-z5=(x4 + mw/2, m);
+z5=(x4 + mw/2, m-overshoot);
 z6=(x5 + mw/2, m/2);
 z7=(x5, 0);
 z8=(x3, y7);
@@ -33,7 +33,7 @@ pen_stroke(
 clearxy;
 z0 = (x1 + mw*0.1, 0.4m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/3, m);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/4, .6m);
 z4 = (x3, .4m);
 
@@ -49,7 +49,7 @@ pen_stroke(
 clearxy;
 z0 =  point 4 of paths[2] + (thick*0.5/2, 0);
 z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/3, m/2);
 z4 = (x3 - 0.8mw, 0);
 

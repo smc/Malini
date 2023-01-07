@@ -4,7 +4,7 @@ p:=0;
 clearxy;
 z0= (0, 0);
 z1= (x0, m/2);
-z2= ((x1+x3)/2, m);
+z2= ((x1+x3)/2, m-overshoot);
 z3= (x0+ mw, y1);
 z4= (x3, y0);
 paths[p] = z0---z1..z2..z3---z4;

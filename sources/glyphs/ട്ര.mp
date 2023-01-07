@@ -1,12 +1,12 @@
 input glyph;
 beginglyph;
 p:=0;
-z0 = (0.8mw, 0.85m);
-z1 = ((x0+x2)/1.8, m);
+z0 = (0.8mw, y1-0.15m);
+z1 = ((x0+x2)/1.8, m-overshoot);
 z2 = (0, (y1  + y3)/2);
 z3 = ((x2 + x4)/2, (y2 + y4)/2);
 z4 = (x0, (y3+y5)/2);
-z5 = (x3, 0);
+z5 = (x3, undershoot);
 z6 = (x2 - mw/3, y3);
 z7 = (x6 + mw/6, m);
 

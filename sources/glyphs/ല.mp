@@ -15,7 +15,7 @@ p:=p+1;
 clearxy;
 z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*sind(45)/2);
 z1=(x0, 0.6m);
-z2=(xpart(point 0.5 of paths[0]), m);
+z2=(xpart(point 0.5 of paths[0]), m-overshoot);
 z3=(0, y1);
 z4=(0, 0);
 

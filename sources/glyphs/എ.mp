@@ -32,7 +32,7 @@ clearxy;
 z0=(0, 0);
 z1=((x0  + x2)/2, -descent*0.8);
 z2=(x0 - mw/1.8, (y1+y3)/2);
-z3=(x0, m*0.975);
+z3=(x0, m-overshoot);
 z4=(x0 + mw/2, y2);
 z5=(x4 - mw/4, y1);
 

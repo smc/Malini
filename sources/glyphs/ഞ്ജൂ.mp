@@ -14,7 +14,7 @@ p:=p+1;
 clearxy;
 z0=(thick*(1 - sind(50)), 0);
 z1= (x0, m*0.6);
-z2 = ( x1 + mw/3, m); % top
+z2 = ( x1 + mw/3, m - overshoot); % top
 z3 = ( x2 + mw/4, 0.875m);
 
 
@@ -55,7 +55,7 @@ p:=p+1;
 clearxy;
 z0=point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
 z1=(x0, m*0.6);
-z2=((x1+x3)/2, m); % Top of arch
+z2=((x1+x3)/2, m - overshoot); % Top of arch
 x3-x1 = mw*0.7;
 z3=(x3, (y2 + y4)/2);
 z4=(x2, ypart(point 3 of paths[p-1]) - m/12);

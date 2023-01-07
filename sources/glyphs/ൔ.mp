@@ -11,7 +11,7 @@ paths[1] = z0{dir 20}..{dir 20}z1{dir 20}..z2..z3;
 clearxy;
 z0 = (mw/4, m/4);
 z1 = (0, 2/3m);
-z2 = (mw/2, m);
+z2 = (mw/2, m-overshoot);
 z3 = (x2 + mw/3, y1);
 z4=  point 0.2 of paths[1];
 

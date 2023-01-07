@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 z0=(0, 1.1m);
-z1=((x0 + x2)/2, 1.4m);
+z1=((x0 + x2)/2.12, 1.4m);
 z2=(x1 + mw*0.3, m);
 z3=(x2, 0);
 

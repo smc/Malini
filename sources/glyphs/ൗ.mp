@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 z0 = (x1 + mw*0.1, 0.4m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/3, m);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/4, .6m);
 z4 = (x3, .4m);
 
@@ -15,9 +15,9 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 =  point 4 of paths[0] + (thick*0.5/2, 0);
-z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m);
+z0 = point 4 of paths[0] + (thick*0.5/2, 0);
+z1 = (x0, m*0.6);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/3, m/2);
 z4 = (x3 - 0.8mw, 0);
 

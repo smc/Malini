@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 p=0;
-paths[p] :=pa_mouth shifted (0, 0.4m);
+paths[p] :=pa_mouth shifted (0, 0.4m-overshoot);
 strokes[p] := va_mouth_stroke(paths[p]);
 p:=p+1;
 clearxy;
@@ -21,7 +21,7 @@ p:=p+1;
 clearxy;
 z0=point infinity of paths[p-1] - (0, thick*sind(45)/2);
 z1=(x0, y0+m/6);
-z2=((x1+x3)/2, m);
+z2=((x1+x3)/2, m-overshoot);
 z3=(x0 - mw*0.8, y1);
 z4=(x3,0);
 paths[p]:= z0---z1..z2..z3---z4 ;

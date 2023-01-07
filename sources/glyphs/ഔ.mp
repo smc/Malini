@@ -3,7 +3,7 @@ beginglyph;
 z0 =(0, (y1 + y3)/2);
 z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
-z3=(x2 - mw/4, thick*0.6/2);
+z3=(x2 - mw/4, undershoot);
 z4=(x0, y0);
 
 paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..{up}z4;
@@ -19,7 +19,7 @@ pen_stroke(
 clearxy;
 z0 = point 3.8 of paths[0];
 z1 = ( x0, (y0 + y2)/2);
-z2 = ( x1 + mw/1.666, m); % top
+z2 = ( x1 + mw/1.666, m - overshoot); % top
 z3 = ( x2 + mw/2.4, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);
@@ -39,7 +39,7 @@ pen_stroke(
 clearxy;
 z0 = (x1 + mw*0.1, 0.4m);
 z1 = (0, 0.75m);
-z2 = (x1 + mw/3, m);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/4, .6m);
 z4 = (x3, .4m);
 
@@ -56,7 +56,7 @@ pen_stroke(
 clearxy;
 z0 =  point 4 of paths[2] + (thick*0.5/2, 0);
 z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m);
+z2 = (x1 + mw/3, m-overshoot);
 z3 = (x2 + mw/3, m/2);
 z4 = (x3 - 0.8mw, thick*0.6/2);
 

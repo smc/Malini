@@ -29,6 +29,8 @@ Xw  := X * condense; % Width of Latin capital letters
 lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 
+overshoot := thin*1.2/4;
+undershoot := thick*0.77/4;
 serif_height := thick*0.4;
 serif_width :=  thick/2 + serif_height*2;
 
@@ -79,8 +81,8 @@ vardef show_coordinates (expr p) =
         pair b;b:=point i+1 of p;
         string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
         dotlabel.bot(pointlabel, a) withpen pencircle scaled 10 withcolor debugcolor;
-        draw (point i of p -- precontrol i of p)  withpen pencircle scaled 2 withcolor debugcolor;
-        draw (point i of p -- postcontrol i of p)  withpen pencircle scaled 2 withcolor debugcolor;
+        draw (point i of p -- precontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
+        draw (point i of p -- postcontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
     endfor;
 
 enddef;
@@ -150,7 +152,7 @@ def endglyph =
             fi;
             if showcoords = 1:
                 show_coordinates(paths[i]);
-                % show_coordinates(strokes[i]);
+                show_coordinates(strokes[i]);
             fi;
         fi;
     endfor;

@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 paths[0] = subpath (0.2, 3.33) of left_arch;
-paths[1] = subpath (1, 3) of right_arch_short shifted (xpart(point 3 of paths[0]), 0);
+paths[1] = subpath (1, 3) of right_arch shifted (xpart(point 3 of paths[0]), 0);
 x1= xpart(point 3 of paths[1]) - mw/3;
 y1 = y2= 0;
 x2 = x1 + 0.6mw;
