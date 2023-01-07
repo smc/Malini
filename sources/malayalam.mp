@@ -6,8 +6,8 @@
 
 vardef left_arch =
     clearxy;
-    z0=(x1+mw/4, undershoot);
-    z1=(0, (y0+y2)/2);
+    z0=(x1+mw/4, 0);
+    z1=(0, (y0+y2)/1.85);
     z2=((x1+x3)/1.8, m-overshoot);
     x3-x1 = 0.7*mw;
     z3=(x3, 0.6m);

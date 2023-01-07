@@ -16,7 +16,7 @@ enddef;
 vardef n_arch =
     clearxy;
     z0=(0, 0.6s);
-    z1=(0.6x2, s-thick/4);
+    z1=(0.64*x2, s-thick/4);
     z2=(x0 + 0.75sw, 2/3s);
     z3=(x2, 0);
     z0{dir 60}..z1{right}..z2---z3
@@ -26,11 +26,11 @@ enddef;
 vardef p_loop =
     clearxy;
     z0=(0, 0.6s);
-    z1=(0.6x2, s-thick/4);
-    z2=(x0 + 0.8sw, 0.5s);
-    z3=(x1, thick/4);
+    z1=(0.56*x2, s-thick/4);
+    z2=(x0 + 0.8sw, 0.52s);
+    z3=(0.46*x2, undershoot);
     z4=(x0, y3 + 0.2s);
-    z0{dir 60}..z1{right}..z2{dir -90}..z3{left}..z4
+    z0{dir 60}..z1{right}..z2{down}..z3{left}..z4
 enddef;
 
 vardef a_loop =

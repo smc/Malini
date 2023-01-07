@@ -12,7 +12,7 @@ z8 = (x7 - mw/4, y6);
 paths[0] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6{down}.. z7..z8;
 z9 = point 5.66 of paths[0];
 y8 := (y6+y8)/2;
-paths[0] := z0{dir 215}..z1..z2..z3 --- z4..z5.. z6{down}.. z7..z8..z9;
+paths[0] := z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6{down}.. z7..z8..z9;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)

@@ -32,7 +32,7 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
 strokes[p] := serif_stroke(paths[p]);
 
-lbearing:=serif_width-lbearing;
+lbearing:=serif_width/2;
 
 anchor( "top", (xpart(point 0.5 of paths[1]), X));
 anchor( "bottom", (xpart(point 0.5 of paths[1]), 0));

@@ -7,12 +7,12 @@ z2 = (x1 + mw/3, undershoot);
 z3 = (x2 + mw/3, 0.4m);
 z4 = (x3, y5-0.4m);
 z5 = (x4 + mw/3, m-overshoot);
-z6 = (x5 + mw/2, y1);
+z6 = (x5 + mw/2, (y5+y7)/2.4);
 z7 = (x6 - mw/4, y2);
 z8 = (x7 - mw/4, y6);
-paths[0] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6.. z7..{dir 60}z8;
+paths[0] = z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6.. z7..z8;
 z9 = point 5.66 of paths[p];
-paths[p] := paths[0]{dir 60} .. z9;
+paths[0] := z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6.. z7..z8..z9;
 % Shift to accommodate the below letter
 paths[p]:=paths[p] yscaled 0.9 shifted (0, m*0.1);
 

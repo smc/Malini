@@ -19,7 +19,7 @@ z14 = (x0, y13);
 z15 = (x1, (y14+y16)/2);
 z16 = (x14, -descent);
 z17 = (x10+thick/2, y16);
-paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6.. z7..z8..{right}z9..z10..{left}z11{right}..z12..z13---z14..z15..z16---z17;
+paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6.. z7..z8..{right}z9..z10..{left}z11{right}..z12..z13---z14..z15..z16---z17;
 
 pen_stroke(
     nib(end_nib rotated terminalangle 0 of paths[0])(0)

@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0=(0, s-thin);
+z0=(0, s-serif_height/2);
 z1=(x0  ,-descent);
 paths[p] := z0--z1;
 pen_stroke(
@@ -13,10 +13,11 @@ clearxy;
 p:=p+1;
 paths[p]:= p_loop;
 pen_stroke(
-   nib(middle_up_nib)(0, 4)
+   nib(middle_up_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_down_nib)(2)
    nib(down_nib)(1)
    nib(down_nib)(3)
+   nib(middle_up_nib rotated terminalangle 4 of paths[p])(4)
    ignore_directions(1, 2, 3)
 )(paths[p])(strokes[p]);
 
@@ -30,5 +31,5 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
 strokes[p] := serif_stroke(paths[p]);
 
-lbearing:=2lbearing;
+lbearing:=serif_width/2;
 endglyph;

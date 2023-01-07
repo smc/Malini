@@ -22,8 +22,7 @@ paths[1] = z5--z6;
 pen_stroke(
      nib(end_nib rotated 90)(0,1)
 )(paths[1])(strokes[1]);
-
-lbearing:=1.5lbearing;
+lbearing:=serif_width/2;
 anchor( "top", (xpart(point 2 of paths[0]), X));
 anchor( "bottom", (xpart(point 2 of paths[0]), 0));
 endglyph;
