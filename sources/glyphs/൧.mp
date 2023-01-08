@@ -14,7 +14,7 @@ z3=(xpart point infinity of paths[0], 0);
 z4=(x3, y3 + m/2);
 z5=(x4 - mw/3, m);
 z6=(x5 - mw/3, y5 - m/2);
-z7=(x6, y2);
+z7=(x6, y3);
 
 paths[1] =  z3---z4..z5..z6---z7;
 pen_stroke(
