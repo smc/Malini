@@ -4,7 +4,7 @@ p:=0;
 clearxy;
 % ഋ sign
 z0 = (0,m);
-z1 = (x0 - 0.5mw, -descent*1.2);
+z1 = (x0 - mw/2, -descent*1.2);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);
 z4 = (x1 + mw/3, y2);

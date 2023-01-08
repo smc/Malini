@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(mw/12, m);
-z1=(x0 + mw/4, 0.5m);
+z1=(x0 + mw/4, m/2);
 z2=(x1 - mw/8, 0);
 paths[0] = z0 ..z1..z2;
 pen_stroke(

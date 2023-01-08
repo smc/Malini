@@ -4,8 +4,8 @@ beginglyph;
 slant := 0;
 w := m/4;
 z0= (1.5w, m);
-z1=( x0-w/2, y0 - 0.5m);
-z2=( x1-w/2, y1 - 0.5m);
+z1=( x0-w/2, y0 - m/2);
+z2=( x1-w/2, y1 - m/2);
 
 paths[0] = z0..z1..z2 ;
 paths[1] = paths[0] shifted (m/3, 0) ;

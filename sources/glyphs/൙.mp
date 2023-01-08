@@ -2,8 +2,8 @@ input glyph;
 beginglyph;
 
 z0=(.5thick, -thick/2);
-z1=(x0, y0 + 0.5m);
-z2=(x0, y1 + 0.5m);
+z1=(x0, y0 + m/2);
+z2=(x0, y1 + m/2);
 z3=(x2 + 0.8mw , y2 - 0.4m);
 z4=(x3 - mw/4, 0); % bottom
 z5=(x4 - mw/4, y4+ m/4);

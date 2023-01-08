@@ -30,7 +30,7 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=point 8.5 of paths[0];
-z1=(x0 + 0.5mw, 0.4m);
+z1=(x0 + mw/2, 0.4m);
 z2=(x1, m);
 paths[1] = z0{right}..{up}z1---z2;
 pen_stroke(

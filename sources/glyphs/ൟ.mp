@@ -19,7 +19,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0=(x1 + 0.3mw, 0);
-z1=(0, y0 + 0.5m);
+z1=(0, y0 + m/2);
 z2=(x1 + mw/2, y1 + m/2);
 z3=(x2 + mw/2, y1);
 z4=(x3 - mw/3, undershoot);

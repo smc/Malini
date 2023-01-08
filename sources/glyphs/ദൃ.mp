@@ -17,7 +17,7 @@ p:=p+1;
 clearxy;
 % ഋ sign
 z0 = point 5 of paths[p-1];
-z1 = (x0 - 0.5mw, -descent);
+z1 = (x0 - mw/2, -descent);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);
 z4 = (x1 + mw/3, y2);

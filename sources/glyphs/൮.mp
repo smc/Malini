@@ -34,7 +34,7 @@ p:=p+1;
 clearxy;
 % bottom tail
 z0 = point 1 of paths[p-2];
-z1 = (x0 - 0.5mw, -descent);
+z1 = (x0 - mw/2, -descent);
 paths[p] = z0{down}.. {left}z1;
 pen_stroke(
     nib(thick_vertical_nib)(0)

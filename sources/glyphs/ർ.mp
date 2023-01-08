@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 z0=(x1 + mw/4, 0);
-z1=(0, y0 + 0.5m);
+z1=(0, y0 + m/2);
 z2=(x1 + mw/2, m-overshoot);
 z3=(x2 + mw/1.75, (y2+y4)/2.4);
 z4=(x3 - mw/3, undershoot);

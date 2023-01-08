@@ -19,7 +19,7 @@ z2=((x1+x3)/2, m - overshoot); % Top of arch
 x3-x1 = mw*0.6;
 z3=(x3, m-m/3);
 z4=(x3, m/3);
-z5= ( x4+ mw/3, 0);
+z5= ( x4+ mw/3, undershoot);
 z6= ( x5 + mw/4, m/3);
 
 paths[p] = z0---z1..z2..z3---z4..z5..z6;

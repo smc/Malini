@@ -41,6 +41,8 @@ color arrowcolor; arrowcolor := (.90, .38,.0);
 % Configurations for debug(development) mode.
 showgrids := 0;
 showcoords := 0;
+showcontrols:=0;
+showpoints:=0;
 show_paths := 0;
 
 

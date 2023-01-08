@@ -2,13 +2,13 @@ input glyph;
 
 beginglyph;
 
-z0 = (mw*0.6 , 0.6m);
+z0 = (mw*0.5 , 0.6m);
 z1 = (x0 + mw/3, m-overshoot);
 z2 = (x1 + mw/3.5, (y1+y3)/1.65);
 z3 = ((x2 + x4)/2, undershoot);
-x2-x4 = mw*1.12;
+x2-x4 = mw*1.2;
 z4 = (x4, (y3+y5)/1.8);
-z5 = (x4 + mw/3, y1);
+z5 = ((x4 + x6)/2, y1);
 z6 = (x0, y0);
 z7 = (x6 + 0.05mw, (y6+y8)/2);
 z8 = ((x7 + x9)/2, undershoot);
@@ -30,10 +30,8 @@ pen_stroke(
    nib(end_nib rotated terminalangle 10 of paths[0])(10)
 )(paths[0])(strokes[0]);
 
-
 anchor( "vc", (x1,0));
 anchor( "bottom", point 8.25 of paths[0]);
 anchor( "right", point 8.25 of paths[0]);
-
 
 endglyph;

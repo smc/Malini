@@ -71,6 +71,16 @@ vardef thinterminalnib =
 enddef;
 
 
+% Show bezier controls
+vardef show_controls (expr p) =
+    for i=0 upto length(p):
+        pair a;a:=point i of p;
+        pair b;b:=point i+1 of p;
+        draw (point i of p -- precontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
+        draw (point i of p -- postcontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
+    endfor;
+enddef;
+
 
 vardef show_coordinates (expr p) =
     % Debug points are hard to see. Change the fontsize
@@ -78,11 +88,14 @@ vardef show_coordinates (expr p) =
 
     for i=0 upto length(p):
         pair a;a:=point i of p;
-        pair b;b:=point i+1 of p;
-        string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
+        string pointlabel;
+        if showpoints = 1:
+            pointlabel := decimal(i) ;
+        fi;
+        if showcoords = 1:
+           pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
+        fi;
         dotlabel.bot(pointlabel, a) withpen pencircle scaled 10 withcolor debugcolor;
-        draw (point i of p -- precontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
-        draw (point i of p -- postcontrol i of p)  withpen pencircle scaled 1 withcolor debugcolor;
     endfor;
 
 enddef;
@@ -150,9 +163,12 @@ def endglyph =
             if show_paths = 1:
                 draw paths[i] withpen nib scaled 2 withcolor 0.8white;
             fi;
-            if showcoords = 1:
+            if (showcoords = 1) or (showpoints = 1):
                 show_coordinates(paths[i]);
-                show_coordinates(strokes[i]);
+            fi;
+            if showcontrols = 1:
+                show_controls(paths[i]);
+                show_controls(strokes[i]);
             fi;
         fi;
     endfor;
