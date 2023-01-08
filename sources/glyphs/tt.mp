@@ -14,7 +14,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 %bar
 
-z5 = (x0 - thick*1.25, s);
+z5 = (x0 - thick*1.25, s-thin*1.2/2);
 z6 = (x5 + sw*1.25, y5);
 
 
@@ -31,5 +31,7 @@ pen_stroke(
      nib(down_nib)(3)
      nib(end_nib scaled 0.75 rotated terminalangle 4 of paths[0])(4)
 )(paths[2])(strokes[2]);
+
+lbearing:=serif_width/2;
 
 endglyph;
