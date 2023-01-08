@@ -1,20 +1,21 @@
 input glyph;
 beginglyph;
-paths[0] := ra;
-z5=point infinity of paths[0];
-z6=(x5 + 0.6mw, y5);
-paths[1] = z5{dir 20}..{dir 20}z6;
+p=0;
+paths[p] := va_mouth;
+strokes[p] := va_mouth_stroke(paths[p]);
+% Horizontal stem
+p:=p+1;
+clearxy;
+z0=(0,0);
+z1=(x0 + 0.7mw, y0);
+
+paths[p]:= z0--z1 ;
+paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1]) , thick*sind(45)/2);
+
 pen_stroke(
-    nib(thicknib)(0, 2, 4, 5, 6)
-    nib(thinnib)(1,3)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
-pen_stroke(
-    nib(thicknib)( 1, 3)
-    nib(thinnib)(2)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(thin_horizontal_nib)(0)
+    nib(thin_horizontal_nib)(1)
+)(paths[p])(strokes[p]);
+
 
 endglyph;
