@@ -12,7 +12,7 @@ z8 = ( x3, y0 - m/8); %
 z9 = ( x8 - 3/4mw, y8);
 z10 = ( x1, (y9+y11)/2);
 z11 = ( x9*2, -descent);
-z12 = ( x7+thick, y11);
+z12 = ( x7+thick/2, y11);
 paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8---z9..z10{down}..z11---z12;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
@@ -25,5 +25,4 @@ pen_stroke(
     nib(down_nib rotated 90)(10)
     nib(thick_horizontal_nib)(11,12)
 )(paths[0])(strokes[0]);
-rbearing:=rbearing - thick;
 endglyph;

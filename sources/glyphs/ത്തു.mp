@@ -41,7 +41,6 @@ pen_stroke(
     nib(down_nib rotated 90)(10)
     nib(thick_horizontal_nib)(11,12)
 )(paths[p])(strokes[p]);
-rbearing:=rbearing - thick;
 
 anchor( "vc", (xpart(point infinity of paths[0]),0));
 endglyph;

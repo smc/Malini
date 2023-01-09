@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 z0=(sw/4, s);
-z1=(x0, s/3);
+z1=(x0, s/4);
 z2=((x1+x3)/2, undershoot);
 z3=(x1 + sw/2.5, y2+s/6);
 paths[0] = z0---z1{down}..z2..{dir 60}z3;
