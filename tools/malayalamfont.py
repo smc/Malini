@@ -921,7 +921,7 @@ class MalayalamFont(Font):
             int(self.info.xHeight-60), int(self.info.xHeight-30),
             # Midline
             int(self.info.xHeight/2-12), int(self.info.xHeight/2+12),
-            int(self.info.ascender-12), int(self.info.ascender+12),
+            int(self.info.ascender), int(self.info.ascender+20),
             int(-self.info.descender), int(-self.info.descender+12)
         ]
         self.info.guidelines=[

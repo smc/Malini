@@ -80,7 +80,7 @@ $(FONTSDIR)/%/otf : %.designspace
 		--filter "ufo2ft.filters.dottedCircleFilter::DottedCircleFilter(pre=True, dots=10)" \
 		--flatten-components  \
 		--interpolate  \
-		--optimize-cff 0 \
+		--optimize-cff 1 \
 		--output-dir $@ \
 		--output otf
 	$(PY) tools/fix_font.py $@/*.otf
@@ -106,7 +106,7 @@ $(FONTSDIR)/%/otf-variable : %.designspace
 		--flatten-components \
 		--output-dir $@ \
 		--verbose WARNING \
-		--optimize-cff 0 \
+		--optimize-cff 1 \
 		--output variable-cff2
 
 	$(PY) tools/fix_font.py $@/*.otf

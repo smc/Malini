@@ -14,7 +14,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0 = point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
+z0 = point infinity of paths[p-1] + (thick/2-thin/2, undershoot);
 z1 = ( x0, (y0 + y2)/2);
 z2 = ( x1 + mw/2, m - overshoot); % top
 z3 = ( x2 + mw/3, y4 + m/8);

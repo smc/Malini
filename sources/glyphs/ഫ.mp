@@ -7,11 +7,11 @@ strokes[p] := va_mouth_stroke(paths[p]);
 p:=p+1;
 clearxy;
 z0=  (0,0);
-z1=(x0 + 1.5mw, y0);
+z1=(x0 + 1.3mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( 0, thick*sind(45)/2) );
+paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -20,7 +20,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[p-1]), 0);
+z0=(xpart(point infinity of paths[p-1])-thick/2, thin/2);
 z1=(x0, m/2);
 z2=((x1+x3)/2, m);
 z3=(x0 - mw*0.8, y1);

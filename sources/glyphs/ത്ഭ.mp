@@ -25,7 +25,7 @@ z7 = ( x6 + mw/3, y8 + m/8);
 z8 = ( x2 - mw/8, thick*0.6);
 
 paths[p] := z0---z1..z2{right}..z3{down}..z4{left}..z5..z6{right}..z7{down}..{dir 150}z8;
-paths[p] := paths[p] shifted (point infinity of paths[p-1] + (thick*(1 - sind(50)), 0));
+paths[p] := paths[p] shifted (point infinity of paths[p-1] + (thick/2-thin/2, undershoot));
 pen_stroke(
     nib(thin_vertical_nib)(0)
     nib(thin_vertical_nib)(1)

@@ -13,7 +13,7 @@ clearxy;
 
 p:=p+1;
 clearxy;
-z0=(thick*(1 - sind(50)), 0);
+z0=(thick/2-thin/2, undershoot);
 z1=(x0, m*0.6);
 z2=((x1+x3)/2, m - overshoot); % Top of arch
 x3-x1 = 0.8*mw;

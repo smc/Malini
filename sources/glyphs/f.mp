@@ -5,7 +5,7 @@ z0=(x2 + Xw/3, y1-thick/2);
 z1=((x0+x2)/2, 1.05X-thick/4);
 z2=(x4  , 0.8X);
 z3=(x4, 3/4s);
-z4=(sw/4, 0);
+z4=(sw/4, thick/4);
 paths[0] = z0{dir 135}..z1..{down}z2 ..{down}z3---z4;
 
 %bar
@@ -25,7 +25,7 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 p:=p+1;
-paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
+paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
 strokes[p] := serif_stroke(paths[p]);
 
 endglyph;

@@ -20,7 +20,7 @@ z2= ((x1+x3)/2, m);
 z3= (x0+ mw, y1);
 z4= (x3, y0);
 paths[p] = z0---z1..z2..z3---z4;
-paths[p] :=paths[p] shifted (point infinity of paths[p-1] + (thin/2, 0));
+paths[p] :=paths[p] shifted (point infinity of paths[p-1] + (thick/2-thin/2, undershoot));
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(middle_up_nib)(1)

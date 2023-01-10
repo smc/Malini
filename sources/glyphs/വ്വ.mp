@@ -7,10 +7,10 @@ strokes[p] := va_mouth_stroke(paths[p]);
 p:=p+1;
 clearxy;
 z0=(0,0);
-z1=(x0 + 0.7mw, y0);
+z1=(x0 + 0.8mw, y0);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1]) , thick*sind(45)/2);
+paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1]) + thin*1.2/2 , thick*sind(45)/2);
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -19,21 +19,22 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, 0);
+z0=(0, thick/2);
 z1=(x0, m);
 
 paths[p]:= z0--z1;
-paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
+paths[p]:= paths[p] shifted (xpart(point infinity of paths[p-1])-thick/2, 0);
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
+
 % Shoe
 clearxy;
 p:=p+1;
-z0 = point .5 of paths[1];
+z0 = point .3 of paths[1];
 z1 = (x0 - mw/3, -descent*0.8) ;
-z2 = (xpart(point 1 of paths[1]), y1) ;
+z2 = (xpart(point 0 of paths[2]), y1) ;
 paths[p] := z0{down}..z1--z2;
 pen_stroke(
     nib(top_nib rotated 45)(0,1,2)
@@ -42,7 +43,7 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=point infinity of paths[p-1] - (0, thick*0.5/2);
-z1 = point 1.6 of paths[1];
+z1 = (x0, 0);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)

@@ -12,7 +12,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] + (thin/2, 0);
+z0=point infinity of paths[p-1] + (thick/2-thin/2, undershoot);
 z1=(x0, 2/3m);
 z2=((x1+x3)/2, m - overshoot); % Top of arch
 x3-x1 = mw*0.6;

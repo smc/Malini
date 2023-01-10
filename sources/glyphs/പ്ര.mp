@@ -11,7 +11,7 @@ z1=(x0 + 0.9mw, y0);
 z2=(x1, m);
 p:=p+1;
 paths[1]:= z0--z1 ;
-paths[1]:= paths[1] shifted ( point infinity of paths[0] + ( 0, thick*sind(45)/2) );
+paths[1]:= paths[1] shifted ( point infinity of paths[0] + ( thin*1.2/2, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

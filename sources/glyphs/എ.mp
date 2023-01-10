@@ -5,7 +5,7 @@ strokes[0] := va_mouth_stroke(paths[0]);
 
 clearxy;
 z0=(0,0);
-z1=(x0 + 1.2mw, y0);
+z1=(x0 + mw, y0);
 z2=(x1, m);
 
 paths[1]:= z0--z1 ;

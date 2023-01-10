@@ -138,7 +138,7 @@ class SVGGlyph:
 
         baseGuide = svgObj.find(
             ".//sodipodi:guide/[@inkscape:label='base']", prefix_map)
-        base = -256
+        base = -250
         if baseGuide != None:
             base = int(float(baseGuide.get('position').split(',')[1])) * -1
         transform[5] += self.svg_height + base  # Y offset

@@ -6,11 +6,11 @@ strokes[p] := va_mouth_stroke(paths[p]);
 
 p:=p+1;
 clearxy;
-z0 = (0,0);
+z0=(0, 0);
 z1 = (x0 + mw, y0);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1]), thick*sind(45)/2 );
+paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thin*1.2/2, thick*sind(45)/2 );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

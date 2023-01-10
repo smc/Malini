@@ -24,7 +24,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] + (thick*(1 - sind(50)), 0);
+z0=point infinity of paths[p-1] + (thick/2-thin/2, 0);
 z1=(x0, m*0.6);
 z2=((x1+x3)/2, m - overshoot); % Top of arch
 x3-x1 = mw*0.7;
@@ -60,7 +60,7 @@ pen_stroke(
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
     nib(middle_up_nib)(4)
-    nib(thin_vertical_nib)(6,7,8)
+    nib(thick_vertical_nib)(6,7,8)
 )(paths[p])(strokes[p]);
 p:=p+1;
 paths[p] := right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
