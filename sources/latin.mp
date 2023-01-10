@@ -16,9 +16,9 @@ enddef;
 vardef n_arch =
     clearxy;
     z0=(0, 0.6s);
-    z1=(0.64*x2, s-thick/4);
+    z1=(0.64*x2, s-overshoot);
     z2=(x0 + 0.75sw, 2/3s);
-    z3=(x2, 0);
+    z3=(x2, serif_height/4);
     z0{dir 60}..z1{right}..z2---z3
 enddef;
 
@@ -26,7 +26,7 @@ enddef;
 vardef p_loop =
     clearxy;
     z0=(0, 0.6s);
-    z1=(0.56*x2, s-thick/4);
+    z1=(0.56*x2, s-overshoot);
     z2=(x0 + 0.8sw, 0.52s);
     z3=(0.46*x2, undershoot);
     z4=(x0, y3 + 0.2s);
@@ -38,9 +38,9 @@ vardef a_loop =
     save r;
     r=0.85;
     z0=(sw*r,  s-thick);
-    z1=(0.5*sw*r, s-thick/4);
+    z1=(0.5*sw*r, s-overshoot);
     z2=(0, s/3);
-    z3=(r*sw/3, thick/4);
+    z3=(r*sw/3, undershoot);
     z4=(x0, y0);
     z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4
 enddef;
@@ -63,7 +63,7 @@ vardef serif_top_slanted =
     z4 = (-thick/2 + serif_height/2, y3-serif_height);
     z5 = (x4, y4-thin);
 
-    z0--z1..{left}z2--z3{right}..{down}z4---z5
+    z0--z1--z2--z3{right}..{down}z4
 enddef;
 
 vardef serif_bottom_slanted =
@@ -99,7 +99,7 @@ vardef serif_stroke_slanted (expr spath) =
         nib(serif_nib rotated terminalangle 0  of spath)(0, 1)
         nib(serif_nib rotated terminalangle 2  of spath)(2)
         nib(serif_nib rotated terminalangle 3  of spath)(3)
-        nib(serif_nib)(4,5)
+        nib(serif_nib)(4)
     )(spath)(s_stroke);
     s_stroke
 enddef;

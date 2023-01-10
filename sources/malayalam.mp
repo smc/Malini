@@ -17,7 +17,7 @@ enddef;
 
 vardef right_arch =
     clearxy;
-    z0=(thin/2, 0);
+    z0=(thick/2-thin/2, undershoot);
     z1=(x0, 0.6m);
     z2=((x1+x3)/2.08, m-overshoot); % Top of arch
     x3-x1 = 2/3*mw;
@@ -28,7 +28,7 @@ enddef;
 
 vardef middle_arch =
     clearxy;
-    z0=(thin/2, 0);
+    z0=(thick/2-thin/2, undershoot);
     z1=(x0, 0.6m);
     z2=((x1+x3)/2, m-overshoot); % Top of arch
     x3-x1 = 0.6mw;
@@ -39,7 +39,7 @@ enddef;
 
 vardef right_tha_arch =
     clearxy;
-    z0=(thin/2, 0);
+    z0=(thick/2-thin/2, undershoot);
     z1= (x0, 0.6m);
     z2 = ( x1 + mw/2.75, m-overshoot); % top
     z3 = ( x2 + mw/2, (y2+y4)/2.5);
@@ -53,7 +53,7 @@ enddef;
 
 vardef middle_tha_arch =
     clearxy;
-    z0=(thin/2, 0);
+    z0=(thick/2-thin/2, undershoot);
     z1= (x0, 2/3m);
     z2 = ( x1 + mw/2.75, m-overshoot); % top
     z3 = ( x2 + mw/2, m/2);
@@ -92,7 +92,7 @@ enddef;
 
 vardef right_arch_dha =
     clearxy;
-    z0=(thin/2, m);
+    z0=(thick/2-thin/2, m);
     z1=(x0, 1/3m);
     z2=(x1 +  mw/3, undershoot);
     z3=(x2 +  mw/3, y2 + m/2);
@@ -217,7 +217,7 @@ enddef;
 
 vardef right_da =
     clearxy;
-    z0=(thin/2, 0);
+    z0=(thick/2-thin/2, undershoot);
     z1= (x0, 2/3m);
     z2 = ( x1 + mw/2.5, m-overshoot); % top
     z3 = ( x2 + mw/3, y2 - m/4);
@@ -247,7 +247,7 @@ enddef;
 vardef right_arch_with_eye =
     clearxy;
     path l;
-    z0 = (thin/2, 0);
+    z0 = (thick/2-thin/2, undershoot);
     z1=(x0, 0.6m);
     z2=((x1 + x3)/2.2, m-overshoot);
     z3=(x1 + 0.85mw, (y2+y4)/2.4);
@@ -260,7 +260,7 @@ enddef;
 
 vardef right_arch_with_tail =
     clearxy;
-    z0 = (thin/2, 0);
+    z0 = (thick/2-thin/2, undershoot);
     z1= ( x0 , 0.6m);
     z2= ( x1 + mw/2.25, m-overshoot);
     z3= ( x2 + mw/2.25, m/2);
