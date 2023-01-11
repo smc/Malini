@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import List
 from itertools import product
 from ufoLib2.objects import Font, Glyph, Component, Guideline
+from ufoLib2.objects.info import GaspRangeRecord
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
@@ -891,6 +892,17 @@ class MalayalamFont(Font):
         self.info.openTypeOS2TypoLineGap = int((self.info.ascender + self.info.descender)/4) # For 1.25 line height
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
+        # FIXME openTypeOS2WidthClass should change as per style:
+        # ULTRA_CONDENSED = 1
+        # EXTRA_CONDESED = 2
+        # CONDENSED = 3
+        # SEMI_CONDENSED = 4
+        # NORMAL = 5  # alias for WidthClass.MEDIUM
+        # MEDIUM = 5
+        # SEMI_EXPANDED = 6
+        # EXPANDED = 7
+        # EXTRA_EXPANDED = 8
+        # ULTRA_EXPANDED = 9
         self.info.openTypeOS2WidthClass = 5
 
         # A font's winAscent and winDescent values should be greater than the head
@@ -941,9 +953,17 @@ class MalayalamFont(Font):
         # self.info.postscriptFamilyBlues = []
         # self.info.postscriptFamilyOtherBlues = []
 
-        # self.info.postscriptSlantAngle = 0
+        self.info.postscriptSlantAngle = 0
         self.info.postscriptStemSnapH = [42]
         self.info.postscriptStemSnapV= [92]
-        self.info.postscriptUnderlinePosition = -700
-        self.info.postscriptUnderlineThickness = 100
-        self.info.postscriptUniqueID = 0
+        self.info.postscriptUnderlinePosition = -200
+        self.info.postscriptUnderlineThickness = 50
+
+        self.info.openTypeGaspRangeRecords = [
+            GaspRangeRecord(65535, [
+                0, # GRIDFIT
+                1, # DOGRAY
+                2, # SYMMETRIC_GRIDFIT
+                3  # SYMMETRIC_SMOOTHING
+            ])
+        ]
