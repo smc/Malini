@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import List
 from itertools import product
-from ufoLib2.objects import Font, Glyph, Anchor, Component, Guideline
+from ufoLib2.objects import Font, Glyph, Component, Guideline
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
@@ -829,6 +829,16 @@ class MalayalamFont(Font):
         self.info.openTypeNameUniqueID = "%s-%s:%d" % (
             psFamily, psStyle, now.year)
         self.info.openTypeHeadCreated = now.strftime("%Y/%m/%d %H:%M:%S")
+
+
+    def setGlyphList(self):
+        """ Write lib.plist file
+        """
+        glyphOrderList: list[str] = list()
+        for glyph in self:
+            glyphOrderList.append(glyph.name)
+
+        self.glyphOrder = glyphOrderList
 
     def setFontInfo(self):
         name = self.options.name
