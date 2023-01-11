@@ -841,6 +841,15 @@ class MalayalamFont(Font):
 
         self.glyphOrder = glyphOrderList
 
+    def build_glyph_groups(self):
+        groupDict=dict()
+        for gclass in self.options.glyphs.classes:
+            glyph_names = [SVGGlyph.get_glyph_name(
+                g) for g in self.get_glyphs_from_named_classes(gclass)]
+            glyph_names = [g for g in glyph_names if g in self]
+            groupDict[gclass] = glyph_names
+        self.groups = groupDict
+
     def setFontInfo(self):
         name = self.options.name
         style = self.style

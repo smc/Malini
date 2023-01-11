@@ -53,4 +53,5 @@ if __name__ == "__main__":
     font.setFontInfo()
     font.updateFontVersion()
     font.setGlyphList()
+    font.build_glyph_groups()
     font.save(options.output, overwrite=True)
