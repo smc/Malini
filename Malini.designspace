@@ -1,5 +1,5 @@
-<?xml version="1.0" ?>
-<designspace format="3">
+<?xml version='1.0' encoding='utf-8'?>
+<designspace format="4.0">
   <axes>
     <axis name="weight" tag="wght" minimum="100" maximum="900" default="400">
       <labelname xml:lang="en">Weight</labelname>
@@ -15,7 +15,7 @@
     </axis>
   </axes>
   <sources>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Regular.ufo" name="Regular">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Regular.ufo" stylename="Regular" name="Regular">
       <lib copy="1"/>
       <info copy="1"/>
       <kerning copy="1"/>
@@ -25,56 +25,56 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Black.ufo" name="Black">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Black.ufo"  stylename="Black" name="Black">
       <location>
         <dimension name="weight" xvalue="900"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Bold.ufo" name="Bold">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Bold.ufo" stylename="Bold" name="Bold">
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Light.ufo" name="Light">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Light.ufo" stylename="Light" name="Light">
       <location>
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Thin.ufo" name="Thin">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Thin.ufo" stylename="Thin" name="Thin">
       <location>
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Condensed.ufo" name="Condensed">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Condensed.ufo" stylename="Condensed" name="Condensed">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Expanded.ufo" name="Expanded">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Expanded.ufo" stylename="Expanded" name="Expanded">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique.ufo" name="Oblique">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique.ufo" stylename="Oblique" name="Oblique">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="-15"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique-Thin.ufo" name="ObliqueThin">
+    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique-Thin.ufo" stylename="ObliqueThin"  name="ObliqueThin">
       <location>
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
