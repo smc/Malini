@@ -3,16 +3,15 @@ beginglyph;
 clearxy;
 p:=0;
 z0=(0, s);
-z1=(0, y0-X/2);
-z2=(x0, 0);
-z3=(x2 - sw/4, -descent);
-z4=(x3 - sw/3, y3 + s/10);
-paths[p] = z0--z1---z2{down}..z3..z4;
+z1=(x0, 0);
+z2=(x1 - sw/4, -descent);
+z3=(x2 - sw/4, y2 + s/10);
+paths[p] = z0--z1{down}..z2..z3;
 paths[p] := paths[p] shifted (thick, 0);
 pen_stroke(
-    nib(thick_vertical_nib)(0,1,2)
-    nib(down_nib rotated( 90 + terminalangle 3 of paths[0]))(3)
-    nib(end_nib rotated terminalangle 4 of paths[p])(4)
+    nib(thick_vertical_nib)(0,1)
+    nib(down_nib )(2)
+    nib(thicknib scaled 1.2 rotated terminalangle 3 of paths[p])(3)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

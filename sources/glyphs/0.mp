@@ -4,7 +4,7 @@ soften := 0;
 z0=(0, X/2);
 z1=(x0 + 0.3Xw, y0 + 0.5X - thick/4);
 z2=(x1 + 0.3Xw, y0);
-z3=(x1, thick/4);
+z3=(x1, undershoot);
 z4=(x0, y2);
 
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;

@@ -7,7 +7,7 @@ z1 = ((x0+x2)/1.5, s-thick/3);
 z2 = (x6+0.05sw, y1 - .2s);
 z3 = ((x2+x4)/2, (y2 + y4)/2);
 z4 = (x0, y5 + .2s);
-z5 = ((x4+x6)/2.5, thick/4);
+z5 = ((x4+x6)/2.5, undershoot);
 z6 = (0, y5+0.15s);
 
 paths[p] = z0{dir 120}..z1..z2{down}..z3..z4{down}..z5..{dir 120}z6;

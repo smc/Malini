@@ -3,23 +3,22 @@ beginglyph;
 
 p:=0;
 z0=(0, s);
-z1=(x0 + sw/2.5, 0);
-
+z1=(x0 + sw/2.75, thick*sind(45)/2);
 paths[p] = z0--z1 ;
 pen_stroke(
      nib(thick_nib)(0)
-     nib(thick_nib)(1)
+     cut(thick_nib, 45)(1)
 )(paths[p])(strokes[p]);
+
 
 p:=p+1;
 clearxy;
 z0=(xpart(point infinity of paths[p-1]),0)  ;
-z1=(x0+sw/2.5, s);
+z1=(x0+sw/2.25, s);
 paths[p] = z0--z1 ;
 paths[p] := subpath(0, 0.8) of paths[p] ;
 pen_stroke(
-     nib(thin_vertical_nib)(0)
-     nib(thin_vertical_nib rotated terminalangle infinity of paths[p])(1)
+       nib(thin_nib scaled 1.25)(0,1)
 )(paths[p])(strokes[p]);
 
 
@@ -27,14 +26,14 @@ p:=p+1;
 paths[p] = paths[0] shifted (xpart(point infinity of paths[p-1]) - thick/4,0);
 pen_stroke(
      nib(thick_nib)(0)
-     nib(thick_nib)(1)
+     cut(thick_nib, 45)(1)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 
-paths[p] = (z0--z1) shifted (xpart(point infinity of paths[p-1]) - 0.4sw,0);
+paths[p] = (z0--z1) shifted (xpart(point infinity of paths[p-1]) - 0.36sw,0);
 pen_stroke(
-    nib(thin_vertical_nib)(0, 1)
+       nib(thin_nib scaled 1.25)(0,1)
 )(paths[p])(strokes[p]);
 
 % Serifs

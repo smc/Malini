@@ -2,16 +2,16 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(0, X);
-z1=(x0 + Xw/2.5, 0);
+z1=(x0 + Xw/2.5, thick*sind(45)/2);
 paths[p] = z0--z1 ;
 pen_stroke(
      nib(thick_nib)(0)
-     nib(thick_nib)(1)
+      cut(thick_nib, 45)(1)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[p-1]) + thin/4,0)  ;
+z0=(xpart(point infinity of paths[p-1]),0)  ;
 z1=(x0+Xw/2.5, X);
 paths[p] = z0--z1 ;
 pen_stroke(

@@ -17,7 +17,7 @@ z12=(x9, y1);
 z13=(x12 + mw/2, (y12+y14)/2);
 z14=(x13 - mw/3, (y12+y16)/2);
 z15=(x14 + mw/2.6, (y14+y16)/2);
-z16=(x14, thick/4);
+z16=(x14, undershoot);
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{dir 10}..z13..{left}z14{right}..z15..{dir 150}z16;
 

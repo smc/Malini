@@ -4,9 +4,9 @@ p:=0;
 save r;
 r=0.85;
 z0 = (0, s/2);
-z1 = ((x0 + x2)/2, s - thick/4);
+z1 = ((x0 + x2)/2, s - overshoot);
 z2 = (x0 + r*sw, y0);
-z3 = (x1, thick/4);
+z3 = (x1, undershoot);
 z4 = (x0, y0);
 paths[p]:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 

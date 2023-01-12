@@ -1,13 +1,12 @@
 input glyph;
 beginglyph;
 z0= (thick/2, X);
-z1=( x0, X/2);
-z2=( x1, 0);
-z3 = (x0, y0);
-z4 = (x3 + 0.75X/2, 0.33X);
-z5 = (x4, y4);
-z6 = (x4 +  0.75X/2, y0);
-z7 = (x6, y1);
+z2= (x0, 0);
+z3 = (x0+thin/2, y0);
+z4 = (x3 + Xw/2.5, thick*sind(45)/2);
+z5 = (x4, 0);
+z6 = (x4 + Xw/2.5, y0);
+z7 = (x6+thin/2, y0);
 z8 = (x7, y2);
 p:=0;
 paths[0] = z0--z2 ;
@@ -18,23 +17,22 @@ pen_stroke(
 p:=p+1;
 paths[1] = z3--z4;
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+      nib(thick_nib)(0)
+      cut(thick_nib, 45)(1)
 )(paths[1])(strokes[1]);
 
 p:=p+1;
 paths[2] = z5--z6;
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+    nib(thin_nib scaled 1.25)(0,1)
 )(paths[2])(strokes[2]);
 p:=p+1;
-paths[3] = z6--z8;
+paths[3] = z7--z8;
 
 
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[3])(strokes[3]);
-
-
 
 % Serifs
 p:=p+1;

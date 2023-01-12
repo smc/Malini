@@ -12,12 +12,12 @@ pen_stroke(
 
 p:=p+1;
 z3 = (x0, X - thin/2);
-z4 = (x3 + sw/3, y3);
-z5 = (x4 + sw/1.75, 0.45X);
+z4 = ((x3 + x5)/3, y3);
+z5 = (x0 + 0.9sw, (y4+y6)/2.04);
 z6 = (x4,  y7);
 z7 = (0, thin/2);
 
-paths[p] = z3---z4..z5..z6---z7 ;
+paths[p] = z3---z4..z5{down}..z6---z7 ;
 
 
 pen_stroke(

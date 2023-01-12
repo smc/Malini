@@ -23,7 +23,7 @@ z2 = ( x1 + mw/1.666, m - overshoot); % top
 z3 = ( x2 + mw/2.4, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);
-z6 = ( x4, thick/4);
+z6 = ( x4, undershoot);
 paths[1]= z0..z1..z2{dir 5}..z3..{left}z4{right}..z5..{dir 160}z6;
 
 pen_stroke(

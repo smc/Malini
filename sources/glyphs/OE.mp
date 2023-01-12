@@ -3,7 +3,7 @@ beginglyph;
 % O
 z0=(x1+Xw/2, y1 + 0.5X - thick/4);
 z1=(0, X/2);
-z3=(x0, thick/4);
+z3=(x0, undershoot);
 
 paths[0] = z0{left}..{down}z1..{right}z3;
 
