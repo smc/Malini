@@ -28,35 +28,12 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-clearxy;
-z0=(0, y1-thick/2);
-z1 = (x0 - thick/2 - 3/4u , -thin/2);
-z2 = (x0 + thick/2 + 3/4u , y1);
-z3 = (x0, y0);
-paths[p] = z0{up}..{left}z1 -- z2{left}..{down}z3 ;
-paths[p] := paths[p] shifted (point 0 of paths[0] + (thin/2, 0));
-pen_stroke(
-     nib(thin_nib rotated terminalangle 0  of paths[p])(0)
-     nib(thin_nib rotated terminalangle 1  of paths[p])(1)
-     nib(thin_nib rotated terminalangle 2  of paths[p])(2)
-     nib(thin_nib rotated terminalangle 3  of paths[p])(3)
-)(paths[p])(strokes[p]);
+paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
+strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
-clearxy;
-z0=(0, y1-thick/2);
-z1 = (x0 - thick/2 - 3/4u , -thin/2);
-z2 = (x0 + thick/2 + 3/4u , y1);
-z3 = (x0, y0);
-paths[p] = z0{up}..{left}z1 -- z2{left}..{down}z3 ;
-paths[p] := paths[p] shifted (point 0 of paths[1] -(3/4thin, 0));
-pen_stroke(
-     nib(thin_nib rotated terminalangle 0  of paths[p])(0)
-     nib(thin_nib rotated terminalangle 1  of paths[p])(1)
-     nib(thin_nib rotated terminalangle 2  of paths[p])(2)
-     nib(thin_nib rotated terminalangle 3  of paths[p])(3)
-)(paths[p])(strokes[p]);
-
+paths[p] := serif_top_thin shifted (point 0 of paths[1] - (3/4thin, 0));
+strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[2]);

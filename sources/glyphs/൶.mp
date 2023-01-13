@@ -12,7 +12,7 @@ paths[p] := z0--z1;
 paths[p] := paths[p] shifted (0, thick*sind(45)/2);
 
 pen_stroke(
-    nib(thin_horizontal_nib)(0)
+    cut(thin_horizontal_nib, 45)(0)
     nib(thin_horizontal_nib)(1)
 )(paths[p])(strokes[p]);
 
