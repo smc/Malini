@@ -71,7 +71,7 @@ glyphs:
       "ý","ŷ","ÿ", "ỳ",
       "ź","ž","ż",
     ]
-    LATIN_LIGATURES:  [ "tt", "ff" ] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+    LATIN_LIGATURES:  [ "tt", "ff", "ft", "fi", "ij" ] # [ "ffi", "th", ]
     ML_CONSONANTS: കഖഗഘങചഛജഝഞടഠഡഢണതഥദധനപഫബഭമയരലവറശഷസഹളഴ
     ML_VOWEL_SIGNS: ['ാ', 'ി','ീ', "ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ", "െ", "േ", "ൈ", "ൊ", "ോ","ൌ", "ൗ"]
     ML_VOWEL_SIGNS_CONJOINING: ["ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ"]
@@ -144,7 +144,8 @@ glyphs:
       - ["1.ARM", "2.L_ROUNDS", -30]
       - ["1.V", "2.U_ROUNDS", -30]
       - ["1.V", "2.L_ROUNDS", -50]
-      - ["1.V", "2.A", -30]
+      - ["V", "A", -150]
+      - ["T", "A", -100]
       - ["1.f", "2.L_ROUNDS", -30]
       - ["1.f", "2.V", -30]
     malayalam:

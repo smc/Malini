@@ -12,33 +12,33 @@ pen_stroke(
     nib(thick_vertical_nib)(3,4)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)
-)(paths[0])(strokes[0]);
+)(paths[p])(strokes[p]);
+
+p:=p+1;
+clearxy;
+paths[p] := subpath(2.5, infinity) of paths[0] shifted(xpart(point 0 of paths[0])*0.75, 0);
+pen_stroke(
+    nib(thick_vertical_nib)(0,1, 2)
+)(paths[p])(strokes[p]);
 
 %bar
-z5 = (0, s-thick/4);
-z6 = (x5 + Xw, y5);
+clearxy;
 p:=p+1;
-paths[1] = z5--z6;
+z5 = (0, s-thick/4);
+z6 = (xpart point infinity of strokes[p-1], y5);
+p:=p+1;
+paths[p] = z5--z6;
 
 pen_stroke(
     nib(thick_nib scaled 0.5 rotated 90)(0,1)
-)(paths[1])(strokes[1]);
-
-p:=p+1;
-paths[2] := paths[0] shifted(xpart(point 0 of paths[0]), 0);
-pen_stroke(
-    nib(thicknib rotated terminalangle 0 of paths[0])(0)
-    nib(thick_vertical_nib)(3,4)
-    nib(top_nib)(1)
-    nib(thick_vertical_nib)(2)
-)(paths[2])(strokes[2]);
+)(paths[p])(strokes[p]);
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
 strokes[p] := serif_stroke(paths[p]);
 
 p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[2], 0);
+paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1], 0);
 strokes[p] := serif_stroke(paths[p]);
 
 rbearing:=0.5*rbearing;
