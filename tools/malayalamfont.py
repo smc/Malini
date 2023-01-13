@@ -40,7 +40,10 @@ class MalayalamFont(Font):
     def get_glyphs_from_named_classes(self, *argv):
         all_glyphs = []
         for class_name in argv:
-            glyphs = self.options.glyphs.classes[class_name]
+            if class_name in self.options.glyphs.classes:
+                glyphs = self.options.glyphs.classes[class_name]
+            elif class_name in self.options.glyphs.kern.classes:
+                glyphs = self.options.glyphs.kern.classes[class_name]
             if isinstance(glyphs, list):
                 all_glyphs = all_glyphs + glyphs
             else:
@@ -63,42 +66,6 @@ class MalayalamFont(Font):
             rules.append(sub)
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_LATIN)
         self.fontFeatures.addFeature(feature, [routine])
-
-    def build_kern(self):
-        feature = "kern"
-        for script in self.options.glyphs.kern:
-            name = f"{script}_kern"
-            languages = eval(f"LANGUAGE_{script.upper()}")
-            rules = []
-            for kern_def in self.options.glyphs.kern[script]:
-                lhs_def = kern_def[0]
-                if '@' in lhs_def:
-                    lhs=[lhs_def]
-                else:
-                    if isinstance(lhs_def, list):
-                        lhs = [SVGGlyph.get_glyph_name(l) for l in lhs_def]
-                    else:
-                        lhs = [SVGGlyph.get_glyph_name(lhs_def)]
-
-                rhs_def = kern_def[1]
-                if '@' in rhs_def:
-                    rhs=[rhs_def]
-                else:
-                    if isinstance(rhs_def, list):
-                        rhs = [SVGGlyph.get_glyph_name(l) for l in rhs_def]
-                    else:
-                        rhs=[SVGGlyph.get_glyph_name(rhs_def)]
-
-                xAdvance = kern_def[2]
-                # Flatten the class to avoid the issue of class overlaps and rules
-                # getting ignored
-                for l, r in product(lhs, rhs):
-                    rules.append(
-                        Positioning([[l], [r]],
-                                    [ValueRecord(xAdvance=xAdvance), ValueRecord()])
-                   )
-            routine = Routine(rules=rules, name=name, languages=languages)
-            self.fontFeatures.addFeature(feature, [routine])
 
     def build_chillus(self):
         feature = "akhn"
@@ -843,12 +810,58 @@ class MalayalamFont(Font):
 
     def build_glyph_groups(self):
         groupDict=dict()
-        for gclass in self.options.glyphs.classes:
+        for gclass in self.options.glyphs.kern.classes:
             glyph_names = [SVGGlyph.get_glyph_name(
                 g) for g in self.get_glyphs_from_named_classes(gclass)]
             glyph_names = [g for g in glyph_names if g in self]
-            groupDict[gclass] = glyph_names
+            groupDict[f"public.kern{gclass}"] = glyph_names
         self.groups = groupDict
+
+    def build_kern(self):
+        kerningDict=dict()
+        for script in ['latin','malayalam']:
+            name = f"{script}_kern"
+            languages = eval(f"LANGUAGE_{script.upper()}")
+            rules = []
+            for kern_def in self.options.glyphs.kern[script]:
+                lhs_def = kern_def[0]
+                rhs_def = kern_def[1]
+                xAdvance = kern_def[2]
+                if '1.' in lhs_def:
+                    # Group
+                    lhs =  f"public.kern{lhs_def}"
+                    if '2.' in rhs_def:
+                        # Group
+                        rhs=f"public.kern{rhs_def}"
+                        kerningDict[(lhs,rhs)]= xAdvance
+                    else:
+                        if isinstance(rhs_def, list):
+                            for rg in rhs_def:
+                                rhs = SVGGlyph.get_glyph_name(rg)
+                                kerningDict[(lhs,rhs)]= xAdvance
+                        else:
+                            rhs=SVGGlyph.get_glyph_name(rhs_def)
+                            kerningDict[(lhs,rhs)]= xAdvance
+                else:
+                    if isinstance(lhs_def, list):
+                        lhss = [SVGGlyph.get_glyph_name(l) for l in lhs_def]
+                    else:
+                        lhss = [SVGGlyph.get_glyph_name(lhs_def)]
+                    for lhs in lhss:
+                        if '2.' in rhs_def:
+                            # Group
+                            rhs=f"public.kern{rhs_def}"
+                            kerningDict[(lhs,rhs)]= xAdvance
+                        else:
+                            if isinstance(rhs_def, list):
+                                for rg in rhs_def:
+                                    rhs = SVGGlyph.get_glyph_name(rg)
+                                    kerningDict[(lhs,rhs)]= xAdvance
+                            else:
+                                rhs=SVGGlyph.get_glyph_name(rhs_def)
+                                kerningDict[(lhs,rhs)]= xAdvance
+        # print(kerningDict)
+        self.kerning = kerningDict
 
     def setFontInfo(self):
         name = self.options.name

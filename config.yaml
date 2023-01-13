@@ -72,25 +72,6 @@ glyphs:
       "ź","ž","ż",
     ]
     LATIN_LIGATURES:  [ "tt", "ff" ] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
-    LC_LEFT_ROUND: ["e", "ee", "c", "d", "o", "q", "g"]
-    LC_RIGHT_ROUND: bop
-    UC_LEFT_ROUND: OQ
-    UC_RIGHT_ROUND: OQDP
-    UC_RIGHT_MOUTH: K
-    LC_RIGHT_SLANT: ["v", "w", "f", "ff", "k"]
-    LC_LEFT_SLANT: ["v"]
-    UC_LEFT_SLANT: ["A", "V", "W", "Y", "T"]
-    UC_RIGHT_SLANT: TYVW
-    UC_RIGHT_LEG: ["L"]
-    UC_RIGHT_ARM: ["T"]
-    LC_RIGHT_ARM: rf
-    UC_LEFT_LEG: ["J"]
-    LC_LEFT_LEG: ["j"]
-    LC_RIGHT_LEG: ["t","tt"]
-    LC_RIGHT_MOUTHS: adqu
-    LC_BOTTOM_GAP: abcdefhiklmnopqrstuvwxz
-    QUOTES: ["'","\"","‘","’","“","”"]
-    PARANTHESIS: "()"
     ML_CONSONANTS: കഖഗഘങചഛജഝഞടഠഡഢണതഥദധനപഫബഭമയരലവറശഷസഹളഴ
     ML_VOWEL_SIGNS: ['ാ', 'ി','ീ', "ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ", "െ", "േ", "ൈ", "ൊ", "ോ","ൌ", "ൗ"]
     ML_VOWEL_SIGNS_CONJOINING: ["ു", "ൂ", "ൃ", "ൄ", "ൢ", "ൣ"]
@@ -134,26 +115,41 @@ glyphs:
 
   # Kern pairs
   kern:
+    classes:
+      # Right Rounds
+      1.U_ROUNDS: OQD
+      1.L_ROUNDS: opb
+      # Left rounds
+      2.L_ROUNDS:  ["e", "ee", "c", "d", "q", "g", "o"]
+      2.U_ROUNDS:  ["C", "O", "Q"]
+      1.V: vVYwyTL
+      2.V: vVYwyT
+      1.MOUTH: KCkcau
+      1.ARM: r
+      2.j: j
+      1.f: ["f", "ff"]
+      1.t: ["t","tt"]
+      1.A: A
+      2.A: A
+      2.QUOTES: ["'","\"","‘","’","“","”"]
+      2.PARANTHESIS: "()"
     latin: # script
-      - ["@UC_RIGHT_ROUND", "@UC_LEFT_SLANT", -50]
-      - ["@UC_RIGHT_ROUND", "@LC_LEFT_ROUND", -20]
-      - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -20]
-      - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -100]
-      - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
-      - ["@UC_RIGHT_MOUTH", "@LC_LEFT_SLANT", -50]
-      - ["@UC_RIGHT_MOUTH", "@LC_LEFT_ROUND", -50]
-      - ["@UC_RIGHT_LEG", "@UC_RIGHT_SLANT", -80]
-      - ["@UC_RIGHT_LEG", "@LC_LEFT_SLANT", -80]
-      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
-      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]
-      - ["@LC_RIGHT_ARM", "@LC_LEFT_ROUND", -80]
-      - ["@LC_BOTTOM_GAP", "@LC_LEFT_LEG", -100]
-      - ["A", ["V", "Y", "T", "v"], -80 ]
-      - ["Y", ["A"], -80 ]
-      - ["L", ["V"], -80 ]
+      - ["1.U_ROUNDS", "2.U_ROUNDS", -10]
+      - ["1.U_ROUNDS", "2.L_ROUNDS", -20]
+      - ["1.L_ROUNDS", "2.L_ROUNDS", -10]
+      - ["1.L_ROUNDS", "2.V", -20]
+      - ["1.A", "2.V", -100]
+      - ["1.A", "2.U_ROUNDS", -50]
+      - ["1.A", "2.L_ROUNDS", -50]
+      - ["1.ARM", "2.L_ROUNDS", -30]
+      - ["1.V", "2.U_ROUNDS", -30]
+      - ["1.V", "2.L_ROUNDS", -50]
+      - ["1.V", "2.A", -30]
+      - ["1.f", "2.L_ROUNDS", -30]
+      - ["1.f", "2.V", -30]
     malayalam:
-      - ['്',"@QUOTES", 100 ]
-      - ['്',"@PARANTHESIS", 100 ]
+      - ['്',"2.QUOTES", 100 ]
+      - ['്',"2.PARANTHESIS", 100 ]
       - ['്',"!", 100 ]
       - [['ത', 'ന', 'നു', 'ന്ന', "സ", 'ഗ'],"ം", -20 ]
       - [ "ം", ['ന', 'നു', 'നൂ', 'സ','സു', 'സൂ'], -20 ]
