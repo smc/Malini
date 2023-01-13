@@ -892,13 +892,14 @@ class MalayalamFont(Font):
         # “if set, it is strongly recommended to use OS/2.sTypoAscender - OS/2.sTypoDescender + OS/2.sTypoLineGap
         # as a value for default line spacing for this font.”
         self.info.openTypeOS2Selection = [7]
+        # A list of bit numbers indicating the embedding type.
         self.info.openTypeOS2Type = []
         # The TypoAscender minus the TypoDescender should equal the unit square.
         # the height of the ascenders in units
         self.info.openTypeOS2TypoAscender = round(self.info.ascender*1.2)
         # the depth of the descenders in units (negative value)
         self.info.openTypeOS2TypoDescender = -round(self.info.descender*1.2)
-        self.info.openTypeOS2TypoLineGap = int((self.info.ascender + self.info.descender)/4) # For 1.25 line height
+        self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
         # FIXME openTypeOS2WidthClass should change as per style:
@@ -918,9 +919,9 @@ class MalayalamFont(Font):
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
         # the top extremum of the font rendering box
-        self.info.openTypeOS2WinAscent = 1223 # As calculated by Fontbakery
+        self.info.openTypeOS2WinAscent = 1094 # As calculated by Fontbakery
         # the bottom extremum of the font rendering box (positive value)
-        self.info.openTypeOS2WinDescent = 919 # As calculated by Fontbakery
+        self.info.openTypeOS2WinDescent = 693 # As calculated by Fontbakery
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
@@ -938,7 +939,7 @@ class MalayalamFont(Font):
         self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
         # The depth of the descenders in units (negative value)
         self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
-        self.info.openTypeHheaLineGap = int((self.info.ascender + self.info.descender)/4) # For 1.25 line height
+        self.info.openTypeHheaLineGap = 0
 
         # postscript metrics
         self.info.postscriptBlueValues= [
