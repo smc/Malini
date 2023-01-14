@@ -97,8 +97,9 @@ vardef serif_stroke_top (expr spath) =
     clearxy;
     path s_stroke;
     pen_stroke(
-        nib(thick_vertical_nib)(0)
-        nib(thick_vertical_nib scaled 2.6)(1,2)
+        nib(thick_nib rotated terminalangle 0 of spath)(0)
+        nib(thick_nib scaled 2.6 )(1)
+        nib(thick_nib scaled 2.6)(2)
     )(spath)(s_stroke);
     s_stroke:=point 0 of s_stroke{up}..{right}(subpath (1,4) of s_stroke){right}..{down}point 5 of s_stroke--cycle;
     s_stroke

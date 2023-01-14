@@ -32,10 +32,12 @@ pen_stroke(
 p:=p+1;
 paths[p] := serif_bottom_thin shifted (xpart point 0 of paths[0] + serif_height/2, 0);
 strokes[p] := serif_stroke_bottom_thin(paths[p]);
+strokes[p]:= point 2.875 of strokes[0]{dir -115}..{left}(subpath (1,4) of strokes[p]){left}..{dir 65}point 0.1 of strokes[0]--cycle;
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1]-thin/2,0);
 strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[p]:= point 0.875 of strokes[1]{dir -65}..{left}(subpath (1,4) of strokes[p]){left}..{dir 115}point 2.1 of strokes[1]--cycle;
 
 lbearing:=serif_width-lbearing;
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));

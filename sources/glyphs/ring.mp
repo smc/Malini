@@ -11,8 +11,9 @@ z4=(x3 - radius, y3 + radius);
 
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 pen_stroke(
-    nib(thicknib)(1, 3)
-    nib(thinnib)(0, 2, 4)
+   nib(middle_down_nib)(0, 2, 4)
+   nib(top_nib)(1)
+   nib(down_nib)(3)
 )(paths[0])(strokes[0]);
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

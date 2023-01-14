@@ -34,14 +34,19 @@ pen_stroke(
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
 strokes[p] := serif_stroke_top(paths[p]);
+strokes[p]:= point 2.85 of strokes[0]..{right}(subpath (1,4) of strokes[p]){right}..point 0.15 of strokes[0]--cycle;
+
 
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[2] + (thin/2, 0));
 strokes[p] := serif_stroke_top(paths[p]);
 
+
 p:=p+1;
 paths[p] := serif_top_thin shifted (point 1 of paths[3] - (thin/2, 0));
 strokes[p] := serif_stroke_top_thin(paths[p]);
+strokes[p]:= point 0.85 of strokes[3]..{right}(subpath (1,4) of strokes[p]){right}..point 2.15 of strokes[3]--cycle;
+
 
 anchor( "top", (xpart(point 1 of paths[1]), 1.2X));
 endglyph;

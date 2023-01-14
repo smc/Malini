@@ -2,11 +2,12 @@ input glyph;
 beginglyph;
 
 paths[0] = ra shifted(mw/4, 0);
-paths[0] := origin -- paths[0] -- (xpart(point infinity of paths[0]) + mw/2, 0);
+paths[0] := (0, thick/4) -- paths[0] -- (xpart(point 4 of paths[0]) + mw/2, thick/4);
 pen_stroke(
-    nib(thinnib)(2,4)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(top_nib)(0, 1,5,6)
+    nib(top_nib)(3)
+    nib(middle_up_nib)(2)
+    nib(middle_down_nib)(4)
 )(paths[0])(strokes[0]);
 
 endglyph;

@@ -16,15 +16,13 @@ pen_stroke(
 
 clearxy;
 z0= (xpart(point 2 of paths[0]), X);
-z1=( xpart(point 1 of paths[0]), (y0+y2)/2);
-z2=( xpart(point 0 of paths[0]), -X*0.05);
+z1=( xpart(point 0 of paths[0]), -X*0.05);
 
-paths[1] = z0{dir 260}..z1..{dir 260}z2 ;
+paths[1] = z0--z1 ;
+
 
 pen_stroke(
-    nib(thinnib)(1)
-    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(thick_vertical_nib rotated terminalangle 0 of paths[1])(0,1)
 )(paths[1])(strokes[1]);
 
 endglyph;

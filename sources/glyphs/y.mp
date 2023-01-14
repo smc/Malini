@@ -22,11 +22,12 @@ pen_stroke(
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
 strokes[p] := serif_stroke_top(paths[p]);
+strokes[p]:= point 2.85 of strokes[0]{dir 120}..{right}(subpath (1,4) of strokes[p]){right}..{dir -60}point 0.15 of strokes[0]--cycle;
 
 p:=p+1;
-paths[p] := serif_top_thin shifted (point 0 of paths[1] - (thin/2, 0));
-strokes[p] := serif_stroke_top(paths[p]);
-
+paths[p] := serif_top_thin shifted (point 0 of paths[1] - (thick/2, 0));
+strokes[p] := serif_stroke_top_thin(paths[p]);
+strokes[p]:= point 6.9 of strokes[1]{dir 60}..{right}(subpath (1,4) of strokes[p]){right}..{dir -115}point 0.15 of strokes[1]--cycle;
 
 
 endglyph;
