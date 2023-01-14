@@ -47,11 +47,10 @@ enddef;
 
 vardef serif_bottom_thick =
     clearxy;
-    z0=(-thick/2 + serif_height/2, 2serif_height);
-    z1 = (-serif_width , serif_height/2);
-    z2 = (serif_width , y1);
-    z3 = (thick/2 - serif_height/2, y0);
-    z0{down}..{left}z1 -- z2{left}..{up}z3
+    z0=(0,  y1+serif_height);
+    z1=(x0, y2+serif_height);
+    z2=(x0, 0);
+    z0--z1--z2
 enddef;
 
 vardef serif_top_slanted =
@@ -79,15 +78,64 @@ vardef serif_top_thin =
     serif_bottom_thin rotated 180
 enddef;
 
-vardef serif_stroke (expr spath) =
+vardef serif_right_thin =
+    serif_bottom_thin rotated 90
+enddef;
+
+vardef serif_stroke_bottom (expr spath) =
     clearxy;
     path s_stroke;
     pen_stroke(
-        nib(serif_nib rotated terminalangle 0  of spath)(0)
-        nib(serif_nib rotated terminalangle 1  of spath)(1)
-        nib(serif_nib rotated terminalangle 2  of spath)(2)
-        nib(serif_nib rotated terminalangle 3  of spath)(3)
+        nib(thick_vertical_nib)(0)
+        nib(thick_vertical_nib scaled 2.6)(1,2)
     )(spath)(s_stroke);
+    s_stroke:=point 0 of s_stroke{down}..{left}(subpath (1,4) of s_stroke){left}..{up}point 5 of s_stroke--cycle;
+    s_stroke
+enddef;
+
+vardef serif_stroke_top (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(thick_vertical_nib)(0)
+        nib(thick_vertical_nib scaled 2.6)(1,2)
+    )(spath)(s_stroke);
+    s_stroke:=point 0 of s_stroke{up}..{right}(subpath (1,4) of s_stroke){right}..{down}point 5 of s_stroke--cycle;
+    s_stroke
+enddef;
+
+vardef serif_stroke_top_thin (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(thin_vertical_nib)(0)
+        nib(thick_vertical_nib scaled 2.6)(1,2)
+    )(spath)(s_stroke);
+    s_stroke:=point 0 of s_stroke{up}..{right}(subpath (1,4) of s_stroke){right}..{down}point 5 of s_stroke--cycle;
+    s_stroke
+enddef;
+
+vardef serif_stroke_bottom_thin (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(thin_vertical_nib rotated terminalangle 0 of spath)(0)
+        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 1 of spath)(1)
+        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 2 of spath)(2)
+    )(spath)(s_stroke);
+    s_stroke:=point 0 of s_stroke{down}..{left}(subpath (1,4) of s_stroke){left}..{up}point 5 of s_stroke--cycle;
+    s_stroke
+enddef;
+
+vardef serif_stroke_right_thin (expr spath) =
+    clearxy;
+    path s_stroke;
+    pen_stroke(
+        nib(thin_vertical_nib rotated terminalangle 0 of spath)(0)
+        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 1 of spath)(1)
+        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 2 of spath)(2)
+    )(spath)(s_stroke);
+    s_stroke:=point 0 of s_stroke{right}..{down}(subpath (1,4) of s_stroke){down}..{left}point 5 of s_stroke--cycle;
     s_stroke
 enddef;
 
@@ -105,12 +153,7 @@ vardef serif_stroke_slanted (expr spath) =
 enddef;
 
 vardef serif_bottom_thin =
-    clearxy;
-    z0=(-thin/2 + serif_height/2,  2serif_height);
-    z1 = (- thick/2 - 3/4u , serif_height/2);
-    z2 = (thick/2 + 3/4u , y1);
-    z3 = (thin/2 - serif_height/2, y0);
-    z0{down}..{left}z1 -- z2{left}..{up}z3
+    serif_bottom_thick
 enddef;
 
 

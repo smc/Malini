@@ -17,7 +17,7 @@ pen_stroke(
 %serif
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[p-1], X);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top(paths[p]);
 
 anchor( "top", (xpart(point 0 of paths[0]), X));
 endglyph;

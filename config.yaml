@@ -118,7 +118,7 @@ glyphs:
     classes:
       # Right Rounds
       1.U_ROUNDS: OQD
-      1.L_ROUNDS: opb
+      1.L_ROUNDS: opbe
       # Left rounds
       2.L_ROUNDS:  ["e", "ee", "c", "d", "q", "g", "o"]
       2.U_ROUNDS:  ["C", "O", "Q"]
@@ -128,7 +128,9 @@ glyphs:
       1.ARM: r
       2.j: j
       1.f: ["f", "ff"]
+      2.f: ["f", "ff"]
       1.t: ["t","tt"]
+      2.t: ["t","tt"]
       1.A: A
       2.A: A
       2.QUOTES: ["'","\"","‘","’","“","”"]
@@ -148,6 +150,10 @@ glyphs:
       - ["T", "A", -100]
       - ["1.f", "2.L_ROUNDS", -30]
       - ["1.f", "2.V", -30]
+      - ["1.L_ROUNDS", "2.t", -30]
+      - ["1.L_ROUNDS", "2.f", -30]
+      - ["a", "2.t", -30]
+      - ["a", "2.f", -30]
     malayalam:
       - ['്',"2.QUOTES", 100 ]
       - ['്',"2.PARANTHESIS", 100 ]

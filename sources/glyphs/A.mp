@@ -31,11 +31,11 @@ pen_stroke(
 
 p:=p+1;
 paths[p] := serif_bottom_thin shifted (xpart point 0 of paths[0] + serif_height/2, 0);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom_thin(paths[p]);
 
 p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1]-thin/4,0);
-strokes[p] := serif_stroke(paths[p]);
+paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1]-thin/2,0);
+strokes[p] := serif_stroke_bottom(paths[p]);
 
 lbearing:=serif_width-lbearing;
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));

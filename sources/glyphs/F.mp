@@ -30,11 +30,11 @@ pen_stroke(
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top(paths[p]);
 
 p:=4;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom(paths[p]);
 
 p:=p+1;
 clearxy;
@@ -46,7 +46,7 @@ paths[p] :=z0--z1--z2{dir 105}..{dir 160}z3--cycle;
 strokes[p] := reverse paths[p];
 
 p:=p+1;
-paths[p] := serif_bottom_thin rotated 90 shifted (point infinity of paths[2]);
-strokes[p] := serif_stroke(paths[p]);
+paths[p] := serif_right_thin shifted (point infinity of paths[2]);
+strokes[p] := serif_stroke_right_thin(paths[p]);
 
 endglyph;

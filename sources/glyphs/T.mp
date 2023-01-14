@@ -21,7 +21,7 @@ pen_stroke(
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom(paths[p]);
 
 clearxy;
 p:=p+1;

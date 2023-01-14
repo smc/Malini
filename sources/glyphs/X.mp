@@ -23,19 +23,19 @@ pen_stroke(
 
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top(paths[p]);
 
 p:=p+1;
 paths[p] := serif_top_thin shifted (point 1 of paths[1] - (3/4thin, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top_thin(paths[p]);
 
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (point 1 of paths[0] - (3/4thin, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom(paths[p]);
 
 p:=p+1;
 paths[p] := serif_bottom_thin shifted (point 0 of paths[1] + (thin, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom_thin(paths[p]);
 
 endglyph;

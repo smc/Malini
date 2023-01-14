@@ -31,16 +31,16 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-paths[p] := subpath(1.5, 4) of serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
-strokes[p] := serif_stroke(paths[p]);
+paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
+strokes[p] :=  subpath(2.5,5.5) of serif_stroke_top(paths[p])--cycle;
 
 p:=p+1;
 paths[p] := serif_bottom_thin shifted (point infinity of paths[0]);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_bottom_thin(paths[p]);
 
 p:=p+1;
 paths[p] := serif_top_thin shifted (point infinity of paths[2]);
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top_thin(paths[p]);
 
 anchor( "top", (xpart(point 0.5 of paths[1]), 1.2X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));

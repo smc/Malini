@@ -39,15 +39,15 @@ pen_stroke(
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[0] + (thin/2, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top(paths[p]);
 
 p:=p+1;
 paths[p] := serif_top_thick shifted (point 0 of paths[2] + (thin/2, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top(paths[p]);
 
 p:=p+1;
 paths[p] := serif_top_thin shifted (point 1 of paths[3] - (thin/2, 0));
-strokes[p] := serif_stroke(paths[p]);
+strokes[p] := serif_stroke_top_thin(paths[p]);
 
 lbearing:=serif_width/2;
 anchor( "top", (xpart(point 0 of paths[2]), X));
