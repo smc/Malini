@@ -26,7 +26,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 = ( 0 , 0);
-z1 = ( x0, 2/3m);
+z1 = ( x0, 0.6m);
 z2 = ( x1 + mw/2.2, m - overshoot); % top
 z3 = ( x2 + mw/3, y4 + m/8);
 z4= ( x3 - mw/5, y5 + m/6);
