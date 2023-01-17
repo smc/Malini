@@ -13,7 +13,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0= point 0.66 of paths[p-1] + (0.75thin, 0);
-z1= ( x0 + 2/3*sw, s-thin/2);
+z1= ( x0 + 2/3*sw, s);
 
 paths[p] = z0--z1;
 pen_stroke(
@@ -24,7 +24,7 @@ pen_stroke(
 
 p:=p+1;
 z2 = point 0.6 of paths[p-2] + (0.75thick, 0);
-z3 = (x1, thick/4);
+z3 = (x1, 0);
 
 paths[p] = z2--z3;
 
@@ -44,12 +44,16 @@ paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
 strokes[p] := serif_stroke_bottom(paths[p]);
 
 p:=p+1;
-paths[p] := serif_top_thin shifted (xpart point infinity of paths[1] - 1.thin, s);
+paths[p] := serif_top_thin shifted (point 1 of paths[1] - (thick/2, 0));
 strokes[p] := serif_stroke_top_thin(paths[p]);
+strokes[p]:= point 0.75 of strokes[1]{dir 30}..{right}(subpath (1,4) of strokes[p]){right}..{dir -150}point 2.25 of strokes[1]--cycle;
+
 
 p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[2] \- thick/2, 0);
+paths[p] := serif_bottom_thick shifted (point 1 of paths[2] - (3/4thin, 0));
 strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[p]:= point 0.8 of strokes[2]..{left}(subpath (1,4) of strokes[p]){left}..point 2.2 of strokes[2]--cycle;
+
 
 lbearing:=serif_width/2;
 

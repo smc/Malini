@@ -12,7 +12,7 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0= (xpart(point 1 of paths[0]), X/3);
-z1= ( x0 + 0.6Xw, X-thick/4);
+z1= ( x0 + 0.6Xw, X);
 
 paths[p] = z0--z1;
 pen_stroke(
@@ -40,11 +40,13 @@ paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
 strokes[p] := serif_stroke_bottom(paths[p]);
 
 p:=p+1;
-paths[p] := serif_top_thick shifted (xpart point infinity of paths[1] - 0.5thick, X);
-strokes[p] := serif_stroke_top(paths[p]);
+paths[p] := serif_top_thin shifted (point 1 of paths[1] - (thick/2, 0));
+strokes[p] := serif_stroke_top_thin(paths[p]);
+strokes[p]:= point 0.85 of strokes[1]{dir 40}..{right}(subpath (1,4) of strokes[p]){right}..{dir -140}point 2.15 of strokes[1]--cycle;
 
 p:=p+1;
-paths[p] := serif_bottom_thick shifted (point infinity of paths[2] - (0.75thick,0));
+paths[p] := serif_bottom_thick shifted (point 1 of paths[2] - (3/4thin, 0));
 strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[p]:= point 0.85 of strokes[2]..{left}(subpath (1,4) of strokes[p]){left}..point 2.25 of strokes[2]--cycle;
 
 endglyph;
