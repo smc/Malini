@@ -11,18 +11,19 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 clearxy;
+
 p:=p+1;
 clearxy;
 z0=(thick/2-thin/2, undershoot);
 z1=(x0, m*0.6);
-z2=(x1+mw/3, m - overshoot); % Top of arch
-z3=(x2+mw/2, 0.4m);
-z4= (x3 - mw/4, 0.125m); % Make room for റ
-z5= (x4 - mw/4, (y4 + y7)/3);
-z6= ((x3 + x4)/2, 3(y4 + y7)/4);
-z7= (x6 - mw/2, 0.95ascent);
+z2=(x1 + mw/3, m - overshoot); % Top of arch
+z3=(x2 + mw/2, (y2+y4)/2.5);
+z4= ((x3+x5)/2, 0.125m); % Room for റ
+z5= (x3 - mw/1.9, (y4 + y7)/3.75);
+z6= ((x3 + x4)/1.8, 0.9(y4 + y7));
+z7= (x6 - mw/2, 0.9ascent);
 
-paths[p] := z0---z1..z2..z3..z4..z5..z6{dir 80}..{dir 210}z7;
+paths[p] := z0---z1..z2..z3{down}..z4..z5{up}..z6{dir 115}..{dir 225}z7;
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
@@ -32,9 +33,8 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(middle_up_nib)(5)
-    nib(middle_down_nib)(6)
-    nib(end_nib rotated terminalangle 7 of paths[p])(7)
-    ignore_directions(2,4,5)
+    nib(middle_down_nib rotated terminalangle 6 of paths[p])(6)
+    nib(end_nib scaled 2/3 rotated terminalangle 7 of paths[p])(7)
 )(paths[p])(strokes[p]);
 
 paths[2] = ra shifted (mw*1.2, -m ) xscaled 0.75 yscaled 0.75;

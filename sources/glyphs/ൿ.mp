@@ -13,11 +13,11 @@ z8=(x2 + mw/3, y7);
 z9=(x8 + mw/2.5, y6);
 z10=((x9+x11)/2, y3);
 z11=(x2 + mw/4, m/2);
-z12=(x11 + mw/3, 3(y10 + y13)/4);
-z13=(x11, 0.95ascent);
+z12=(x11 + mw/3, 0.95(y10 + y13));
+z13=(x12-mw/2, 0.9ascent);
 
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{dir 90}..{dir 190}z13;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{dir 115}..{dir 225}z13;
 
 pen_stroke(
    nib(middle_up_nib)(0, 4)
@@ -31,8 +31,8 @@ pen_stroke(
    nib(middle_down_nib)(9)
    nib(down_nib)(10)
    nib(middle_up_nib)(11)
-   nib(middle_down_nib)(12)
-   nib(end_nib rotated terminalangle 13 of paths[0])(13)
+   nib(middle_down_nib rotated terminalangle 12 of paths[0])(12)
+   nib(end_nib scaled 2/3 rotated terminalangle 13 of paths[0])(13)
 
 )(paths[0])(strokes[0]);
 

@@ -41,12 +41,13 @@ pen_stroke(
 % Shoe
 clearxy;
 p:=p+1;
-z0 = (xpart(point 3 of paths[0]), thick*0.6/2);
+z0 = (xpart(point 2.25 of paths[0]), thick*0.6/2);
 z1 = (x0 - mw/3, -descent*0.8) ;
 z2 = (xpart(point 1 of paths[1]), y1) ;
 paths[p] := z0{down}..z1--z2;
 pen_stroke(
-    nib(top_nib rotated 45)(0,1,2)
+    nib(middle_down_nib)(0)
+    nib(top_nib rotated 45)(1,2)
 )(paths[p])(strokes[p]);
 
 clearxy;
