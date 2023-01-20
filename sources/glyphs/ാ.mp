@@ -15,5 +15,5 @@ pen_stroke(
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
 )(paths[0])(strokes[0]);
-
+lbearing:=lbearing/2;
 endglyph;

@@ -17,13 +17,13 @@ pen_stroke(
 
 p:= p+1;
 clearxy;
-z0 = point 1.4 of paths[p-1];
-z1 = (x0+sw/3, s);
+z0 = point 1.5 of paths[p-1];
+z1 = (x0+sw/4, s);
 paths[p]:=z0..z1;
 
 pen_stroke(
     nib(end_nib rotated terminalangle 0 of paths[p])(0)
-    nib(thick_nib rotated terminalangle 1 of paths[p])(1)
+    nib(thicknib rotated terminalangle 1 of paths[p])(1)
 )(paths[p])(strokes[p]);
 
 p:= p+1;
