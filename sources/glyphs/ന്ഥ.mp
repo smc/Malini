@@ -36,7 +36,7 @@ p:=p+1;
 clearxy;
 z0=(xpart(point infinity of paths[p-1]), 0);
 z1=(x0, m/2);
-z2=((x1+x3)/2, m);
+z2=((x1+x3)/2, m-overshoot);
 z3=(x0 - mw*0.8, y1);
 z4=(x3,ypart(point infinity of paths[p-1]));
 paths[p]:= z0---z1..z2..z3---z4 ;
