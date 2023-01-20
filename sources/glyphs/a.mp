@@ -6,14 +6,16 @@ p:=0;
 z0=(thick/4, 0.75s);
 z1=((x0+x2)/2, s-overshoot);
 z2=(x0+0.75sw, 0.6s);
-z3=(x2, serif_height/2);
-paths[p] := z0{dir 70}..z1{right}..z2---z3;
+z3=(x2, s/6);
+z4=(x3+sw/4, 1.5undershoot);
+paths[p] := z0{dir 80}..z1{right}..z2---z3..{dir 30}z4;
 
 pen_stroke(
-    nib(thicknib rotated terminalangle 0 of paths[p] )(0)
+    nib(thicknib scaled 1.2 rotated terminalangle 0 of paths[p] )(0)
     nib(top_nib scaled 0.8)(1)
-    nib(middle_down_nib)(2,3)
-    nib(thick_vertical_nib)(infinity)
+    nib(middle_down_nib)(2)
+    nib(middle_down_nib)(3)
+    nib(end_nib scaled 0.5 rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -31,10 +33,7 @@ pen_stroke(
     nib(end_nib scaled 0.9 rotated terminalangle 3 of paths[p])(3)
 )(paths[p])(strokes[p]);
 
-% Serifs
-p:=p+1;
-paths[p] := serif_bottom_slanted shifted point infinity of paths[0];
-strokes[p] := serif_stroke_slanted(paths[p]);
 
+rbearing:=rbearing/2;
 anchor( "top", (xpart(point 1 of paths[0]), X));
 endglyph;

@@ -11,8 +11,8 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=(xpart point 0 of paths[0], X-thick*sind(45)/2);
-z1=(x0+Xw/4, y0);
-z2=(x1+Xw/4, (y0+y3)/2);
+z1=((x0+x2)/2, y0);
+z2=(x0+0.56Xw, (y0+y3)/2);
 z3=(x1, y4);
 z4=(x0, 0.525X);
 paths[p] := z0---z1..{down}z2..z3---z4;
@@ -24,8 +24,8 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=point 4 of paths[p-1];
-z1=(x0+Xw/4, y0);
-z2=(x1+Xw/3, (y0+y3)/2);
+z1=((x0+x2)/2, y0);
+z2=(x0+0.6Xw, (y0+y3)/2);
 z3=(x1, y4);
 z4=(xpart point 1 of paths[0], thick*sind(45)/2);
 paths[p] := z0---z1..{down}z2..z3---z4;

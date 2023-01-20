@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 p:=0;
-z0=(thick/2, X);
+z0=(thick/2, X-thick/4);
 z1=(x0,0);
 paths[p] := z0--z1;
 pen_stroke(
@@ -12,8 +12,8 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0 = (xpart (point 0 of paths[0]), X-thin/2);
-z1 = (x0 + Xw/4, y0);
-z2 = (x1 + Xw/3.5, (y1+y3)/2);
+z1 = ((x0 + x2)/2, y0);
+z2 = (x0 + 0.56Xw, (y1+y3)/2);
 z3 = (x1, y4);
 z4 = point 0.6 of paths[0];
 paths[p]  = z0--z1{right}..z2{down}..{left}z3--z4;
@@ -27,7 +27,7 @@ pen_stroke(
 
 % Serifs
 p:=p+1;
-paths[p] := serif_top_thick shifted (point 0 of paths[0]);
+paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
 strokes[p] := serif_stroke_top(paths[p]);
 
 p:=p+1;
