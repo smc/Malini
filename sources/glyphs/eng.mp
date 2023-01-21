@@ -20,6 +20,6 @@ z1=(x0-s/3, -descent);
 paths[2]=z0{dir -95}..{left}z1;
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(down_nib)(1)
+    cut(end_nib scaled 0.5 rotated 90, 90)(1)
 )(paths[2])(strokes[2]);
 endglyph;

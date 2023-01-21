@@ -2,25 +2,45 @@ input glyph;
 beginglyph;
 
 p:=0;
-z0 = (2/3sw, y1 - 0.15s);
-z1 = ((x0+x2)/1.5, s-thick/3);
-z2 = (x6+0.05sw, y1 - .2s);
-z3 = ((x2+x4)/2, (y2 + y4)/2);
-z4 = (x0, y5 + .2s);
-z5 = ((x4+x6)/2.5, undershoot);
-z6 = (0, y5+0.15s);
+z0 = (x4, y1 - s/4);
+z1 = ((x0+x2)/2, s-overshoot);
+z2 = (x6+ thick/2, (y1 +y3)/2);
+z3 = ((x2 + x4)/2, (y2 + y4)/2);
+z4 = (0.75sw, (y3 + y5)/2);
+z5 = ((x4 + x6)/1.8, undershoot);
+z6 = (0, y5 + s/4);
 
-paths[p] = z0{dir 120}..z1..z2{down}..z3..z4{down}..z5..{dir 120}z6;
+paths[p] = z0{dir 90}  ..z1{left}..z2{down} ..z3..z4{down} ..z5{left} ..  z6;
 
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[0])(0)
-   nib(top_nib)(1)
+   nib(serif_nib rotated terminalangle 0 of paths[p] )(0)
+   nib(top_nib scaled 0.85)(1)
    nib(middle_down_nib)(2,4)
-   nib(down_nib)(5)
-   nib(thick_vertical_nib rotated 90)(3)
-   nib(end_nib rotated terminalangle 6 of paths[0])(6)
-)(paths[0])(strokes[0]);
+   nib(middle_down_nib scaled 0.85 rotated 90)(3)
+   nib(down_nib  scaled 0.85)(5)
+   nib(serif_nib rotated terminalangle infinity of paths[0] )(infinity)
+)(paths[p])(strokes[p]);
 
+% Serif
+p:=p+1;
+clearxy;
+z0 = point (length(paths[p-1])*2 + 1 ) of strokes[p-1];
+z1 = (x0 + serif_height, y0);
+z2 = (x1, s);
+z3 = (x2 - (x1-x0), y2);
+z4 = point 0.5 of paths[p-1];
+paths[p] = z0--z1--z2--z3--z4..{down}cycle;
+strokes[p] := paths[p];
+
+p:=p+1;
+clearxy;
+z0 = point 6 of strokes[p-2];
+z1 = (xpart point 7 of strokes[p-2], y0);
+z2 = (x1, 0);
+z3 = (x2 - (x1-x0), y2);
+z4 = point 5.6 of paths[p-2];
+paths[p] = z0--z1--z2--z3--z4..{up}cycle;
+strokes[p] := paths[p];
 % bar
 p:=p+1;
 clearxy;
@@ -31,23 +51,5 @@ pen_stroke(
     nib(middle_down_nib scaled 2/3 rotated terminalangle 1 of paths[p])(0,1)
 )(paths[p])(strokes[p]);
 
-% Serif
-p:=p+1;
-clearxy;
-z0=(xpart(point 0 of paths[0]) , s);
-z1=(x0, ypart(point 0 of paths[0])  - thick/5);
-paths[p]=z0---z1;
-pen_stroke(
-    nib(middle_down_nib scaled 2/3 rotated terminalangle 1 of paths[p])(0,1)
-)(paths[p])(strokes[p]);
-
-p:=p+1;
-clearxy;
-z0=(xpart(point infinity of paths[0]), 0);
-z1=(x0, ypart(point infinity of paths[0])+thick/5);
-paths[p]=z0---z1;
-pen_stroke(
-    nib(middle_down_nib scaled 2/3 rotated terminalangle 1 of paths[p])(0,1)
-)(paths[p])(strokes[p]);
 
 endglyph;

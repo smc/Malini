@@ -3,7 +3,7 @@ beginglyph;
 
 p:=0;
 z0=(0, X-thick/4);
-z1=(x0, serif_height/4);
+z1=(x0, thick/4);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)

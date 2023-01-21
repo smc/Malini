@@ -37,7 +37,7 @@ clearxy;
 z0=(xpart(point 0 of paths[0]), s);
 z1=(x0 - 0.05sw, y0  - 1.5serif_width);
 z2=(x1 + serif_height, y1);
-z3=point 0.2 of strokes[0];
+z3=point 0.25 of strokes[0];
 paths[p] :=z0--z1--z2{dir 60}..{dir 20}z3--cycle;
 strokes[p] := paths[p];
 

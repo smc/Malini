@@ -6,8 +6,8 @@ z2 = (x1 + sw/3, y0);
 paths[0] = z0--z1--z2;
 pen_stroke(
     nib(thick_nib )(0)
-    nib(thick_nib )(1,2)
-    nib(thick_nib)(infinity)
+    nib(thick_nib )(1)
+    nib(thick_nib)(2)
 )(paths[0])(strokes[0]);
 
 endglyph;

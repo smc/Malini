@@ -36,7 +36,7 @@ z1=(x0-X/3, -descent);
 paths[p]=z0{down}..{left}z1;
 pen_stroke(
     nib(thin_vertical_nib rotated terminalangle 0 of paths[3])(0)
-    nib(end_nib rotated terminalangle infinity of paths[3])(infinity)
+    nib(thin_vertical_nib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
 

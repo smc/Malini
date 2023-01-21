@@ -7,11 +7,11 @@ paths[0] = z0--z1;
 paths[1] = z0--z2;
 
 pen_stroke(
-    nib(end_nib rotated terminalangle 0 of paths[0])(0)
+    cut(end_nib rotated terminalangle 0 of paths[0], 90)(0)
     nib(end_nib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(end_nib rotated terminalangle 0 of paths[1])(0)
+    cut(end_nib rotated terminalangle 0 of paths[1], 90)(0)
     nib(end_nib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 paths[2] := paths[0] shifted(s/2, 0);
