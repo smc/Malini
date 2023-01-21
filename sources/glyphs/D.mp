@@ -13,7 +13,7 @@ pen_stroke(
 p:=p+1;
 z3 = (x0, X - thin/2);
 z4 = ((x3 + x5)/3, y3);
-z5 = (x0 + 0.75Xw, (y4+y6)/2.04);
+z5 = (x0 + 0.7Xw, (y4+y6)/2.04);
 z6 = (x4,  y7);
 z7 = (0, thin/2);
 
@@ -27,8 +27,10 @@ pen_stroke(
 
 
 p:=p+1;
-paths[p] := serif_top_thick shifted (point 0 of paths[0]);
-strokes[p] := serif_stroke_top(paths[p]);
+paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
+path serif_stroke;
+serif_stroke := serif_stroke_top(paths[p]);
+strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 8) of strokes[1] -- cycle;
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);

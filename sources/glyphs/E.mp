@@ -14,7 +14,8 @@ z3 = (x0, X - thin/2);
 z4 = (x3 + Xw/1.6, y3);
 paths[p] = z3--z4;
 pen_stroke(
-    nib(thin_nib rotated 90)(0,1)
+    cut(thin_nib rotated 90, 90)(0)
+    nib(thin_nib rotated 90)(1)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
@@ -39,11 +40,16 @@ pen_stroke(
 
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
-strokes[p] := serif_stroke_top(paths[p]);
+path serif_stroke;
+serif_stroke := serif_stroke_top(paths[p]);
+strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 2) of strokes[1] -- cycle;
+
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
-strokes[p] := serif_stroke_bottom(paths[p]);
+path serif_stroke;
+serif_stroke := serif_stroke_bottom(paths[p]);
+strokes[3] := subpath(0, 2) of serif_stroke -- subpath(1, 3) of strokes[3] -- cycle;
 
 % Bottom bar serif
 p:=p+1;
@@ -51,7 +57,7 @@ clearxy;
 z0=(xpart(point 1 of paths[3]), 0);
 z1=(x0 + 0.05sw, y0  + 1.5serif_width);
 z2=(x1 - serif_height, y1);
-z3=point 2.25 of strokes[3];
+z3=point 4.25 of strokes[3];
 paths[p] :=z0--z1--z2{dir -105}..{dir 200}z3--cycle;
 strokes[p] := paths[p];
 
@@ -64,7 +70,7 @@ clearxy;
 z0=(xpart(point 1 of paths[1]), X);
 z1=(x0 + 0.05sw, y0  - 1.5serif_width);
 z2=(x1 - serif_height, y1);
-z3=point 4.75 of strokes[1];
+z3=point 3.75 of strokes[1];
 paths[p] :=z0--z1--z2{dir 105}..{dir 160}z3--cycle;
 strokes[p] := reverse paths[p];
 

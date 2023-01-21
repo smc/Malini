@@ -28,7 +28,9 @@ pen_stroke(
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
-strokes[p] := serif_stroke_top(paths[p]);
+path serif_stroke;
+serif_stroke := serif_stroke_top(paths[p]);
+strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 8) of strokes[1] -- cycle;
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);

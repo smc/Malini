@@ -30,7 +30,9 @@ pen_stroke(
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
-strokes[p] := serif_stroke_top(paths[p]);
+path serif_stroke;
+serif_stroke := serif_stroke_top(paths[p]);
+strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 2) of strokes[1] -- cycle;
 
 p:=4;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
@@ -41,7 +43,7 @@ clearxy;
 z0=(xpart(point 1 of paths[1]), X);
 z1=(x0 + 0.05sw, y0  - 1.5serif_width);
 z2=(x1 - serif_height, y1);
-z3=point 4.75 of strokes[1];
+z3=point 3.75 of strokes[1];
 paths[p] :=z0--z1--z2{dir 105}..{dir 160}z3--cycle;
 strokes[p] := reverse paths[p];
 
