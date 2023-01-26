@@ -4,7 +4,7 @@ beginglyph;
 z0 =(0, (y1 + y3)/2);
 z1 =(x0 + mw/4, y3+0.55m);
 z2=(x1 + mw/4, y0);
-z3=(x2 - mw/4, thick*0.6/2);
+z3=(x2 - mw/4, undershoot);
 z4=(x0, y0);
 z5=(x0, m/2);
 z6=(x5 + mw/3, m-overshoot);
@@ -17,21 +17,23 @@ pen_stroke(
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
     nib(middle_up_nib)(4)
-
 )(paths[0])(strokes[0]);
+
+
 clearxy;
 z4=(point 3.8 of paths[0]);
 z5=(0, m/2);
-z6=(x5 + mw/2, m);
+z6=(x5 + mw/2, m-overshoot);
 z7=(x6 + mw/2, m/2);
-z8=(x7 - mw/4, 0);
-paths[1]= z4..z5 ..z6..{down}z7..z8;
+z8=(x7 - mw/4+ thin*1.2/2, thin/2);
+z9=(x8, 0);
+paths[1]= z4..z5 ..z6..{down}z7..z8--z9;
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
-    nib(end_nib)(4)
+    nib(end_nib)(4,5)
 )(paths[1])(strokes[1]);
 
 clearxy;
@@ -40,7 +42,7 @@ z1=(x0 + 0.6mw, y0);
 z2=(x1, m);
 
 paths[2]:= z0--z1 ;
-paths[2]:= paths[2] shifted ( xpart(point 4 of paths[1]) +  thick*0.5, thick*sind(45)/2);
+paths[2]:= paths[2]  shifted ( point infinity of paths[1] + (thin*1.2/2, thick*sind(45)/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

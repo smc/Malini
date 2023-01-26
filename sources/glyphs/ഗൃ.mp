@@ -10,7 +10,7 @@ z5 = (x4 + mw/3, m-overshoot);
 z6 = (x5 + mw/3, y1);
 
 
-paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. {dir -85}z6 ;
+paths[p] = z0{dir 215}..z1{down}..z2{right}..z3 --- z4..z5{right}.. {down}z6 ;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)

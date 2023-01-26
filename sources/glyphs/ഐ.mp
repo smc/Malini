@@ -36,7 +36,7 @@ z1=(x0 + mw, y0);
 z2=(x1, m);
 
 paths[4]:= z0--z1 ;
-paths[4]:= paths[4] shifted ( point 4 of paths[3]   );
+paths[4]:= paths[4] shifted (xpart point 4 of paths[3] + thin*1.2/2, thick*sind(45)/2);
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)
@@ -58,12 +58,12 @@ pen_stroke(
 clearxy;
 z0=(0, 0);
 z1=((x0  + x2)/2, -descent*0.8);
-z2=(x0 - mw/1.8, (y1+y3)/2);
+z2=(x0 - mw/1.8, (y1+y3)/2.5);
 z3=(x0, m-overshoot);
 z4=(x0 + mw/2, y2);
 z5=(x4 - mw/4, y1);
 
-paths[6]:= z0{down}..z1..{dir 85}z2..z3{right}..z4..z5;
+paths[6]:= z0{down}..z1{left}..{up}z2..z3{right}..z4{down}..z5;
 paths[6]:= paths[6] shifted (xpart(point 0 of paths[5]), 0);
 pen_stroke(
     nib(middle_down_nib)(0,4)
