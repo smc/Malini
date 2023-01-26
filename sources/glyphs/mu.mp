@@ -10,7 +10,7 @@ pen_stroke(
     nib(end_nib scaled 2/3 rotated terminalangle infinity of paths[p])(infinity)
     nib(down_nib)(2)
     nib(thick_vertical_nib)(0,1)
-    ignore_directions(2)
+
 )(paths[p])(strokes[p]);
 
 p:=p+1;

@@ -21,7 +21,7 @@ z5= ( x4+ mw/3, undershoot);
 z6= ( x5 + mw/3, (y5+y7)/2);
 z7= ( x2 + 3/4mw, m);
 
-paths[p] = z0---z1..z2..z3---z4..z5{right}..z6{up}..z7;
+paths[p] = z0---z1..z2{right}..z3---z4..z5{right}..z6{up}..z7;
 
 pen_stroke(
     nib(thin_vertical_nib)(0)

@@ -22,8 +22,10 @@ pen_stroke(
     nib(thin_nib rotated 90)(0,1)
     nib(end_nib rotated 90)(3,4)
     nib(middle_down_nib)(2)
-    ignore_directions(2)
+
 )(paths[p])(strokes[p]);
+
+showcontrols:=0;
 
 % Serifs
 p:=p+1;

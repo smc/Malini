@@ -41,7 +41,7 @@ pen_stroke(
     nib(top_nib scaled 0.9)(8)
     nib(thick_vertical_nib)(9)
     nib(thick_vertical_nib)(10)
-    ignore_directions(2,3,5,7,8)
+
 )(paths[1])(strokes[1]);
 
 paths[2] := right_da;
@@ -54,7 +54,7 @@ pen_stroke(
     nib(end_nib rotated 90)(4)
     nib(middle_down_nib scaled 0.9)(3, 5)
     nib(end_nib rotated 45)(6)
-    ignore_directions(2,3,5)
+
 )(paths[2])(strokes[2]);
 
 anchor( "vc", point 0 of paths[2]);

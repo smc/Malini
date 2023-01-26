@@ -24,7 +24,7 @@ pen_stroke(
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3,4)
-    ignore_directions(1, 2)
+
 )(paths[p])(strokes[p]);
 
 p:=p+1;

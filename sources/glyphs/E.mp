@@ -37,7 +37,7 @@ pen_stroke(
 
 % Serifs
 
-
+showcontrols:=0;
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
 path serif_stroke;

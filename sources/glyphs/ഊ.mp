@@ -27,17 +27,17 @@ pen_stroke(
     nib(down_nib)(8)
     nib(middle_up_nib)(9)
     nib(thick_horizontal_nib)(10,11)
-    ignore_directions(2, 3 , 5, 6, 9)
+
 )(paths[0])(strokes[0]);
 
 clearxy;
 z0 = (x1 + mw*0.1, 0.4m);
-z1 = (0, 0.75m);
-z2 = (x1 + mw/3, m-overshoot);
-z3 = (x2 + mw/4, .6m);
+z1 = (0, (y0+y2)/2);
+z2 = ((x1 + x3)/2, m-overshoot);
+z3 = (x1 + mw*0.6, .6m);
 z4 = (x3, .4m);
 
-paths[2] = z0..z1..z2{dir -8}..{down}z3---z4 ;
+paths[2] = z0..z1{up}..z2{right}..{down}z3---z4 ;
 paths[2] := paths[2] shifted (xpart(point infinity of paths[0]) + mw/5, 0);
 pen_stroke(
    nib(start_up_nib rotated terminalangle 0 of paths[2])(0)
@@ -48,12 +48,12 @@ pen_stroke(
 
 clearxy;
 z0 =  point 4 of paths[2] + (thick*0.5/2, 0);
-z1 =  (x0, m*0.6);
-z2 = (x1 + mw/3, m-overshoot);
-z3 = (x2 + mw/3, m/2);
+z1 = (x0, m*0.6);
+z2 = ((x1 + x3)/2, m-overshoot);
+z3 = (x1 + 0.66mw, (y2+y4)/1.75);
 z4 = (x3 - 0.8mw, 0);
 
-paths[3] = z0 --- z1 ..z2..z3..z4;
+paths[3] = z0 --- z1 ..z2{right}..z3{down}..{dir 175}z4;
 
 pen_stroke(
     nib(thin_vertical_nib)(0)

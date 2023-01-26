@@ -19,7 +19,7 @@ pen_stroke(
    nib(middle_down_nib)(3, 4, 6)
    nib(top_nib)(5)
    nib(end_nib rotated terminalangle 7 of paths[0])(7)
-   ignore_directions(2,5)
+
 )(paths[p])(strokes[p]);
 anchor( "vc", point 4 of paths[p]);
 anchor( "bottom", (xpart(point 6 of paths[p]),0));

@@ -13,7 +13,7 @@ pen_stroke(
    nib(middle_down_nib scaled 0.8)(2)
    nib(top_nib scaled 0.75)(1)
    nib(down_nib)(3)
-   ignore_directions(1,2,3)
+
 )(paths[0])(strokes[0]);
 
 anchor( "right", (xpart(point 1 of paths[0]), ypart(point 1 of paths[0])));

@@ -154,6 +154,7 @@ glyphs:
       - ["1.L_ROUNDS", "2.f", -30]
       - ["a", "2.t", -30]
       - ["a", "2.f", -30]
+      - ["k", "2.L_ROUNDS", -50]
     malayalam:
       - ['്',"2.QUOTES", 100 ]
       - ['്',"2.PARANTHESIS", 100 ]

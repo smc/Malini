@@ -18,7 +18,7 @@ pen_stroke(
     nib(middle_down_nib)(2)
     nib(middle_up_nib)(4)
     nib(thick_vertical_nib)(6,7)
-    ignore_directions(1, 2, 3 , 4, 5)
+
 )(paths[0])(strokes[0]);
 
 clearxy;

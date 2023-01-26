@@ -18,7 +18,7 @@ pen_stroke(
    nib(down_nib)(1)
    nib(down_nib)(3)
    nib(middle_up_nib rotated terminalangle 4 of paths[p])(4)
-   ignore_directions(1, 2, 3)
+
 )(paths[p])(strokes[p]);
 
 % Serifs

@@ -19,6 +19,7 @@ pen_stroke(
    nib(end_nib rotated 90)(0,1)
 )(paths[p])(strokes[p]);
 
+showcontrols:=0;
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);

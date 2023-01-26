@@ -7,20 +7,20 @@
 vardef left_arch =
     clearxy;
     z0=(x1+mw/4, 0);
-    z1=(0, (y0+y2)/1.85);
+    z1=(0, (y0+y2)/1.8);
     z2=((x1+x3)/1.8, m-overshoot);
     x3-x1 = 0.7*mw;
     z3=(x3, 0.6m);
     z4=(x3, 0); % bottom of piller
-    z0..z1..z2..{down}z3---z4
+    z0..z1{up}..z2{right}..{down}z3---z4
 enddef;
 
 vardef right_arch =
     clearxy;
     z0=(thick/2-thin/2, undershoot);
     z1=(x0, 0.6m);
-    z2=((x1+x3)/2.08, m-overshoot); % Top of arch
-    x3-x1 = 2/3*mw;
+    z2=((x1+x3)/2.2, m-overshoot); % Top of arch
+    x3-x1 = 0.7*mw;
     z3=(x3, (y2+y4)/1.86);
     z4= (x3 - mw/4, 0);
     z0---z1..z2{right}..z3{down}..z4
@@ -180,7 +180,7 @@ vardef pa_mouth =
     z4=(x3 - mw/4 + thin*1.2/2, thin/2);
     z5=(x4, 0);
 
-    z0..z1..z2..z3..z4--z5
+    z0..z1{up}..z2{right}..z3{down}..z4--z5
 enddef;
 
 
@@ -235,7 +235,7 @@ vardef left_arch_with_eye =
     z2=(x1 + mw/4, y0);
     z3=(x2 - mw/4, undershoot);
     z4=(x0, y0);
-    z5=((x4 + x6)/2, m-overshoot);
+    z5=((x4 + x6)/1.8, m-overshoot);
     z6=(x4 + 0.85mw, 0.6m);
     z7=(x6, 0);
     _temp:=z0{dir 80}..z1..z2..z3..z4{dir 100}..z5{right}..{down}z6 ---z7;
@@ -255,19 +255,19 @@ vardef right_arch_with_eye =
     z5=(x3 -0.55*mw, y4 + m/3);
     l=z0---z1..z2..z3..z4..z5;
     z6=point 2.8 of l;
-    z0---z1..z2..z3..z4..z5..z6
+    z0---z1..z2{right}..z3{down}..z4{left}..z5..z6
 enddef;
 
 vardef right_arch_with_tail =
     clearxy;
     z0 = (thick/2-thin/2, undershoot);
     z1= ( x0 , 0.6m);
-    z2= ( x1 + mw/2.25, m-overshoot);
-    z3= ( x2 + mw/2.25, m/2);
-    z4= ( x3 - mw/3, undershoot);
+    z2=((x1 + x3)/2.2, m-overshoot);
+    z3=(x1 + 0.85mw, (y2+y4)/2.4);
+    z4=((x3 + x5)/2, undershoot); % Bottom
     z5= ( x4 - mw/4, y4 + m/3);
     z6= ( x4 + mw/4, y3 + m/6);
     z7= ( x5 + mw*0.9, (y6 + y8)/2);
     z8= ( x5 + mw*0.2, y6-m);
-    z0---z1..z2..z3..z4..z5..z6..z7{down}..z8
+    z0---z1..z2{right}..z3{down}..z4{left}..z5..z6..z7{down}..z8
 enddef;

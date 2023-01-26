@@ -32,7 +32,7 @@ pen_stroke(
     nib(middle_down_nib)(4)
     nib(down_nib)(5)
     nib(middle_up_nib)(6)
-    ignore_directions(2,5,6)
+
 )(paths[p])(strokes[p]);
 
 p:=p+1;

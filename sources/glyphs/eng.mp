@@ -12,7 +12,7 @@ pen_stroke(
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
-    nib(middle_down_nib)(2,3)
+    nib(thick_vertical_nib)(2,3)
 )(paths[1])(strokes[1]);
 clearxy;
 z0=point infinity of paths[1];

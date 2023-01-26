@@ -14,8 +14,8 @@ paths[p]:=paths[p] shifted(xpart(point 1 of paths[p-1]) ,0);
 pen_stroke(
     cut(end_nib scaled 2/3, rel 90)(0)
     nib(top_nib)(1)
-    nib(middle_down_nib)(2,3)
-    ignore_directions(1)
+    nib(thick_vertical_nib)(2,3)
+
 )(paths[p])(strokes[p]);
 
 % Serifs

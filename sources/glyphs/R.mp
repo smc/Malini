@@ -33,7 +33,7 @@ pen_stroke(
      nib(thick_vertical_nib)(0,1,2)
 )(paths[p])(strokes[p]);
 
-
+showcontrols:=0;
 % Serifs
 p:=p+1;
 paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);

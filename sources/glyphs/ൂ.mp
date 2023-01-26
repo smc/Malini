@@ -9,7 +9,7 @@ pen_stroke(
    nib(middle_down_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
    nib(middle_up_nib )(1)
    nib(end_nib rotated terminalangle 2 of paths[p])(2)
-   ignore_directions(1)
+
 )(paths[0])(strokes[0]);
 
 clearxy;
@@ -27,7 +27,7 @@ pen_stroke(
    nib(middle_down_nib scaled 0.8)(2)
    nib(top_nib scaled 0.75)(1)
    nib(down_nib)(3)
-   ignore_directions(1,2,3)
+
 )(paths[p])(strokes[p]);
 
 clearxy;

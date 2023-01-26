@@ -960,8 +960,8 @@ class MalayalamFont(Font):
             # Base zone
             -20, 0,
             # xheight zone
-            int(self.info.xHeight), int(self.info.xHeight+20),
-            int(self.info.ascender), int(self.info.ascender+20),
+            int(self.info.xHeight), int(self.info.xHeight+15),
+            int(self.info.ascender), int(self.info.ascender+15),
         ]
         self.info.postscriptOtherBlues= [
             int(-self.info.descender), int(-self.info.descender+12)

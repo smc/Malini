@@ -30,7 +30,7 @@ pen_stroke(
    nib(down_nib)(10)
    nib(middle_up_nib)(11)
    nib(end_nib rotated terminalangle 12 of paths[p])(12)
-   ignore_directions(1,2, 3, 6, 9, 10)
+
 )(paths[p])(strokes[p]);
 
 
