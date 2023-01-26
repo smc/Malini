@@ -955,18 +955,15 @@ class MalayalamFont(Font):
         self.info.openTypeHheaLineGap = 0
 
         # postscript metrics
+        # Refer Chapter 5 of https://adobe-type-tools.github.io/font-tech-notes/pdfs/T1_SPEC.pdf
         self.info.postscriptBlueValues= [
             # Base zone
             -20, 0,
             # xheight zone
-            int(self.info.xHeight), int(self.info.xHeight+30),
-            # Bottom curve-above
-            40, 70,
-            # Top curve-below
-            int(self.info.xHeight-60), int(self.info.xHeight-30),
-            # Midline
-            int(self.info.xHeight/2-12), int(self.info.xHeight/2+12),
+            int(self.info.xHeight), int(self.info.xHeight+20),
             int(self.info.ascender), int(self.info.ascender+20),
+        ]
+        self.info.postscriptOtherBlues= [
             int(-self.info.descender), int(-self.info.descender+12)
         ]
         self.info.guidelines=[
@@ -977,8 +974,6 @@ class MalayalamFont(Font):
         # self.info.postscriptFamilyOtherBlues = []
 
         self.info.postscriptSlantAngle = 0
-        self.info.postscriptStemSnapH = [42]
-        self.info.postscriptStemSnapV= [92]
         self.info.postscriptUnderlinePosition = -200
         self.info.postscriptUnderlineThickness = 50
 
