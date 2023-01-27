@@ -7,7 +7,7 @@ z3=(x2 + mw/1.75, (y2+y4)/2.4);
 z4=(x3 - mw/3, undershoot);
 z5= (x4 - mw/4, (y4 + y6)/3);
 z6= (x4, ascent);
-paths[0] = z0..z1..z2{right}..z3{down}..z4..z5{up}..{up}z6;
+paths[0] = z0..z1{up}..z2{right}..z3{down}..z4..z5{up}..{up}z6;
 paths[0] := paths[0] ;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)

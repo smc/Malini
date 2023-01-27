@@ -15,10 +15,10 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=(point 1.8 of paths[0]);
+z0=(point 2 of paths[0]);
 z1=(xpart point 3.66 of paths[0], 0);
 
-paths[1]= z0{dir angle(direction 1.8 of paths[0])}..z1 ;
+paths[1]= z0{dir angle(direction 2 of paths[0])}..z1 ;
 pen_stroke(
     nib(middle_down_nib)(0)
     nib(top_nib)(1)

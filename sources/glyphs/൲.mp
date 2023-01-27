@@ -20,7 +20,7 @@ z5= (x4 - mw/4, (y4 + y7)/3);
 z6= (x5 + mw/3, (y5+y7)/2);
 z7= (x3 + mw/3, m);
 
-paths[p] := z0---z1..z2..z3..z4..z5{up}..z6{right}..{up}z7;
+paths[p] := z0---z1..z2{right}..z3{down}..z4{left}..z5{up}..z6{right}..{up}z7;
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(

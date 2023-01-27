@@ -2,12 +2,12 @@ input glyph;
 beginglyph;
 p:=0;
 z0=(0, X - thick*0.7/2);
-z1=(x0 + .55Xw, y0);
+z1=(x0 + .5Xw, y0);
 
 paths[0] = z0--z1;
 p:=p+1;
 clearxy;
-z0=(.55Xw - thick*0./2, X);
+z0=(.5Xw - thick*0./2, X);
 z1=(x0 - Xw/4, 0);
 paths[1] = z0{dir -90}..{dir -90}z1;
 
@@ -28,5 +28,6 @@ pen_stroke(
     nib(serif_nib rotated terminalangle 0 of paths[p])(0 )
     nib(end_nib rotated terminalangle 1 of paths[p])(1 )
 )(paths[p])(strokes[p]);
+strokes[p]:=point 0 of strokes[p]--point 1 of strokes[p]--point 2 of strokes[p]--point 3 of strokes[p]--cycle;
 
 endglyph;

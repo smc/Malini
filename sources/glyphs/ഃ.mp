@@ -10,8 +10,10 @@ paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 paths[0] := paths[0] xyscaled (0.75, 0.75);
 paths[1] = paths[0] shifted (0, m/2) ;
 pen_stroke(
-    nib(default_nib scaled(1))(1, 3)
-    nib(thinnib)(0, 2, 4)
+   nib(middle_up_nib)(0,4)
+   nib(middle_down_nib)(2)
+   nib(top_nib)(1)
+   nib(down_nib)(3)
 )(paths[0])(strokes[0]);
 strokes[1]:= strokes[0] shifted (0, m/2)  ;
 endglyph;

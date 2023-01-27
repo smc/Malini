@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 %  MALAYALAM FRACTION ONE FIFTH
-z0=(x1+mw/6, -thick/2);
+z0=(x1+mw/4, 0);
 z1=(0, y0 + m/2);
-z2=(x0 + mw/3, m);
+z2=(x0 + mw/3, m-overshoot);
 z3=(x2 + mw/2 , y2 - 0.4m);
-z4=(x3 - mw/4, 0); % bottom
+z4=(x3 - mw/4, undershoot); % bottom
 z5=(x4 - mw/4, y4+ m/4);
 z6=(x5 + mw/3, y5 + m/4);
 z7=(x6 + mw/3, y6 + m/2);

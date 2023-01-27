@@ -14,10 +14,10 @@ pen_stroke(
     nib(middle_down_nib)(4)
 )(paths[0])(strokes[0]);
 clearxy;
-z0=(point 3.8 of paths[0]);
+z0=(point 4 of paths[0]);
 z1=(xpart point 1.66 of paths[0], X);
 
-paths[1]= z0{dir angle(direction 3.8 of paths[0])}..z1 ;
+paths[1]= z0{dir angle(direction 4 of paths[0])}..z1 ;
 pen_stroke(
     nib(middle_down_nib)(0)
     nib(top_nib)(1)

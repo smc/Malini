@@ -3,8 +3,8 @@
 input glyph;
 beginglyph;
 z0=(0,0);
-z1=(x0 +mw/4, m/3);
-z2=(x1 + mw/6, m);
+z1=(x0 + mw/3, m/4);
+z2=(x1, m);
 z3=(x2, m/2);
 z4=(x3 + mw/3, 0);
 z5=(x4 + mw/4, y0 + m/2);
@@ -18,7 +18,7 @@ z12=(x11 + mw/3, 0);
 z13=(x12 + mw/3, m/2);
 z14=(x13 - mw/4 , m);
 
-paths[0] = z0..z1..z2;
+paths[0] = z0..z1---z2;
 paths[1]= z2---z3..z4..z5..z6..z7..z8..z9..z10..z11..z12..z13..z14 ;
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)

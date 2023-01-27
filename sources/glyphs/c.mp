@@ -3,11 +3,11 @@ beginglyph;
 save r,e;
 r=0.75;
 z0 = (r*sw, .8s);
-z1 = ((x0 + x2)/2, s - overshoot);
+z1 = ((x0 + x2)/1.8, s - overshoot);
 z2 = (0, s/2);
-z3 = (x1, undershoot);
+z3 = ((x0 + x2)/1.75, undershoot);
 z4 = (x0+thin*1.2/2, y3+ s/4);
-paths[0]:=z0{dir 120}..{dir 190}z1..z2..z3..z4;
+paths[0]:=z0{dir 120}..{left}z1..z2{down}..z3{right}..z4;
 
 pen_stroke(
     nib(thicknib rotated terminalangle 0 of paths[0])(0)

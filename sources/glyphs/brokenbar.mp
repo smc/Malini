@@ -4,7 +4,7 @@ beginglyph;
 slant := 0;
 z0= (0, X);
 z1=( x0, y0 - 0.5X);
-z2=( x1, y1 - 0.1X);
+z2=( x1, y1 - 0.2X);
 z3=( x2, y2 - 0.5X);
 
 paths[0] = z0..z1;

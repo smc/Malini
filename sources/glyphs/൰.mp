@@ -31,7 +31,7 @@ z0 = point 1.5 of paths[p-2];
 z1 = (x0 - mw/4, -0.75descent);
 paths[p] = z0{down}.. {left}z1;
 pen_stroke(
-    nib(thick_vertical_nib)(0)
+    cut(thick_vertical_nib, -45)(0)
     nib(down_nib)(1)
 )(paths[p])(strokes[p]);
 

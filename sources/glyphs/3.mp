@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
-z0=(0, 0.8X);
-z1=(x0 + Xw/3, X);
-z2=(x1 + Xw/4, (y1+y3)/2);
-z3=(x2 - Xw/3, 0.55X);
-z4=(x3 + Xw/2.5, (y3+y5)/2);
-z5=(x1, 0);
+z0=(0, 0.8y1);
+z1=((x0 + x2)/2, X-overshoot);
+z2=(x0 + Xw/2, (y1+y3)/2);
+z3=(x2 - Xw/3, 0.55y1);
+z4=(x2 + thick/2, (y3+y5)/2);
+z5=((x4+x6)/2, undershoot);
 z6=(x0, 0.15X);
 
 paths[0] = z0..z1{right}..{down}z2..{left}z3{right}..z4..{left}z5..z6;

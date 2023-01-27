@@ -130,7 +130,7 @@ def endglyph =
     path softpath;
 
 
-    for i=0 upto 10:
+    for i=0 upto 11:
         if varstroke = 1:
             if known strokes[i]:
                 if (thin = 1) and (terminalround = 1):
