@@ -25,5 +25,5 @@ paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
 strokes[p] := serif_stroke_slanted(paths[p]);
 lbearing:=0.5serif_width;
 
-anchor( "top", (xpart(point 0 of paths[0]), X));
+anchor( "top", (xpart(point 0 of paths[0]), 0.9X));
 endglyph;

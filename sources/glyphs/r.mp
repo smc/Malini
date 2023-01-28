@@ -34,6 +34,6 @@ strokes[p] := serif_stroke_bottom(paths[p]);
 
 lbearing:=serif_width/2;
 
-anchor( "top", (xpart(point 0.5 of paths[1]), X));
+anchor( "top", (xpart(point 0.5 of paths[1]), 0.9X));
 anchor( "bottom", (xpart(point 0.5 of paths[1]), 0));
 endglyph;
