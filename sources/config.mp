@@ -8,8 +8,8 @@ u :=            em/10;        % Unit width. Em square divisions. This is the bas
 
 ascent  :=      7.5u;         % Ascender Height
 descent :=      2.5u;         % Descender Height
-xheight :=      0.7*ascent;  % Height of English small letters
-mheight :=      0.7*ascent;  % Height of Malayalam letters
+xheight :=      0.7*ascent;   % Height of English small letters
+mheight :=      0.7*ascent;   % Height of Malayalam letters
 Xheight :=      ascent;       % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
@@ -19,8 +19,8 @@ subthick :=     0.666u;       % Thickness of thickest lines in subscribed charac
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
-lbearing :=     0.45u;        % Default left bearing
-rbearing :=     0.45u;        % Default right bearing
+lbearing :=     0.50u;        % Default left bearing
+rbearing :=     0.50u;        % Default right bearing
 
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
