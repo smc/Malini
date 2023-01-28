@@ -16,7 +16,7 @@ pen_stroke(
 paths[1] = right_arch_with_eye shifted (point infinity of paths[0]);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

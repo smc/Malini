@@ -14,7 +14,7 @@ pen_stroke(
 paths[1] := middle_tha_arch shifted (xpart(point infinity of paths[0]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3)
@@ -27,7 +27,7 @@ pen_stroke(
 paths[2] := right_tha_arch shifted (xpart(point infinity of paths[1]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)

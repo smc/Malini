@@ -26,7 +26,7 @@ z5 = ( x4 + mw/3, (y4+y6)/2);
 z6 = ( x5 - mw/3, undershoot);
 z7 = ( x6 - mw/4, y6 + m/2.5);
 z8 = ( x7 + mw/2.5, m-overshoot);   % top
-z9 = ( x8 + mw/2,2/3m);
+z9 = ( x8 + mw/2,0.6m);
 z10 = ( x9, 0);
 paths[1] = z0{dir angle(direction 4 of paths[0])}..z1{up}..z2..z3{down}..{left}z4{right}..z5{down}..z6..{up}z7..z8..{down}z9---z10;
 pen_stroke(
@@ -48,7 +48,7 @@ paths[2] := right_da;
 paths[2]:= paths[2] shifted (xpart(point infinity of paths[1]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(end_nib rotated 90)(4)

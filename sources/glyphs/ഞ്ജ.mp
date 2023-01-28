@@ -22,7 +22,7 @@ paths[p] :=z0---z1{up}..{right}z2..z3;
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib rotated terminalangle 3 of paths[p])(3)

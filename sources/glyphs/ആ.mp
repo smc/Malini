@@ -9,7 +9,7 @@ z5 = ( x4 + mw/3.5, y4-m/4);
 z6 = ( (x5 + x7)/1.85, undershoot);
 z7 = ( x5 - mw/1.75, y6 + m/2.5);
 z8 = ( (x7 + x9)/1.8, m - overshoot*1.25);   % top
-z9 = ( x7 + 0.9mw, 2/3m);
+z9 = ( x7 + 0.9mw, 0.6m);
 z10 = ( x9, 0);
 paths[0] = z0..z1{up}..z2{right}..z3{down}..{left}z4{right}..z5{down}..z6..{up}z7..z8{right}..{down}z9---z10;
 pen_stroke(
@@ -28,7 +28,7 @@ pen_stroke(
 paths[1] = right_arch_with_tail shifted (xpart(point infinity of paths[0]), 0);
 
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

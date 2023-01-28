@@ -16,7 +16,7 @@ z0 = (point infinity of paths[p]) + (mw/2, m/4);
 z1 = (x0 + mw/2, y0);
 paths[p] := paths[p]{up}..z0---z1;
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

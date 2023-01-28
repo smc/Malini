@@ -47,7 +47,7 @@ pen_stroke(
     nib(thin_vertical_nib)(4)
 )(paths[p-1])(strokes[p-1]);
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

@@ -14,7 +14,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0 = point infinity of paths[p-1] + (thick/2-thin/2, undershoot);
+z0 = point infinity of paths[p-1] + (thick/2-thin/2, thin/2);
 z1 = ( x0, (y0 + y2)/2);
 z2 = ( x1 + mw/2, m - overshoot); % top
 z3 = ( x2 + mw/3, y4 + m/8);
@@ -30,7 +30,7 @@ z12=(x7+ thick/2,  y11);
 
 paths[p] := z0---z1..z2{right}..z3{down}..z4{left}..z5..z6{right} ..z7..z8---z9..z10..z11---z12 ;
 pen_stroke(
-    nib(thin_vertical_nib)(0)
+    cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3,5, 7)

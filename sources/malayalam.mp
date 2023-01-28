@@ -17,7 +17,7 @@ enddef;
 
 vardef right_arch =
     clearxy;
-    z0=(thick/2-thin/2, undershoot);
+    z0=(thick/2-thin/2, thin/2);
     z1=(x0, 0.6m);
     z2=((x1+x3)/2.2, m-overshoot); % Top of arch
     x3-x1 = 0.7*mw;
@@ -28,7 +28,7 @@ enddef;
 
 vardef middle_arch =
     clearxy;
-    z0=(thick/2-thin/2, undershoot);
+    z0=(thick/2-thin/2, thin/2);
     z1=(x0, 0.6m);
     z2=((x1+x3)/2, m-overshoot); % Top of arch
     x3-x1 = 0.6mw;
@@ -39,7 +39,7 @@ enddef;
 
 vardef right_tha_arch =
     clearxy;
-    z0=(thick/2-thin/2, undershoot);
+    z0=(thick/2-thin/2, thin/2);
     z1= (x0, 0.6m);
     z2 = ( x1 + mw/2.75, m-overshoot); % top
     z3 = ( x2 + mw/2, (y2+y4)/2.5);
@@ -53,7 +53,7 @@ enddef;
 
 vardef middle_tha_arch =
     clearxy;
-    z0=(thick/2-thin/2, undershoot);
+    z0=(thick/2-thin/2, thin/2);
     z1= (x0, 0.6m);
     z2 = ( x1 + mw/2.75, m-overshoot); % top
     z3 = ( x2 + mw/2, m/2);
@@ -61,7 +61,7 @@ vardef middle_tha_arch =
     z5 = ( x4 - mw/4, y3);
     z6 = ( x5 + mw/2, y2); % second top
     z7 = ( x6 + mw/2.5, 0.6m);
-    z8 = ( x7, y0);
+    z8 = ( x7, 0);
     z0---z1..z2..z3..{left}z4{left}..z5..z6{right}..z7---z8
 enddef;
 
@@ -75,7 +75,7 @@ vardef left_tha_arch =
     z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
     z5 = ( x4 - mw/4, m/2);
     z6 = ( x5 + mw/2, y2); % second top
-    z7 = ( x6 + mw/2.5, 2/3m);
+    z7 = ( x6 + mw/2.5, 0.6m);
     z8 = ( x7, 0);
     z0..z1..z2..z3..{left}z4{left}..z5..z6{right}..z7---z8
 enddef;
@@ -120,17 +120,6 @@ vardef la_sign =
     l shifted(0,-m*1.1) xscaled 0.8 yscaled 2/3
 enddef;
 
-vardef la =
-    clearxy;
-    z0=(mw/4, m/2);
-    z1=(x0 + mw/2, y0+m/6);
-    z2=(x1 - mw/3, m);
-    z3=(thick/4, m/3);
-    z4=(x3 + mw/3, 0);
-    z5=(x4 + 2/3mw, y3);
-    z6=(x5 - mw/8, y2);
-    z0..z1..z2..z3..z4..z5..z6
-enddef;
 
 vardef ra =
     clearxy;
@@ -140,7 +129,7 @@ vardef ra =
     x3-x1 = 0.95mw;
     z3=(x3, (y2+y4)/2);
     z4=(x3 - mw/3, undershoot);
-    z0..z1..z2..z3..z4
+    z0..z1{up}..z2{right}..z3{down}..z4
 enddef;
 
 vardef va_mouth =
@@ -209,22 +198,22 @@ vardef da =
     z2 = ( x1 + mw/2, m-overshoot); % top
     z3 = ( x2 + mw/3, y2 - m/4);
     z4 = ( x3 - mw/3, y3 - m/4); % <
-    z5 = ( x3+ mw/10, y4-m/4);
+    z5 = ( x3+ thick/4, y4-m/4);
     z6 = ( x4, thin/2);
-    z0..z1{up}..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
+    z0..z1{up}..{right}z2..z3..{left}z4{right}..z5{down}..{dir 150}z6
 enddef;
 
 
 vardef right_da =
     clearxy;
-    z0=(thick/2-thin/2, undershoot);
-    z1= (x0, 2/3m);
+    z0=(thick/2-thin/2, thin/2);
+    z1= (x0, 0.6m);
     z2 = ( x1 + mw/2.5, m-overshoot); % top
     z3 = ( x2 + mw/3, y2 - m/4);
     z4 = ( x3 - mw/3, y3 - m/4); % <
-    z5 = ( x3+ mw/10, y4-m/4);
+    z5 = ( x3 + thick/4, y4-m/4);
     z6 = ( x4, y0 + m/20);
-    z0---z1..{right}z2..z3..{left}z4{right}..z5..{dir 150}z6
+    z0---z1..{right}z2..z3..{left}z4{right}..z5{down}..{dir 150}z6
 enddef;
 
 vardef left_arch_with_eye =
@@ -247,7 +236,7 @@ enddef;
 vardef right_arch_with_eye =
     clearxy;
     path l;
-    z0 = (thick/2-thin/2, undershoot);
+    z0 = (thick/2-thin/2, thin/2);
     z1=(x0, 0.6m);
     z2=((x1 + x3)/2.2, m-overshoot);
     z3=(x1 + 0.85mw, (y2+y4)/2.4);
@@ -260,7 +249,7 @@ enddef;
 
 vardef right_arch_with_tail =
     clearxy;
-    z0 = (thick/2-thin/2, undershoot);
+    z0 = (thick/2-thin/2, thin/2);
     z1= ( x0 , 0.6m);
     z2=((x1 + x3)/2.2, m-overshoot);
     z3=(x1 + 0.85mw, (y2+y4)/2.4);
