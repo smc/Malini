@@ -69,15 +69,15 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0 = point infinity of paths[p-2];
+z0 = point infinity of paths[p-1];
 z1 =(x0 + mw/2, m/2);
-z2 =(x1 + mw/3, y1-m/4);
+z2 =(x1 + mw/3, (y1+y3)/2);
 z3 =(x2 - mw/3, -m/6);
 z4 =(xpart point 7 of paths[p-2], y3);
 z5 =(xpart point 6 of paths[p-2], (y4+y6)/2);
 z6 =(x4, -descent);
 z7 =(x2 + thick/2, y6);
-paths[p]:=z0{dir angle(direction infinity of paths[p-2])}..z1..z2..z3---z4..z5..z6---z7;
+paths[p]:=z0{dir angle(direction infinity of paths[p-1])}..z1{right}..z2{down}..z3---z4..z5..z6---z7;
 
 
 pen_stroke(

@@ -1,2 +1,2 @@
 input ./config/Regular;
-condense :=  0.8;
+condense :=  0.75;

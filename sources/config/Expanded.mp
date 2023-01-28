@@ -1,2 +1,2 @@
-condense :=  1.16;
+condense :=  1.15;
 soften := 0;
