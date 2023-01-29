@@ -12,7 +12,7 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=(0, s/2);
-z1=(0.5sw, s-thick/2);
+z1=(0.5sw, s-thick/4);
 
 paths[p]:= z0{dir 60}..z1{dir -20};
 paths[p] := paths[p] shifted(xpart(point 0 of paths[p-1]), 0);

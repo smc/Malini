@@ -41,7 +41,7 @@ z3 = (x2 - (x1-x0), y2);
 z4 = point 5.6 of paths[p-2];
 paths[p] = z0--z1--z2--z3--z4..{up}cycle;
 strokes[p] := paths[p];
-
+lbearing:=lbearing/2;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 anchor( "bottom", (xpart(point 1 of paths[0]), 0));
 endglyph;
