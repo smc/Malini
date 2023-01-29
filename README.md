@@ -2,6 +2,8 @@
 
 A Malayalam typeface optimized for body text
 
+![](./docs/sample-1.jpg)
+
 Taking full advantage of variable font technology, Malini offers an unprecedented level of flexibility, all from a single font file. Malini has 4 variable axes: `Weight`, `Width`, and `Slant`.
 
 As a variable font, Malini gives you fine-grained control over each one of its styles. However, it also comes with 64 predefined styles that are easy to access through your font menu. Called *named instances¹*, these work just like regular static fonts do.
@@ -10,11 +12,9 @@ As a variable font, Malini gives you fine-grained control over each one of its s
 
 The Variable font capability makes Malini stylistically flexible and warmly energetic.
 
-![Malini variable font - animated demo](docs/images/nupuram-var.gif "Malini variable font - animated demo showing all 4 axis")
-
 Malini is also available as multiple fonts with different weights.
 
-![Malini weights](docs/images/width-weight-grid.jpg "Malini weights")
+![Malini weights](docs/varaxes.jpg "Malini weights")
 
 ## Variation axes
 
@@ -107,7 +107,6 @@ Malini is primarily a Malayalam font. All the Malayalam characters defined in Un
 
 Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu.
 
-![Malini sample rendering](docs/images/nupuram-sample.jpg "Malini sample rendering")
 
 ## Credits
 
