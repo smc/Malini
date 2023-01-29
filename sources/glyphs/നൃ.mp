@@ -11,7 +11,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] := subpath(0, 2.75) of right_arch shifted (xpart(point infinity of paths[p-1]), 0);
+paths[p] := subpath(0, 3) of right_arch shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
@@ -29,9 +29,9 @@ z1 = (x0 - 0.75mw, -descent);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);
 z4 = (x1 + mw/3, y2);
-paths[p] = z0{dir -80}.. {left}z1..z2..z3..z4;
+paths[p] = z0{down}.. {left}z1..z2..z3..z4;
 pen_stroke(
-    nib(thick_vertical_nib)(0)
+    nib(middle_down_nib)(0)
     nib(down_nib)(1)
     nib(middle_down_nib)(2)
     nib(top_nib)(3)

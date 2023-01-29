@@ -9,6 +9,7 @@ pen_stroke(
     nib(thick_vertical_nib)(3)
     nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
+
 p:=p+1;
 paths[p] = right_arch_with_tail shifted (xpart(point infinity of paths[p-1]), 0);
 

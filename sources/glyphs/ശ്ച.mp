@@ -8,7 +8,7 @@ z3 = (x2 + mw/3, 0.4m);
 z4 = (x3, y5-0.4m);
 z5 = (x4 + mw/3, m-overshoot);
 z6 = (x5 + mw/2, (y5 + y7)/2);
-z7 = (x6 - mw/4, m/4);
+z7 = (x6 - mw/4, m/3);
 z8 = (x7 - mw/4, (y7+y9)/2);
 z9 = (x8 + mw/2, y5 - m/6);
 z10 = (x9 + mw/3, (y9 + y11)/2);
@@ -32,11 +32,11 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0=(0, 0);
-z1=(x0 +  mw, y0);
+z1=(x0 +  1.25mw, y0);
 paths[p] := z0--z1;
-paths[p] := paths[p] shifted (xpart point 7 of paths[p-1], thick*sind(45)/2);
+paths[p] := paths[p] shifted (xpart point 8 of paths[p-1], thick*sind(45)/2);
 pen_stroke(
-    nib(down_nib)(0,1)
+    nib(thin_horizontal_nib)(0,1)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

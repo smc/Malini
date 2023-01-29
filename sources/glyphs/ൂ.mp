@@ -44,4 +44,5 @@ pen_stroke(
    nib(down_nib scaled 0.75)(1)
 )(paths[p])(strokes[p]);
 lbearing:=lbearing/2;
+rbearing:=rbearing/2;
 endglyph;

@@ -54,8 +54,8 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=(xpart point infinity of strokes[2] - thin/2, m);
-z1=((x0+x2)/2, ypart(point 0.45 of paths[2]));
-z2=(xpart(point 0.2 of paths[1]), ypart(point 0.75 of paths[2]));
+z1=((x0+x2)/2, ypart(point 0.55 of paths[2]));
+z2=(xpart(point 0.2 of paths[1]), (y1+y3)/2);
 z3=(x2 + mw/4, m-overshoot);
 z4=(x3 + mw/4, 2/3m);
 z5=(x4,  ypart(point 0  of paths[1]));

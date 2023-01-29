@@ -31,4 +31,5 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 lbearing:=lbearing/2;
+rbearing:=rbearing/2;
 endglyph;
