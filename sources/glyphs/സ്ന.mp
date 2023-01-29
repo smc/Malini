@@ -48,13 +48,13 @@ pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
+    nib(thick_vertical_nib scaled 0.8)(3)
+    nib(thick_vertical_nib scaled 0.8)(4)
 )(paths[p-1])(strokes[p-1]);
 
 pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(thin_vertical_nib scaled 0.8, -45)(0)
+    nib(thin_vertical_nib scaled 0.8)(1)
     nib(top_nib)(2)
     nib(middle_down_nib scaled 0.8)(3)
     nib(end_nib rotated terminalangle 4 of paths[p])(4)
