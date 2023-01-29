@@ -9,8 +9,9 @@ z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
 z5 = ( x4 - mw/4, y3);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
-z8 = ( x7 - mw/3, y0); %
-paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8;
+z8 = ( x7 - mw/3 + thin*1.2/2, thin/2); %
+z9 = ( x8, 0); %
+paths[0] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7..z8--z9;
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
@@ -18,15 +19,15 @@ pen_stroke(
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
-    nib(end_nib rotated 45)(8)
+    nib(end_nib)(8,9)
 )(paths[0])(strokes[0]);
 
 p:=p+1;
 clearxy;
-z0=(0,thin/2);
-z1=(m*1.5, y0);
+z0=(0, 0);
+z1=(mw*1.5, y0);
 paths[p]:= z0--z1 ;
-paths[p]:=paths[p] shifted (point infinity of paths[p-1]  + ( thick*0.5, 0)) ;
+paths[p]:=paths[p] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*sind(45)/2) );
 pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(thin_horizontal_nib)(1)

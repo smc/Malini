@@ -15,25 +15,25 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0= (0, 0);
+z0= (0, thin/2);
 z1= (x0, m/2);
-z2= ((x1+x3)/2, m-overshoot);
+z2= ((x1+x3)/2, m - overshoot);
 z3= (x0+ mw, y1);
 z4= (x3, 0);
 paths[p] = z0---z1..z2..z3---z4;
-paths[p] := paths[1] shifted (point infinity of paths[p-1] + (thick/2-thin/2, 0));
+paths[p] := paths[1] shifted (xpart point infinity of paths[p-1] + thick/2-thin/2, 0);
 
 pen_stroke(
-    nib(middle_up_nib)(0)
-    nib(middle_up_nib)(1)
+    cut(thin_vertical_nib, -45)(0)
+    nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(middle_down_nib)(3,4)
+    nib(thick_vertical_nib)(3,4)
 )(paths[p])(strokes[p]);
 
 clearxy;
 p:=p+1;
-z0=(xpart point 0 of paths[1] , thick*sind(45)/2);
-z1=(xpart(point 4 of paths[p-1]), y0);
+z0=(xpart point 0 of paths[1]+thin/2 , thick*sind(45)/2);
+z1=(xpart(point 4 of paths[p-1])+thick/2, y0);
 paths[p] = z0--z1;
 pen_stroke(
     nib(thin_horizontal_nib)(0)

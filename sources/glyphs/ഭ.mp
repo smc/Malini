@@ -11,7 +11,7 @@ z6= ( x4, y7 + m/6);
 z7 = ( x6 + mw/4, y8 + m/8);
 z8 = ( x2 - mw/8, thin);
 
-paths[0] := z0..z1{up}..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{dir 10}..z7{down}..{dir 150}z8;
+paths[0] := z0..z1{up}..z2{right}..z3{down}..z4{left}..z5{down}..z6{right}..z7{down}..{dir 150}z8;
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)

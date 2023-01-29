@@ -40,30 +40,30 @@ paths[4] = paths[1] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     nib(middle_up_nib)(0,4)
     nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
+    nib(middle_down_nib xscaled 0.8)(2)
     nib(down_nib)(3)
-    nib(thick_vertical_nib)(6,7,8)
+    nib(thick_vertical_nib xscaled 0.8)(6,7,8)
 )(paths[3])(strokes[3]);
 pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(thin_vertical_nib xscaled 0.8, -45)(0)
+    nib(thin_vertical_nib xscaled 0.8)(1)
     nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
+    nib(thick_vertical_nib xscaled 0.8)(3)
+    nib(thick_vertical_nib xscaled 0.8)(4)
 )(paths[4])(strokes[4]);
 
 
 paths[5] = right_arch_with_tail shifted (xpart(point infinity of paths[1]), 0);
 paths[5] := paths[5] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(thin_vertical_nib xscaled 0.8, -45)(0)
+    nib(thin_vertical_nib xscaled 0.8)(1)
     nib(top_nib)(2)
-    nib(middle_down_nib)(3)
+    nib(middle_down_nib xscaled 0.8)(3)
     nib(down_nib)(4)
     nib(middle_up_nib)(5)
     nib(top_nib)(6)
-    nib(middle_down_nib)(7)
+    nib(middle_down_nib xscaled 0.8)(7)
     nib(end_nib rotated -60)(8)
 )(paths[5])(strokes[5]);
 

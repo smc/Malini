@@ -10,9 +10,10 @@ z4= ( x3 - mw/5, y5 + m/6);
 z5= ( x4 - mw/4, m/2);
 z6= ( x4, y7 + m/6);
 z7 = ( x6 + mw/4, y8 + m/8);
-z8 = ( x2 - mw/8, thick/2);
+z8 = ( x2 - mw/8, thin);
 
-paths[p] := z0..z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{dir 10}..z7{down}..{dir 150}z8;
+paths[0] := z0..z1{up}..z2{right}..z3{down}..z4{left}..z5{down}..z6{right}..z7{down}..{dir 150}z8;
+
 paths[p] := paths[p] shifted (mw/3,0);
 
 pen_stroke(

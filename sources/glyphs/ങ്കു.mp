@@ -34,7 +34,7 @@ p:=p-1;
 clearxy;
 z0=point 7 of paths[p+1];
 z1=(0, 3/4m);
-z2=(x1+mw/4, m);
+z2=(x1+mw/4, m-overshoot);
 z3=point 0 of paths[p+1];
 paths[p] := z0{left}..z1.. z2..{down}z3;
 pen_stroke(

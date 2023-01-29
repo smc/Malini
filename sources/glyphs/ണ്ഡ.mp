@@ -28,19 +28,22 @@ pen_stroke(
 % the connector curve
 clearxy;
 p:=p+1;
-z0=point infinity of paths[1] + (thick*0.5/2, 0);
+z0=point infinity of paths[1] + (thick/2-thin/2, thin/2);
 z1=(x0, ypart(point 3 of paths[1]));
 z2=(x1 + mw/4, 0.95m);
 z3=(x2 + mw/4, m/2);
 z4=(x3 + mw/4, 0.05m);
 z5=(x4 + mw/4, mw/2);
-z6=(x5, m);
+z6=(x5, m-thin/2);
 paths[p] = z0---z1..z2..z3{down}..z4{right}..z5---z6;
 pen_stroke(
+    cut(thin_vertical_nib, -45)(0)
+    nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
-    nib(thin_vertical_nib)(0, 1,5,6)
+    nib(thin_vertical_nib)(5)
+    cut(thin_vertical_nib, -45)(6)
 )(paths[p])(strokes[p]);
 
 clearxy;

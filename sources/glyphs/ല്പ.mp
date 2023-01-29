@@ -17,13 +17,14 @@ z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*sind(45)/2);
 z1=(x0, 0.6m);
 z2=(xpart(point 0.5 of paths[0]), m-overshoot);
 z3=(0, y1);
-z4=(0, thick/2);
+z4=(0, thick*tand(20)/2);
 
 paths[p]:= z0{up}..z1{up}..{left}z2...z3---z4;
 pen_stroke(
     nib(middle_up_nib )(0,1)
     nib(top_nib)(2)
-    nib(thick_vertical_nib)(3, 4)
+    nib(thick_vertical_nib)(3)
+    cut(thick_vertical_nib, 20)(4)
 
 )(paths[p])(strokes[p]);
 
@@ -39,13 +40,13 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(0, thick/2);
+z0=(0, thick*tand(20)/2);
 z1=(x0, m);
 
 paths[p]:= z0--z1;
 paths[p]:= paths[p] shifted (xpart(point infinity of paths[2]) - thick/2, 0) ;
 pen_stroke(
-    nib(thick_vertical_nib)(0)
+    cut(thick_vertical_nib, -20)(0)
     nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
 
@@ -75,16 +76,22 @@ paths[p]:= z0--z1;
 paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
 
 paths[p-2] := paths[p-2] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
-paths[p-1] := paths[p-1] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
-paths[p] := paths[p] shifted (0.19mw, -0.75m) xscaled 0.8 yscaled 0.77 ;
-strokes[p-2] := va_mouth_stroke(paths[p-2]);
+paths[p-1] := paths[p-1] shifted (0.25mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
+paths[p] := paths[p] shifted (0.235mw, -0.75m) xscaled 0.8 yscaled 0.75 ;
 pen_stroke(
-    nib(thin_horizontal_nib)(0)
-    nib(thin_horizontal_nib)(1)
+    nib(start_up_nib rotated terminalangle 0 of paths[p-2])(0)
+    nib(middle_up_nib)(1)
+    nib(top_nib)(2)
+    nib(middle_down_nib xscaled 0.8 yscaled 0.75)(3)
+    nib(end_nib)(4,5)
+)(paths[p-2])(strokes[p-2]);
+pen_stroke(
+    nib(thin_horizontal_nib xscaled 0.8 yscaled 0.75)(0)
+    nib(thin_horizontal_nib xscaled 0.8 yscaled 0.75)(1)
 )(paths[p-1])(strokes[p-1]);
 pen_stroke(
-    nib(thick_vertical_nib)(0)
-    nib(thick_vertical_nib)(1)
+    nib(thick_vertical_nib xscaled 0.8 yscaled 0.75)(0)
+    nib(thick_vertical_nib xscaled 0.8 yscaled 0.75)(1)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 0.5 of paths[2]);

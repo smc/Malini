@@ -7,7 +7,7 @@ z2 = (x1 + mw/3, undershoot);
 z3 = (x2 + mw/3, 0.4m);
 z4 = (x3, y5-0.4m);
 z5 = (x4 + mw/3, m-overshoot);
-z6 = (x5 + mw/3, y1);
+z6 = (x5 + mw/2.5, y1);
 
 
 paths[p] = z0{dir 215}..z1{down}..z2{right}..z3 --- z4..z5{right}.. {down}z6 ;
