@@ -1,10 +1,10 @@
 # Malini Malayalam Typeface
 
-A Malayalam typeface optimized for body text
+A Malayalam variable typeface optimized for body text
 
 ![](./docs/sample-1.jpg)
 
-Taking full advantage of variable font technology, Malini offers an unprecedented level of flexibility, all from a single font file. Malini has 4 variable axes: `Weight`, `Width`, and `Slant`.
+Taking full advantage of variable font technology, Malini offers an unprecedented level of flexibility, all from a single font file. Malini has 4 variable axes: `Weight`, `Width`, `Slant` and `Optical Size`.
 
 As a variable font, Malini gives you fine-grained control over each one of its styles. However, it also comes with 64 predefined styles that are easy to access through your font menu. Called *named instances¹*, these work just like regular static fonts do.
 
@@ -25,7 +25,7 @@ Malini has the following axes:
 | Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 | Slant     | `slnt` | -15 to 0       | 0       | Upright (0°) to Slanted (about 15°)                                                |
 | Width     | `wdth` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
-
+| Optical Size     | `opsz` | 10 to 100  | 20     | Follows the font size to optimize the contrast and spacing |
 
 ### Axis Definitions
 
@@ -40,7 +40,9 @@ Malini has the following axes:
 * **Width** `wdth`: 75 to 125%. The percentage of letter width. 75% is 'Condensed', where the letters are horizontally condensed to 75% of original width. 125% is 'Expanded' where the letters are horizontally stretched to 125% of original width.
 
     Recommended use: The condense or expand can be used to achieve precise typographic layout in a predefined rendering space. The content can be adjusted in this way to "fit" the space. Be aware of the legibility degradation when doing this.
-                 |
+* **Optical size** `opsz`: 10 to 100. The contrast, spacing are adjusted to the current font size. In smaller sizes, glyphs will have less contrast and loose text. In larger font sizes, glyphs will have high contrast and tight spacing.
+
+    Recommended use: Browsers will automatically choose the the correct opsz value as per font size. To disable that `font-optical-sizing: none` can be used. It is also possible to manually set an `opsz` value to the `font-variation-settings`
 
 ## Using the fonts
 
@@ -99,7 +101,7 @@ This will take more than 15 minutes to build everything. But if you have a multi
 make -j8
 ```
 
-A directory name d riable fonts, UFO sources generated there.
+A directory named fonts will be generated.
 
 ## Language support
 
