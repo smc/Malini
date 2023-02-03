@@ -2,11 +2,8 @@ name: Malini
 styles: [
   "Regular",
   "Black",
-  "Bold",
   "Thin",
-  "Light",
   "Oblique",
-  "Oblique-Thin",
   "Condensed",
   "Expanded",
   "Display",
@@ -177,6 +174,16 @@ variablefonts:
     designspace: Malini.designspace
     stat:
       axes:
+        - tag: opsz
+          name: Optical Size
+          values:
+            - value: 10
+              name: "10px"
+            - value: 20
+              name: "20px"
+              flags: 2
+            - value: 60
+              name: "60px"
         - tag: slnt
           name: Slant
           values:
