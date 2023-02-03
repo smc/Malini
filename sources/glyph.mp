@@ -29,10 +29,6 @@ Xw  := X * condense; % Width of Latin capital letters
 lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 
-overshoot := thin*1.2/4;
-undershoot := thick*0.77/4;
-serif_height := thick*0.4;
-serif_width :=  thick/2 + serif_height*2;
 
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;

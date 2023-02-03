@@ -32,6 +32,10 @@ outputformat := "svg";        % Output format
 
 varstroke :=     1;           % Stroke modulation. Uses pen_strokes
 
+overshoot := thin*1.2/4;
+undershoot := thick*0.77/4;
+serif_height := thick*0.4;
+serif_width :=  thick/2 + serif_height*2;
 
 color glyphcolor; glyphcolor := (.1, .37,.71);
 color debugcolor; debugcolor := 0.8green;
