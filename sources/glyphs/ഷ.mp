@@ -10,10 +10,10 @@ z0=(0,0);
 z1=(x0 + mw*1.2, y0);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[1] shifted ( point infinity of paths[p-1] + ( thin*1.2/2, thick*sind(45)/2) );
+paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick*sind(45)/2 );
 
 pen_stroke(
-    nib(thin_horizontal_nib)(0)
+    cut(thin_horizontal_nib, 45)(0)
     nib(thin_horizontal_nib)(1)
 )(paths[p])(strokes[p]);
 
