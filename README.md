@@ -44,6 +44,8 @@ Malini has the following axes:
 
     Recommended use: Browsers will automatically choose the the correct opsz value as per font size. To disable that `font-optical-sizing: none` can be used. It is also possible to manually set an `opsz` value to the `font-variation-settings`
 
+![](./docs/opsz-diff.png)
+
 ## Using the fonts
 
 * Download the latest fonts from the [Releases](https://gitlab.com/smc/fonts/Malini/-/releases/) (Look under the "Assets" of the latest release, download the zip, and then open that zip)
