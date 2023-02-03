@@ -122,6 +122,7 @@ function listen() {
         document.getElementById('var-weight').style.display = "none"
         document.getElementById('var-width').style.display = "none"
         document.getElementById('var-slant').style.display = "none"
+        document.getElementById('var-optical').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
         root.style.setProperty('--font', selected);
 
@@ -132,6 +133,7 @@ function listen() {
             document.getElementById('var-weight').style.display = "contents"
             document.getElementById('var-width').style.display = "contents"
             document.getElementById('var-slant').style.display = "contents"
+            document.getElementById('var-optical').style.display = "contents"
         }
 
 
@@ -202,6 +204,12 @@ function listen() {
                 document.querySelector('#font-slant > input[type="range"]').value = fontSlant;
             }
             root.style.setProperty('--slant', fontSlant);
+        });
+    });
+
+    document.querySelectorAll("[data-id='fontOptical']").forEach((element) => {
+        element.addEventListener('change', function () {
+            root.style.setProperty('--opsz-enabled',  element.checked? "auto":"none");
         });
     });
 

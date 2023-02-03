@@ -8,7 +8,9 @@ styles: [
   "Oblique",
   "Oblique-Thin",
   "Condensed",
-  "Expanded"
+  "Expanded",
+  "Display",
+  "Text"
 ]
 version: 0.160
 unitsPerEm: 1000

@@ -15,6 +15,7 @@
   --primary-l: 22%;
   --weight: 400;
   --slant: 0;
+  --opsz-enabled: "auto",
   --width: 100;
   --font: 'Malini';
   --font-size: 20px;
@@ -92,6 +93,7 @@ main {
   max-width: 75%;
   width: 75%;
   font-variation-settings: 'wght' var(--weight), 'slnt' var(--slant), 'wdth' var(--width);
+  font-optical-sizing: var(--opsz-enabled);
   hyphens: auto;
   -webkit-hyphenate-character: '';
   direction: ltr;
