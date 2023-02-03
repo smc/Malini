@@ -13,8 +13,9 @@
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
-    <axis name="optical" tag="opsz" minimum="10" maximum="60" default="20">
+    <axis name="optical" tag="opsz" minimum="10" maximum="100" default="20">
       <labelname xml:lang="en">Optical size</labelname>
+      <labelname xml:lang="ml">എടുപ്പ്</labelname>
     </axis>
   </axes>
   <sources>
@@ -37,22 +38,7 @@
         <dimension name="optical" xvalue="20"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Bold.ufo" stylename="Bold" name="Bold">
-      <location>
-        <dimension name="weight" xvalue="700"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="0"/>
-        <dimension name="optical" xvalue="20"/>
-      </location>
-    </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Light.ufo" stylename="Light" name="Light">
-      <location>
-        <dimension name="weight" xvalue="300"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="0"/>
-        <dimension name="optical" xvalue="20"/>
-      </location>
-    </source>
+
     <source familyname="Malini" filename="./sources/ufo/Malini-Thin.ufo" stylename="Thin" name="Thin">
       <location>
         <dimension name="weight" xvalue="100"/>
@@ -85,14 +71,6 @@
         <dimension name="optical" xvalue="20"/>
       </location>
     </source>
-    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique-Thin.ufo" stylename="ObliqueThin"  name="ObliqueThin">
-      <location>
-        <dimension name="weight" xvalue="100"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="-15"/>
-        <dimension name="optical" xvalue="20"/>
-      </location>
-    </source>
     <source familyname="Malini" filename="./sources/ufo/Malini-Text.ufo" stylename="Text" name="Text">
       <location>
         <dimension name="weight" xvalue="400"/>
@@ -106,7 +84,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="optical" xvalue="60"/>
+        <dimension name="optical" xvalue="100"/>
       </location>
     </source>
   </sources>
@@ -409,14 +387,24 @@
         <dimension name="optical" xvalue="10"/>
       </location>
     </instance>
-     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Display.ufo" stylename="Display">
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Display.ufo" stylename="Display">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="slant" xvalue="0"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="optical" xvalue="60"/>
+        <dimension name="optical" xvalue="100"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="ThinDisplay">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="100"/>
       </location>
     </instance>
   </instances>

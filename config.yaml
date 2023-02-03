@@ -182,8 +182,8 @@ variablefonts:
             - value: 20
               name: "20px"
               flags: 2
-            - value: 60
-              name: "60px"
+            - value: 100
+              name: "100px"
         - tag: slnt
           name: Slant
           values:
