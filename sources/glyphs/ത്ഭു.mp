@@ -21,14 +21,14 @@ z3 = ( x2 + mw/3, y4 + m/8);
 z4= ( x3 - mw/5, y5 + m/6);
 z5= ( x4 - mw/5, m/2);
 z6= ( x5 + mw/5, y5 - m/6);
-z7 = ( x6 + mw/4, y6 - m/6);
+z7 = ( x6 + mw/4, (y6+y8)/2);
 z8= (x7 - mw/3, - m/8);
 z9= (xpart(point 0 of paths[0]), y8);
 z10=(0, (y9+y11)/2);
 z11=(x9,  -descent);
 z12=(x7+ thick/2,  y11);
 
-paths[p] := z0---z1..z2{right}..z3{down}..z4{left}..z5..z6{right} ..z7..z8---z9..z10..z11---z12 ;
+paths[p] := z0---z1..z2{right}..z3{down}..z4{left}..z5..z6{right} ..z7{down}..z8---z9..z10..z11---z12 ;
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)

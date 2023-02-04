@@ -65,7 +65,7 @@ z1 = (xpart(point 0.25 of paths[2]), -descent*0.8 );
 z2 = (xpart(point 2 of paths[0]), y1);
 z3 = (xpart(point 0 of paths[0]) - mw/3, ypart(point 4 of paths[0]));
 z4 = (x3 + mw/4, m);
-paths[p] = z0{down}..{dir 180}z1..z2{dir 180}..z3{up}..z4;
+paths[p] =  z0{down}..z1---z2..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)

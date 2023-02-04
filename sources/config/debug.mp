@@ -1,4 +1,4 @@
-input ./config/Display;
+input ./config/Regular;
 showgrids := 1;
 showcoords := 0;
 showcontrols:=1;

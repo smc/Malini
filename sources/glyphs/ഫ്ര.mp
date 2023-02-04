@@ -42,7 +42,7 @@ z1 = (xpart(point 0.66 of paths[p-2]), -descent*0.75 );
 z2 = (xpart(point 0 of paths[1]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3+mw/4, m);
-paths[p] = z0{down}..{dir 190}z1..z2{dir 170}..z3..z4;
+paths[p] =  z0{down}..z1---z2..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
