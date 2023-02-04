@@ -1,15 +1,15 @@
-input glyph;
+ input glyph;
 beginglyph;
 p:=0;
-z0 = (0.8mw, y1-0.15m);
-z1 = ((x0+x2)/1.8, m-overshoot);
+z0 = (0.75mw, y1-0.1m);
+z1 = ((x0+x2)/2.25, m-overshoot);
 z2 = (0, (y1  + y3)/2);
 z3 = ((x2 + x4)/2, (y2 + y4)/2);
 z4 = (x0, (y3+y5)/2);
-z5 = ((x4 + x6)/2.2, undershoot);
+z5 = ((x4 + x6)/1.75, undershoot);
 z6 = (x2 - thick/3, y5+0.15m);
 
-paths[p] = z0..z1..z2{down}..z3..z4{down}..z5..z6;
+paths[p] = z0..z1{left}..z2{down}..z3..z4{down}..z5{left}..z6;
 
 pen_stroke(
    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
