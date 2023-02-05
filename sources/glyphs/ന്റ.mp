@@ -46,7 +46,9 @@ pen_stroke(
     nib(end_nib  rotated terminalangle 4 of paths[2])(4)
 )(paths[2])(strokes[2]);
 
+rbearing:=1.5rbearing;
+
 anchor( "vc", (xpart(point 4 of paths[0]),0));
-anchor( "bottom", point 4 of paths[2]);
 anchor( "right", point 4 of paths[2]);
+
 endglyph;

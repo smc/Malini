@@ -23,8 +23,8 @@ pen_stroke(
 
 % Serif
 clearxy;
-z0 = (xpart point 0 of paths[p], X-thick/2);
-z1 = (xpart point infinity of paths[p] , thick/2);
+z0 = (xpart point 13 of strokes[p], X-thick/2);
+z1 = (xpart point 6 of strokes[p] , thick/2);
 strokes[p] :=point 0 of strokes[p]
    -- z0
    .. (subpath(1, 7) of strokes[p])
