@@ -25,12 +25,16 @@ test:
   allow_failure: true
   script:
     - make test
+  artifacts:
+    expire_in: 1000 yrs
+    paths:
+    - proofs/
 
 pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -rf fonts tests public
+    - cp -rf fonts tests proofs public
   artifacts:
     expire_in: 1000 yrs
     paths:
