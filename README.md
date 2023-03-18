@@ -107,9 +107,107 @@ A directory named fonts will be generated.
 
 ## Language support
 
-Malini is primarily a Malayalam font. All the Malayalam characters defined in Unicode version 15 are present in the font. Malini also has latin script support. So Malini supports 39 languages:
+All the Malayalam characters defined in Unicode version 15 are present in the font. Malini also has latin script support. Malini supports 94 languages
 
-Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu.
+<details>
+  <summary><strong>Supported languages</strong></summary>
+  <ul>
+    <li>Afrikaans</li>
+    <li>Albanian</li>
+    <li>Asu</li>
+    <li>Basque</li>
+    <li>Bemba</li>
+    <li>Bena</li>
+    <li>Breton</li>
+    <li>Catalan</li>
+    <li>Chiga</li>
+    <li>Colognian</li>
+    <li>Cornish</li>
+    <li>Croatian</li>
+    <li>Czech</li>
+    <li>Danish</li>
+    <li>Dutch</li>
+    <li>Embu</li>
+    <li>English</li>
+    <li>Estonian</li>
+    <li>Faroese</li>
+    <li>Filipino</li>
+    <li>Finnish</li>
+    <li>French</li>
+    <li>Friulian</li>
+    <li>Galician</li>
+    <li>Ganda</li>
+    <li>German</li>
+    <li>Gusii</li>
+    <li>Hawaiian</li>
+    <li>Hungarian</li>
+    <li>Inari Sami</li>
+    <li>Indonesian</li>
+    <li>Irish</li>
+    <li>Italian</li>
+    <li>Jola-Fonyi</li>
+    <li>Kabuverdianu</li>
+    <li>Kalenjin</li>
+    <li>Kamba</li>
+    <li>Kikuyu</li>
+    <li>Kinyarwanda</li>
+    <li>Latvian</li>
+    <li>Lithuanian</li>
+    <li>Lower Sorbian</li>
+    <li>Luo</li>
+    <li>Luxembourgish</li>
+    <li>Luyia</li>
+    <li>Machame</li>
+    <li>Makhuwa-Meetto</li>
+    <li>Makonde</li>
+    <li>Malagasy</li>
+    <li>Maltese</li>
+    <li>Manx</li>
+    <li>Meru</li>
+    <li>Morisyen</li>
+    <li>North Ndebele</li>
+    <li>Norwegian Bokmål</li>
+    <li>Norwegian Nynorsk</li>
+    <li>Nyankole</li>
+    <li>Oromo</li>
+    <li>Polish</li>
+    <li>Portuguese</li>
+    <li>Quechua</li>
+    <li>Romanian</li>
+    <li>Romansh</li>
+    <li>Rombo</li>
+    <li>Rundi</li>
+    <li>Rwa</li>
+    <li>Samburu</li>
+    <li>Sango</li>
+    <li>Sena</li>
+    <li>Serbian</li>
+    <li>Shambala</li>
+    <li>Shona</li>
+    <li>Slovak</li>
+    <li>Soga</li>
+    <li>Somali</li>
+    <li>Spanish</li>
+    <li>Swahili</li>
+    <li>Swedish</li>
+    <li>Swiss German</li>
+    <li>Taita</li>
+    <li>Teso</li>
+    <li>Tongan</li>
+    <li>Turkish</li>
+    <li>Upper Sorbian</li>
+    <li>Uzbek (Latin)</li>
+    <li>Volapük</li>
+    <li>Vunjo</li>
+    <li>Walser</li>
+    <li>Welsh</li>
+    <li>Western Frisian</li>
+    <li>Zulu</li>
+    <li>Malayalam</li>
+  </ul>
+</details>
+
+
 
 
 ## Credits
