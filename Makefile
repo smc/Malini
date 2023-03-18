@@ -193,7 +193,7 @@ proofs:
 
 test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
-	fontbakery check-ufo-sources $(UFODIR)/$(FAMILY)-Regular.ufo
+	fontbakery check-ufo-sources $(FONTSDIR)/Malini/ufo/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(FONTSDIR)/Malini/otf/Malini-Regular.otf
 	fontbakery check-googlefonts --full-lists --config fontbakery.yaml $(FONTSDIR)/Malini/ttf-variable/Malini-VF.ttf
 
