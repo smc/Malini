@@ -12,3 +12,5 @@ overrides:
     bad-fvar-instances: WARN
   com.google.fonts/check/canonical_filename:
     bad-filename: WARN
+  com.google.fonts/check/fontdata_namecheck:
+    namecheck-service: WARN
