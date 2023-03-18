@@ -64,7 +64,7 @@ fontmake==3.5.1
     # via -r requirements.in
 fontmath==0.9.3
     # via fontmake
-fonttools[lxml,ufo,unicode]==4.39.0
+fonttools[lxml,ufo,unicode]==4.39.2
     # via
     #   axisregistry
     #   babelfont
@@ -100,7 +100,7 @@ gitpython==3.1.31
     # via font-v
 glyphsets==0.5.4
     # via fontbakery
-glyphslib==6.1.0
+glyphslib==6.2.0
     # via
     #   babelfont
     #   fontmake

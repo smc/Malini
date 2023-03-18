@@ -10,6 +10,7 @@ def fix_font(fontFile):
     log.debug(f"Fixing {fontFile}")
     ttFont = ttLib.TTFont(fontFile)
     fix_unhinted_font(ttFont)
+    remove_aat(ttFont)
     ttFont.save(fontFile)
 
 def fix_unhinted_font(ttFont: ttLib.TTFont):
@@ -25,6 +26,21 @@ def fix_unhinted_font(ttFont: ttLib.TTFont):
     prep.program = program
 
     ttFont["prep"] = prep
+
+def remove_aat(ttFont: ttLib.TTFont):
+    """Unwanted AAT tables were found in the font and should be removed .
+    Args:
+        ttFont: a TTFont instance
+    """
+    unwanted_tables = [
+        'EBSC', 'Zaph', 'acnt', 'ankr', 'bdat', 'bhed', 'bloc',
+        'bmap', 'bsln', 'fdsc', 'feat', 'fond', 'gcid', 'just',
+        'kerx', 'lcar', 'ltag', 'mort', 'morx', 'opbd', 'prop',
+        'trak', 'xref'
+    ]
+    for unwanted in unwanted_tables:
+        if unwanted in ttFont:
+            del ttFont[unwanted]
 
 
 if __name__ == "__main__":

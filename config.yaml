@@ -9,7 +9,7 @@ styles: [
   "Display",
   "Text"
 ]
-version: 0.160
+version: 1.000
 unitsPerEm: 1000
 ascender: 750
 descender: 250
@@ -58,6 +58,7 @@ glyphs:
       "ĝ","ġ","ğ", "ģ",
       "ĥ",
       "í","î","ï","ì","ī","ĩ", "į",
+      "ĵ", "ǰ",
       "ķ",
       "ĺ", "ļ", "ľ",
       "ń","ň","ñ", "ņ",
@@ -181,12 +182,12 @@ variablefonts:
           name: Optical Size
           values:
             - value: 10
-              name: "10px"
+              name: "10pt"
             - value: 20
-              name: "20px"
+              name: "20pt"
               flags: 2
             - value: 100
-              name: "100px"
+              name: "72pt"
         - tag: slnt
           name: Slant
           values:

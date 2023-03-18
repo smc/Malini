@@ -195,14 +195,13 @@ test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
 	fontbakery check-ufo-sources $(UFODIR)/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(FONTSDIR)/Malini/otf/Malini-Regular.otf
-	cp $(FONTSDIR)/Malini/ttf-variable/Malini-VF.ttf $(FONTSDIR)/Malini/ttf-variable/Malini[slnt,wdth,wght].ttf
+	cp $(FONTSDIR)/Malini/ttf-variable/Malini-VF.ttf $(FONTSDIR)/Malini/ttf-variable/Malini[opsz,slnt,wdth,wght].ttf
 	fontbakery check-googlefonts \
 		--full-lists \
-		-x com.google.fonts/check/name/license \
-		-x com.google.fonts/check/license/OFL_body_text \
+		-x com.google.fonts/check/font_names \
 		-x com.google.fonts/check/version_bump \
 		-x com.google.fonts/check/repo/zip_files \
-		$(FONTSDIR)/Malini/ttf-variable/Malini[slnt,wdth,wght].ttf
+		$(FONTSDIR)/Malini/ttf-variable/Malini[opsz,slnt,wdth,wght].ttf
 
 install: build
 	@mkdir -p $(INSTALLDIR);

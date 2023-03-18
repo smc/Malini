@@ -4,13 +4,11 @@ import os
 import re
 from datetime import datetime
 from typing import List
-from itertools import product
 from ufoLib2.objects import Font, Glyph, Component, Guideline
 from ufoLib2.objects.info import GaspRangeRecord
-from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
-                          Substitution, ValueRecord)
+from fontFeatures import (Chaining, FontFeatures, Routine, Attachment,
+                          Substitution)
 from fontTools import agl
-
 from svgglyph import SVGGlyph
 
 log = logging.getLogger(__name__)
@@ -932,7 +930,7 @@ class MalayalamFont(Font):
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
         # the top extremum of the font rendering box
-        self.info.openTypeOS2WinAscent = 1094 # As calculated by Fontbakery
+        self.info.openTypeOS2WinAscent = 1101 # As calculated by Fontbakery
         # the bottom extremum of the font rendering box (positive value)
         self.info.openTypeOS2WinDescent = 693 # As calculated by Fontbakery
         # When the win Metrics are significantly greater than the upm, the
