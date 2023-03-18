@@ -30,7 +30,7 @@ tracker.
 * Swathanthra Malayalam computing and its volunteers for all help and support.
 * [Latin letter construction](https://www.kellscraft.com/EssentialsofLettering/EssentialsofLetteringCh02.html)
 * [FontFeatures](https://github.com/simoncozens/fontFeatures) python library by Simon Cozens helped programmatic generation of Opentype feature files.
-
+* Jonathan Hoefler for [the latin kerning tests](https://github.com/hoeflerco/proofs)
 * more to add...
 
 For a complete list of authors who contributed to the project, see CONTRIBUTORS.md

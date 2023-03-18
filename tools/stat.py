@@ -16,7 +16,7 @@ config = DefaultMunch.fromDict(yaml.load(open("config.yaml"), Loader=yaml.FullLo
 def make_stat(stat, fontFile):
     log.debug(f"Creating STAT table in {fontFile}")
     ttFont = ttLib.TTFont(fontFile)
-    buildStatTable(ttFont, stat.axes)
+    buildStatTable(ttFont, stat.axes, stat.locations)
     ttFont.save(fontFile)
 
 

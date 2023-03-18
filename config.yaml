@@ -186,16 +186,17 @@ variablefonts:
             - value: 20
               name: "20pt"
               flags: 2
-            - value: 100
-              name: "72pt"
+            - value: 96
+              name: "96pt"
         - tag: slnt
           name: Slant
           values:
             - value: 0
               name: Upright
               flags: 2
+              linkedValue: -15
             - value: -15
-              name: Oblique
+              name: Italic
         - tag: wght
           name: Weight
           values:
@@ -233,3 +234,4 @@ variablefonts:
               name: SemiExpanded
             - value: 125
               name: Expanded
+

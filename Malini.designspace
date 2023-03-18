@@ -13,7 +13,7 @@
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
-    <axis name="optical" tag="opsz" minimum="10" maximum="100" default="20">
+    <axis name="optical" tag="opsz" minimum="10" maximum="96" default="20">
       <labelname xml:lang="en">Optical size</labelname>
       <labelname xml:lang="ml">എടുപ്പ്</labelname>
     </axis>
@@ -84,7 +84,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="optical" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
       </location>
     </source>
   </sources>
@@ -394,7 +394,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="slant" xvalue="0"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="optical" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
       </location>
     </instance>
     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="ThinDisplay">
@@ -404,7 +404,7 @@
         <dimension name="weight" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="optical" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
       </location>
     </instance>
   </instances>
