@@ -85,4 +85,6 @@ pen_stroke(
     nib(end_nib rotated terminalangle 5 of paths[p])(5)
 )(paths[p])(strokes[p]);
 
+anchor( "right", point 1.75 of paths[p]);
+
 endglyph;

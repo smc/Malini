@@ -28,12 +28,12 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0 = point 3 of paths[p-1];
+z0 = point 3.5 of paths[p-1];
 z1 = (xpart(point 1.8 of paths[1]), -descent*0.75 );
 z2 = (xpart(point 2 of paths[p-2]), y1);
 z3 = (xpart(point 1 of paths[p-2]) - mw/3, ypart(point 1 of paths[p-2]));
-z4 = (x3 + mw/10, m);
-paths[p] =  z0{dir -80}..z1---z2..z3..z4;
+z4 = (x3 + mw/6, m);
+paths[p] =  z0{dir (angle(direction 3.5 of paths[p-1]))*-1}..z1---z2..z3..z4;
 
 pen_stroke(
     nib(middle_up_nib)(0)
