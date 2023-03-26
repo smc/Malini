@@ -164,7 +164,10 @@ class MalayalamFont(Font):
         prevent_stack_contexts = {
             "ഷ്ട": "്ട",
             "ഷ്പ": "്ര",
+            "സ്പ": "്ര",
             "സ്ത": "്ത",
+            "സ്ന": "്ന",
+            "ശ്ന": "്ന",
             "ല്പ": "്പ",
         }
         conditional_stack_lookup = None
