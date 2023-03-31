@@ -47,7 +47,7 @@ pen_stroke(
 shift = xpart(point infinity of paths[1]) - mw/3;
 paths[2] = paths[0] shifted (shift, 0);
 % We need to cut the extra elongation we gave for first ള
-paths[3] := subpath (0, 9.66) of paths[1] shifted (shift, 0);
+paths[3] := subpath (0, 9.62) of paths[1] shifted (shift, 0);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
