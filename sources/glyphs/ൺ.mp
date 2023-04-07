@@ -3,7 +3,8 @@ beginglyph;
 p:=0;
 paths[p] :=left_arch_with_eye;
 pen_stroke(
-    nib(middle_up_nib)(0,4)
+    nib(middle_up_nib scaled 0.6)(0)
+    nib(middle_up_nib)(4)
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
@@ -44,7 +45,7 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(middle_up_nib)(5)
-    nib(middle_down_nib rotated terminalangle 6 of paths[p])(6)
+    nib(middle_down_nib)(6)
     nib(end_nib scaled 2/3 rotated terminalangle 7 of paths[p])(7)
 )(paths[p])(strokes[p]);
 

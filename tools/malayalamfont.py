@@ -4,7 +4,7 @@ import os
 import re
 from datetime import datetime
 from typing import List
-from ufoLib2.objects import Font, Glyph, Component, Guideline
+from ufoLib2.objects import Font, Glyph, Component, Guideline, Anchor
 from ufoLib2.objects.info import GaspRangeRecord
 from fontFeatures import (Chaining, FontFeatures, Routine, Attachment,
                           Substitution)
@@ -726,7 +726,7 @@ class MalayalamFont(Font):
 
             if u_glyph_name not in self and u_glyph_name not in self.get_glyph_names_from_named_classes('ML_PREVENT_CONJUNCTS'):
                 log.debug(
-                    f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
+                    f"Compose {u_glyph_name} : {base_glyph_name}+u_drop_sign")
                 self.buildComposite(u_glyph_name, None, [
                                     base_glyph_name, 'u_drop_sign'])
                 if base_glyph_name in self.salts:

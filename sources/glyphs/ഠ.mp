@@ -1,5 +1,6 @@
 input glyph;
 beginglyph;
+
 z0=(0, y2);
 z1=((x0 + x2)/2, m-overshoot);
 z2=(x0 + 0.9mw, (y1+y3)/2);

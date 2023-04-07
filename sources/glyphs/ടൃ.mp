@@ -1,13 +1,13 @@
 input glyph;
 beginglyph;
 p:=0;
-z0 = (0.75mw, y1-0.1m);
-z1 = ((x0+x2)/1.8, m-overshoot);
+z0 = (0.75mw, y1-0.18m);
+z1 = ((x0+x2)/2.25, m-overshoot);
 z2 = (0, (y1  + y3)/2);
 z3 = ((x2 + x4)/2, m/2);
 z4 = (x0, m/6);
 
-paths[p] = z0..z1..z2..z3..{down}z4;
+paths[p] = z0..z1{left}..z2{down}..z3..{down}z4;
 
 pen_stroke(
    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)

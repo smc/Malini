@@ -21,7 +21,7 @@ vardef right_arch =
     z1=(x0, 0.6m);
     z2=((x1+x3)/2.2, m-overshoot); % Top of arch
     x3-x1 = 0.7*mw;
-    z3=(x3, (y2+y4)/1.86);
+    z3=(x3, (y2+y4)/2);
     z4= (x3 - mw/4, 0);
     z0---z1..z2{right}..z3{down}..z4
 enddef;
@@ -46,7 +46,7 @@ vardef right_tha_arch =
     z4 = ( x3 - mw/4, 2undershoot); % bottom middle
     z5 = ( (x1+x3)/2.5, (y4+y6)/2.5);
     z6 = ( (x5 + x7)/2, y2); % second top
-    z7 = ( x6 + mw/2, (y6+y8)/2.2);
+    z7 = ( x6 + mw/2, (y6+y8)/2);
     z8 = ( x7 - mw/4, 0);
     z0---z1..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8
 enddef;
@@ -56,7 +56,7 @@ vardef middle_tha_arch =
     z0=(thick/2-thin/2, thin/2);
     z1= (x0, 0.6m);
     z2 = ( x1 + mw/2.75, m-overshoot); % top
-    z3 = ( x2 + mw/2, m/2);
+    z3 = ( x2 + mw/2, (y2+y4)/2.5);
     z4 = ( x3 - mw/4, undershoot); % bottom middle
     z5 = ( x4 - mw/4, y3);
     z6 = ( x5 + mw/2, y2); % second top
@@ -220,17 +220,17 @@ vardef left_arch_with_eye =
     clearxy;
     path _temp;
     z0 =(0, (y1 + y3)/2);
-    z1 =(x0 + mw/4, y3+0.55m);
+    z1 =(x0 + mw/4, (y3+y5)/2);
     z2=(x1 + mw/4, y0);
-    z3=(x2 - mw/4, undershoot);
-    z4=(x0, y0);
-    z5=((x4 + x6)/1.8, m-overshoot);
+    z3=(x1, undershoot);
+    z4=(x0+thin/4, y0);
+    z5=((x4 + x6)/2, m-overshoot);
     z6=(x4 + 0.85mw, 0.6m);
     z7=(x6, 0);
-    _temp:=z0{dir 80}..z1..z2..z3..z4{dir 100}..z5{right}..{down}z6 ---z7;
+    _temp:=z0{up}..z1{right}..z2{down}..z3{left}..z4{dir 120}..z5{right}..{down}z6 ---z7;
     % Get the point for extrema
-    z8=point 4.1 of _temp;
-    z0{dir 80}..z1..z2..z3..z8{up}..z5{right}..{down}z6---z7
+    z8=point 4.25 of _temp;
+    z0{up}..z1{right}..z2{down}..z3{left}..z8{up}..z5{right}..{down}z6---z7
 enddef;
 
 vardef right_arch_with_eye =

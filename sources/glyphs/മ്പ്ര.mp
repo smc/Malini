@@ -68,7 +68,7 @@ z4 = (x3 +mw/6, m);
 paths[p] =  z0{down}..z1---z2..z3..z4;
 
 pen_stroke(
-    nib(middle_down_nib)(0)
+    nib(middle_down_nib rotated -10)(0)
     nib(down_nib)(1,2)
     nib(middle_up_nib)(3)
     nib(top_nib rotated 45)(4)

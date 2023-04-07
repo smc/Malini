@@ -21,7 +21,8 @@ z4=(0, thick*tand(20)/2);
 
 paths[p]:= z0{up}..z1{up}..{left}z2...z3---z4;
 pen_stroke(
-    nib(middle_up_nib )(0,1)
+    nib(middle_up_nib rotated 10)(0)
+    nib(middle_up_nib )(1)
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3)
     cut(thick_vertical_nib, 20)(4)

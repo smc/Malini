@@ -3,7 +3,8 @@ beginglyph;
 
 paths[0] :=left_arch_with_eye;
 pen_stroke(
-    nib(middle_up_nib)(0,4)
+    nib(middle_up_nib scaled 0.6)(0)
+    nib(middle_up_nib)(4)
     nib(top_nib)(1,5)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
@@ -38,7 +39,8 @@ paths[3] = paths[0] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 paths[4] = paths[1] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 
 pen_stroke(
-    nib(middle_up_nib)(0,4)
+    nib(middle_up_nib scaled 0.6)(0)
+    nib(middle_up_nib)(4)
     nib(top_nib)(1,5)
     nib(middle_down_nib xscaled 0.8)(2)
     nib(down_nib)(3)
