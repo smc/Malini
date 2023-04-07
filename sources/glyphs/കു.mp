@@ -13,9 +13,9 @@ z7=(x6 + mw/3, y6 + 0.325m);
 z8=(x2  + mw/6, y7);
 z9=(x8 + mw/3.5, (y8 + y10)/2);
 z10=(x9 - mw/4, (y8+ y12)/2);
-z11=(x10 + mw/4, (y10 + y12)/2);
+z11=(x10 + mw/3.75, (y10 + y12)/2);
 z12=(x11 - mw/2.5, y3);
-paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9..{left}z10{right}..z11..{dir 160}z12;
+paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9..{left}z10{right}..z11{down}..{dir 160}z12;
 pen_stroke(
    nib(middle_up_nib)(0, 4)
    nib(top_nib)(1)

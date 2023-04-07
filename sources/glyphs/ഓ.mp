@@ -17,17 +17,18 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = point 3.8 of paths[0];
-z1 = ( x0, (y0 + y2)/2);
+z0 = point 4 of paths[0];
+z1 = ( x0, 0.4m);
 z2 = ( x1 + mw/1.666, m - overshoot); % top
 z3 = ( x2 + mw/2.4, y2 - m/4);
 z4 = ( x3 - mw/3, y3 - m/4); % <
 z5 = ( x3+ mw/10, y4-m/4);
 z6 = ( x4, undershoot);
-paths[1]= z0..z1..z2{dir 5}..z3..{left}z4{right}..z5..{dir 160}z6;
+paths[1]= z0{up}..z1{up}..z2{right}..z3{down}..{left}z4{right}..z5{down}..{dir 160}z6;
+
 
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(middle_up_nib rotated terminalangle 4 of paths[0])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(end_nib rotated 90)(4)
@@ -37,12 +38,12 @@ pen_stroke(
 
 
 clearxy;
-z0=(0, 0.75m);
-z1=(x0 + mw/3, m-y3);
-z2=(x1 + mw/3, (y1+y3)/2);
-z3=(x1, 0);
-z4=(x0, m-y0);
-paths[2] = z0..z1..z2..z3..z4;
+z0=(0, 0.7m);
+z1=((x0 + x2)/2.24, m-overshoot);
+z2=(x0 + 0.75mw, (y1+y3)/2);
+z3=(x1, undershoot);
+z4=(x0, y1-y0);
+paths[2] = z0..z1{right} ..z2{down}..z3{left} ..z4;
 paths[2]:= paths[2] shifted(xpart(point 5 of paths[1]) + mw/4, 0);
 pen_stroke(
     nib(middle_up_nib)(0,4)

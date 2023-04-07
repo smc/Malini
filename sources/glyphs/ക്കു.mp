@@ -10,16 +10,16 @@ z5=(x4 - mw/4, y3);
 z6=(x5 - mw/4, y5 + 0.25m);
 z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2 + mw/3, y7);
-z9=(x8 + mw/2.5, y6);
-z10=((x9+x11)/2, y3);
-z11=(x2 + mw/4, y2);
+z9=(x8 + mw/2.25, y6);
+z10=((x9+x11)/1.95, y3);
+z11=(x2 + mw/4, 0.4m);
 z12=(x9, y1);
-z13=(x12 + mw/2, (y12+y14)/2);
+z13=(x12 + mw/2.2, (y12+y14)/2);
 z14=(x13 - mw/3, (y12+y16)/2);
 z15=(x14 + mw/2.6, (y14+y16)/2);
 z16=(x14, undershoot);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{dir 10}..z13..{left}z14{right}..z15..{dir 150}z16;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11{up}..z12{right}..z13{down}..{left}z14{right}..z15{down}..z16;
 
 pen_stroke(
    nib(middle_up_nib)(0, 4)

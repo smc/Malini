@@ -25,7 +25,7 @@ z3=(x2 + mw/2, y1);
 z4=(x3 - mw/3, undershoot);
 z5=(x4 - mw/4, y4 + m/3);
 
-paths[p] = z0..z1..z2{right}..z3..z4..{dir 90}z5;
+paths[p] = z0..z1{up}..z2{right}..z3{down}..z4{left}..{up}z5;
 z6 = point 2.6 of paths[p];
 paths[p] := paths[p]..{right}z6 ;
 paths[p] := paths[p] shifted (xpart(point 2 of paths[p-1]) + mw/4,0);

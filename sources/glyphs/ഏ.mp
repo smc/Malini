@@ -44,7 +44,8 @@ z7=(x5, y6-m/4);
 paths[3]:= z0{down}..z1{left}..{up}z2..z3{right}..z4{down}..{left}z5{right}..z6..z7;
 paths[3]:= paths[3] shifted (xpart(point 0 of paths[2]), 0);
 pen_stroke(
-    nib(middle_down_nib)(0,4)
+    nib(middle_down_nib rotated -10)(0,4)
+    nib(middle_down_nib)(4)
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(top_nib)(3)

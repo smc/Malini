@@ -12,7 +12,7 @@ z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2  + mw/6, y7);
 z9=(x8 + mw/3, (y8+ y10)/2);
 z10=(x9 - mw/3, y5 );
-paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10;
+paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10;
 pen_stroke(
    nib(middle_up_nib)(0, 4)
    nib(top_nib)(1)

@@ -1,30 +1,24 @@
 input glyph;
 beginglyph;
 p:=0;
-z0 = (x1 + mw/4, m);
-z1 = (0, y0 - m/2);
-z2 = (x1 + mw/3, undershoot);
-z3 = (x2 + mw/3, 0.4m);
-z4 = (x3, y0-0.4m);
-
-
-
-paths[p] = z0{dir 215}..z1..z2..z3 --- z4 ;
-paths[p] :=paths[p] .. {right}subpath(2, infinity) of da shifted (mw/2, 0);
+paths[p] := subpath (0, 4) of ga;
+z5 = (xpart point infinity of paths[p], m-overshoot);
+z6 = (x5 + mw/2.5, (y5+y7)/2);
+z7 = (x6 - mw/3, (y6+y8)/2);
+z8 = (x7 + mw/2.5, (y7+y9)/2);
+z9 = (x8 - mw/2, undershoot);
+paths[p] := paths[p].. z6{down}..{left}z7{right}..z8{down}..{dir 150}z9;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)
    nib(middle_up_nib)(1)
    nib(down_nib)(2)
-   nib(middle_down_nib)(3, 4)
-   nib(top_nib)(5)
-    nib(end_nib rotated 90)(9)
-    nib(middle_down_nib scaled 0.9)(6,8)
-    nib(end_nib rotated terminalangle 7 of paths[p])(7)
-
+   nib(middle_down_nib)(3, 5)
+   nib(top_nib)(4)
+   nib(end_nib rotated 90)(6)
+   nib(middle_down_nib)(7)
+   nib(end_nib rotated terminalangle infinity of paths[p])(8)
 )(paths[p])(strokes[p]);
 
-
-anchor( "vc", point 4 of paths[p]);
-anchor( "right", (xpart(point 8.5 of paths[p]),0));
+anchor( "vc", point 3 of paths[p]);
 endglyph;

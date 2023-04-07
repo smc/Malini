@@ -68,7 +68,8 @@ z5=(x4 - mw/4, y1);
 paths[p]:= z0{down}..z1{left}..{up}z2..z3{right}..z4{down}..z5;
 paths[p]:= paths[p] shifted (xpart(point 0 of paths[p-1]), 0);
 pen_stroke(
-    nib(middle_down_nib)(0,4)
+    nib(middle_down_nib rotated -10)(0,4)
+    nib(middle_down_nib)(4)
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
     nib(top_nib)(3)

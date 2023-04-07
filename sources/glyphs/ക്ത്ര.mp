@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-p=0;
+p:=0;
 z0=(mw/2, m/2);
 z1=((x0 + x2)/1.96, m-overshoot);
 z2=(x0 + 2/3mw, (y1 + y3)/2);
@@ -11,7 +11,7 @@ z6=(x5 - mw/4, y5 + 0.25m);
 z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2  + mw/3, y7);
 
-paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8;
+paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
    nib(middle_up_nib)(0, 4)
@@ -26,23 +26,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0= (x1 + mw/3, 0) ;
-z1= (xpart point infinity of paths[0], y0 + mw/2);
-z2 = ( x1 + mw/2, m - overshoot); % top
-z3 = ( x2 + mw/2, 0.4m);
-z4 = ( x3 - mw/4, thick*0.6/2); % bottom middle
-z5 = ( x4 - mw/4, y3);
-z6 = ( x5 + mw/2, y2); % second top
-z7 = ( x6 + mw/2, y3);
-
-
-z8 = (x7 - 0.6mw, -3/4descent); % ra sign starts
-z9 = (xpart point 4 of paths[0] ,  y8); % ra sign starts
-z10 = (xpart point 6 of paths[0] - mw/3, y1);
-z11 = (x10 + mw/8, m);
-
-paths[p] = z0..z1..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7 ..{dir 190}z8..{dir 170}z9 ..z10{up}..z11;
-
+paths[p]:=subpath (0, 7) of tha shifted (xpart(point infinity of paths[0]),0);
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[1])(0)
@@ -50,13 +34,27 @@ pen_stroke(
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)
     nib(middle_up_nib)(1,5)
-    nib(down_nib)(8, 9)
-    nib(middle_up_nib)(10)
-    nib(end_nib rotated terminalangle 11 of paths[p])(11)
 )(paths[p])(strokes[p]);
 
-anchor( "vc", z1);
 
-anchor( "right", point 7.75 of paths[p]);
+p:=p+1;
+clearxy;
+z0 = point infinity of paths[p-1];
+z1 = (xpart(point 4 of paths[p-1]), -descent*0.75 );
+z2 = (xpart(point 0 of paths[p-2]), y1);
+z3 = (xpart(point 6 of paths[p-2]) - mw/3, ypart(point 6 of paths[p-2]));
+z4 = (x3 + mw/4, m);
+paths[p] =  z0{dir angle(direction infinity of paths[p-1])}..z1---z2..z3..z4;
+
+pen_stroke(
+    nib(middle_down_nib)(0)
+    nib(down_nib)(1,2)
+    nib(middle_up_nib)(3)
+    nib(end_nib rotated terminalangle 4 of paths[p])(4)
+)(paths[p])(strokes[p]);
+
+
+anchor( "vc", point infinity of paths[p]);
+anchor( "right", point 0.75 of paths[p]);
 
 endglyph;

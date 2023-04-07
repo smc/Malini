@@ -10,9 +10,9 @@ z5=(x4 - mw/4, y3);
 z6=(x5 - mw/4, y5 + 0.25m);
 z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2 + mw/3, y7);
-z9=(x8 + mw/2.5, y6);
-z10=((x9+x11)/2, y3);
-z11=(x2 + mw/4, y13);
+z9=(x8 + mw/2.25, y6);
+z10=((x9+x11)/1.95, y3);
+z11=(x2 + mw/4, 0.4m);
 z12=(x9, y1);
 z13=(x12 + mw/2, m/3);
 
@@ -39,8 +39,8 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 = point infinity of paths[p-1];
-z1 = (xpart(point9 of paths[p-1]), -descent*0.75 );
-z2 = (xpart(point 5 of paths[p-1]), y1);
+z1 = (xpart(point 10 of paths[p-1]), -descent*0.75 );
+z2 = (xpart(point 7 of paths[p-1]), y1);
 z3 = (xpart(point 6 of paths[p-1]) - mw/3, ypart(point 6 of paths[p-1]));
 z4 = (x3 + mw/4, m);
 paths[p] =  z0{dir angle(direction infinity of paths[p-1])}..z1---z2..z3..z4;

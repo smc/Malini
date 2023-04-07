@@ -13,7 +13,7 @@ z9= (x0, (y8+y10)/2);
 z10= (x8, -descent*0.75);
 z11= (x6 + thick/2, y10);
 
-paths[0]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6..z7---z8..z9..z10---z11;
+paths[0]:=z0{up}..z1{right}..z2{down}..z3{left}..z4{up}..z5{right}..{down}z6..z7---z8..z9{down}..z10---z11;
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)

@@ -17,7 +17,7 @@ z12=(x11 + mw/3, 0.85(y10 + y13));
 z13=(x12-mw/2, 0.9ascent);
 
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{up}..{dir 225}z13;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..z11..z12{up}..{dir 225}z13;
 
 pen_stroke(
    nib(middle_up_nib)(0, 4)
