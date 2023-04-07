@@ -20,10 +20,10 @@ z2=(x1 + mw/3, m - overshoot); % Top of arch
 z3=(x2 + mw/2, (y2+y4)/2.5);
 z4= ((x3+x5)/2, 0.125m); % Room for റ
 z5= (x3 - mw/1.9, (y4 + y7)/3.75);
-z6= ((x3 + x4)/1.8, 0.9(y4 + y7));
+z6= ((x3 + x4)/1.8, 0.85(y4 + y7));
 z7= (x6 - mw/2, 0.9ascent);
 
-paths[p] := z0---z1..z2..z3{down}..z4..z5{up}..z6{dir 115}..{dir 225}z7;
+paths[p] := z0---z1..z2..z3{down}..z4..z5{up}..z6{up}..{dir 225}z7;
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
