@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p=0;
 paths[p] = left_tha_arch;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(

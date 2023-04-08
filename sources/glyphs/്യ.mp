@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 z0 = (0, y1 + m/3);
 z1 = ((x0 + x2)/2, -descent);
 z2 = (x1 + mw/3.5, y1 + m/3);

@@ -1,7 +1,6 @@
 input glyph;
 beginglyph;
 
-p:=0;
 z0=(0, 0);
 z1=(x0+sw/3  ,s);
 paths[p] := z0{dir 45}..{up}z1;

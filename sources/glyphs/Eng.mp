@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 z0= (thick/2, X);
 z1=( x0, X/2);
 z2=( x1, 0);

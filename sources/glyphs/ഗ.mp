@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 paths[p] = ga;
 
 pen_stroke(

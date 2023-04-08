@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 z0=(0, s-thin);
 z1=(x0, 1/3s);
 z2=(0.4*x3, thick/4);

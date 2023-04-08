@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 clearxy;
 paths[p] :=left_arch_with_eye;
 pen_stroke(

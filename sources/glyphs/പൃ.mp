@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p=0;
 paths[p] := pa_mouth;
 strokes[p] := va_mouth_stroke(paths[p]);
 

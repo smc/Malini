@@ -1,7 +1,6 @@
 input glyph;
 
 beginglyph;
-p:=0;
 paths[p] = la_sign;
 pen_stroke(
     nib(middle_up_nib)(0,4, 9)

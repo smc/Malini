@@ -14,7 +14,7 @@ input config;
 maybeinput jobname;
 
 % Pens
-input ./pens
+input ./pens;
 
 pen nib; nib := finenib;
 
@@ -118,9 +118,10 @@ def beginglyph =
     pickup defaultpen;
     drawoptions();
 
-    save paths, strokes;
+    save paths, strokes, p;
     path paths[], strokes[];
-enddef;
+    p:=0;
+    enddef;
 
 def endglyph =
     path softpath;

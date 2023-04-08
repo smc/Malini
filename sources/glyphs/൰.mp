@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 
 paths[p] = left_arch_dha;
 pen_stroke(

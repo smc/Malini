@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 save r;
 r=0.8;
 z0 = (r*sw, (y1+y3)/1.85);

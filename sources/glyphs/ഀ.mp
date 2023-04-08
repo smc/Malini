@@ -1,7 +1,6 @@
 input glyph;
 beginglyph;
 % MALAYALAM SIGN COMBINING ANUSVARA ABOVE
-p:=0;
 z0=(0, m/4);
 z1=((x2+x0)/2, y0 + m/4);
 z2=(x1 + mw/4, y0);

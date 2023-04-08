@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 clearxy;
 z0=(mw/2, m/2);
 z1=((x0 + x2)/1.96, m-overshoot);

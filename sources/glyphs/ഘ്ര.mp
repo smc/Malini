@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p=0;
 paths[p] :=pa_mouth shifted (0, 0.4m-overshoot);
 paths[p] := paths[p] shifted (mw/3,0);
 

@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 clearxy;
 %  ൠ sign
 z0 = (0,m);

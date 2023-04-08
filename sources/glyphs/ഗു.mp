@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 paths[p] := subpath (0, 5) of ga;
 
 z0 = (xpart point infinity of paths[p] - mw/2, -m/8);

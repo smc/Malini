@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 paths[p] :=  left_arch;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)

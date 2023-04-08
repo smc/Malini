@@ -1,7 +1,6 @@
 input glyph;
 beginglyph;
 clearxy;
-p:=0;
 z0=(0, s);
 z1=(x0, 0);
 z2=(x1 - sw/4, -descent);

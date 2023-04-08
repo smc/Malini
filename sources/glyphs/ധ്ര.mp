@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 
 paths[p] = left_arch_dha;
 paths[p] := paths[p] shifted (mw/3,0);

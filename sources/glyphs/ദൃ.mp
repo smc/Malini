@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 paths[p] =subpath (0,4) of da;
 z0 = point infinity of paths[p] + (mw/2.5, -m/3);
 paths[p] := paths[p]{right} ..{dir -80}z0;

@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-p:=0;
 paths[p] := p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 pen_stroke(
     nib(middle_up_nib rotated terminalangle 0 of paths[p])(0)

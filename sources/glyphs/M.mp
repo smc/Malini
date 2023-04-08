@@ -8,7 +8,6 @@ z5 = (x4, 0);
 z6 = (x4 + Xw/2.5, y0);
 z7 = (x6+thin/2, X);
 z8 = (x7, y2);
-p:=0;
 paths[0] = z0--z2 ;
 pen_stroke(
     nib(thin_vertical_nib)(0,1)

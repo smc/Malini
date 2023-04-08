@@ -2,7 +2,6 @@ input glyph;
 beginglyph;
 % This glyph does not slant. Reset slant value
 slant := 0;
-p:=0;
 z0=(0, y2);
 z1=((x2+x0)/2, 0.4X);
 z2=(x1 + Xw/6, (y1 + y3)/2);

@@ -2,7 +2,6 @@ input glyph;
 
 beginglyph;
 
-p:=0;
 paths[p] = left_arch;
 
 pen_stroke(

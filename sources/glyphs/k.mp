@@ -2,7 +2,6 @@ input glyph;
 beginglyph;
 
 
-p:=0;
 z0=(thick/2, 1.05X);
 z1=(x0, serif_height/4);
 paths[p] := z0--z1;

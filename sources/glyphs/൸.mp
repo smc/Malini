@@ -3,7 +3,6 @@
 input glyph;
 beginglyph;
 
-p:=0;
 z0=(0,0);
 z1=(x0 +mw/4, m/3);
 z2=(x1+mw/6, m-overshoot); % pillar top

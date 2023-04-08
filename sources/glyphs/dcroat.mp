@@ -3,7 +3,6 @@ beginglyph;
 clearxy;
 paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 
-p:=0;
 clearxy;
 z0=(0, 1.05X);
 z1=(x0, thin/4);

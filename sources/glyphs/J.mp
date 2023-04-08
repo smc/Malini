@@ -1,7 +1,6 @@
 input glyph;
 beginglyph;
 clearxy;
-p:=0;
 z0=(x2, X-thick/4);
 z2=(x3 + sw/4, y3+ X/3);
 z3=(x4 + sw/4, undershoot);
