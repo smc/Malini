@@ -1,38 +1,16 @@
 input glyph;
 beginglyph;
 
-paths[p] := pa_mouth shifted (mw/3,0);
-strokes[p] := va_mouth_stroke(paths[p]);
-
-clearxy;
-z0=  (0,0);
-z1=(x0 + 0.9mw, y0);
-z2=(x1, m);
-p:=p+1;
-paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick*sind(45)/2 );
-
-pen_stroke(
-    cut(thin_horizontal_nib, 45)(0)
-    nib(thin_horizontal_nib)(1)
-)(paths[p])(strokes[p]);
-
-clearxy;
-p:=p+1;
-z0=(0, 0);
-z1=(x0, m);
-
-paths[2]:= z0--z1;
-paths[2]:= paths[2] shifted (xpart(point 1 of paths[1]), 0);
-pen_stroke(
-    nib(thick_vertical_nib)(0)
-    nib(thick_vertical_nib)(1)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/പ;
+for i=0 upto 2:
+    paths[i] := paths[i] shifted (mw/3, 0);
+    strokes[i] := strokes[i] shifted (mw/3, 0);
+endfor;
 
 
 clearxy;
 p:=p+1;
-z0 = point 1 of paths[1];
+z0 = point 0 of paths[p-1];
 z1 = (xpart(point 0.5 of paths[1]), -descent*0.75  );
 z2 = (xpart(point 2 of paths[0]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));

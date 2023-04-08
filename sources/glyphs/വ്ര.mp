@@ -1,33 +1,11 @@
 input glyph;
 beginglyph;
+input ./glyphs/include/വ;
 
-paths[p] := va_mouth shifted (mw/3,0);
-strokes[p] := va_mouth_stroke(paths[p]);
-% Horizontal stem
-p:=p+1;
-clearxy;
-z0=(0,0);
-z1=(x0 + 0.8mw, y0);
-
-paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick*sind(45)/2 );
-
-pen_stroke(
-    cut(thin_horizontal_nib, 45)(0)
-    nib(thin_horizontal_nib)(1)
-)(paths[p])(strokes[p]);
-
-p:=p+1;
-clearxy;
-z0=(0, thick/2);
-z1=(x0, m);
-
-paths[p]:= z0--z1;
-paths[p]:= paths[p] shifted (xpart(point infinity of paths[p-1])-thick/2, 0);
-pen_stroke(
-    nib(thick_vertical_nib)(0)
-    nib(thick_vertical_nib)(1)
-)(paths[p])(strokes[p]);
+for i=0 upto 2:
+    paths[i] := paths[i] shifted (mw/3, 0);
+    strokes[i] := strokes[i] shifted (mw/3, 0);
+endfor;
 
 
 clearxy;
