@@ -1,32 +1,16 @@
 input glyph;
 beginglyph;
-clearxy;
-paths[p] =left_arch_with_eye;
-paths[p] := paths[p] shifted (mw/3,0);
-pen_stroke(
-    nib(middle_up_nib scaled 0.6)(0)
-    nib(middle_up_nib)(4)
-    nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
-    nib(down_nib)(3)
-    nib(thick_vertical_nib)(6,7,8)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/ണ;
+for i=0 upto p+1:
+    paths[i] := paths[i] shifted (mw/3, 0);
+    strokes[i] := strokes[i] shifted (mw/3, 0);
+endfor;
 
-% Second arch
-p:=p+1;
-clearxy;
-paths[p] := middle_arch shifted (xpart(point infinity of paths[p-1]), 0);
 
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
-)(paths[p])(strokes[p]);
+p:=2;
 % Third arch
 
-p := p+1;
+
 clearxy;
 z0 = point infinity of paths[p-1] + (thick/2-thin/2, thin/2);
 z1 = ( x0, 0.6m);
@@ -41,7 +25,7 @@ z9= (xpart(point 2 of paths[p-2]), y8);
 z10= (xpart(point 0 of paths[p-2]) - mw/3, m/2);
 z11= (x10 + mw/4, m);
 
-paths[p] = z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{dir 10}..z7{down}..z8{dir 190}..z9{dir 170}..z10..z11 ;
+paths[p] := z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{dir 10}..z7{down}..z8{dir 190}..z9{dir 170}..z10..z11 ;
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)

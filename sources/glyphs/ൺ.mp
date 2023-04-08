@@ -1,29 +1,9 @@
 input glyph;
 beginglyph;
-paths[p] :=left_arch_with_eye;
-pen_stroke(
-    nib(middle_up_nib scaled 0.6)(0)
-    nib(middle_up_nib)(4)
-    nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
-    nib(down_nib)(3)
-    nib(thick_vertical_nib)(6,7,8)
-)(paths[p])(strokes[p]);
-
-% Second arch
-p:=p+1;
-paths[p] = middle_arch shifted (xpart(point infinity of paths[p-1]), 0);
-
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/ണ;
 % Third arch
 
-p:=p+1;
+p:=2;
 clearxy;
 z0=(thick/2-thin/2, thin/2);
 z1=(x0, m*0.6);

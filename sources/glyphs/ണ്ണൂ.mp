@@ -1,39 +1,8 @@
 input glyph;
 beginglyph;
+input ./glyphs/include/ണ;
 
-paths[0] :=left_arch_with_eye;
-pen_stroke(
-    nib(middle_up_nib scaled 0.6)(0)
-    nib(middle_up_nib)(4)
-    nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
-    nib(down_nib)(3)
-    nib(thick_vertical_nib)(6,7,8)
-)(paths[0])(strokes[0]);
-
-% Second arch
-
-paths[1] = middle_arch shifted (xpart(point infinity of paths[0]), 0);
-
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
-)(paths[1])(strokes[1]);
-
-paths[2] = right_arch shifted (xpart(point infinity of paths[1]), 0);
-
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib  rotated 120)(4)
-)(paths[2])(strokes[2]);
-
-xshift := 0.6mw;
+xshift := 0.4mw;
 yshift := -m;
 paths[3] = paths[0] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 paths[4] = paths[1] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
