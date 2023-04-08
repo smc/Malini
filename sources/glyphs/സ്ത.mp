@@ -5,7 +5,7 @@ input ./glyphs/include/സ;
 p:=p+1;
 clearxy;
 
-z0= (x1 + mw/4, undershoot);
+z0= (x1 + mw/3, undershoot);
 z1= (0, (y0 + y2)/2.08);
 z2 = ( x1 + mw/2, m-overshoot); % top
 z3 = ( x2 + mw/2, (y2+y4)/2.5);

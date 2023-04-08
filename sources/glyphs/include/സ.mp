@@ -17,7 +17,7 @@ z3=(x3, m-m/3);
 z4=(x3, 0.4m);
 z5= ( x4+ mw/3, undershoot);
 z6= ( x5 + mw/3, (y5+y7)/2);
-z7= ( x2 + 3/4mw, m);
+z7= ( x5, m);
 
 paths[p] = z0---z1..z2{right}..z3---z4..z5{right}..z6{up}..z7;
 

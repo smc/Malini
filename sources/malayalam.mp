@@ -6,7 +6,7 @@
 
 vardef left_arch =
     clearxy;
-    z0=(x1+mw/4, 0);
+    z0=(x1+mw/3, 0);
     z1=(0, (y0+y2)/1.8);
     z2=((x1+x3)/1.8, m-overshoot);
     x3-x1 = 0.7*mw;
@@ -22,7 +22,7 @@ vardef right_arch =
     z2=((x1+x3)/2.2, m-overshoot); % Top of arch
     x3-x1 = 0.7*mw;
     z3=(x3, (y2+y4)/2);
-    z4= (x3 - mw/4, 0);
+    z4= (x3 - mw/3, 0);
     z0---z1..z2{right}..z3{down}..z4
 enddef;
 
@@ -47,7 +47,7 @@ vardef right_tha_arch =
     z5 = ( (x1+x3)/2.5, (y4+y6)/2.5);
     z6 = ( (x5 + x7)/2, y2); % second top
     z7 = ( x6 + mw/2, (y6+y8)/2);
-    z8 = ( x7 - mw/4, 0);
+    z8 = ( x7 - mw/3, 0);
     z0---z1..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8
 enddef;
 
@@ -68,7 +68,7 @@ enddef;
 
 vardef left_tha_arch =
     clearxy;
-    z0= (x1 + mw/4, undershoot);
+    z0= (x1 + mw/3, undershoot);
     z1= (0, y0 + mw/2);
     z2 = ( x1 + mw/2, m-overshoot); % top
     z3 = ( x2 + mw/2, (y2+y4)/2.5);
@@ -82,7 +82,7 @@ enddef;
 
 vardef left_arch_dha =
     clearxy;
-    z0=(x1+mw/4, m);
+    z0=(x1+mw/3, m);
     z1=(0, y0 - m/2);
     z2=((x1+x3)/2, undershoot);
     z3=(x2 +  mw/3, 1/3m);
@@ -96,7 +96,7 @@ vardef right_arch_dha =
     z1=(x0, 1/3m);
     z2=(x1 +  mw/3, undershoot);
     z3=(x2 +  mw/3, y2 + m/2);
-    z4=(x3 -  mw/4, m);
+    z4=(x3 -  mw/3, m);
     z0---z1..z2{right}..z3{up}..z4
 enddef;
 
@@ -114,7 +114,7 @@ vardef la_sign =
     z7=(x6, 0.4m);
     z8=(x7 + mw/3, y3);
     z9=(x8 + mw/3, m/2);
-    z10=(x9 - mw/4, y5);
+    z10=(x9 - mw/3, y5);
 
     l=z0{dir 80}..z1..z2..z3..z4..z5..{down}z6..z7..z8..z9..z10;
     l shifted(0,-m*1.1) xscaled 0.8 yscaled 2/3
@@ -193,7 +193,7 @@ enddef;
 
 vardef tha =
     clearxy;
-    z0= (x1 + mw/4, 0);
+    z0= (x1 + mw/3, 0);
     z1= (0, (y0 + y2)/2.08);
     z2 = ( x1 + mw/2, m-overshoot); % top
     z3 = ( x2 + mw/2, (y2+y4)/2.5);
@@ -201,13 +201,13 @@ vardef tha =
     z5 = ( (x1+x3)/2.2, (y4+y6)/2.5);
     z6 = ( (x5 + x7)/2, y2); % second top
     z7 = ( x6 + mw/2, (y6+y8)/2.2);
-    z8 = ( x7 - mw/4, 0); %
+    z8 = ( x7 - mw/3, 0); %
     z0..z1{up}..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8
 enddef;
 
 vardef ga =
     clearxy;
-    z0 = (x1 + mw/4, m);
+    z0 = (x1 + mw/3, m);
     z1 = (0, (y0+y2)/2);
     z2 = (x1 + mw/3, undershoot);
     z3 = (x2 + mw/3, 0.5m);

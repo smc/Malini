@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0=(x1 + mw/4, undershoot);
+z0=(x1 + mw/3, undershoot);
 z1=(0, (y0 + y2)/2.2);
 z2=(x1 + mw/2, m-overshoot);
 z3=(x2 + mw/2, y1);
