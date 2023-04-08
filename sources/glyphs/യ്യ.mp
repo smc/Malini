@@ -31,22 +31,22 @@ pen_stroke(
    nib(end_nib rotated terminalangle 10 of paths[0])(10)
 )(paths[p])(strokes[p]);
 
-
 % Shoe
 clearxy;
 p:=p+1;
-z0 = point 8 of paths[0];
-z1 = (x0 - mw/3, -descent*0.8);
-z2 = (xpart(point 8.5 of paths[0]), y1) ;
-paths[p] := z0{down}..z1--z2;
+z0 = (xpart(point 8 of paths[0]), thick*0.6/2);
+z1 = (xpart point 0 of paths[0], -descent*0.8) ;
+z2 = (xpart(point 9 of paths[0]), y1) ;
+paths[p] := z0{down}..{left}z1{right}...{right}z2;
 pen_stroke(
-    nib(top_nib rotated 45)(0, 1,2)
+    nib(end_nib)(0)
+    nib(end_nib rotated 90)(1,2)
 )(paths[p])(strokes[p]);
 
 clearxy;
 p:=p+1;
-z0=point infinity of paths[p-1] - (0, thick*0.5/2);
-z1 = (xpart point 8.5 of paths[0], m/6);
+z0=(xpart point infinity of paths[p-1], ypart point 2 of strokes[p-1]);
+z1 = (xpart point 9 of paths[0], ypart point 8.5 of paths[0]);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)

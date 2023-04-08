@@ -29,8 +29,6 @@ pen_stroke(
     nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
 
-% Shoe
-
 
 % Shoe
 clearxy;

@@ -286,3 +286,14 @@ vardef right_arch_with_tail =
     z8= ( x5 + mw*0.2, -descent*0.6);
     z0---z1..z2{right}..z3{down}..z4{left}..z5..z6..z7{down}..z8
 enddef;
+
+% ഋ sign
+vardef vocalic_r_sign =
+    clearxy;
+    z0 = (0, thick/4);
+    z1 = ((x0 + x2)/2, -descent*1.2);
+    z2 = (x0 -0.9mw, (y1+y3)/2);
+    z3 = ((x2 +x4)/1.75, y0-m/4);
+    z4 = ((x0 + x1)/3, (y1+y2)/2.4);
+    z0{down}.. {dir 190}z1..{dir 85}z2..{right}z3..z4
+enddef;
