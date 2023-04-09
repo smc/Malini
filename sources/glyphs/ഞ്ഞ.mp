@@ -32,7 +32,7 @@ pen_stroke(
     nib(end_nib  rotated -45)(8)
 )(paths[p])(strokes[p]);
 
-anchor( "right", point infinity of paths[2]);
-anchor( "bottom", point infinity of paths[2]);
+anchor( "right", point infinity of paths[3]);
+anchor( "bottom", point infinity of paths[3]);
 
 endglyph;
