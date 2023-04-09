@@ -1,13 +1,5 @@
 
-paths[p] := left_arch_with_eye;
-pen_stroke(
-    nib(middle_up_nib scaled 0.6)(0)
-    nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
-    nib(down_nib)(3)
-    nib(middle_up_nib)(4)
-    nib(thick_vertical_nib)(6,7,8)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/left_arch_with_eye;
 
 p:=p+1;
 clearxy;
@@ -48,7 +40,7 @@ clearxy;
 z0=(0, 0);
 z1=(x0, m);
 paths[p] = z0--z1;
-paths[p] := paths[3] shifted (xpart(point 1 of paths[p-1]), 0);
+paths[p] := paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)

@@ -26,7 +26,7 @@ pen_stroke(
     nib(end_nib rotated terminalangle 8 of paths[p])(8)
 )(paths[p])(strokes[p]);
 
-anchor( "vc", point 1 of paths[1]);
-anchor( "right", point 7.5 of paths[2]);
+anchor( "vc", point 1 of paths[2]);
+anchor( "right", point 7.5 of paths[3]);
 
 endglyph;

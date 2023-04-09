@@ -18,11 +18,9 @@ p:=p+1;
 paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     nib(middle_up_nib rotated terminalangle 4 of paths[p])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3,4)
+    nib(top_nib)(1)
+    nib(thick_vertical_nib)(2, 3)
 )(paths[p])(strokes[p]);
-
 
 p:=p+1;
 paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
