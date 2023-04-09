@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 input ./glyphs/include/ണ;
 
-paths[2] := right_arch_with_tail shifted (xpart(point infinity of paths[1]), 0);
+paths[p] := right_arch_with_tail shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
@@ -13,7 +13,7 @@ pen_stroke(
     nib(middle_up_nib)(5)
     nib(top_nib)(6)
     nib(middle_down_nib)(7)
-    nib(end_nib rotated terminalangle 8 of paths[2])(8)
-)(paths[2])(strokes[2]);
+    nib(end_nib rotated terminalangle 8 of paths[p])(8)
+)(paths[p])(strokes[p]);
 
 endglyph;

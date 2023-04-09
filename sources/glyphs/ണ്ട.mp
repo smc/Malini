@@ -3,7 +3,7 @@ beginglyph;
 input ./glyphs/include/ണ;
 % Third arch
 
-p:=2;
+p:=3;
 clearxy;
 z0 = point infinity of paths[p-1] + (thick/2-thin/2, thin/2);
 z1 = ( x0, 0.6m);

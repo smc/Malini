@@ -5,7 +5,7 @@ input ./glyphs/include/ണ;
 
 % the connector curve
 clearxy;
-z0=point infinity of paths[1] + (thick/2-thin/2, thin/2);
+z0=point infinity of paths[p-1] + (thick/2-thin/2, thin/2);
 z1=(x0, ypart(point 3 of paths[1]));
 z2=(x1 + mw/4, 0.95m);
 z3=(x2 + mw/4, m/2);

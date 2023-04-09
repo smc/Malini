@@ -3,7 +3,7 @@ beginglyph;
 input ./glyphs/include/ണ;
 % Third arch
 
-p:=2;
+p:=3;
 clearxy;
 z0=(thick/2-thin/2, thin/2);
 z1=(x0, m*0.6);

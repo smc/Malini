@@ -2,20 +2,12 @@ input glyph;
 beginglyph;
 
 
-paths[0] := left_arch_with_eye;
-pen_stroke(
-    nib(middle_up_nib scaled 0.6)(0)
-    nib(top_nib)(1,5)
-    nib(middle_down_nib)(2)
-    nib(down_nib)(3)
-    nib(middle_up_nib)(4)
-    nib(thick_vertical_nib)(6,7,8)
-)(paths[0])(strokes[0]);
+input ./glyphs/include/left_arch_with_eye;
 
 clearxy;
+p:=p+1;
 
-
-paths[1] = right_arch_with_tail shifted (xpart(point infinity of paths[0]), 0);
+paths[p] = right_arch_with_tail shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
@@ -26,7 +18,7 @@ pen_stroke(
     nib(middle_up_nib)(5)
     nib(top_nib)(6)
     nib(middle_down_nib)(7)
-    nib(end_nib rotated terminalangle 8 of paths[1])(8)
-)(paths[1])(strokes[1]);
+    nib(end_nib rotated terminalangle 8 of paths[p])(8)
+)(paths[p])(strokes[p]);
 
 endglyph;
