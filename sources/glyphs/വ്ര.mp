@@ -11,7 +11,7 @@ endfor;
 clearxy;
 p:=p+1;
 z0 = point 0 of paths[2];
-z1 = (xpart(point 0.5 of paths[1]), -descent*0.75 );
+z1 = (xpart(point 0.5 of paths[1]), -descent*0.8 );
 z2 = (xpart(point 2 of paths[0]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/4, m);

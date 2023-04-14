@@ -37,7 +37,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 = point 0 of paths[p-1];
-z1 = (xpart(point 0.66 of paths[p-2]), -descent*0.75 );
+z1 = (xpart(point 0.5 of paths[p-2]), -descent*0.8 );
 z2 = (xpart(point 0 of paths[1]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3+mw/4, m);

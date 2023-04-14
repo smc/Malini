@@ -21,20 +21,11 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 
-p:=p+1;
-paths[p] := right_arch_with_tail shifted (xpart(point infinity of paths[0]), 0);
 
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(down_nib)(4)
-    nib(middle_up_nib)(5)
-    nib(top_nib)(6)
-    nib(middle_down_nib)(7)
-    nib(end_nib rotated terminalangle 8 of paths[p])(8)
-)(paths[p])(strokes[p]);
+p:=p+1;
+input ./glyphs/include/right_arch_with_tail;
+paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+strokes[p] := strokes[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 anchor( "vc", point 4 of paths[p]);
 anchor( "bottom", (xpart(point 6 of paths[p]),0));

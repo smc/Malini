@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-p:=1;
+
 clearxy;
 z0=(mw/2, m/2);
 z1=(x0 + mw/3, m-overshoot);
@@ -12,7 +12,7 @@ z6=(x5 - mw/4, y5 + 0.25m);
 z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2 + mw/6, y7);
 z9=(x8 + mw/3, (y8 + y10)/1.2);
-z10=((x9 + x11)/1.75, -descent*0.75);
+z10=((x9 + x11)/1.75, -descent*0.8);
 z11=(x6 - mw/3, (y10 + y12)/2);
 z12=(x11 + mw/4, y1);
 
@@ -37,19 +37,20 @@ pen_stroke(
 
 clearxy;
 
-p:=p-1;
+p:=p+1;
 clearxy;
-z0=point 7 of paths[p+1];
-z1=(xpart point 6 of paths[p+1], 3/4m);
+z0=point 7 of paths[p-1];
+z1=(xpart point 6 of paths[p-1], 3/4m);
 z2=(x1+mw/4, m-overshoot);
-z3=point 0 of paths[p+1];
-paths[p] := z0{left}..z1.. z2..{down}z3;
+z3=point 0 of paths[p-1];
+paths[p] := z0{left}..z1{up}..z2{right}..{down}z3;
+
 pen_stroke(
    nib(thin_vertical_nib rotated 90)(0, 4)
-   nib(middle_up_nib)(1)
+      nib(middle_down_nib scaled 0.9)(1)
    nib(top_nib)(2)
    nib(middle_up_nib)(3)
 )(paths[p])(strokes[p]);
 
-anchor( "right", point 9.5 of paths[1] );
+anchor( "right", point 9.5 of paths[p-1] );
 endglyph;

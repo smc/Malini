@@ -12,7 +12,7 @@ z7 = ( x6 + mw/4, y6 - m/5);
 z8= (x7 - mw/3, y7 - m/4);
 z9= (x8 - mw/3, y8);
 z10=(0, (y9+y11)/2);
-z11=(x9,  -descent*0.75);
+z11=(x9,  -descent*0.8);
 z12=(x7+ thick/2,  y11);
 
 paths[p] := z0..z1{up}..z2{right}..z3{down}..z4{left}..z5{down}..z6{right} ..z7{down}..z8---z9..z10..z11---z12 ;
