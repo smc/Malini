@@ -25,16 +25,9 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] = right_arch_dha;
+input ./glyphs/include/right_arch_dha;
 paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
-
-pen_stroke(
-    nib(thick_vertical_nib)(0)
-    nib(thick_vertical_nib)(1)
-    nib(down_nib)(2)
-    nib(middle_up_nib)(3)
-    nib(top_nib rotated -45)(4)
-)(paths[2])(strokes[2]);
+strokes[p]:=strokes[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 anchor( "vc", point 2 of paths[1]);
 anchor( "right", point 2.3 of paths[p]);

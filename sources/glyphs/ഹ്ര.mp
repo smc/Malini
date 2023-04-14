@@ -16,7 +16,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] := subpath(0.15, 3) of ra shifted (xpart(point 1 of paths[p-1]) - mw/4, 0);
+paths[p] := subpath(0.15, 2.8) of ra shifted (xpart(point 1 of paths[p-1]) - mw/4, 0);
 
 pen_stroke(
     nib(start_up_nib rotated 90)(0)
@@ -29,7 +29,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 % ര sign
-z0 = point 3 of paths[p-1];
+z0 = point infinity of paths[p-1];
 z1 = (xpart(point 1.75 of paths[2]), -descent*0.8 );
 z2 = (xpart(point 6 of paths[p-3]), y1);
 z3 = (xpart(point 1 of paths[p-3]) - mw/3, ypart(point 1 of paths[p-3]));
