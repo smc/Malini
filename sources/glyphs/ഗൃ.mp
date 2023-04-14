@@ -1,21 +1,21 @@
 input glyph;
 beginglyph;
-paths[p] = subpath (0, 5) of ga;
+input ./glyphs/include/ഗ;
+
+paths[p] := subpath (0, 5.9) of paths[p];
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)
    nib(middle_up_nib)(1)
    nib(down_nib)(2)
-   nib(middle_down_nib)(3, 5)
-   nib(top_nib)(4)
+   nib(middle_down_nib)(3,4, 6)
+   nib(top_nib)(5)
 )(paths[p])(strokes[p]);
-
-
 
 p:=p+1;
 clearxy;
 % ഋ sign
-z0 = point 6 of paths[p-1];
+z0 = point infinity of paths[p-1];
 z1 = (x0 - 0.66mw, -descent);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);
