@@ -24,16 +24,10 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-paths[1]:=tha shifted (xpart(point infinity of paths[0]),0);
-
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[1])(0)
-    nib(top_nib)(2,6)
-    nib(middle_down_nib)(3, 7)
-    nib(down_nib)(4)
-    nib(middle_up_nib)(1,5)
-    cut(end_nib  rotated -45, rel 90)(8)
-)(paths[1])(strokes[1]);
+p:=p+1;
+input ./glyphs/include/ത;
+paths[p]:=paths[p] shifted (xpart(point infinity of paths[0]),0);
+strokes[p]:=strokes[p] shifted (xpart(point infinity of paths[0]),0);
 
 anchor( "vc", point infinity of paths[0]);
 anchor( "right", (xpart(point 9.25 of paths[0]), 0));

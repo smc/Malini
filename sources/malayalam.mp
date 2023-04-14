@@ -66,20 +66,6 @@ vardef middle_tha_arch =
 enddef;
 
 
-vardef left_tha_arch =
-    clearxy;
-    z0= (x1 + mw/3, undershoot);
-    z1= (0, y0 + mw/2);
-    z2 = ( x1 + mw/2, m-overshoot); % top
-    z3 = ( x2 + mw/2, (y2+y4)/2.5);
-    z4 = ( x3 - mw/4, 2undershoot); % bottom middle
-    z5 = ( x4 - mw/4, (y4+y6)/2.5);
-    z6 = ( x5 + mw/2, y2); % second top
-    z7 = ( x6 + mw/2.5, 0.6m);
-    z8 = ( x7, 0);
-    z0..z1{up}..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7---z8
-enddef;
-
 vardef left_arch_dha =
     clearxy;
     z0=(x1+mw/3, m);
