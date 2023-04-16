@@ -43,14 +43,14 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0 = point infinity of paths[p-1];
-z1 = (x0 + mw/2, (y0 + y2)/2);
+z0 = point 8.8 of paths[p-1];
+z1 = (x0 + mw/2.25, (y0 + y2)/2);
 z2 = (x1 - mw/2, y1 - m/3);
 z3 = (x4 + mw/3, y2);
 z4 = (xpart point 1 of paths[p-1], (y3+y5)/2);
 z5 = (x3, y3- m/4);
 z6 = (x1, y5);
-paths[p]:= z0{dir angle(direction infinity of paths[p-1])}..z1{down}..z2---z3..z4..z5---z6;
+paths[p]:= z0{dir angle(direction 8.8 of paths[p-1])}..z1{down}..z2---z3..z4..z5---z6;
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_down_nib scaled 0.8)(1)
