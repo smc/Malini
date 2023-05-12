@@ -34,7 +34,6 @@ pen_stroke(
    nib(top_nib)(12)
    nib(middle_down_nib)(13)
    nib(end_nib rotated terminalangle 14 of paths[0])(14)
-
 )(paths[0])(strokes[0]);
 
 anchor( "vc", point 1 of paths[0]);

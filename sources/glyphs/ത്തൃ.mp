@@ -4,7 +4,7 @@ input ./glyphs/include/ത_;
 
 p:=p+1;
 clearxy;
-paths[p] = subpath(0, 7) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
+paths[p] = subpath(0, 6.75) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
@@ -19,7 +19,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 % ഋ sign
-z0 = point 7 of paths[p-1];
+z0 = point infinity of paths[p-1];
 z1 = (x0 - 0.75mw, -descent);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);

@@ -30,14 +30,14 @@ p:=p+1;
 paths[p] := paths[p-1]  shifted (0.35mw, -m) xscaled 0.8 yscaled 0.8;
 
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_up_nib)(1)
-   nib(down_nib)(2)
+   nib(end_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
+   nib(middle_up_nib scaled 0.8)(1)
+   nib(down_nib scaled 0.8)(2)
    nib(middle_down_nib scaled 0.8)(3,4, 6)
-   nib(top_nib)(5)
-   nib(down_nib)(7)
-   nib(middle_up_nib)(8)
-   nib(end_nib rotated terminalangle 9 of paths[p])(9)
+   nib(top_nib scaled 0.8)(5)
+   nib(down_nib scaled 0.8)(7)
+   nib(middle_up_nib scaled 0.8)(8)
+   nib(end_nib scaled 0.8 rotated terminalangle infinity of paths[p])(9)
 )(paths[p])(strokes[p]);
 
 
@@ -52,10 +52,10 @@ z5 = (x3, y3- m/4);
 z6 = (x1, y5);
 paths[p]:= z0{dir angle(direction 8.8 of paths[p-1])}..z1{down}..z2---z3..z4..z5---z6;
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[p])(0)
+   nib(end_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
    nib(middle_down_nib scaled 0.8)(1)
-   nib(down_nib)(2,3)
-   nib(down_nib rotated 90)(4)
-   nib(thick_horizontal_nib)(5,6)
+   nib(down_nib scaled 0.8)(2,3)
+   nib(down_nib scaled 0.8 rotated 90)(4)
+   nib(thick_horizontal_nib scaled 0.8)(5,6)
 )(paths[p])(strokes[p]);
 endglyph;

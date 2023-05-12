@@ -3,12 +3,12 @@ beginglyph;
 input ./glyphs/include/ത;
 
 clearxy;
-z0 = (xpart point 3.75 of paths[p], -0.8*descent); % ra sign starts
-z9 = (x0 - mw/4,  y0); % ra sign starts
+z0 = (xpart point 5.75 of paths[p], -0.75*descent); % ra sign starts
+z9 = (xpart point 2.25 of paths[p],  y0); % ra sign starts
 z10 = point 1 of paths[p] - (mw/3, 0);
 z11 = (x10 + mw/8, m);
 
-paths[p] := (subpath(0,7) of paths[p]) .. z0---z9 ..z10{up}..z11;
+paths[p] := (subpath(0, 6.75) of paths[p]) .. z0---z9 ..z10{up}..z11;
 
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(

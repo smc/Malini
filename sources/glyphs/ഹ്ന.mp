@@ -12,24 +12,21 @@ paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick
 
 pen_stroke(
     cut(thin_horizontal_nib, 45)(0)
-    nib(thin_horizontal_nib)(1)
+    cut(thin_horizontal_nib, -45)(1)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] = subpath(0.15, infinity) of left_arch shifted (xpart(point 1 of paths[p-1])-mw/5, 0);
-pen_stroke(
-    cut(start_up_nib rotated terminalangle 0 of paths[0], 90)(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3,4)
+input ./glyphs/include/left_arch;
 
-)(paths[p])(strokes[p]);
-
+paths[p] := paths[p] shifted (xpart point infinity of paths[p-1] - mw/3 + thick/2, 0);
+strokes[p] := strokes[p] shifted (xpart point infinity of paths[p-1]-mw/3+ thick/2, 0);
 
 p:=p+1;
 input ./glyphs/include/right_arch;
+
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 strokes[p] := strokes[p] shifted (xpart(point infinity of paths[p-1]), 0);
+
 
 anchor( "vc", point 0.5 of paths[1]);
 

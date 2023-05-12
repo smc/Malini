@@ -18,13 +18,13 @@ paths[p] = z0..z1..z2..z3..z4..z5{left}..z6..z7;
 paths[p] := paths[p]  shifted (mw/3, 0);
 paths[p] := paths[p] shifted (0.95mw, -0.95m) xscaled 0.8 yscaled 0.7;
 pen_stroke(
-   nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
-   nib(top_nib)(1)
-   nib(middle_down_nib scaled 0.75)(2,4)
-   nib(middle_down_nib rotated 90 scaled 0.75)(3)
-   nib(down_nib)(5)
-   nib(middle_up_nib)(6)
-   nib(end_nib rotated terminalangle 7 of paths[p])(7)
+   nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
+   nib(top_nib scaled 0.8)(1)
+   nib(middle_down_nib scaled 0.8)(2,4)
+   nib(middle_down_nib scaled 0.8 rotated 90 scaled 0.75)(3)
+   nib(down_nib scaled 0.8 )(5)
+   nib(middle_up_nib scaled 0.8)(6)
+   nib(end_nib scaled 0.8 rotated terminalangle 7 of paths[p])(7)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 0.5 of paths[1]);

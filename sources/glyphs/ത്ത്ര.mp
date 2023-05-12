@@ -7,7 +7,7 @@ strokes[p] := strokes[p]  shifted (mw/3,0);
 
 p:=p+1;
 clearxy;
-paths[p] = subpath(0, 7) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
+paths[p] = subpath(0, 6.75) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
@@ -39,4 +39,5 @@ pen_stroke(
 rbearing:=rbearing - thick;
 
 anchor( "vc", (xpart(point infinity of paths[0]),0));
+anchor( "right", point 0.75 of paths[p]);
 endglyph;

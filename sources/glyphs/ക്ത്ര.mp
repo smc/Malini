@@ -25,7 +25,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-paths[p]:=subpath (0, 7) of tha shifted (xpart(point infinity of paths[0]),0);
+paths[p]:=subpath (0, 6.75) of tha shifted (xpart(point infinity of paths[0]),0);
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[1])(0)
