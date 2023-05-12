@@ -15,12 +15,12 @@ pen_stroke(
 pen_stroke(
     cut(thin_vertical_nib scaled 0.8, -45)(0)
     nib(thin_vertical_nib scaled 0.8)(1)
-    nib(top_nib)(2)
+    nib(top_nib  scaled 0.8)(2)
     nib(middle_down_nib scaled 0.8)(3)
     nib(middle_down_nib scaled 0.8)(4)
-    nib(down_nib)(5)
-    nib(middle_up_nib)(6)
-    nib(top_nib rotated -45)(7)
+    nib(down_nib  scaled 0.8)(5)
+    nib(middle_up_nib  scaled 0.8)(6)
+    nib(end_nib scaled 0.8 rotated terminalangle 7 of paths[3])(7)
 )(paths[3])(strokes[3]);
 anchor( "vc", z3);
 anchor( "right", (point 5 of paths[3]));

@@ -17,16 +17,16 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=point 0.2 of paths[0];
-z1=(xpart(point 1 of paths[0]), ypart(point 2.2 of paths[0]));
-z2=point 1.8 of paths[0];
+z0=point 0.3 of paths[0];
+z1=(xpart(point 1 of paths[0]), ypart(point 2.1 of paths[0]));
+z2=point 1.7 of paths[0];
 
 paths[1] = z0{down}..z1..{up}z2;
 
 pen_stroke(
    cut(start_up_nib, 0)(0)
    nib(down_nib scaled 0.75)(1)
-   cut(end_nib scaled 0.75, 0)(2)
+   cut(start_up_nib, 0)(2)
 )(paths[1])(strokes[1]);
 
 anchor( "right", (xpart(point 1 of paths[0]), ypart(point 1 of paths[0])));

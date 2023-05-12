@@ -15,9 +15,9 @@ z10=(x9 - mw/3, m);
 l=z0{dir 80}..z1..z2..z3..z4..z5..{down}z6..z7..z8..z9{up}..z10;
 paths[p] = l shifted(0,-m*1.1) xscaled 0.8 yscaled 2/3;
 pen_stroke(
-    nib(middle_up_nib)(0,4, 9)
-    nib(top_nib)(1,5)
+    nib(middle_up_nib scaled 0.8)(0,4, 9)
+    nib(top_nib scaled 0.8)(1,5)
     nib(middle_down_nib scaled 0.8)(2,6,7)
-    nib(down_nib)(3,8)
-    nib(end_nib rotated terminalangle 10 of paths[p])(10)
+    nib(down_nib scaled 0.8)(3,8)
+    nib(end_nib scaled 0.8 rotated terminalangle 10 of paths[p])(10)
 )(paths[p])(strokes[p]);

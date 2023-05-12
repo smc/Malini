@@ -16,8 +16,8 @@ z2=(x0 , X-y0);
 paths[p] := z0{right}..z1..{left}z2;
 
 pen_stroke(
-    nib(top_nib)(0)
+    cut(top_nib, 90)(0)
     nib(middle_down_nib rotated terminalangle 1 of paths[p])(1)
-    nib(down_nib)(2)
+    cut(down_nib, 90)(2)
 )(paths[p])(strokes[p]);
 endglyph;
