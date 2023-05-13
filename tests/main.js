@@ -42,6 +42,7 @@ const otFeatures = {
     'pstf': true,
     'psts': true,
     'liga': true,
+    'onum': false,
     'abvm': true,
     'calt': true,
 }
@@ -291,10 +292,13 @@ function listen() {
             otFeatures[element.value] = !!checked
             const fontFeatureSettings = [];
             for (let otFeature in otFeatures) {
-                if (otFeatures.hasOwnProperty(otFeature) && !otFeatures[otFeature]) {
-                    fontFeatureSettings.push(`"${otFeature}" off`);
+                if (otFeatures.hasOwnProperty(otFeature)) {
+                    if ( !otFeatures[otFeature]) {
+                        fontFeatureSettings.push(`"${otFeature}" off`);
+                    }
                 }
             }
+            root.style.setProperty('--old-num', otFeatures["onum"]? 'oldstyle-nums' : 'normal' );
             contentArea.style.fontFeatureSettings = fontFeatureSettings.join(',');
         });
     });

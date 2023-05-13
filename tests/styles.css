@@ -16,6 +16,7 @@
   --weight: 400;
   --slant: 0;
   --opsz-enabled: "auto";
+  --old-num: normal;
   --width: 100;
   --font: 'Malini';
   --font-size: 20px;
@@ -99,7 +100,7 @@ main {
   direction: ltr;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-
+  font-variant-numeric: var(--old-num);
 }
 
 .font-name {
