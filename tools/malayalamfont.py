@@ -13,6 +13,7 @@ from svgglyph import SVGGlyph
 
 log = logging.getLogger(__name__)
 
+LANGUAGE_ALL = [('DFLT', 'dflt'), ('latn', 'dflt'), ('mlm2', 'dflt')]
 LANGUAGE_MALAYALAM = [('mlm2', 'dflt')]
 LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
 
@@ -26,6 +27,7 @@ class MalayalamFont(Font):
         self.fontFeatures = FontFeatures()
         self.available_svgs = []
         self.salts={} #Stylistic Alternates
+        self.onums={} #Old Numerals
         logging.basicConfig(level='WARN')
 
     def build_glyph_classes(self):
@@ -180,6 +182,8 @@ class MalayalamFont(Font):
             "ഷ്ട": "്ട",
             "ഷ്പ": "്ര",
             "സ്പ": "്ര",
+            "യ്ത": "്ത",
+            "സ്ക": "്ക",
             "സ്ത": "്ത",
             "സ്ന": "്ന",
             "ശ്ന": "്ന",
@@ -507,7 +511,16 @@ class MalayalamFont(Font):
         rules=[]
         for base, alts in self.salts.items():
             rules.append(Substitution([[base]], [[base] + alts]))
-        routine = Routine(name=name, rules=rules)
+        routine = Routine(name=name, rules=rules, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_onum(self):
+        feature = "onum"
+        name="onum_lookup"
+        rules=[]
+        for base, alts in self.onums.items():
+            rules.append(Substitution([[base]], [alts]))
+        routine = Routine(name=name, rules=rules, languages=LANGUAGE_ALL)
         self.fontFeatures.addFeature(feature, [routine])
 
     def build_aalt(self):
@@ -542,6 +555,7 @@ class MalayalamFont(Font):
         self.build_calt()
         self.build_aalt()
         self.build_salt()
+        self.build_onum()
         self.features.text = self.getFeatures()
 
     def build(self, design_dir):
@@ -579,6 +593,11 @@ class MalayalamFont(Font):
                     self.salts[svg_glyph.glyph_name]=[]
 
                 self.salts[svg_glyph.glyph_name].append(svg_glyph.glif.name)
+            if svg_glyph.onum:
+                if svg_glyph.glyph_name not in self.onums:
+                    self.onums[svg_glyph.glyph_name]=[]
+
+                self.onums[svg_glyph.glyph_name].append(svg_glyph.glif.name)
 
         # Even though we can flip the glyphs using transformation,
         # it is always better to design a glyph for that.
@@ -742,7 +761,7 @@ class MalayalamFont(Font):
                 if base_glyph_name in self.salts:
                     uu_glyph_name_alt = uu_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0])
                     self.buildComposite(uu_glyph_name_alt, None, [
-                                    self.salts[base_glyph_name][0], 'u_drop_sign'])
+                                    self.salts[base_glyph_name][0], 'uu_drop_sign'])
                     self.salts[uu_glyph_name]=[uu_glyph_name_alt]
 
         log.debug(f"Total glyph count: {len(self)}")

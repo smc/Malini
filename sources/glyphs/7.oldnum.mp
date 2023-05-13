@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0=(0, X - thick*0.7/2);
+z0=(0, s - thick*0.7/2);
 z1=(x0 + .5Xw, y0);
 
 paths[0] = z0--z1;
@@ -11,8 +11,8 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(.5Xw - thick*0./2, X);
-z1=(x0 - Xw/4, 0);
+z0=(.5Xw - thick*0./2, s);
+z1=(x0 - Xw/4, -descent);
 paths[p] = z0--z1;
 pen_stroke(
    nib(middle_up_nib rotated 10)(0)

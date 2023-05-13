@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
-z0=(x1 + Xw/2, X - thin*sind(45)/2);
-z1=(0, 0.3X);
+z0=(x1 + Xw/2, s - thin*sind(45)/2);
+z1=(0, 0.2s);
 paths[0] = z0--z1;
 pen_stroke(
    cut(thin_nib rotated terminalangle 0 of paths[0], -45)(0)
@@ -21,8 +21,8 @@ pen_stroke(
 
 % Vertical
 clearxy;
-z0=(xpart(point 0 of paths[0])+thick*sind(45)/2, X);
-z1=(x0, 0);
+z0=(xpart(point 0 of paths[0])+thick*sind(45)/2, s);
+z1=(x0, -descent);
 paths[2] = z0--z1 ;
 
 pen_stroke(

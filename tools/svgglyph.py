@@ -62,6 +62,7 @@ class SVGGlyph:
         self.svg_height = 0.0
         self.name = ""
         self.alt = None
+        self.onum = None
         self.unicode = None
         self.glyph_name = ""
         self.glyph_width = 0
@@ -110,15 +111,22 @@ class SVGGlyph:
         filename = os.path.splitext(os.path.basename(self.svg_file_path))[0]
         self.name = filename.split(".")[0]
         self.alt = None
+        self.onum = None
         if len(filename.split(".")) > 1:
-            self.alt = filename.split(".")[1]
+            variant = filename.split(".")[1]
+            if variant == 'alt':
+                self.alt =  variant
+            elif variant == 'oldnum':
+                self.onum = variant
+            elif variant == 'wrap':
+                self.alt = variant
         self.unicode = None
         if len(self.name) == 1:
             self.unicode = [ord(self.name)]
         elif self.name in agl.AGL2UV:
             self.unicode = [agl.AGL2UV.get(self.name)]
 
-        if self.alt:
+        if self.alt or self.onum:
             # Alternate glyphs does not require unicode.
             self.unicode = None
         self.glyph_name = SVGGlyph.get_glyph_name(self.name)
@@ -212,6 +220,8 @@ class SVGGlyph:
             glif_name = self.glyph_name
             if self.alt:
                 glif_name = self.glyph_name + "." + self.alt
+            if self.onum:
+                glif_name = self.glyph_name + "." + self.onum
             self.glif = SVGGlyph.svg2glif(self.svg_file_path,
                                           name=glif_name,
                                           width=self.glyph_width,
