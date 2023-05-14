@@ -213,7 +213,9 @@ label {
   body {
     display: grid;
     grid-template-columns: 9fr 3fr;
+    height: 100vh;
   }
+
   header {
     align-items: start;
     height: 100%;
