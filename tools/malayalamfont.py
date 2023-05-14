@@ -185,6 +185,7 @@ class MalayalamFont(Font):
             "യ്ത": "്ത",
             "സ്ക": "്ക",
             "സ്ത": "്ത",
+            "പ്ത": "്ത",
             "സ്ന": "്ന",
             "ശ്ന": "്ന",
             "ല്പ": "്പ",
@@ -520,7 +521,7 @@ class MalayalamFont(Font):
         rules=[]
         for base, alts in self.onums.items():
             rules.append(Substitution([[base]], [alts]))
-        routine = Routine(name=name, rules=rules, languages=LANGUAGE_ALL)
+        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
     def build_aalt(self):
