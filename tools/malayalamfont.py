@@ -28,6 +28,7 @@ class MalayalamFont(Font):
         self.available_svgs = []
         self.salts={} #Stylistic Alternates
         self.onums={} #Old Numerals
+        self.sups={} # Superscripts
         logging.basicConfig(level='WARN')
 
     def build_glyph_classes(self):
@@ -515,6 +516,15 @@ class MalayalamFont(Font):
         routine = Routine(name=name, rules=rules, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
+    def build_sups(self):
+        feature = "sups"
+        name="sups_lookup"
+        rules=[]
+        for base, alts in self.sups.items():
+            rules.append(Substitution([[base]], [alts]))
+        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
     def build_onum(self):
         feature = "onum"
         name="onum_lookup"
@@ -557,6 +567,7 @@ class MalayalamFont(Font):
         self.build_aalt()
         self.build_salt()
         self.build_onum()
+        self.build_sups()
         self.features.text = self.getFeatures()
 
     def build(self, design_dir):
@@ -599,7 +610,11 @@ class MalayalamFont(Font):
                     self.onums[svg_glyph.glyph_name]=[]
 
                 self.onums[svg_glyph.glyph_name].append(svg_glyph.glif.name)
+            if svg_glyph.sups:
+                if svg_glyph.glyph_name not in self.sups:
+                    self.sups[svg_glyph.glyph_name]=[]
 
+                self.sups[svg_glyph.glyph_name].append(svg_glyph.glif.name)
         # Even though we can flip the glyphs using transformation,
         # it is always better to design a glyph for that.
         # Flipping here won't work nicely with slanting for example.
