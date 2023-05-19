@@ -39,7 +39,7 @@ z5=(x4 - mw/4, y4 + m/3);
 z6 = (x5 + mw/2, y5 + m/3);
 z7 = (x6 + mw/2, (y6+y8)/2);
 z8 = (x6, -descent*0.8);
-z9 = (xpart point 0 of paths[0], y8);
+z9 = (xpart point 1.5 of paths[0], y8);
 z10 = (xpart point 0 of paths[1]-mw/4, ypart point 0 of paths[0]);
 z11 = (x10+mw/6, m);
 

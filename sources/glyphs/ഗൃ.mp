@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 input ./glyphs/include/ഗ;
 
-paths[p] := subpath (0, 5.9) of paths[p];
+paths[p] := subpath (0, 5.8) of paths[p];
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[0])(0)
@@ -16,7 +16,7 @@ p:=p+1;
 clearxy;
 % ഋ sign
 z0 = point infinity of paths[p-1];
-z1 = (x0 - 0.66mw, -descent);
+z1 = (x0 - 0.75mw, -descent);
 z2 = (x1 - mw/3, (y1+y3)/2);
 z3 = (x1, y2+m/6);
 z4 = ((x1 + x0)/2, y2);

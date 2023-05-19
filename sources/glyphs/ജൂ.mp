@@ -21,7 +21,7 @@ paths[p]:=z0{dir angle(direction infinity of paths[p-2])}..z1..z2..{left}z3{righ
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib scaled 0.8)(1)
-    nib(down_nib)(3)
+    nib(end_nib rotated 90)(3)
     nib(middle_down_nib scaled 0.8)(2, 4)
     nib(down_nib)(5,6)
     nib(down_nib rotated 90)(7)

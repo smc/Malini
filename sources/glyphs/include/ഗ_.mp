@@ -1,12 +1,12 @@
 
 clearxy;
 z0 = (x1 + mw/3.5, m);
-z1 = (0, (y0+y2)/2);
+z1 = (0, (y0+y2)/2.25);
 z2 = (x1 + mw/3, undershoot);
 z3 = (x2 + mw/3, (y2+y5)*0.4);
 z4 = (x3, (y2+y5)*0.6);
 z5 = (x4 + mw/3, m-overshoot);
-z6 = (x5 + mw/3, (y4+y6)/2);
+z6 = (x5 + mw/3, (y4+y6)/2.25);
 z7 = (x6, 0);
 paths[p] = z0{dir 215}..z1{down}..z2{right}..z3---z4..z5{right}.. z6---z7;
 
