@@ -31,11 +31,11 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0=point 0 of paths[2];
-z1=(x0-X/3, -descent);
-paths[p]=z0{down}..{left}z1;
+z1=(x0-X/3, -descent*0.8);
+paths[p]=z0{down}..{dir 160}z1;
 pen_stroke(
     nib(thin_vertical_nib rotated terminalangle 0 of paths[3])(0)
-    nib(thin_vertical_nib rotated terminalangle infinity of paths[3])(infinity)
+    nib(thicknib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
 

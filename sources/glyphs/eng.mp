@@ -15,11 +15,11 @@ pen_stroke(
     nib(thick_vertical_nib)(2,3)
 )(paths[1])(strokes[1]);
 clearxy;
-z0=point infinity of paths[1];
-z1=(x0-s/3, -descent);
-paths[2]=z0{dir -95}..{left}z1;
+z0=point infinity of paths[1] + (0, undershoot);
+z1=(x0-s/3, -descent*0.9);
+paths[2]=z0{down}..{dir 160}z1;
 pen_stroke(
     nib(middle_down_nib)(0)
-    cut(end_nib scaled 0.5 rotated 90, 90)(1)
+    nib(thicknib)(1)
 )(paths[2])(strokes[2]);
 endglyph;
