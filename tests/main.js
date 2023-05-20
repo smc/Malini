@@ -43,6 +43,7 @@ const otFeatures = {
     'psts': true,
     'liga': true,
     'onum': false,
+    'sups': false,
     'abvm': true,
     'calt': true,
 }
@@ -286,23 +287,20 @@ function listen() {
     })
 
 
-    document.querySelectorAll("[name=opentype]").forEach((element) => {
-        element.addEventListener('change', function () {
-            const checked = this.checked;
-            otFeatures[element.value] = !!checked
-            const fontFeatureSettings = [];
-            for (let otFeature in otFeatures) {
-                if (otFeatures.hasOwnProperty(otFeature)) {
-                    if ( !otFeatures[otFeature]) {
-                        fontFeatureSettings.push(`"${otFeature}" off`);
-                    }
-                }
+    const onFeatureChange = function() {
+        const fontFeatureSettings = [];
+        for (let otFeature in otFeatures) {
+            let checked =  document.getElementById(otFeature).checked;
+            if ( otFeatures[otFeature] !== checked ) {
+                fontFeatureSettings.push(`"${otFeature}" ${checked?1:0}`);
             }
-            root.style.setProperty('--old-num', otFeatures["onum"]? 'oldstyle-nums' : 'normal' );
-            contentArea.style.fontFeatureSettings = fontFeatureSettings.join(',');
-        });
-    });
+        }
+        contentArea.style.fontFeatureSettings = fontFeatureSettings.join(', ');
+    }
 
+    document.querySelectorAll("[name=opentype]").forEach((element) => {
+        element.addEventListener('change',onFeatureChange);
+    });
 }
 
 
