@@ -175,9 +175,9 @@ glyphs:
       - [['ന്റ', 'ൻ്റ'], "്", 40 ]
       - [['ന്റ', 'ൻ്റ'], "ി", 40 ]
       - [['ന്റ', 'ൻ്റ'], "ീ", 40 ]
-  calts:
-    malayalam:
-      - ['ന', "ി", 'wrap' ]
+  # calts:
+  #   malayalam:
+  #     - ['ന', "ി", 'wrap' ]
 variablefonts:
   Malini:
     designspace: Malini.designspace
