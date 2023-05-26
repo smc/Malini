@@ -495,6 +495,8 @@ class MalayalamFont(Font):
 
     def build_calt(self):
         feature = "calt"
+        if not "calts" in self.options.glyphs:
+            return
         for script in self.options.glyphs.calts:
             name = f"{script}_calt_lookup"
             languages = eval(f"LANGUAGE_{script.upper()}")
