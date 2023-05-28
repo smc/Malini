@@ -8,7 +8,7 @@ p:=p+1;
 clearxy;
 
 z0=  (0,0);
-z1=(x0 + 1.3mw, y0);
+z1=(x0 + 1.4mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
@@ -24,7 +24,7 @@ clearxy;
 z0=(xpart(point infinity of paths[p-1])-thick/2, thin/2);
 z1=(x0, m/2);
 z2=((x1+x3)/2, m-overshoot);
-z3=(x0 - mw*0.8, y1);
+z3=(x0 - mw*0.75, y1);
 z4=(x3,ypart(point infinity of paths[p-1]));
 paths[p]:= z0---z1..z2..z3---z4 ;
 pen_stroke(
