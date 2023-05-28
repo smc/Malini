@@ -23,8 +23,8 @@
   --font-line-height: 1.5;
   --controls-color: hsl(var(--primary-h), var(--primary-s), 98%);
   --controls-background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
-  --text-color: hsl(210, 29%, 24.3%);
-  --text-background-color: hsla(0, 0%, 100%, 1);
+  --text-color: hsl(var(--primary-h), var(--primary-s), 98%);
+  --text-background-color: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
   color-scheme: light dark;
 }
 
