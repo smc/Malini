@@ -28,21 +28,13 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 
-p:=p+1;
 clearxy;
-z0=(0, 0.75m);
-z1=(x0 + mw/3, m-y3);
-z2=(x1 + mw/3, (y1+y3)/2);
-z3=(x1,  0);
-z4=(x0, m-y0);
-paths[p] = z0..z1..z2..z3..z4;
-paths[p]:= paths[p] shifted(xpart(point 3 of paths[0]) + mw/3, 0);
-pen_stroke(
-   cut(end_nib, rel 90)(0)
-    cut(end_nib, rel 90)(4)
-    nib(middle_down_nib)(2)
-    nib(top_nib)(1)
-    nib(down_nib)(3)
-)(paths[p])(strokes[p]);
+p:=p+1;
+
+input ./glyphs/include/ാ;
+
+paths[p] := paths[p]  shifted(xpart(point 3 of paths[p-1]) + mw/4, 0);
+strokes[p] := strokes[p]  shifted(xpart(point 3 of paths[p-1]) + mw/4, 0);
+
 
 endglyph;

@@ -7,13 +7,14 @@ z3 = (x1, m/2);
 z4 = (x3, m);
 
 paths[p] = z0{dir -100}..z1{right}..z2{dir 100}..{dir 100}z3.. z4;
-paths[p] := paths[0] shifted(-x3,0);
+paths[p] := paths[p] shifted(-x3,0);
 pen_stroke(
     nib(middle_down_nib rotated terminalangle 0 of paths[0])(0)
     nib(down_nib)(1)
     nib(middle_up_nib)(2)
-    nib(middle_down_nib)(3,4)
-
+    nib(middle_down_nib)(3)
+    cut(middle_down_nib, 0)(4)
 )(paths[p])(strokes[p]);
+
 anchor( "right", point 1.5 of paths[p]);
 endglyph;
