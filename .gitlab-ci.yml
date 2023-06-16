@@ -1,4 +1,4 @@
-image: "debian:bullseye-slim"
+image: "debian:bookworm-slim"
 
 before_script:
   - apt-get update -y
