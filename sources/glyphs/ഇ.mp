@@ -33,7 +33,7 @@ z6= (xpart(point 0 of paths[0]), (y5+y7)/2);
 z7= (x5, -descent*0.75);
 z8= (x3 + thick/2, y7);
 
-paths[1] = z0---z1..z2..z3{down}..z4---z5..z6..z7---z8;
+paths[1] = z0---z1..z2..z3..z4---z5..z6..z7---z8;
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)

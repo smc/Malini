@@ -15,7 +15,7 @@ z12=((x11+x13)/2, y1);
 z13=(x11 + 0.95mw, (y12+y14)/2);
 z14=(x13 - mw/4, 0);
 
-paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..z11{up}..z12{right}..z13{down}..z14;
+paths[p] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..z11..z12{right}..z13{down}..z14;
 
 pen_stroke(
    nib(middle_up_nib)(0, 4)

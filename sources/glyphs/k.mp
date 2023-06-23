@@ -17,7 +17,7 @@ z1= ( x0 + 2/3*sw, s);
 paths[p] = z0--z1;
 pen_stroke(
   cut(thin_nib rotated terminalangle 0 of paths[p], rel 145)(0)
-  cut(thin_nib rotated terminalangle 0 of paths[p], rel 145)(1)
+  cut(thin_nib rotated terminalangle 0 of paths[p], 0)(1)
 )(paths[p])(strokes[p]);
 
 

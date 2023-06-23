@@ -11,7 +11,7 @@ z7 = ( x5 - 0.6mw, y4);
 z8 = ( (x7 + x9)/1.8, m - overshoot*1.25);   % top
 z9 = ( x7 + 0.9mw, 0.6m);
 z10 = ( x9, 0);
-paths[p] = z0..z1{up}..z2{right}..z3{down}..{left}z4{right}..z5{down}..z6{left}..{up}z7..z8{right}..{down}z9---z10;
+paths[p] = z0..z1{up}..z2{right}..z3{down}..{left}z4{right}..z5..z6{left}..z7..z8..{down}z9---z10;
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
