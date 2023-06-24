@@ -13,8 +13,8 @@ paths[p]:=z0{dir 90}..z1{left}..z2{down}..z3{right} ..{dir 80}z4;
 pen_stroke(
     nib(serif_nib)(0)
     nib(middle_down_nib)(2)
-    nib(top_nib)(1)
-    nib(down_nib)(3)
+    nib(top_nib  rotated 10)(1)
+    nib(down_nib rotated -40)(3)
     nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 

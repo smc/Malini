@@ -5,9 +5,10 @@ z0=(0, 0);
 z1=(x0 + Xw/2.5, X);
 paths[p] = z0--z1 ;
 pen_stroke(
-     nib(thin_nib scaled 1.25)(0,1)
+    nib(thin_nib scaled 1.25)(0,1)
 )(paths[p])(strokes[p]);
 
+% Right slant
 p:=p+1;
 clearxy;
 z0=(xpart(point infinity of paths[p-1]),X-thick*sind(45)/2)  ;
@@ -18,13 +19,16 @@ pen_stroke(
     nib(thick_nib)(1)
     cut(thick_nib, 45)(0)
 )(paths[p])(strokes[p]);
+
+% Cross bar
 clearxy;
 p:=p+1;
 z0 = point 0.4 of paths[p-2] ;
 z1 = (xpart point 0.65 of paths[p-1], y0) ;
 paths[p]:= z0--z1 ;
 pen_stroke(
-    nib(top_nib)(0,1)
+    nib(top_nib)(0)
+    cut(top_nib, -70)(1)
 )(paths[p])(strokes[p]);
 
 
