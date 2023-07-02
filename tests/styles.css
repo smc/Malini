@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Malini";
-  src: url(../fonts/Malini/webfonts/Malini-VF.woff2) format("woff2-variations"),
-    url(../fonts/Malini/otf-variable/Malini-VF.otf) format("opentype-variations"),
-    url(../fonts/Malini/otf/Malini-Regular.otf) format("opentype");
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-  font-style: oblique 0deg 15deg;
-}
 
 
 :root {
