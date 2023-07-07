@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "Malini";
+  src: url(../fonts/Malini/webfonts/Malini-VF.woff2) format("woff2-variations"),
+    url(../fonts/Malini/otf-variable/Malini-VF.otf) format("opentype-variations"),
+    url(../fonts/Malini/otf/Malini-Regular.otf) format("opentype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-optical-sizing: auto;
+  font-style: oblique 0deg 15deg;
+}
+
+
+
+/* If class is applied, update custom property and
+   apply modern font-variant-* when supported */
+   .malini-aalt {
+    --malini-aalt: "aalt" on;
+}
+
+.malini-onum {
+    --malini-onum: "onum" on;
+}
+
+@supports (font-variant-numeric: oldstyle-nums) {
+    .malini-onum {
+        --malini-onum: "____";
+        font-variant-numeric: oldstyle-nums;
+    }
+}
+
+.malini-opsz {
+    font-optical-sizing: auto;
+}
+
+.malini-no-opsz {
+    font-optical-sizing: none;
+}
+
+
+.malini-salt {
+    --malini-salt: "salt" on;
+}
+
+.malini-sups {
+    --malini-sups: "sups" on;
+}
+
+@supports (font-variant-position: super) {
+    .malini-sups {
+        --malini-sups: "____";
+        font-variant-position: super;
+    }
+}
+
+/* Apply current state of all custom properties
+   whenever a class is being applied */
+.malini-aalt,
+.malini-onum,
+.malini-salt,
+.malini-sups {
+    font-feature-settings: var(--malini-aalt), var(--malini-onum),
+        var(--malini-salt), var(--malini-sups);
+}
+
+/* Variable instances */
+.malini-thin {
+    font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0;
+}
+
+.malini-oblique-thin {
+    font-variation-settings: "wght" 100, "wdth" 100, "slnt" -15;
+}
+
+.malini-condensed-thin {
+    font-variation-settings: "wght" 100, "wdth" 75, "slnt" 0;
+}
+
+.malini-expanded-thin {
+    font-variation-settings: "wght" 100, "wdth" 125, "slnt" 0;
+}
+
+.malini-extralight {
+    font-variation-settings: "wght" 200, "wdth" 100, "slnt" 0;
+}
+
+.malini-extralight-oblique {
+    font-variation-settings: "wght" 200, "wdth" 100, "slnt" -15;
+}
+
+.malini-light {
+    font-variation-settings: "wght" 300, "wdth" 100, "slnt" 0;
+}
+
+.malini-light-oblique {
+    font-variation-settings: "wght" 300, "wdth" 100, "slnt" -15;
+}
+
+.malini-condensed-light {
+    font-variation-settings: "wght" 300, "wdth" 75, "slnt" 0;
+}
+
+.malini-expanded-light {
+    font-variation-settings: "wght" 300, "wdth" 125, "slnt" 0;
+}
+
+.malini-regular {
+    font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0;
+}
+
+.malini-oblique {
+    font-variation-settings: "wght" 400, "wdth" 100, "slnt" -15;
+}
+
+.malini-condensed {
+    font-variation-settings: "wght" 400, "wdth" 75, "slnt" 0;
+}
+
+.malini-semicondensed {
+    font-variation-settings: "wght" 400, "wdth" 87.501, "slnt" 0;
+}
+
+.malini-condensed-oblique {
+    font-variation-settings: "wght" 400, "wdth" 75, "slnt" -15;
+}
+
+.malini-expanded {
+    font-variation-settings: "wght" 400, "wdth" 125, "slnt" 0;
+}
+
+.malini-semiexpanded {
+    font-variation-settings: "wght" 400, "wdth" 112.501, "slnt" 0;
+}
+
+.malini-medium {
+    font-variation-settings: "wght" 500, "wdth" 100, "slnt" 0;
+}
+
+.malini-medium-oblique {
+    font-variation-settings: "wght" 500, "wdth" 100, "slnt" -15;
+}
+
+.malini-condensed-medium {
+    font-variation-settings: "wght" 500, "wdth" 75, "slnt" 0;
+}
+
+.malini-expanded-medium {
+    font-variation-settings: "wght" 500, "wdth" 125, "slnt" 0;
+}
+
+.malini-semibold {
+    font-variation-settings: "wght" 600, "wdth" 100, "slnt" 0;
+}
+
+.malini-semibold-oblique {
+    font-variation-settings: "wght" 600, "wdth" 100, "slnt" -15;
+}
+
+.malini-bold {
+    font-variation-settings: "wght" 700, "wdth" 100, "slnt" 0;
+}
+
+.malini-bold-oblique {
+    font-variation-settings: "wght" 700, "wdth" 100, "slnt" -15;
+}
+
+.malini-condensed-bold {
+    font-variation-settings: "wght" 700, "wdth" 75, "slnt" 0;
+}
+
+.malini-expanded-bold {
+    font-variation-settings: "wght" 700, "wdth" 125, "slnt" 0;
+}
+
+.malini-extrabold {
+    font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0;
+}
+
+.malini-extrabold-oblique {
+    font-variation-settings: "wght" 800, "wdth" 100, "slnt" -15;
+}
+
+.malini-black {
+    font-variation-settings: "wght" 900, "wdth" 100, "slnt" 0;
+}
+
+.malini-black-oblique {
+    font-variation-settings: "wght" 900, "wdth" 100, "slnt" -15;
+}
+
+.malini-text {
+    font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 10;
+}
+
+.malini-display {
+    font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-thindisplay {
+    font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0, "opsz" 96;
+}
