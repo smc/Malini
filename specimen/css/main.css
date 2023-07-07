@@ -7,7 +7,7 @@
   --body-background-color: lightgray;
   --border-color: #9e9e9e;
   --footer-color: #666;
-  --title-color: #e65100;
+  --title-color: #ed7c72;
   --page-width: 1123px; /* A4 size 96dpi*/
   --page-height: 794px; /* A4 size 96dpi*/
   --page-margin: 48px;
@@ -15,6 +15,15 @@
   --malini-regular-onum: "onum" off;
   --malini-regular-salt: "salt" off;
   --malini-regular-sups: "sups" off;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 .malini {
@@ -25,6 +34,7 @@
 body {
   hyphens: auto;
   -webkit-hyphenate-character: "";
+  hyphenate-character: "";
   font-family: "Lato";
   font-size: 100%;
   background-color: var(--body-background-color);
@@ -58,9 +68,10 @@ main {
 .page > main {
   padding: var(--page-margin);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1em;
   overflow: hidden;
+  max-height: 600px;
   align-items: start;
 }
 
@@ -122,6 +133,11 @@ main {
   color: #fff;
 }
 
+.color-bg-black {
+  background-color: #000;
+  color: #fff;
+}
+
 
 .color-bg-brown {
   background-color: #3e2723;
@@ -137,6 +153,11 @@ main {
 .text-start {
   text-align: start;
 }
+
+.text-end {
+  text-align: end;
+}
+
 
 .text-thin {
   font-weight: 100;
@@ -210,7 +231,7 @@ main {
 
 .text-48 {
   font-size: 48pt;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .text-72 {
@@ -252,9 +273,7 @@ p {
   text-align: justify;
 }
 
-p:first-child {
-  text-indent: 0;
-}
+
 
 p + p {
   margin-top: 0.75em;
@@ -280,6 +299,10 @@ p + .meta-desc {
   grid-column: span 4;
 }
 
+.col-5 {
+  grid-column: span 5;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -293,4 +316,29 @@ a:hover {
   column-count: 8;
   font-size: 8pt;
   column-gap: 41px;
+}
+
+.bg-red {
+  background-color:#ed7c72
+ }
+
+.bg-black {
+  background-color: #7e7568;
+}
+.bg-gray {
+  background-color: #aaa;
+}
+.bg-silver {
+  background-color: #f0edec;
+}
+.bg-white {
+  background-color: #fff7f0;
+}
+
+.black-text {
+ color:#6a6358
+}
+
+.white-text {
+ color:#fffbf8
 }

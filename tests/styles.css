@@ -87,6 +87,7 @@ main {
   font-optical-sizing: var(--opsz-enabled);
   hyphens: auto;
   -webkit-hyphenate-character: '';
+  hyphenate-character: "";
   direction: ltr;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
