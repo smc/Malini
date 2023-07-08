@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0= (0, X-thick/2);
+z0= (0, X-thick/4);
 z1=( x0, 0);
 paths[p] = z0--z1;
 

@@ -397,7 +397,7 @@
         <dimension name="optical" xvalue="96"/>
       </location>
     </instance>
-    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="ThinDisplay">
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="Thin Display">
       <info />
       <kerning />
       <location>

@@ -13,19 +13,12 @@
 
 /* If class is applied, update custom property and
    apply modern font-variant-* when supported */
-   .malini-aalt {
+.malini-aalt {
     --malini-aalt: "aalt" on;
 }
 
 .malini-onum {
-    --malini-onum: "onum" on;
-}
-
-@supports (font-variant-numeric: oldstyle-nums) {
-    .malini-onum {
-        --malini-onum: "____";
-        font-variant-numeric: oldstyle-nums;
-    }
+    --malini-onum: "onum";
 }
 
 .malini-opsz {
@@ -37,8 +30,12 @@
 }
 
 
+.malini-liga-off {
+    --malini-liga: "liga" 0;
+}
+
 .malini-salt {
-    --malini-salt: "salt" on;
+    --malini-salt: "salt" 2;
 }
 
 .malini-sups {
@@ -55,11 +52,13 @@
 /* Apply current state of all custom properties
    whenever a class is being applied */
 .malini-aalt,
+.malini-liga,
+.malini-liga-off,
 .malini-onum,
 .malini-salt,
 .malini-sups {
     font-feature-settings: var(--malini-aalt), var(--malini-onum),
-        var(--malini-salt), var(--malini-sups);
+        var(--malini-salt), var(--malini-sups), var(--malini-liga);
 }
 
 /* Variable instances */
@@ -195,6 +194,6 @@
     font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 96;
 }
 
-.malini-thindisplay {
+.malini-thin-display {
     font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0, "opsz" 96;
 }

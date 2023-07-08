@@ -524,7 +524,7 @@ class MalayalamFont(Font):
         rules=[]
         for base, alts in self.sups.items():
             rules.append(Substitution([[base]], [alts]))
-        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_MALAYALAM)
+        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_ALL)
         self.fontFeatures.addFeature(feature, [routine])
 
     def build_onum(self):
@@ -533,7 +533,7 @@ class MalayalamFont(Font):
         rules=[]
         for base, alts in self.onums.items():
             rules.append(Substitution([[base]], [alts]))
-        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_MALAYALAM)
+        routine = Routine(name=name, rules=rules,  languages=LANGUAGE_ALL)
         self.fontFeatures.addFeature(feature, [routine])
 
     def build_aalt(self):
