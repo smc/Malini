@@ -12,13 +12,13 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0=(.5Xw - thick*0./2, X);
-z1=(x0 - Xw/4, 0);
-paths[p] = z0--z1;
+z1=(x0 - Xw/3, thick/2);
+paths[p] = z0..{dir -100}z1;
 pen_stroke(
    nib(middle_up_nib rotated 10)(0)
-   nib(thick_nib)(1)
+   nib(thicknib rotated terminalangle infinity of paths[p])(1)
 )(paths[p])(strokes[p]);
-strokes[p]:=point 0 of strokes[p]--point 1 of strokes[p]--point 2 of strokes[p]--point 3 of strokes[p]--cycle;
+% strokes[p]:=point 0 of strokes[p]--point 1 of strokes[p]--point 2 of strokes[p]--point 3 of strokes[p]--cycle;
 
 clearxy;
 p:=p+1;

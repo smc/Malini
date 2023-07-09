@@ -10,6 +10,7 @@ pen_stroke(
 
 % Horizontal
 clearxy;
+p:=p+1;
 z0 =(0, ypart(point infinity of paths[0])  - thick/4 );
 z1=(x0+0.8Xw, y0);
 paths[1] = z0--z1 ;
@@ -21,6 +22,7 @@ pen_stroke(
 
 % Vertical
 clearxy;
+p:=p+1;
 z0=(xpart(point 0 of paths[0])+thick*sind(45)/2, X);
 z1=(x0, 0);
 paths[2] = z0--z1 ;
@@ -28,4 +30,12 @@ paths[2] = z0--z1 ;
 pen_stroke(
     nib(middle_down_nib rotated -10)(0,1)
 )(paths[2])(strokes[2]);
+
+
+% Bottom bar serif
+p:=p+1;
+paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[2], 0);
+strokes[p] := serif_stroke_bottom(paths[p]);
+
+
 endglyph;

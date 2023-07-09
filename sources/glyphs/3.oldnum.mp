@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 z0=(0, 0.8y1);
 z1=((x0 + x2)/2, s-overshoot);
-z2=(x0 + Xw/2, (y1+y3)/2);
+z2=(x0 + Xw/2.25, (y1+y3)/2);
 z3=(x2 - Xw/3, 0.4y1);
 z4=(x2 + thick/2, (y3+y5)/2);
 z5=((x4+x6)/2, -descent*0.8+undershoot);

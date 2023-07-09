@@ -55,7 +55,7 @@ strokes[p-2] := subpath(0, 2) of serif_stroke -- subpath(1, 3) of strokes[p-2] -
 p:=p+1;
 clearxy;
 z0=(xpart(point 1 of paths[p-3]), 0);
-z1=(x0 + 0.15sw, y0  + 1.5serif_width);
+z1=(x0 + 0.075sw, y0  + 1.5serif_width);
 z2=(x1 - serif_height, y1);
 z3=point 4.25 of strokes[p-3];
 paths[p] :=z0--z1--z2{dir -115}..{dir 200}z3--cycle;
@@ -70,7 +70,7 @@ strokes[p] := serif_stroke_right_thin(paths[p]);
 p:=p+1;
 clearxy;
 z0=(xpart(point 1 of paths[p-7]), X);
-z1=(x0 + 0.1sw, y0  - 1.5serif_width);
+z1=(x0 + 0.05sw, y0  - 1.5serif_width);
 z2=(x1 - serif_height, y1);
 z3=point 3.75 of strokes[p-7];
 paths[p] :=z0--z1--z2{dir 105}..{dir 160}z3--cycle;

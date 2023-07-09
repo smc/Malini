@@ -332,6 +332,15 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-SemiCondensed-Bold.ufo" stylename="SemiCondensed Bold">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="700"/>
+        <dimension name="width" xvalue="87.5"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Expanded-Bold.ufo" stylename="Expanded Bold">
       <info />
       <kerning />

@@ -8,7 +8,7 @@ z3=(x1, 0);
 z4=(x0, y0);
 
 paths[p] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
-paths[p] := paths[p] shifted (0, 3/4m);
+paths[p] := paths[p] shifted (0, 1.1m);
 pen_stroke(
    nib(middle_up_nib)(0,4)
    nib(middle_down_nib)(2)

@@ -328,16 +328,35 @@ html {
 }
 
 body {
-  hyphens: auto;
-  -webkit-hyphenate-character: "";
-  hyphenate-character: "";
-  font-family: "Lato";
+
+  font-family: "Lato", sans-serif;
   font-size: 100%;
   background-color: var(--body-background-color);
   color: var(--text-color);
   line-height: 1.2;
   margin: auto;
   width: var(--page-width);
+}
+
+:lang(en) {
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  /* Limiting the number of consecutive hyphenated lines */
+  hyphenate-limit-lines: 2;
+  /*Avoiding hyphenated words across the last line of a paragraph*/
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%
+}
+
+:lang(ml) {
+  hyphens: auto;
+  -webkit-hyphenate-character: "";
+  hyphenate-character: "";
+  -webkit-hyphenate-character: "";
+  hyphenate-limit-chars: 6 3 2;
+  /*Avoiding hyphenated words across the last line of a paragraph*/
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
 }
 
 main {
@@ -356,7 +375,7 @@ main {
   margin: 16px 0;
 
   display: grid;
-  grid-template-rows: 90% 10%;
+  grid-template-rows: auto 8%;
   grid-template-columns: 1fr;
   align-content: space-between;
 }
@@ -371,7 +390,7 @@ main {
   grid-template-columns: repeat(5, 1fr);
   gap: 1em;
   overflow: hidden;
-  max-height: 600px;
+  max-height: 624px;
   max-width: 90%;
   align-items: start;
 }
@@ -474,12 +493,12 @@ main {
 
 .text-11 {
   font-size: 11pt;
-  line-height: 1.4;
+  line-height: 1.36;
 }
 
 .text-12 {
   font-size: 12pt;
-  line-height: 1.4;
+  line-height: 1.36;
 }
 
 .text-14 {
@@ -559,11 +578,16 @@ main {
 p {
   margin: 0;
   text-align: start;
-  text-justify: inter-word;
+}
+
+.text-indent {
+  text-indent: 2ch;
 }
 
 .text-justify {
   text-align: justify;
+  text-justify: inter-word;
+
 }
 
 p.nowrap + p {

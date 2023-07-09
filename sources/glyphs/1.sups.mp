@@ -7,7 +7,7 @@ paths[0] = z0--z1;
 
 
 pen_stroke(
-    nib(middle_down_nib )(0,1)
+     nib(thick_vertical_nib)(0,1)
 )(paths[0])(strokes[0]);
 
 clearxy;

@@ -41,7 +41,7 @@ strokes[p] := serif_stroke_bottom(paths[p]);
 p:=p+1;
 clearxy;
 z0=(xpart(point 1 of paths[1]), X);
-z1=(x0 + 0.1sw, y0  - 1.5serif_width);
+z1=(x0 + 0.05sw, y0  - 1.5serif_width);
 z2=(x1 - serif_height, y1);
 z3=point 3.75 of strokes[1];
 paths[p] :=z0--z1--z2{dir 105}..{dir 160}z3--cycle;
