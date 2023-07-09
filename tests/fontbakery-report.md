@@ -1,8 +1,8 @@
 ## Fontbakery report
 
-Fontbakery version: 0.8.11
+Fontbakery version: 0.8.13
 
-<details><summary><b>[16] Family checks</b></summary><div><details><summary>ℹ <b>INFO:</b> Check axis ordering on the STAT table.  (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/STAT/axis_order">com.google.fonts/check/STAT/axis_order</a>)</summary><div>
+<details><summary><b>[17] Family checks</b></summary><div><details><summary>ℹ <b>INFO:</b> Check axis ordering on the STAT table.  (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/STAT/axis_order">com.google.fonts/check/STAT/axis_order</a>)</summary><div>
 
 >
 >This is (for now) a merely informative check to detect what's the axis ordering declared on the STAT table of fonts in the Google Fonts collection.
@@ -97,6 +97,18 @@ Fontbakery version: 0.8.11
 >'The Font Family name [...] should be shared among at most four fonts that differ only in weight or style [...]'
 >
 * 🍞 **PASS** There were no more than 4 fonts per family name.
+</div></details><details><summary>🍞 <b>PASS:</b> Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present,  otherwise uses Font Family name (nameID 1) (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/name.html#com.adobe.fonts/check/family/consistent_family_name">com.adobe.fonts/check/family/consistent_family_name</a>)</summary><div>
+
+>
+>Per the OpenType spec: * "...many existing applications that use this pair of names assume that a Font Family name is shared by at most four fonts that form a font style-linking group" * "For extended typographic families that includes fonts other than the four basic styles(regular, italic, bold, bold italic), it is strongly recommended that name IDs 16 and 17 be used in fonts to create an extended, typographic grouping." * "If name ID 16 is absent, then name ID 1 is considered to be the typographic family name."
+>
+>https://learn.microsoft.com/en-us/typography/opentype/spec/name
+>
+>Fonts within a font family all must have consistent names in the Typographic Family name (nameID 16) or Font Family name (nameID 1), depending on which it uses.
+>
+>Inconsistent font/typographic family names across fonts in a family can result in unexpected behaviors, such as broken style linking.
+>
+* 🍞 **PASS** Font family names are consistent across the family.
 </div></details><details><summary>🍞 <b>PASS:</b> Ensure VFs have 'ital' STAT axis. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/stat.html#com.google.fonts/check/italic_axis_in_stat">com.google.fonts/check/italic_axis_in_stat</a>)</summary><div>
 
 >
@@ -109,7 +121,7 @@ Fontbakery version: 0.8.11
 >In order to showcase what a font family looks like, the project's README.md file should ideally include a sample image and highlight it in the upper portion of the document, no more than 10 lines away from the top of the file.
 >
 * 💤 **SKIP** Unfulfilled Conditions: readme_contents, readme_directory
-</div></details><br></div></details><details><summary><b>[222] Malini-VF.ttf</b></summary><div><details><summary>⚠ <b>WARN:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+</div></details><br></div></details><details><summary><b>[225] Malini-VF.ttf</b></summary><div><details><summary>⚠ <b>WARN:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 >
 >A font's filename must be composed as "<familyname>-<stylename>.ttf":
@@ -125,22 +137,6 @@ Fontbakery version: 0.8.11
 >- Familyname-Italic[wght].ttf
 >
 * ⚠ **WARN** Expected "Malini[opsz,slnt,wdth,wght].ttf. Got Malini-VF.ttf. [code: bad-filename]
-</div></details><details><summary>⚠ <b>WARN:</b> Familyname must be unique according to namecheck.fontdata.com (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/fontdata_namecheck">com.google.fonts/check/fontdata_namecheck</a>)</summary><div>
-
->
->We need to check names are not already used, and today the best place to check that is http://namecheck.fontdata.com
->
-* ⚠ **WARN** Failed to access: http://namecheck.fontdata.com.
-		This check relies on the external service http://namecheck.fontdata.com via the internet. While the service cannot be reached or does not respond this check is broken.
-
-		You can exclude this check with the command line option:
-		-x com.google.fonts/check/fontdata_namecheck
-
-		Or you can wait until the service is available again.
-		If the problem persists please report this issue at: https://github.com/googlefonts/fontbakery/issues
-
-		Original error message:
-		<class 'requests.exceptions.ConnectionError'> [code: namecheck-service]
 </div></details><details><summary>⚠ <b>WARN:</b> Check variable font instances (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/fvar_instances">com.google.fonts/check/fvar_instances</a>)</summary><div>
 
 >
@@ -152,31 +148,34 @@ Fontbakery version: 0.8.11
 
 | Name | current | expected |
 | :--- | :--- | :--- |
+| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
 | Condensed Thin | wght=100.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Light Oblique | wght=300.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| Oblique Thin | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
-| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
+| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
+| Oblique | wght=400.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
+| Black Oblique | wght=900.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Condensed Bold | wght=700.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
 | Medium Oblique | wght=500.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
-| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
-| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
-| Black Oblique | wght=900.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=20.0 | N/A |
-| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
+| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
+| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Oblique Thin | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Bold Oblique | wght=700.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| ExtraLight Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=20.0 | N/A |
+| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
 | Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
 | ExtraLight Oblique | wght=200.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Oblique | wght=400.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Bold Oblique | wght=700.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| ThinDisplay | wght=100.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
-| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Light Oblique | wght=300.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Thin Italic | N/A | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 |
 | Thin | wght=100.0, wdth=100.0, slnt=0.0, opsz=20.0 | wght=100.0, wdth=100.0, slnt=0.0, opsz=20.0 |
 | ExtraLight Italic | N/A | wght=200.0, wdth=100.0, slnt=-15.0, opsz=20.0 |
@@ -264,7 +263,7 @@ Fontbakery version: 0.8.11
 >On the STAT table, the "Italic" keyword must not be used on AxisValues for variation axes other than 'ital'.
 >
 * ⚠ **WARN** The following AxisValue entries on the STAT table should not contain "Italic":
- ['nameID 299: Italic'] [code: bad-italic]
+ ['nameID 302: Italic'] [code: bad-italic]
 </div></details><details><summary>⚠ <b>WARN:</b> Glyph names are all valid? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/valid_glyphnames">com.google.fonts/check/valid_glyphnames</a>)</summary><div>
 
 >
@@ -300,9 +299,11 @@ ml_ga_virama_da_virama_dha_virama_ra, ml_fraction_one_one_hundred_and_sixtieth, 
 >
 >The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark a hyphenation possibility within a word in the absence of or overriding dictionary hyphenation.
 >
->It is supposed to be zero-width and invisible.
+>It is sometimes designed empty with no width (such as a control character), sometimes the same as the traditional hyphen, sometimes double encoded with the hyphen.
 >
->It is also mostly an obsolete mechanism now, and the character is typicaly only included in fonts for legacy codepage coverage.
+>That being said, it is recommended to not include it in the font at all, because discretionary hyphenation should be handled at the level of the shaping engine, not the font. Also, even if present, the software would not display that character.
+>
+>More discussion at: https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar
 >
 * ⚠ **WARN** This font has a 'Soft Hyphen' character. [code: softhyphen]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
@@ -312,19 +313,19 @@ ml_ga_virama_da_virama_dha_virama_ra, ml_fraction_one_one_hundred_and_sixtieth, 
 >
 >This probably comes from the will to avoid additional tabular math signs knowing that their design can easily share the same width.
 >
-* ⚠ **WARN** The most common width is 517 among a set of 5 math glyphs.
+* ⚠ **WARN** The most common width is 544 among a set of 5 math glyphs.
 The following math glyphs have a different width, though:
 
-Width = 406:
+Width = 425:
 less
 
-Width = 392:
+Width = 412:
 greater
 
-Width = 565:
+Width = 592:
 multiply
 
-Width = 641:
+Width = 675:
 divide
  [code: width-outliers]
 </div></details><details><summary>⚠ <b>WARN:</b> Check glyphs in mark glyph class are non-spacing. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_spacing_marks">com.google.fonts/check/gdef_spacing_marks</a>)</summary><div>
@@ -342,7 +343,7 @@ divide
 >Mark characters should be in the GDEF mark glyph class.
 >
 * ⚠ **WARN** The following mark characters could be in the GDEF mark glyph class:
-	 ml_sign_u (U+0D41), ml_sign_uu (U+0D42), ml_sign_vocalic_l (U+0D62), ml_sign_vocalic_ll (U+0D63), ml_sign_vocalic_r (U+0D43) and ml_sign_vocalic_rr (U+0D44) [code: mark-chars]
+	 ml_sign_u (U+0D41), ml_sign_uu (U+0D42), ml_sign_vocalic_l (U+0D62), ml_sign_vocalic_ll (U+0D63), ml_sign_vocalic_r (U+0D43), ml_sign_vocalic_rr (U+0D44), uni951 (U+0951) and uni952 (U+0952) [code: mark-chars]
 </div></details><details><summary>⚠ <b>WARN:</b> Check GDEF mark glyph class doesn't have characters that are not marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/gdef.html#com.google.fonts/check/gdef_non_mark_chars">com.google.fonts/check/gdef_non_mark_chars</a>)</summary><div>
 
 >
@@ -468,6 +469,14 @@ divide
 >Subsets for which none of the codepoints are supported will cause the check to FAIL.
 >
 * 💤 **SKIP** Unfulfilled Conditions: family_metadata
+</div></details><details><summary>💤 <b>SKIP:</b> Check for codepoints not covered by METADATA subsets. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/metadata/unreachable_subsetting">com.google.fonts/check/metadata/unreachable_subsetting</a>)</summary><div>
+
+>
+>This check ensures that all encoded glyphs in the font are covered by a subset declared in the METADATA.pb. Google Fonts splits the font into a set of subset fonts based on the contents of the `subsets` field and the subset definitions in the `glyphsets` repository.
+>
+>Any encoded glyphs which are not by any of these subset definitions will not be served in the subsetted fonts, and so will be unreachable to the end user.
+>
+* 💤 **SKIP** Unfulfilled Conditions: family_metadata
 </div></details><details><summary>💤 <b>SKIP:</b> Check font has a license. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/family/has_license">com.google.fonts/check/family/has_license</a>)</summary><div>
 
 
@@ -532,7 +541,9 @@ divide
 * 💤 **SKIP** Unfulfilled Conditions: font_metadata
 </div></details><details><summary>💤 <b>SKIP:</b> METADATA.pb font.name value should be same as the family name declared on the name table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/metadata/nameid/font_name">com.google.fonts/check/metadata/nameid/font_name</a>)</summary><div>
 
-
+>
+>This check ensures consistency between the font name declared on the name table and the contents of the METADATA.pb file.
+>
 * 💤 **SKIP** Unfulfilled Conditions: font_metadata
 </div></details><details><summary>💤 <b>SKIP:</b> METADATA.pb font.full_name and font.post_script_name fields have equivalent values ? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/metadata/match_fullname_postscript">com.google.fonts/check/metadata/match_fullname_postscript</a>)</summary><div>
 
@@ -826,6 +837,18 @@ divide
 >Additionally, when a dotted circle glyph is present, it should be able to display all marks correctly, meaning that it should contain anchors for all attaching marks.
 >
 * 💤 **SKIP** Font has no nonspacing mark glyphs.
+</div></details><details><summary>💤 <b>SKIP:</b> Checking STAT table entries in static fonts. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/STAT_in_statics">com.google.fonts/check/STAT_in_statics</a>)</summary><div>
+
+>
+>Adobe feature syntax allows for the definition of a STAT table. Fonts built with a hand-coded STAT table in feature syntax may be built either as static or variable, but will end up with the same STAT table.
+>
+>This is a problem, because a STAT table which works on variable fonts will not be appropriate for static instances. The examples in the OpenType spec of non-variable fonts with a STAT table show that the table entries must be restricted to those entries which refer to the static font's position in the designspace. i.e. a Regular weight static should only have the following entry for the weight axis:
+>
+><AxisIndex value="0"/> <Flags value="2"/>  <!-- ElidableAxisValueName --> <ValueNameID value="265"/>  <!-- Regular --> <Value value="400.0"/>
+>
+>However, if the STAT table intended for a variable font is compiled into a static, it will have many entries for this axis. In this case, Windows will read the first entry only, causing all instances to report themselves as "Thin Condensed".
+>
+* 💤 **SKIP** Unfulfilled Conditions: not is_variable_font
 </div></details><details><summary>💤 <b>SKIP:</b> Is the CFF subr/gsubr call depth > 10? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/cff.html#com.adobe.fonts/check/cff_call_depth">com.adobe.fonts/check/cff_call_depth</a>)</summary><div>
 
 >
@@ -871,6 +894,12 @@ You'll also need to use the `--configuration` flag when invoking fontbakery.
 >The 'CFF ' table has a lot of information that is duplicated in other tables. This information should be consistent across tables, because there's no guarantee which table an app will get the data from.
 >
 * 💤 **SKIP** Unfulfilled Conditions: is_cff
+</div></details><details><summary>💤 <b>SKIP:</b> Check name table IDs 1, 2, 16, 17 to conform to Italic style. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/name.html#com.google.fonts/check/name/italic_names">com.google.fonts/check/name/italic_names</a>)</summary><div>
+
+>
+>This check ensures that several entries in the name table conform to the font's Upright or Italic style, namely IDs 1 & 2 as well as 16 & 17 if they're present.
+>
+* 💤 **SKIP** Font is not Italic.
 </div></details><details><summary>💤 <b>SKIP:</b> The variable font 'ital' (Italic) axis coordinate must be zero on the 'Regular' instance. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/fvar.html#com.google.fonts/check/varfont/regular_ital_coord">com.google.fonts/check/varfont/regular_ital_coord</a>)</summary><div>
 
 >
@@ -954,8 +983,8 @@ You'll also need to use the `--configuration` flag when invoking fontbakery.
 
  |               | fonts/Malini/ttf-variable/Malini-VF.ttf          |
  |:------------- | ---------------:|
- | Dehinted Size | 761.5kb |
- | Hinted Size   | 761.5kb   |
+ | Dehinted Size | 800.9kb |
+ | Hinted Size   | 800.9kb   |
  | Increase      | 24 bytes      |
  | Change        | 0.0 %  |
  [code: size-impact]
@@ -1077,7 +1106,7 @@ The version string must ideally include a git commit hash and either a "dev" or 
 
 
 * 🍞 **PASS** No need to substitute copyright, registered and trademark symbols in name table entries of this font.
-</div></details><details><summary>🍞 <b>PASS:</b> Checking OS/2 usWeightClass. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/usweightclass">com.google.fonts/check/usweightclass</a>)</summary><div>
+</div></details><details><summary>🍞 <b>PASS:</b> Check the OS/2 usWeightClass is appropriate for the font's best SubFamily name. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/usweightclass">com.google.fonts/check/usweightclass</a>)</summary><div>
 
 >
 >Google Fonts expects variable fonts, static ttfs and static otfs to have differing OS/2 usWeightClass values.
@@ -1224,6 +1253,12 @@ The version string must ideally include a git commit hash and either a "dev" or 
 >This is an arbitrary max length for the copyright notice field of the name table. We simply don't want such notices to be too long. Typically such notices are actually much shorter than this with a length of roughly 70 or 80 characters.
 >
 * 🍞 **PASS** All copyright notice name entries on the 'name' table are shorter than 500 characters.
+</div></details><details><summary>🍞 <b>PASS:</b> Familyname must be unique according to namecheck.fontdata.com (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/fontdata_namecheck">com.google.fonts/check/fontdata_namecheck</a>)</summary><div>
+
+>
+>We need to check names are not already used, and today the best place to check that is http://namecheck.fontdata.com
+>
+* 🍞 **PASS** Font familyname seems to be unique.
 </div></details><details><summary>🍞 <b>PASS:</b> Check glyphs do not have components which are themselves components. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyf_nested_components">com.google.fonts/check/glyf_nested_components</a>)</summary><div>
 
 >
@@ -1426,12 +1461,12 @@ The version string must ideally include a git commit hash and either a "dev" or 
 >A base expectation is that a font family's regular/default (400 roman) style can render its 'menu name' (nameID 1) in itself.
 >
 * 🍞 **PASS** Font can successfully render its own name (Malini)
-</div></details><details><summary>🍞 <b>PASS:</b> Check font has the expected color font tables (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/colorfont_tables">com.google.fonts/check/colorfont_tables</a>)</summary><div>
+</div></details><details><summary>🍞 <b>PASS:</b> Check font has the expected color font tables. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/colorfont_tables">com.google.fonts/check/colorfont_tables</a>)</summary><div>
 
 >
->Colr v0 fonts are widely supported in most browsers so they do not require an SVG color table. However, Colr v1 is only well supported in Chrome so we need to add an SVG table to these fonts.
+>COLR v0 fonts are widely supported in most browsers so they do not require an SVG color table. However, some environments (e.g. Safari, Adobe apps) do not currently support COLR v1 so we need to add an SVG table to these fonts, except in the case of variable fonts, since SVG does not support OpenType Variations.
 >
->To add an SVG table, run the maximum_color tool in Nano Emoji, https://github.com/googlefonts/nanoemoji
+>To automatically generate compatible SVG/COLR tables, run the maximum_color tool in nanoemoji: https://github.com/googlefonts/nanoemoji
 >
 * 🍞 **PASS** Looks Good!
 </div></details><details><summary>🍞 <b>PASS:</b> Color layers should have a minimum brightness (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/color_cpal_brightness">com.google.fonts/check/color_cpal_brightness</a>)</summary><div>
@@ -1601,6 +1636,16 @@ The version string must ideally include a git commit hash and either a "dev" or 
 >Here we check for the presence of potential interpolation errors using the fontTools.varLib.interpolatable module.
 >
 * 🍞 **PASS** No interpolation issues found
+</div></details><details><summary>🍞 <b>PASS:</b> Checking Vertical Metric Linegaps. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/linegaps">com.google.fonts/check/linegaps</a>)</summary><div>
+
+>
+>The LineGap value is a space added to the line height created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment.
+>
+>This leading value will be added above the text line in most desktop apps. It will be shared above and under in web browsers, and ignored in Windows if Use_Typo_Metrics is disabled.
+>
+>For better linespacing consistency across platforms, (typo/hhea)LineGap values must be 0.
+>
+* 🍞 **PASS** OS/2 sTypoLineGap and hhea lineGap are both 0.
 </div></details><details><summary>🍞 <b>PASS:</b> Checking font version fields (head and name table). (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/head.html#com.google.fonts/check/font_version">com.google.fonts/check/font_version</a>)</summary><div>
 
 
@@ -1732,10 +1777,6 @@ The version string must ideally include a git commit hash and either a "dev" or 
 
 
 * 🍞 **PASS** 'loca' table matches numGlyphs in 'maxp' table.
-</div></details><details><summary>🍞 <b>PASS:</b> Checking Vertical Metric Linegaps. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/hhea.html#com.google.fonts/check/linegaps">com.google.fonts/check/linegaps</a>)</summary><div>
-
-
-* 🍞 **PASS** OS/2 sTypoLineGap and hhea lineGap are both 0.
 </div></details><details><summary>🍞 <b>PASS:</b> MaxAdvanceWidth is consistent with values in the Hmtx and Hhea tables? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/hhea.html#com.google.fonts/check/maxadvancewidth">com.google.fonts/check/maxadvancewidth</a>)</summary><div>
 
 
@@ -1962,5 +2003,5 @@ The version string must ideally include a git commit hash and either a "dev" or 
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 0 | 17 | 91 | 8 | 122 | 0 |
-| 0% | 0% | 7% | 38% | 3% | 51% | 0% |
+| 0 | 0 | 16 | 94 | 8 | 124 | 0 |
+| 0% | 0% | 7% | 39% | 3% | 51% | 0% |

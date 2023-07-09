@@ -3,7 +3,7 @@ beginglyph;
 % This glyph does not slant. Reset slant value
 slant := 0;
 radius:=0.2sw;
-z0=(0, X);
+z0=(0, 0.95X);
 z1=(x0 + radius, y0 + radius);
 z2=(x1 + radius, y1 - radius);
 z3=(x2 - radius, y2 - radius);

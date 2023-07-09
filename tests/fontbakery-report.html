@@ -74,22 +74,22 @@
             <tr>
                 <td>0</td>
                 <td>0</td>
-                <td>17</td>
-                <td>91</td>
+                <td>16</td>
+                <td>94</td>
                 <td>8</td>
-                <td>122</td>
+                <td>124</td>
             </tr>
             <tr>
                 <td>0%</td>
                 <td>0%</td>
                 <td>7%</td>
-                <td>38%</td>
+                <td>39%</td>
                 <td>3%</td>
                 <td>51%</td>
             </tr>
             </table>
             
-<h2>&lt;Section: Google Fonts&gt; ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</h2>
+<h2>&lt;Section: Google Fonts&gt; ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</h2>
 <h3>Ensure that all variable font files have the same set of axes and axis ranges.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/consistent_axes&gt;</div>
 <p>In order to facilitate the construction of intuitive and friendly user interfaces, all variable font files in a given family should have the same set of variation axes. Also, each axis must have a consistent setting of min/max value ranges accross all the files.</p>
@@ -288,12 +288,19 @@
 
 <details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: family_metadata</p>
 </span></li></ul></div></details>
+<h3>Check for codepoints not covered by METADATA subsets.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/unreachable_subsetting&gt;</div>
+<p>This check ensures that all encoded glyphs in the font are covered by a subset declared in the METADATA.pb. Google Fonts splits the font into a set of subset fonts based on the contents of the <code>subsets</code> field and the subset definitions in the <code>glyphsets</code> repository.</p>
+<p>Any encoded glyphs which are not by any of these subset definitions will not be served in the subsetted fonts, and so will be unreachable to the end user.</p>
+
+<details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: family_metadata</p>
+</span></li></ul></div></details>
 <h3>Substitute copyright, registered and trademark symbols in name table entries.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/unwanted_chars&gt;</div>
 
 <details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>No need to substitute copyright, registered and trademark symbols in name table entries of this font.</p>
 </span></li></ul></div></details>
-<h3>Checking OS/2 usWeightClass.</h3>
+<h3>Check the OS/2 usWeightClass is appropriate for the font's best SubFamily name.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/usweightclass&gt;</div>
 <p>Google Fonts expects variable fonts, static ttfs and static otfs to have differing OS/2 usWeightClass values.</p>
 <ul>
@@ -386,8 +393,8 @@
 <details><summary>ℹ️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>ℹ️ INFO</span><span class='details_text'><p>Hinting filesize impact:</p>
 <p>|               | fonts/Malini/ttf-variable/Malini-VF.ttf          |
 |:------------- | ---------------:|
-| Dehinted Size | 761.5kb |
-| Hinted Size   | 761.5kb   |
+| Dehinted Size | 800.9kb |
+| Hinted Size   | 800.9kb   |
 | Increase      | 24 bytes      |
 | Change        | 0.0 %  |
 [code: size-impact]</p>
@@ -518,6 +525,7 @@ flag = 0x0F
 </span></li></ul></div></details>
 <h3>METADATA.pb font.name value should be same as the family name declared on the name table.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/nameid/font_name&gt;</div>
+<p>This check ensures consistency between the font name declared on the name table and the contents of the METADATA.pb file.</p>
 
 <details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: font_metadata</p>
 </span></li></ul></div></details>
@@ -694,17 +702,7 @@ flag = 0x0F
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fontdata_namecheck&gt;</div>
 <p>We need to check names are not already used, and today the best place to check that is http://namecheck.fontdata.com</p>
 
-<details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>Failed to access: http://namecheck.fontdata.com.
-This check relies on the external service http://namecheck.fontdata.com via the internet. While the service cannot be reached or does not respond this check is broken.</p>
-<pre><code>	You can exclude this check with the command line option:
-	-x com.google.fonts/check/fontdata_namecheck
-
-	Or you can wait until the service is available again.
-	If the problem persists please report this issue at: https://github.com/googlefonts/fontbakery/issues
-
-	Original error message:
-	&lt;class 'requests.exceptions.ConnectionError'&gt; [code: namecheck-service]
-</code></pre>
+<details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>Font familyname seems to be unique.</p>
 </span></li></ul></div></details>
 <h3>Check for font-v versioning.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fontv&gt;</div>
@@ -795,31 +793,34 @@ The version string must ideally include a git commit hash and either a &quot;dev
 </ul>
 <p>| Name | current | expected |
 | :--- | :--- | :--- |
+| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
 | Condensed Thin | wght=100.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Light Oblique | wght=300.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| Oblique Thin | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
-| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
+| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
+| Oblique | wght=400.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
+| Black Oblique | wght=900.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Condensed Bold | wght=700.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
 | Medium Oblique | wght=500.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=20.0 | N/A |
-| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
-| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
-| Black Oblique | wght=900.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=20.0 | N/A |
-| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
+| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
+| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Oblique Thin | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Bold Oblique | wght=700.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
+| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| ExtraLight Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
+| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=20.0 | N/A |
+| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
 | Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
 | ExtraLight Oblique | wght=200.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Oblique | wght=400.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Bold Oblique | wght=700.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-15.0, opsz=20.0 | N/A |
-| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=20.0 | N/A |
-| ThinDisplay | wght=100.0, wdth=100.0, slnt=0.0, opsz=96.0 | N/A |
-| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=20.0 | N/A |
+| Light Oblique | wght=300.0, wdth=100.0, slnt=-15.0, opsz=20.0 | N/A |
 | Thin Italic | N/A | wght=100.0, wdth=100.0, slnt=-15.0, opsz=20.0 |
 | Thin | wght=100.0, wdth=100.0, slnt=0.0, opsz=20.0 | wght=100.0, wdth=100.0, slnt=0.0, opsz=20.0 |
 | ExtraLight Italic | N/A | wght=200.0, wdth=100.0, slnt=-15.0, opsz=20.0 |
@@ -1139,10 +1140,10 @@ The version string must ideally include a git commit hash and either a &quot;dev
 
 <details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: family_metadata</p>
 </span></li></ul></div></details>
-<h3>Check font has the expected color font tables</h3>
+<h3>Check font has the expected color font tables.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/colorfont_tables&gt;</div>
-<p>Colr v0 fonts are widely supported in most browsers so they do not require an SVG color table. However, Colr v1 is only well supported in Chrome so we need to add an SVG table to these fonts.</p>
-<p>To add an SVG table, run the maximum_color tool in Nano Emoji, https://github.com/googlefonts/nanoemoji</p>
+<p>COLR v0 fonts are widely supported in most browsers so they do not require an SVG color table. However, some environments (e.g. Safari, Adobe apps) do not currently support COLR v1 so we need to add an SVG table to these fonts, except in the case of variable fonts, since SVG does not support OpenType Variations.</p>
+<p>To automatically generate compatible SVG/COLR tables, run the maximum_color tool in nanoemoji: https://github.com/googlefonts/nanoemoji</p>
 
 <details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>Looks Good!</p>
 </span></li></ul></div></details>
@@ -1168,7 +1169,7 @@ The version string must ideally include a git commit hash and either a &quot;dev
 
 <details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: is_noto</p>
 </span></li></ul></div></details>
-<h2>&lt;Section: Universal&gt; ⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩ℹ️ℹ️</h2>
+<h2>&lt;Section: Universal&gt; ⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩ℹ️ℹ️</h2>
 <h3>Checking all files are in the same directory.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/single_directory&gt;</div>
 <p>If the set of font files passed in the command line is not all in the same directory, then we warn the user since the tool will interpret the set of files as belonging to a single family (and it is unlikely that the user would store the files from a single family spreaded in several separate directories).</p>
@@ -1293,7 +1294,7 @@ The version string must ideally include a git commit hash and either a &quot;dev
 <p>On the STAT table, the &quot;Italic&quot; keyword must not be used on AxisValues for variation axes other than 'ital'.</p>
 
 <details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following AxisValue entries on the STAT table should not contain &quot;Italic&quot;:
-['nameID 299: Italic'] [code: bad-italic]</p>
+['nameID 302: Italic'] [code: bad-italic]</p>
 </span></li></ul></div></details>
 <h3>Glyph names are all valid?</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/valid_glyphnames&gt;</div>
@@ -1360,8 +1361,9 @@ ml_ga_virama_da_virama_dha_virama_ra, ml_fraction_one_one_hundred_and_sixtieth, 
 <h3>Does the font contain a soft hyphen?</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/soft_hyphen&gt;</div>
 <p>The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark a hyphenation possibility within a word in the absence of or overriding dictionary hyphenation.</p>
-<p>It is supposed to be zero-width and invisible.</p>
-<p>It is also mostly an obsolete mechanism now, and the character is typicaly only included in fonts for legacy codepage coverage.</p>
+<p>It is sometimes designed empty with no width (such as a control character), sometimes the same as the traditional hyphen, sometimes double encoded with the hyphen.</p>
+<p>That being said, it is recommended to not include it in the font at all, because discretionary hyphenation should be handled at the level of the shaping engine, not the font. Also, even if present, the software would not display that character.</p>
+<p>More discussion at: https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar</p>
 
 <details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>This font has a 'Soft Hyphen' character. [code: softhyphen]</p>
 </span></li></ul></div></details>
@@ -1433,17 +1435,34 @@ ml_ga_virama_da_virama_dha_virama_ra, ml_fraction_one_one_hundred_and_sixtieth, 
 <p>It is a common practice to have math signs sharing the same width (preferably the same width as tabular figures accross the entire font family).</p>
 <p>This probably comes from the will to avoid additional tabular math signs knowing that their design can easily share the same width.</p>
 
-<details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The most common width is 517 among a set of 5 math glyphs.
+<details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The most common width is 544 among a set of 5 math glyphs.
 The following math glyphs have a different width, though:</p>
-<p>Width = 406:
+<p>Width = 425:
 less</p>
-<p>Width = 392:
+<p>Width = 412:
 greater</p>
-<p>Width = 565:
+<p>Width = 592:
 multiply</p>
-<p>Width = 641:
+<p>Width = 675:
 divide
 [code: width-outliers]</p>
+</span></li></ul></div></details>
+<h3>Checking Vertical Metric Linegaps.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/linegaps&gt;</div>
+<p>The LineGap value is a space added to the line height created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment.</p>
+<p>This leading value will be added above the text line in most desktop apps. It will be shared above and under in web browsers, and ignored in Windows if Use_Typo_Metrics is disabled.</p>
+<p>For better linespacing consistency across platforms, (typo/hhea)LineGap values must be 0.</p>
+
+<details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>OS/2 sTypoLineGap and hhea lineGap are both 0.</p>
+</span></li></ul></div></details>
+<h3>Checking STAT table entries in static fonts.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/STAT_in_statics&gt;</div>
+<p>Adobe feature syntax allows for the definition of a STAT table. Fonts built with a hand-coded STAT table in feature syntax may be built either as static or variable, but will end up with the same STAT table.</p>
+<p>This is a problem, because a STAT table which works on variable fonts will not be appropriate for static instances. The examples in the OpenType spec of non-variable fonts with a STAT table show that the table entries must be restricted to those entries which refer to the static font's position in the designspace. i.e. a Regular weight static should only have the following entry for the weight axis:</p>
+<p><AxisIndex value="0"/> <Flags value="2"/>  <!-- ElidableAxisValueName --> <ValueNameID value="265"/>  <!-- Regular --> <Value value="400.0"/></p>
+<p>However, if the STAT table intended for a variable font is compiled into a static, it will have many entries for this axis. In this case, Windows will read the first entry only, causing all instances to report themselves as &quot;Thin Condensed&quot;.</p>
+
+<details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Unfulfilled Conditions: not is_variable_font</p>
 </span></li></ul></div></details>
 <h2>&lt;Section: fontbakery.profiles.cff&gt; ⏩⏩⏩</h2>
 <h3>Is the CFF subr/gsubr call depth > 10?</h3>
@@ -1575,13 +1594,22 @@ You'll also need to use the <code>--configuration</code> flag when invoking font
 
 <details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>Value of post.italicAngle is 0.0 with style=&quot;Regular&quot;.</p>
 </span></li></ul></div></details>
-<h2>&lt;Section: fontbakery.profiles.name&gt; ⏩</h2>
+<h2>&lt;Section: fontbakery.profiles.name&gt; ⏩⏩</h2>
 <h3>Verify that each group of fonts with the same nameID 1 has maximum of 4 fonts.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/family/max_4_fonts_per_family_name&gt;</div>
 <p>Per the OpenType spec:</p>
 <p>'The Font Family name [...] should be shared among at most four fonts that differ only in weight or style [...]'</p>
 
 <details><summary>✅ <strong>Family check</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>There were no more than 4 fonts per family name.</p>
+</span></li></ul></div></details>
+<h3>Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present,  otherwise uses Font Family name (nameID 1)</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/family/consistent_family_name&gt;</div>
+<p>Per the OpenType spec: * &quot;...many existing applications that use this pair of names assume that a Font Family name is shared by at most four fonts that form a font style-linking group&quot; * &quot;For extended typographic families that includes fonts other than the four basic styles(regular, italic, bold, bold italic), it is strongly recommended that name IDs 16 and 17 be used in fonts to create an extended, typographic grouping.&quot; * &quot;If name ID 16 is absent, then name ID 1 is considered to be the typographic family name.&quot;</p>
+<p>https://learn.microsoft.com/en-us/typography/opentype/spec/name</p>
+<p>Fonts within a font family all must have consistent names in the Typographic Family name (nameID 16) or Font Family name (nameID 1), depending on which it uses.</p>
+<p>Inconsistent font/typographic family names across fonts in a family can result in unexpected behaviors, such as broken style linking.</p>
+
+<details><summary>✅ <strong>Family check</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>Font family names are consistent across the family.</p>
 </span></li></ul></div></details>
 <h3>Check name table for empty records.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/name/empty_records&gt;</div>
@@ -1654,6 +1682,12 @@ You'll also need to use the <code>--configuration</code> flag when invoking font
 
 <details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>Entries in the &quot;name&quot; table for ID 6 (PostScript name) are consistent.</p>
 </span></li></ul></div></details>
+<h3>Check name table IDs 1, 2, 16, 17 to conform to Italic style.</h3>
+<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/italic_names&gt;</div>
+<p>This check ensures that several entries in the name table conform to the font's Upright or Italic style, namely IDs 1 &amp; 2 as well as 16 &amp; 17 if they're present.</p>
+
+<details><summary>⏩ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⏩ SKIP</span><span class='details_text'><p>Font is not Italic.</p>
+</span></li></ul></div></details>
 <h2>&lt;Section: fontbakery.profiles.loca&gt; </h2>
 <h3>Does the number of glyphs in the loca table match the maxp table?</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/loca/maxp_num_glyphs&gt;</div>
@@ -1661,11 +1695,6 @@ You'll also need to use the <code>--configuration</code> flag when invoking font
 <details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>'loca' table matches numGlyphs in 'maxp' table.</p>
 </span></li></ul></div></details>
 <h2>&lt;Section: fontbakery.profiles.hhea&gt; </h2>
-<h3>Checking Vertical Metric Linegaps.</h3>
-<div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/linegaps&gt;</div>
-
-<details><summary>✅ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>✅ PASS</span><span class='details_text'><p>OS/2 sTypoLineGap and hhea lineGap are both 0.</p>
-</span></li></ul></div></details>
 <h3>MaxAdvanceWidth is consistent with values in the Hmtx and Hhea tables?</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/maxadvancewidth&gt;</div>
 
@@ -1704,7 +1733,7 @@ acutecmb (U+0301), brevecmb (U+0306), caroncmb (U+030C), cedillacmb (U+0327), ci
 <p>Mark characters should be in the GDEF mark glyph class.</p>
 
 <details><summary>⚠️ <strong>fonts/Malini/ttf-variable/Malini-VF.ttf</strong></summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The following mark characters could be in the GDEF mark glyph class:
-ml_sign_u (U+0D41), ml_sign_uu (U+0D42), ml_sign_vocalic_l (U+0D62), ml_sign_vocalic_ll (U+0D63), ml_sign_vocalic_r (U+0D43) and ml_sign_vocalic_rr (U+0D44) [code: mark-chars]</p>
+ml_sign_u (U+0D41), ml_sign_uu (U+0D42), ml_sign_vocalic_l (U+0D62), ml_sign_vocalic_ll (U+0D63), ml_sign_vocalic_r (U+0D43), ml_sign_vocalic_rr (U+0D44), uni951 (U+0951) and uni952 (U+0952) [code: mark-chars]</p>
 </span></li></ul></div></details>
 <h3>Check GDEF mark glyph class doesn't have characters that are not marks.</h3>
 <div>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gdef_non_mark_chars&gt;</div>

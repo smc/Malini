@@ -43,5 +43,5 @@ strokes[p] := serif_stroke_bottom(paths[p]);
 strokes[p]:= point 0.875 of strokes[1]{dir -65}..{left}(subpath (1,4) of strokes[p]){left}..{dir 115}point 2.1 of strokes[1]--cycle;
 
 lbearing:=serif_width-lbearing;
-anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
+anchor( "top", (xpart(point 1 of paths[0]), 1.1X));
 endglyph;

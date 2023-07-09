@@ -985,9 +985,9 @@ class MalayalamFont(Font):
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
         # the top extremum of the font rendering box
-        self.info.openTypeOS2WinAscent = 1128 # As calculated by Fontbakery
+        self.info.openTypeOS2WinAscent = 1102  # As calculated by Fontbakery
         # the bottom extremum of the font rendering box (positive value)
-        self.info.openTypeOS2WinDescent = 693 # As calculated by Fontbakery
+        self.info.openTypeOS2WinDescent = 679  # As calculated by Fontbakery
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
@@ -1002,9 +1002,9 @@ class MalayalamFont(Font):
         # - Mac OS X uses the hhea values.
         # - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.
         # The height of the ascenders in units
-        self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
+        self.info.openTypeHheaAscender = self.info.openTypeOS2TypoAscender
         # The depth of the descenders in units (negative value)
-        self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
+        self.info.openTypeHheaDescender = self.info.openTypeOS2TypoDescender
         self.info.openTypeHheaLineGap = 0
 
         # postscript metrics

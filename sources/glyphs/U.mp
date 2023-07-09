@@ -22,5 +22,5 @@ p:=p+1;
 paths[p] := serif_top_thin shifted (xpart point infinity of paths[0], X);
 strokes[p] := serif_stroke_top_thin(paths[p]);
 
-anchor( "top", (xpart(point 2 of paths[0]), 1.2X));
+anchor( "top", (xpart(point 2 of paths[0]), 1.1X));
 endglyph;
