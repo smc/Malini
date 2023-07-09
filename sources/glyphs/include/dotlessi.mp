@@ -1,12 +1,9 @@
-input glyph;
-beginglyph;
-
-input ./include/dotlessi;
-
-p:=p+1;
-paths[p] = fullcircle scaled (thick*1.5) shifted(x1, 1.33s);
-
-strokes[p] = paths[p];
+z0=(0, s);
+z1=(x0  ,serif_height/4);
+paths[p] := z0--z1;
+pen_stroke(
+    nib(thick_vertical_nib)(0,1)
+)(paths[p])(strokes[p]);
 
 % Serifs
 p:=p+1;
@@ -17,5 +14,3 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
 strokes[p] := serif_stroke_bottom(paths[p]);
 
-lbearing:=serif_width/2;
-endglyph;
