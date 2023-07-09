@@ -416,5 +416,75 @@
         <dimension name="optical" xvalue="96"/>
       </location>
     </instance>
+     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="ExtraLight Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="200"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Thin-Display.ufo" stylename="Light Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="300"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Medium-Display.ufo" stylename="Medium Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-SemiBold-Display.ufo" stylename="SemiBold Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Bold-Display.ufo" stylename="Bold Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="700"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+    <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-ExtraBold-Display.ufo" stylename="ExtraBold Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="800"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
+     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Black-Display.ufo" stylename="Black Display">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="800"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="optical" xvalue="96"/>
+      </location>
+    </instance>
   </instances>
 </designspace>
