@@ -324,6 +324,7 @@ html {
 
 .malini {
   font-family: "Malini";
+  font-optical-sizing: auto;
 }
 
 body {
