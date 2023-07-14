@@ -15,7 +15,8 @@ INSTALLDIR=~/.fonts/$(FAMILY)
 
 UFO=$(STYLES:%=$(UFODIR)/$(FAMILY)-%.ufo)
 
-.PHONY: $(STYLES) ufo clean glyphs build proofs autobuild
+.PHONY: $(STYLES) ufo clean glyphs build proofs autobuild update-deps init update
+
 
 default: build
 
@@ -211,4 +212,15 @@ release:
 	zip -r $(FONTSDIR)/Malini.zip README.md OFL.txt $(FONTSDIR)/Malini
 	sha256sum $(FONTSDIR)/Malini.zip > $(FONTSDIR)/Malini.zip.sha256
 	md5sum $(FONTSDIR)/Malini.zip > $(FONTSDIR)/Malini.zip.md5
+
+init:
+	pip-sync
+	pip check
+
+update: update-deps init
+
+update-deps:
+	export PIP_REQUIRE_VIRTUALENV=true
+	pip install --upgrade pip-tools pip wheel
+	pip-compile --upgrade --extra=tests,dev -o requirements.txt pyproject.toml
 

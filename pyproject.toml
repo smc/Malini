@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools", "wheel", "hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "malini"
+classifiers = ["Private :: Do Not Upload"]
+version = "1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "fontmake",
+    "fontFeatures",
+    "pyyaml",
+    "munch",
+    "ufonormalizer",
+    "Brotli"
+]
+
+[project.optional-dependencies]
+tests = [
+    "fontbakery[freetype]",
+]
+dev = [
+    "black",
+    "ruff",
+    "tox",
+]
+
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
