@@ -10,12 +10,12 @@ z6 = (x5 + mw/2, y1);
 z7 = (x6 - mw/4, y2);
 z8 = (x7 - mw/4, y6);
 z9 = (x8 + mw/2, y6+m/3);
-z10 = (x9 + mw/2, (y9+y11)/2);
+z10 = (x9 + mw/2, (y9+y11)/1.5);
 z11 = (x7, -descent*0.8);
 z12 = (x3, y11);
 z13 = (x1-mw/3, y1);
 z14 = (x13+mw/6, y0);
-paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6.. z7..{dir 70}z8..z9{right}..z10{down}..z11---z12..z13{up}..z14;
+paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5{right}.. z6.. z7..{dir 70}z8..z9{right}..z10{down}..z11..z12..z13{up}..z14;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
@@ -31,5 +31,5 @@ pen_stroke(
    nib(end_nib rotated terminalangle 14 of paths[p])(14)
 )(paths[p])(strokes[p]);
 
-anchor( "right", point 10.5 of paths[0]);
+anchor( "right", (xpart point 10.4 of paths[p], ypart point 10.5 of paths[p]));
 endglyph;

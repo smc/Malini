@@ -10,16 +10,17 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(0, s/2);
-z1=(0.5sw, s-thick/4);
+z0=(thick/4, ypart point 0.5 of paths[p-1]);
+z1=(x2-0.125sw, s-1.5overshoot);
+z2=(x0 + 0.5sw, y1-0.1s);
 
-paths[p]:= z0{dir 60}..z1{dir -20};
+paths[p]:= z0{dir 75}..{right}z1.. {dir -80}z2;
 paths[p] := paths[p] shifted(xpart(point 0 of paths[p-1]), 0);
 
 pen_stroke(
     nib(end_nib scaled 2/3 rotated terminalangle 0 of paths[p])(0)
-    nib(top_nib)(1)
-    nib(thicknib rotated terminalangle 2 of paths[1])(2)
+    nib(thicknib scaled 0.8)(1)
+    nib(thicknib scaled 1.2 rotated terminalangle 2 of paths[p])(2)
 )(paths[p])(strokes[p]);
 
 % Serifs

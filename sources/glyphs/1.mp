@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0=(mw/10, X-overshoot);
+z0=(mw/10, X-2overshoot);
 z1=(x0, serif_height/4);
 p:=0;
 paths[0] = z0--z1;
@@ -15,7 +15,6 @@ p:=p+1;
 
 paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
 strokes[p] := serif_stroke_slanted(paths[p]);
-
 
 p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);

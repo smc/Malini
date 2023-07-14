@@ -62,7 +62,7 @@ vardef serif_top_slanted =
     z4 = (-thick/2 + serif_height/2, y3-serif_height);
     z5 = (x4, y4-thin);
 
-    z0--z1--z2--z3{right}..{down}z4
+    z0--z1{dir 200}..{dir 180}z2--z3{right}..{down}z4
 enddef;
 
 vardef serif_bottom_slanted =

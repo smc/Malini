@@ -11,14 +11,22 @@ pen_stroke(
 % Right slant
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[p-1]),X-thick*sind(45)/2)  ;
+z0=(xpart(point infinity of paths[p-1]), X)  ;
 z1=(x0+Xw/2.5, 0);
 paths[p] = z0--z1 ;
 
 pen_stroke(
+    cut(thick_nib, rel 90)(0)
     nib(thick_nib)(1)
-    cut(thick_nib, 45)(0)
 )(paths[p])(strokes[p]);
+
+% Precisely position the corner of left slant on right slant
+strokes[p-1] := point 0 of strokes[p-1] --
+    point 1 of strokes[p-1] --
+    point 0 of strokes[p] --
+    point 3 of strokes[p-1] -- cycle;
+
+% strokes[p] := subpath(0,3) of strokes[p]{dir 210} .. {dir 190}cycle;
 
 % Cross bar
 clearxy;
