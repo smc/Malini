@@ -1,20 +1,22 @@
 input glyph;
 beginglyph;
 z0=(0.05Xw , X - 0.05X);
-z1=(x0 + .55Xw, y0);
-paths[0] = z0--z1;
+z1=(x0 + .55Xw, y0  );
+paths[0] = z0{dir -5}..z1;
 pen_stroke(
-    nib(thick_horizontal_nib)(0,1)
+    nib(thick_horizontal_nib scaled 0.8)(0)
+    cut(thick_horizontal_nib, rel 90)(1)
 )(paths[p])(strokes[p]);
 
 clearxy;
 p:=p+1;
-z0=(xpart point 0 of paths[0]+thin/2, ypart point 0 of paths[0]);
+z0=(xpart point 0 of paths[0]+thin/2, ypart point 0 of strokes[0]);
 z1=(0, 0.45X);
 
 paths[p] = z0--z1;
 pen_stroke(
-    nib(thin_vertical_nib)(0,1)
+    cut(thin_vertical_nib, -15)(0)
+    nib(thin_vertical_nib)(1)
 )(paths[p])(strokes[p]);
 
 
@@ -33,15 +35,5 @@ pen_stroke(
     nib(down_nib)(3)
     nib(thicknib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
-
-% Top bar hanging serif
-p:=p+1;
-clearxy;
-z0=(xpart(point 1 of paths[p-3]), ypart(point 2 of strokes[p-3]));
-z1=(x0 + 0.025sw, y0 - 1.5serif_width);
-z2=(x1 - serif_height, y1);
-z3=point 4.8 of strokes[p-3];
-paths[p] :=z0--z1--z2--z3--cycle;
-strokes[p] := reverse paths[p];
 
 endglyph;
