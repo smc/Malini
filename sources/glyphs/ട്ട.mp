@@ -16,14 +16,13 @@ pen_stroke(
    nib(middle_down_nib scaled 0.9)(2,4)
    nib(middle_down_nib rotated 90)(3)
    nib(down_nib)(5)
-   nib(down_nib )(6)
-
+   cut(down_nib, rel 90 )(6)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 clearxy;
 z0 = point 5 of paths[p-1];
-z1 = (xpart(point 4 of paths[p-1]) + thick/4, (y0+ y2)/2);
+z1 = (xpart(point 4 of paths[p-1])  , (y0+ y2)/2);
 z2 = ((x1+x3)/1.75, -descent);
 z3 = (xpart(point 2 of paths[p-1])- thick/3, (y0+ y2)/1.5);
 

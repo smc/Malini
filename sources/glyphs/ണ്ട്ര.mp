@@ -18,11 +18,11 @@ z5 = ( x4 - mw/5, m/2);
 z6 = ( x5 + mw/4, y5 - m/6);
 z7 = ( x6 + mw/4, 0);
 z8 = (x7 - mw/2, -descent*0.8);
-z9 = (xpart(point 3 of paths[p-3]), y8);
+z9 = (xpart(point 2.5 of paths[p-3]), y8);
 z10= (xpart(point 0 of paths[p-3]) - mw/3, m/2);
 z11= (x10 + mw/6, m);
 
-paths[p] := z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{right}..z7{down}..z8---z9..z10..z11 ;
+paths[p] := z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{right}..z7{down}..z8{dir 190}..{dir 170}z9..z10..z11 ;
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)

@@ -43,7 +43,7 @@ z9 = (xpart point 1.5 of paths[0], y8);
 z10 = (xpart point 0 of paths[1]-mw/4, ypart point 0 of paths[0]);
 z11 = (x10+mw/6, m);
 
-paths[p] = z0..z1..z2{right}..z3..z4..z5..z6{right}..z7..z8---z9..z10..z11;
+paths[p] = z0..z1..z2{right}..z3..z4..z5..z6{right}..z7..z8{dir 190}..{dir 170}z9..z10..z11;
 pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(middle_up_nib)(1)

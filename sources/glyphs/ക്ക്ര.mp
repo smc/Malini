@@ -42,7 +42,7 @@ z1 = (xpart(point 10 of paths[p-1]), -descent*0.8 );
 z2 = (xpart(point 7 of paths[p-1]), y1);
 z3 = (xpart(point 6 of paths[p-1]) - mw/3, ypart(point 6 of paths[p-1]));
 z4 = (x3 + mw/4, m);
-paths[p] =  z0{dir angle(direction infinity of paths[p-1])}..z1---z2..z3..z4;
+paths[p] =  z0{dir angle(direction infinity of paths[p-1])}..z1{dir 190}..{dir 170}z2..z3..z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
