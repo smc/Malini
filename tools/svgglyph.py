@@ -76,9 +76,7 @@ class SVGGlyph:
         agl.UV2AGL.update(UV2AGL_EXTRA)
 
     @staticmethod
-    def svg2glif(
-        svg_file, name, width=0, height=0, unicodes=None, transform=None, version=3, anchors=None
-    ):
+    def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None, version=3, anchors=None):
         """Convert an SVG outline to a UFO glyph with given 'name', advance
         'width' and 'height' (int), and 'unicodes' (list of int).
         Return the resulting string in GLIF format (default: version 2).
@@ -164,9 +162,7 @@ class SVGGlyph:
 
         vc_guide = svgObj.find(".//sodipodi:guide/[@inkscape:label='vc']", prefix_map)
         if vc_guide is not None:
-            anchors.append(
-                {"x": float(vc_guide.get("position").split(",")[0]), "y": 0, "name": "vc"}
-            )
+            anchors.append({"x": float(vc_guide.get("position").split(",")[0]), "y": 0, "name": "vc"})
 
         anchor_names = []
         try:
@@ -178,16 +174,9 @@ class SVGGlyph:
                 if parentEl and "transform" in parentEl.attrib:
                     transformstr = parentEl.get("transform")
                     if "translate" in transformstr:
-                        [x, y] = (
-                            transformstr.strip()
-                            .replace("translate(", "")
-                            .replace(")", "")
-                            .split(" ")
-                        )
+                        [x, y] = transformstr.strip().replace("translate(", "").replace(")", "").split(" ")
                     if "matrix" in transformstr:
-                        [lhs, y] = (
-                            transformstr.strip().replace("matrix(", "").replace(")", "").split(" ")
-                        )
+                        [lhs, y] = transformstr.strip().replace("matrix(", "").replace(")", "").split(" ")
                         x = lhs.split(",")[-1]
                     x = float(x)
                     y = float(y)
