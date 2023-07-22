@@ -32,9 +32,7 @@ class MalayalamFont(Font):
 
     def build_glyph_classes(self):
         for gclass in self.options.glyphs.classes:
-            glyph_names = [
-                SVGGlyph.get_glyph_name(g) for g in self.get_glyphs_from_named_classes(gclass)
-            ]
+            glyph_names = [SVGGlyph.get_glyph_name(g) for g in self.get_glyphs_from_named_classes(gclass)]
             glyph_names = [g for g in glyph_names if g in self]
             self.fontFeatures.namedClasses[gclass] = glyph_names
 
@@ -137,9 +135,7 @@ class MalayalamFont(Font):
                     replacement=[[SVGGlyph.get_glyph_name(l)] for l in cons_sign],
                 )
             )
-        split_cons_signs = Routine(
-            rules=rules, name="split_cons_signs", languages=LANGUAGE_MALAYALAM
-        )
+        split_cons_signs = Routine(rules=rules, name="split_cons_signs", languages=LANGUAGE_MALAYALAM)
 
         rules = [
             # Avoid യ + ് + ര ligature
@@ -198,16 +194,16 @@ class MalayalamFont(Font):
         # Key is stack, value is letters after the stack that prevents stacking.
         # Example, ഷ് + ട്ട -> Avoid stacked shta, prefer sh + virama + tta
         prevent_stack_contexts = {
-            "ഷ്ട": "്ട",
-            "ഷ്പ": "്ര",
-            "സ്പ": "്ര",
-            "യ്ത": "്ത",
-            "സ്ക": "്ക",
-            "സ്ത": "്ത",
-            "പ്ത": "്ത",
-            "സ്ന": "്ന",
-            "ശ്ന": "്ന",
-            "ല്പ": "്പ",
+            "ഷ്ട": ["്ട"],
+            "ഷ്പ": ["്ര"],
+            "സ്പ": ["്ര"],
+            "യ്ത": ["്ത"],
+            "സ്ക": ["്ക", "്ര"],
+            "സ്ത": ["്ത"],
+            "പ്ത": ["്ത"],
+            "സ്ന": ["്ന"],
+            "ശ്ന": ["്ന"],
+            "ല്പ": ["്പ"],
         }
         conditional_stack_lookup = None
         # TODO Can this dictionary be moved to config?
@@ -226,26 +222,28 @@ class MalayalamFont(Font):
                     conditional_stack_lookup = Routine(
                         rules=[sub], name="conditional_stack_lookup", languages=LANGUAGE_MALAYALAM
                     )
-                rules.extend(
-                    [
+                ignore_sub_chainings = []
+                for post_stack_conj in prevent_stack_contexts.get(conjunct):
+                    postcontext = []
+                    for letter in post_stack_conj:
+                        postcontext.append([SVGGlyph.get_glyph_name(letter)])
+                    ignore_sub_chainings.append(
                         Chaining(
-                            [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                            postcontext=[
-                                [SVGGlyph.get_glyph_name(l)]
-                                for l in prevent_stack_contexts.get(conjunct)
-                            ],
+                            [[SVGGlyph.get_glyph_name(letter)] for letter in conjunct],
+                            postcontext=postcontext,
                             lookups=[],
-                        ),  # Produces ignore sub rule.
-                        Chaining(
-                            [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                            lookups=[
-                                [self.fontFeatures.referenceRoutine(conditional_stack_lookup)],
-                                None,
-                                None,
-                            ],
-                        ),
-                    ]
+                        )
+                    )
+
+                conditional_stack_lookup_chaining = Chaining(
+                    [[SVGGlyph.get_glyph_name(letter)] for letter in conjunct],
+                    lookups=[
+                        [self.fontFeatures.referenceRoutine(conditional_stack_lookup)],
+                        None,
+                        None,
+                    ],
                 )
+                rules.extend([*ignore_sub_chainings, conditional_stack_lookup_chaining])
                 # THANKS to https://github.com/simoncozens/fontFeatures/issues/58
                 # for the above method
             else:
@@ -347,15 +345,11 @@ class MalayalamFont(Font):
                 parts.append(l)
             if len(largest_seq):
                 parts.append(largest_seq)
-            sub = Substitution(
-                [[ligature_glyph_name]], replacement=[[SVGGlyph.get_glyph_name(l)] for l in parts]
-            )
+            sub = Substitution([[ligature_glyph_name]], replacement=[[SVGGlyph.get_glyph_name(l)] for l in parts])
             if split_cons_conj:
                 split_cons_conj.addRule(sub)
             else:
-                split_cons_conj = Routine(
-                    rules=[sub], name="split_cons_conj", languages=LANGUAGE_MALAYALAM
-                )
+                split_cons_conj = Routine(rules=[sub], name="split_cons_conj", languages=LANGUAGE_MALAYALAM)
             rules.append(
                 Chaining(
                     [[SVGGlyph.get_glyph_name(ligature)]],
@@ -369,9 +363,7 @@ class MalayalamFont(Font):
     def build_abvm(self):
         feature = "abvm"
         name = "abvm_topmarks"
-        top_mark_glyphs = [
-            SVGGlyph.get_glyph_name(c) for c in self.get_glyphs_from_named_classes("ML_TOP_MARKS")
-        ]
+        top_mark_glyphs = [SVGGlyph.get_glyph_name(c) for c in self.get_glyphs_from_named_classes("ML_TOP_MARKS")]
         anchors = {}
         visual_center_anchor_name = "vc"
         lettersWithMarks = sorted(
@@ -397,9 +389,7 @@ class MalayalamFont(Font):
                 anchors[glyph.name] = {visual_center_anchor_name: (glyph.width / 2, 0)}
 
             for vowel_sign in vowel_signs:
-                letterWithVowel = SVGGlyph.get_glyph_name(l) + SVGGlyph.get_glyph_name(
-                    vowel_sign, prefix="_"
-                )
+                letterWithVowel = SVGGlyph.get_glyph_name(l) + SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
                 if letterWithVowel not in self:
                     continue
                 glyphWithVowel = self[letterWithVowel]
@@ -417,24 +407,18 @@ class MalayalamFont(Font):
                     else:
                         top_bases[glyphname] = position
 
-        tops = Attachment(
-            visual_center_anchor_name, visual_center_anchor_name, top_bases, top_marks
-        )
+        tops = Attachment(visual_center_anchor_name, visual_center_anchor_name, top_bases, top_marks)
         routine = Routine(name=name, rules=[tops], languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
     def build_blwm(self):
         feature = "blwm"
         name = "blwm_bottommarks"
-        bottom_mark_glyphs = [
-            SVGGlyph.get_glyph_name(c)
-            for c in self.get_glyphs_from_named_classes("ML_BOTTOM_MARKS")
-        ]
+        bottom_mark_glyphs = [SVGGlyph.get_glyph_name(c) for c in self.get_glyphs_from_named_classes("ML_BOTTOM_MARKS")]
         anchors = {}
         bbvm_anchor_name = "bottom"
         lettersWithMarks = sorted(
-            self.get_glyphs_from_named_classes("ML_CONSONANTS")
-            + self.get_glyphs_from_named_classes("ML_BOTTOM_MARKS")
+            self.get_glyphs_from_named_classes("ML_CONSONANTS") + self.get_glyphs_from_named_classes("ML_BOTTOM_MARKS")
         )
         for l in lettersWithMarks:
             glyph_name = SVGGlyph.get_glyph_name(l)
@@ -480,9 +464,7 @@ class MalayalamFont(Font):
             if ligature_glyph_name in self:
                 self.fontFeatures.glyphclasses[ligature_glyph_name] = "ligature"
 
-        for c in self.get_glyphs_from_named_classes("LC_ALL") + self.get_glyphs_from_named_classes(
-            "UC_ALL"
-        ):
+        for c in self.get_glyphs_from_named_classes("LC_ALL") + self.get_glyphs_from_named_classes("UC_ALL"):
             c_glyph_name = SVGGlyph.get_glyph_name(c)
             if c_glyph_name in self:
                 self.fontFeatures.glyphclasses[c_glyph_name] = "base"
@@ -733,9 +715,7 @@ class MalayalamFont(Font):
             "\u0326",  # 0326 COMBINING COMMA BELOW
         ]
         for diacritic in diacritics:
-            for base in self.get_glyphs_from_named_classes(
-                "LC_ALL"
-            ) + self.get_glyphs_from_named_classes("UC_ALL"):
+            for base in self.get_glyphs_from_named_classes("LC_ALL") + self.get_glyphs_from_named_classes("UC_ALL"):
                 base_name = SVGGlyph.get_glyph_name(base)
                 diacritc_name = SVGGlyph.get_glyph_name(diacritic)
                 items = [base_name, diacritc_name]
@@ -794,35 +774,23 @@ class MalayalamFont(Font):
             u_glyph_name = SVGGlyph.get_glyph_name(base + "ു")
             uu_glyph_name = SVGGlyph.get_glyph_name(base + "ൂ")
 
-            if (
-                u_glyph_name not in self
-                and u_glyph_name
-                not in self.get_glyph_names_from_named_classes("ML_PREVENT_CONJUNCTS")
+            if u_glyph_name not in self and u_glyph_name not in self.get_glyph_names_from_named_classes(
+                "ML_PREVENT_CONJUNCTS"
             ):
                 log.debug(f"Compose {u_glyph_name} : {base_glyph_name}+u_drop_sign")
                 self.buildComposite(u_glyph_name, None, [base_glyph_name, "u_drop_sign"])
                 if base_glyph_name in self.salts:
-                    u_glyph_name_alt = u_glyph_name.replace(
-                        base_glyph_name, self.salts[base_glyph_name][0]
-                    )
-                    self.buildComposite(
-                        u_glyph_name_alt, None, [self.salts[base_glyph_name][0], "u_drop_sign"]
-                    )
+                    u_glyph_name_alt = u_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0])
+                    self.buildComposite(u_glyph_name_alt, None, [self.salts[base_glyph_name][0], "u_drop_sign"])
                     self.salts[u_glyph_name] = [u_glyph_name_alt]
-            if (
-                uu_glyph_name not in self
-                and uu_glyph_name
-                not in self.get_glyph_names_from_named_classes("ML_PREVENT_CONJUNCTS")
+            if uu_glyph_name not in self and uu_glyph_name not in self.get_glyph_names_from_named_classes(
+                "ML_PREVENT_CONJUNCTS"
             ):
                 log.debug(f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(uu_glyph_name, None, [base_glyph_name, "uu_drop_sign"])
                 if base_glyph_name in self.salts:
-                    uu_glyph_name_alt = uu_glyph_name.replace(
-                        base_glyph_name, self.salts[base_glyph_name][0]
-                    )
-                    self.buildComposite(
-                        uu_glyph_name_alt, None, [self.salts[base_glyph_name][0], "uu_drop_sign"]
-                    )
+                    uu_glyph_name_alt = uu_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0])
+                    self.buildComposite(uu_glyph_name_alt, None, [self.salts[base_glyph_name][0], "uu_drop_sign"])
                     self.salts[uu_glyph_name] = [uu_glyph_name_alt]
 
         log.debug(f"Total glyph count: {len(self)}")
@@ -902,9 +870,7 @@ class MalayalamFont(Font):
     def build_glyph_groups(self):
         groupDict = {}
         for gclass in self.options.glyphs.kern.classes:
-            glyph_names = [
-                SVGGlyph.get_glyph_name(g) for g in self.get_glyphs_from_named_classes(gclass)
-            ]
+            glyph_names = [SVGGlyph.get_glyph_name(g) for g in self.get_glyphs_from_named_classes(gclass)]
             glyph_names = [g for g in glyph_names if g in self]
             groupDict[f"public.kern{gclass}"] = glyph_names
         self.groups = groupDict
@@ -969,9 +935,7 @@ class MalayalamFont(Font):
         # Names
         self.info.familyName = name
         self.info.styleName = style
-        self.info.copyright = (
-            f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
-        )
+        self.info.copyright = f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
         self.info.openTypeNameDesigner = f"{self.options.author.name} ({self.options.author.email})"
         self.info.openTypeNameDesignerURL = self.options.author.url
         self.info.openTypeNameLicense = self.options.license.text
@@ -1072,7 +1036,5 @@ class MalayalamFont(Font):
         self.info.postscriptUnderlineThickness = 50
 
         self.info.openTypeGaspRangeRecords = [
-            GaspRangeRecord(
-                65535, [0, 1, 2, 3]  # GRIDFIT  # DOGRAY  # SYMMETRIC_GRIDFIT  # SYMMETRIC_SMOOTHING
-            )
+            GaspRangeRecord(65535, [0, 1, 2, 3])  # GRIDFIT  # DOGRAY  # SYMMETRIC_GRIDFIT  # SYMMETRIC_SMOOTHING
         ]
