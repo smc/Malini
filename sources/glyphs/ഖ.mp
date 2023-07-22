@@ -49,6 +49,7 @@ pen_stroke(
     cut(thin_horizontal_nib, 45)(0)
     nib(thin_horizontal_nib)(1)
 )(paths[p])(strokes[p]);
+strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])) -- subpath( 1, 3) of strokes[p]--cycle;
 
 clearxy;
 z0=(0, 0);

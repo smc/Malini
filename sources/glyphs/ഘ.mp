@@ -13,9 +13,11 @@ paths[p]:= z0--z1 ;
 paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( thick/4, thick*sind(45)/2) );
 
 pen_stroke(
-    cut(thin_horizontal_nib, 45)(0)
+    cut(thin_horizontal_nib, 30)(0)
     nib(thin_horizontal_nib)(1)
 )(paths[p])(strokes[p]);
+
+strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])) -- subpath( 1, 3) of strokes[p]--cycle;
 
 p:=p+1;
 clearxy;
