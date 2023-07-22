@@ -6,7 +6,6 @@ input ./glyphs/include/പ;
 p:=p+1;
 
 % Ra
-% Ra
 input ./glyphs/include/റ;
 paths[p] := paths[p] shifted (0, -1.05m ) xscaled 0.75 yscaled 0.75;
 strokes[p] := strokes[p] shifted (0, -1.05m ) xscaled 0.75 yscaled 0.75;

@@ -5,7 +5,7 @@ input ./glyphs/include/ണ;
 xshift := 0.6mw;
 yshift := -m;
 p:=p+1;
-paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
+paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     nib(middle_up_nib scaled 0.8)(0)
     nib(top_nib scaled 0.8)(1)
@@ -15,7 +15,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
+paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     nib(middle_up_nib scaled 0.8 rotated terminalangle 4 of paths[p])(0)
     nib(top_nib scaled 0.8)(1)
@@ -23,7 +23,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.8;
+paths[p] = paths[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     cut(thin_vertical_nib scaled 0.8, -45)(0)
     nib(thin_vertical_nib scaled 0.8)(1)
@@ -35,7 +35,7 @@ pen_stroke(
 
 p:=p+1;
 paths[p] := right_arch_with_eye shifted (xpart(point infinity of paths[2]), 0);
-paths[p] := paths[p] shifted (xshift, yshift) xscaled 0.8 yscaled 0.8;
+paths[p] := paths[p] shifted (xshift, yshift) xscaled 0.8 yscaled 0.75;
 pen_stroke(
     cut(thin_vertical_nib scaled 0.8, -45)(0)
     nib(thin_vertical_nib scaled 0.8)(1)

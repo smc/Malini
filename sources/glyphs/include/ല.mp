@@ -29,22 +29,33 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(-thick/2, thick*sind(45)/2);
+z0=(0, thick*sind(45)/2);
 z1=(x0 + mw*1.4, y0);
 paths[p]:= z0--z1;
 pen_stroke(
     nib(thin_horizontal_nib)(0)
-    nib(thin_horizontal_nib)(1)
+    cut(thin_horizontal_nib, 135)(1)
 )(paths[p])(strokes[p]);
+
+
+% Clean joint
+strokes[p] :=  point 4 of strokes[p-1]
+    -- subpath(1,3) of strokes[p]
+    --cycle;
 
 clearxy;
 p:=p+1;
-z0=(0, thick*tand(20)/2);
+z0=(xpart point 1 of strokes[p-1] - thick/2, thick*tand(45)/2);
 z1=(x0, m);
 
 paths[p]:= z0--z1;
-paths[p]:= paths[p] shifted (xpart(point infinity of paths[2]) - thick/2, 0) ;
+
 pen_stroke(
-    cut(thick_vertical_nib, -20)(0)
+    cut(thick_vertical_nib, -45)(0)
     nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
+
+% Clean joint
+strokes[p] :=  subpath(0,2) of strokes[p]
+    -- (xpart point 2 of strokes[p], ypart  point 2 of strokes[p-1])
+    --cycle;
