@@ -11,5 +11,4 @@ for i=1 upto 4:
   strokes[p] = strokes[p-4] shifted (xshift , yshift) xscaled 0.8 yscaled 0.75;
 endfor;
 
-rbearing:=0;
 endglyph;

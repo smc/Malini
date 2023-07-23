@@ -22,15 +22,23 @@ z1=(x0 + 1.5mw, y0);
 paths[p] := z0--z1;
 
 pen_stroke(
-    nib(thin_horizontal_nib)(0,1)
+    nib(thin_horizontal_nib)(0)
+    cut(thin_horizontal_nib, 135)(1)
 )(paths[p])(strokes[p]);
+
 
 clearxy;
 p:=p+1;
-z0=(xpart(point infinity of paths[1]), 0);
+z0=(xpart(point 1 of strokes[p-1])- thick/2,  thick*tand(45)/2);
 z1=(x0, m);
 paths[p] := z0--z1;
 
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+    cut(thick_vertical_nib, -45)(0)
+      nib(thick_vertical_nib)(1)
 )(paths[p])(strokes[p]);
+
+% Clean joint
+strokes[p] :=  subpath(0,2) of strokes[p]
+    -- (xpart point 2 of strokes[p], ypart  point 2 of strokes[p-1])
+    --cycle;
