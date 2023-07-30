@@ -1,4 +1,5 @@
 clearxy;
+% Arch
 z0= (0, thin/2);
 z1= (x0, m/2);
 z2= ((x1+x3)/2, m-overshoot);
@@ -22,6 +23,13 @@ pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(thin_horizontal_nib)(1)
 )(paths[p])(strokes[p]);
+
+
+% Clean joint
+strokes[p] :=  subpath(0,1) of strokes[p]
+    -- (xpart point 3 of paths[p-1], ypart  point 2 of strokes[p])
+    -- point 3 of strokes[p]
+    -- cycle;
 
 % Bow
 clearxy;

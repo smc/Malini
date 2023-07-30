@@ -16,7 +16,6 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])) -- subpath( 1, 3) of strokes[p]--cycle;
 
-
 p:=p+1;
 input ./glyphs/include/left_arch;
 

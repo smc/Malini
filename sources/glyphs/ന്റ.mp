@@ -28,16 +28,14 @@ pen_stroke(
     nib(end_nib scaled 2/3 rotated terminalangle 7 of paths[p])(7)
 )(paths[p])(strokes[p]);
 
-paths[2] = ra shifted (mw*1.2, -m ) xscaled 0.75 yscaled 0.75;
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[2])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib scaled 0.8)(3)
-    nib(end_nib  rotated terminalangle 4 of paths[2])(4)
-)(paths[2])(strokes[2]);
+p:=p+1;
+xshift = 1.3mw;
+yshift = -0.98m;
+input ./glyphs/include/റ;
+paths[p] := paths[p] shifted (xshift, yshift ) xscaled 0.75 yscaled 0.75;
+strokes[p] := strokes[p] shifted (xshift, yshift ) xscaled 0.75 yscaled 0.75;
 
-rbearing:=1.5rbearing;
+rbearing:=0;
 
 anchor( "vc", (xpart(point 4 of paths[0]),0));
 anchor( "right", point 4 of paths[2]);

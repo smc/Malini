@@ -5,7 +5,7 @@ strokes[p] := va_mouth_stroke(paths[p]);
 p:=p+1;
 clearxy;
 z0=(0,0);
-z1=(x0 + 0.8mw, y0);
+z1=(x0 + 0.7mw, y0);
 
 paths[p]:= z0--z1 ;
 paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick*sind(45)/2 );

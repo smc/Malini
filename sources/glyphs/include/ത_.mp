@@ -1,7 +1,7 @@
 clearxy;
 z0= (x1 + mw/3, 0);
-z1= (0, (y0 + y2)/2.08);
-z2 = ( x1 + mw/2, m-overshoot); % top
+z1= (0, (y0 + y2)/2);
+z2 = ( x1 + mw/2, m - overshoot); % top
 z3 = ( x2 + mw/2, (y2+y4)/2.5);
 z4 = ( x3 - mw/4, 2undershoot); % bottom middle
 z5 = ( (x1+x3)/2.2, (y4+y6)/2.5);

@@ -38,27 +38,17 @@ strokes[p] :=  subpath(0,  8) of strokes[p]
     -- cycle;
 
 p:=p+1;
-
 % Ra
-paths[p] = ra;
-paths[p] := paths[p] shifted (mw/4, -1.05m ) xscaled 0.75 yscaled 0.75;
-pen_stroke(
-    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
-    nib(middle_up_nib scaled 0.8)(1)
-    nib(top_nib scaled 0.8)(2)
-    nib(middle_down_nib scaled 0.8)(3)
-    nib(end_nib  scaled 0.8 rotated terminalangle 4 of paths[p])(4)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/റ;
+xshift = 0.5mw;
+yshift = -1.05m;
+paths[p] := paths[p] shifted (xshift,yshift  ) xscaled 0.7 yscaled 0.7;
+strokes[p] := strokes[p] shifted (xshift, yshift ) xscaled 0.7 yscaled 0.7;
 p:=p+1;
-paths[p] := paths[p-1] shifted (mw, 0);
+paths[p] := paths[p-1] shifted (0.8mw, 0);
+strokes[p] := strokes[p-1] shifted (0.8mw, 0);
 
-pen_stroke(
-    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
-    nib(middle_up_nib scaled 0.8)(1)
-    nib(top_nib scaled 0.8 )(2)
-    nib(middle_down_nib scaled 0.8)(3)
-    nib(end_nib scaled 0.8 rotated terminalangle 4 of paths[p])(4)
-)(paths[p])(strokes[p]);
+rbearing:=0;
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
 

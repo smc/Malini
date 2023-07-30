@@ -26,7 +26,7 @@
 }
 
 .malini-no-opsz {
-    font-optical-sizing: none;
+    font-optical-sizing: none !important;
 }
 
 

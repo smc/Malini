@@ -17,6 +17,6 @@ p:=p+1;
 paths[p] := serif_bottom_thick shifted (xpart point 1 of paths[0], 0);
 strokes[p] := serif_stroke_bottom(paths[p]);
 
-lbearing:=serif_width/2;
+lbearing:=serif_width/1.5;
 anchor( "top", (xpart(point 0 of paths[0]), 1.2X));
 endglyph;

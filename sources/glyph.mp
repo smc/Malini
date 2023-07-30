@@ -23,9 +23,9 @@ m   := mheight;
 s   := xheight;      % x is a special symbol. So let us use s
 X   := Xheight;
 
-sw  := s * condense; % Width of Latin small letters
+sw  := s * condense * 0.95; % Width of Latin small letters
 mw  := m * condense; % Width of Malayalm letters
-Xw  := X * condense; % Width of Latin capital letters
+Xw  := X * condense * 0.95; % Width of Latin capital letters
 lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 

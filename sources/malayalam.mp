@@ -88,17 +88,6 @@ enddef;
 
 
 
-vardef ra =
-    clearxy;
-    z0=(x1 + mw/3 , undershoot);
-    z1=(0, (y0+y2)/2.08);
-    z2=((x1+x3)/2, m-overshoot);
-    x3-x1 = 0.95mw;
-    z3=(x3, (y2+y4)/2);
-    z4=(x3 - mw/3, undershoot);
-    z0..z1{up}..z2{right}..z3{down}..z4
-enddef;
-
 vardef va_mouth =
     clearxy;
     z0=(x1 + mw/4 , undershoot);

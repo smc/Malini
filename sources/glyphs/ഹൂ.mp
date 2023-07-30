@@ -12,13 +12,14 @@ paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1])+thick/4, thick
 
 pen_stroke(
     cut(thin_horizontal_nib, 30)(0)
-    nib(thin_horizontal_nib)(1)
+     cut(thin_horizontal_nib, -45)(1)
 )(paths[p])(strokes[p]);
 strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])) -- subpath( 1, 3) of strokes[p]--cycle;
 
-
 p:=p+1;
-paths[p] := subpath(0.15, 2) of ra shifted (xpart(point 1 of paths[p-1]) - mw/4, 0);
+input ./glyphs/include/റ;
+xshift = xpart(point 1 of paths[p-1]) - mw/4;
+paths[p] := subpath(0, 2) of paths[p] shifted (xpart(point 1 of paths[p-1]) - mw/4, 0);
 clearxy;
 z3 = ( xpart point 2 of paths[p] + mw/2, (ypart point 2 of paths[p]+y4)/2);
 z4 = (x3 - mw/3, (ypart point 2 of paths[p]+y6)/2);
