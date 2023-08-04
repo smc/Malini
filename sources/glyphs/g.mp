@@ -17,13 +17,18 @@ pen_stroke(
 p:= p+1;
 clearxy;
 z0 = point 1.5 of paths[p-1];
-z1 = (x0+sw/4, 1.05y0);
-paths[p]:=z0..z1;
+z1 = (x0+sw/3, 1.1y0);
+paths[p]:=z0{dir 45}..z1;
 
 pen_stroke(
     nib(end_nib rotated terminalangle 0 of paths[p])(0)
-    nib(thicknib rotated terminalangle 1 of paths[p])(1)
+    nib(thick_nib rotated terminalangle 1 of paths[p])(1)
 )(paths[p])(strokes[p]);
+
+% Top hanging serif styling
+strokes[p] :=  subpath(0, 1) of strokes[p]{up}
+    ..subpath(2.4, 3) of strokes[p]
+    -- cycle;
 
 p:= p+1;
 clearxy;

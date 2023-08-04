@@ -1,16 +1,16 @@
 input glyph;
 beginglyph;
-z0=(x2 + Xw/3, y1-X/10);
+z0=(x2 + Xw/3, 0.95X);
 z1=((x0+x2)/2, 1.1X);
 z2=(x4  , 0.8X);
 z3=(x4, 3/4s);
 z4=(sw/4, 0);
-paths[0] = z0{dir 120}..z1{left}..{down}z2 ..{down}z3---z4;
+paths[0] = z0{dir 90}..z1{left}..{down}z2 ..{down}z3---z4;
 pen_stroke(
-        nib(thicknib rotated terminalangle 0 of paths[0])(0)
-    nib(thick_vertical_nib)(3,4)
+    nib(thick_nib scaled 1.2)(0)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)
+    nib(thick_vertical_nib)(3,4)
 )(paths[0])(strokes[0]);
 
 %bar
@@ -24,6 +24,8 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 strokes[0] := bottom_serif(strokes[0], 4);
+% Top hanging serif styling
+strokes[0] :=  subpath(0.4, 13) of strokes[0]{right} .. cycle;
 
 lbearing:=lbearing/2;
 rbearing:=0;

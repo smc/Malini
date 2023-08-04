@@ -33,8 +33,12 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 strokes[0] := bottom_serif(strokes[0], 4);
+% Top hanging serif styling
+strokes[0] :=  subpath(0.4, 13) of strokes[0]{right} .. cycle;
 
 strokes[2] := bottom_serif(strokes[2], 4);
+% Top hanging serif styling
+strokes[2] :=  subpath(0.4, 13) of strokes[2]{right} .. cycle;
 
 rbearing:=0.5*rbearing;
 lbearing:=0;

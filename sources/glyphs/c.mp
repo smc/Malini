@@ -2,20 +2,27 @@ input glyph;
 beginglyph;
 save r,e;
 r=0.75;
-z0 = (r*sw, y1-.2s);
+z0 = (r*sw, y1-.3s);
 z1 = ((x0 + x2)/1.8, s - overshoot);
 z2 = (0, s/2);
 z3 = ((x0 + x2)/1.75, undershoot);
 z4 = (x0+thin*1.2/2, y3+ s/4);
-paths[0]:=z0{dir 90}..z1{left}..z2{down}..z3{right}..z4;
+paths[0]:=z0{dir 80}..z1{left}..z2{down}..z3{right}..z4;
 
 pen_stroke(
-    nib(thicknib scaled 1 rotated terminalangle 0 of paths[0])(0)
+    nib(thick_nib scaled 1.1)(0)
     nib(middle_down_nib)(2)
     nib(top_nib rotated 10 scaled 0.9)(1)
     nib(down_nib scaled 1.2 rotated -40)(3)
-    nib(end_nib scaled 0.75 rotated terminalangle 4 of paths[0])(4)
+    nib(end_nib scaled 1.2 rotated terminalangle 4 of paths[0])(4)
 )(paths[0])(strokes[0]);
+
+% Top hanging serif styling
+strokes[0] :=  subpath(0.25, 9) of strokes[0]{right} .. cycle;
+% Bottom end styling
+strokes[0] :=  subpath(0, 4) of strokes[0]{dir 120}
+   .. subpath(5.1, 10) of strokes[0]
+   .. cycle;
 
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 endglyph;
