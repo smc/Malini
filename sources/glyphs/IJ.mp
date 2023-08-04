@@ -9,13 +9,8 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Serifs
-p:=p+1;
-paths[p] := serif_top_thick shifted (point 0 of paths[0]);
-strokes[p] := serif_stroke_top(paths[p]);
-
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (point 1 of paths[0]);
-strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[0] := top_serif(strokes[0], 0);
+strokes[0] := bottom_serif(strokes[0], 1+2);
 
 % J
 p:=p+1;
@@ -34,7 +29,5 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 %serif
-p:=p+1;
-paths[p] := serif_top_thick shifted (point 0 of paths[p-1]);
-strokes[p] := serif_stroke_top(paths[p]);
+strokes[1] := top_serif(strokes[1], 0);
 endglyph;

@@ -33,9 +33,6 @@ path serif_stroke;
 serif_stroke := serif_stroke_top(paths[p]);
 strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 8) of strokes[1] -- cycle;
 
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (point infinity of paths[0]);
-strokes[p] := serif_stroke_bottom(paths[p]);
-
+strokes[0] := bottom_serif(strokes[0], 5);
 
 endglyph;

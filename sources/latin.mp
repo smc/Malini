@@ -18,7 +18,7 @@ vardef n_arch =
     z0=(0, 0.6s);
     z1=(0.64*x2, s-overshoot);
     z2=(x0 + 0.75sw, 2/3s);
-    z3=(x2, serif_height/4);
+    z3=(x2, 0);
     z0{dir 60}..z1{right}..z2---z3
 enddef;
 
@@ -176,3 +176,53 @@ vardef serif_bottom_right_slanted =
     z1= (x0+thick/2+ u, y0+thick/2);
     z0{dir 45}..{right}z1
 enddef;
+
+
+vardef top_left_serif(expr s, p ) =
+    (point p of s) + (-serif_width+thick/2, 0) % Move to left
+    -- (point p of s) + (-serif_width+thick/2, -serif_height){right} % Down
+    .. {down}(point p of s) + (0, -serif_height*2) % Right
+    -- subpath(p+1, length(s)) of s
+    -- cycle
+enddef;
+
+vardef top_right_serif(expr s, p) =
+    subpath(0, p-1) of s
+    -- (point p of s) + (0, -serif_height*2){up}
+    .. {right}(point p of s) + (serif_width-thick/2, -serif_height)
+    -- (point p of s) + (serif_width-thick/2, 0){left}
+    -- subpath(p+1, length(s)) of s
+    -- cycle
+enddef;
+
+vardef top_serif(expr s, p) =
+    path new_s;
+    new_s:=top_left_serif(s, p);
+    top_right_serif(new_s, length(new_s)-2)
+enddef;
+
+
+vardef bottom_left_serif(expr s, p ) =
+   subpath(0, p-1) of s
+   -- (point p of s) + (0, serif_height*2){down}
+   .. {left} (point p of s) + (-serif_width+thick/2, serif_height)
+   -- (point p of s) + (-serif_width+thick/2, 0)
+   -- subpath(p+1, length(s)) of s
+   -- cycle
+enddef;
+
+vardef bottom_right_serif(expr s, p) =
+   subpath(0, p-1) of s
+   -- (point p of s) + (serif_width-thick/2, 0) % move it right
+   -- (point p of s) + (serif_width-thick/2, serif_height){left}
+   .. {up} (point p of s) + (0, serif_height*2)
+   -- subpath(p+1,  length(s)) of s
+   -- cycle
+enddef;
+
+vardef bottom_serif(expr s, p) =
+    path new_s;
+    new_s:=bottom_left_serif(s, p);
+    bottom_right_serif(new_s, p+3)
+enddef;
+

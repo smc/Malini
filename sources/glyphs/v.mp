@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 z0=(0, s-thick/4);
-z1=(x0 + sw/2.25, thick*0.25);
+z1=(x0 + sw/2.25, 0);
 paths[p] = z0--z1 ;
 pen_stroke(
      nib(thick_nib)(0)
-     cut(thick_nib, rel 140)(1)
+     cut(thick_nib, 60+slant)(1)
 )(paths[p])(strokes[p]);
 
 % Right slant
@@ -21,7 +21,7 @@ pen_stroke(
 
 strokes[p-1]:= point 0 of strokes[p-1]
      -- point 3 of strokes[p]
-     -- point 0.133 of paths[p]
+     -- point 2 of strokes[p-1]
      -- point 3 of strokes[p-1]
      -- cycle;
 

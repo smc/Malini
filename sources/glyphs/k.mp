@@ -3,7 +3,7 @@ beginglyph;
 
 
 z0=(thick/2, 1.05X);
-z1=(x0, serif_height/4);
+z1=(x0, 0);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
@@ -38,9 +38,7 @@ p:=p+1;
 paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
 strokes[p] := serif_stroke_slanted(paths[p]);
 
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
-strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[0] := bottom_serif(strokes[0], 1);
 
 p:=p+1;
 paths[p] := serif_top_thin shifted (point 1 of paths[1] - (thick/2, 0));

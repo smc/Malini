@@ -1,13 +1,14 @@
 input glyph;
 beginglyph;
 z0=(0, s-thick/4);
-z1=(x0 + sw/2, 0);
+z1=(x0 + sw/2, thick/4);
 paths[p] = z0--z1 ;
 pen_stroke(
      nib(thick_nib)(0)
-     cut(thick_nib,  45)(1)
+     cut(thick_nib, 60+slant)(1)
 )(paths[p])(strokes[p]);
 
+% Right slant
 p:=p+1;
 clearxy;
 z0=(xpart(point infinity of paths[p-1]) + sw/2.5, s-thick/4);

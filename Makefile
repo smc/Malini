@@ -33,7 +33,7 @@ build: ufo Malini
 # Useful in design workflow.
 # Package inotify-tools are available in linux distros
 autobuild:
-	while inotifywait -r -e MODIFY $(SOURCEDIR)/glyphs/; do $(MAKE) -C $(SOURCEDIR); done;
+	while inotifywait -e MODIFY $(SOURCEDIR)/glyphs/; do $(MAKE) -C $(SOURCEDIR); done;
 
 # Targets for preparing the glyphs from metapost and preparing master UFOs.
 glyphs: $(STYLES)

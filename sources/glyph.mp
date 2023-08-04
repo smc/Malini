@@ -127,7 +127,7 @@ def endglyph =
     path softpath;
 
 
-    for i=0 upto 11:
+    for i=0 upto 20:
         if varstroke = 1:
             if known strokes[i]:
                 if (thin = 1) and (terminalround = 1):
@@ -165,6 +165,13 @@ def endglyph =
             fi;
             if showcontrols = 1:
                 show_controls(paths[i]);
+            fi;
+        fi;
+        if known strokes[i]:
+            if (showcoords = 1) or (showpoints = 1):
+                show_coordinates(strokes[i]);
+            fi;
+            if showcontrols = 1:
                 show_controls(strokes[i]);
             fi;
         fi;

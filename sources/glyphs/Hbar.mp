@@ -1,9 +1,9 @@
 input glyph;
 beginglyph;
-z0=(0, X-thick/4);
+z0=(0, X);
 z1=(x0, X/2);
-z2=(x1, thick/4);
-z3=(x0 + 0.6X, X-thick/4);
+z2=(x1, 0);
+z3=(x0 + 0.6X, X);
 
 paths[p] = z0--z2;
 pen_stroke(
@@ -12,7 +12,7 @@ pen_stroke(
 
 p:=p+1;
 
-z5=(x3, thick/4);
+z5=(x3, 0);
 paths[p] = z3--z5;
 pen_stroke(
   nib(thick_vertical_nib)(0,1,2)
@@ -27,21 +27,11 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Serifs
-p:=p+1;
-paths[p] := serif_top_thick shifted (xpart point 0 of paths[0], X);
-strokes[p] := serif_stroke_top(paths[p]);
+strokes[0] := top_serif(strokes[0], 0);
+strokes[0] := bottom_serif(strokes[0], 1+2);
 
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[0], 0);
-strokes[p] := serif_stroke_bottom(paths[p]);
-
-p:=p+1;
-paths[p] := serif_top_thick shifted (xpart point 0 of paths[1], X);
-strokes[p] := serif_stroke_top(paths[p]);
-
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1], 0);
-strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[1] := top_serif(strokes[1], 0);
+strokes[1] := bottom_serif(strokes[1], 1+2);
 
 % Bar
 clearxy;
