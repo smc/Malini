@@ -6,10 +6,5 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Serifs
-p:=p+1;
-paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
-strokes[p] := serif_stroke_slanted(paths[p]);
-
-
-
-strokes[0] := bottom_serif(strokes[0], 1);
+strokes[p] := top_left_serif(strokes[p], 0);
+strokes[p] := bottom_serif(strokes[p], 3);

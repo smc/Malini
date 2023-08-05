@@ -182,7 +182,7 @@ vardef top_left_serif(expr s, p ) =
     (point p of s) + (-serif_width+thick/2, 0) % Move to left
     -- (point p of s) + (-serif_width+thick/2, -serif_height){right} % Down
     .. {down}(point p of s) + (0, -serif_height*2) % Right
-    -- subpath(p+1, length(s)) of s
+    -- subpath(p+1, length(s)-1) of s
     -- cycle
 enddef;
 
@@ -198,7 +198,7 @@ enddef;
 vardef top_serif(expr s, p) =
     path new_s;
     new_s:=top_left_serif(s, p);
-    top_right_serif(new_s, length(new_s)-2)
+    top_right_serif(new_s, length(new_s)-1)
 enddef;
 
 

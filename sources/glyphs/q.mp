@@ -21,12 +21,11 @@ paths[p] := paths[p] shifted(xpart(point 0 of paths[0]),0);
 pen_stroke(
     nib(thick_vertical_nib)(0,1,2)
 )(paths[p])(strokes[p]);
-% Remove a triangular piece from the top left of vertical bar
-strokes[p]:=(point 0 of strokes[p] + (thick/2, 0))-- subpath (1,5) of strokes[p]--cycle;
 
-% Serifs
-p:=p+1;
-paths[p] := serif_bottom_thick shifted (xpart point infinity of paths[1], -descent);
-strokes[p] := serif_stroke_bottom(paths[p]);
+strokes[p] := top_right_serif(strokes[p], 5);
+strokes[p] := bottom_serif(strokes[p], 2);
+% Leave some extra gap at bottom, near serif
+strokes[p] :=  subpath(0.75, 11.85) of strokes[p]
+    --  cycle;
 
 endglyph;

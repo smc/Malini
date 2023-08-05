@@ -9,3 +9,6 @@ pen_stroke(
     nib(down_nib )(2)
     nib(thicknib scaled 1.2 rotated terminalangle 3 of paths[p])(3)
 )(paths[p])(strokes[p]);
+
+% Serifs
+strokes[p] := top_left_serif(strokes[p], 0);

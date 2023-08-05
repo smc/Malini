@@ -5,20 +5,23 @@ beginglyph;
 z0=(thick/8, 0.725s);
 z1=((x0+x2)/2, s-overshoot);
 z2=(x0+0.7sw, 0.6s);
-z3=(x2, s/6);
-z4=(x3+serif_width, undershoot);
-paths[p] := z0{dir 100}.. z1{right}..z2---z3..{dir 30}z4;
+z3=(x2, 0);
+paths[p] := z0{dir 100}.. z1{right}..z2---z3 ;
 
 pen_stroke(
     nib(thick_nib scaled 1.25 rotated terminalangle 0 of paths[p] )(0)
     nib(top_nib scaled 0.8)(1)
-    nib(middle_down_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib scaled 0.6 rotated terminalangle 4 of paths[p])(4)
+    nib(thick_vertical_nib)(2, 3)
 )(paths[p])(strokes[p]);
 
 % Top hanging serif styling
-strokes[p] :=  subpath(0, 8.7) of strokes[p]{dir -120}  .. {right}cycle;
+strokes[p] :=  subpath(0, 6.7) of strokes[p]{dir -120}  .. {right}cycle;
+
+strokes[p] := bottom_right_serif(strokes[p], 4);
+% Leave some extra gap at bottom, near serif
+strokes[p] :=  subpath(0, 2.75) of strokes[p]
+    -- subpath(3.15, 10) of strokes[p]
+    --  cycle;
 
 p:=p+1;
 clearxy;

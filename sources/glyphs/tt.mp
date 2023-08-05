@@ -3,13 +3,11 @@ beginglyph;
 
 z0=(sw/4, s);
 z1=(x0, s/4);
-z2=((x1+x3)/2, undershoot);
-z3=(x1 + sw/2.5, y2+s/6);
-paths[0] = z0---z1{down}..z2{right}..{dir 60}z3;
+z2=(x1 + sw/2.5,s/10);
+paths[0] = z0---z1{down}.. z2;
 pen_stroke(
      nib(thick_vertical_nib)(0,1)
-     nib(down_nib)(2)
-     nib(end_nib scaled 0.75 rotated terminalangle 3 of paths[0])(3)
+     nib(end_nib scaled 0.75 rotated terminalangle 2 of paths[0])(2)
 )(paths[0])(strokes[0]);
 %bar
 clearxy;

@@ -1,12 +1,19 @@
 input glyph;
 beginglyph;
-z0=(0, 1.05X);
-z1=(x0, thick*sind(30)/2);
+z0=(0, X+serif_height);
+z1=(x0, 0);
 paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
-    cut(thick_vertical_nib, 30)(1)
 )(paths[p])(strokes[p]);
+
+% Serifs
+strokes[p] := top_left_serif(strokes[p], 0);
+strokes[p] := bottom_left_serif(strokes[p], 3);
+% Leave some extra gap at bottom, near serif
+strokes[p] :=  subpath(0, 5.85) of strokes[p]
+    -- subpath(6.1, 10) of strokes[p]
+    --  cycle;
 
 clearxy;
 p:=p+1;
@@ -26,10 +33,6 @@ pen_stroke(
    nib(middle_up_nib)(4)
 )(paths[p])(strokes[p]);
 
-% Serifs
-p:=p+1;
-paths[p] := serif_top_slanted shifted point 0 of paths[0] ;
-strokes[p] := serif_stroke_slanted(paths[p]);
 
 lbearing:=serif_width/2;
 anchor( "top", (xpart(point 1 of paths[1]), X));

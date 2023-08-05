@@ -11,7 +11,7 @@ pen_stroke(
 % Serifs
 
 strokes[0] := top_serif(strokes[0], 0);
-strokes[0] := bottom_serif(strokes[0], 1+2);
+strokes[0] := bottom_serif(strokes[0], 3);
 
 lbearing:=serif_width/1.5;
 
