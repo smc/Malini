@@ -29,6 +29,6 @@ strokes[p] :=  subpath(0.25, 6) of strokes[p]{left}
 
 
 
-anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
+anchor( "top", (xpart(point 1 of paths[0]), 1.1X));
 anchor( "bottom", (xpart(point 1 of paths[0]), 0));
 endglyph;

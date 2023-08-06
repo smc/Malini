@@ -57,5 +57,5 @@ strokes[p]:= point 0.85 of strokes[1]..{right}(subpath (1,4) of strokes[p]){righ
 strokes[2] := bottom_serif(strokes[2], 2);
 
 
-anchor( "top", (xpart(point 1 of paths[2]), 1.2X));
+anchor( "top", (xpart(point 1 of paths[2]), 1.1X));
 endglyph;

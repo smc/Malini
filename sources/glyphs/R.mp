@@ -42,6 +42,6 @@ strokes[1] := subpath(3, 5) of serif_stroke -- subpath(0, 8) of strokes[1] -- cy
 
 strokes[0] := bottom_serif(strokes[0], 1);
 
-anchor( "top", (xpart(point 1 of paths[1]), 1.2X));
+anchor( "top", (xpart(point 1 of paths[1]), 1.1X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));
 endglyph;
