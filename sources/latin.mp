@@ -179,11 +179,20 @@ enddef;
 
 
 vardef top_left_serif(expr s, p ) =
-    (point p of s) + (-serif_width+thick/2, 0) % Move to left
-    -- (point p of s) + (-serif_width+thick/2, -serif_height){right} % Down
-    .. {down}(point p of s) + (0, -serif_height*2) % Right
-    -- subpath(p+1, length(s)-1) of s
-    -- cycle
+    if p = 0:
+        (point p of s) + (-serif_width+thick/2, 0) % Move to left
+        -- (point p of s) + (-serif_width+thick/2, -serif_height){right} % Down
+        .. {down}(point p of s) + (0, -serif_height*2) % Right
+        -- subpath(p+1, length(s)-1) of s
+        -- cycle
+    else:
+        subpath(0, p-1) of s
+        -- (point p of s) + (-serif_width+thick/2, 0) % Move to left
+        -- (point p of s) + (-serif_width+thick/2, -serif_height){right} % Down
+        .. {down}(point p of s) + (0, -serif_height*2) % Right
+        -- subpath(p+1, length(s)-1) of s
+        -- cycle
+    fi
 enddef;
 
 vardef top_right_serif(expr s, p) =
