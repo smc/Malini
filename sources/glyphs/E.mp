@@ -51,7 +51,7 @@ paths[p] = z0--z1 ;
 pen_stroke(
     nib(thin_nib scaled 1.2 rotated 90)(0,1)
 )(paths[p])(strokes[p]);
-% Standing erif
+% Standing Serif
 strokes[p] := subpath(0, 1) of strokes[p]{right}
    -- (xpart point 1 of strokes[p]+0.01Xw, X-s)
    -- (xpart point 1 of strokes[p] - serif_height, X-s){down}
