@@ -78,7 +78,6 @@ $(FONTSDIR)/%/otf : %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--verbose WARNING \
 		--filter DecomposeTransformedComponentsFilter  \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--flatten-components  \
 		--interpolate  \
 		--optimize-cff 1 \
@@ -91,7 +90,6 @@ $(FONTSDIR)/%/otf : %.designspace
 $(FONTSDIR)/%/ttf-variable: %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--filter DecomposeTransformedComponentsFilter \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--flatten-components \
 		--verbose WARNING \
 		--output-dir $@ \
@@ -103,7 +101,6 @@ $(FONTSDIR)/%/ttf-variable: %.designspace
 $(FONTSDIR)/%/otf-variable : %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--filter DecomposeTransformedComponentsFilter  \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--flatten-components \
 		--output-dir $@ \
 		--verbose WARNING \
@@ -128,7 +125,6 @@ $(FONTSDIR)/%/otf: ${UFODIR}/%.ufo
 		--optimize-cff 1 \
 		--flatten-components \
 		--filter DecomposeTransformedComponentsFilter  \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--output otf \
 		--output-dir $@ \
 		--ufo-paths $(UFODIR)/$*.ufo
@@ -140,7 +136,6 @@ $(FONTSDIR)/%/ttf: ${UFODIR}/%.ufo
 		--output ttf \
 		--flatten-components \
 		--filter DecomposeTransformedComponentsFilter \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--optimize-cff 1 \
 		--output-dir $@ \
 		--ufo-paths $(UFODIR)/$*.ufo
