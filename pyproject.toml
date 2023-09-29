@@ -18,7 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 tests = [
-    "fontbakery[freetype]",
+    "fontbakery[ufo-sources, googlefonts]",
 ]
 dev = [
     "black",
