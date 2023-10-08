@@ -1009,7 +1009,7 @@ class MalayalamFont(Font):
         # the top extremum of the font rendering box
         self.info.openTypeOS2WinAscent = 1102  # As calculated by Fontbakery
         # the bottom extremum of the font rendering box (positive value)
-        self.info.openTypeOS2WinDescent = 679  # As calculated by Fontbakery
+        self.info.openTypeOS2WinDescent = 680  # As calculated by Fontbakery
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
