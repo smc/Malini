@@ -19,8 +19,6 @@ subthick :=     0.666u;       % Thickness of thickest lines in subscribed charac
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
-lbearing :=     0.50u;        % Default left bearing
-rbearing :=     0.50u;        % Default right bearing
 
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
@@ -34,8 +32,8 @@ varstroke :=     1;           % Stroke modulation. Uses pen_strokes
 
 overshoot := thin*1.2/4;
 undershoot := thick*0.77/4;
-serif_height := thick*0.4;
-serif_width :=  thick/2 + serif_height*2;
+serif_height := thick/3;
+serif_width :=  thick*1.1;
 
 color glyphcolor; glyphcolor := (.1, .37,.71);
 color debugcolor; debugcolor := 0.8green;
