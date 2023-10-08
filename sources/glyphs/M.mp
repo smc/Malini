@@ -51,4 +51,7 @@ strokes[p] := subpath(0, 2) of serif_stroke_top(paths[p])-- point 2 of strokes[2
 
 strokes[3] := bottom_serif(strokes[3], 1);
 
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
+
 endglyph;

@@ -27,5 +27,6 @@ strokes[0] :=  subpath(0, 8.85) of strokes[0]
     -- subpath(9.15, 10) of strokes[0]
     --  cycle;
 
-lbearing:=serif_width/2;
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.4;
 endglyph;

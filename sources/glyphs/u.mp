@@ -30,8 +30,7 @@ strokes[p] :=  subpath(0, 2.75) of strokes[p]
     -- subpath(3.15, 10) of strokes[p]
     --  cycle;
 
-
-
-lbearing:=serif_width/2;
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
 anchor( "top", (xpart(point 2.25 of paths[0]), 0.9X));
 endglyph;

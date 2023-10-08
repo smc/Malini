@@ -19,6 +19,7 @@ p:=p+1;
 paths[p] = fullcircle scaled (thick*1.5) shifted(xpart(point 0 of paths[p-1]), 1.33s);
 strokes[p] = paths[p];
 
-lbearing:=2lbearing;
+lbearing:=thick*condense*0.3;
+rbearing:=thick*condense*0.3;
 
 endglyph;

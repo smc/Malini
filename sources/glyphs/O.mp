@@ -9,9 +9,11 @@ z4=(x0, y2);
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 
 pen_stroke(
-   nib(middle_down_nib)(0, 2, 4)
-   nib(top_nib)(1)
-   nib(down_nib)(3)
+   nib(middle_down_nib rotated -12)(0, 2, 4)
+   nib(top_nib rotated 20)(1)
+   nib(down_nib rotated -20)(3)
 )(paths[0])(strokes[0]);
+lbearing:=sw/3*0.4;
+rbearing:=sw/3*0.4;
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
 endglyph;

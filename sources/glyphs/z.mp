@@ -49,5 +49,8 @@ z3=point 2.25 of strokes[2];
 paths[p] :=z0--z1--z2{dir -105}..{dir 200}z3--cycle;
 strokes[p] := paths[p];
 
+lbearing:=sw/3*0.3;
+rbearing:=sw/3*0.3;
+
 anchor( "top", (xpart(point 0.5 of paths[0]), 0.9X));
 endglyph;

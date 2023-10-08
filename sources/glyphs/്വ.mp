@@ -18,4 +18,6 @@ pen_stroke(
 pen_stroke(
     nib(thick_vertical_nib)( 0,1)
 )(paths[1])(strokes[1]);
+
+absolute_position := 1;
 endglyph;

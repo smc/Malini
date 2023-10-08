@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 z0 = (thick/2, X + m/6);
-z1 = (x0+ 0.05sw, s*1.2);
+z1 = (x0, s);
 paths[0] = z0{dir 220}..{right}z1;
 pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)

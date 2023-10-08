@@ -36,4 +36,6 @@ paths[p] := serif_top_thin shifted (xpart point 1 of paths[1] - thin/2, s);
 strokes[p] := serif_stroke_top_thin(paths[p]);
 strokes[p]:= point 0.85 of strokes[1]..{right}(subpath (1,4) of strokes[p]){right}..point 2.15 of strokes[1]--cycle;
 
+lbearing:=sw/3*0.2;
+rbearing:=sw/3*0.2;
 endglyph;

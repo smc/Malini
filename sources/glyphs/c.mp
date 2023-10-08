@@ -24,5 +24,7 @@ strokes[0] :=  subpath(0, 4) of strokes[0]{dir 120}
    .. subpath(5.1, 10) of strokes[0]
    .. cycle;
 
+lbearing:=sw/3*0.3;
+rbearing:=sw/3*0.45;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 endglyph;

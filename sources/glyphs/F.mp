@@ -16,7 +16,7 @@ strokes[p] := bottom_serif(strokes[p], 3);
 p:=p+1;
 clearxy;
 z0 = point 0 of paths[0] - (0, thin/2*1.2);
-z1 = (x0 + Xw/1.6, y0);
+z1 = (x0 + sw*0.9, y0);
 
 paths[1] = z0--z1 ;
 

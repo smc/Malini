@@ -3,7 +3,7 @@ beginglyph;
 % This glyph does not slant. Reset slant value
 slant := 0;
 z0 = (thick/4, m/4);
-z1 = (x0, -m/6);
+z1 = (x0, y0 -(X-s)-m/6);
 
 paths[0] = z0{right}..{dir -135}z1;
 pen_stroke(

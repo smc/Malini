@@ -16,4 +16,5 @@ pen_stroke(
     nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
+absolute_position := 1;
 endglyph;

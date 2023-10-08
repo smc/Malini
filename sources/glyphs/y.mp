@@ -29,5 +29,7 @@ paths[p] := serif_top_thin shifted (xpart point 0 of paths[1] - thick/2, s);
 strokes[p] := serif_stroke_top_thin(paths[p]);
 strokes[p]:= point 6.9 of strokes[1]{dir 60}..{right}(subpath (1,4) of strokes[p]){right}..{dir -115}point 0.15 of strokes[1]--cycle;
 
+lbearing:=sw/3*0.2;
+rbearing:=sw/3*0.2;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 endglyph;

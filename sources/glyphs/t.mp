@@ -30,7 +30,10 @@ paths[2] =  z0--z1--z2{down}..{left}z3--cycle;
 strokes[2] = paths[2];
 
 
-lbearing:=lbearing/4;
+
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.3;
+
 anchor( "top", (xpart(point 2 of paths[0]), X));
 anchor( "bottom", (xpart(point 2 of paths[0]), 0));
 endglyph;

@@ -29,6 +29,7 @@ pen_stroke(
 
 )(paths[p])(strokes[p]);
 
+absolute_position := 1;
 lbearing:=lbearing/2;
 rbearing:=rbearing/2;
 endglyph;

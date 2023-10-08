@@ -37,6 +37,9 @@ strokes[p] := point 3 of strokes[1] -- subpath(3, 6) of serif_stroke_top_thin(pa
 strokes[0] := bottom_serif(strokes[0], 1);
 strokes[2] := top_serif(strokes[2], 0);
 
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
+
 anchor( "top", (xpart(point 0.5 of paths[1]), 1.2X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));
 endglyph;

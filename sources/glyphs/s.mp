@@ -5,7 +5,7 @@ z0 = (x4, y1 - s/4);
 z1 = ((x0+x2)/2, s-overshoot);
 z2 = (x6+ thick/2, (y1 +y3)/2);
 z3 = ((x2 + x4)/2, (y2 + y4)/2);
-z4 = (0.75sw, (y3 + y5)/2);
+z4 = (0.7sw, (y3 + y5)/2);
 z5 = ((x4 + x6)/1.8, undershoot);
 z6 = (0, y5+s/3.5);
 
@@ -27,7 +27,9 @@ strokes[p] :=  subpath(0.25, 6) of strokes[p]{left}
     .. cycle;
 
 
-lbearing:=lbearing/2;
+
+lbearing:=thick*condense*0.4;
+rbearing:=thick*condense*0.4;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 anchor( "bottom", (xpart(point 1 of paths[0]), 0));
 endglyph;

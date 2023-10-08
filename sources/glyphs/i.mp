@@ -8,5 +8,6 @@ paths[p] = fullcircle scaled (thick*1.5) shifted(x1, 1.33s);
 
 strokes[p] = paths[p];
 
-lbearing:=serif_width/2;
+lbearing:=sw/3*0.3;
+rbearing:=sw/3*0.3;
 endglyph;

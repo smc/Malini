@@ -16,7 +16,7 @@ strokes[p] := bottom_left_serif(strokes[p], 3);
 p:=p+1;
 clearxy;
 z0 = point 0 of paths[0] - (0, thin/2*1.2);
-z1 = (x0 + Xw/1.6, y0);
+z1 = (x0 + sw*0.8, y0);
 
 paths[1] = z0--z1 ;
 
@@ -34,7 +34,7 @@ strokes[p] := subpath(0, 0.7) of strokes[p]{right}
 p:=p+1;
 clearxy;
 z0 = point 0.5 of paths[0];
-z1 = (x0 + Xw*0.45, y0);
+z1 = (x0 + sw*0.6, y0);
 paths[p] = z0--z1;
 pen_stroke(
     nib(thin_nib rotated 90)(0,1)
@@ -44,7 +44,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 = point 1 of paths[0] + (0, thin/2*1.2);
-z1 = (x0 + Xw/1.5, y0);
+z1 = (x0 + sw*0.9, y0);
 
 paths[p] = z0--z1 ;
 

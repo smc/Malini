@@ -16,5 +16,6 @@ pen_stroke(
     cut(middle_down_nib, rel 90)(4)
 )(paths[p])(strokes[p]);
 
+absolute_position := 1;
 anchor( "right", point 1.5 of paths[p]);
 endglyph;

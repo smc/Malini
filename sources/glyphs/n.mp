@@ -23,7 +23,8 @@ strokes[0] := bottom_serif(strokes[0], 3);
 
 strokes[1] := bottom_serif(strokes[1], 3);
 
-lbearing:=serif_width/2;
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
 
 anchor( "top", (xpart(point 1 of paths[1]), 0.9X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));

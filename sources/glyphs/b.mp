@@ -33,7 +33,7 @@ pen_stroke(
    nib(middle_up_nib)(4)
 )(paths[p])(strokes[p]);
 
-
-lbearing:=serif_width/2;
+lbearing:=thick*condense*0.25;
+rbearing:=thick*condense*0.4;
 anchor( "top", (xpart(point 1 of paths[1]), X));
 endglyph;

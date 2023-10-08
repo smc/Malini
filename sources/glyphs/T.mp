@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-twidth=Xw;
+twidth=Xw*0.8;
 z0=(twidth/2, X-thick/4);
 z1=(x0, 0);
 

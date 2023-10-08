@@ -36,7 +36,9 @@ strokes[0] :=  subpath(0, 8.85) of strokes[0]
     -- subpath(9.15, 10) of strokes[0]
     --  cycle;
 
-lbearing:=serif_width/2;
+
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
 
 anchor( "top", (xpart(point 0.5 of paths[1]), 0.9X));
 anchor( "bottom", (xpart(point 0.5 of paths[1]), 0));

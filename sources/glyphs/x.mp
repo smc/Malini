@@ -42,4 +42,7 @@ paths[p] := serif_bottom_thin shifted (xpart point 0 of paths[1] + thin, 0);
 strokes[p] := serif_stroke_bottom_thin(paths[p]);
 strokes[p]:= point 2.9 of strokes[1]{dir -130}..{left}(subpath (1,4) of strokes[p]){left}..{dir 50}point 0.15 of strokes[1]--cycle;
 
+lbearing:=sw/3*0.2;
+rbearing:=sw/3*0.2;
+
 endglyph;

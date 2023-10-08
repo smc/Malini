@@ -6,7 +6,7 @@ paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
-
+show X;
 p:=p+1;
 paths[p] := n_arch shifted(xpart(point 0 of paths[p-1]),0);
 pen_stroke(
@@ -16,11 +16,12 @@ pen_stroke(
 
 )(paths[p])(strokes[p]);
 
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
 
 % Serifs
 strokes[0] := top_left_serif(strokes[0], 0);
 strokes[0] := bottom_serif(strokes[0], 3);
 strokes[1] := bottom_serif(strokes[1], 3);
 
-lbearing:=serif_width/2;
 endglyph;
