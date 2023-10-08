@@ -26,9 +26,10 @@ X   := Xheight;
 sw  := s * condense * 0.95; % Width of Latin small letters
 mw  := m * condense; % Width of Malayalm letters
 Xw  := X * condense * 0.95; % Width of Latin capital letters
-lbearing := lbearing * condense;
-rbearing := rbearing * condense;
+lbearing :=  mw/3*0.3;   % Default left bearing
+rbearing :=  mw/3*0.3;   % Default right bearing
 
+absolute_position := 0;
 
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
@@ -188,9 +189,16 @@ def endglyph =
         rbearing := rbearing - slant_xshift;
     fi;
 
-    currentpicture := currentpicture shifted (lbearing, descent);
+    % Place the whole drawing at x=0
+    if absolute_position <> 1:
+        xmin:= xpart (llcorner currentpicture);
+        currentpicture := currentpicture shifted (-xmin, descent);
+    else:
+        currentpicture := currentpicture shifted (0, descent);
+    fi;
 
-    % Place the drawing at the svg canvas.
+
+    % Place the drawing at the svg canvas with left and right bearing.
     pair ur; ur:=urcorner currentpicture;
     path bbox; bbox = boundingbox(currentpicture, lbearing, rbearing);
     setbounds currentpicture to bbox;
@@ -198,22 +206,22 @@ def endglyph =
     if showgrids = 1:
         % Debug points are hard to see. Change the fontsize
         defaultscale := 2;
-        pair w; w:=urcorner currentpicture;
-        draw (0, 0) -- (xpart w, 0) withpen pencircle scaled 1 withcolor gridcolor;
-        draw (0, descent) -- (xpart w, descent) withpen pencircle scaled 1 withcolor gridcolor;
-        draw (0, mheight+descent) -- (xpart w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
-        draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
+        w:=xpart ur  + lbearing + rbearing;
+        draw (0, 0) -- (w, 0) withpen pencircle scaled 1 withcolor gridcolor;
+        draw (0, descent) -- (w, descent) withpen pencircle scaled 1 withcolor gridcolor;
+        draw (0, mheight+descent) -- (w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
+        draw (0, xheight+descent) -- (w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
         draw (0, 0) -- (0, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
-        draw ( xpart ur + lbearing+ rbearing, 0) -- (xpart ur  + lbearing + rbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw ( xpart ur + lbearing+ rbearing, 0) -- (w, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw ( xpart ur  + lbearing , 0) -- (xpart ur  + lbearing , em) withpen pencircle scaled 1 withcolor gridcolor;
-        draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw (0, em) -- (w, em) withpen pencircle scaled 1 withcolor gridcolor;
     fi;
 
     if showcoords = 1:
         % Debug points are hard to see. Change the fontsize
         defaultscale := 2;
-        pair w; w:=urcorner currentpicture;
+
         dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
         dotlabel.lrt( "(" & decimal(lbearing) & ",0 )", (lbearing,  descent))  withcolor debugcolor;
