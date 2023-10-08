@@ -1,2 +1,2 @@
-thick := 0.9u;
+thick := 0.92u;
 thin := 0.5thick;
