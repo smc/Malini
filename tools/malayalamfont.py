@@ -620,14 +620,6 @@ class MalayalamFont(Font):
                 glyph.unicodes = [u]
             self.addGlyph(glyph)
 
-        # Add space
-        space = Glyph(name="space")
-        space.width = 260
-        space.unicodes = [0x0020]
-        self.addGlyph(space)
-        # NBSP width must be same as Space width
-        self["uni00A0"].width = space.width
-
         for f in sorted(os.listdir(design_dir)):
             if not f.endswith(".svg"):
                 continue
@@ -810,6 +802,14 @@ class MalayalamFont(Font):
                     uu_glyph_name_alt = uu_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0])
                     self.buildComposite(uu_glyph_name_alt, None, [self.salts[base_glyph_name][0], "uu_drop_sign"])
                     self.salts[uu_glyph_name] = [uu_glyph_name_alt]
+
+        # Add space
+        space = Glyph(name="space")
+        space.width = self["i"].width
+        space.unicodes = [0x0020]
+        self.addGlyph(space)
+        # NBSP width must be same as Space width
+        self["uni00A0"].width = space.width
 
         log.debug(f"Total glyph count: {len(self)}")
 
