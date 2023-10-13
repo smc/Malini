@@ -36,7 +36,7 @@ cffsubr==0.2.9.post1
     # via ufo2ft
 chardet==5.2.0
     # via tox
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via requests
 click==8.1.7
     # via black
@@ -68,7 +68,7 @@ filelock==3.12.4
     #   virtualenv
 font-v==2.1.0
     # via fontbakery
-fontbakery[googlefonts,ufo-sources]==0.9.2
+fontbakery[googlefonts,ufo-sources]==0.10.0
     # via malini (pyproject.toml)
 fontfeatures==1.8.0
     # via
@@ -78,7 +78,7 @@ fontmake==3.7.1
     # via malini (pyproject.toml)
 fontmath==0.9.3
     # via fontmake
-fonttools[lxml,ufo,unicode]==4.42.1
+fonttools[lxml,ufo,unicode]==4.43.1
     # via
     #   axisregistry
     #   babelfont
@@ -117,7 +117,7 @@ gitpython==3.1.37
     # via font-v
 glyphsets==0.6.4
     # via fontbakery
-glyphslib==6.4.0
+glyphslib==6.4.1
     # via
     #   babelfont
     #   fontmake
@@ -150,9 +150,9 @@ opentype-sanitizer==9.1.0
     # via fontbakery
 opentypespec==1.9.1
     # via fontbakery
-orjson==3.9.7
+orjson==3.9.9
     # via babelfont
-packaging==23.1
+packaging==23.2
     # via
     #   black
     #   fontbakery
@@ -162,7 +162,7 @@ pathspec==0.11.2
     # via black
 pip-api==0.0.30
     # via fontbakery
-platformdirs==3.10.0
+platformdirs==3.11.0
     # via
     #   black
     #   tox
@@ -195,11 +195,11 @@ requests==2.31.0
     # via
     #   fontbakery
     #   youseedee
-rich==13.5.3
+rich==13.6.0
     # via fontbakery
-rstr==3.2.1
+rstr==3.2.2
     # via stringbrewer
-ruff==0.0.291
+ruff==0.0.292
     # via malini (pyproject.toml)
 shaperglot==0.3.0
     # via fontbakery
@@ -247,7 +247,7 @@ uharfbuzz==0.37.3
     #   vharfbuzz
 unicodedata2==15.1.0
     # via fonttools
-urllib3==2.0.5
+urllib3==2.0.6
     # via requests
 vharfbuzz==0.2.0
     # via
