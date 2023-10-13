@@ -10,10 +10,10 @@ show X;
 p:=p+1;
 paths[p] := n_arch shifted(xpart(point 0 of paths[p-1]),0);
 pen_stroke(
-    nib(end_nib scaled 2/3 rotated terminalangle 0 of paths[p])(0)
+    cut(end_nib scaled 0.9, rel 90)(0)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2,3)
-
+    ignore_directions(1r )
 )(paths[p])(strokes[p]);
 
 lbearing:=sw/3*0.25;

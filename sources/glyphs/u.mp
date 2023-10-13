@@ -6,10 +6,10 @@ z2=(0.4*x3, thin*1.2/4);
 z3=(x0 + 0.75sw, 0.4s);
 paths[p] := z0---z1..{right}z2..{dir 60}z3;
 pen_stroke(
-    nib(end_nib scaled 2/3 rotated terminalangle infinity of paths[p])(infinity)
+    nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
     nib(down_nib)(2)
     nib(thick_vertical_nib)(0,1)
-
+    ignore_directions(2)
 )(paths[p])(strokes[p]);
 strokes[p] := top_left_serif(strokes[p], 0);
 

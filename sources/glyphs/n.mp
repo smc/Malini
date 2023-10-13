@@ -11,10 +11,10 @@ p:=p+1;
 paths[p]:=n_arch;
 paths[p]:=paths[p] shifted(xpart(point 1 of paths[p-1]) ,0);
 pen_stroke(
-    cut(end_nib scaled 2/3, rel 90)(0)
+    cut(end_nib scaled 0.9, rel 90)(0)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2,3)
-
+    ignore_directions(1r )
 )(paths[p])(strokes[p]);
 
 % Serifs

@@ -12,9 +12,10 @@ paths[0]:=z0{dir 80}..z1{left}..z2{down}..z3{right}..z4;
 pen_stroke(
     nib(thick_nib scaled 1.1)(0)
     nib(middle_down_nib)(2)
-    nib(top_nib rotated 10 scaled 0.9)(1)
-    nib(down_nib scaled 1.2 rotated -40)(3)
+    nib(top_nib)(1)
+    nib(down_nib scaled 1.2 )(3)
     nib(end_nib scaled 1.2 rotated terminalangle 4 of paths[0])(4)
+    ignore_directions(0,1l,2,3,4)
 )(paths[0])(strokes[0]);
 
 % Top hanging serif styling

@@ -11,6 +11,7 @@ pen_stroke(
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3, 4)
+    ignore_directions(1r)
 )(paths[p])(strokes[p]);
 
 % Bottom bar
@@ -42,7 +43,8 @@ paths[p] = z0{dir -10}..z1{dir -110}..{dir 200}z2;
 pen_stroke(
     nib(end_nib scaled 0.8 rotated terminalangle 0 of paths[p]  )(0)
     nib(middle_down_nib )(1)
-        cut(end_nib rotated terminalangle 2 of paths[p], 90 )(2)
+    cut(end_nib rotated terminalangle 2 of paths[p], 90 )(2)
+    ignore_directions(0, 1)
 )(paths[p])(strokes[p]);
 
 

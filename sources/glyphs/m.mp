@@ -8,8 +8,9 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
 
+% m has two condensed n archs
 p:=p+1;
-paths[p] := n_arch shifted(xpart(point 1 of paths[p-1]), 0) xyscaled(0.9, 1);
+paths[p] := n_arch xscaled 0.9 shifted(xpart(point 1 of paths[p-1]), 0);
 pen_stroke(
     cut(end_nib scaled 2/3, rel 90)(0)
     nib(top_nib)(1)

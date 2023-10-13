@@ -23,6 +23,7 @@ pen_stroke(
     nib(top_nib)(8)
     nib(thick_vertical_nib)(9)
     nib(thick_vertical_nib)(10)
+    ignore_directions(3, 5, 6, 7)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-z0 = (x4, y1 - X/4);
+z0 = (x4, y1 - X/5);
 z1 = ((x0 + x2)/2, X-overshoot);
 z2 = (x6 + thick/2, (y1 + y3)/2);
 z3 = ((x2 + x4)/2, (y2 + y4)/2);
@@ -15,9 +15,10 @@ pen_stroke(
    nib(thick_nib scaled 1.1 rotated terminalangle 0 of paths[0] )(0)
    nib(top_nib scaled 0.85)(1)
    nib(middle_down_nib)(2,4)
-   nib(middle_down_nib scaled 0.85 rotated 90)(3)
+   nib(middle_down_nib  rotated 90)(3)
    nib(down_nib  scaled 0.85)(5)
    nib(thick_nib scaled 1.1  rotated terminalangle 6 of paths[0] )(6)
+   ignore_directions(1, 3, 5)
 )(paths[p])(strokes[p]);
 
 

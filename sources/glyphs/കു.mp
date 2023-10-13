@@ -26,7 +26,7 @@ pen_stroke(
    nib(thin_vertical_nib rotated 90)(7, 8)
    nib(end_nib rotated 90)(10)
    nib(end_nib rotated terminalangle 12 of paths[p])(12)
-
+   ignore_directions(2, 5, 9r, 11r)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 1 of paths[0]);

@@ -20,6 +20,7 @@ pen_stroke(
     nib(middle_down_nib)(5,6)
     nib(down_nib)(7)
     nib(end_nib scaled 3/4 rotated terminalangle infinity of paths[p])(infinity)
+    ignore_directions(3,3, 5, 6, 7)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (x4,0));

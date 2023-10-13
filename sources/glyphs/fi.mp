@@ -16,7 +16,7 @@ pen_stroke(
 % i
 p:=p+1;
 clearxy;
-paths[p] := subpath(2.5, infinity) of paths[0] shifted(xpart(point 0 of paths[0])*0.9, 0);
+paths[p] := subpath(2.5, infinity) of paths[0] shifted(xpart(point 0 of paths[0]), 0);
 pen_stroke(
     nib(thick_vertical_nib)(0,1, 2)
 )(paths[p])(strokes[p]);

@@ -24,7 +24,7 @@ pen_stroke(
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3)
     cut(thick_vertical_nib, 20)(4)
-
+    ignore_directions(2l)
 )(paths[p])(strokes[p]);
 
 % Clean joint

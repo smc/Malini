@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 
-z0=(thick/8, 0.725s);
+z0=(thick/8, 2/3s);
 z1=((x0+x2)/2, s-overshoot);
 z2=(x0+0.7sw, 0.6s);
 z3=(x2, 0);
@@ -10,8 +10,10 @@ paths[p] := z0{dir 100}.. z1{right}..z2---z3 ;
 
 pen_stroke(
     nib(thick_nib scaled 1.25 rotated terminalangle 0 of paths[p] )(0)
-    nib(top_nib scaled 0.8)(1)
-    nib(thick_vertical_nib)(2, 3)
+    nib(top_nib scaled 0.9)(1)
+    nib(thick_vertical_nib)(2)
+    nib(thick_vertical_nib scaled 0.95)(3)
+    ignore_directions(1r)
 )(paths[p])(strokes[p]);
 
 % Top hanging serif styling
@@ -27,15 +29,16 @@ p:=p+1;
 clearxy;
 z0=point 2 of paths[p-1];
 z1=(x3, y3 + 0.5s);
-z2=(0, (y1 + y3)/2.5) ;
-z3=((x2+x4)/2.5, undershoot);
-z4=(x0, y3+s/3);
+z2=(0, (y1 + y3)/2.2) ;
+z3=((x2+x4)/2.25, 1.2undershoot);
+z4=(x0, y3+0.25s);
 paths[p] := z0{dir 185}..{down}z2..z3{right}..z4;
 pen_stroke(
     nib(end_nib scaled 0.9 rotated terminalangle 0 of paths[p])(0)
     nib(middle_down_nib)(1)
-    nib(down_nib)(2)
-    cut(end_nib   rotated terminalangle 3 of paths[p], 0)(3)
+    nib(down_nib rotated -40)(2)
+    nib(end_nib rotated terminalangle 3 of paths[p])(3)
+    ignore_directions(1l, 2 ,3, 4)
 )(paths[p])(strokes[p]);
 
 
