@@ -302,8 +302,8 @@
   --footer-color: var(--material-color-grey-800);
   --title-color: var(--material-color-orange-800);
 
-  --page-width: 1123px; /* A4 size 96dpi*/
-  --page-height: 794px; /* A4 size 96dpi*/
+  --page-width: 29.7cm; /* A4 size 96dpi*/
+  --page-height: 21cm; /* A4 size 96dpi*/
   --page-margin: 48px;
 
   --malini-aalt: "aalt" off;
