@@ -1,14 +1,21 @@
 input glyph;
 beginglyph;
+
 % This glyph does not slant. Reset slant value
 slant := 0;
-z0 = (thick/4, m/4);
-z1 = (x0, y0 -(X-s)-m/6);
 
-paths[0] = z0{right}..{dir -135}z1;
+soften:=0;
+paths[0] = fullcircle scaled (thick*1.5) shifted(thick, thick);
+strokes[0] = paths[0];
+
+p:=p+1;
+z0 = point 0.1 of strokes[0] - (thick/2 , 0);
+z1 = (x0 - mw/6, -m/4);
+
+paths[p] = z0{dir -70} ..{dir -150}z1;
 pen_stroke(
-    nib(thicknib scaled 1.25 rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])(strokes[0]);
+    nib(thick_nib rotated terminalangle 0 of paths[p])(0)
+    cut(thin_nib rotated terminalangle 1 of paths[p], rel 90)(1)
+)(paths[p])(strokes[p]);
 anchor( "bottom", point 0 of paths[0]);
 endglyph;

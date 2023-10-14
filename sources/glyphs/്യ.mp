@@ -1,21 +1,25 @@
 input glyph;
 beginglyph;
-z0 = (0, y1 + m/3);
-z1 = ((x0 + x2)/2, -descent);
-z2 = (x1 + mw/3.5, y1 + m/3);
-z3 = (x1, 0.6m);
-z4 = (x3, m);
+z0 = (x1 + mw/6, -0.1*descent);
+z1 = (0, y2 + m/3);
+z2 = ((x1 + x3)/2, -descent*1.2);
+z3 = (x2 + mw/3.5, y2 + m/3);
+z4 = (x2, 0.4m);
+z5 = (x2, m);
 
-paths[p] = z0{dir -100}..z1{right}..z2..z3---z4;
-paths[p] := paths[p] shifted(-x3,0);
+paths[p] = z0{dir -80}..{left}z1{left}..z2{dir 10}..z3{up}..z4..z5;
+paths[p] := paths[p] shifted(-x4+mw*0.15,0);
 pen_stroke(
-    nib(middle_down_nib rotated terminalangle 0 of paths[0])(0)
+    cut(end_nib rotated terminalangle 0 of paths[0], 0)(0)
     nib(down_nib)(1)
-    nib(middle_down_nib scaled 0.8)(2)
-    nib(middle_down_nib)(3)
-    cut(middle_down_nib, rel 90)(4)
+    nib(down_nib)(2)
+    nib(middle_down_nib scaled 0.8)(3)
+    nib(middle_down_nib scaled 0.8)(4)
+    cut(thick_nib, rel 90)(5)
 )(paths[p])(strokes[p]);
 
+rbearing:=rbearing/2;
 absolute_position := 1;
-anchor( "right", point 1.5 of paths[p]);
+
+anchor( "right", point 2.5 of paths[p]);
 endglyph;

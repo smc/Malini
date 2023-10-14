@@ -29,22 +29,24 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 
+
 p:=p+1;
 clearxy;
-% ര sign
 z0 = point infinity of paths[p-1];
-z1 = (xpart(point 1.75 of paths[2]), -descent*0.8 );
-z2 = (xpart(point 6 of paths[p-3]), y1);
-z3 = (xpart(point 1 of paths[p-3]) - mw/3, ypart(point 1 of paths[p-3]));
-z4 = (x3 + mw/4, m);
-paths[p] =  z0{dir angle(direction infinity of paths[p-1]) }..z1{dir 190}..{dir 170}z2..z3..z4;
+z1 = (0.7(x0-x3), -descent + thick/2 );
+z2 = (1/3(x0-x3), y1);
+z3 = (xpart(point 1 of paths[0]) - mw/3, (y2+y4)/2);
+z4 = (x3+mw/4, m);
+paths[p] =  z0{down}..z1---z2..z3{up}..{dir 30}z4;
 
 pen_stroke(
     nib(middle_down_nib)(0)
-    nib(down_nib)(1,2)
+    nib(thick_horizontal_nib)(1, 2)
     nib(middle_up_nib)(3)
     nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
+
+
 
 anchor( "vc", point 0.5 of paths[1]);
 anchor( "right", point 0.75 of paths[p]);
