@@ -17,3 +17,5 @@ overrides:
   com.google.fonts/check/alt_caron:googlefonts:
     bad-mark: WARN
     wrong-mark: WARN
+  com.google.fonts/check/legacy_accents:googlefonts:
+    legacy-accents-component: WARN
