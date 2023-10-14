@@ -30,7 +30,8 @@ pen_stroke(
 
 )(paths[p])(strokes[p]);
 
+lbearing:=sw/3*0.3;
+rbearing:=sw/3*0.25;
 
-lbearing:=thick*condense*0.4;
 anchor( "top", (xpart(point 1 of paths[1]), X));
 endglyph;

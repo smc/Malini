@@ -29,5 +29,5 @@ strokes[0] :=  subpath(0, 8.85) of strokes[0]
     --  cycle;
 
 lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.4;
+rbearing:=sw/3*0.3;
 endglyph;

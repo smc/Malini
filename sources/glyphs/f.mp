@@ -27,7 +27,7 @@ strokes[0] := bottom_serif(strokes[0], 4);
 % Top hanging serif styling
 strokes[0] :=  subpath(0.4, 13) of strokes[0]{right} .. cycle;
 
-lbearing:=lbearing/2;
+lbearing:=sw/3*0.1;
 rbearing:=0;
 
 endglyph;

@@ -35,5 +35,5 @@ pen_stroke(
     nib(down_nib rotated 90)(15)
     nib(thick_horizontal_nib)(16,17)
 )(paths[p])(strokes[p]);
-rbearing:=rbearing - thick;
+
 endglyph;

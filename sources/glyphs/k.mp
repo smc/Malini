@@ -49,7 +49,7 @@ strokes[p] := serif_stroke_bottom(paths[p]);
 strokes[p]:= point 0.8 of strokes[2]..{left}(subpath (1,4) of strokes[p]){left}..point 2.2 of strokes[2]--cycle;
 
 
-lbearing:=thick*condense*0.25;
-rbearing:=thick*condense*0.25;
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.1;
 
 endglyph;

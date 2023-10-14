@@ -49,5 +49,7 @@ pen_stroke(
     nib(middle_up_nib)(4)
     cut(end_nib, -45)(7)
 )(paths[p])(strokes[p]);
-rbearing:=0.5rbearing;
+
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.1;
 endglyph;

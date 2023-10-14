@@ -12,7 +12,7 @@ pen_stroke(
 strokes[0] := top_left_serif(strokes[0], 0);
 strokes[0] := bottom_serif(strokes[0], 3);
 
-lbearing:=thick*condense*0.3;
-rbearing:=thick*condense*0.3;
+lbearing:=sw/3*0.25;
+rbearing:=sw/3*0.25;
 anchor( "top", (xpart(point 0 of paths[0]), 1.2X));
 endglyph;
