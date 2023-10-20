@@ -16,8 +16,8 @@ pen_stroke(
     ignore_directions(1r )
 )(paths[p])(strokes[p]);
 
-lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.25;
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.1;
 
 % Serifs
 strokes[0] := top_left_serif(strokes[0], 0);

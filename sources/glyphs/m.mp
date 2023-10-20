@@ -34,6 +34,6 @@ strokes[0] := bottom_serif(strokes[0], 3);
 strokes[1] := bottom_serif(strokes[1], 3);
 strokes[2] := bottom_serif(strokes[2], 3);
 
-lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.25;
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.1;
 endglyph;

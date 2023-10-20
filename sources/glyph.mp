@@ -51,6 +51,15 @@ vardef thick_vertical_nib = thick_nib enddef;
 vardef thin_vertical_nib = thin_nib enddef;
 vardef serif_nib = fix_nib(serif_height, 0, 0) enddef;
 
+vardef insert_point(expr orig_path, t) =
+    save new_point;
+    pair new_point;
+    new_point = point t of orig_path;
+    path result_path;
+    result_path = subpath (0, floor(t)) of orig_path .. new_point .. subpath (floor(t+1), length(orig_path)) of orig_path;
+    result_path
+enddef;
+
 vardef terminalnib =
     if terminalround = 0:
         fix_nib(thick*xthick, 0, 0)

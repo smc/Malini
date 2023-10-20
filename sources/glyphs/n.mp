@@ -17,14 +17,15 @@ pen_stroke(
     ignore_directions(1r )
 )(paths[p])(strokes[p]);
 
+
 % Serifs
 strokes[0] := top_left_serif(strokes[0], 0);
 strokes[0] := bottom_serif(strokes[0], 3);
 
 strokes[1] := bottom_serif(strokes[1], 3);
 
-lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.25;
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.1;
 
 anchor( "top", (xpart(point 1 of paths[1]), 0.9X));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));

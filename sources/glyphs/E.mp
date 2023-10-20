@@ -9,14 +9,14 @@ pen_stroke(
    nib(thick_vertical_nib)(0,1,2)
 )(paths[p])(strokes[p]);
 
-strokes[p] := top_left_serif(strokes[p], 0);
+strokes[p] := top_left_straight_serif(strokes[p], 0);
 strokes[p] := bottom_left_serif(strokes[p], 3);
 
 % Top bar
 p:=p+1;
 clearxy;
-z0 = point 0 of paths[0] - (0, thin/2*1.2);
-z1 = (x0 + sw*0.8, y0);
+z0 = (xpart point 8 of strokes[p-1] , ypart point 8 of strokes[p-1]  -thin/2*1.2);
+z1 = (x0 + sw*0.75, y0);
 
 paths[1] = z0--z1 ;
 
@@ -24,9 +24,15 @@ pen_stroke(
     nib(thin_nib scaled 1.2 rotated 90)(0,1)
 )(paths[p])(strokes[p]);
 % Hanging serif
-strokes[p] := subpath(0, 0.7) of strokes[p]{right}
- ..{down}(xpart point 2 of strokes[p] - serif_height , s)
- -- (xpart point 2 of strokes[p]+0.01X, s)
+clearxy;
+z0 = (x1- serif_height , s);
+z1 = (xpart point 1 of strokes[p] + serif_height, s);
+% Control points
+z3 = (xpart point 0.8 of strokes[p] , ypart point 0 of strokes[p] );
+z4 = (xpart point 0.9 of strokes[p] , 0.95y3);
+strokes[p] := subpath(0, 0.5) of strokes[p]
+ ..controls z3 and z4 .. z0
+ -- z1
  -- subpath(2, length(strokes[p])) of strokes[p]
  -- cycle;
 
@@ -51,12 +57,18 @@ paths[p] = z0--z1 ;
 pen_stroke(
     nib(thin_nib scaled 1.2 rotated 90)(0,1)
 )(paths[p])(strokes[p]);
-% Standing Serif
+
+% Standing serif
+clearxy;
+z0 = (xpart point 1 of strokes[p]+0.04Xw, X-s-0.01Xw);
+z1 = (x0 - serif_height, X-s);
+% Control points for joint
+z3 = (x1 - 0.08Xw,  ypart point 3 of strokes[p]*1.8);
+z4 = (x1 - 0.1Xw,  ypart point 3 of strokes[p]);
 strokes[p] := subpath(0, 1) of strokes[p]{right}
-   -- (xpart point 1 of strokes[p]+0.01Xw, X-s)
-   -- (xpart point 1 of strokes[p] - serif_height, X-s){down}
-  .. {left}subpath(2.3, length(strokes[p])) of strokes[p]
-  -- cycle;
+   -- z0---z1.. controls z3 and z4 .. subpath(2.4, length(strokes[p])) of strokes[p]  -- cycle;
+
+
 lbearing:=serif_width/2;
 anchor( "top", (xpart(point 0.5 of paths[1]), 1.2X));
 endglyph;

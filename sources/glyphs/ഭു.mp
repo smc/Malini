@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-z0 = ( x1 + 0.1mw , 0);
+z0 = ( x1 + 0.15mw , 0);
 z1 = ( 0, (y0 + y2)/2);
 z2 = ( x1 + mw/2, m - overshoot); % top
 z3 = ( x2 + mw/3, y4 + m/8);
@@ -26,6 +26,7 @@ pen_stroke(
     nib(down_nib rotated 90)(10)
     nib(top_nib scaled 0.8)(4, 6)
     nib(thick_horizontal_nib)(11,12)
+    ignore_directions(1,4,5,6)
 )(paths[p])(strokes[p]);
 
 endglyph;

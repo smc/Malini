@@ -11,7 +11,9 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
     ignore_directions(2)
 )(paths[p])(strokes[p]);
-strokes[p] := top_left_serif(strokes[p], 0);
+
+
+strokes[p] := top_left_straight_serif(strokes[p], 0);
 
 p:=p+1;
 clearxy;
@@ -23,14 +25,17 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
 
-strokes[p] := top_left_serif(strokes[p], 0);
-strokes[p] := bottom_right_serif(strokes[p], 4);
-% Leave some extra gap at bottom, near serif
-strokes[p] :=  subpath(0, 2.75) of strokes[p]
-    -- subpath(3.15, 10) of strokes[p]
-    --  cycle;
 
-lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.25;
+
+
+strokes[p] := top_left_straight_serif(strokes[p], 0);
+% Leave some extra gap at bottom, near serif
+strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
+    .. {dir -80}subpath(3.15, 7) of strokes[p]
+    --  cycle;
+strokes[p] := bottom_right_serif(strokes[p], 4);
+
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.1;
 anchor( "top", (xpart(point 2.25 of paths[0]), 0.9X));
 endglyph;

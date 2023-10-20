@@ -1,3 +1,3 @@
 input ./config/Regular;
 
-slant :=15; % Degree of slanting
+slant := 12; % Degree of slanting

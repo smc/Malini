@@ -11,12 +11,14 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
     nib(thin_vertical_nib)(3,4)
     nib(down_nib)(2)
+    ignore_directions(2l)
 )(paths[p])(strokes[p]);
 
 % Serifs
+
+
 strokes[p] := top_serif(strokes[p], 0);
-strokes[p] := top_right_serif(strokes[p], 6);
-strokes[p] := top_left_serif(strokes[p], 9);
+strokes[p] := top_serif(strokes[p], 6);
 
 anchor( "top", (xpart(point 2 of paths[0]), 1.1X));
 endglyph;

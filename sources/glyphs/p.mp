@@ -20,6 +20,8 @@ pen_stroke(
    ignore_directions(1,2,3)
 )(paths[p])(strokes[p]);
 
+
+
 % Serifs
 strokes[0] := top_left_serif(strokes[0], 0);
 strokes[0] := bottom_serif(strokes[0], 3);
@@ -28,6 +30,7 @@ strokes[0] :=  subpath(0, 8.85) of strokes[0]
     -- subpath(9.15, 10) of strokes[0]
     --  cycle;
 
-lbearing:=sw/3*0.25;
-rbearing:=sw/3*0.3;
+
+lbearing:=sw/3*0.1;
+rbearing:=sw/3*0.2;
 endglyph;

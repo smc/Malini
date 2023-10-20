@@ -12,7 +12,7 @@ endfor;
 p:=p+1;
 clearxy;
 z0 = (xpart point 4 of paths[p-3], 0);
-z1 = (3/4(x0-x3), -descent  );
+z1 = (3/4(x0-x3), reph_sign_depth  );
 z2 = (0.5(x0-x3), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, m/2);
 z4 = (x3+mw/6, m);

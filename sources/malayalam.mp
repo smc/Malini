@@ -3,6 +3,8 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
+% Depth of reph sign in ക്ര, പ്ര , സ്ര etc
+reph_sign_depth   := -descent*0.8;
 
 vardef left_arch =
     clearxy;

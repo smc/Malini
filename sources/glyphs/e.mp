@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 save r;
 r=0.8;
-z0 = (r*sw, (y1+y3)/1.95);
+z0 = (r*sw, (y1+y3)/1.9);
 z1 = ((x0 + x2)/2, s - overshoot);
 z2 = (0, (y1+y3)/2);
 z3 = ((x2+x4)/2, undershoot*1.5);
@@ -22,13 +22,13 @@ pen_stroke(
 clearxy;
 p:=p+1;
 z0= point 0 of paths[p-1] + (0, thin*1.2/2);
-z1=(xpart(point 2 of paths[p-1]), 0.95y0);
+z1=(xpart(point 2 of paths[p-1]), y0);
 paths[p]:=z0--z1;
 pen_stroke(
     nib(end_nib rotated 90)(0,1)
 )(paths[p])(strokes[p]);
 
-lbearing:=sw/3*0.3;
-rbearing:=sw/3*0.4;
+lbearing:=sw/3*0.2;
+rbearing:=sw/3*0.2;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 endglyph;
