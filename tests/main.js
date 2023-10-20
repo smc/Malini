@@ -169,7 +169,7 @@ function listen() {
             } else {
                 document.querySelector('#font-size > input[type="range"]').value = fontSize;
             }
-            root.style.setProperty('--font-size', fontSize);
+            root.style.setProperty('--font-size', `${fontSize}px`);
         });
     });
 
@@ -239,7 +239,7 @@ function listen() {
                 document.querySelector('#letter-spacing > input[type="range"]').value =
                     letterSpacing;
             }
-            root.style.setProperty('--font-letter-spacing', letterSpacing);
+            root.style.setProperty('--font-letter-spacing', `${letterSpacing}px`);
         });
     });
 
@@ -305,4 +305,4 @@ function listen() {
 }
 
 
-window.onload = listen
+document.addEventListener("DOMContentLoaded", listen );
