@@ -210,8 +210,8 @@ variablefonts:
             - value: 0
               name: Upright
               flags: 2
-              linkedValue: -15
-            - value: -15
+              linkedValue: -12
+            - value: -12
               name: Italic
         - tag: wght
           name: Weight
