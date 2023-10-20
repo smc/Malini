@@ -156,7 +156,7 @@ glyphs:
       # - ["1.A", "2.L_ROUNDS", -50]
       # - ["1.MOUTH", "2.U_ROUNDS", -40]
       # - ["1.MOUTH", "2.L_ROUNDS", -40]
-      - ["1.ARM", "2.L_ROUNDS", -40] # Examples: ro
+      - ["1.ARM", "2.L_ROUNDS", -10] # Examples: ro re
       - ["1.V", "2.U_ROUNDS", -30]
       - ["1.V", "2.L_ROUNDS", -40]
       - ["1.V", "2.A", -100]
@@ -170,7 +170,7 @@ glyphs:
       # - ["1.L_ROUNDS", "2.f", -30]
       - ["a", "2.t", -10]
       - ["a", "y", -10]
-      - ["r", "a", -20]
+      # - ["r", "a", -10]
       # - ["k", "2.L_ROUNDS", -20]
       # - ["j", "j", 50]
     malayalam:
