@@ -9,7 +9,7 @@
       <labelname xml:lang="en">Width</labelname>
       <labelname xml:lang="ml">വീതി</labelname>
     </axis>
-    <axis tag="slnt" minimum="-15" maximum="0" default="0" name="slant">
+    <axis tag="slnt" minimum="-12" maximum="0" default="0" name="slant">
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
@@ -67,7 +67,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="optical" xvalue="20"/>
       </location>
     </source>
@@ -104,7 +104,7 @@
       <location>
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
       </location>
     </instance>
     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Condensed-Thin.ufo" stylename="Condensed Thin">
@@ -139,7 +139,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="200"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -157,7 +157,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="300"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -194,7 +194,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
       </location>
     </instance>
     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Condensed.ufo" stylename="Condensed">
@@ -221,7 +221,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="75"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
       </location>
     </instance>
     <instance familyname="Malini" filename="./fonts/Malini/ufo/Malini-Expanded.ufo" stylename="Expanded">
@@ -265,7 +265,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="500"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -301,7 +301,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="600"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -319,7 +319,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="700"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -364,7 +364,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="800"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
@@ -382,7 +382,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="900"/>
-        <dimension name="slant" xvalue="-15"/>
+        <dimension name="slant" xvalue="-12"/>
         <dimension name="width" xvalue="100"/>
       </location>
     </instance>
