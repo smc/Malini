@@ -20,14 +20,14 @@ strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])
 p:=p+1;
 clearxy;
 z0=(xpart(point 1 of strokes[p-1])-thick/2, thick*tand(45)/2);
-z1=(x0, m/2);
+z1=(x0, (y0+y2)/2);
 z2=((x1+x3)/2, m-overshoot);
 z3=(x4, y1);
 z4=(x0 - mw*0.75, ypart(point infinity of paths[p-1]));
 paths[p]:= z0---z1..z2..z3---z4 ;
 pen_stroke(
     cut(thick_vertical_nib, -45)(0)
-    nib(thick_vertical_nib)(1)
+    nib(middle_down_nib)(1)
     nib(top_nib)(2)
     nib(middle_up_nib)(3,4)
 )(paths[p])(strokes[p]);
