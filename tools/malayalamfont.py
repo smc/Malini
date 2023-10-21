@@ -963,7 +963,7 @@ class MalayalamFont(Font):
         self.info.openTypeNameManufacturerURL = self.options.manufacturer.url
 
         # Metrics
-        self.info.xHeight = self.info.ascender * 0.7
+        self.info.xHeight = self.info.ascender * 2/3
         self.info.capHeight = self.info.ascender
         self.info.guidelines = []
         self.info.italicAngle = 0
