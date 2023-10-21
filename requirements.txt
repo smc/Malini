@@ -68,7 +68,7 @@ filelock==3.12.4
     #   virtualenv
 font-v==2.1.0
     # via fontbakery
-fontbakery[googlefonts,ufo-sources]==0.10.1
+fontbakery[googlefonts,ufo-sources]==0.10.2
     # via malini (pyproject.toml)
 fontfeatures==1.8.0
     # via
