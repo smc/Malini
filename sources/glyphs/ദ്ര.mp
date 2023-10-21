@@ -3,7 +3,7 @@ beginglyph;
 
 paths[0] := subpath(0, 4) of da shifted(mw/3,0);
 z5=(xpart(point infinity of paths[0]) + 0.4mw, 0);
-z6=(xpart(point 1.8 of paths[0]), -descent*0.8);
+z6=(xpart(point 1.8 of paths[0]), reph_sign_depth);
 z7=(xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z8=(x7 + mw/4, m);
 paths[0] := paths[0]{right}..z5..z6..z7.. z8;
