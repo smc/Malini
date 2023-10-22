@@ -1007,9 +1007,9 @@ class MalayalamFont(Font):
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
         # the top extremum of the font rendering box
-        self.info.openTypeOS2WinAscent = 1102  # As calculated by Fontbakery
+        self.info.openTypeOS2WinAscent = 1099  # As calculated by `make metrics-report`
         # the bottom extremum of the font rendering box (positive value)
-        self.info.openTypeOS2WinDescent = 680  # As calculated by Fontbakery
+        self.info.openTypeOS2WinDescent = 662  # As calculated by `make metrics-report`
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2

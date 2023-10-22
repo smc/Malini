@@ -193,7 +193,7 @@ test: proofs
 	fontbakery check-opentype $(FONTSDIR)/Malini/otf/Malini-Regular.otf
 	fontbakery check-googlefonts --full-lists --config fontbakery.yaml --html tests/fontbakery-report.html --ghmarkdown tests/fontbakery-report.md $(FONTSDIR)/Malini/ttf-variable/Malini-VF.ttf
 
-install: build
+install: $(FONTSDIR)/Malini/otf-variable
 	@mkdir -p $(INSTALLDIR);
 	@cp $(FONTSDIR)/Malini/otf-variable/Malini-VF.otf $(INSTALLDIR);
 	@fc-cache -fr
@@ -219,3 +219,7 @@ update-deps:
 	pip install --upgrade pip-tools pip wheel
 	pip-compile --upgrade --extra=tests,dev -o requirements.txt pyproject.toml
 
+# Vertical Metrics Reporting
+metrics-report:
+	# May need `pip install font-line` to install font-line
+	font-line report $(FONTSDIR)/Malini/otf-variable/*.otf
