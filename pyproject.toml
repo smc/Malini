@@ -21,26 +21,8 @@ tests = [
     "fontbakery[ufo-sources, googlefonts]",
 ]
 dev = [
-    "black",
     "ruff",
-    "tox",
 ]
-
-
-[tool.black]
-line-length = 120
 
 [tool.ruff]
 line-length = 120
-select = [
-    "E",  # pycodestyle errors
-    "W",  # pycodestyle warnings
-    "F",  # pyflakes
-    "I",  # isort
-    "C",  # flake8-comprehensions
-    "B",  # flake8-bugbear
-]
-ignore = [
-    "B008",  # do not perform function calls in argument defaults
-    "C901",  # too complex
-]

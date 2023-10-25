@@ -814,7 +814,7 @@ class MalayalamFont(Font):
         log.debug(f"Total glyph count: {len(self)}")
 
     @staticmethod
-    def commonAnchor(setA, setB) -> str|None:
+    def commonAnchor(setA, setB) -> str | None:
         nameSetA = [anchor["name"] for anchor in setA]
         nameSetB = [anchor["name"] for anchor in setB]
         commonNames = [name for name in nameSetA if name in nameSetB]
@@ -963,7 +963,7 @@ class MalayalamFont(Font):
         self.info.openTypeNameManufacturerURL = self.options.manufacturer.url
 
         # Metrics
-        self.info.xHeight = self.info.ascender * 2/3
+        self.info.xHeight = self.info.ascender * 2 / 3
         self.info.capHeight = self.info.ascender
         self.info.guidelines = []
         self.info.italicAngle = 0
