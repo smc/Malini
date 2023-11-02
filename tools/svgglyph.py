@@ -6,6 +6,7 @@ import xml.etree.ElementTree as etree
 from fontTools import agl
 from fontTools.svgLib import SVGPath
 from fontTools.ufoLib import UFOLibError
+from fontTools.misc.roundTools import otRound
 from ufoLib2.objects import Glyph
 
 AGL2UV_EXTRA = {
@@ -101,6 +102,27 @@ class SVGGlyph:
         except ValueError:
             msg = "Invalid transformation matrix: %r" % arg
             raise ValueError(msg)
+
+    def round_glif_points(self):
+        """
+        Rounds the x and y coordinates of points in a Glif object.
+
+        Parameters:
+        - self: The Glif object containing the points to be rounded.
+
+        Returns:
+        - None
+
+        Description:
+        This method iterates through the contours and points in a Glif object and rounds the x and y coordinates of each point.
+        The rounding is done using the otRound function.
+
+        """
+        for contour in self.glif:
+            for point in contour.points:
+                # Round the point's x and y coordinates
+                point.x = otRound(point.x)
+                point.y = otRound(point.y)
 
     def parse(self):
         svgObj = etree.parse(self.svg_file_path).getroot()
@@ -224,6 +246,8 @@ class SVGGlyph:
         except Exception:
             print(f"Error while processing {self.__dict__}")
             traceback.print_exc()
+
+        self.round_glif_points()
 
     @staticmethod
     def name_from_uc(char):
