@@ -19,6 +19,8 @@ pen_stroke(
    nib(thin_nib scaled 1.2 rotated 90)(0,1)
 )(paths[p])(strokes[p]);
 
+
+
 % Serifs
 strokes[0] := top_serif(strokes[0], 0);
 strokes[0] := bottom_left_serif(strokes[0], 3);

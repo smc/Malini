@@ -16,8 +16,8 @@ pen_stroke(
     nib(top_nib)(3)
     nib(middle_down_nib scaled 0.9)(2)
     nib(middle_up_nib)(4)
-    nib(thin_vertical_nib)(6)
-    nib(thin_vertical_nib)(7)
+    nib(thick_vertical_nib)(6)
+    nib(thick_vertical_nib)(7)
 )(paths[p])(strokes[p]);
 
 p:=p+1;

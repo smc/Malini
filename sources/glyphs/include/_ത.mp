@@ -7,7 +7,7 @@ z4 = ( x3 - mw/4, 2undershoot); % bottom middle
 z5 = ( (x1+x3)/2.5, (y4+y6)/2.5);
 z6 = ( (x5 + x7)/2, y2); % second top
 z7 = ( x6 + mw/2, (y6+y8)/2);
-z8 = ( x7 - mw/3, 0);
+z8 = ( x7 - mw/4, 0);
 paths[p]:=z0---z1..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8;
 
 pen_stroke(

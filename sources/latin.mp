@@ -231,7 +231,7 @@ enddef;
 
 vardef top_serif(expr s, p ) =
     clearxy;
-    z0 = (point p of s) + (-1.2serif_width+thick/2, 0); % Move to left
+    z0 = (point p of s) + (-serif_width+thick/2, 0); % Move to left
     z1 = (x0, y0  -3/4serif_height);
     z2 = (xpart point p of s, y1-serif_width*2);
 
@@ -247,11 +247,11 @@ vardef top_serif(expr s, p ) =
     z10=(x6+ 0.05u, y4);
 
     if p = 0:
-        z0{dir 250}
-        .. {dir 300}z1.. controls z4 and z5 .. z2
+        z0{dir 210}
+        .. {dir 330}z1.. controls z4 and z5 .. z2
         -- subpath(p+1, length(s)-2) of s
-        -- z6 .. controls z9 and z10.. z7
-        --z8{dir 183} .. {dir 177}cycle
+        -- z6 .. controls z9 and z10.. z7{dir 30}
+        .. {dir 150}z8{dir 183} .. {dir 177}cycle
     else:
         z14 = (point p of s) + (-1.2serif_width, 0); % Move to left
         z15 = (x14, y14  -3/4serif_height);
@@ -269,15 +269,24 @@ vardef top_serif(expr s, p ) =
     fi
 enddef;
 
-
 vardef bottom_left_serif(expr s, p ) =
-   subpath(0, p-1) of s
-   -- (point p of s) + (0, serif_height*2){down}
-   .. {left} (point p of s) + (-serif_width+thick/2, serif_height)
-   -- (point p of s) + (-serif_width+thick/2, 0)
-   -- subpath(p+1, length(s)) of s
-   -- cycle
+   clearxy;
+   thickness := (xpart point p+1 of s )- (xpart point p of s);
+   z0 = (xpart point p of s, y2 + 2*serif_width);
+   z1 = (x0 - serif_width+thickness/2, y2+3/4serif_height) ;
+   z2 = (x1, ypart point p of s);
+   z3 = (xpart point p+1 of s + serif_width-thickness/2, y2);
+   z4 = (x3, y1);
+   z5 = (xpart point p+1 of s, y4+1.25serif_width);
+
+   z6 = (x0, ypart point p of s + serif_height*1.2);
+   z7 = (x0-0.05u, y6) ;
+
+   subpath(0, p-1) of s -- z0.. controls z6 and z7.. z1{dir 210}
+      .. {dir 330}z2
+      -- subpath(p+1, length(s)) of s  -- cycle
 enddef;
+
 
 vardef bottom_right_serif(expr s, p) =
     clearxy;
@@ -298,21 +307,73 @@ enddef;
 vardef bottom_serif(expr s, p) =
     clearxy;
 
+    thickness := (xpart point p+1 of s )- (xpart point p of s);
     z0 = (xpart point p of s, y2 + 2*serif_width);
-    z1 = (x0 - 1.25serif_width+thick/2, y2+3/4serif_height) ;
+    z1 = (x0 - serif_width+thickness/2, y2+3/4serif_height) ;
     z2 = (x1, ypart point p of s);
-    z3 = (x2 + 1.2serif_width*2, y2);
+    z3 = (xpart point p+1 of s + serif_width-thickness/2, y2);
     z4 = (x3, y1);
-    z5 = (x3 - 1.2serif_width + thick/2, y4+1.25serif_width);
+    z5 = (xpart point p+1 of s, y4+1.25serif_width);
 
     z6 = (x0, ypart point p of s + serif_height*1.2);
     z7 = (x0-0.05u, y6) ;
     z8 = (x5+0.05u, y6);
     z9 = (x5, y6);
-    subpath(0, p-1) of s -- z0.. controls z6 and z7.. z1{dir 250}
-        .. {dir 280}z2{dir 3}
-        .. {dir -3}z3{dir 70}
-        .. {dir 110}z4..  controls  z8 and z9 .. z5
+    subpath(0, p-1) of s -- z0.. controls z6 and z7.. z1{dir 210}
+        .. {dir 330}z2{dir 3}
+        .. {dir -3}z3{dir 30}
+        .. {dir 150}z4..  controls  z8 and z9 .. z5
         -- subpath(p+2, length(s)) of s  -- cycle
 enddef;
 
+
+vardef top_left_slanted_serif(expr s, p ) =
+    clearxy;
+    z0 = (point p of s) + (-serif_width+thick/2, 0); % Move to left
+    z1 = (x0, y0  -3/4serif_height);
+    z2 = (point 0.3 of s);
+
+    z4 = (xpart point p + 0.1 of s, ypart point p of s - serif_height*1.2);
+    z5 = (x4, y4);
+
+
+    z6 = point length(s)- 1 - 0.3 of s;
+    z7 = (x6 + serif_width-thick/2, y1);
+    z8 = (x7, y0);
+
+    z9=(xpart point length(s) - 1 - 0.1 of s , y4);
+    z10=(x6+ 0.05u, y4);
+
+
+     z0{dir 250}
+     .. {dir 300}z1.. controls z4 and z5 .. z2
+     -- subpath(p+1, length(s)-2) of s
+     -- z6 .. controls z9 and z10.. z7
+     --z8{dir 183} .. {dir 177}cycle
+
+enddef;
+
+vardef top_right_slanted_serif(expr s, p ) =
+    clearxy;
+    z0 = (point p  of s) + (-serif_width, 0); % Move to left
+    z1 = (x0, y0  -3/4serif_height);
+    z2 = (point 0.3 of s);
+
+    z4 = (xpart point p + 0.1 of s, ypart point p of s - serif_height*1.2);
+    z5 = (x4, y4);
+
+
+    z6 = point length(s)- 1 - 0.3 of s;
+    z7 = (x6 + serif_width , y1); % Move to right
+    z8 = (x7, y0);
+
+    z9=(xpart point length(s) - 1 - 0.1 of s , y4);
+    z10=(x6+ thick/2, y9);
+
+    z0{dir 250}
+     .. {dir 300}z1.. controls z4 and z5 .. z2
+     -- subpath(p+1, length(s)-2) of s
+     -- z6 .. controls z9 and z10.. z7
+     --z8{dir 183} .. {dir 177}cycle
+
+enddef;

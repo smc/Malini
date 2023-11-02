@@ -10,7 +10,7 @@ z6=(x5 + mw/2, 0.6m);
 z7=(x6, 0.4m);
 z8=(x7 + mw/3, y3);
 z9=(x8 + mw/3, (y8+y10)/2);
-z10=(x9 - mw/3, m);
+z10=(x9 - mw/4, m);
 
 l=z0{dir 80}..z1..z2..z3..z4..z5..{down}z6..z7..z8..z9{up}..z10;
 paths[p] = l shifted(0,-m*1.1) xscaled 0.8 yscaled 2/3;

@@ -14,8 +14,8 @@ paths[p] =  z0 .. z1.. z2..z3..z4 ..z5---z6;
 paths[0] := paths[0] shifted (-x5 + 3/4thick, 0);
 pen_stroke(
     nib(end_nib scaled 0.8rotated terminalangle 0 of paths[p])(0)
-    nib(middle_up_nib)(1)
-    nib(middle_down_nib scaled 0.8)(3)
+    nib(middle_down_nib  scaled 0.8)(1)
+    nib(middle_up_nib)(3)
     nib(top_nib)(2)
     nib(top_nib)(4)
     nib(thick_vertical_nib)(5,6)
