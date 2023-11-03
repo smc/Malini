@@ -6,55 +6,58 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="fonts.css">
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 		<script src="main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
-		<!-- 'nano' theme -->
 	</head>
 
 	<body>
 		<header>
 			<section>
-			<section class="font-name">
+				<section class="font-name">
 					<label for="font-name">Font</label>
 					<select class="controls fontname" id="test-font">
 						<option value="Malini">Malini</option>
 					</select>
-			</section>
-			<section class="text-samples">
 
-				<label for="test-content">Sample</label>
-				<select class="controls testcontent" id="test-content">
-					<option value="paragraphsMl" selected>ഖണ്ഡികകൾ</option>
-					<option value="paragraphsEn">Paragraphs</option>
-					<option value="lines">സിനിമാപ്പേരുകൾ</option>
-					<option value="pangrams">Pangrams</option>
-					<option value="kerning">Kerning</option>
-					<option value="ligaturesMl">കൂട്ടക്ഷരങ്ങൾ</option>
-				</select>
-				<span class="sample-nav">
-					<span id="prev-test" style="cursor: pointer;">
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-							version="1.1" width="24" height="24" viewBox="0 0 24 24">
-							<path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-						</svg>
+				</section>
+				<section class="text-samples">
+
+					<label for="test-content">Sample</label>
+					<select class="controls testcontent" id="test-content">
+						<option value="paragraphsMl" selected>ഖണ്ഡികകൾ</option>
+						<option value="paragraphsEn">Paragraphs</option>
+						<option value="lines">സിനിമാപ്പേരുകൾ</option>
+						<option value="pangrams">Pangrams</option>
+						<option value="kerning">Kerning</option>
+						<option value="ligaturesMl">കൂട്ടക്ഷരങ്ങൾ</option>
+					</select>
+					<span class="sample-nav">
+						<span class="material-symbols-outlined" id="prev-test" style="cursor: pointer;">
+							arrow_back
+						</span>
+						<span class="material-symbols-outlined" id="next-test" style="cursor: pointer;">
+							arrow_forward
+						</span>
 					</span>
-					<span id="next-test" style="cursor: pointer;">
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-							version="1.1" width="24" height="24" viewBox="0 0 24 24">
-							<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
-						</svg>
-					</span>
-				</span>
-		</section>
-	</section>
+				</section>
+				<section class="theme cols-3">
+					<label for="theme-switcher">Theme</label>
+					<form id="theme-switcher">
+						<input type="radio" id="light" name="theme" value="light">
+						<label for="light">Light</label>
+						<input type="radio" checked id="dark" name="theme" value="dark">
+						<label for="dark">Dark</label>
+					</form>
+				</section>
+			</section>
+
 			<section class="font-vals">
 				<div class="val-selector cols-3" id="font-size">
 					<label for="font-fontSize">Font Size</label>
-					<input type="range" data-id="fontSize" value="20" min="8" step="1" max="512">
+					<input type="range" data-id="fontSize" value="20" min="8" step="1" max="512" />
 					<input type="number" class="font-size val-input" data-id="fontSize" value="20" min="8" step="1"
-						max="120" id="font-fontSize">
+						max="120" id="font-fontSize" />
 				</div>
 				<div class="val-selector cols-3" id="line-height">
 					<label for="font-lineHeight">Line Height</label>
@@ -78,7 +81,7 @@
 			</section>
 			<section class="font-variations">
 
-				<div class="val-selector cols-3"  id="font-weight">
+				<div class="val-selector cols-3" id="font-weight">
 					<label for="font-fontSize">Weight</label>
 
 					<input type="range" data-id="fontWeight" value="400" min="100" step="1" max="900">
@@ -87,7 +90,7 @@
 					<input type="number" class="font-weight val-input" data-id="fontWeight" value="400" min="1" step="1"
 						max="900" id="font-fontWeight">
 				</div>
-				<div class="val-selector cols-3"  id="font-width">
+				<div class="val-selector cols-3" id="font-width">
 					<label for="font-fontWidth">Width</label>
 
 					<input type="range" data-id="fontWidth" value="100" min="75" step="1" max="125">
@@ -96,7 +99,7 @@
 					<input type="number" class="font-width val-input" data-id="fontWidth" value="100" min="1" step="1"
 						max="125" id="font-fontWidth">
 				</div>
-				<div class="val-selector cols-3"  id="font-slant">
+				<div class="val-selector cols-3" id="font-slant">
 					<label for="font-fontSlant">Slant</label>
 
 					<input type="range" data-id="fontSlant" value="0" min="-15" step="1" max="0">
@@ -104,40 +107,28 @@
 					<input type="number" class="font-slant val-input" data-id="fontSlant" value="0" min="-15" step="1"
 						max="0" id="font-fontSlant">
 				</div>
-				<div class="val-selector cols-3"  id="font-optical">
-					<label for="font-fontOptical">Optical size
-					<input type="checkbox" data-id="fontOptical" checked>
-					</label>
- 				</div>
+				<div class="val-selector cols-3" id="font-optical">
+					<label for="font-fontOptical">Optical size</label>
+					<input type="checkbox" data-id="fontOptical" checked />
+				</div>
 			</section>
 
-			<section class="font-colors">
 
-				<label for="font-fontColor">Font color
-					<input type="button" class="font-color" data-id="fontColor" id="font-fontColor"></label>
-
-				<label for="background-color">Background
-					<input type="button" class="font-color background-color val-input" data-id="background-color"
-						id="background-color"></label>
-
-			</section>
 			<section class="text-align">
 				<label for="text-align">Text align</label>
+
 				<span class="alignments">
-					<span data-align="left">
-
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z"/></svg>
+					<span class="material-symbols-outlined" data-align="left">
+						format_align_left
 					</span>
-					<span data-align="center">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 15v2h10v-2H7zm-4 6h18v-2H3v2zm0-8h18v-2H3v2zm4-6v2h10V7H7zM3 3v2h18V3H3z"/></svg>
+					<span class="material-symbols-outlined" data-align="center">
+						format_align_center
 					</span>
-					<span data-align="right">
-
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18v-2H3v2zm6-4h12v-2H9v2zm-6-4h18v-2H3v2zm6-4h12V7H9v2zM3 3v2h18V3H3z"/></svg>
+					<span class="material-symbols-outlined" data-align="right">
+						format_align_right
 					</span>
-					<span data-align="justify">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zm0-4h18v-2H3v2zm0-4h18V7H3v2zm0-6v2h18V3H3z"/></svg>
+					<span class="material-symbols-outlined" data-align="justify">
+						format_align_justify
 					</span>
 				</span>
 			</section>
@@ -207,12 +198,12 @@
 					<span>liga</span>
 				</div>
 				<div>
-					<label for="onum"><input type="checkbox" id="onum" name="opentype" value="onum" >
+					<label for="onum"><input type="checkbox" id="onum" name="opentype" value="onum">
 						Old numerals</label>
 					<span>onum</span>
 				</div>
 				<div>
-					<label for="sups"><input type="checkbox" id="sups" name="opentype" value="sups" >
+					<label for="sups"><input type="checkbox" id="sups" name="opentype" value="sups">
 						Superscript</label>
 					<span>sups</span>
 				</div>
@@ -230,6 +221,6 @@
 			</div>
 		</main>
 
-		</body>
+	</body>
 
 </html>

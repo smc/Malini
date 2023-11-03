@@ -11,26 +11,6 @@ function shuffle(a) {
 }
 
 let root = document.documentElement;
-const swatches =[
-    'rgba(255, 255, 255, 1)',
-    'rgba(244, 67, 54, 1)',
-    'rgba(233, 30, 99, 0.95)',
-    'rgba(156, 39, 176, 0.9)',
-    'rgba(103, 58, 183, 0.85)',
-    'rgba(63, 81, 181, 0.8)',
-    'rgba(33, 150, 243, 0.75)',
-    'rgba(3, 169, 244, 0.7)',
-    'rgba(0, 188, 212, 0.7)',
-    'rgba(0, 150, 136, 0.75)',
-    'rgba(76, 175, 80, 0.8)',
-    'rgba(139, 195, 74, 0.85)',
-    'rgba(205, 220, 57, 0.9)',
-    'rgba(255, 235, 59, 0.95)',
-    'rgba(255, 250, 240, 1)',
-    'rgba(35, 36, 31, 1)',
-    'rgba(255, 193, 7, 1)',
-    'rgba(47, 53, 65, 1)'
-];
 
 const otFeatures = {
     'kern': true,
@@ -116,7 +96,7 @@ function listen() {
 
     document.getElementById('salt').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
-        contentArea.style.fontFeatureSettings = "\"salt\" "  + selected
+        contentArea.style.fontFeatureSettings = "\"salt\" " + selected
     })
 
     document.getElementById('test-font').addEventListener('change', function () {
@@ -126,12 +106,10 @@ function listen() {
         document.getElementById('var-width').style.display = "none"
         document.getElementById('var-slant').style.display = "none"
         document.getElementById('var-optical').style.display = "none"
-        document.getElementById('font-fontColor').disabled = false
         root.style.setProperty('--font', selected);
 
 
         if (selected === 'Malini') {
-            document.getElementById('font-fontColor').disabled = false
             document.getElementById('var-values').style.display = "grid"
             document.getElementById('var-weight').style.display = "contents"
             document.getElementById('var-width').style.display = "contents"
@@ -150,7 +128,7 @@ function listen() {
         contentArea.innerHTML = testContents[++currentTestIndex];
     });
     document.getElementById('prev-test').addEventListener('click', () => {
-        if (currentTestIndex -1 <= 0) {
+        if (currentTestIndex - 1 <= 0) {
             currentTestIndex = testContents.length;
         }
         contentArea.innerHTML = testContents[--currentTestIndex];
@@ -212,7 +190,7 @@ function listen() {
 
     document.querySelectorAll("[data-id='fontOptical']").forEach((element) => {
         element.addEventListener('change', function () {
-            root.style.setProperty('--opsz-enabled',  element.checked? "auto":"none");
+            root.style.setProperty('--opsz-enabled', element.checked ? "auto" : "none");
         });
     });
 
@@ -243,66 +221,30 @@ function listen() {
         });
     });
 
-    new Pickr({
-        el: '#font-fontColor',
-        theme: 'nano',
-        useAsButton: true,
-        defaultRepresentation: 'HEX',
-        default: '#000000',
-        swatches,
-        components: {
-            preview: true,
-            opacity: true,
-            hue: true,
-            // Input / output Options
-            interaction: {
-                hex: true,
-                hsla: true,
-                input: true,
-            }
-        }
-    }).on('change', (color, source, instance) => {
-        root.style.setProperty('--text-color', color.toHEXA());
-    })
-
-    new Pickr({
-        el: '#background-color',
-        theme: 'nano',
-        useAsButton: true,
-        defaultRepresentation: 'HEX',
-        default: '#2c3e50',
-        swatches,
-        components: {
-            preview: true,
-            opacity: true,
-            hue: true,
-            // Input / output Options
-            interaction: {
-                hex: true,
-                hsla: true,
-                input: true,
-            }
-        }
-    }).on('change', (color, source, instance) => {
-        root.style.setProperty('--text-background-color', color.toHEXA());
-    })
-
-
-    const onFeatureChange = function() {
+    const onFeatureChange = function () {
         const fontFeatureSettings = [];
         for (let otFeature in otFeatures) {
-            let checked =  document.getElementById(otFeature).checked;
-            if ( otFeatures[otFeature] !== checked ) {
-                fontFeatureSettings.push(`"${otFeature}" ${checked?1:0}`);
+            let checked = document.getElementById(otFeature).checked;
+            if (otFeatures[otFeature] !== checked) {
+                fontFeatureSettings.push(`"${otFeature}" ${checked ? 1 : 0}`);
             }
         }
         contentArea.style.fontFeatureSettings = fontFeatureSettings.join(', ');
     }
 
     document.querySelectorAll("[name=opentype]").forEach((element) => {
-        element.addEventListener('change',onFeatureChange);
+        element.addEventListener('change', onFeatureChange);
     });
+
+    const switcher = document.querySelector('#theme-switcher')
+
+
+    switcher.addEventListener('input', e =>
+        setTheme(e.target.value))
+
+    const setTheme = theme =>
+        root.setAttribute('color-scheme', theme)
 }
 
 
-document.addEventListener("DOMContentLoaded", listen );
+document.addEventListener("DOMContentLoaded", listen);
