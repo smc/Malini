@@ -5,9 +5,9 @@ input ./glyphs/include/ഗ;
 paths[p] := subpath (0, 5.8) of paths[p];
 
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[0])(0)
-   nib(middle_up_nib)(1)
-   nib(down_nib)(2)
+   nib(end_nib rotated terminalangle 0 of paths[p])(0)
+   nib(middle_down_nib rotated -20)(1)
+   nib(down_nib rotated -20)(2)
    nib(middle_down_nib)(3,4, 6)
    nib(top_nib)(5)
 )(paths[p])(strokes[p]);

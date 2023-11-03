@@ -4,8 +4,6 @@ beginglyph;
 input ./glyphs/include/left_arch;
 
 % Second arch
-
-% Second arch
 p:=p+1;
 input ./glyphs/include/middle_arch;
 paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);

@@ -1,21 +1,23 @@
 
 clearxy;
 z0 = (x1 + mw/3.5, m);
-z1 = (0, (y0+y2)/2.25);
-z2 = (x1 + mw/3, undershoot);
-z3 = (x2 + mw/3, (y2+y5)*0.4);
-z4 = (x3, (y2+y5)*0.6);
-z5 = (x4 + mw/3, m-overshoot);
-z6 = (x5 + mw/3, (y4+y6)/2.25);
+z1 = (0, y0 - m/2);
+z2 = ((x1 + x3)/2, undershoot);
+z3 = (x1 + 0.66mw, 0.4m);
+z4 = (x3, y5-0.45m);
+z5 = ((x4 + x6)/2, m-overshoot);
+z6 = (x3 + 0.66mw, 0.6m);
 z7 = (x6, 0);
-paths[p] = z0{dir 215}..z1{down}..z2{right}..z3---z4..z5{right}.. z6---z7;
+paths[p] = z0..z1..z2..z3..z4..z5.. z6---z7;
 
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_up_nib)(1)
-   nib(down_nib)(2)
-   nib(middle_down_nib)(3, 4, 6)
+   nib(middle_down_nib rotated -20)(1)
+   nib(down_nib rotated -20)(2)
+   nib(middle_down_nib)(3,4)
+   nib(middle_down_nib)(6)
    nib(top_nib)(5)
-   nib(thick_vertical_nib)(6,7)
+   nib(middle_down_nib)(6)
+   nib(thick_vertical_nib)(7)
 )(paths[p])(strokes[p]);

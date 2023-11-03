@@ -12,9 +12,10 @@ paths[p] := paths[p] ..z0---z1..z2..z3---z4;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_up_nib)(1)
-   nib(down_nib)(2)
-   nib(middle_down_nib)(3, 4, 6)
+   nib(middle_down_nib rotated -20)(1)
+   nib(down_nib rotated -20)(2)
+   nib(middle_down_nib)(3,4)
+   nib(middle_down_nib)(6)
    nib(down_nib)(7, 8)
    nib(down_nib rotated 90)(9)
    nib(thick_horizontal_nib)(10,11)
