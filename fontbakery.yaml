@@ -19,3 +19,5 @@ overrides:
     wrong-mark: WARN
   com.google.fonts/check/legacy_accents:googlefonts:
     legacy-accents-component: WARN
+  com.google.fonts/check/fontbakery_version:
+    outdated-fontbakery: WARN
