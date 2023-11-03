@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 paths[p] := pa_mouth;
 paths[p] := paths[p] shifted (mw/3,0);
-strokes[p] := va_mouth_stroke(paths[p]);
+strokes[p] := pa_mouth_stroke(paths[p]);
 
 p:=p+1;
 clearxy;

@@ -6,10 +6,14 @@ input ./glyphs/include/പ;
 % ന
 
 p:=p+1;
-paths[p] = left_arch;
+
+input ./glyphs/include/left_arch;
+
 
 p:=p+1;
-paths[p] := right_arch shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/right_arch;
+
+paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 paths[p-1] := paths[p-1] shifted (0.25mw, -1.05m) xscaled 0.8 yscaled 0.7;
 paths[p] := paths[p] shifted (0.25mw, -1.05m) xscaled 0.8 yscaled 0.7;
 

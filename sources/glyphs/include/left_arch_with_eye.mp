@@ -26,6 +26,7 @@ paths[p] := z0{dir angle(direction 3.8 of paths[p-1])}..z1{right}..z2---z3 ;
 pen_stroke(
     nib(middle_up_nib rotated terminalangle 4 of paths[p])(0)
     nib(top_nib)(1)
-    nib(thick_vertical_nib)(2, 3)
+    nib(middle_down_nib)(3)
+    nib(thick_vertical_nib)(4)
 )(paths[p])(strokes[p]);
 

@@ -11,7 +11,8 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 p:=p+1;
-paths[p] := subpath(0, 3) of right_arch shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/right_arch;
+paths[p] := subpath(0, 3) of paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)

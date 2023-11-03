@@ -1,16 +1,15 @@
 input glyph;
 beginglyph;
-paths[p] = left_arch;
+input ./glyphs/include/left_arch;
+
 paths[p] := paths[p] shifted (mw/3,0);
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3,4)
-)(paths[p])(strokes[p]);
+strokes[p] := strokes[p] shifted (mw/3,0);
+
 
 p:=p+1;
-paths[p] := subpath(0,2.9) of right_arch shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/right_arch;
+
+paths[p] := subpath(0,2.9) of paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)

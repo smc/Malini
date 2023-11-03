@@ -1,14 +1,9 @@
 input glyph;
 beginglyph;
-paths[p] = left_arch ;
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
-)(paths[p])(strokes[p]);
 
+input ./glyphs/include/left_arch;
+
+clearxy;
 p:=p+1;
 paths[p] := subpath(0, 5) of right_arch_with_eye shifted (xpart(point infinity of paths[p-1]), 0);
 z0 = (point infinity of paths[p]) + (mw/2, m/4);

@@ -7,11 +7,14 @@ strokes[p] := strokes[p]  shifted (mw/3,0);
 
 p:=p+1;
 clearxy;
-paths[p] = subpath(0, 6.75) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/_ത;
+paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+
+paths[p] := (subpath(0,6.8) of paths[p]);
 
 pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(middle_up_nib, -45)(0)
+    nib(middle_up_nib)(1)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)

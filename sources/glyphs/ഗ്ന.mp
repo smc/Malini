@@ -4,16 +4,8 @@ beginglyph;
 input ./glyphs/include/ഗ_;
 
 p:=p+1;
-paths[p] := right_arch shifted (xpart(point infinity of paths[p-1]), 0);
-
-pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(end_nib rotated 135)(4)
-)(paths[p])(strokes[p]);
-
+input ./glyphs/include/right_arch;
+paths[p] := paths[p]  shifted (xpart(point infinity of paths[p-1]), 0);
 
 anchor( "vc", point 4 of paths[p]);
 anchor( "bottom", (xpart(point 6 of paths[p]),0));

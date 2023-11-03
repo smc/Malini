@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-paths[p] = left_arch;
+input ./glyphs/include/left_arch;
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
@@ -12,11 +12,13 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-paths[p] = subpath (0, 6.8 ) of right_tha_arch shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/_ത;
+paths[p] := paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+paths[p] := (subpath(0,6.8) of paths[p]);
 
 pen_stroke(
-    cut(thin_vertical_nib, -45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(middle_up_nib, -45)(0)
+    nib(middle_up_nib)(1)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)
@@ -35,7 +37,7 @@ paths[p] =  z0{dir (angle(direction infinity of paths[p-1]))}.. z1---z2..z3{up}.
 paths[p] := insert_point(paths[p], 2.5);
 
 pen_stroke(
-    nib(middle_down_nib  scaled 0.9)(0)
+    nib(middle_down_nib)(0)
     nib(thick_horizontal_nib)(1, 2)
     nib(thick_nib rotated terminalangle 3 of paths[p] scaled 0.8)(3)
     nib(middle_up_nib scaled 1.1)(4)

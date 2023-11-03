@@ -3,13 +3,13 @@ beginglyph;
 z0 = ( x1 + mw/4 , 0);
 z1 = ( 0, (y0 + y2)/2);
 z2 = ( (x1 + x3)/2, m - overshoot); % top
-z3 = ( x1 + 0.9mw, (y2 + y4)/2);
+z3 = ( x1 + mw, (y2 + y4)/2);
 z4 = ( x3 - mw/4, (y2 + y6)/2.1 ); % <
 z5 = ( x4 + mw/3, (y4 + y6)/2);
 z6 = ( (x5 + x7)/1.9, undershoot);
-z7 = ( x5 - 0.6mw, y4);
+z7 = ( x5 - 2/3mw, y4);
 z8 = ( (x7 + x9)/1.8, m - overshoot*1.25);   % top
-z9 = ( x7 + 0.9mw, 0.6m);
+z9 = ( x7 + mw, 0.6m);
 z10 = ( x9, 0);
 paths[p] = z0..z1{up}..z2{right}..z3{down}..{left}z4{right}..z5..z6{left}..z7..z8..{down}z9---z10;
 pen_stroke(

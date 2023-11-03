@@ -6,67 +6,6 @@
 % Depth of reph sign in ക്ര, പ്ര , സ്ര etc
 reph_sign_depth   := -descent*0.8;
 
-vardef left_arch =
-    clearxy;
-    z0=(x1+mw/3, 0);
-    z1=(0, (y0+y2)/1.8);
-    z2=((x1+x3)/1.8, m-overshoot);
-    x3-x1 = 0.7*mw;
-    z3=(x3, 0.6m);
-    z4=(x3, 0); % bottom of piller
-    z0..z1{up}..z2{right}..{down}z3---z4
-enddef;
-
-vardef right_arch =
-    clearxy;
-    z0=(thick/2-thin/2, thin/2);
-    z1=(x0, 0.6m);
-    z2=((x1+x3)/2.2, m-overshoot); % Top of arch
-    x3-x1 = 0.75*mw;
-    z3=(x3, (y2+y4)/2);
-    z4= (x3 - mw/3, 0);
-    z0---z1..z2{right}..z3{down}..z4
-enddef;
-
-vardef middle_arch =
-    clearxy;
-    z0=(thick/2-thin/2, thin/2);
-    z1=(x0, 0.6m);
-    z2=((x1+x3)/2, m-overshoot); % Top of arch
-    x3-x1 = 0.6mw;
-    z3=(x3, y1);
-    z4=(x3, 0);
-    z0---z1..z2..z3---z4
-enddef;
-
-vardef right_tha_arch =
-    clearxy;
-    z0=(thick/2-thin/2, thin/2);
-    z1= (x0, 0.6m);
-    z2 = ( x1 + mw/2.75, m-overshoot); % top
-    z3 = ( x2 + mw/2, (y2+y4)/2.5);
-    z4 = ( x3 - mw/4, 2undershoot); % bottom middle
-    z5 = ( (x1+x3)/2.5, (y4+y6)/2.5);
-    z6 = ( (x5 + x7)/2, y2); % second top
-    z7 = ( x6 + mw/2, (y6+y8)/2);
-    z8 = ( x7 - mw/3, 0);
-    z0---z1..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8
-enddef;
-
-vardef middle_tha_arch =
-    clearxy;
-    z0=(thick/2-thin/2, thin/2);
-    z1= (x0, 0.6m);
-    z2 = ( x1 + mw/2.75, m-overshoot); % top
-    z3 = ( x2 + mw/2, (y2+y4)/2.5);
-    z4 = ( x3 - mw/4, undershoot); % bottom middle
-    z5 = ( x4 - mw/4, y3);
-    z6 = ( x5 + mw/2, y2); % second top
-    z7 = ( x6 + mw/2.5, 0.6m);
-    z8 = ( x7, 0);
-    z0---z1..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7---z8
-enddef;
-
 
 vardef left_arch_dha =
     clearxy;
@@ -116,6 +55,7 @@ vardef va_mouth_stroke (expr va_path) =
     va_stroke
 enddef;
 
+
 vardef pa_mouth =
     clearxy;
     z0=(x1 + mw/6 , thin/4);
@@ -130,6 +70,19 @@ vardef pa_mouth =
     z0..z1{up}..z2{right}..z3{down}..z4--z5
 enddef;
 
+
+vardef pa_mouth_stroke (expr va_path) =
+    clearxy;
+    path va_stroke;
+    pen_stroke(
+        nib(start_up_nib rotated terminalangle 0 of va_path)(0)
+        nib(middle_up_nib)(1)
+        nib(top_nib)(2)
+        nib(middle_down_nib)(3)
+        nib(end_nib)(4,5)
+    )(va_path)(va_stroke);
+    va_stroke
+enddef;
 
 vardef pa_tail =
     clearxy;

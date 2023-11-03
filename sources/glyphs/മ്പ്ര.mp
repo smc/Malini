@@ -1,19 +1,14 @@
 input glyph;
 beginglyph;
-paths[p] := left_arch;
-paths[p] := paths[p] shifted (mw/3,0);
 
-pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-    nib(middle_up_nib)(1)
-    nib(top_nib)(2)
-    nib(thick_vertical_nib)(3)
-    nib(thick_vertical_nib)(4)
-)(paths[p])(strokes[p]);
+input ./glyphs/include/left_arch;
+
+paths[p] := paths[p] shifted (mw/3,0);
+strokes[p] := strokes[p] shifted (mw/3,0);
 
 p:=p+1;
 clearxy;
-z0=(thick/2-thin/2, thin/2);
+z0=(thick/2-thin/2*middle_up_nib_scale, thin/2);
 z1=(x0, 0.6m);
 z2=((x1+x3)/2.2, m-overshoot); % Top of arch
 x3-x1 = 0.7*mw;

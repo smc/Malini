@@ -1,6 +1,8 @@
 input glyph;
 beginglyph;
-paths[p] = subpath(0,3.5) of left_arch;
+
+input ./glyphs/include/left_arch;
+paths[p] := subpath(0,3.5) of paths[p];
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
     nib(middle_up_nib)(1)
