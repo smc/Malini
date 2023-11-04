@@ -1,7 +1,7 @@
 input ./config/Regular;
 
 % Reduce contrast in smaller size
-thin := 0.56thick;
+contrast := 0.56;
 
 % Use loose spacing in small sizes
 % Ref https://www.typotheque.com/articles/size-specific_spacing_of_fonts

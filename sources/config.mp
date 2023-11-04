@@ -14,7 +14,7 @@ Xheight :=      ascent;       % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines
-thin :=         0.56*thick;   % Thickness of thinnest lines
+contrast :=     0.56;         % Thickness of thinnest lines, ratio to this thick value.
 subthick :=     0.666u;       % Thickness of thickest lines in subscribed characters
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
@@ -30,7 +30,7 @@ outputformat := "svg";        % Output format
 
 varstroke :=     1;           % Stroke modulation. Uses pen_strokes
 
-overshoot := thin*1.2/4;
+overshoot := thick*contrast*1.2/4;
 undershoot := thick*0.77/4;
 serif_height := thick/3;
 serif_width :=  thick*1.1;

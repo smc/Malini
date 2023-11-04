@@ -7,6 +7,7 @@ styles: [
   "Condensed",
   "Expanded",
   "Display",
+  "Thin-Display",
   "Text"
 ]
 version: 1.000
@@ -224,9 +225,9 @@ variablefonts:
               name: Light
             - value: 400
               name: Regular
-              flags: 2
               linkedValue: 700
             - value: 500
+              flags: 2
               name: Medium
             - value: 600
               name: SemiBold

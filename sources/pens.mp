@@ -2,8 +2,8 @@
 % Their angle remains constant through out the stroke, hence
 % results modulated, ribbon like outlines. SVG will have only strokes. No paths
 
-pen ellipsenib; ellipsenib := pencircle scaled thick yscaled thin rotated rotation;
-pen sub_ellipsenib; sub_ellipsenib := pencircle scaled subthick yscaled thin rotated rotation;
+% pen ellipsenib; ellipsenib := pencircle scaled thick yscaled (thick*contrast) rotated rotation;
+% pen sub_ellipsenib; sub_ellipsenib := pencircle scaled subthick yscaled (thick*contrast) rotated rotation;
 pen finenib; finenib := pencircle scaled 1;
 
 % -------- Path pens -----------

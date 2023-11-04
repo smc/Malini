@@ -11,7 +11,7 @@ z5=(x3 + 1.5thick, 0.1s);
 paths[p] := z0{dir 90}.. z1{right}..z2{down}..{down}z3..z4.. z5 ;
 
 pen_stroke(
-    cut(thick_nib scaled 1.25 , 15 )(0)
+    cut(thick_nib scaled 1.25 , 10 )(0)
     nib(top_nib scaled 0.8)(1)
     nib(thick_vertical_nib)(2)
     nib(middle_down_nib)(3)
@@ -21,10 +21,8 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Top hanging serif styling
-% strokes[p] :=  subpath(0, 10.9) of strokes[p]{dir -120}  .. {right}cycle;
-
-strokes[p] := soften_node(strokes[p], u*condense*0.3, 0 );
-strokes[p] := soften_node(strokes[p], u*condense*0.3, 12 );
+strokes[p] := soften_node(strokes[p], u*condense*0.2, 0 );
+strokes[p] := soften_node(strokes[p], u*condense*0.1, 12 );
 
 p:=p+1;
 clearxy;

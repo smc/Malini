@@ -30,7 +30,7 @@ lbearing :=  mw/3*0.3;   % Default left bearing
 rbearing :=  mw/3*0.3;   % Default right bearing
 
 absolute_position := 0;
-
+thin := thick*contrast;
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thin, thin, 0) enddef;
@@ -39,10 +39,17 @@ vardef thinnib = fix_nib(thin, thin, 0) enddef;
 vardef thick_nib = fix_nib(thick, 0, 0) enddef;
 vardef thin_nib = fix_nib(thin, 0, 0) enddef;
 
-middle_up_nib_scale = 1.2;
-end_nib_scale = 1.2;
-top_nib_scale = 1.5;
-down_nib_scale = 1.5;
+if contrast = 1:
+    middle_up_nib_scale = 1;
+    end_nib_scale = 1;
+    top_nib_scale = 1;
+    down_nib_scale = 1;
+else:
+    middle_up_nib_scale = 1.2;
+    end_nib_scale = 1.2;
+    top_nib_scale = 1.5;
+    down_nib_scale = 1.5;
+fi;
 
 vardef start_up_nib = thin_nib enddef;
 vardef middle_up_nib = thin_nib scaled middle_up_nib_scale rotated -10 enddef;

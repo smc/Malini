@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-input ./glyphs/include/ഗ_;
+input ./glyphs/include/ഗ;
 paths[p] := paths[p] shifted (mw/3,0);
 paths[p] := subpath (0, 5) of paths[p];
 clearxy;
