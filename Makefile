@@ -64,7 +64,6 @@ Malini: $(FONTSDIR)/Malini/ttf-variable\
 $(FONTSDIR)/%/ttf: %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--filter DecomposeTransformedComponentsFilter  \
-		--filter "ufo2ft.filters.dottedCircle::DottedCircleFilter(pre=True, dots=10)" \
 		--interpolate \
 		--flatten-components  \
 		--verbose WARNING \
