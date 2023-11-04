@@ -377,3 +377,13 @@ vardef top_right_slanted_serif(expr s, p ) =
      --z8{dir 183} .. {dir 177}cycle
 
 enddef;
+
+vardef circle(expr radius) =
+    clearxy;
+    z0 = (0, radius/2);
+    z1 = ((x0 + x2)/2, radius);
+    z2 = (x0 + radius, y0);
+    z3 = (x1, 0);
+    z4 = (x0, y0);
+    z0{up}..{right}z1..{down}z2..z3{left}..{up}z4..cycle
+enddef;

@@ -13,10 +13,9 @@ paths[p] = z0..z1..z2..z3..z4..z5.. z6---z7;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_down_nib rotated -20)(1)
+   nib(middle_up_nib scaled 1.2 rotated 30)(1)
    nib(down_nib rotated -20)(2)
    nib(middle_down_nib)(3,4)
-   nib(middle_down_nib)(6)
    nib(top_nib)(5)
    nib(middle_down_nib)(6)
    nib(thick_vertical_nib)(7)

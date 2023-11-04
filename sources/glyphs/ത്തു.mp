@@ -4,7 +4,7 @@ input ./glyphs/include/ത_;
 
 p:=p+1;
 clearxy;
-z0=(thick/2-thin/2*middle_up_nib_scale, thin/2) + (xpart(point infinity of paths[p-1]), 0);
+z0=(thick/2-thin/2*middle_up_nib_scale, thin/2*middle_up_nib_scale) + (xpart(point infinity of paths[p-1]), 0);
 z1= (x0, m*0.6);
 z2 = ( x1 + mw/2.75, m - overshoot); % top
 z3 = ( x2 + mw/2, 0.4m);

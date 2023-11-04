@@ -31,6 +31,7 @@ rbearing :=  mw/3*0.3;   % Default right bearing
 
 absolute_position := 0;
 thin := thick*contrast;
+
 % Ellipitical nibs
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thin, thin, 0) enddef;
@@ -50,6 +51,12 @@ else:
     top_nib_scale = 1.5;
     down_nib_scale = 1.5;
 fi;
+
+
+overshoot := thin*top_nib_scale/4;
+undershoot := thin*down_nib_scale/4;
+serif_height := thick/3;
+serif_width :=  thick*1.1;
 
 vardef start_up_nib = thin_nib enddef;
 vardef middle_up_nib = thin_nib scaled middle_up_nib_scale rotated -10 enddef;

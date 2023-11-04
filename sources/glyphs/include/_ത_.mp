@@ -1,6 +1,6 @@
 clearxy;
 
-z0=(thick/2-thin/2*middle_up_nib_scale, thin/2);
+z0=(thick/2-thin/2*middle_up_nib_scale, thin/2*middle_up_nib_scale);
 z1= (x0, 0.6m);
 z2 = ( x1 + mw/2.75, m-overshoot); % top
 z3 = ( x2 + mw/2, (y2+y4)/2.5);

@@ -5,7 +5,7 @@ input ./glyphs/include/ണ;
 
 p:=3;
 clearxy;
-z0=(thick/2-thin/2*middle_up_nib_scale, thin/2);
+z0=(thick/2-thin/2*middle_up_nib_scale, thin/2*middle_up_nib_scale);
 z1=(x0, m*0.6);
 z2=(x1 + mw/3, m - overshoot); % Top of arch
 z3=(x2 + mw/2, (y2+y4)/2.5);
