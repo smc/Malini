@@ -1,392 +1,224 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ml">
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Malini typeface specimen</title>
     <link id="theme-style" rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" media="print" href="css/print.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="js/main.js"></script>
     <title></title>
   </head>
 
   <body>
-    <header></header>
-    <main>
+    <header class="grid">
+      <nav class="navbar col-start-2@lg col-10@lg col-12 grid">
+        <h1 class="col-3 text-20 ">Malini</h1>
+        <a href="#" class="col-start-10 col-1 text-14">
+          Download</a>
+        <a href="#" class="col-start-11 col-1 text-14">Source</a>
+        <span class="col-start-12 col-1 material-symbols-outlined theme-toggle" id="theme-toggle"
+          title="Toggles light & dark" aria-label="auto" aria-live="polite">
+          contrast
+        </span>
+      </nav>
+    </header>
+    <main class="grid">
+      <section class="page grid master">
+        <div class="content col-12 text-center">
+          <div lang="ml" class="malini malini-display text-72">മാലിനി</div>
+          <div lang="en" class="malini malini-display text-72">Malini</div>
+          <div class="text-24">Malayalam variable typeface</div>
+          <div class="text-16">Santhosh Thottingal</div>
+        </div>
+      </section>
 
-      <section class="page bg-light-blue-800 white-text">
-        <main style="justify-items: center">
+      <section class="page grid">
+        <div class="content card col-start-2@lg col-10@lg col-12 text-center">
+          <svg class="malini malini-display" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 14">
+            <text x="0" y="10">മലയാളം</text>
+          </svg>
+          <svg class="malini malini-display" viewBox="0 0 115 20">
+            <text x="0" y="15">തിരുവനന്തപുരം</text>
+          </svg>
+          <svg class="malini malini-display" viewBox="0 0 180 22">
+            <text x="0" y="15">സുന്ദരിമാരുടെ സ്വപ്നങ്ങൾ</text>
+          </svg>
+          <svg class="malini malini-display" viewBox="0 0 140 22">
+            <text x="0" y="15">The pale blue dot</text>
+          </svg>
+          <svg viewBox="0 0 310 22">
+            <text class="malini malini-display" x="0" y="15">ഒരിടത്തൊരു ആമയും മുയലും ഉണ്ടായിരുന്നു</text>
+          </svg>
+          <svg viewBox="0 0 610 22">
+            <text class="malini malini-text" x="0" y="15">പണ്ട്, പറന്നു പറന്ന് ചിറകുകടയുന്ന നാഗത്താന്മാർ പനങ്കുരലിൽ
+              മാണിക്യമിറക്കിവെച്ചു</text>
+          </svg>
+          <svg class="malini malini-thin-display" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 20">
+            <text x="0" y="15">കേരളം 678595</text>
+          </svg>
+          <svg class="malini malini-semicondensed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20">
+            <text x="0" y="15">Angel Adept Blind Bodice Clique Coast Dunce Docile
+              Enact Eosin Furlong Focal Gnome Gondola Human Hoist Inlet Iodine Justin Jocose</text>
+          </svg>
+          <svg class="malini malini-semicondensed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20">
+            <text x="0" y="15">Pneumo pneumo poncho for the dauphin opossum of the
+              holdup bishop and supplies. Quanta quanta qophs for the inquest sheqel of the</text>
+          </svg>
+          <svg class="malini malini-black-display" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 16">
+            <text x="0" y="12">സമ്മേളനം</text>
+          </svg>
+        </div>
+      </section>
+      <section class="page grid">
+        <div class="toolbar col-start-2@lg col-10@lg col-12 grid">
+          <label class="col-2" for="playground-font-size">Font Size</label>
+          <input class="col-7" type="range" data-id="font-size" value="16" min="8" step="1" max="148">
+          <input class="col-2" type="number" data-id="font-size" id="playground-font-size" value="16">pt
 
-          <div class="content col-5">
-            <h1 lang="ml" class="malini text-72 text-center">മാലിനി</h1>
-            <h1 lang="en" class="malini text-72 text-center">Malini</h1>
-            <h2 class="text-center">Santhosh Thottingal</h2>
-            <h3 class="text-center">Typeface specimen</h2>
+          <label class="col-2" for="playground-font-weight">Font Weight</label>
+          <input class="col-7" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
+          <input type="number" class="col-2 font-weight" data-id="font-weight" value="400" min="1" step="1" max="900"
+            id="playground-font-weight">
+
+          <label class="col-2" for="playground-font-width">Font Width</label>
+          <input class="col-7" type="range" data-id="font-width" value="100" min="75" step="1" max="125">
+          <input type="number" class="col-2 font-width" data-id="font-width" value="100" min="75" step="1" max="125"
+            id="playground-font-width">%
+
+
+          <label class="col-2" for="playground-font-slant">Font Slant</label>
+          <input class="col-7" type="range" data-id="font-slant" value="0" min="-12" step="1" max="0">
+          <input type="number" class="col-2 font-slant" data-id="font-slant" value="0" min="-12" step="1" max="0"
+            id="playground-font-slant">degree
+        </div>
+        <section class="card col-start-2@lg col-10@lg col-12 malini playground" contenteditable="">
+
+          നാട്ടുബുൾബുളിനോളം വലിപ്പമുള്ള കാട്ടുപക്ഷിയാണു തീക്കുരുവി (Orange minivet). കാംപിഫാഗിഡേ (Campephagidae)
+          പക്ഷികുടുംബത്തിൽപ്പെടുന്നു. ശ്രീലങ്ക, മലേഷ്യ, മ്യാൻമർ, ഇന്തോ-ചൈന തുടങ്ങിയ പ്രദേശങ്ങളിൽ തീക്കുരുവികളെ കാണാം.
+          ഹിമാലയ പ്രദേശങ്ങളിലും അസം, പഴനി,
+          നീലഗിരി, തെക്കൻ ആർക്കോട്ട് എന്നിവിടങ്ങളിലും ഇത്തരം പക്ഷികളുണ്ട്. നിത്യഹരിതവനങ്ങളിലും ഇലകൊഴിയും കാടുകളിലും
+          1200 മീറ്റർ വരെ ഉയരമുള്ള കുന്നിൻ പ്രദേശങ്ങളിലും ചെറുകൂട്ടങ്ങളായി ഇവയെ കാണാം.
+
+        </section>
+      </section>
+      <section class="page grid">
+        <div class="content card col-start-2@lg col-7@lg col-12 ">
+          <div class="meta-desc"> Thin</div>
+          <p lang="ml" class="text-body malini text-thin text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> Extra Light</div>
+          <p lang="ml" class="text-body malini text-extralight text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം
+            ആലപ്പുഴ</p>
+          <div class="meta-desc"> Light</div>
+          <p lang="ml" class="text-body malini text-light text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> Regular</div>
+          <p lang="ml" class="text-body malini text-regular text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> Medium</div>
+          <p lang="ml" class="text-body malini text-medium text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> SemiBold</div>
+          <p lang="ml" class="text-body malini text-semibold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> Bold</div>
+          <p lang="ml" class="text-body malini text-bold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+          <div class="meta-desc"> ExtraBold</div>
+          <p lang="ml" class="text-body malini text-extrabold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം
+            ആലപ്പുഴ</p>
+          <div class="meta-desc"> Black</div>
+          <p lang="ml" class="text-body malini text-black text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+          </p>
+        </div>
+        <div class="meta col-start-9@lg col-3@lg col-12">
+          <h2 class="meta-title">Weight variants.</h2>
+          <div class="meta-desc">
+            <p>
+              The overall thickness of letters and the darkness of text composed with them. There are 9 named
+              instances with varying thinkness. However, as a variable font, a weight between 100 to 900 can be used
+              to get precise typographic control.</p>
+
+            </p>
           </div>
-        </main>
+        </div>
+        </div>
+
+
 
       </section>
 
-      <section class="page bg-lime-50">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Malini</h2>
-            <div class="meta-desc">
-              <p>As a variable font, Malini offers an unprecedented level of
-                flexibility, all from a single font file. Malini has 4 variable axes: .</p>
-              <ul>
-                <li>Weight</li>
-                <li>Width</li>
-                <li>Slant</li>
-                <li>Optical size</li>
-              </ul>
-              <p>It has 482 characters and 902 glyphs, 4 axes and 34 instances, and 14 layout features.
-              </p>
-            </div>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 12pt</div>
-            <p lang="ml" class="text-body malini">
-              നാട്ടുബുൾബുളിനോളം വലിപ്പമുള്ള കാട്ടുപക്ഷിയാണു തീക്കുരുവി (Orange minivet). കാംപിഫാഗിഡേ (Campephagidae)
-              പക്ഷികുടുംബത്തിൽപ്പെടുന്നു. ശ്രീലങ്ക,
-              മലേഷ്യ, മ്യാൻമർ, ഇന്തോ-ചൈന തുടങ്ങിയ പ്രദേശങ്ങളിൽ തീക്കുരുവികളെ കാണാം. ഹിമാലയ പ്രദേശങ്ങളിലും അസം, പഴനി,
-              നീലഗിരി, തെക്കൻ ആർക്കോട്ട് എന്നിവിടങ്ങളിലും ഇത്തരം പക്ഷികളുണ്ട്. നിത്യഹരിതവനങ്ങളിലും ഇലകൊഴിയും കാടുകളിലും
-              1200 മീറ്റർ വരെ ഉയരമുള്ള കുന്നിൻ പ്രദേശങ്ങളിലും ചെറുകൂട്ടങ്ങളായി ഇവയെ കാണാം.
-            </p>
-            <p lang="en" class="text-body malini">ആൺ പക്ഷികളുടെ തല, കഴുത്ത്,
-              മുഖം, താടി എന്നീ ഭാഗങ്ങളെല്ലാം നല്ല കറുപ്പുനിറമായിരിക്കും. ചിറകിന്റെ പകുതിയിലധികം ഭാഗവും വാലിന്റെ
-              മധ്യഭാഗത്തുള്ള തൂവലുകളും പക്ഷിയുടെ പുറം ഭാഗവും കറുപ്പുനിറം തന്നെയാണ്; ബാക്കി ഭാഗങ്ങൾക്കെല്ലാം കടും
-              ചുവപ്പും. എന്നാൽ പെൺപക്ഷിയുടെ ശരീരത്തിൽ ചുവപ്പുനിറമേയില്ല. പ്രായപൂർത്തിയെത്താത്ത കുഞ്ഞുങ്ങൾ
-              പെൺപക്ഷിയെപ്പോലിരിക്കും. പെൺപക്ഷിയുടെ നെറ്റിത്തടം മുതൽ പുറത്തിന്റെ മധ്യഭാഗം വരെ പച്ചകലർന്ന ചാരനിറവും
-              ചിറകുകളും വാലും മങ്ങിയ കറുപ്പുനിറവും താടിയും കഴുത്തും മുഖവും ബാക്കി ഭാഗങ്ങളും നല്ല മഞ്ഞനിറവും
-              ആയിരിക്കും.ഉയരം കൂടിയ വൃക്ഷങ്ങളിൽ നിന്ന് മറ്റു വൃക്ഷങ്ങളിലേക്കും ശാഖകളിലേക്കും പറന്ന് പ്രാണികളേയും ചെറു
-              പാറ്റകളേയും ഇവ പിടിച്ചു ഭക്ഷിക്കുന്നു. പ്രാണികളാണ് ഇവയുടെ മുഖ്യ ആഹാരം.
+
+      <section class="page grid ">
+        <div class="meta col-start-2@lg col-4@lg col-12">
+          <h2 class="meta-title">Choosing the weight</h2>
+          <div class="meta-desc">
+            <p> Differences in weight can provide emphasis in text, show user interaction, or adjust the tone of
+              communication. </p>
+            <p> For light text on dark backgrounds, 400 (“Regular”) tends to be appropriate for text and
+              code. For dark text on a light background, it can be beneficial to adjust the weight upwards to 500
+              (“Medium”). </p>
             </p>
 
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 12pt</div>
-            <p lang="en" class="text-body malini">
-              Look again at that dot. That’s here. That’s home. That’s us. On it everyone you love, everyone you know,
-              everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our
-              joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and
-              forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every
-              young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of
-              morals, every corrupt politician, every “superstar,” every “supreme leader,” every saint and sinner in the
-              history of our species lived there-on a mote of dust suspended in a sunbeam.
-            </p>
-            <p lang="en" class="text-body malini">
-              The Earth is a very small stage in a vast cosmic arena. Think of the endless cruelties visited by the
-              inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner,
-              how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
-              Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph,
-              they could become the momentary masters of a fraction of a dot.
-            </p>
-          </div>
-        </main>
-        <footer>
-        </footer>
+        </div>
+        <div class="content col-6@lg col-12 text-body malini text-12 grid">
+          <form class="col-12 grid">
+            <input class="col-8" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
+            <input type="number" class="col-3 font-weight" data-id="font-weight" value="400" min="1" step="1" max="900"
+              id="playground-font-weight">
+          </form>
+          <p class="card col-12 playground" contenteditable>കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
+            പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
+            മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
+            കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
+            പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
+            എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.
+          </p>
+
+        </div>
+        </div>
       </section>
 
-      <section class="page bg-lime-50 ">
-        <main>
-          <div class="content col-4">
-            <div class="meta-desc">Malini Thin | 20pt</div>
-            <p lang="ml" class="text-body malini text-thin text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini Extra Light | 20pt</div>
-            <p lang="ml" class="text-body malini text-extralight text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം
-              ആലപ്പുഴ</p>
-            <div class="meta-desc">Malini Light | 20pt</div>
-            <p lang="ml" class="text-body malini text-light text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini Regular | 20pt</div>
-            <p lang="ml" class="text-body malini text-regular text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini Medium | 20pt</div>
-            <p lang="ml" class="text-body malini text-medium text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini SemiBold | 20pt</div>
-            <p lang="ml" class="text-body malini text-semibold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini Bold | 20pt</div>
-            <p lang="ml" class="text-body malini text-bold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
-            </p>
-            <div class="meta-desc">Malini ExtraBold | 20pt</div>
-            <p lang="ml" class="text-body malini text-extrabold text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം
-              ആലപ്പുഴ</p>
-            <div class="meta-desc">Malini Black | 20pt</div>
-            <p lang="ml" class="text-body malini text-black text-20">തിരുവനന്തപുരം കൊല്ലം പത്തനംതിട്ട കോട്ടയം ആലപ്പുഴ
+      <section class="page grid">
+        <div class="meta col-start-2@lg col-6@lg col-12">
+          <h2 class="meta-title">Weight axis interpolation</h2>
+          <div class="meta-desc">
+            <p> Animating the smooth interpolation between thin to black weights </p>
             </p>
           </div>
-          <div class="meta col-1">
-            <h2 class="meta-title">Weight variants.</h2>
-            <div class="meta-desc">
-              <p>
-                The overall thickness of letters and the darkness of text composed with them. There are 9 named
-                instances with varying thinkness. However, as a variable font, a weight between 100 to 900 can be used
-                to get precise typographic control.</p>
+        </div>
+        <div class="content card col-start-2@lg col-10@lg col-12 animate-weight center ">
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 16">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">മലയാളം</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">കാര്യക്ഷമത</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 16">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">assumption</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 18">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">Nothing could be further from
+              truth</text>
+          </svg>
 
-              </p>
-            </div>
-          </div>
-          </div>
-        </main>
-        <footer>
-        </footer>
+        </div>
+
       </section>
 
-
-      <section class="page bg-lime-50">
-        <main>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Thin | 12pt</div>
-            <p lang="ml" class="text-body malini text-thin text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.
-            </p>
-            <p lang="ml" class="text-body malini text-thin text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-
-          <div class="content col-1">
-            <div class="meta-desc">Malini Extra Light | 12pt</div>
-            <p lang="ml" class="text-body malini text-extralight text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-
-            <p lang="ml" class="text-body malini text-extralight text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Light | 12pt</div>
-            <p lang="ml" class="text-body malini text-light text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-
-            <p lang="ml" class="text-body malini text-light text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Regular | 12pt</div>
-            <p lang="ml" class="text-body malini text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ. പിടിച്ചുകേറാനാവാത്ത
-              വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ മാനം മുട്ടുവോളം ഇണർച്ചു
-              പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ കേറാൻ പേടിക്കേണ്ടതില്ല.
-              പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും.
-              പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്. എന്നിട്ടും ഖസാക്കിലെ
-              പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-            <p lang="ml" class="text-body malini  text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-          <div class="meta col-1">
-            <h2 class="meta-title">Choosing the weight</h2>
-            <div class="meta-desc">
-              <p> Differences in weight can provide emphasis in text, show user interaction, or adjust the tone of
-                communication. </p>
-              <p> For light text on dark backgrounds, 400 (“Regular”) tends to be appropriate for text and
-                code. For dark text on a light background, it can be beneficial to adjust the weight upwards to 500
-                (“Medium”). </p>
-              </p>
-            </div>
-          </div>
-        </main>
-        <footer>
-        </footer>
-      </section>
-
-
-      <section class="page bg-lime-50">
-        <main>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Medium | 12pt</div>
-            <p lang="ml" class="text-body malini text-medium text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.
-            </p>
-            <p lang="ml" class="text-body malini text-medium text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-
-          <div class="content col-1">
-            <div class="meta-desc">Malini Semi Bold | 12pt</div>
-            <p lang="ml" class="text-body malini text-semibold text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-            <p lang="ml" class="text-body malini text-semibold text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Bold | 12pt</div>
-            <p lang="ml" class="text-body malini text-bold text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-
-            <p lang="ml" class="text-body malini text-bold text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-          </div>
-
-          <div class="content col-1">
-            <div class="meta-desc">Malini Extra Bold | 12pt</div>
-            <p lang="ml" class="text-body malini text-extrabold text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-            <p lang="ml" class="text-body malini text-extrabold text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Black | 12pt</div>
-            <p lang="ml" class="text-body malini text-black text-12">കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
-              പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
-              മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
-              കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
-              പാമ്പെറുമ്പുകൾ മാറിക്കൊള്ളും. പായൽ അവർക്കു വഴുക്കില്ല. പുളിങ്കൊമ്പത്തെ പോതി ചാരിത്രവതികളെ കാക്കുന്നവളാണ്.
-              എന്നിട്ടും ഖസാക്കിലെ പുളിപറിക്കാർ ആ മരം കയറിയില്ല.</p>
-            <p lang="ml" class="text-body malini text-black text-12">ഖസാക്കിന്റെ ഇതിഹാസം - ഓ.വി. വിജയൻ</p>
-
-          </div>
-        </main>
-        <footer>
-        </footer>
-      </section>
-
-      <section class="page bg-blue-grey-800 white-text  ">
-        <main>
-          <div class="content col-5 animate-weight ">
-            <div class="meta-desc">Malini Thin - Black| 72pt </div>
-            <p lang="ml" class="text-12 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-            </p>
-            <p lang="ml" class="text-14 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-
-            </p>
-            <p lang="ml" class="text-16 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-
-            </p>
-            <p lang="ml" class="text-20 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-
-            </p>
-            <p lang="ml" class="text-24 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-
-            </p>
-            <p lang="ml" class="text-36 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-
-            </p>
-            <p lang="ml" class="text-48 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-            </p>
-            <p lang="ml" class="text-64 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-            </p>
-            <p lang="ml" class="text-72 malini text-left nowrap">
-              കേരളത്തിൽ സാധാരണ കണ്ടുവരുന്ന ഒരു പക്ഷിയാണ് ആറ്റകുരുവി.കൂരിയാറ്റ, തൂക്കണാംകുരുവി എന്നീ പേരുകളിലും ഇത്
-              അറിയപ്പെടുന്നു. ഇത് അങ്ങാടിക്കുരുവിയോട് വളരെയധികം സാദൃശ്യമുള്ള പക്ഷിയാണ്.
-            </p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-
-      <section class="page bg-light-blue-800 white-text  ">
-        <main>
-          <div class="content col-5 animate-weight ">
-            <div class="meta-desc">Malini Thin - Black| 144pt </div>
-            <p lang="ml" class="text-180 malini text-center nowrap">
-              മലയാളം
-              <br /> കൈരളി
-            </p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-      <section class="page bg-blue-grey-800 white-text">
-        <main>
-          <div class="content col-5 animate-weight">
-            <div class="meta-desc">Malini Thin - Black| 72pt </div>
-            <p lang="en" class="text-12 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-            </p>
-            <p lang="en" class="text-14 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
-            </p>
-            <p lang="en" class="text-16 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
-            </p>
-            <p lang="en" class="text-20 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
-            </p>
-            <p lang="en" class="text-24 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
-            </p>
-            <p lang="en" class="text-36 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
-            </p>
-            <p lang="en" class="text-48 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-            </p>
-            <p lang="en" class="text-64 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-            </p>
-            <p lang="en" class="text-72 malini text-left nowrap">
-              ABCDEDFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-            </p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-
-      <section class="page bg-grey-800 white-text">
-        <main>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Bold | 20pt</div>
+      <section class="page grid  ">
+        <div class="col-start-2@lg col-10@lg col-12 card grid">
+          <div class="content col-12 col-2@lg">
+            <div class="meta-desc"> Bold | 20pt</div>
             <p class="text-20 malini malini-bold">അശ്വമേധം</p>
             <p class="text-12 malini ">വയലാർ രാമവർമ്മ</p>
-
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 12pt</div>
+          <div class="content col-3@lg col-12">
+            <div class="meta-desc"> Regular | 12pt</div>
             <p lang="ml" class="text-body malini text-12">
               ആരൊരാളെൻ കുതിരയെ കെട്ടുവാൻ<br />
               ആരൊരാളതിൻ മാർഗ്ഗം മുടക്കുവാൻ ?<br />
@@ -414,7 +246,7 @@
               തണ്ട് നല്‍കി വളര്‍ത്തി മുത്തശ്ശിമാര്‍<br />
             </p>
           </div>
-          <div class="content col-2 text-center">
+          <div class="content col-3@lg col-12">
             <p lang="ml" class="text-body malini text-12">
 
               കാട്ടുചോലകള്‍ പാടിയപാട്ടുക-<br />
@@ -444,16 +276,48 @@
             </p>
 
           </div>
-        </main>
-        <footer>
-        </footer>
+
+          <div class="content col-3@lg col-12">
+            <p lang="ml" class="text-body malini text-12">
+              ആഗമതത്വവേദികൾ വന്നുപോൽ<br />
+              യോഗദണ്ഡിതിലിതിനെത്തളയ്ക്കുവാൻ!<br />
+
+              എന്റെ പൂർവികരശ്വഹ്രിദയജ്ഞ;<br />
+              രെന്റെ പൂർവികർ വിശ്വവിജയികൾ,<br /><br />
+
+              അങ്കമാടിക്കുതിരയെ വീണ്ടെടു-<br />
+              ത്തന്നണഞ്ഞു യുഗങ്ങൾതൻ ഗായകർ!<br /><br />
+
+              മണ്ണിൽനിന്നു പിറന്നവർ മണ്ണിനെ –<br />
+              പ്പൊന്നണിയിച്ച സംസ്കാരശില്പികൾ!<br /><br />
+
+              നേടിയതാണവരോടു ഞാ,-നെന്നിൽ<br />
+              നാടുണർന്നോരുനാളിക്കുതിരയെ!<br /><br />
+
+              ഈ യുഗത്തിന്റെ സാമൂഹ്യശക്തി ഞാൻ<br />
+              മായുകില്ലെന്റെ ചൈതന്യവീചികൾ!<br /><br />
+
+              ഈശ്വരനല്ല മാന്ത്രികനല്ല ഞാൻ<br />
+              പച്ചമണ്ണിൻ മനുഷ്യത്മാണുഞാൻ!<br /><br />
+
+              ദിഗ്വിജയത്തിനെൻ സർഗ്ഗശക്തിയാ-<br />
+              മിക്കുതിരയെ വിട്ടയയ്ക്കുന്നു ഞാൻ<br /><br />
+
+              ആരൊരാളിക്കുതിരയെ കെട്ടുവാൻ<br />
+              ആരൊരാളതിൻ മാർഗ്ഗം മുടക്കുവാൻ<br />
+            </p>
+
+          </div>
+        </div>
+
+
+
       </section>
 
-      <section class="page  ">
-        <main>
-          <div class="content col-1">
-
-            <div class="meta-desc">Malini Thin | 24pt</div>
+      <section class="page grid  ">
+        <div class="content card col-start-2@lg col-10@lg col-12 grid">
+          <div class="content col-4">
+            <div class="meta-desc"> Thin | 24pt</div>
             <p lang="ml" class="text-body malini text-24 malini-thin text-start">
               ഖസാക്കിന്റെ ഇതിഹാസം
             </p>
@@ -462,8 +326,8 @@
             </p>
             <img src="images/pp-appukkili.jpg" width="380px" />
           </div>
-          <div class="content col-4">
-            <div class="meta-desc">Malini Regular | 12pt</div>
+          <div class="content col-6">
+            <div class="meta-desc"> Regular | 12pt</div>
 
             <p lang="ml" class="malini text-12  text-justify text-indent">
               “മൂത്താര്‌ പറയണം,” ജമ്പറു തുന്നിത്തീരാൻ ഇന്നത്തെ പീടികയിൽ കാത്തിരിക്കുമ്പോൾ നീലി പറഞ്ഞതാണ്.
@@ -500,1324 +364,1176 @@
 
           </div>
 
-        </main>
-        <footer>
-        </footer>
+
+
+
       </section>
 
-      <section class="page bg-blue-grey-800 white-text">
-        <main>
-          <div class="content col-4">
-            <div class="meta-desc">Malini Slanted Thin | 20pt</div>
-            <p lang="ml" class="text-body malini text-thin text-slanted text-20 nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട്
-              കണ്ണൂർ കാസർഗോഡ് </p>
-            <div class="meta-desc">Malini Slanted Extra Light | 20pt</div>
-            <p lang="ml" class="text-body malini text-extralight text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട്
-              വയനാട് കണ്ണൂർ കാസർഗോഡ്</p>
-            <div class="meta-desc">Malini Slanted Light | 20pt</div>
-            <p lang="ml" class="text-body malini text-light text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട്
-              കണ്ണൂർ കാസർഗോഡ് </p>
-            <div class="meta-desc">Malini Slanted Regular | 20pt</div>
-            <p lang="ml" class="text-body malini text-regular text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട്
-              വയനാട് കണ്ണൂർ കാസർഗോഡ് </p>
-            <div class="meta-desc">Malini Slanted Medium | 20pt</div>
-            <p lang="ml" class="text-body malini text-medium text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട്
-              കണ്ണൂർ കാസർഗോഡ് </p>
-            <div class="meta-desc">Malini Slanted SemiBold | 20pt</div>
-            <p lang="ml" class="text-body malini text-semibold text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട്
-              വയനാട് കണ്ണൂർ കാസർഗോഡ്</p>
-            <div class="meta-desc">Malini Slanted Bold | 20pt</div>
-            <p lang="ml" class="text-body malini text-bold text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട്
-              കണ്ണൂർ കാസർഗോഡ്</p>
-            <div class="meta-desc">Malini Slanted ExtraBold | 20pt</div>
-            <p lang="ml" class="text-body malini text-extrabold text-20 nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട് കണ്ണൂർ കാസർഗോഡ്
-            </p>
-            <div class="meta-desc">Malini Slanted Black | 20pt</div>
-            <p lang="ml" class="text-body malini text-black text-20 text-slanted nowrap">പാലക്കാട് മലപ്പുറം കോഴിക്കോട് വയനാട്
-              കണ്ണൂർ കാസർഗോഡ്</p>
-          </div>
-          <div class="meta  col-1">
-
-            <h2 class="meta-title">Slant variants.</h2>
-            <div class="meta-desc">
-              <p>
-                Slant changes the angle of the italic face along a range that runs 0 to -15. The "forward lean" of letters. Note: -15 (negative 15) corresponds to a 15° clockwise slant, due to type design's roots in geometry
-              </p>
-            </div>
-        </main>
-        <footer>
-        </footer>
-      </section>
-
-      <section class="page bg-grey-800 white-text  ">
-        <main>
-          <div class="content col-5 animate-slant ">
-            <div class="meta-desc">Malini Regular-Slanted | 144pt </div>
-            <p lang="ml" class="text-180 malini text-center nowrap">
-              മായാവി
-              <br /> രമണൻ
+      <section class="page grid  ">
+        <div class="meta col-start-2@lg col-2@lg col-12">
+          <h2 class="meta-title">Slant variants.</h2>
+          <div class="meta-desc">
+            <p>
+              Slant changes the angle of the italic face along a range that runs 0 to -15. The "forward lean" of
+              letters. Note: -15 (negative 15) corresponds to a 15° clockwise slant, due to type design's roots in
+              geometry
             </p>
           </div>
-        </main>
-        <footer>
+        </div>
 
-        </footer>
+        <div class="content card col-start-4@lg col-8@lg col-12 animate-slant ">
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 16">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">മായാവി</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 16">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">അരനാഴികനേരം</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 16">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">the ensnare bosom of the genus pathos
+              and missing.</text>
+          </svg>
+          <svg class="malini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 18">
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">unplug</text>
+          </svg>
+
+        </div>
+        </div>
+
+
+
+
       </section>
 
-      <section class="page bg-cyan-900 white-text">
-        <main>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Thin | 12pt</div>
-            <p lang="en" class="text-body malini text-thin text-12">The aggregate of our joy and suffering, thousands of
-              confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward,
-              every creator and destroyer of civilization, ever king and peasant, every young couple in love, every moth
-              and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every
-              "superstar,” every "supreme leader," every saint and sinner in the history of our species lived there—on a
-              mote of dust suspended in a sunbeam.
-            </p>
-          </div>
-
-          <div class="content col-1">
-            <div class="meta-desc">Malini Extra Light | 12pt</div>
-            <p lang="en" class="text-body malini text-extralight text-12">The aggregate of our joy and suffering,
-              thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero
-              and coward, every creator and destroyer of civilization, ever king and peasant, every young couple in
-              love, every moth and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt
-              politician, every "superstar,” every "supreme leader," every saint and sinner in the history of our
-              species lived there—on a mote of dust suspended in a sunbeam.</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Light | 14pt</div>
-            <p lang="en" class="text-body malini text-light text-12">The aggregate of our joy and suffering, thousands
-              of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and
-              coward, every creator and destroyer of civilization, ever king and peasant, every young couple in love,
-              every moth and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt
-              politician, every "superstar,” every "supreme leader," every saint and sinner in the history of our
-              species lived there—on a mote of dust suspended in a sunbeam.</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Regular | 12pt</div>
-            <p lang="en" class="text-body malini text-12">The aggregate of our joy and suffering, thousands of confident
-              religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every
-              creator and destroyer of civilization, ever king and peasant, every young couple in love, every moth and
-              father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every
-              "superstar,” every "supreme leader," every saint and sinner in the history of our species lived there—on a
-              mote of dust suspended in a sunbeam.</p>
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Medium | 12pt</div>
-            <p lang="en" class="text-body malini text-medium text-12">The aggregate of our joy and suffering, thousands
-              of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and
-              coward, every creator and destroyer of civilization, ever king and peasant, every young couple in love,
-              every moth and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt
-              politician, every "superstar,” every "supreme leader," every saint and sinner in the history of our
-              species lived there—on a mote of dust suspended in a sunbeam.
-            </p>
-          </div>
-        </main>
-        <footer>
-        </footer>
-      </section>
-
-
-      <section class="page bg-cyan-900 white-text">
-        <main>
-
-
-          <div class="content col-1">
-            <div class="meta-desc">Malini Semi Bold | 12pt</div>
-            <p lang="en" class="text-body malini text-semibold text-12 ">The aggregate of our joy and suffering,
-              thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero
-              and coward, every creator and destroyer of civilization, ever king and peasant, every young couple in
-              love, every moth and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt
-              politician, every "superstar,” every "supreme leader," every saint and sinner in the history of our
-              species lived there—on a mote of dust suspended in a sunbeam.</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Bold | 12pt</div>
-            <p lang="en" class="text-body malini text-bold text-12">The aggregate of our joy and suffering, thousands of
-              confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward,
-              every creator and destroyer of civilization, ever king and peasant, every young couple in love, every moth
-              and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every
-              "superstar,” every "supreme leader," every saint and sinner in the history of our species lived there—on a
-              mote of dust suspended in a sunbeam.</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini ExtraBold | 12pt</div>
-            <p lang="en" class="text-body malini text-extrabold text-12">The aggregate of our joy and suffering,
-              thousands of
-              confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward,
-              every creator and destroyer of civilization, ever king and peasant, every young couple in love, every moth
-              and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every
-              "superstar,” every "supreme leader," every saint and sinner in the history of our species lived there—on a
-              mote of dust suspended in a sunbeam.</p>
-
-
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Black | 12pt</div>
-            <p lang="en" class="text-body malini text-black text-12">The aggregate of our joy and suffering, thousands
-              of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and
-              coward, every creator and destroyer of civilization, ever king and peasant, every young couple in love,
-              every moth and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt
-              politician, every "superstar,” every "supreme leader," every saint and sinner in the history of our
-              species lived there—on a mote of dust suspended in a sunbeam.</p>
-
-          </div>
-        </main>
-        <footer>
-        </footer>
-      </section>
-
-
-
-      <section class="page bg-black white-text">
-        <main style="background:url('images/pp-The Mount of Sayed Mian Sheikh.jpg');background-repeat: no-repeat;
-        background-position: right top;background-size: 50%;">
-
-          <div class="content col-3">
-            <div class="meta-desc">Malini Regular | 36pt</div>
-
+      <section class="page grid  ">
+        <div class="content card col-start-2@lg col-10@lg col-12 grid">
+        <div  class="content col-start-1 col-6">
+          <div class="meta-desc"> Regular | 36pt</div>
             <p lang="ml" class="text-body malini text-36  text-start">
               രാത്രിയുടെ അവസാനയാമത്തിൽ പാണ്ടൻകുതിര ചത്തു. ഖസാക്കിലെ പനങ്കാട്ടിലാണ് അവനെ കുടിവെച്ചത്. </p>
-
           </div>
-          <div class="content col-5">
+          <div class="content  col-6">
             <p lang="ml" class="text-body malini malini-thin text-36  text-start">
               കിഴക്കൻകാറ്റടിക്കുമ്പോൾ ഞൊണ്ടിയുമിരടിയും അവന്റെ കുളമ്പടി കേൾക്കാമത്രേ. പഴണിമല കേറാൻ പോകുന്ന
               ഷണ്മുഖാനന്ദൻമാർ കാലുതളരുമ്പോൾ അവനെ വിളിച്ചു. </p>
-            <div class="meta-desc">Malini Thin | 36pt</div>
+            <div class="meta-desc"> Thin | 36pt</div>
 
           </div>
+          </div>
 
-        </main>
-        <footer>
-        </footer>
       </section>
 
 
-      <section class="page bg-blue-grey-800 white-text">
-        <main>
-          <div class="meta  col-1">
-            <h2 class="meta-title">Width variants</h2>
-            <div class="meta-desc">
-              <p>Malini comes with <code>wdth</code> axis to control the horizontal width of the letters. This is
-                expressed
-                as a percentage value between 75% to 125%. 75% is 'Condensed', where the letters are horizontally
-                condensed to 75% of original width. 125% is 'Expanded' where the letters are horizontally stretched to
-                125% of original width. There are 50 possible values for Width. </p>
-              <p>The condense or expand can be used to achieve precise typographic layout in a predefined rendering
-                space. The content can be adjusted in this way to "fit" the space. Be aware of the legibility
-                degradation when doing this.
-              </p>
-            </div>
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Condensed | 12pt</div>
-            <p lang="en" class="text-body malini malini-condensed">
-              In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
-              to everything that is. The nature of the world has been conceptualized differently in different fields.
-              Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
-              world as one simple object while others analyze the world as a complex made up of many parts. In
-              scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
-              all that is, has been, and will be".
-            </p>
+      <section class="page grid bg-blue-gray-800 ">
 
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini SemiCondensed | 12pt</div>
-            <p lang="en" class="text-body malini malini-semicondensed">
-              In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
-              to everything that is. The nature of the world has been conceptualized differently in different fields.
-              Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
-              world as one simple object while others analyze the world as a complex made up of many parts. In
-              scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
-              all that is, has been, and will be".
+        <div class="meta  col-4">
+          <h2 class="meta-title">Width variants</h2>
+          <div class="meta-desc">
+            <p>Malini comes with <code>wdth</code> axis to control the horizontal width of the letters. This is
+              expressed
+              as a percentage value between 75% to 125%. 75% is 'Condensed', where the letters are horizontally
+              condensed to 75% of original width. 125% is 'Expanded' where the letters are horizontally stretched to
+              125% of original width. There are 50 possible values for Width. </p>
+            <p>The condense or expand can be used to achieve precise typographic layout in a predefined rendering
+              space. The content can be adjusted in this way to "fit" the space. Be aware of the legibility
+              degradation when doing this.
             </p>
-
           </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Regular | 12pt</div>
-            <p lang="en" class="text-body malini malini-regular">
-              In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
-              to everything that is. The nature of the world has been conceptualized differently in different fields.
-              Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
-              world as one simple object while others analyze the world as a complex made up of many parts. In
-              scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
-              all that is, has been, and will be".
-            </p>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Condensed | 12pt</div>
+          <p lang="en" class="text-body malini malini-condensed">
+            In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
+            to everything that is. The nature of the world has been conceptualized differently in different fields.
+            Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
+            world as one simple object while others analyze the world as a complex made up of many parts. In
+            scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
+            all that is, has been, and will be".
+          </p>
 
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Expanded | 12pt</div>
-            <p lang="en" class="text-body malini malini-expanded">
-              In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
-              to everything that is. The nature of the world has been conceptualized differently in different fields.
-              Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
-              world as one simple object while others analyze the world as a complex made up of many parts. In
-              scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
-              all that is, has been, and will be".
-            </p>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> SemiCondensed | 12pt</div>
+          <p lang="en" class="text-body malini malini-semicondensed">
+            In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
+            to everything that is. The nature of the world has been conceptualized differently in different fields.
+            Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
+            world as one simple object while others analyze the world as a complex made up of many parts. In
+            scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
+            all that is, has been, and will be".
+          </p>
 
-          </div>
-        </main>
-        <footer> </footer>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Regular | 12pt</div>
+          <p lang="en" class="text-body malini malini-regular">
+            In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
+            to everything that is. The nature of the world has been conceptualized differently in different fields.
+            Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
+            world as one simple object while others analyze the world as a complex made up of many parts. In
+            scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
+            all that is, has been, and will be".
+          </p>
+
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Expanded | 12pt</div>
+          <p lang="en" class="text-body malini malini-expanded">
+            In its most general sense, the term "world" refers to the totality of entities, to the whole of reality or
+            to everything that is. The nature of the world has been conceptualized differently in different fields.
+            Some conceptions see the world as unique while others talk of a "plurality of worlds". Some treat the
+            world as one simple object while others analyze the world as a complex made up of many parts. In
+            scientific cosmology the world or universe is commonly defined as "[t]he totality of all space and time;
+            all that is, has been, and will be".
+          </p>
+
+        </div>
+
+
       </section>
 
-      <section class="page bg-blue-grey-800 white-text">
-        <main>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Condensed | 12pt</div>
-            <p lang="ml" class="text-body malini malini-condensed">
-              ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
-              വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
-              ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
-              വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
-              ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
-              <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
-            </p>
+      <section class="page grid bg-blue-gray-800 ">
 
-          </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Condensed | 12pt</div>
+          <p lang="ml" class="text-body malini malini-condensed">
+            ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
+            വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
+            ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
+            വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
+            ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
+            <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
+          </p>
 
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Semi Condensed | 12pt</div>
-            <p lang="ml" class="text-body malini malini-semicondensed">
-              ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
-              വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
-              ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
-              വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
-              ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
-              <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
-            </p>
+        </div>
 
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Regular| 12pt</div>
-            <p lang="ml" class="text-body malini ">
-              ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
-              വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
-              ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
-              വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
-              ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
-              <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
-            </p>
+        <div class="content  col-4">
+          <div class="meta-desc"> Semi Condensed | 12pt</div>
+          <p lang="ml" class="text-body malini malini-semicondensed">
+            ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
+            വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
+            ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
+            വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
+            ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
+            <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
+          </p>
 
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini SemiExpanded | 12pt</div>
-            <p lang="ml" class="text-body malini malini-semiexpanded">
-              ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
-              വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
-              ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
-              വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
-              ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
-              <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
-            </p>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Regular| 12pt</div>
+          <p lang="ml" class="text-body malini ">
+            ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
+            വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
+            ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
+            വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
+            ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
+            <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
+          </p>
 
-          </div>
-          <div class="content  col-1">
-            <div class="meta-desc">Malini Expanded | 12pt</div>
-            <p lang="ml" class="text-body malini malini-expanded">
-              ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
-              വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
-              ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
-              വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
-              ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
-              <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
-            </p>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> SemiExpanded | 12pt</div>
+          <p lang="ml" class="text-body malini malini-semiexpanded">
+            ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
+            വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
+            ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
+            വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
+            ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
+            <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
+          </p>
 
-          </div>
-        </main>
-        <footer> </footer>
+        </div>
+        <div class="content  col-4">
+          <div class="meta-desc"> Expanded | 12pt</div>
+          <p lang="ml" class="text-body malini malini-expanded">
+            ശെമ്മാശൻ കുട്ടിപ്പാപ്പന്റെ നെറ്റിയിൽ കൈവെച്ച് കണ്ണടച്ചുനിന്ന് പ്രാർത്ഥിച്ചു. ശെമ്മാശ്ശന് വലിയ പൊക്കവും
+            വണ്ണവും ഉണ്ടായിരുന്നു. നീണ്ട് ചെമ്പിച്ച താടി വയറിന് മീതെവരെ വളർന്നു കിടക്കുന്നു. കർത്താവിനെപ്പോലെ
+            ശെമ്മാശ്ശനും തോളിലേക്ക് മുടി നീട്ടിയിരിക്കുന്നു. ശെമ്മാശ്ശന് പൂച്ചക്കണ്ണുകളായിരുന്നു. തലയിലൊരു കറുത്ത
+            വട്ടത്തൊപ്പി. വലിയ വയറിനു മീതെ മുറുകിക്കിടക്കുന്ന ലോഹ. ലോഹയ്ക്കു മീതെ കറുത്ത ചരടുകൊണ്ട് അരയിലൊരു കെട്ട്.
+            ലോഹയ്ക്കു താഴെ കറുത്ത കാൽസ്രായി. തടിച്ചു പരന്ന വലിയ കാലടികൾ. ആകപ്പാടെ ആനിക്ക് ശെമ്മാശ്ശനെ പേടിയായി.
+            <br>അലാഹയുടെ പെണ്മക്കൾ <br>സാറാ ജോസഫ്
+          </p>
+
+        </div>
+
+
       </section>
 
-      <section class="page bg-grey-800 white-text  ">
-        <main>
-          <div class="content col-5 animate-width ">
-            <div class="meta-desc">Malini Condensed-Regular-Expanded | 180pt </div>
-            <p lang="ml" class="text-180 malini text-center nowrap">
-              ആവണി
-              <br /> മകരം
-            </p>
-          </div>
-        </main>
-        <footer>
+      <section class="page grid    ">
 
-        </footer>
-      </section>
+        <div class="content col-5 animate-width ">
+          <div class="meta-desc"> Condensed-Regular-Expanded | 180pt </div>
+          <p lang="ml" class="text-180 malini nowrap">
+            ആവണി
+            <br /> മകരം
+          </p>
+        </div>
 
 
-      <section class="page bg-light-blue-800 white-text">
-        <main>
-          <div class="content col-5">
-            <div class="meta-desc">Malini Condensed Light | 36pt</div>
-            <p class="text-36 malini  malini-condensed-light">Pale Blue Dot: A Vision of the Human Future in Space</p>
-            <p class="text-12 malini   ">Carl Sagan</p>
-          </div>
-          <div class="content col-1">
-            <div class="meta-desc">Malini Thin | 20pt</div>
-            <p lang="en" class="text-body malini malini-thin text-20">
-              Look again at that dot. That’s here. That’s home. That’s us.</p>
-          </div>
-          <div class="content col-4">
-            <div class="meta-desc">Malini SemiCondensed | 12pt</div>
-            <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
-              On it everyone you love, everyone you know,
-              everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our
-              joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and
-              forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every
-              young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of
-              morals, every corrupt politician, every “superstar,” every “supreme leader,” every saint and sinner in the
-              history of our species lived there-on a mote of dust suspended in a sunbeam.
-            </p>
-            <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
-              The Earth is a very small stage in a vast cosmic arena. Think of the endless cruelties visited by the
-              inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner,
-              how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
-              Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph,
-              they could become the momentary masters of a fraction of a dot.
-            </p>
 
 
-            <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
-              Our posturings, our imagined self-importance, the delusion that we have some privileged position in the
-              Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping
-              cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere
-              to save us from ourselves.
-            </p>
-
-            <br />
-          </div>
-
-          </div>
-        </main>
-        <footer>
-        </footer>
       </section>
 
 
-      <section class="page bg-green-900 white-text">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Optical sizing</h2>
-            <div class="meta-desc">
-              <p>Malini is optimized for use at singular specific sizes, such as 14 pt or 144 pt. Small (or body)
-                optical sizes tend to have less stroke contrast and more open and wider spacing than those of their
-                large (or display) counterparts.</p>
+      <section class="page grid bg-light-blue-800 ">
 
-              <p>Optical Size optimizes the type for display at different sizes by varying the x-height, the contrast,
-                and the width of thin strokes. The numbers on the Optical Size axis (6–18) correspond roughly to
-                recommended point sizes: “6pt” (for fine print); “8pt” (footnotes and indexes), “10pt” (block quotes and
-                appendices), “Regular” (main text), “14pt” (subheads), “18pt” (display text, 18 points or larger).
-                However, there’s nothing to prevent your using any Optical Size you like at any actual point size, if
-                you like the look of it. </p>
+        <div class="content col-5">
+          <div class="meta-desc"> Condensed Light | 36pt</div>
+          <p class="text-36 malini  malini-condensed-light">Pale Blue Dot: A Vision of the Human Future in Space</p>
+          <p class="text-12 malini   ">Carl Sagan</p>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Thin | 20pt</div>
+          <p lang="en" class="text-body malini malini-thin text-20">
+            Look again at that dot. That’s here. That’s home. That’s us.</p>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> SemiCondensed | 12pt</div>
+          <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
+            On it everyone you love, everyone you know,
+            everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our
+            joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and
+            forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every
+            young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of
+            morals, every corrupt politician, every “superstar,” every “supreme leader,” every saint and sinner in the
+            history of our species lived there-on a mote of dust suspended in a sunbeam.
+          </p>
+          <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
+            The Earth is a very small stage in a vast cosmic arena. Think of the endless cruelties visited by the
+            inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner,
+            how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
+            Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph,
+            they could become the momentary masters of a fraction of a dot.
+          </p>
 
-            </div>
+
+          <p lang="en" class="text-body malini malini-semicondensed text-12 text-justify">
+            Our posturings, our imagined self-importance, the delusion that we have some privileged position in the
+            Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping
+            cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere
+            to save us from ourselves.
+          </p>
+
+          <br />
+        </div>
+
+        </div>
+
+
+
+      </section>
+
+
+      <section class="page grid bg-green-900 ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Optical sizing</h2>
+          <div class="meta-desc">
+            <p>Malini is optimized for use at singular specific sizes, such as 14 pt or 144 pt. Small (or body)
+              optical sizes tend to have less stroke contrast and more open and wider spacing than those of their
+              large (or display) counterparts.</p>
+
+            <p>Optical Size optimizes the type for display at different sizes by varying the x-height, the contrast,
+              and the width of thin strokes. The numbers on the Optical Size axis (6–18) correspond roughly to
+              recommended point sizes: “6pt” (for fine print); “8pt” (footnotes and indexes), “10pt” (block quotes and
+              appendices), “Regular” (main text), “14pt” (subheads), “18pt” (display text, 18 points or larger).
+              However, there’s nothing to prevent your using any Optical Size you like at any actual point size, if
+              you like the look of it. </p>
+
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 72pt | Optical sizing </div>
+        </div>
+        <div class="card col-8 grid">
+          <div class="content col-6">
+            <div class="meta-desc"> Regular | 72pt | Optical sizing </div>
 
             <p lang="ml" class="text-body malini text-72  text-start malini-opsz nowrap">
-              മലയാളം<br/> തമിഴ്<br/> കന്നഡ <br/>English
+              മലയാളം<br /> തമിഴ്<br /> കന്നഡ <br />English
             </p>
 
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 72pt | No Optical sizing</div>
+          <div class="content col-6">
+            <div class="meta-desc"> Regular | 72pt | No Optical sizing</div>
 
             <p lang="ml" class="text-body malini text-72  text-start malini-no-opsz nowrap">
-              മലയാളം <br/>തമിഴ് <br/>കന്നഡ<br/> English</p>
+              മലയാളം <br />തമിഴ് <br />കന്നഡ<br /> English</p>
 
           </div>
+        </div>
 
-        </main>
-        <footer>
-        </footer>
+
+
       </section>
 
-      <section class="page bg-black">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Malini Display</h2>
-            <div class="meta-desc">
-              <p>Malini Display is optimized for large font sizes, such as headings. However, it can be used as body
-                text as well for increased contrast between thick and thin strokes</p>
-            </div>
+      <section class="page grid bg-black">
+
+        <div class="content card col-8">
+
+          <div class="meta-desc"> Display | 48pt </div>
+
+          <p lang="ml" class="malini text-48 text-start malini-display">
+            കുപ്പുവച്ചൻ
+          </p>
+          <div class="meta-desc"> Display | 24pt </div>
+          <p lang="ml" class="malini text-24  text-start malini-display">
+            ആരെക്കുറിച്ചും ഒന്നും പറയാനില്ലാത്തപ്പോൾ കുപ്പുവച്ചൻ മീൻ പിടിയ്ക്കാനിറങ്ങും. ഒറ്റലുംകൊണ്ട് തോട്ടിലും
+            ചേറ്റിലും ഞാറക്കൊറ്റിയെപ്പോലെ കൊക്കിനടക്കുന്ന കുപ്പുവച്ചനെ വെട്ടിച്ചുപോകാൻ പരൽമീനുകൾക്കു
+            പോലും വിഷമമുണ്ടായിരുന്നില്ല. ജീവനും ഓജസ്സുമുള്ളതത്രയും തന്നെ വെട്ടിച്ചു കടന്നുകളയുന്നു. എങ്കിലും
+            മീൻപിടുത്തം ഒരാശ്വാസമാണ്. വെള്ളത്തിലും ചേറ്റിലും നിഴലിച്ചുകണ്ട ആകാശത്തിനു മീതേ
+            സഞ്ചരിക്കുമ്പോൾ, ശക്തവും സമൃദ്ധവുമായൊരു ജീവിതത്തിന്റെ മങ്ങിയ ഓർമ്മകൾ
+            പരൽമീനുകളെപ്പോലെ കുപ്പുവച്ചനെ തൊട്ടും ഉരസിയും കടന്നു പോയി.
+          </p>
+
+        </div>
+
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Malini Display</h2>
+          <div class="meta-desc">
+            <p>Malini Display is optimized for large font sizes, such as headings. However, it can be used as body
+              text as well for increased contrast between thick and thin strokes</p>
           </div>
-          <div class="content col-4">
-
-            <div class="meta-desc">Malini Display | 48pt </div>
-
-            <p lang="ml" class="malini text-48 text-start malini-display">
-              കുപ്പുവച്ചൻ
-            </p>
-            <div class="meta-desc">Malini Display | 24pt </div>
-            <p lang="ml" class="malini text-24  text-start malini-display">
-              ആരെക്കുറിച്ചും ഒന്നും പറയാനില്ലാത്തപ്പോൾ കുപ്പുവച്ചൻ മീൻ പിടിയ്ക്കാനിറങ്ങും. ഒറ്റലുംകൊണ്ട് തോട്ടിലും
-              ചേറ്റിലും ഞാറക്കൊറ്റിയെപ്പോലെ കൊക്കിനടക്കുന്ന കുപ്പുവച്ചനെ വെട്ടിച്ചുപോകാൻ പരൽമീനുകൾക്കു
-              പോലും വിഷമമുണ്ടായിരുന്നില്ല. ജീവനും ഓജസ്സുമുള്ളതത്രയും തന്നെ വെട്ടിച്ചു കടന്നുകളയുന്നു. എങ്കിലും
-              മീൻപിടുത്തം ഒരാശ്വാസമാണ്. വെള്ളത്തിലും ചേറ്റിലും നിഴലിച്ചുകണ്ട ആകാശത്തിനു മീതേ
-              സഞ്ചരിക്കുമ്പോൾ, ശക്തവും സമൃദ്ധവുമായൊരു ജീവിതത്തിന്റെ മങ്ങിയ ഓർമ്മകൾ
-              പരൽമീനുകളെപ്പോലെ കുപ്പുവച്ചനെ തൊട്ടും ഉരസിയും കടന്നു പോയി.
-            </p>
-
-          </div>
-
-        </main>
-        <footer>
-        </footer>
-      </section>
+        </div>
 
 
-
-      <section class="page  ">
-        <main>
-
-          <div class="content col-5">
-
-            <div class="meta-desc">Malini Display Thin | 36pt</div>
-            <p lang="ml" class="malini text-36 malini-thin-display  text-start">
-              പനകേറ്റക്കാരന്റെ ഇതിഹാസം.
-            </p>
-
-          </div>
-          <div class="content col-2">
-
-            <img src="images/pp-toddy-tapper.jpg" width="400px" />
-
-          </div>
-          <div class="content col-3">
-            <div class="meta-desc">Malini Display | 14pt</div>
-            <p lang="ml" class="text-indent malini malini-display text-14 text-start">
-              പണ്ട്, പറന്നു പറന്ന് ചിറകുകടയുന്ന നാഗത്താന്മാർ പനങ്കുരലിൽ മാണിക്യമിറക്കിവെച്ചു ക്ഷീണം
-              തീർക്കാറുണ്ടായിരുന്നു. നാഗത്താന്മാർക്കായി പനകേറ്റക്കാരൻ കള്ളു നേർന്നു വെച്ചു. പനഞ്ചോട്ടിലാകട്ടെ, അവൻ
-              കുലദൈവങ്ങൾക്കു തെച്ചിപ്പൂ നേർന്നിട്ടു. ദൈവങ്ങളെയും പിതൃക്കളെയും ഷെയ്ഖ് തമ്പുരാനെയും സ്‌മരിച്ചേ പന
-              കയറുകയുള്ളൂ. കാരണം, പിടിനിലയില്ലാത്ത ആകാശത്തിലേക്കാണ് കയറിപ്പോകുന്നത്. പനമ്പട്ടകളിൽ ഇടിമിന്നലും
-              കാറ്റുമുണ്ട്. പനയുടെ കൂർത്ത ചിതമ്പലുകളിലാണെങ്കിൽ തേളുകളുമുണ്ട്. ആ ചിതമ്പലുകളിലുരഞ്ഞു പനകേറ്റക്കാരന്റെ
-              കയ്യും മാറും തഴമ്പു കെട്ടും. ആ തഴമ്പുകൾ കണ്ടാണ് പെണ്ണുങ്ങൾ ആണിനെയറിഞ്ഞത്.
-              കെട്ടിയവന്മാർ പനങ്കാട്ടിലേയ്ക്ക് പോയാൽ ഉച്ചയ്ക്ക് പെണ്ണുങ്ങൾ ചപ്പലടിക്കാൻ പോകും. ചപ്പലു കത്തിച്ചാണ്
-              കള്ളുകാച്ചി ചക്കര കുറുക്കുക. മാന്തോപ്പിലും തേക്കിൻകാട്ടിലും ചപ്പലടിക്കുമ്പോഴാണ് ലോക വർത്തമാനവും
-              പരദൂഷണവുമൊക്കെ. അട്ടിയട്ടിയായി ഉറങ്ങുന്ന ചപ്പലുകളെ ചൂലു കൊണ്ടു ചികയാൻ പെണ്ണുങ്ങൾ പേടിച്ചില്ല. ചപ്പലിനകത്തെ
-              വിഷത്താന്മാർ ചാരിത്രവതികളെ കൊത്തില്ല. അഥവാ, എന്നെങ്കിലുമൊന്നു പിഴച്ചുപോയെങ്കിൽ ഖസാക്കിലെ സർപ്പശിലകളിൽ
-              ആരുമറിയാതെ ഒരു തുളസിയില വെച്ചേ അവർ ചപ്പലടിയ്ക്കാൻ ചെന്നുള്ളൂ. ഒറ്റപ്പനകളുടെ ചോട്ടിലും അവർ 'തെറ്റു' വെച്ചു.
-              കാരണം, കരിമ്പനയ്ക്ക് കാണാൻ വയ്യാത്തതൊന്നുമില്ല. പണ്ടുപണ്ടൊരു കാലമുണ്ടായിരുന്നു: പുള്ളുവന്റെ പാട്ടുകൾ
-              ഇന്നുമാ കാലത്തെയോർക്കുന്നു. അന്ന് പന കേറേണ്ടതില്ലായിരുന്നു. ചെത്തുകാരനുവേണ്ടി കരിമ്പന കുനിഞ്ഞു കൊടുത്തു.
-              ചെത്തുകാരന്റെ പെണ്ണ് പിഴച്ചതിൽപ്പിന്നെയാണ് അത് കുനിയാതെയായത്. </p>
-
-          </div>
-
-
-
-        </main>
-        <footer>
-        </footer>
       </section>
 
 
-      <section class="page  color-bg-blue ">
+
+      <section class="page grid  ">
+
+
+        <div class="content col-12">
+
+          <div class="meta-desc"> Display Thin | 36pt</div>
+          <p lang="ml" class="malini text-36 malini-thin-display  text-start">
+            പനകേറ്റക്കാരന്റെ ഇതിഹാസം.
+          </p>
+
+        </div>
+        <div class="content col-4">
+
+          <img src="images/pp-toddy-tapper.jpg" width="400px" />
+
+        </div>
+        <div class="content col-6">
+          <div class="meta-desc"> Display | 14pt</div>
+          <p lang="ml" class="text-indent malini malini-display text-14 text-start">
+            പണ്ട്, പറന്നു പറന്ന് ചിറകുകടയുന്ന നാഗത്താന്മാർ പനങ്കുരലിൽ മാണിക്യമിറക്കിവെച്ചു ക്ഷീണം
+            തീർക്കാറുണ്ടായിരുന്നു. നാഗത്താന്മാർക്കായി പനകേറ്റക്കാരൻ കള്ളു നേർന്നു വെച്ചു. പനഞ്ചോട്ടിലാകട്ടെ, അവൻ
+            കുലദൈവങ്ങൾക്കു തെച്ചിപ്പൂ നേർന്നിട്ടു. ദൈവങ്ങളെയും പിതൃക്കളെയും ഷെയ്ഖ് തമ്പുരാനെയും സ്‌മരിച്ചേ പന
+            കയറുകയുള്ളൂ. കാരണം, പിടിനിലയില്ലാത്ത ആകാശത്തിലേക്കാണ് കയറിപ്പോകുന്നത്. പനമ്പട്ടകളിൽ ഇടിമിന്നലും
+            കാറ്റുമുണ്ട്. പനയുടെ കൂർത്ത ചിതമ്പലുകളിലാണെങ്കിൽ തേളുകളുമുണ്ട്. ആ ചിതമ്പലുകളിലുരഞ്ഞു പനകേറ്റക്കാരന്റെ
+            കയ്യും മാറും തഴമ്പു കെട്ടും. ആ തഴമ്പുകൾ കണ്ടാണ് പെണ്ണുങ്ങൾ ആണിനെയറിഞ്ഞത്.
+            കെട്ടിയവന്മാർ പനങ്കാട്ടിലേയ്ക്ക് പോയാൽ ഉച്ചയ്ക്ക് പെണ്ണുങ്ങൾ ചപ്പലടിക്കാൻ പോകും. ചപ്പലു കത്തിച്ചാണ്
+            കള്ളുകാച്ചി ചക്കര കുറുക്കുക. മാന്തോപ്പിലും തേക്കിൻകാട്ടിലും ചപ്പലടിക്കുമ്പോഴാണ് ലോക വർത്തമാനവും
+            പരദൂഷണവുമൊക്കെ. അട്ടിയട്ടിയായി ഉറങ്ങുന്ന ചപ്പലുകളെ ചൂലു കൊണ്ടു ചികയാൻ പെണ്ണുങ്ങൾ പേടിച്ചില്ല. ചപ്പലിനകത്തെ
+            വിഷത്താന്മാർ ചാരിത്രവതികളെ കൊത്തില്ല. അഥവാ, എന്നെങ്കിലുമൊന്നു പിഴച്ചുപോയെങ്കിൽ ഖസാക്കിലെ സർപ്പശിലകളിൽ
+            ആരുമറിയാതെ ഒരു തുളസിയില വെച്ചേ അവർ ചപ്പലടിയ്ക്കാൻ ചെന്നുള്ളൂ. ഒറ്റപ്പനകളുടെ ചോട്ടിലും അവർ 'തെറ്റു' വെച്ചു.
+            കാരണം, കരിമ്പനയ്ക്ക് കാണാൻ വയ്യാത്തതൊന്നുമില്ല. പണ്ടുപണ്ടൊരു കാലമുണ്ടായിരുന്നു: പുള്ളുവന്റെ പാട്ടുകൾ
+            ഇന്നുമാ കാലത്തെയോർക്കുന്നു. അന്ന് പന കേറേണ്ടതില്ലായിരുന്നു. ചെത്തുകാരനുവേണ്ടി കരിമ്പന കുനിഞ്ഞു കൊടുത്തു.
+            ചെത്തുകാരന്റെ പെണ്ണ് പിഴച്ചതിൽപ്പിന്നെയാണ് അത് കുനിയാതെയായത്. </p>
+
+        </div>
+
+
+
+
+
+
+      </section>
+
+
+      <section class="page grid  color-bg-blue ">
 
         <img src="images/grid.jpg" width="100%" height="100%">
 
-        <footer>
 
-        </footer>
+
+
       </section>
 
 
-      <section class="page color-bg-dark">
+      <section class="page grid color-bg-dark">
 
         <img src="images/variants.jpg" width="100%" height="100%">
 
-        <footer>
 
-        </footer>
+
+
       </section>
 
-      <section class="page  ">
-        <main>
-
-          <div class="content col-5">
-
-            <div class="meta-desc">Malini Bold Semi Condensed | 36pt</div>
-            <p lang="ml" class="malini text-36 malini-semicondensed-bold  text-start">
-              ഖസാക്കിന്റെ ഇതിഹാസം
-            </p>
-            <p lang="ml" class="malini text-12 malini-medium text-start">
-              ഓ. വി. വിജയൻ
-            </p>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular | 11pt</div>
-            <p lang="ml" class="text-indent malini text-11 text-start">
-              കുടിലിന്റെ മൺചുമരിൽ ആണിയറഞ്ഞ് മാറുതാലിയും ചേറ്റുകത്തിയും കുപ്പുവച്ചൻ അവിടെ തൂക്കിയിട്ടു. ഏറെ താമസിയാതെ
-              വലിയ കറുത്ത ചിലന്തികൾ അവിടെ പറ്റിയിരിപ്പായി. രണ്ടും മൂന്നും ദിവസമടുപ്പിച്ച് അവിടെ അടുപ്പു പുകയില്ല. പിന്നെ
-              കുടിലിന്റെ ഏകാന്തതയിൽ നിന്ന് വെളിമ്പുറങ്ങളുടെ ഏകാന്തതയിലേയ്ക്ക് കുപ്പുവച്ചൻ നടന്നു. അല്ലെങ്കിൽ മലങ്കാറ്റു
-              കൊണ്ട് വെളിമ്പുറങ്ങളിലിരുന്നു. അങ്ങനെ തനിച്ചിരുന്നാൽ ഓർത്തുപോവുക കല്യാണിയുടെ വീടിനെക്കുറിച്ചാണ്. </p>
-            <p lang="ml" class="text-indent malini text-11 text-start">
-              അവളുടെ
-              അപ്പനുമമ്മയും മരിച്ചു പോയ്ക്കഴിഞ്ഞിരുന്നു. അറയിൽ ഒരു മൂലയിൽ കൂനിയിരുന്ന ഒരു മുത്തി മാത്രമുണ്ട്ആ വീട്ടിൽ.
-              ഒരു തുവർത്തു മാത്രം ചുറ്റി യാക്കരത്തോട്ടിൽ കല്യാണി കുളിച്ചു നിൽക്കുന്നത് കുപ്പുവച്ചനോർത്തു. തുവർത്തു
-              മാത്രം ചുറ്റി, നാരായണിയമ്മയെപ്പോലെ. ഓട്ടുകമ്പനിയിൽ പണിയെടുക്കാൻ വരുന്നവർ ആ കടവിൽത്തന്നെ
-              കുളിയ്ക്കാനിറങ്ങുന്നതും സന്ധ്യമയങ്ങേ ആണില്ലാത്ത ആ വീട്ടിനു മുമ്പിൽ ചുറ്റിക്കറങ്ങുന്നതും അയാളോർത്തു.
-              വീട്ടിൽ തിരിച്ചുചെന്ന് ഉറങ്ങാൻ കിടന്നാലും അതുതന്നെയാണ് മനസ്സിൽ. പിന്നെപ്പിന്നെ മറ്റെല്ലാം തന്നെ
-              കുപ്പുവച്ചന്റെ മനസ്സിൽനിന്നകന്നു. ഒറ്റത്തുവർത്തും ചുറ്റി കല്യാണി മാത്രം അവിടെ നീരാടി. പുറത്ത് മഞ്ഞും
-              കാറ്റും നിറയുമ്പോൾ കുപ്പുവച്ചൻ പായിൽ കമിഴ്ന്നു കിടന്നു. അങ്ങിനെ കൊല്ലം പതിനഞ്ചു കഴിഞ്ഞു.
-            </p>
-          </div>
-          <div class="content col-2">
-            <p lang="ml" class="malini  text-11 text-start text-indent">
-              ഖസാക്കിലെ അത്താണിപ്പുറത്ത് കുപ്പുവച്ചൻ പ്രത്യക്ഷപ്പെടുന്നു. നെറ്റിയിലേയ്ക്ക് വീഴുന്ന നരപടർന്ന ചെമ്പൻ
-              മുടിയും കോട്ടുപല്ലുകൾ കൊഴിഞ്ഞ് ഒട്ടിപ്പിടിച്ച കവിളു മുതൽ കവിളു വരെ പടരുന്ന ചിരിയുമായി കുപ്പുവച്ചൻ അവിടെ
-              കുന്തിച്ചിരുന്നു. എന്നുതൊട്ടാണ് കുപ്പുവച്ചനെ അത്താണിപ്പുറത്തു കണ്ടുതുടങ്ങിയതെന്ന് ഖസാക്കുകാർക്കു
-              പറഞ്ഞുകൂടാ. എന്നും അവിടെത്തന്നെയിരുന്നിരിക്കണം. കഴിഞ്ഞ കാലങ്ങളെ ബന്ധിച്ച കണ്ണികളത്രയും അറ്റു പോയിരുന്നു.
-            </p>
-            <p lang="ml" class="malini  malini-medium text-11 text-start text-indent">
-              തല കാൽമുട്ടുകൾക്കിടയിലേയ്ക്കിറക്കിവെച്ച് മെലിഞ്ഞൊട്ടിയ കൈകൾ സ്വസ്തികാബദ്ധമാക്കി, വലതുകൈപ്പടം മുറുകെ
-              അടച്ചുപിടിച്ച് കുപ്പുവച്ചൻ അത്താണിപ്പുറത്തിരുന്നു. വരുന്നവർ ആരായാലും കുപ്പുവച്ചൻ കുശലം ചോദിച്ചുകൊള്ളും.
-              ചിലപ്പോൾ, ആ ക്ഷണം നിരസിയ്ക്കപ്പെടുമെന്ന പൂർണ്ണ
-              ബോദ്ധ്യമുണ്ടെങ്കിൽ, അത്താണിപ്പുറത്തു നിന്ന് ചായപ്പീടികയിലേയ്ക്ക് വിളിച്ചുപറയും, </p>
-            <p lang="ml" class="malini text-11 text-start text-indent">“നമ്മണ്ടെ കണക്കി ഒര്
-              കോട്ടറ് കൊടുത്താണ്.” </p>
-            <p lang="ml" class="malini text-11 text-start text-indent">
-              അല്ലെങ്കിൽ, കൈ മടക്കിപ്പിടിച്ച് ഇടുതലയിട്ട് ഓരോ അടിയും അളന്നു
-              മുറിച്ചുവച്ച് പതുക്കെ നടുപ്പറമ്പിലൂടെ നീങ്ങുമ്പോൾ ആരെയെങ്കിലും എതിരു മുട്ടിയാൽ പറഞ്ഞു തുടങ്ങും.</p>
-            <p lang="ml" class="malini text-11 text-start text-indent">
-              “നീയ് കേ്ട്ടോന്ന്ം, കുട്ടീ? നമ്മ പറയാമ്പഴ്‌തില്ലാത്തതാണ്. എ്ന്നാല്ം അയ് മേഷ്ടര് ചെക്കൻ എ്വ്ടന്നാ
-              പാല് വാങ്ങ്ണ്ന്നറിയോ? അയ് തൂങ്ങിച്ചത്ത നാകുമണിന്റെ മക്ള് ലഷ്മിന്റട്ത്ത്ന്ന്. പിന്നെ, നമ്മണ്ടെ
-              പങ്ങേലന്റെ പെ്ണ്ണിന് മാസം പത്താണ്. പങ്ങേലൻ എ്ന്നാണ് മലയ്ക്കു പോയത്? ഇന്നെയ്ക്കി മാസം
-              പതിനൊന്നായിലേ? നമ്‌ക്കെ്ന്ത് പറയണ്ട കാരിയം!”
-            </p>
-          </div>
+      <section class="page grid  ">
 
 
-          <div class="content col-1">
+        <div class="content col-12">
 
-            <img src="images/pp-kuppuvachan.jpg" height="300px" />
-            <div class="meta-desc">Malini Display | 16pt</div>
-            <p lang="ml" class="malini malini-display text-16 text-start">
-              ഈ പറഞ്ഞുതീരുന്നതിനിടയിൽ കുപ്പുവച്ചൻ നിലത്തിരുന്നുപോകും. ഇരുന്നാൽ തല, കയ്യ്, കാല്,
-              ഇവയത്രയും അതതിന്റെ സ്ഥാനത്തു ചെന്നു പെടുകയും ചെയ്യും.
-            </p>
-          </div>
-        </main>
-        <footer>
-        </footer>
+          <div class="meta-desc"> Bold Semi Condensed | 36pt</div>
+          <p lang="ml" class="malini text-36 malini-semicondensed-bold  text-start">
+            ഖസാക്കിന്റെ ഇതിഹാസം
+          </p>
+          <p lang="ml" class="malini text-12 malini-medium text-start">
+            ഓ. വി. വിജയൻ
+          </p>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular | 12pt</div>
+          <p lang="ml" class="text-indent malini text-12 text-start">
+            കുടിലിന്റെ മൺചുമരിൽ ആണിയറഞ്ഞ് മാറുതാലിയും ചേറ്റുകത്തിയും കുപ്പുവച്ചൻ അവിടെ തൂക്കിയിട്ടു. ഏറെ താമസിയാതെ
+            വലിയ കറുത്ത ചിലന്തികൾ അവിടെ പറ്റിയിരിപ്പായി. രണ്ടും മൂന്നും ദിവസമടുപ്പിച്ച് അവിടെ അടുപ്പു പുകയില്ല. പിന്നെ
+            കുടിലിന്റെ ഏകാന്തതയിൽ നിന്ന് വെളിമ്പുറങ്ങളുടെ ഏകാന്തതയിലേയ്ക്ക് കുപ്പുവച്ചൻ നടന്നു. അല്ലെങ്കിൽ മലങ്കാറ്റു
+            കൊണ്ട് വെളിമ്പുറങ്ങളിലിരുന്നു. അങ്ങനെ തനിച്ചിരുന്നാൽ ഓർത്തുപോവുക കല്യാണിയുടെ വീടിനെക്കുറിച്ചാണ്. </p>
+          <p lang="ml" class="text-indent malini text-12 text-start">
+            അവളുടെ
+            അപ്പനുമമ്മയും മരിച്ചു പോയ്ക്കഴിഞ്ഞിരുന്നു. അറയിൽ ഒരു മൂലയിൽ കൂനിയിരുന്ന ഒരു മുത്തി മാത്രമുണ്ട്ആ വീട്ടിൽ.
+            ഒരു തുവർത്തു മാത്രം ചുറ്റി യാക്കരത്തോട്ടിൽ കല്യാണി കുളിച്ചു നിൽക്കുന്നത് കുപ്പുവച്ചനോർത്തു. തുവർത്തു
+            മാത്രം ചുറ്റി, നാരായണിയമ്മയെപ്പോലെ. ഓട്ടുകമ്പനിയിൽ പണിയെടുക്കാൻ വരുന്നവർ ആ കടവിൽത്തന്നെ
+            കുളിയ്ക്കാനിറങ്ങുന്നതും സന്ധ്യമയങ്ങേ ആണില്ലാത്ത ആ വീട്ടിനു മുമ്പിൽ ചുറ്റിക്കറങ്ങുന്നതും അയാളോർത്തു.
+            വീട്ടിൽ തിരിച്ചുചെന്ന് ഉറങ്ങാൻ കിടന്നാലും അതുതന്നെയാണ് മനസ്സിൽ. പിന്നെപ്പിന്നെ മറ്റെല്ലാം തന്നെ
+            കുപ്പുവച്ചന്റെ മനസ്സിൽനിന്നകന്നു. ഒറ്റത്തുവർത്തും ചുറ്റി കല്യാണി മാത്രം അവിടെ നീരാടി. പുറത്ത് മഞ്ഞും
+            കാറ്റും നിറയുമ്പോൾ കുപ്പുവച്ചൻ പായിൽ കമിഴ്ന്നു കിടന്നു. അങ്ങിനെ കൊല്ലം പതിനഞ്ചു കഴിഞ്ഞു.
+          </p>
+        </div>
+        <div class="content col-4">
+          <p lang="ml" class="malini  text-12 text-start text-indent">
+            ഖസാക്കിലെ അത്താണിപ്പുറത്ത് കുപ്പുവച്ചൻ പ്രത്യക്ഷപ്പെടുന്നു. നെറ്റിയിലേയ്ക്ക് വീഴുന്ന നരപടർന്ന ചെമ്പൻ
+            മുടിയും കോട്ടുപല്ലുകൾ കൊഴിഞ്ഞ് ഒട്ടിപ്പിടിച്ച കവിളു മുതൽ കവിളു വരെ പടരുന്ന ചിരിയുമായി കുപ്പുവച്ചൻ അവിടെ
+            കുന്തിച്ചിരുന്നു. എന്നുതൊട്ടാണ് കുപ്പുവച്ചനെ അത്താണിപ്പുറത്തു കണ്ടുതുടങ്ങിയതെന്ന് ഖസാക്കുകാർക്കു
+            പറഞ്ഞുകൂടാ. എന്നും അവിടെത്തന്നെയിരുന്നിരിക്കണം. കഴിഞ്ഞ കാലങ്ങളെ ബന്ധിച്ച കണ്ണികളത്രയും അറ്റു പോയിരുന്നു.
+          </p>
+          <p lang="ml" class="malini  malini-medium text-12 text-start text-indent">
+            തല കാൽമുട്ടുകൾക്കിടയിലേയ്ക്കിറക്കിവെച്ച് മെലിഞ്ഞൊട്ടിയ കൈകൾ സ്വസ്തികാബദ്ധമാക്കി, വലതുകൈപ്പടം മുറുകെ
+            അടച്ചുപിടിച്ച് കുപ്പുവച്ചൻ അത്താണിപ്പുറത്തിരുന്നു. വരുന്നവർ ആരായാലും കുപ്പുവച്ചൻ കുശലം ചോദിച്ചുകൊള്ളും.
+            ചിലപ്പോൾ, ആ ക്ഷണം നിരസിയ്ക്കപ്പെടുമെന്ന പൂർണ്ണ
+            ബോദ്ധ്യമുണ്ടെങ്കിൽ, അത്താണിപ്പുറത്തു നിന്ന് ചായപ്പീടികയിലേയ്ക്ക് വിളിച്ചുപറയും, </p>
+          <p lang="ml" class="malini text-12 text-start text-indent">“നമ്മണ്ടെ കണക്കി ഒര്
+            കോട്ടറ് കൊടുത്താണ്.” </p>
+          <p lang="ml" class="malini text-12 text-start text-indent">
+            അല്ലെങ്കിൽ, കൈ മടക്കിപ്പിടിച്ച് ഇടുതലയിട്ട് ഓരോ അടിയും അളന്നു
+            മുറിച്ചുവച്ച് പതുക്കെ നടുപ്പറമ്പിലൂടെ നീങ്ങുമ്പോൾ ആരെയെങ്കിലും എതിരു മുട്ടിയാൽ പറഞ്ഞു തുടങ്ങും.</p>
+          <p lang="ml" class="malini text-12 text-start text-indent">
+            “നീയ് കേ്ട്ടോന്ന്ം, കുട്ടീ? നമ്മ പറയാമ്പഴ്‌തില്ലാത്തതാണ്. എ്ന്നാല്ം അയ് മേഷ്ടര് ചെക്കൻ എ്വ്ടന്നാ
+            പാല് വാങ്ങ്ണ്ന്നറിയോ? അയ് തൂങ്ങിച്ചത്ത നാകുമണിന്റെ മക്ള് ലഷ്മിന്റട്ത്ത്ന്ന്. പിന്നെ, നമ്മണ്ടെ
+            പങ്ങേലന്റെ പെ്ണ്ണിന് മാസം പത്താണ്. പങ്ങേലൻ എ്ന്നാണ് മലയ്ക്കു പോയത്? ഇന്നെയ്ക്കി മാസം
+            പതിനൊന്നായിലേ? നമ്‌ക്കെ്ന്ത് പറയണ്ട കാരിയം!”
+          </p>
+        </div>
+
+
+        <div class="content col-4">
+
+          <img src="images/pp-kuppuvachan.jpg" height="400px" />
+          <div class="meta-desc"> Display | 16pt</div>
+          <p lang="ml" class="malini malini-display text-16 text-start">
+            ഈ പറഞ്ഞുതീരുന്നതിനിടയിൽ കുപ്പുവച്ചൻ നിലത്തിരുന്നുപോകും. ഇരുന്നാൽ തല, കയ്യ്, കാല്,
+            ഇവയത്രയും അതതിന്റെ സ്ഥാനത്തു ചെന്നു പെടുകയും ചെയ്യും.
+          </p>
+        </div>
+
+
+
       </section>
 
-      <section class="page bg-brown-900 white-text ">
-        <main>
-          <div class="content col-3">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini text-center">
-              ABCDEDFGHIJKLMNOP QRSTUVWXYZ abcdefghijklmnop qrstuvwxyz
-              0123456789?!@#$&*
-            </p>
-          </div>
-        </main>
-        <footer>
+      <section class="page grid bg-brown-900  ">
 
-        </footer>
+        <div class="content col-6">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini">
+            ABCDEDFGHIJKLMNOP QRSTUVWXYZ abcdefghijklmnop qrstuvwxyz
+            0123456789?!@#$&*
+          </p>
+        </div>
+
+
+
+
       </section>
 
-      <section class="page bg-grey-800 white-text ">
-        <main>
-          <div class="content col-3">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini text-start">
-              കഖഗഘങ ചഛജഝഞ ടഠഡഢണ തഥദധന പഫബഭമ
-            </p>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini text-end">
-              യരലവ ശഷസ ഹളഴറ
-            </p>
-          </div>
+      <section class="page grid   ">
 
-        </main>
-        <footer>
+        <div class="content col-6">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini text-start">
+            കഖഗഘങ ചഛജഝഞ ടഠഡഢണ തഥദധന പഫബഭമ
+          </p>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini text-end">
+            യരലവ ശഷസ ഹളഴറ
+          </p>
+        </div>
 
-        </footer>
+
+
+
+
       </section>
 
-      <section class="page bg-blue-grey-800 white-text ">
-        <main>
-          <div class="content col-5">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini text-start">
-              കൎണ്ണൻ വൎത്തുളം ഭാൎയ്യ സൎക്കാർ കാൎക്കോടകൻ മുഖ്യമന്ത്രി സ്വാതന്ത്ര്യം കട്ലെറ്റ് ഹിറ്റ്ലർ കുറ്റ്യാടി</p>
-          </div>
-        </main>
-        <footer>
+      <section class="page grid bg-blue-gray-800  ">
 
-        </footer>
-      </section>
+        <div class="content col-5">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini text-start">
+            കൎണ്ണൻ വൎത്തുളം ഭാൎയ്യ സൎക്കാർ കാൎക്കോടകൻ മുഖ്യമന്ത്രി സ്വാതന്ത്ര്യം കട്ലെറ്റ് ഹിറ്റ്ലർ കുറ്റ്യാടി</p>
+        </div>
 
 
-      <section class="page bg-grey-800 white-text ">
-        <main>
-          <div class="content col-5">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini  text-center">
-              ൦൧൨൩൪൫൬൭൮൯ ൳൴൵൶൷൸൹൏ ൘൙൚൛൜൝൞ ൰൱൲ ഩഺഽൟൠൡ</p>
-          </div>
-        </main>
-        <footer>
 
-        </footer>
-      </section>
 
-      <section class="page bg-blue-grey-800 white-text ">
-        <main>
-          <div class="content col-5">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini  text-center">
-              ദുഃഖം നമോഽസ്തു പഩ എൻഺെ എന്റെ ഹെൻറി ൟഴം കൢപ്തം പൌൎണ്ണമി യ഼ സഀതഁ നഄ</p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-      <section class="page bg-grey-800 white-text ">
-        <main>
-          <div class="content col-5">
-            <div class="meta-desc">Malini Regular| 72pt </div>
-            <p lang="ml" class="text-72 malini text-center">
-              കൂൺ അവൻ ഇതൾ കാർ പാൽ ഇലൿട്രിൿ കാൕകറി തമിൖനാട് കലൔ</p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-      <section class="page bg-blue-grey-800">
-        <main>
-
-          <div class="content  col-5">
-            <div class="meta-desc">Malini Thin | 24pt</div>
-            <p lang="en" class="text-24 malini text-thin">
-              ARROWROOT BARLEY CHERVIL DUMPLING ENDIVE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEE MARJORAM
-              NECTARINE OXTAIL PIZZA QUINOA ROQUEFORT SQUASH TOFU UPPUMA VANILLA WHEAT XERGIS YOGURT ZWEIBACK 0 1 2 3 4
-              5 6 7 8 9 ! ?
-            </p>
-            <div class="meta-desc">Malini Regular | 24pt</div>
-            <p lang="en" class="text-24 malini">
-              ARROWROOT BARLEY CHERVIL DUMPLING ENDIVE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEE MARJORAM
-              NECTARINE OXTAIL PIZZA QUINOA ROQUEFORT SQUASH TOFU UPPUMA VANILLA WHEAT XERGIS YOGURT ZWEIBACK 0 1 2 3 4
-              5 6 7 8 9 ! ?
-            </p>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
       </section>
 
 
-      <section class="page bg-black">
-        <main>
+      <section class="page grid   ">
 
-          <div class="content  col-5">
-            <div class="meta-desc">Malini Regular | 36pt</div>
-            <p lang="en" class="text-36 malini">
-              0123456789 12:35 4:1 8-3
-              3×5 ×9 8× 3x4 x9 2x
-              3−5 −5 8− 3+5 +5 3+
-              3÷5 ÷5 8÷ 3±5 ±5 8±
-              3=5 =5 8= 3≠5 ≠5 8≠
-              3≈5 ≈5 8≈ 3~5 ~5 8~
-              3>5 >5 >8 3<5 <5 <8 3≥5 ≥5 ≥8 3≤5 ≤5 ≤8 FFFFFF 000000 FF00 4296DE 3200 9000 198.3 5300 12,385,900 43.2e9
-                0xA04D −0 −1 −2 −3 −4 −5 −6 −7 −8 −9 +0 +1 +2 +3 +4 +5 +6 +7 +8 +9 + − × ÷ ±=≠ ≈ ~ <> ≤ ≥
-                00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 0a 0b 0c 0d 0e 0f
+        <div class="content col-5">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini ">
+            ൦൧൨൩൪൫൬൭൮൯ ൳൴൵൶൷൸൹൏ ൘൙൚൛൜൝൞ ൰൱൲ ഩഺഽൟൠൡ</p>
+        </div>
 
-            </p>
 
-          </div>
-        </main>
-        <footer>
 
-        </footer>
+
       </section>
 
-      <section class="page bg-cyan-900 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Old Numbers</h2>
-            <div class="meta-desc">
-              <p>Malini has the opentype feature <code>onum</code> implemented. Enabling it provides the old numberals.
-              </p>
+      <section class="page grid bg-blue-gray-800  ">
 
-            </div>
-          </div>
-          <div class="content col-4">
-            <div class="meta-desc">Malini Regular| 72pt | <code>onum</code>: off</div>
-            <p lang="ml" class="text-48 malini text-start">
-              3.1415926535 8979323846 2643383279 5028841971 6939937510
-            </p>
-            <div class="meta-desc">Malini Regular| 72pt | <code>onum</code>: on</div>
-            <p lang="ml" class="text-48 malini malini-onum text-start">
-              3.1415926535 8979323846 2643383279 5028841971 6939937510
-            </p>
-        </main>
-        <footer>
+        <div class="content col-5">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini ">
+            ദുഃഖം നമോഽസ്തു പഩ എൻഺെ എന്റെ ഹെൻറി ൟഴം കൢപ്തം പൌൎണ്ണമി യ഼ സഀതഁ നഄ</p>
+        </div>
 
-        </footer>
+
+
+
       </section>
 
-      <section class="page bg-brown-900 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Reph signs</h2>
-            <div class="meta-desc">
-              <p>By changing <code>pres</code> opentype feature, the conjoined or disjoined rendering of reph formas (്
-                + ര) can be obtained. By default this is 'on'</p>
+      <section class="page grid   ">
 
-            </div>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>pres</code>: on</div>
-            <p lang="ml" class="text-72 malini text-start">
-              പ്രകാശം <br>പുത്രൻ <br>അക്രമം<br> ഗ്രാമം<br> ശ്രമം
-            </p>
+        <div class="content col-5">
+          <div class="meta-desc"> Regular| 72pt </div>
+          <p lang="ml" class="text-72 malini">
+            കൂൺ അവൻ ഇതൾ കാർ പാൽ ഇലൿട്രിൿ കാൕകറി തമിൖനാട് കലൔ</p>
+        </div>
 
-          </div>
-          <div class="content col-2">
 
-            <div class="meta-desc">Malini Regular| 72pt | <code>pres</code>: off</div>
-            <p lang="ml" class="text-72 malini text-start" style="font-feature-settings: 'pres' 0;">
-              പ്രകാശം<br> പുത്രൻ <br>അക്രമം <br>ഗ്രാമം<br> ശ്രമം
-            </p>
-          </div>
-        </main>
-        <footer>
 
-        </footer>
+
+      </section>
+
+      <section class="page grid bg-blue-gray-800">
+
+
+        <div class="content  col-5">
+          <div class="meta-desc"> Thin | 24pt</div>
+          <p lang="en" class="text-24 malini text-thin">
+            ARROWROOT BARLEY CHERVIL DUMPLING ENDIVE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEE MARJORAM
+            NECTARINE OXTAIL PIZZA QUINOA ROQUEFORT SQUASH TOFU UPPUMA VANILLA WHEAT XERGIS YOGURT ZWEIBACK 0 1 2 3 4
+            5 6 7 8 9 ! ?
+          </p>
+          <div class="meta-desc"> Regular | 24pt</div>
+          <p lang="en" class="text-24 malini">
+            ARROWROOT BARLEY CHERVIL DUMPLING ENDIVE FLAXSEED GARBANZO HIJIKI ISHTU JICAMA KALE LYCHEE MARJORAM
+            NECTARINE OXTAIL PIZZA QUINOA ROQUEFORT SQUASH TOFU UPPUMA VANILLA WHEAT XERGIS YOGURT ZWEIBACK 0 1 2 3 4
+            5 6 7 8 9 ! ?
+          </p>
+        </div>
+
+
+
+
       </section>
 
 
-      <section class="page bg-blue-grey-800 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Postbase substitutions</h2>
-            <div class="meta-desc">
-              <p>By changing Postbase substitutions - <code>psts</code> opentype feature, the conjoined or disjoined
-                rendering of u signs - ു, ൂ, ൃ can be obtained. By default this is 'on'</p>
-            </div>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>psts</code>: on</div>
-            <p lang="ml" class="text-72 malini text-start">
-              കൂലി <br /> കൃത്യം <br />സംതൃപ്തി കുസുമം പൂവ്
+      <section class="page grid bg-black">
+
+
+        <div class="content  col-5">
+          <div class="meta-desc"> Regular | 36pt</div>
+          <p lang="en" class="text-36 malini">
+            0123456789 12:35 4:1 8-3
+            3×5 ×9 8× 3x4 x9 2x
+            3−5 −5 8− 3+5 +5 3+
+            3÷5 ÷5 8÷ 3±5 ±5 8±
+            3=5 =5 8= 3≠5 ≠5 8≠
+            3≈5 ≈5 8≈ 3~5 ~5 8~
+            3>5 >5 >8 3<5 <5 <8 3≥5 ≥5 ≥8 3≤5 ≤5 ≤8 FFFFFF 000000 FF00 4296DE 3200 9000 198.3 5300 12,385,900 43.2e9
+              0xA04D −0 −1 −2 −3 −4 −5 −6 −7 −8 −9 +0 +1 +2 +3 +4 +5 +6 +7 +8 +9 + − × ÷ ±=≠ ≈ ~ <> ≤ ≥
+              00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 0a 0b 0c 0d 0e 0f
+
+          </p>
+
+        </div>
+
+
+
+
+      </section>
+
+      <section class="page grid bg-cyan-900  ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Old Numbers</h2>
+          <div class="meta-desc">
+            <p>Malini has the opentype feature <code>onum</code> implemented. Enabling it provides the old numberals.
             </p>
 
           </div>
-          <div class="content col-2">
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>onum</code>: off</div>
+          <p lang="ml" class="text-48 malini text-start">
+            3.1415926535 8979323846 2643383279 5028841971 6939937510
+          </p>
+          <div class="meta-desc"> Regular| 72pt | <code>onum</code>: on</div>
+          <p lang="ml" class="text-48 malini malini-onum text-start">
+            3.1415926535 8979323846 2643383279 5028841971 6939937510
+          </p>
 
-            <div class="meta-desc">Malini Regular| 72pt | <code>psts</code>: off</div>
-            <p lang="ml" class="text-72 malini text-start" style="font-feature-settings: 'psts' 0;">
-              കൂലി<br /> കൃത്യം <br />സംതൃപ്തി കുസുമം പൂവ്
-            </p>
+
+
+
+      </section>
+
+      <section class="page grid bg-brown-900  ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Reph signs</h2>
+          <div class="meta-desc">
+            <p>By changing <code>pres</code> opentype feature, the conjoined or disjoined rendering of reph formas (്
+              + ര) can be obtained. By default this is 'on'</p>
+
           </div>
-        </main>
-        <footer>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>pres</code>: on</div>
+          <p lang="ml" class="text-72 malini text-start">
+            പ്രകാശം <br>പുത്രൻ <br>അക്രമം<br> ഗ്രാമം<br> ശ്രമം
+          </p>
 
-        </footer>
+        </div>
+        <div class="content col-4">
+
+          <div class="meta-desc"> Regular| 72pt | <code>pres</code>: off</div>
+          <p lang="ml" class="text-72 malini text-start" style="font-feature-settings: 'pres' 0;">
+            പ്രകാശം<br> പുത്രൻ <br>അക്രമം <br>ഗ്രാമം<br> ശ്രമം
+          </p>
+        </div>
+
+
+
+
       </section>
 
 
-      <section class="page bg-grey-800 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Ligatures</h2>
-            <div class="meta-desc">
-              <p>By changing Postbase substitutions - <code>liga</code> opentype feature, the ligated forms can be
-                obtained. By default this is 'on'</p>
-            </div>
+      <section class="page grid bg-blue-gray-800  ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Postbase substitutions</h2>
+          <div class="meta-desc">
+            <p>By changing Postbase substitutions - <code>psts</code> opentype feature, the conjoined or disjoined
+              rendering of u signs - ു, ൂ, ൃ can be obtained. By default this is 'on'</p>
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>liga</code>: on</div>
-            <p lang="en" class="text-72 malini text-start">
-              ditto <br> off <br> after<br> final
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>psts</code>: on</div>
+          <p lang="ml" class="text-72 malini text-start">
+            കൂലി <br /> കൃത്യം <br />സംതൃപ്തി കുസുമം പൂവ്
+          </p>
+
+        </div>
+        <div class="content col-4">
+
+          <div class="meta-desc"> Regular| 72pt | <code>psts</code>: off</div>
+          <p lang="ml" class="text-72 malini text-start" style="font-feature-settings: 'psts' 0;">
+            കൂലി<br /> കൃത്യം <br />സംതൃപ്തി കുസുമം പൂവ്
+          </p>
+        </div>
+
+
+
+
+      </section>
+
+
+      <section class="page grid   ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Ligatures</h2>
+          <div class="meta-desc">
+            <p>By changing Postbase substitutions - <code>liga</code> opentype feature, the ligated forms can be
+              obtained. By default this is 'on'</p>
+          </div>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>liga</code>: on</div>
+          <p lang="en" class="text-72 malini text-start">
+            ditto <br> off <br> after<br> final
+          </p>
+
+        </div>
+        <div class="content col-4">
+
+          <div class="meta-desc"> Regular| 72pt | <code>liga</code>: off</div>
+          <p lang="en" class="text-72 malini malini-liga-off text-start">
+            ditto <br> off <br> after<br> final
+        </div>
+
+
+
+
+      </section>
+
+      <section class="page grid bg-blue-gray-800  ">
+
+        <div class="meta col-4">
+          <h2 class="meta-title">Stylistic variants</h2>
+          <div class="meta-desc">
+            <p>Malini has the opentype feature <code>aalt</code> implemented. Enabling it provides the old numberals.
             </p>
 
           </div>
-          <div class="content col-2">
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>aalt</code>: off</div>
+          <p lang="ml" class="text-72 malini text-start">
+            പച്ച <br />വെള്ളം കള്ളു്<br />അങ്ങാടി
+          </p>
 
-            <div class="meta-desc">Malini Regular| 72pt | <code>liga</code>: off</div>
-            <p lang="en" class="text-72 malini malini-liga-off text-start">
-              ditto <br> off <br> after<br> final
-          </div>
-        </main>
-        <footer>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>aalt</code>: on</div>
+          <p lang="ml" class="text-72 malini malini-aalt text-start">
+            പച്ച <br />വെള്ളം കള്ളു് <br />അങ്ങാടി
+          </p>
 
-        </footer>
+
+
+
       </section>
 
-      <section class="page bg-blue-grey-800 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Stylistic variants</h2>
-            <div class="meta-desc">
-              <p>Malini has the opentype feature <code>aalt</code> implemented. Enabling it provides the old numberals.
-              </p>
+      <section class="page grid   ">
 
-            </div>
+        <div class="meta col-4">
+          <h2 class="meta-title">Superscripts</h2>
+          <div class="meta-desc">
+            <p>By changing Superscripts - <code>sups</code> opentype feature, the superscript forms can be obtained.
+              By default this is 'off'</p>
           </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>aalt</code>: off</div>
-            <p lang="ml" class="text-72 malini text-start">
-              പച്ച <br />വെള്ളം കള്ളു്<br />അങ്ങാടി
-            </p>
+        </div>
+        <div class="content col-4">
+          <div class="meta-desc"> Regular| 72pt | <code>sups</code>: off</div>
+          <p lang="en" class="text-72 malini text-start">
+            ആണ്.1 ഉണ്ട്.2 ഇല്ല.3 X0123
+          </p>
 
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>aalt</code>: on</div>
-            <p lang="ml" class="text-72 malini malini-aalt text-start">
-              പച്ച <br />വെള്ളം കള്ളു് <br />അങ്ങാടി
-            </p>
-        </main>
-        <footer>
+        </div>
+        <div class="content col-4">
 
-        </footer>
+          <div class="meta-desc"> Regular| 72pt | <code>sups</code>: on</div>
+          <p lang="en" class="text-72 malini malini-sups text-start">
+            ആണ്.1 ഉണ്ട്.2 ഇല്ല.3 X0123
+        </div>
+
+
+
+
       </section>
 
-      <section class="page bg-grey-800 white-text ">
-        <main>
-          <div class="meta col-1">
-            <h2 class="meta-title">Superscripts</h2>
-            <div class="meta-desc">
-              <p>By changing Superscripts - <code>sups</code> opentype feature, the superscript forms can be obtained.
-                By default this is 'off'</p>
-            </div>
-          </div>
-          <div class="content col-2">
-            <div class="meta-desc">Malini Regular| 72pt | <code>sups</code>: off</div>
-            <p lang="en" class="text-72 malini text-start">
-              ആണ്.1 ഉണ്ട്.2 ഇല്ല.3 X0123
-            </p>
+      <section class="page grid ">
 
-          </div>
-          <div class="content col-2">
-
-            <div class="meta-desc">Malini Regular| 72pt | <code>sups</code>: on</div>
-            <p lang="en" class="text-72 malini malini-sups text-start">
-              ആണ്.1 ഉണ്ട്.2 ഇല്ല.3 X0123
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-      <section class="page bg-lime-50">
-        <main>
-          <div class="content col-1">
-            <div class="meta">
-              <h1 class="meta-title">Supported languages </h1>
-              <div class="meta-desc">
-                <p>
-                  All the Malayalam characters defined in Unicode version 15 are present in the font. Malini also has
-                  latin
-                  script support.
-                </p>
-                <p>
-                  Malini supports 294 languages convering approximately 2.8B speakers (Calculated using <a
-                    href="https://hyperglot.rosettatype.com/">hyperglot tool</a>)</p>
-              </div>
-            </div>
-          </div>
-          <div class="meta col-4">
-            <div class="meta-desc">
-              <ul class="languages">
-                <li> Acheron </li>
-                <li> Achinese </li>
-                <li> Acholi </li>
-                <li> Afar </li>
-                <li> Afrikaans </li>
-                <li> Alekano </li>
-                <li> Aleut </li>
-                <li> Amahuaca </li>
-                <li> Amarakaeri </li>
-                <li> Amis </li>
-                <li> Anaang </li>
-                <li> Andaandi, Dongolawi </li>
-                <li> Anuta </li>
-                <li> Ao Naga </li>
-                <li> Aragonese </li>
-                <li> Arbëreshë Albanian </li>
-                <li> Arvanitika Albanian </li>
-                <li> Asháninka </li>
-                <li> Ashéninka Perené </li>
-                <li> Asu (Tanzania) </li>
-                <li> Balinese </li>
-                <li> Bari </li>
-                <li> Basque </li>
-                <li> Batak Dairi </li>
-                <li> Batak Karo </li>
-                <li> Batak Mandailing </li>
-                <li> Batak Simalungun </li>
-                <li> Batak Toba </li>
-                <li> Bemba (Zambia) </li>
-                <li> Bena (Tanzania) </li>
-                <li> Bikol </li>
-                <li> Bislama </li>
-                <li> Borana-Arsi-Guji Oromo </li>
-                <li> Bosnian </li>
-                <li> Breton </li>
-                <li> Buginese </li>
-                <li> Candoshi-Shapra </li>
-                <li> Caquinte </li>
-                <li> Caribbean Hindustani </li>
-                <li> Cashibo-Cacataibo </li>
-                <li> Catalan </li>
-                <li> Cebuano </li>
-                <li> Central Aymara </li>
-                <li> Central Kurdish </li>
-                <li> Chamorro </li>
-                <li> Chavacano </li>
-                <li> Chiga </li>
-                <li> Chiltepec Chinantec </li>
-                <li> Chokwe </li>
-                <li> Chuukese </li>
-                <li> Cimbrian </li>
-                <li> Cofán </li>
-                <li> Congo Swahili </li>
-                <li> Cook Islands Māori </li>
-                <li> Cornish </li>
-                <li> Corsican </li>
-                <li> Creek </li>
-                <li> Crimean Tatar </li>
-                <li> Croatian </li>
-                <li> Czech </li>
-                <li> Danish </li>
-                <li> Dehu </li>
-                <li> Dutch </li>
-                <li> Eastern Abnaki </li>
-                <li> Eastern Arrernte </li>
-                <li> Eastern Oromo </li>
-                <li> Embu </li>
-                <li> English </li>
-                <li> Ese Ejja </li>
-                <li> Faroese </li>
-                <li> Fijian </li>
-                <li> Filipino </li>
-                <li> Finnish </li>
-                <li> French </li>
-                <li> Friulian </li>
-                <li> Galician </li>
-                <li> Ganda </li>
-                <li> Garifuna </li>
-                <li> Ga’anda </li>
-                <li> German </li>
-                <li> Gheg Albanian </li>
-                <li> Gilbertese </li>
-                <li> Gooniyandi </li>
-                <li> Gourmanchéma </li>
-                <li> Guadeloupean Creole French </li>
-                <li> Gusii </li>
-                <li> Haitian </li>
-                <li> Hani </li>
-                <li> Hawaiian </li>
-                <li> Hiligaynon </li>
-                <li> Ho-Chunk </li>
-                <li> Hopi </li>
-                <li> Huastec </li>
-                <li> Hungarian </li>
-                <li> Hän </li>
-                <li> Icelandic </li>
-                <li> Iloko </li>
-                <li> Inari Sami </li>
-                <li> Indonesian </li>
-                <li> Irish </li>
-                <li> Istro Romanian </li>
-                <li> Italian </li>
-                <li> Ixcatlán Mazatec </li>
-                <li> Jamaican Creole English </li>
-                <li> Japanese </li>
-                <li> Javanese </li>
-                <li> Jola-Fonyi </li>
-                <li> K'iche' </li>
-                <li> Kabuverdianu </li>
-                <li> Kalaallisut </li>
-                <li> Kalenjin </li>
-                <li> Kamba (Kenya) </li>
-                <li> Kaonde </li>
-                <li> Karelian </li>
-                <li> Kashubian </li>
-                <li> Kekchí </li>
-                <li> Kenzi, Mattokki </li>
-                <li> Khasi </li>
-                <li> Kikuyu </li>
-                <li> Kimbundu </li>
-                <li> Kinyarwanda </li>
-                <li> Kituba (DRC) </li>
-                <li> Kongo </li>
-                <li> Konzo </li>
-                <li> Kuanyama </li>
-                <li> Kven Finnish </li>
-                <li> Kölsch </li>
-                <li> Ladin </li>
-                <li> Ladino </li>
-                <li> Latgalian </li>
-                <li> Latin </li>
-                <li> Ligurian </li>
-                <li> Lithuanian </li>
-                <li> Lombard </li>
-                <li> Low German </li>
-                <li> Lower Sorbian </li>
-                <li> Luba-Lulua </li>
-                <li> Lule Sami </li>
-                <li> Luo (Kenya and Tanzania) </li>
-                <li> Luxembourgish </li>
-                <li> Macedo-Romanian </li>
-                <li> Makhuwa </li>
-                <li> Makhuwa-Meetto </li>
-                <li> Makonde </li>
-                <li> Makwe </li>
-                <li> Malagasy </li>
-                <li> Malaysian </li>
-                <li> Maltese </li>
-                <li> Mandinka </li>
-                <li> Manx </li>
-                <li> Maore Comorian </li>
-                <li> Maori </li>
-                <li> Mapudungun </li>
-                <li> Marshallese </li>
-                <li> Matsés </li>
-                <li> Mauritian Creole </li>
-                <li> Meriam Mir </li>
-                <li> Meru </li>
-                <li> Minangkabau </li>
-                <li> Mirandese </li>
-                <li> Mohawk </li>
-                <li> Montenegrin </li>
-                <li> Munsee </li>
-                <li> Murrinh-Patha </li>
-                <li> Mwani </li>
-                <li> Mískito </li>
-                <li> Naga Pidgin </li>
-                <li> Ndonga </li>
-                <li> Neapolitan </li>
-                <li> Ngazidja Comorian </li>
-                <li> Niuean </li>
-                <li> Nobiin </li>
-                <li> Nomatsiguenga </li>
-                <li> North Marquesan </li>
-                <li> North Ndebele </li>
-                <li> Northern Kurdish </li>
-                <li> Northern Qiandong Miao </li>
-                <li> Northern Uzbek </li>
-                <li> Norwegian </li>
-                <li> Nyanja </li>
-                <li> Nyankole </li>
-                <li> Occitan </li>
-                <li> Ojitlán Chinantec </li>
-                <li> Orma </li>
-                <li> Oroqen </li>
-                <li> Palauan </li>
-                <li> Paluan </li>
-                <li> Pampanga </li>
-                <li> Papantla Totonac </li>
-                <li> Papiamento </li>
-                <li> Pedi </li>
-                <li> Picard </li>
-                <li> Pichis Ashéninka </li>
-                <li> Piemontese </li>
-                <li> Pijin </li>
-                <li> Pintupi-Luritja </li>
-                <li> Pipil </li>
-                <li> Pohnpeian </li>
-                <li> Polish </li>
-                <li> Portuguese </li>
-                <li> Potawatomi </li>
-                <li> Purepecha </li>
-                <li> Quechua </li>
-                <li> Romanian </li>
-                <li> Romansh </li>
-                <li> Rotokas </li>
-                <li> Rundi </li>
-                <li> Rwa </li>
-                <li> Samburu </li>
-                <li> Samoan </li>
-                <li> Sango </li>
-                <li> Sangu (Tanzania) </li>
-                <li> Saramaccan </li>
-                <li> Sardinian </li>
-                <li> Scottish Gaelic </li>
-                <li> Sena </li>
-                <li> Seri </li>
-                <li> Seselwa Creole French </li>
-                <li> Shambala </li>
-                <li> Shawnee </li>
-                <li> Shipibo-Conibo </li>
-                <li> Shona </li>
-                <li> Sicilian </li>
-                <li> Silesian </li>
-                <li> Slovak </li>
-                <li> Slovenian </li>
-                <li> Soga </li>
-                <li> Somali </li>
-                <li> Soninke </li>
-                <li> South Marquesan </li>
-                <li> South Ndebele </li>
-                <li> Southern Aymara </li>
-                <li> Southern Qiandong Miao </li>
-                <li> Southern Sami </li>
-                <li> Southern Sotho </li>
-                <li> Spanish </li>
-                <li> Sranan Tongo </li>
-                <li> Standard Estonian </li>
-                <li> Standard Latvian </li>
-                <li> Standard Malay </li>
-                <li> Sundanese </li>
-                <li> Swahili </li>
-                <li> Swati </li>
-                <li> Swedish </li>
-                <li> Swiss German </li>
-                <li> Tagalog </li>
-                <li> Tahitian </li>
-                <li> Taita </li>
-                <li> Tedim Chin </li>
-                <li> Tetum </li>
-                <li> Tetun Dili </li>
-                <li> Tiv </li>
-                <li> Tok Pisin </li>
-                <li> Tokelau </li>
-                <li> Tonga (Tonga Islands) </li>
-                <li> Tonga (Zambia) </li>
-                <li> Tosk Albanian </li>
-                <li> Tsonga </li>
-                <li> Tswana </li>
-                <li> Tumbuka </li>
-                <li> Turkish </li>
-                <li> Turkmen </li>
-                <li> Tzeltal </li>
-                <li> Tzotzil </li>
-                <li> Uab Meto </li>
-                <li> Upper Guinea Crioulo </li>
-                <li> Upper Sorbian </li>
-                <li> Venetian </li>
-                <li> Veps </li>
-                <li> Võro </li>
-                <li> Wallisian </li>
-                <li> Walloon </li>
-                <li> Walser </li>
-                <li> Wangaaybuwan-Ngiyambaa </li>
-                <li> Waray (Philippines) </li>
-                <li> Warlpiri </li>
-                <li> Wayuu </li>
-                <li> Welsh </li>
-                <li> West Central Oromo </li>
-                <li> Western Abnaki </li>
-                <li> Western Frisian </li>
-                <li> Wik-Mungkan </li>
-                <li> Wiradjuri </li>
-                <li> Wolof </li>
-                <li> Xhosa </li>
-                <li> Yanesha' </li>
-                <li> Yao </li>
-                <li> Yapese </li>
-                <li> Yindjibarndi </li>
-                <li> Yucateco </li>
-                <li> Zapotec </li>
-                <li> Zulu </li>
-                <li> Záparo </li>
-              </ul>
-            </div>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-      </section>
-
-      <section class="page bg-blue-grey-800">
-        <main>
-          <div class="meta col-1">
-            <h1 class="malini">മാലിനി</h1>
-          </div>
-          <div class="meta col-2 white-text">
-            <h1 class="meta-title">Designer </h1>
-            <div class="meta-desc">
-              Santhosh Thottingal (santhosh.thottingal@gmail.com)
-            </div>
-
-            <h1 class="meta-title">Copyright </h1>
-            <div class="meta-desc">
-              Copyright 2023 The Malini Project Authors (https://gitlab.com/smc/fonts/malini)
-            </div>
-
-            <h1 class="meta-title">License </h1>
-            <div class="meta-desc">
-              This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available
-              with a FAQ at: <a href="https://scripts.sil.org/OFL">https://scripts.sil.org/OFL</a>
-            </div>
-            <h1 class="meta-title">Download </h1>
-            <div class="meta-desc">
-              All the fonts can be downloaded from SMC website <a
-                href="https://smc.org.in/fonts">https://smc.org.in/fonts</a>
-            </div>
-            <h1 class="meta-title">Source code </h1>
-            <div class="meta-desc">
-              <a href="https://gitlab.com/smc/fonts/Malini">https://gitlab.com/smc/fonts/Malini</a>
-            </div>
-            <h1 class="meta-title">Specimen illustrations</h1>
-            <div class="meta-desc">
-              Prince Payikattu
-            </div>
-          </div>
-          <div class="meta col-2">
-            <h1 class="meta-title">Opentype Layout features</h1>
+        <div class="content col-3">
+          <div class="meta">
+            <h1 class="meta-title">Supported languages </h1>
             <div class="meta-desc">
               <p>
-                <code>  aalt</code>
-                <code>  akhn</code>
-                <code>  liga</code>
-                <code>  onum</code>
-                <code>  pref</code>
-                <code>  pres</code>
-                <code>  pstf</code><br />
-                <code>  psts</code>
-                <code>  salt</code>
-                <code>  sups</code>
-                <code>  abvm</code>
-                <code>  blwm</code>
-                <code>  kern </code>
+                All the Malayalam characters defined in Unicode version 15 are present in the font. Malini also has
+                latin
+                script support.
               </p>
-            </div>
-            <h1 class="meta-title">Unicode support</h1>
-            <div class="meta-desc">
               <p>
-                0000, 0020-007E, 00A0-00A3, 00A5-00B1, 00B4-00B8, 00BA-00BB, 00BF-0113, 0116-012B, 012E-0133, 0135-0137,
-                0139-013E, 0141-0148, 014A-014D, 0150-0161, 0164-0165, 0168-017E, 01CD-01CE, 01F0, 0218-021B, 0237,
-                02BB, 02C6-02C7, 02D8-02DD, 0300-0304, 0306-0308, 030A-030C, 0312, 0326-0328, 03A9, 03C0, 0951-0952,
-                0D00-0D0C, 0D0E-0D10, 0D12-0D44, 0D46-0D48, 0D4A-0D4F, 0D54-0D63, 0D66-0D7F, 1E80-1E85, 1E9E, 1EF2-1EF3,
-                200C-200D, 2013-2014, 2018-201A, 201C-201E, 2022, 2026, 2039-203A, 2044, 20A9, 20AC, 20B9, 2122, 2212,
-                25CC, 2E42.
-              <p>
+                Malini supports 294 languages convering approximately 2.8B speakers (Calculated using <a
+                  href="https://hyperglot.rosettatype.com/">hyperglot tool</a>)</p>
             </div>
           </div>
-
+        </div>
+        <div class="meta col-9">
+          <div class="meta-desc">
+            <ul class="languages">
+              <li> Acheron </li>
+              <li> Achinese </li>
+              <li> Acholi </li>
+              <li> Afar </li>
+              <li> Afrikaans </li>
+              <li> Alekano </li>
+              <li> Aleut </li>
+              <li> Amahuaca </li>
+              <li> Amarakaeri </li>
+              <li> Amis </li>
+              <li> Anaang </li>
+              <li> Andaandi, Dongolawi </li>
+              <li> Anuta </li>
+              <li> Ao Naga </li>
+              <li> Aragonese </li>
+              <li> Arbëreshë Albanian </li>
+              <li> Arvanitika Albanian </li>
+              <li> Asháninka </li>
+              <li> Ashéninka Perené </li>
+              <li> Asu (Tanzania) </li>
+              <li> Balinese </li>
+              <li> Bari </li>
+              <li> Basque </li>
+              <li> Batak Dairi </li>
+              <li> Batak Karo </li>
+              <li> Batak Mandailing </li>
+              <li> Batak Simalungun </li>
+              <li> Batak Toba </li>
+              <li> Bemba (Zambia) </li>
+              <li> Bena (Tanzania) </li>
+              <li> Bikol </li>
+              <li> Bislama </li>
+              <li> Borana-Arsi-Guji Oromo </li>
+              <li> Bosnian </li>
+              <li> Breton </li>
+              <li> Buginese </li>
+              <li> Candoshi-Shapra </li>
+              <li> Caquinte </li>
+              <li> Caribbean Hindustani </li>
+              <li> Cashibo-Cacataibo </li>
+              <li> Catalan </li>
+              <li> Cebuano </li>
+              <li> Central Aymara </li>
+              <li> Central Kurdish </li>
+              <li> Chamorro </li>
+              <li> Chavacano </li>
+              <li> Chiga </li>
+              <li> Chiltepec Chinantec </li>
+              <li> Chokwe </li>
+              <li> Chuukese </li>
+              <li> Cimbrian </li>
+              <li> Cofán </li>
+              <li> Congo Swahili </li>
+              <li> Cook Islands Māori </li>
+              <li> Cornish </li>
+              <li> Corsican </li>
+              <li> Creek </li>
+              <li> Crimean Tatar </li>
+              <li> Croatian </li>
+              <li> Czech </li>
+              <li> Danish </li>
+              <li> Dehu </li>
+              <li> Dutch </li>
+              <li> Eastern Abnaki </li>
+              <li> Eastern Arrernte </li>
+              <li> Eastern Oromo </li>
+              <li> Embu </li>
+              <li> English </li>
+              <li> Ese Ejja </li>
+              <li> Faroese </li>
+              <li> Fijian </li>
+              <li> Filipino </li>
+              <li> Finnish </li>
+              <li> French </li>
+              <li> Friulian </li>
+              <li> Galician </li>
+              <li> Ganda </li>
+              <li> Garifuna </li>
+              <li> Ga’anda </li>
+              <li> German </li>
+              <li> Gheg Albanian </li>
+              <li> Gilbertese </li>
+              <li> Gooniyandi </li>
+              <li> Gourmanchéma </li>
+              <li> Guadeloupean Creole French </li>
+              <li> Gusii </li>
+              <li> Haitian </li>
+              <li> Hani </li>
+              <li> Hawaiian </li>
+              <li> Hiligaynon </li>
+              <li> Ho-Chunk </li>
+              <li> Hopi </li>
+              <li> Huastec </li>
+              <li> Hungarian </li>
+              <li> Hän </li>
+              <li> Icelandic </li>
+              <li> Iloko </li>
+              <li> Inari Sami </li>
+              <li> Indonesian </li>
+              <li> Irish </li>
+              <li> Istro Romanian </li>
+              <li> Italian </li>
+              <li> Ixcatlán Mazatec </li>
+              <li> Jamaican Creole English </li>
+              <li> Japanese </li>
+              <li> Javanese </li>
+              <li> Jola-Fonyi </li>
+              <li> K'iche' </li>
+              <li> Kabuverdianu </li>
+              <li> Kalaallisut </li>
+              <li> Kalenjin </li>
+              <li> Kamba (Kenya) </li>
+              <li> Kaonde </li>
+              <li> Karelian </li>
+              <li> Kashubian </li>
+              <li> Kekchí </li>
+              <li> Kenzi, Mattokki </li>
+              <li> Khasi </li>
+              <li> Kikuyu </li>
+              <li> Kimbundu </li>
+              <li> Kinyarwanda </li>
+              <li> Kituba (DRC) </li>
+              <li> Kongo </li>
+              <li> Konzo </li>
+              <li> Kuanyama </li>
+              <li> Kven Finnish </li>
+              <li> Kölsch </li>
+              <li> Ladin </li>
+              <li> Ladino </li>
+              <li> Latgalian </li>
+              <li> Latin </li>
+              <li> Ligurian </li>
+              <li> Lithuanian </li>
+              <li> Lombard </li>
+              <li> Low German </li>
+              <li> Lower Sorbian </li>
+              <li> Luba-Lulua </li>
+              <li> Lule Sami </li>
+              <li> Luo (Kenya and Tanzania) </li>
+              <li> Luxembourgish </li>
+              <li> Macedo-Romanian </li>
+              <li> Makhuwa </li>
+              <li> Makhuwa-Meetto </li>
+              <li> Makonde </li>
+              <li> Makwe </li>
+              <li> Malagasy </li>
+              <li> Malaysian </li>
+              <li> Maltese </li>
+              <li> Mandinka </li>
+              <li> Manx </li>
+              <li> Maore Comorian </li>
+              <li> Maori </li>
+              <li> Mapudungun </li>
+              <li> Marshallese </li>
+              <li> Matsés </li>
+              <li> Mauritian Creole </li>
+              <li> Meriam Mir </li>
+              <li> Meru </li>
+              <li> Minangkabau </li>
+              <li> Mirandese </li>
+              <li> Mohawk </li>
+              <li> Montenegrin </li>
+              <li> Munsee </li>
+              <li> Murrinh-Patha </li>
+              <li> Mwani </li>
+              <li> Mískito </li>
+              <li> Naga Pidgin </li>
+              <li> Ndonga </li>
+              <li> Neapolitan </li>
+              <li> Ngazidja Comorian </li>
+              <li> Niuean </li>
+              <li> Nobiin </li>
+              <li> Nomatsiguenga </li>
+              <li> North Marquesan </li>
+              <li> North Ndebele </li>
+              <li> Northern Kurdish </li>
+              <li> Northern Qiandong Miao </li>
+              <li> Northern Uzbek </li>
+              <li> Norwegian </li>
+              <li> Nyanja </li>
+              <li> Nyankole </li>
+              <li> Occitan </li>
+              <li> Ojitlán Chinantec </li>
+              <li> Orma </li>
+              <li> Oroqen </li>
+              <li> Palauan </li>
+              <li> Paluan </li>
+              <li> Pampanga </li>
+              <li> Papantla Totonac </li>
+              <li> Papiamento </li>
+              <li> Pedi </li>
+              <li> Picard </li>
+              <li> Pichis Ashéninka </li>
+              <li> Piemontese </li>
+              <li> Pijin </li>
+              <li> Pintupi-Luritja </li>
+              <li> Pipil </li>
+              <li> Pohnpeian </li>
+              <li> Polish </li>
+              <li> Portuguese </li>
+              <li> Potawatomi </li>
+              <li> Purepecha </li>
+              <li> Quechua </li>
+              <li> Romanian </li>
+              <li> Romansh </li>
+              <li> Rotokas </li>
+              <li> Rundi </li>
+              <li> Rwa </li>
+              <li> Samburu </li>
+              <li> Samoan </li>
+              <li> Sango </li>
+              <li> Sangu (Tanzania) </li>
+              <li> Saramaccan </li>
+              <li> Sardinian </li>
+              <li> Scottish Gaelic </li>
+              <li> Sena </li>
+              <li> Seri </li>
+              <li> Seselwa Creole French </li>
+              <li> Shambala </li>
+              <li> Shawnee </li>
+              <li> Shipibo-Conibo </li>
+              <li> Shona </li>
+              <li> Sicilian </li>
+              <li> Silesian </li>
+              <li> Slovak </li>
+              <li> Slovenian </li>
+              <li> Soga </li>
+              <li> Somali </li>
+              <li> Soninke </li>
+              <li> South Marquesan </li>
+              <li> South Ndebele </li>
+              <li> Southern Aymara </li>
+              <li> Southern Qiandong Miao </li>
+              <li> Southern Sami </li>
+              <li> Southern Sotho </li>
+              <li> Spanish </li>
+              <li> Sranan Tongo </li>
+              <li> Standard Estonian </li>
+              <li> Standard Latvian </li>
+              <li> Standard Malay </li>
+              <li> Sundanese </li>
+              <li> Swahili </li>
+              <li> Swati </li>
+              <li> Swedish </li>
+              <li> Swiss German </li>
+              <li> Tagalog </li>
+              <li> Tahitian </li>
+              <li> Taita </li>
+              <li> Tedim Chin </li>
+              <li> Tetum </li>
+              <li> Tetun Dili </li>
+              <li> Tiv </li>
+              <li> Tok Pisin </li>
+              <li> Tokelau </li>
+              <li> Tonga (Tonga Islands) </li>
+              <li> Tonga (Zambia) </li>
+              <li> Tosk Albanian </li>
+              <li> Tsonga </li>
+              <li> Tswana </li>
+              <li> Tumbuka </li>
+              <li> Turkish </li>
+              <li> Turkmen </li>
+              <li> Tzeltal </li>
+              <li> Tzotzil </li>
+              <li> Uab Meto </li>
+              <li> Upper Guinea Crioulo </li>
+              <li> Upper Sorbian </li>
+              <li> Venetian </li>
+              <li> Veps </li>
+              <li> Võro </li>
+              <li> Wallisian </li>
+              <li> Walloon </li>
+              <li> Walser </li>
+              <li> Wangaaybuwan-Ngiyambaa </li>
+              <li> Waray (Philippines) </li>
+              <li> Warlpiri </li>
+              <li> Wayuu </li>
+              <li> Welsh </li>
+              <li> West Central Oromo </li>
+              <li> Western Abnaki </li>
+              <li> Western Frisian </li>
+              <li> Wik-Mungkan </li>
+              <li> Wiradjuri </li>
+              <li> Wolof </li>
+              <li> Xhosa </li>
+              <li> Yanesha' </li>
+              <li> Yao </li>
+              <li> Yapese </li>
+              <li> Yindjibarndi </li>
+              <li> Yucateco </li>
+              <li> Zapotec </li>
+              <li> Zulu </li>
+              <li> Záparo </li>
+            </ul>
           </div>
-        </main>
-        <footer>
+        </div>
 
-        </footer>
+
       </section>
-    </main>
-    <footer></footer>
+
+      <footer class="grid footer">
+
+        <div class="meta col-3">
+          <h1 class="malini">മാലിനി</h1>
+        </div>
+        <div class="meta col-4 ">
+          <h1 class="meta-title">Designer </h1>
+          <div class="meta-desc">
+            Santhosh Thottingal (santhosh.thottingal@gmail.com)
+          </div>
+          <h1 class="meta-title">Copyright </h1>
+          <div class="meta-desc">
+            Copyright 2023 The Malini Project Authors (https://gitlab.com/smc/fonts/malini)
+          </div>
+
+          <h1 class="meta-title">License </h1>
+          <div class="meta-desc">
+            This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available
+            with a FAQ at: <a href="https://scripts.sil.org/OFL">https://scripts.sil.org/OFL</a>
+          </div>
+          <h1 class="meta-title">Download </h1>
+          <div class="meta-desc">
+            All the fonts can be downloaded from SMC website <a
+              href="https://smc.org.in/fonts">https://smc.org.in/fonts</a>
+          </div>
+          <h1 class="meta-title">Source code </h1>
+          <div class="meta-desc">
+            <a href="https://gitlab.com/smc/fonts/Malini">https://gitlab.com/smc/fonts/Malini</a>
+          </div>
+          <h1 class="meta-title">Specimen illustrations</h1>
+          <div class="meta-desc">
+            Prince Payikattu
+          </div>
+        </div>
+        <div class="meta col-4">
+          <h1 class="meta-title">Opentype Layout features</h1>
+          <div class="meta-desc">
+            <p>
+              <code>  aalt</code>
+              <code>  akhn</code>
+              <code>  liga</code>
+              <code>  onum</code>
+              <code>  pref</code>
+              <code>  pres</code>
+              <code>  pstf</code><br />
+              <code>  psts</code>
+              <code>  salt</code>
+              <code>  sups</code>
+              <code>  abvm</code>
+              <code>  blwm</code>
+              <code>  kern </code>
+            </p>
+          </div>
+          <h1 class="meta-title">Unicode support</h1>
+          <div class="meta-desc">
+            <p>
+              0000, 0020-007E, 00A0-00A3, 00A5-00B1, 00B4-00B8, 00BA-00BB, 00BF-0113, 0116-012B, 012E-0133, 0135-0137,
+              0139-013E, 0141-0148, 014A-014D, 0150-0161, 0164-0165, 0168-017E, 01CD-01CE, 01F0, 0218-021B, 0237,
+              02BB, 02C6-02C7, 02D8-02DD, 0300-0304, 0306-0308, 030A-030C, 0312, 0326-0328, 03A9, 03C0, 0951-0952,
+              0D00-0D0C, 0D0E-0D10, 0D12-0D44, 0D46-0D48, 0D4A-0D4F, 0D54-0D63, 0D66-0D7F, 1E80-1E85, 1E9E, 1EF2-1EF3,
+              200C-200D, 2013-2014, 2018-201A, 201C-201E, 2022, 2026, 2039-203A, 2044, 20A9, 20AC, 20B9, 2122, 2212,
+              25CC, 2E42.
+            <p>
+          </div>
+        </div>
+
+        </div>
+
+
+
+
+      </footer>
+
+
   </body>
 
 </html>

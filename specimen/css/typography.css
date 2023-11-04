@@ -1,0 +1,438 @@
+
+@font-face {
+  font-family: "Malini";
+  src: url(../../fonts/Malini/webfonts/Malini-VF.woff2) format("woff2-variations"),
+    url(../../fonts/Malini/otf-variable/Malini-VF.otf) format("opentype-variations"),
+    url(../../fonts/Malini/otf/Malini.otf) format("opentype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-optical-sizing: auto;
+  font-style: oblique 0deg 12deg;
+  unicode-range: U+0000, U+0020-007E, U+00A0-00A3, U+00A5-00B1,
+  U+00B4-00B8, U+00BA-00BB, U+00BF-0113, U+0116-012B, U+012E-0133,
+  U+0135-0137, U+0139-013E, U+0141-0148, U+014A-014D, U+0150-0161,
+  U+0164-0165, U+0168-017E, U+01CD-01CE, U+01F0, U+0218-021B, U+0237,
+  U+02BB, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308,
+  U+030A-030C, U+0312, U+0326-0328, U+03A9, U+03C0, U+0951-0952,
+  U+0D00-0D0C, U+0D0E-0D10, U+0D12-0D44, U+0D46-0D48, U+0D4A-0D4F,
+  U+0D54-0D63, U+0D66-0D7F, U+1E80-1E85, U+1E9E, U+1EF2-1EF3,
+  U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026,
+  U+2039-203A, U+2044, U+20A9, U+20AC, U+20B9, U+2122, U+2212, U+25CC,
+  U+2E42;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+/* If class is applied, update custom property and
+   apply modern font-variant-* when supported */
+.malini-aalt {
+    --malini-aalt: "aalt" on;
+}
+
+.malini-onum {
+    --malini-onum: "onum";
+}
+
+.malini-opsz {
+    font-optical-sizing: auto;
+}
+
+.malini-no-opsz {
+    font-optical-sizing: none !important;
+}
+
+
+.malini-liga-off {
+    --malini-liga: "liga" 0;
+}
+
+.malini-salt {
+    --malini-salt: "salt" 2;
+}
+
+.malini-sups {
+    --malini-sups: "sups" on;
+}
+
+@supports (font-variant-position: super) {
+    .malini-sups {
+        --malini-sups: "____";
+        font-variant-position: super;
+    }
+}
+
+/* Apply current state of all custom properties
+   whenever a class is being applied */
+.malini-aalt,
+.malini-liga,
+.malini-liga-off,
+.malini-onum,
+.malini-salt,
+.malini-sups {
+    font-feature-settings: var(--malini-aalt), var(--malini-onum),
+        var(--malini-salt), var(--malini-sups), var(--malini-liga);
+}
+
+.malini {
+    font-family: "Malini";
+    font-optical-sizing: auto;
+}
+
+
+.text-thin {
+  font-weight: 100;
+}
+
+.text-extralight {
+  font-weight: 200;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-semibold {
+  font-weight: 700;
+}
+
+.text-black {
+  font-weight: 900;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-extrabold {
+  font-weight: 800;
+}
+
+.text-slanted {
+  font-variation-settings: "slnt" -12;
+}
+
+.text-body {
+  font-size: 12pt;
+  line-height: 1.5;
+}
+
+.text-11 {
+  font-size: 11pt;
+  line-height: 1.36;
+}
+
+.text-12 {
+  font-size: 12pt;
+  line-height: 1.36;
+}
+
+.text-14 {
+  font-size: 14pt;
+  line-height: 1.4;
+}
+
+.text-16 {
+  font-size: 16pt;
+  line-height: 1.4;
+}
+
+.text-20 {
+  font-size: 20pt;
+  line-height: 1.33;
+}
+
+.text-24 {
+  font-size: 24pt;
+  line-height: 1.5;
+}
+
+.text-36 {
+  font-size: 36pt;
+  line-height: 1.33;
+}
+
+.text-48 {
+  font-size: 48pt;
+  line-height: 1.33;
+}
+
+.text-64 {
+  font-size: 64pt;
+  line-height: 1.33;
+}
+
+.text-72 {
+  font-size: 72pt;
+  line-height: 1.33;
+}
+
+.text-96 {
+  font-size: 96pt;
+  line-height: 1.33;
+}
+
+.text-128 {
+  font-size: 128pt;
+  line-height: 1.4;
+}
+
+.text-144 {
+  font-size: 144pt;
+  line-height: 1;
+}
+
+.text-180 {
+  font-size: 180pt;
+  line-height: 1.25;
+}
+
+.text-256 {
+  font-size: clamp(2rem, 16vw, 256pt);
+  line-height: 1.25;
+}
+
+.text-xxl {
+  font-size: clamp(2rem, 16vw, 256pt);
+  line-height: 1.25;
+}
+
+.text-xl {
+  font-size: clamp(2rem, 12vw, 200pt);
+  line-height: 1.25;
+}
+
+svg {
+  width: 100%;
+  fill: currentColor;
+}
+
+.text-fit {
+  font-size: 10cqw;
+  line-height: 1.5;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+:lang(ml) {
+  hyphens: auto;
+  -webkit-hyphenate-character: "";
+  hyphenate-character: "";
+  -webkit-hyphenate-character: "";
+  hyphenate-limit-chars: 6 3 2;
+  /*Avoiding hyphenated words across the last line of a paragraph*/
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+:lang(en) {
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  /* Limiting the number of consecutive hyphenated lines */
+  hyphenate-limit-lines: 2;
+  /*Avoiding hyphenated words across the last line of a paragraph*/
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+/* Variable instances */
+.malini-thin {
+  font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-oblique-thin {
+  font-variation-settings: "wght" 100, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-condensed-thin {
+  font-variation-settings: "wght" 100, "wdth" 75, "slnt" 0, "opsz" 20;
+}
+
+.malini-expanded-thin {
+  font-variation-settings: "wght" 100, "wdth" 125, "slnt" 0, "opsz" 20;
+}
+
+.malini-extralight {
+  font-variation-settings: "wght" 200, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-extralight-oblique {
+  font-variation-settings: "wght" 200, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-light {
+  font-variation-settings: "wght" 300, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-light-oblique {
+  font-variation-settings: "wght" 300, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-condensed-light {
+  font-variation-settings: "wght" 300, "wdth" 75, "slnt" 0, "opsz" 20;
+}
+
+.malini-expanded-light {
+  font-variation-settings: "wght" 300, "wdth" 125, "slnt" 0, "opsz" 20;
+}
+
+.malini-regular {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-oblique {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-condensed {
+  font-variation-settings: "wght" 400, "wdth" 75, "slnt" 0, "opsz" 20;
+}
+
+.malini-semicondensed {
+  font-variation-settings: "wght" 400, "wdth" 87.5, "slnt" 0, "opsz" 20;
+}
+
+.malini-condensed-oblique {
+  font-variation-settings: "wght" 400, "wdth" 75, "slnt" -12, "opsz" 20;
+}
+
+.malini-expanded {
+  font-variation-settings: "wght" 400, "wdth" 125, "slnt" 0, "opsz" 20;
+}
+
+.malini-semiexpanded {
+  font-variation-settings: "wght" 400, "wdth" 112.5, "slnt" 0, "opsz" 20;
+}
+
+.malini-medium {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-medium-oblique {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-condensed-medium {
+  font-variation-settings: "wght" 500, "wdth" 75, "slnt" 0, "opsz" 20;
+}
+
+.malini-expanded-medium {
+  font-variation-settings: "wght" 500, "wdth" 125, "slnt" 0, "opsz" 20;
+}
+
+.malini-semibold {
+  font-variation-settings: "wght" 600, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-semibold-oblique {
+  font-variation-settings: "wght" 600, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-bold {
+  font-variation-settings: "wght" 700, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-bold-oblique {
+  font-variation-settings: "wght" 700, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-condensed-bold {
+  font-variation-settings: "wght" 700, "wdth" 75, "slnt" 0, "opsz" 20;
+}
+
+.malini-semicondensed-bold {
+  font-variation-settings: "wght" 700, "wdth" 87.5, "slnt" 0, "opsz" 20;
+}
+
+.malini-expanded-bold {
+  font-variation-settings: "wght" 700, "wdth" 125, "slnt" 0, "opsz" 20;
+}
+
+.malini-extrabold {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-extrabold-oblique {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-black {
+  font-variation-settings: "wght" 900, "wdth" 100, "slnt" 0, "opsz" 20;
+}
+
+.malini-black-oblique {
+  font-variation-settings: "wght" 900, "wdth" 100, "slnt" -12, "opsz" 20;
+}
+
+.malini-text {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 10;
+}
+
+.malini-display {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-thin-display {
+  font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-extralight-display {
+  font-variation-settings: "wght" 200, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-light-display {
+  font-variation-settings: "wght" 300, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-medium-display {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-semibold-display {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-bold-display {
+  font-variation-settings: "wght" 700, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-extrabold-display {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
+.malini-black-display {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0, "opsz" 96;
+}
+
