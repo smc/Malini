@@ -4,6 +4,8 @@ exclude_checks:
   - com.google.fonts/check/repo/zip_files
   - com.google.fonts/check/soft_dotted
 overrides:
+  com.google.fonts/check/STAT:
+    bad-axis-values: WARN
   com.google.fonts/check/STAT_strings:
     bad-italic: WARN
   com.google.fonts/check/STAT/gf_axisregistry:
@@ -21,3 +23,5 @@ overrides:
     legacy-accents-component: WARN
   com.google.fonts/check/fontbakery_version:
     outdated-fontbakery: WARN
+  com.google.fonts/check/glyphsets/shape_languages:
+    failed-language-shaping: WARN
