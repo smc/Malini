@@ -5,8 +5,8 @@ input ./glyphs/include/left_arch_with_eye;
 
 clearxy;
 p:=p+1;
-
-paths[p] = right_arch_with_eye shifted (point infinity of paths[p-1]);
+input ./glyphs/include/right_arch_with_eye;
+paths[p] := paths[p] shifted (point infinity of paths[p-1]);
 
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)

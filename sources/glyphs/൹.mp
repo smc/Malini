@@ -5,7 +5,9 @@ input ./glyphs/include/left_arch;
 
 clearxy;
 p:=p+1;
-paths[p] := subpath(0, 5) of right_arch_with_eye shifted (xpart(point infinity of paths[p-1]), 0);
+input ./glyphs/include/right_arch_with_eye;
+paths[p] := subpath(0, 5) of paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+clearxy;
 z0 = (point infinity of paths[p]) + (mw/2, m/4);
 z1 = (x0 + mw/2, y0);
 paths[p] := paths[p]{up}..z0---z1;

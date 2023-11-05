@@ -102,20 +102,6 @@ vardef va_tail =
    z0{dir 20}..{dir 20}z1{dir 30}..z2...{dir 60}z3
 enddef;
 
-vardef tha =
-    clearxy;
-    z0= (x1 + mw/3, 0);
-    z1= (0, (y0 + y2)/2.08);
-    z2 = ( x1 + mw/2, m-overshoot); % top
-    z3 = ( x2 + mw/2, (y2+y4)/2.5);
-    z4 = ( x3 - mw/4, 2undershoot); % bottom middle
-    z5 = ( (x1+x3)/2.2, (y4+y6)/2.5);
-    z6 = ( (x5 + x7)/2, y2); % second top
-    z7 = ( x6 + mw/2, (y6+y8)/2.2);
-    z8 = ( x7 - mw/3, 0); %
-    z0..z1{up}..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8
-enddef;
-
 vardef ga =
     clearxy;
     z0 = (x1 + mw/3.5, m);
@@ -153,50 +139,6 @@ vardef right_da =
     z0---z1..{right}z2..z3..{left}z4{right}..z5{down}..{dir 150}z6
 enddef;
 
-vardef left_arch_with_eye =
-    clearxy;
-    path _temp;
-    z0 =(0, (y1 + y3)/2);
-    z1 =(x0 + mw/4, (y3+y5)/2);
-    z2=(x1 + mw/4, y0);
-    z3=(x1, undershoot);
-    z4=(x0+thin/4, y0);
-    z5=((x4 + x6)/2, m-overshoot);
-    z6=(x4 + 0.85mw, 0.6m);
-    z7=(x6, 0);
-    _temp:=z0{up}..z1{right}..z2{down}..z3{left}..z4{dir 120}..z5{right}..{down}z6 ---z7;
-    % Get the point for extrema
-    z8=point 4.25 of _temp;
-    z0{up}..z1{right}..z2{down}..z3{left}..z8{up}..z5{right}..{down}z6---z7
-enddef;
-
-vardef right_arch_with_eye =
-    clearxy;
-    path l;
-    z0 = (thick/2-thin/2, thin/2);
-    z1=(x0, 0.6m);
-    z2=((x1 + x3)/2.2, m-overshoot);
-    z3=(x1 + 0.85mw, (y2+y4)/2.4);
-    z4=((x3 + x5)/2, undershoot); % Bottom
-    z5=(x3 -0.55*mw, y4 + m/3);
-    l=z0---z1..z2..z3..z4..z5;
-    z6=point 2.8 of l;
-    z0---z1..z2{right}..z3{down}..z4{left}..z5..z6
-enddef;
-
-vardef right_arch_with_tail =
-    clearxy;
-    z0 = (thick/2-thin/2, thin/2);
-    z1= ( x0 , 0.6m);
-    z2=((x1 + x3)/2.2, m-overshoot);
-    z3=(x1 + 0.85mw, (y2+y4)/2.4);
-    z4=((x3 + x5)/2, undershoot); % Bottom
-    z5= ( x3 - 0.55*mw, y4 + m/3);
-    z6= ( x4 + mw/4, (y2+y4)/1.5);
-    z7= ( x5 + mw*0.9, (y6 + y8)/2);
-    z8= ( x5 + mw*0.2, -descent*0.6);
-    z0---z1..z2{right}..z3{down}..z4{left}..z5..z6..z7{down}..z8
-enddef;
 
 % ഋ sign
 vardef vocalic_r_sign =

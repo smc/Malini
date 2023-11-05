@@ -1,14 +1,14 @@
 clearxy;
 % Arch
-z0= (0, thin/2);
+z0= (0, thin/2*middle_up_nib_scale);
 z1= (x0, m/2);
 z2= ((x1+x3)/2, m-overshoot);
 z3= (x0+ mw, y1);
 z4= (x3, 0);
 paths[p] = z0---z1..z2..z3---z4;
 pen_stroke(
-    cut(thin_vertical_nib, 45)(0)
-    nib(thin_vertical_nib)(1)
+    cut(middle_up_nib, 45)(0)
+    nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thick_vertical_nib)(3, 4)
     ignore_directions(1r)
@@ -17,7 +17,7 @@ pen_stroke(
 % Bottom bar
 clearxy;
 p:=p+1;
-z0=(-thin/2, thick*sind(45)/2);
+z0=(xpart point 9 of strokes[p-1], thick*sind(45)/2);
 z1=(xpart(point 4 of paths[p-1])+thick/2, y0);
 paths[p] = z0--z1;
 pen_stroke(

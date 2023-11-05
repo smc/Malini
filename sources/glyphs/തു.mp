@@ -2,12 +2,12 @@ input glyph;
 beginglyph;
 z0= (x1 + mw/4, 0);
 z1= (0, (y0 + y2)/2);
-z2 = ( x1 + mw/2, m - overshoot); % top
-z3 = ( x2 + mw/2, (y2+y4)/2.5);
+z2 = ( (x1 + x3)/2, m-overshoot); % top
+z3 = ( x1 + 0.95mw, (y2+y4)/2.5);
 z4 = ( x3 - mw/4, 2undershoot); % bottom middle
 z5 = ( (x1+x3)/2.2, (y4+y6)/2.5);
 z6 = ( (x5 + x7)/2, y2); % second top
-z7 = ( x6 + mw/1.85, y3);
+z7 = ( x1 + 1.5mw, (y6+y8)/2);
 z8 = ( x3, y0 - m/6); %
 z9 = ( x8 - 3/4mw, y8);
 z10 = ( x1, (y9+y11)/2);
@@ -22,7 +22,7 @@ pen_stroke(
     nib(middle_up_nib)(1,5)
     nib(down_nib)(8)
     nib(down_nib)(9)
-    nib(down_nib rotated 90)(10)
+    nib(down_nib rotated 70)(10)
     nib(thick_horizontal_nib)(11,12)
 )(paths[p])(strokes[p]);
 endglyph;
