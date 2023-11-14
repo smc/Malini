@@ -8,7 +8,7 @@ z4 = (x3, y5-0.45m);
 z5 = ((x4 + x6)/2, m-overshoot);
 z6 = (x3 + 0.66mw, 0.6m);
 z7 = (x6, 0);
-paths[p] = z0..z1..z2..z3..z4..z5.. z6---z7;
+paths[p] = z0..z1{down}..z2..z3..z4..z5.. z6---z7;
 
 
 pen_stroke(
