@@ -219,7 +219,7 @@ class SVGGlyph:
                 if name == "vc":
                     anchor["y"] = 0
                 anchors.append(anchor)
-        except:
+        except Exception:
             print(f"Error while processing {self.__dict__}")
             traceback.print_exc()
             pass

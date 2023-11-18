@@ -51,7 +51,7 @@ class MalayalamFont(Font):
 
     def get_glyph_names_from_named_classes(self, class_name):
         all_glyphs = self.get_glyphs_from_named_classes(class_name)
-        return [SVGGlyph.get_glyph_name(l) for l in all_glyphs]
+        return [SVGGlyph.get_glyph_name(letter) for letter in all_glyphs]
 
     def build_latin_ligatures(self):
         feature = "liga"
@@ -61,7 +61,7 @@ class MalayalamFont(Font):
         rules = []
         for ligature in ligatures:
             sub = Substitution(
-                [[SVGGlyph.get_glyph_name(l)] for l in ligature],
+                [[SVGGlyph.get_glyph_name(letter)] for letter in ligature],
                 replacement=[[SVGGlyph.get_glyph_name(ligature)]],
             )
             rules.append(sub)
@@ -85,7 +85,7 @@ class MalayalamFont(Font):
         for chillu in chillus:
             rules.append(
                 Substitution(
-                    [[SVGGlyph.get_glyph_name(l)] for l in chillu],
+                    [[SVGGlyph.get_glyph_name(letter)] for letter in chillu],
                     replacement=[[SVGGlyph.get_glyph_name(chillu)]],
                 )
             )
@@ -100,7 +100,7 @@ class MalayalamFont(Font):
         for conjunct in self.get_glyphs_from_named_classes("ML_LA_CONJUNCTS"):
             rules.append(
                 Substitution(
-                    [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
+                    [[SVGGlyph.get_glyph_name(letter)] for letter in conjunct],
                     replacement=[[SVGGlyph.get_glyph_name(conjunct)]],
                 )
             )
@@ -115,7 +115,7 @@ class MalayalamFont(Font):
         for cons_sign in cons_signs:
             rules.append(
                 Substitution(
-                    [[SVGGlyph.get_glyph_name(l)] for l in cons_sign],
+                    [[SVGGlyph.get_glyph_name(letter)] for letter in cons_sign],
                     replacement=[[SVGGlyph.get_glyph_name(cons_sign)]],
                 )
             )
@@ -132,7 +132,7 @@ class MalayalamFont(Font):
             rules.append(
                 Substitution(
                     [[SVGGlyph.get_glyph_name(cons_sign)]],
-                    replacement=[[SVGGlyph.get_glyph_name(l)] for l in cons_sign],
+                    replacement=[[SVGGlyph.get_glyph_name(letter)] for letter in cons_sign],
                 )
             )
         split_cons_signs = Routine(rules=rules, name="split_cons_signs", languages=LANGUAGE_MALAYALAM)
@@ -179,7 +179,7 @@ class MalayalamFont(Font):
         # To allow independent reph sign rendering, use zwj + reph
         glyph_names_with_reph.append("zwj")
         rule = Substitution(
-            [[SVGGlyph.get_glyph_name(l)] for l in reph],
+            [[SVGGlyph.get_glyph_name(letter)] for letter in reph],
             replacement=[[SVGGlyph.get_glyph_name(reph)]],
             precontext=[glyph_names_with_reph],
         )
@@ -212,7 +212,7 @@ class MalayalamFont(Font):
             if conjunct_glyph_name not in self:
                 continue
             sub = Substitution(
-                [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
+                [[SVGGlyph.get_glyph_name(letter)] for letter in conjunct],
                 replacement=[[conjunct_glyph_name]],
             )
             if conjunct in prevent_stack_contexts.keys():
@@ -358,11 +358,11 @@ class MalayalamFont(Font):
                 if SVGGlyph.get_glyph_name(seq + missing_vowels[0]) in self:
                     largest_seq = seq
             # Split everything from the starting part of ligature_vowel.
-            for l in ligature[0 : len(ligature) - len(largest_seq)]:
-                parts.append(l)
+            for letter in ligature[0 : len(ligature) - len(largest_seq)]:
+                parts.append(letter)
             if len(largest_seq):
                 parts.append(largest_seq)
-            sub = Substitution([[ligature_glyph_name]], replacement=[[SVGGlyph.get_glyph_name(l)] for l in parts])
+            sub = Substitution([[ligature_glyph_name]], replacement=[[SVGGlyph.get_glyph_name(letter)] for letter in parts])
             if split_cons_conj:
                 split_cons_conj.addRule(sub)
             else:
@@ -393,8 +393,8 @@ class MalayalamFont(Font):
         )
         vowel_signs = self.options.glyphs.classes["ML_VOWEL_SIGNS_CONJOINING"]
         # FIXME, should do this for alt glyphs too
-        for l in lettersWithMarks:
-            glyph_name = SVGGlyph.get_glyph_name(l)
+        for letter in lettersWithMarks:
+            glyph_name = SVGGlyph.get_glyph_name(letter)
             if glyph_name not in self:
                 continue
             glyph = self[glyph_name]
@@ -406,7 +406,7 @@ class MalayalamFont(Font):
                 anchors[glyph.name] = {visual_center_anchor_name: (glyph.width / 2, 0)}
 
             for vowel_sign in vowel_signs:
-                letterWithVowel = SVGGlyph.get_glyph_name(l) + SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
+                letterWithVowel = SVGGlyph.get_glyph_name(letter) + SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
                 if letterWithVowel not in self:
                     continue
                 glyphWithVowel = self[letterWithVowel]
@@ -437,8 +437,8 @@ class MalayalamFont(Font):
         lettersWithMarks = sorted(
             self.get_glyphs_from_named_classes("ML_CONSONANTS") + self.get_glyphs_from_named_classes("ML_BOTTOM_MARKS")
         )
-        for l in lettersWithMarks:
-            glyph_name = SVGGlyph.get_glyph_name(l)
+        for letter in lettersWithMarks:
+            glyph_name = SVGGlyph.get_glyph_name(letter)
             if glyph_name not in self:
                 continue
             glyph = self[glyph_name]
@@ -918,7 +918,7 @@ class MalayalamFont(Font):
                             kerningDict[(lhs, rhs)] = xAdvance
                 else:
                     if isinstance(lhs_def, list):
-                        lhss = [SVGGlyph.get_glyph_name(l) for l in lhs_def]
+                        lhss = [SVGGlyph.get_glyph_name(letter) for letter in lhs_def]
                     else:
                         lhss = [SVGGlyph.get_glyph_name(lhs_def)]
                     for lhs in lhss:
