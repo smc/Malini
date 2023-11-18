@@ -202,6 +202,25 @@ vardef top_left_serif(expr s, p ) =
     fi
 enddef;
 
+vardef top_right_straight_serif(expr s, p) =
+    path serif;
+    clearxy;
+    z0 = (point p of s) + (1.2*serif_width/2, 0); % Move to right
+    z1 = (x0-0.05u , y0  - serif_height); % Move to down
+    z2 = (xpart point p of s, y1-serif_height);
+    z4 = (x2 + sw*0.02, y1*0.98);
+    z5 = (x4 , y4);
+
+    serif = subpath(0, p-1) of s
+    -- z2 .. controls z4 and z5
+    .. z1
+    .. z0 {dir 183}
+    .. {dir 183}cycle;
+
+    soften_node(serif, u/10, 0)
+enddef;
+
+
 vardef top_left_straight_serif(expr s, p ) =
     path serif;
     clearxy;

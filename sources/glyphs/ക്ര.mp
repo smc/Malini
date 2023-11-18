@@ -31,7 +31,7 @@ z3 = (xpart(point 6 of paths[0]) - mw/3, m/2);
 z4 = (x3+mw/4, m);
 paths[p] =  z0{dir (angle(direction infinity of paths[p-1]))}.. z1---z2..z3..z4;
 
-paths[p] := insert_point(paths[p], 2.5);
+paths[p] := insert_nodes(paths[p])(2.5);
 
 pen_stroke(
     nib(middle_down_nib  scaled 0.9)(0)

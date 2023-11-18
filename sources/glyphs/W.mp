@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 z0=(0, X-thick/4);
-z1=(x0 + Xw/2.25, 0);
+z1=(x0 + Xw/2.5, 0);
 paths[p] = z0--z1 ;
 pen_stroke(
      nib(thick_nib)(0)
@@ -13,7 +13,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0= (xpart point 1 of strokes[p-1] + thin/2*0.75 , 0);
-z1=(x0+Xw/2.75, 3/4X);
+z1=(x0+Xw/3, 3/4X);
 paths[p] = z0--z1 ;
 pen_stroke(
      cut(thin_nib scaled 1.25, 0)(0)
@@ -37,7 +37,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0= (xpart point 1 of strokes[p-1] + thin/2*0.75 , 0);
-z1=(x0+Xw/2.25, X-thick/4);
+z1=(x0+Xw/2.5, X-thick/4);
 paths[p] = z0--z1 ;
 pen_stroke(
      cut(thin_nib scaled 1.25, 0)(0)

@@ -16,7 +16,7 @@ z10=(x9 + mw/4, m);
 paths[p] := z0..z1{up}..z2{right}..z3{down}..z4{left}..z5{down}..z6{right}..z7{down}..z8{left}..z9..z10 ;
 paths[p] := paths[p] shifted (mw/3,0);
 
-paths[p] := insert_point(paths[p], 8.5);
+paths[p] := insert_nodes(paths[p])(8.5);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1, 9)

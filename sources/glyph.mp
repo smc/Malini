@@ -57,6 +57,7 @@ overshoot := thin*top_nib_scale/4;
 undershoot := thin*down_nib_scale/4;
 serif_height := thick/3;
 serif_width :=  thick*1.1;
+inktrap_width := thin/2;
 
 vardef start_up_nib = thin_nib enddef;
 vardef middle_up_nib = thin_nib scaled middle_up_nib_scale rotated -10 enddef;
@@ -69,15 +70,6 @@ vardef thin_horizontal_nib = fix_nib(0, thick*sind(45), 0) enddef;
 vardef thick_vertical_nib = thick_nib enddef;
 vardef thin_vertical_nib = thin_nib enddef;
 vardef serif_nib = fix_nib(serif_height, 0, 0) enddef;
-
-vardef insert_point(expr orig_path, t) =
-    save new_point;
-    pair new_point;
-    new_point = point t of orig_path;
-    path result_path;
-    result_path = subpath (0, floor(t)) of orig_path .. new_point .. subpath (floor(t+1), length(orig_path)) of orig_path;
-    result_path
-enddef;
 
 vardef terminalnib =
     if terminalround = 0:

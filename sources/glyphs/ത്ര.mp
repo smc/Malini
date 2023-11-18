@@ -8,7 +8,7 @@ z10 = point 1 of paths[p] - (mw/3, 0);
 z11 = (x10 + mw/8, m);
 
 paths[p] := (subpath(0, 7) of paths[p]) .. z8{left} ..z10{up}..z11;
-paths[p] := insert_point(paths[p], 8.5);
+paths[p] := insert_nodes(paths[p])(8.5);
 
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(

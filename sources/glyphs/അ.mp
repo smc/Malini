@@ -21,7 +21,7 @@ pen_stroke(
     nib(down_nib)(6)
     nib(middle_up_nib)(7)
     nib(top_nib)(8)
-    nib(thick_vertical_nib)(9)
+    nib(middle_down_nib)(9)
     nib(thick_vertical_nib)(10)
     ignore_directions(3, 5, 6, 7)
 )(paths[p])(strokes[p]);

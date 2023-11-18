@@ -19,7 +19,7 @@ strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])
 p:=p+1;
 input ./glyphs/include/റ;
 xshift = xpart(point 1 of paths[p-1]) - mw/4;
-paths[p] := subpath(0, 3) of paths[p] shifted (xshift, 0);
+paths[p] := subpath(0, 2.75) of paths[p] shifted (xshift, 0);
 
 pen_stroke(
     nib(start_up_nib rotated 90)(0)
@@ -36,9 +36,9 @@ z1 = (3/4(x0-x3), reph_sign_depth  );
 z2 = (0.35(x0-x3), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, m/2);
 z4 = (x3+mw/6, m);
-paths[p] =  z0{dir (angle(direction infinity of paths[p-1]))}..z1---z2..z3{up}..{dir 45}z4;
+paths[p] =  z0{dir (angle(direction infinity of paths[p-1]))}..z1---z2..z3..z4;
 
-paths[p] := insert_point(paths[p], 2.5);
+paths[p] := insert_nodes(paths[p], 2.5);
 
 pen_stroke(
     nib(middle_down_nib)(0)

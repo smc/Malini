@@ -72,7 +72,7 @@ z5= point 0.95 of strokes[1];
 z6=(x5, y5);
 
 z7 = point 2.05 of strokes[1];
-z8 = (x7, y5);
+z8 = (x7, y7);
 
 strokes[1] := z0..controls z5 and z6 ..z1{dir 250}
     .. {dir 300}z2{dir 3}..{dir -3}z3{dir 70}
