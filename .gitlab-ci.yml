@@ -25,6 +25,7 @@ build:
 test:
   stage: test
   script:
+    - ruff check .
     - make test
   artifacts:
     expire_in: 1000 yrs
