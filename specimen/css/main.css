@@ -53,6 +53,7 @@
     background-image: var(--body-background-image);
     background-color: var(--body-background-color);
     background-repeat: repeat;
+    accent-color: var(--brand);
   }
 
   main {
@@ -231,6 +232,8 @@
     color: var(--lime-12);
   }
 
+
+
   html {
     /* light */
     --brand-light: var(--orange-6);
@@ -252,6 +255,7 @@
     --border-color: var(--gray-3);
     --meta-text-color-dark: var(--blue-4);
     --header-background-color-dark: var(--gray-0);
+
   }
 
   :root {

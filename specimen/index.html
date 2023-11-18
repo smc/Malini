@@ -74,25 +74,30 @@
       </section>
       <section class="page grid">
         <div class="toolbar col-start-2@lg col-10@lg col-12 grid">
-          <label class="col-2" for="playground-font-size">Font Size</label>
-          <input class="col-7" type="range" data-id="font-size" value="16" min="8" step="1" max="148">
-          <input class="col-2" type="number" data-id="font-size" id="playground-font-size" value="16">pt
-
-          <label class="col-2" for="playground-font-weight">Font Weight</label>
-          <input class="col-7" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
-          <input type="number" class="col-2 font-weight" data-id="font-weight" value="400" min="1" step="1" max="900"
-            id="playground-font-weight">
-
-          <label class="col-2" for="playground-font-width">Font Width</label>
-          <input class="col-7" type="range" data-id="font-width" value="100" min="75" step="1" max="125">
-          <input type="number" class="col-2 font-width" data-id="font-width" value="100" min="75" step="1" max="125"
-            id="playground-font-width">%
-
-
-          <label class="col-2" for="playground-font-slant">Font Slant</label>
-          <input class="col-7" type="range" data-id="font-slant" value="0" min="-12" step="1" max="0">
-          <input type="number" class="col-2 font-slant" data-id="font-slant" value="0" min="-12" step="1" max="0"
-            id="playground-font-slant">degree
+          <div class="slider-container col-3@lg col-6@md col-12 grid grid-gap-xxxxs">
+            <label class="col-6" for="playground-font-size">Font Size</label>
+            <input class="col-start-11 col-end-13 font-size" type="number" data-id="font-size" id="playground-font-size"
+              value="16">
+            <input class="col-12" type="range" data-id="font-size" value="16" min="8" step="1" max="148">
+          </div>
+          <div class="slider-container col-3@lg col-6@md col-12  grid grid-gap-xxxxs">
+            <label class="col-6" for="playground-font-weight">Font Weight</label>
+            <input type="number" class="col-start-11 col-end-13 font-weight" data-id="font-weight" value="400" min="1"
+              step="1" max="900" id="playground-font-weight">
+            <input class="col-12" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
+          </div>
+          <div class="slider-container col-3@lg col-6@md col-12  grid grid-gap-xxxxs">
+            <label class="col-6" for="playground-font-width">Font Width</label>
+            <input type="number" class="col-start-11 col-end-13 font-width" data-id="font-width" value="100" min="75"
+              step="1" max="125" id="playground-font-width">
+            <input class="col-12" type="range" data-id="font-width" value="100" min="75" step="1" max="125">
+          </div>
+          <div class="slider-container col-3@lg col-6@md col-12 grid grid-gap-xxxxs">
+            <label class="col-6" for="playground-font-slant">Font Slant</label>
+            <input type="number" class="col-start-11 col-end-13 font-slant" data-id="font-slant" value="0" min="-12"
+              step="1" max="0" id="playground-font-slant">
+            <input class="col-12" type="range" data-id="font-slant" value="0" min="-12" step="1" max="0">
+          </div>
         </div>
         <section class="card col-start-2@lg col-10@lg col-12 malini playground" contenteditable="">
 
@@ -165,13 +170,15 @@
 
           </div>
         </div>
-        <div class="content col-6@lg col-12 text-body malini text-12 grid">
-          <form class="col-12 grid">
-            <input class="col-8" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
-            <input type="number" class="col-3 font-weight" data-id="font-weight" value="400" min="1" step="1" max="900"
-              id="playground-font-weight">
-          </form>
-          <p class="card col-12 playground" contenteditable>കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
+        <div class="content col-6@lg col-12 text-12 grid">
+          <div class="slider-container  col-12  grid grid-gap-xxxxs">
+            <label class="col-6" for="playground-font-weight">Font Weight</label>
+            <input type="number" class="col-start-11 col-end-13 font-weight" data-id="font-weight" value="400" min="1"
+              step="1" max="900" id="playground-font-weight">
+            <input class="col-12" type="range" data-id="font-weight" value="400" min="100" step="1" max="900">
+          </div>
+
+          <p class="card col-12 playground text-body malini " contenteditable>കാലം ചെന്നിട്ടും പുളിമരം ശോഷിച്ചില്ലത്രെ.
             പിടിച്ചുകേറാനാവാത്ത വണ്ണം അതിന്റെ തടി തിടം വെച്ചു. പ്രാചീനമായ പായലുകൾ അതിന്മേൽ പാടുകൾ വരച്ചു. കൊമ്പുകൾ
             മാനം മുട്ടുവോളം ഇണർച്ചു പൊങ്ങി. ഇണർപ്പുകളിൽ ഉഗ്രവിഷമുള്ള പാമ്പെറുമ്പുകൾ കൂടുവെച്ചു. എങ്കിലും അതിന്മേൽ
             കേറാൻ പേടിക്കേണ്ടതില്ല. പെണ്ണുങ്ങൾ ചാരിത്രവതികളാണെങ്കിൽ അവരുടെ കെട്ടിയവന്മാരുടെ മുമ്പിൽ
@@ -406,8 +413,8 @@
 
       <section class="page grid  ">
         <div class="content card col-start-2@lg col-10@lg col-12 grid">
-        <div  class="content col-start-1 col-6">
-          <div class="meta-desc"> Regular | 36pt</div>
+          <div class="content col-start-1 col-6">
+            <div class="meta-desc"> Regular | 36pt</div>
             <p lang="ml" class="text-body malini text-36  text-start">
               രാത്രിയുടെ അവസാനയാമത്തിൽ പാണ്ടൻകുതിര ചത്തു. ഖസാക്കിലെ പനങ്കാട്ടിലാണ് അവനെ കുടിവെച്ചത്. </p>
           </div>
@@ -418,7 +425,7 @@
             <div class="meta-desc"> Thin | 36pt</div>
 
           </div>
-          </div>
+        </div>
 
       </section>
 
