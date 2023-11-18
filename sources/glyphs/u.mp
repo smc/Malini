@@ -25,6 +25,13 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
 
+strokes[p] := top_left_straight_serif(strokes[p], 0);
+% Leave some extra gap at bottom, near serif
+strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
+    .. {dir -80}subpath(3.15, 7) of strokes[p]
+    --  cycle;
+strokes[p] := bottom_right_serif(strokes[p], 4);
+
 
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;
