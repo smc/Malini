@@ -327,18 +327,22 @@ vardef bottom_serif(expr s, p) =
     clearxy;
 
     thickness := (xpart point p+1 of s )- (xpart point p of s);
-    z0 = (xpart point p of s, y2 + 2*serif_width);
+    z0 = (xpart point p of s, y2 + serif_width);
     z1 = (x0 - serif_width+thickness/2, y2+3/4serif_height) ;
     z2 = (x1, ypart point p of s);
     z3 = (xpart point p+1 of s + serif_width-thickness/2, y2);
     z4 = (x3, y1);
-    z5 = (xpart point p+1 of s, y4+1.25serif_width);
+    z5 = (xpart point p+1 of s,y0 );
 
-    z6 = (x0, ypart point p of s + serif_height*1.2);
-    z7 = (x0-0.05u, y6) ;
-    z8 = (x5+0.05u, y6);
-    z9 = (x5, y6);
-    subpath(0, p-1) of s -- z0.. controls z6 and z7.. z1{dir 210}
+    numeric control_t;
+    control_t = arctime serif_height of subpath(p, p-1) of s ;
+    z6 = point (p - control_t ) of s;
+    z7 = z6;
+
+    control_t := arctime serif_height of subpath(p+1, p+2) of s;
+    z8 = point p + 1 + control_t of s;
+    z9 = z8;
+    subpath(0, p-1) of s -- z0 .. controls z6 and z7.. z1{dir 210}
         .. {dir 330}z2{dir 3}
         .. {dir -3}z3{dir 30}
         .. {dir 150}z4..  controls  z8 and z9 .. z5

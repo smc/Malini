@@ -78,6 +78,14 @@
         <dimension name="optical" xvalue="20"/>
       </location>
     </source>
+    <source familyname="Malini" filename="./sources/ufo/Malini-Oblique-Thin.ufo" stylename="Oblique Thin" name="Oblique-Thin">
+      <location>
+        <dimension name="weight" xvalue="100"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="-12"/>
+        <dimension name="optical" xvalue="20"/>
+      </location>
+    </source>
     <source familyname="Malini" filename="./sources/ufo/Malini-Text.ufo" stylename="Text" name="Text">
       <location>
         <dimension name="weight" xvalue="400"/>
