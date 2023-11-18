@@ -990,7 +990,7 @@ class MalayalamFont(Font):
         self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
-        # FIXME openTypeOS2WidthClass should change as per style:
+        # OpenTypeOS2WidthClass should change as per style:
         # ULTRA_CONDENSED = 1
         # EXTRA_CONDESED = 2
         # CONDENSED = 3
@@ -1001,7 +1001,12 @@ class MalayalamFont(Font):
         # EXPANDED = 7
         # EXTRA_EXPANDED = 8
         # ULTRA_EXPANDED = 9
-        self.info.openTypeOS2WidthClass = 5
+        if self.style == 'Expanded':
+             self.info.openTypeOS2WidthClass = 7
+        elif self.style == 'Condensed':
+             self.info.openTypeOS2WidthClass = 3
+        else:
+            self.info.openTypeOS2WidthClass = 5
 
         # A font's winAscent and winDescent values should be greater than the head
         # table's yMax, abs(yMin) values. If they are less than these values,
