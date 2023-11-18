@@ -55,8 +55,8 @@ fi;
 
 overshoot := thin*top_nib_scale/4;
 undershoot := thin*down_nib_scale/4;
-serif_height := thick/3;
-serif_width :=  thick*1.1;
+serif_height := u/3;
+serif_width :=  thick/2 + u/2;
 inktrap_width := thin/2;
 
 vardef start_up_nib = thin_nib enddef;
