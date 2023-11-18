@@ -23,7 +23,7 @@ Malini has the following axes:
 | Axis       | Tag    | Range        | Default | Description                                                     |
 | ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
 | Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
-| Slant     | `slnt` | -15 to 0       | 0       | Upright (0°) to Slanted (about 15°)                                                |
+| Slant     | `slnt` | -12 to 0       | 0       | Upright (0°) to Slanted (about 12°)                                                |
 | Width     | `wdth` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
 | Optical Size     | `opsz` | 10 to 96  | 20     | Follows the font size to optimize the contrast and spacing |
 
@@ -33,7 +33,7 @@ Malini has the following axes:
 
     Recommended use: Differences in weight can provide emphasis in text, show user interaction, or adjust the tone of communication. For light text on dark backgrounds, 400 (“Regular”) tends to be appropriate for text and code. For dark text on a light background, it can be beneficial to adjust the weight upwards to 500 (“Medium”).
 
-* **Slant** `slnt`: 0 to -15. The "forward lean" of letters. Note: -15 (negative 15) corresponds to a 15° clockwise slant, due to type design's roots in geometry.
+* **Slant** `slnt`: 0 to -12. The "forward lean" of letters. Note: -12 (negative 12) corresponds to a 12° clockwise slant, due to type design's roots in geometry.
 
     Recommended use: The Malayalam script with its glyph characteristics does not have an established slant behavior. Mostly we mimic the slanting in latin. And we often call italic. Note that italic and slant are not same.  Use Slant as a secondary way to emphasize text or vary typographic tone. In text, it can be useful to use a partial slant of around -12.
 
