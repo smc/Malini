@@ -248,22 +248,26 @@ vardef top_right_serif(expr s, p) =
     -- cycle
 enddef;
 
+
 vardef top_serif(expr s, p ) =
     clearxy;
+    numeric control_t;
     z0 = (point p of s) + (-serif_width+thick/2, 0); % Move to left
     z1 = (x0, y0  -3/4serif_height);
-    z2 = (xpart point p of s, y1-serif_width*2);
-
-    z4 = (xpart point p of s-0.05u, ypart point p of s - serif_height*1.2);
-    z5 = (xpart point p of s, y4);
-
+    z2 = (xpart point p of s, y0-serif_width);
 
     z6 = (xpart point p-1 of s, y2);
     z7 = (x6 + serif_width-thick/2, y1);
     z8 = (x7, y0);
 
-    z9=(x6 , y4);
-    z10=(x6+ 0.05u, y4);
+    control_t = arctime serif_height of subpath(p, p+1) of s ;
+    z4 =  point (p + control_t ) of s;
+    z5 = z4;
+
+    control_t := arctime serif_height of subpath(p-1, p-2) of s ;
+    z9 = point (p -1- control_t ) of s;
+    z10 = z9;
+
 
     if p = 0:
         z0{dir 210}
@@ -272,16 +276,25 @@ vardef top_serif(expr s, p ) =
         -- z6 .. controls z9 and z10.. z7{dir 30}
         .. {dir 150}z8{dir 183} .. {dir 177}cycle
     else:
+
         z14 = (point p of s) + (-1.2serif_width, 0); % Move to left
         z15 = (x14, y14  -3/4serif_height);
-        z11 =(xpart point p+1 of s, y10 -serif_width);
-        z12 =(x11 , y10);
-        z13 =(x12, y12);
+
+        z11 =(xpart point p+1 of s, y14 -serif_width);
+
+        control_t := arctime serif_height of subpath(p+1, p+2) of s ;
+        z12 =point (p+1+ control_t ) of s;
+        z13 =z12;
+
+        control_t := arctime serif_height of subpath(p, p-1) of s ;
+        z16 = point (p - control_t ) of s;
+        z17 = z16;
+
         subpath(0, p-1) of s
-        -- z6 .. controls z9 and z10.. z7
-        --z8{dir 183}
-        .. z14{dir 177}
-        .. {dir 300}z15
+        -- z6 .. controls z16 and z17.. z7{dir 30}
+        .. {dir 150}z8{dir 183}
+        .. {dir 177}z14{dir 210}
+        .. {dir 330}z15
         .. controls z12 and z13..z11
         -- subpath(p+2, length(s)-1) of s
         -- cycle
