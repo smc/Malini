@@ -62,7 +62,7 @@ fontmake==3.7.1
     # via malini (pyproject.toml)
 fontmath==0.9.3
     # via fontmake
-fonttools[lxml,ufo,unicode]==4.44.3
+fonttools[lxml,ufo,unicode]==4.45.0
     # via
     #   axisregistry
     #   babelfont
@@ -150,7 +150,7 @@ pyclipper==1.3.0.post5
     #   booleanoperations
 pycparser==2.21
     # via cffi
-pygments==2.16.1
+pygments==2.17.1
     # via rich
 python-dateutil==2.8.2
     # via strictyaml
