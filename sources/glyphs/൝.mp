@@ -21,7 +21,7 @@ z14=(x13 - mw/4 , m);
 paths[0] = z0..z1---z2;
 paths[1]= z2---z3..z4..z5..z6..z7..z8..z9..z10..z11..z12..z13..z14 ;
 pen_stroke(
-   nib(end_nib rotated terminalangle 0 of paths[0])(0)
+   nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_down_nib)(1, 2)
 )(paths[0])(strokes[0]);
 pen_stroke(

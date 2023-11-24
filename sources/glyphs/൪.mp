@@ -10,7 +10,7 @@ z6= (x4, ascent);
 paths[0] = z0..z1{up}..z2{right}..z3{down}..z4..z5{up}..{up}z6;
 paths[0] := paths[0] ;
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)

@@ -14,8 +14,8 @@ paths[0] := subpath(0.45, infinity) of spath;
 pen_stroke(
    nib(middle_down_nib)(1, 3,5)
    nib(thick_vertical_nib rotated 90)(2)
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
-   nib(start_up_nib rotated terminalangle 0 of paths[0])(4)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
+   nib(start_up_nib rotated terminalangle 0 of paths[p])(4)
 )(paths[0])(strokes[0]);
 paths[1] :=  subpath(0, 3.6) of spath shifted(0, -.45m);
 pen_stroke(

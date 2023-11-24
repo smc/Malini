@@ -16,7 +16,7 @@ z11 = (x10 - mw/2, thick*sind(45)/2);
 paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6.. z7..z8{up}..z9{right}..z10{down}..{dir 190}z11;
 
 pen_stroke(
-    nib(end_nib rotated terminalangle 0 of paths[0])(0)
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(down_nib)(2)
     nib(middle_down_nib)(3,4, 6)

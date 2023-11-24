@@ -5,7 +5,7 @@ paths[0] := r_vstem;
 paths[1] := subpath(0, 3) of n_arch shifted(xpart(point 1 of r_vstem),0);
 
 pen_stroke(
-   nib(end_nib scaled 0.5 rotated terminalangle 0 of paths[0])(0)
+   nib(end_nib scaled 0.5 rotated terminalangle 0 of paths[p])(0)
     nib(thick_vertical_nib)(1,2)
     nib(end_nib scaled 3)(infinity)
 )(paths[0])(strokes[0]);

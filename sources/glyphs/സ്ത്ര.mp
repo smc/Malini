@@ -21,7 +21,7 @@ z11 = (x10 + mw/8, m);
 paths[p] := (subpath(0, 6.75) of paths[p]) .. z0---z9 ..z10{up}..z11;
 
 pen_stroke(
-    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
     nib(top_nib scaled 0.8)(2,6)
     nib(middle_down_nib scaled 0.8)(3, 7)
     nib(down_nib scaled 0.8)(4)

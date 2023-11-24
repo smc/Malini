@@ -4,7 +4,7 @@ z0=(x1 + Xw/2, s - thin*sind(45)/2);
 z1=(0, 0.2s);
 paths[0] = z0--z1;
 pen_stroke(
-   cut(thin_nib rotated terminalangle 0 of paths[0], -45)(0)
+   cut(thin_nib rotated terminalangle 0 of paths[p], -45)(0)
    cut(thin_nib rotated terminalangle 1 of paths[0], 90)(1)
 )(paths[0])(strokes[0]);
 

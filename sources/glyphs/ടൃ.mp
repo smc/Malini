@@ -10,7 +10,7 @@ z4 = (x0-down_nib_width/2, y3/2);
 paths[p] = z0..z1{left}..z2{down}..z3..{down}z4;
 
 pen_stroke(
-   nib(start_up_nib scaled 1.2 rotated terminalangle 0 of paths[0])(0)
+   nib(start_up_nib scaled 1.2 rotated terminalangle 0 of paths[p])(0)
    nib(top_nib rotated 30)(1)
    nib(middle_down_nib scaled 0.9)(2,4)
     nib(middle_down_nib rotated 60)(3)

@@ -33,7 +33,7 @@ z10 = (x5+ thick/2, y9);
 paths[1]= z0..z1..z2..z3..{left}z4{right}..z5..z6---z7..z8..z9---z10;
 
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(thin_vertical_nib rotated 90)(4)

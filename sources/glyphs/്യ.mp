@@ -10,7 +10,7 @@ z5 = (x2, m);
 paths[p] = z0{dir -80}..{left}z1{left}..z2{dir 10}..z3{up}..z4..z5;
 paths[p] := paths[p] shifted(-x4+mw*0.15,0);
 pen_stroke(
-    cut(end_nib rotated terminalangle 0 of paths[0], 0)(0)
+    cut(end_nib rotated terminalangle 0 of paths[p], 0)(0)
     nib(down_nib)(1)
     nib(down_nib)(2)
     nib(middle_down_nib scaled 0.8)(3)

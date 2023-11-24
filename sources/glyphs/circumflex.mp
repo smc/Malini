@@ -5,7 +5,7 @@ z1 = (x0+ 0.25sw, y0 + s/3);
 
 paths[0] = z0--z1;
 pen_stroke(
-    nib(thick_nib rotated terminalangle 0 of paths[0])(0)
+    nib(thick_nib rotated terminalangle 0 of paths[p])(0)
     cut(thin_nib rotated terminalangle 1 of paths[0], 0)(1)
 )(paths[0])(strokes[0]);
 strokes[0]:=point 0 of strokes[0] --point 1 of strokes[0] --point 2 of strokes[0] --point 3 of strokes[0] --cycle;

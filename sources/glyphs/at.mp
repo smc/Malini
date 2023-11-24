@@ -11,14 +11,14 @@ z3 = (xpart(point 0 of paths[1]) + sw/2, s/2);
 z4 = (xpart(point 0 of paths[0]) + sw/4, ypart(point 0 of paths[0]) - sw/6);
 paths[0] := z0..z1..z2{right}..z3{down}..z4..paths[0];
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_down_nib)(3)
     nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(middle_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(middle_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(1)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)

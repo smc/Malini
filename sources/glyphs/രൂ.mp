@@ -19,7 +19,7 @@ z13 = ( x12 + mw/6, m);
 paths[0] := paths[0].. z6..z7..{left}z8{right}..z9..z10{dir 190}..{dir 170}z11..z12{up}..z13;
 paths[0] := paths[0] shifted (mw/3,0);
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1, 12)
     nib(top_nib)(2)
     nib(middle_down_nib)(3,7,9)

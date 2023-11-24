@@ -10,7 +10,7 @@ z4 = (0, 0);
 paths[0] = z0{up}..z1{left}..z2{dir -85}..z3{left}..{up}z4;
 
 pen_stroke(
-    nib(end_nib rotated terminalangle 0 of paths[0])(0)
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(1)
     nib(down_nib)(3)
     nib(middle_down_nib)(2)

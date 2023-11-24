@@ -10,7 +10,7 @@ paths[1] = (z3..z4) xyscaled(0.5, 0.5) shifted (0,0.8s);
 pen_stroke(
     nib(thin_nib)(0, 2)
     nib(thin_nib)(1)
-    nib(thin_nib rotated terminalangle 0 of paths[0])(0)
+    nib(thin_nib rotated terminalangle 0 of paths[p])(0)
     nib(thin_nib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(

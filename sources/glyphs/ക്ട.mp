@@ -1,7 +1,9 @@
 input glyph;
 beginglyph;
+input ./glyphs/include/ക;
 
-input ./glyphs/include/ഷ.mp;
+p:=p+1;
+
 
 clearxy;
 p:=p+1;
@@ -25,6 +27,7 @@ pen_stroke(
   nib(end_nib scaled 0.8 rotated terminalangle 6 of paths[p])(6)
 )(paths[p])(strokes[p]);
 
-anchor( "vc", point 0.5 of paths[1]);
+anchor( "vc", point 1 of paths[p]);
+
 
 endglyph;

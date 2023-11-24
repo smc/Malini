@@ -7,7 +7,7 @@ z3=(x4, 3/4s);
 z4=(sw/4, 0);
 paths[0] = z0{dir 120}..z1{left}..{down}z2 ..{down}z3---z4;
 pen_stroke(
-    nib(thicknib rotated terminalangle 0 of paths[0])(0)
+    nib(thicknib rotated terminalangle 0 of paths[p])(0)
     nib(thick_vertical_nib)(3,4)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)
@@ -26,7 +26,7 @@ pen_stroke(
 p:=p+1;
 paths[2] := paths[0] shifted(xpart(point 0 of paths[0]), 0);
 pen_stroke(
-    nib(thicknib rotated terminalangle 0 of paths[0])(0)
+    nib(thicknib rotated terminalangle 0 of paths[p])(0)
     nib(thick_vertical_nib)(3,4)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)

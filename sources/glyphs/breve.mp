@@ -9,7 +9,7 @@ paths[0] = z0{down}..{right}z1..{up}z2;
 paths[0] := paths[0] shifted (-x1, 0);
 
 pen_stroke(
-    nib(thick_nib rotated terminalangle 0 of paths[0])(0)
+    nib(thick_nib rotated terminalangle 0 of paths[p])(0)
     nib(down_nib)(1)
     nib(end_nib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

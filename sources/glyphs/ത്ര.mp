@@ -12,7 +12,7 @@ paths[p] := insert_nodes(paths[p])(8.5);
 
 paths[p] := paths[p] shifted (mw/3,0);
 pen_stroke(
-    nib(start_up_nib rotated terminalangle 0 of paths[0])(0)
+    nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(2,6)
     nib(middle_down_nib)(3, 7)
     nib(down_nib)(4)

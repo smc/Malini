@@ -12,7 +12,7 @@ z6 = (0, y5+s/3.5);
 paths[p] = z0{dir 90}  ..z1{left}..z2{down} ..z3..z4{down} ..z5{left} ..  z6;
 
 pen_stroke(
-   nib(thick_nib scaled 1.1 rotated terminalangle 0 of paths[0] )(0)
+   nib(thick_nib scaled 1.1 rotated terminalangle 0 of paths[p] )(0)
    nib(top_nib scaled 0.85)(1)
    nib(middle_down_nib)(2,4)
    nib(middle_down_nib rotated 90)(3)
