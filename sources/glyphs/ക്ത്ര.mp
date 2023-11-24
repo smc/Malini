@@ -40,7 +40,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 = point infinity of paths[p-1];
-z1 = (xpart(point 4 of paths[p-1]), -descent*0.8 );
+z1 = (xpart(point 4 of paths[p-1]), reph_sign_depth );
 z2 = (xpart(point 0 of paths[p-2]), y1);
 z3 = (xpart(point 6 of paths[p-2]) - mw/3, ypart(point 6 of paths[p-2]));
 z4 = (x3 + mw/4, m);

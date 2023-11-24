@@ -3,7 +3,7 @@ beginglyph;
 input ./glyphs/include/ത;
 
 clearxy;
-z8 = (xpart point 5.75 of paths[p], -descent); % ra sign starts
+z8 = (xpart point 5.75 of paths[p], reph_sign_depth); % ra sign starts
 z10 = point 1 of paths[p] - (mw/3, 0);
 z11 = (x10 + mw/8, m);
 
