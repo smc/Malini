@@ -8,9 +8,9 @@ u :=            em/10;        % Unit width. Em square divisions. This is the bas
 
 ascent  :=      7.5u;         % Ascender Height
 descent :=      2.5u;         % Descender Height
-xheight :=      2/3*ascent;   % Height of English small letters
-mheight :=      2/3*ascent;   % Height of Malayalam letters
-Xheight :=      ascent;       % Height of English capital letters
+xheight :=      0.62*ascent;  % Height of English small letters
+mheight :=      0.62*ascent;  % Height of Malayalam letters
+Xheight :=      0.94*ascent;  % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines

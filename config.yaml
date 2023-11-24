@@ -14,6 +14,9 @@ styles: [
 version: 1.000
 unitsPerEm: 1000
 ascender: 750
+xheight: 465
+mheight: 465
+Xheight: 705
 descender: 250
 source: https://gitlab.com/smc/fonts/Malini
 author:

@@ -963,8 +963,8 @@ class MalayalamFont(Font):
         self.info.openTypeNameManufacturerURL = self.options.manufacturer.url
 
         # Metrics
-        self.info.xHeight = self.info.ascender * 2 / 3
-        self.info.capHeight = self.info.ascender
+        self.info.xHeight = int(self.options.xheight)
+        self.info.capHeight = int(self.options.Xheight)
         self.info.guidelines = []
         self.info.italicAngle = 0
 
@@ -1043,12 +1043,20 @@ class MalayalamFont(Font):
             # xheight zone
             int(self.info.xHeight),
             int(self.info.xHeight + 15),
+            # capHeight zone
+            int(self.info.capHeight),
+            int(self.info.capHeight + 15),
+            # ascender zone
             int(self.info.ascender),
             int(self.info.ascender + 15),
         ]
-        self.info.postscriptOtherBlues = [int(-self.info.descender), int(-self.info.descender + 12)]
+        self.info.postscriptOtherBlues = [
+            int(-self.info.descender),
+            int(-self.info.descender + 12)
+        ]
         self.info.guidelines = [
             Guideline(name="xheight", y=self.info.xHeight),
+            Guideline(name="capHeight", y=self.info.capHeight),
             Guideline(name="mid", y=self.info.xHeight / 2),
         ]
         # self.info.postscriptFamilyBlues = []
