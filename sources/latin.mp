@@ -364,55 +364,96 @@ enddef;
 
 
 vardef top_left_slanted_serif(expr s, p ) =
+    numeric t_on_left_slant;
+    numeric l_control_t;
     clearxy;
     z0 = (point p of s) + (-serif_width+thick/2, 0); % Move to left
     z1 = (x0, y0  -3/4serif_height);
-    z2 = (point 0.3 of s);
+    z2 = point ( arctime serif_width of subpath(p, p+1) of s ) of s;
 
-    z4 = (xpart point p + 0.1 of s, ypart point p of s - serif_height*1.2);
-    z5 = (x4, y4);
+    l_control_t = arctime serif_height of subpath(p, p+1) of s ;
+    z4 =  point (p + l_control_t ) of s;
+    z5 = z4;
 
-
-    z6 = point length(s)- 1 - 0.3 of s;
+    t_on_left_slant =  arctime serif_width of subpath(length(s) - 1, length(s) - 2)  of s;
+    z6 = point (length(s) - 1 - t_on_left_slant ) of s;
     z7 = (x6 + serif_width-thick/2, y1);
     z8 = (x7, y0);
 
-    z9=(xpart point length(s) - 1 - 0.1 of s , y4);
-    z10=(x6+ 0.05u, y4);
+    l_control_t := arctime serif_height of subpath(length(s) - 1, length(s) - 2) of s ;
+    z9= point (length(s) - 1 - l_control_t ) of s;
+    z10=z9;
 
 
      z0{dir 250}
      .. {dir 300}z1.. controls z4 and z5 .. z2
      -- subpath(p+1, length(s)-2) of s
-     -- z6 .. controls z9 and z10.. z7
-     --z8{dir 183} .. {dir 177}cycle
+     -- z6 .. controls z9 and z10.. z7{dir 30}
+     ..{dir 150}z8{dir 183} .. {dir 177}cycle
 
 enddef;
 
 vardef top_right_slanted_serif(expr s, p ) =
+    numeric t_on_right_slant;
+    numeric r_control_t;
     clearxy;
     z0 = (point p  of s) + (-serif_width, 0); % Move to left
     z1 = (x0, y0  -3/4serif_height);
-    z2 = (point 0.3 of s);
+    z2 = point ( arctime serif_width of subpath(p, p+1) of s ) of s;
 
-    z4 = (xpart point p + 0.1 of s, ypart point p of s - serif_height*1.2);
-    z5 = (x4, y4);
+    r_control_t = arctime serif_height of subpath(p, p+1) of s ;
+    z4 =  point (p + r_control_t ) of s;
+    z5 = z4;
 
-
-    z6 = point length(s)- 1 - 0.3 of s;
+    t_on_right_slant =  arctime serif_width of subpath(length(s) - 1, length(s) - 2)  of s;
+    z6 = point (length(s) - 1 - t_on_right_slant ) of s;
     z7 = (x6 + serif_width , y1); % Move to right
     z8 = (x7, y0);
 
-    z9=(xpart point length(s) - 1 - 0.1 of s , y4);
-    z10=(x6+ thick/2, y9);
 
-    z0{dir 250}
-     .. {dir 300}z1.. controls z4 and z5 .. z2
+    r_control_t := arctime serif_height of subpath(length(s) - 1, length(s) - 2) of s ;
+    z9= point (length(s) - 1 - r_control_t ) of s;
+    z10=z9;
+
+    z0{dir 210}
+     .. {dir 330}z1.. controls z4 and z5 .. z2
      -- subpath(p+1, length(s)-2) of s
-     -- z6 .. controls z9 and z10.. z7
-     --z8{dir 183} .. {dir 177}cycle
+     -- z6 .. controls z9 and z10.. z7{dir 30}
+     ..{dir 150}z8{dir 183} .. {dir 177}cycle
 
 enddef;
+
+vardef bottom_right_slanted_serif(expr stroke, t ) =
+    clearxy;
+    numeric t_on_left_side, t_on_right_side;
+    numeric r_control_t;
+
+    z0 = point ( t  - arctime serif_width of subpath(t, t-1) of stroke ) of stroke;
+    z1 = (x0 - serif_width/2, 3/4serif_height);
+    z2 = (x1, 0);
+    z3 = (xpart point t+1 of stroke + serif_width/2, y2);
+    z4 = (x3, y1);
+
+    % control points
+    t_on_left_side =  t - arctime 1.25serif_height of subpath(t, t-1)  of stroke;
+    z6 = point t_on_left_side of stroke;
+    z7 = z6;
+
+    t_on_right_slant := arctime serif_width of subpath(t+1, t+2)  of stroke;
+    z5 = point (t +1 + t_on_right_slant ) of stroke;
+    r_control_t = arctime 1.25serif_height of subpath(t+1, t+2) of stroke ;
+    z8 = point t + 1+ r_control_t of stroke;
+    z9 = z8;
+
+    subpath(0, t-1) of stroke -- z0..controls z6 and z7 ..z1{dir 210}
+        .. {dir 330}z2{dir 3}..{dir -3}z3{dir 30}
+        .. {dir 120}z4..controls z8 and z9
+        .. z5
+        -- subpath(t+2, length(stroke)) of stroke
+        -- cycle
+
+enddef;
+
 
 vardef circle(expr radius) =
     clearxy;
