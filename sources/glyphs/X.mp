@@ -52,8 +52,11 @@ vardef bottom_right_slanted_serif(expr stroke, t ) =
 
 enddef;
 
+
+
 strokes[0] := top_left_slanted_serif(strokes[0], 0);
 strokes[0] := bottom_right_slanted_serif(strokes[0], 3);
 strokes[1] := top_right_slanted_serif(strokes[1], 0);
+strokes[1] := bottom_left_slanted_serif(strokes[1], 3);
 
 endglyph;

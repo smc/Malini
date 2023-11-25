@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
 
-z0=(0, 0);
-z1=(x0 + Xw/2.5, X);
+z0=(x1 + Xw/2.5, X);
+z1=(0, 0);
 paths[p] = z0--z1 ;
 pen_stroke(
     nib(thin_nib scaled 1.25)(0,1)
@@ -11,7 +11,7 @@ pen_stroke(
 % Right slant
 p:=p+1;
 clearxy;
-z0=(xpart(point infinity of paths[p-1]), X)  ;
+z0=(xpart(point 0 of paths[p-1]), X)  ;
 z1=(x0+Xw/2.5, 0);
 paths[p] = z0--z1 ;
 
@@ -21,15 +21,14 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Precisely position the corner of left slant on right slant
-strokes[p-1] := point 0 of strokes[p-1] --
-    point 1 of strokes[p-1] --
-    point 0 of strokes[p] --
-    point 3 of strokes[p-1] -- cycle;
+strokes[p-1] := point 0 of strokes[p]
+        -- subpath(1, length(strokes[p])-1) of strokes[p-1]
+        -- cycle;
 
 % Cross bar
 clearxy;
 p:=p+1;
-z0 = point 0.4 of paths[p-2] ;
+z0 = point 0.6 of paths[p-2] ;
 z1 = (xpart point 0.65 of paths[p-1], y0) ;
 paths[p]:= z0--z1 ;
 pen_stroke(
@@ -39,46 +38,10 @@ pen_stroke(
 
 
 % Left leg serif
-clearxy;
-z0 = point 2.75 of strokes[0];
-z1 = (x0 - serif_width, 3/4serif_height);
-z2 = (x1, 0);
-z3 = (xpart point 0 of strokes[0] + serif_width, y2);
-z4 = (x3, y1);
-
-% control points
-z5=point 2.95 of strokes[0];
-z6=(x5, y5);
-
-z7 = point 0.05 of strokes[0];
-z8 = (x7, y5);
-
-strokes[0] := z0..controls z5 and z6 ..z1{dir 250}
-    .. {dir 300}z2{dir 3}..{dir -3}z3{dir 70}
-    .. {dir 110}z4..controls z7 and z8
-    .. subpath(0.25, 2.75) of strokes[0]
-    --cycle;
+strokes[0] := bottom_left_slanted_serif(strokes[0], 1);
 
 % Right leg serif
-clearxy;
-z0 = point 0.75 of strokes[1];
-z1 = (x0 - 1/4serif_width, 3/4serif_height);
-z2 = (x1, 0);
-z3 = (xpart point 2 of strokes[1] + serif_width/2, y2);
-z4 = (x3, y1);
-
-% control points
-z5= point 0.95 of strokes[1];
-z6=(x5, y5);
-
-z7 = point 2.05 of strokes[1];
-z8 = (x7, y7);
-
-strokes[1] := z0..controls z5 and z6 ..z1{dir 250}
-    .. {dir 300}z2{dir 3}..{dir -3}z3{dir 70}
-    .. {dir 110}z4..controls z7 and z8
-    .. subpath(2.25, 4) of strokes[1]
-    -- cycle;
+strokes[1] := bottom_right_slanted_serif(strokes[1], 1);
 
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;
