@@ -455,6 +455,41 @@ vardef bottom_right_slanted_serif(expr stroke, t ) =
 enddef;
 
 
+vardef bottom_left_slanted_serif(expr stroke, t ) =
+    clearxy;
+    numeric t_on_left_side, t_on_right_side;
+    numeric r_control_t;
+
+    z0 = point ( t  - arctime serif_width of subpath(t, t-1) of stroke ) of stroke;
+    z1 = (x0 - serif_width, 3/4serif_height);
+    z2 = (x1, 0);
+    z3 = (xpart point t+1 of stroke + serif_width, y2);
+    z4 = (x3, y1);
+
+    % control points
+    t_on_right_side =  arctime 1.25serif_height of subpath(t, t-1)  of stroke;
+    z6 = point t - t_on_right_side of stroke;
+    z7 = z6;
+
+    t_on_left_side := arctime serif_width of subpath(t+1, t+2) of stroke;
+    z5 = point (t +1 + t_on_left_side ) of stroke;
+    r_control_t = arctime 1.25serif_height of subpath(t+1, t+2) of stroke ;
+    z8 = point t + 1+ r_control_t of stroke;
+    z9 = z8;
+
+    subpath(0, t-1) of stroke -- z0
+        .. controls z6 and z7
+        .. z1{dir 210}
+        .. {dir 330}z2{dir 3}
+        .. {dir -3}z3{dir 30}
+        .. {dir 150}z4
+        .. controls z8 and z9
+        .. z5
+        -- subpath(t+2, length(stroke)) of stroke
+        -- cycle
+
+enddef;
+
 vardef circle(expr radius) =
     clearxy;
     z0 = (0, radius/2);
