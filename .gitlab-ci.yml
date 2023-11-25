@@ -59,7 +59,7 @@ upload:
   stage: upload
   image: curlimages/curl:latest
   dependencies:
-    - build-tag
+    - build
   rules:
     - if: $CI_COMMIT_TAG
   script:
