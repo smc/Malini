@@ -198,14 +198,19 @@ install: $(FONTSDIR)/Malini/otf-variable
 	@fc-cache -fr
 
 release:
+.PHONY: release
+
+release:
+	@$(eval VERSION=$(shell git describe --tags `git rev-list --tags --max-count=1`))
+	@echo "Creating release for version $(VERSION)"
 	# Tar files - Malini
-	tar czvf $(FONTSDIR)/Malini.tar.gz *.conf OFL.txt README.md $(FONTSDIR)/Malini
-	sha256sum $(FONTSDIR)/Malini.tar.gz > $(FONTSDIR)/Malini.tar.gz.sha256
-	md5sum $(FONTSDIR)/Malini.tar.gz > $(FONTSDIR)/Malini.tar.gz.md5
+	tar czvf $(FONTSDIR)/Malini-$(VERSION).tar.gz *.conf OFL.txt README.md $(FONTSDIR)/Malini
+	sha256sum $(FONTSDIR)/Malini-$(VERSION).tar.gz > $(FONTSDIR)/Malini-$(VERSION).tar.gz.sha256
+	md5sum $(FONTSDIR)/Malini-$(VERSION).tar.gz > $(FONTSDIR)/Malini-$(VERSION).tar.gz.md5
 	# Zip files
-	zip -r $(FONTSDIR)/Malini.zip README.md OFL.txt $(FONTSDIR)/Malini
-	sha256sum $(FONTSDIR)/Malini.zip > $(FONTSDIR)/Malini.zip.sha256
-	md5sum $(FONTSDIR)/Malini.zip > $(FONTSDIR)/Malini.zip.md5
+	zip -r $(FONTSDIR)/Malini-$(VERSION).zip README.md OFL.txt $(FONTSDIR)/Malini
+	sha256sum $(FONTSDIR)/Malini-$(VERSION).zip > $(FONTSDIR)/Malini-$(VERSION).zip.sha256
+	md5sum $(FONTSDIR)/Malini-$(VERSION).zip > $(FONTSDIR)/Malini-$(VERSION).zip.md5
 
 init:
 	pip-sync
