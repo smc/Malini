@@ -32,7 +32,8 @@
     align-items: center;
     font-family: var(--font-sans);
     font-weight: var(--font-weight-7);
-  }
+    background-color: var(--surface-1);
+ }
 
   .text-samples {
     display: grid;

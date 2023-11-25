@@ -80,6 +80,7 @@ upload:
 release:
   stage: release
   image: registry.gitlab.com/gitlab-org/release-cli:latest
+  needs: ["upload"]
   only:
     - tags
   before_script:
@@ -107,6 +108,7 @@ release:
 
 trigger_job:
   stage: release
+  needs: ["release"]
   only:
     - tags
   trigger:
