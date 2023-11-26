@@ -14,14 +14,14 @@ z10 = (x9 - mw/8, m);
 paths[0] = z0{up}..z1{right}..z2 ..z3..z4{up}..z5{right}..z6{down}..z7..z8..z9{up}..z10;
 
 pen_stroke(
-   nib(middle_up_nib scaled 1.1)(0)
+   nib(middle_down_nib scaled 0.9)(0)
    nib(top_nib)(1)
    nib(middle_down_nib)(2)
    nib(down_nib)(3)
    nib(middle_up_nib)(4)
    nib(top_nib scaled 1.2)(5)
-   nib(middle_up_nib scaled 1.2)(6)
-   nib(middle_up_nib scaled 1.2)(7)
+   nib(middle_down_nib scaled 0.9)(6)
+   nib(middle_down_nib)(7)
    nib(down_nib)(8)
    nib(middle_up_nib rotated 20)(9)
    nib(end_nib rotated terminalangle 10 of paths[0])(10)
