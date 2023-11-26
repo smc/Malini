@@ -1,72 +1,91 @@
-
 .animate-weight {
-    animation: wghtvars infinite linear both;
-    animation-duration: 12s;
-    animation-timing-function: ease;
-  }
+  animation: wghtvars infinite linear both;
+  animation-duration: 12s;
+  animation-timing-function: ease;
+}
 
-  .animate-opsz {
-    animation: opszvars infinite linear both;
-    animation-duration: 6s;
-    animation-timing-function: ease;
-  }
+.animate-opsz {
+  animation: opszvars infinite linear both;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+}
 
-  .animate-slant {
-    animation: slntvars infinite linear both;
-    animation-duration: 6s;
-    animation-timing-function: ease;
-  }
+.animate-slant {
+  animation: slntvars infinite linear both;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+}
 
-  .animate-width {
-    animation: wdthvars infinite linear both;
-    animation-duration: 12s;
-    animation-timing-function: ease;
-  }
+.animate-width {
+  animation: wdthvars infinite linear both;
+  animation-duration: 12s;
+  animation-timing-function: ease;
+}
 
-  @keyframes wghtvars {
-    0% {
-      font-variation-settings: "wght" 100;
-    }
-    50% {
-      font-variation-settings: "wght" 900;
-    }
-    100% {
-      font-variation-settings: "wght" 100;
-    }
-  }
+.animate-weight-width {
+  animation: wghtwdthvars infinite ease-in both;
+  animation-direction: alternate;
+  animation-duration: 12s;
+  animation-timing-function: ease;
+}
 
-  @keyframes slntvars {
-    0% {
-      font-variation-settings: "slnt" -15;
-    }
-    50% {
-      font-variation-settings: "slnt" 0;
-    }
-    100% {
-      font-variation-settings: "slnt" -15;
-    }
+@keyframes wghtwdthvars {
+  0% {
+    font-variation-settings:"wght" 100,"wdth" 75,"slnt" 0
   }
+  50% {
+    font-variation-settings:"wght" 400,"wdth" 100,"slnt" 0
+  }
+  100% {
+    font-variation-settings:"wght" 900 ,"wdth" 125,"slnt" 0
+  }
+}
 
-  @keyframes wdthvars {
-    0% {
-      font-variation-settings: "wdth" 75;
-    }
-    50% {
-      font-variation-settings: "wdth" 125;
-    }
-    100% {
-      font-variation-settings: "wdth" 75;
-    }
-  }
 
-  @keyframes opszvars {
-    0% {
-      font-variation-settings: "opsz" 10;
-    }
-    50% {
-      font-variation-settings: "opsz" 96;
-    }
-    100% {
-      font-variation-settings: "opsz" 10;
-    }
+@keyframes wghtvars {
+  0% {
+    font-variation-settings: "wght" 100;
   }
+  50% {
+    font-variation-settings: "wght" 900;
+  }
+  100% {
+    font-variation-settings: "wght" 100;
+  }
+}
+
+@keyframes slntvars {
+  0% {
+    font-variation-settings: "slnt" -15;
+  }
+  50% {
+    font-variation-settings: "slnt" 0;
+  }
+  100% {
+    font-variation-settings: "slnt" -15;
+  }
+}
+
+@keyframes wdthvars {
+  0% {
+    font-variation-settings: "wdth" 75;
+  }
+  50% {
+    font-variation-settings: "wdth" 125;
+  }
+  100% {
+    font-variation-settings: "wdth" 75;
+  }
+}
+
+@keyframes opszvars {
+  0% {
+    font-variation-settings: "opsz" 10;
+  }
+  50% {
+    font-variation-settings: "opsz" 96;
+  }
+  100% {
+    font-variation-settings: "opsz" 10;
+  }
+}
