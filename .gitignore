@@ -4,3 +4,5 @@ proofs
 .venv
 .vscode
 __pycache__
+*.log
+*.aux
