@@ -7,8 +7,8 @@ z1=((x0+x2)/2, s-overshoot);
 z2=(x0+0.7sw, 0.6s);
 z3=(x2, s/4);
 z4=((x3 + x5)/2, undershoot);
-z5=(x3 + sw*0.3, 0.15s);
-paths[p] := z0{dir 80}.. z1{right}..z2{down}..{down}z3..z4{right}.. {up}z5 ;
+z5=(x3 + sw*0.3, 0.125s);
+paths[p] := z0{dir 80}.. z1{right}..z2{down}..{down}z3..z4{right}.. {dir 60}z5 ;
 
 pen_stroke(
     cut(thick_nib scaled 1 , -20 )(0)
@@ -41,6 +41,6 @@ pen_stroke(
 
 
 lbearing:=sw/3*0.2;
-rbearing:=sw/3*0.1;
+rbearing:=sw/3*0.05;
 anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
 endglyph;
