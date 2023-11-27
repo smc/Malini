@@ -6,6 +6,44 @@ const setTheme = theme => {
   root.setAttribute('color-scheme', theme)
   localStorage.setItem(storageKey, theme)
 }
+const fittext = (elements, options) => {
+  const { baseline = '50%', paddingY = 0, doc = document } = options || {};
+  const bounding = typeof doc.createElementNS('http://www.w3.org/2000/svg', 'svg').getBoundingClientRect === 'function';
+
+  for (let i = 0; i < elements.length; i++) {
+    const content = elements[i].textContent;
+    const svg = doc.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const text = doc.createElementNS('http://www.w3.org/2000/svg', 'text');
+    let rect;
+
+    text.textContent = content;
+    text.setAttribute('x', '50%');
+    text.setAttribute('y', baseline);
+    text.setAttribute('font-family', 'inherit');
+    text.setAttribute('font-size', '1rem');
+    text.setAttribute('font-weight', 'inherit');
+    text.setAttribute('style', 'text-anchor:middle;dominant-baseline:middle');
+
+    for (let j = 0; j < elements[i].attributes.length; j++) {
+      svg.setAttribute(elements[i].attributes[j].name, elements[i].attributes[j].value);
+    }
+
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('style', 'max-height:100%');
+    svg.setAttribute('fill', 'currentcolor');
+    svg.setAttribute('overflow', 'visible');
+
+    svg.appendChild(text);
+    elements[i].parentNode.replaceChild(svg, elements[i]);
+
+    rect = bounding ? text.getBoundingClientRect() : {};
+    rect.width = rect.width || text.offsetWidth || text.getComputedTextLength();
+    rect.height = rect.height || text.offsetHeight || 24;
+
+    svg.setAttribute('viewBox', `0 0 ${Math.round(rect.width)} ${Math.round(rect.height) + paddingY}`);
+  }
+};
+
 
 const init = () => {
   // now this script can find and listen for clicks on the control
@@ -70,6 +108,9 @@ const init = () => {
   });
 
 
+  const nodes = document.querySelectorAll('[data-fit-text]');
+  fittext(nodes);
 }
+
 
 window.onload = init;
