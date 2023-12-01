@@ -35,7 +35,7 @@ input ./glyphs/include/റ;
 paths[p] := paths[p] shifted (xshift, yshift ) xscaled 0.75 yscaled 0.7;
 strokes[p] := strokes[p] shifted (xshift, yshift ) xscaled 0.75 yscaled 0.7;
 
-rbearing:=0;
+rbearing:=rbearing/2;
 
 anchor( "vc", (xpart(point 4 of paths[0]),0));
 anchor( "right", point 4 of paths[2]);
