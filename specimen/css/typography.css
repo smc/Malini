@@ -183,7 +183,7 @@ h6 {
 }
 
 .text-48 {
-  font-size: 48pt;
+  font-size: var(--font-size-fluid-2);
   line-height: 1.33;
 }
 
@@ -193,7 +193,12 @@ h6 {
 }
 
 .text-72 {
-  font-size: 72pt;
+  font-size: var(--font-size-fluid-3);
+  line-height: 1.33;
+}
+
+.text-xl {
+  font-size: var(--font-size-fluid-3);
   line-height: 1.33;
 }
 
@@ -436,3 +441,10 @@ svg {
   font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0, "opsz" 96;
 }
 
+.drop-cap::first-letter,
+.init-cap {
+  float: left;
+  padding: 4px;
+  line-height: 1;
+  font-size: var(--font-size-fluid-3);
+}

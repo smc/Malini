@@ -200,12 +200,10 @@
   }
 
   code {
-    border: 1px solid var(--orange);
-    color: var(--orange-100);
-    background-color: var(--orange);
-    border-radius: 8px;
-    padding: 0 2px;
-    margin: 0 4px;
+    background: var(--surface-2);
+    border: var(--border-size-1) solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-2);
   }
 
   .card {
