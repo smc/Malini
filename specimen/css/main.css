@@ -66,7 +66,7 @@
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: var(--surface-1);
-    border-bottom: 1px solid var(--border-color);
+    /* border-bottom: 1px solid var(--border-color); */
     box-shadow: var(--shadow-2);
     z-index: var(--layer-2);
   }
@@ -211,32 +211,29 @@
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: var(--surface-2);
     border-radius: 12px;
-    border: var(--border-size-1) solid var(--border-color);
+    /* border: var(--border-size-1) solid var(--border-color); */
     box-shadow: var(--shadow-3);
     padding: var(--size-fluid-2);
   }
 
   footer {
-    background-color: var(--lime-0);
-    color: var(--lime-12);
+    border-top: var(--border-size-1) solid var(--border-color);
     padding: var(--size-4);
   }
 
-  footer .meta-desc,
-  footer .meta-title {
-    color: var(--lime-12);
-  }
+
 
   html {
     /* light */
-    --brand-light: var(--blue-6);
-    --text-1-light: var(--gray-8);
-    --surface-1-light: var(--gray-0);
-    --surface-2-light: var(--gray-2);
+    --brand-light: #4B32C3;
+    --text-1-light: #667085;
+    --surface-1-light: #F2F4F7;
+    --surface-2-light: #fcfcfd;
     --body-background-color-light: var(--gray-0);
     --body-background-image-light: url("../images/bg.svg");
-    --text-color-light: var(--gray-12);
+    --text-color-light: #667085;
     --meta-text-color-light: var(--orange-7);
+    --border-color-light: #E4E7EC;
 
     /* dark */
     --brand-dark: var(--blue-6);
@@ -245,7 +242,7 @@
     --surface-2-dark: #1d2939;
     --body-background-image-dark: url("../images/bg-dark.svg");
     --text-color-dark: var(--gray-0);
-    --border-color: #475467;
+    --border-color-dark: #475467;
     --meta-text-color-dark: var(--blue-4);
   }
 
@@ -256,9 +253,9 @@
     --text-1-light: var(--text-1-light);
     --surface-1: var(--surface-1-light);
     --surface-2: var(--surface-2-light);
-    --body-background-color: var(--body-background-color-light);
+
     --meta-text-color: var(--meta-text-color-light);
-    --border-color: var(--gray-3);
+    --border-color: var(--border-color-light);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -271,7 +268,7 @@
       --body-background-image: var(--body-background-image-dark);
 
       --meta-text-color: var(--meta-text-color-dark);
-      --border-color: #475467;
+      --border-color: var(--border-color-dark);
     }
   }
 
