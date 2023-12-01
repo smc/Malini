@@ -9,9 +9,9 @@ z5 = (x4 + mw/3, m-overshoot);
 z6 = (x5 + mw/2, 0.4m);
 z7 = (x6 - mw/4, undershoot); % bottom.
 z8 = (x7 - mw/4, (y7+y10)/3);
-z9 = ((x6+x7)/2, 0.85(y7 + y10));
-z10 = (x9-mw/2, 0.9ascent);
-paths[0] = z0..z1..z2..z3 --- z4..z5.. z6.. z7.. z8..z9{up}..{dir 225}z10;
+z9 = ((x6+x7)/2, 0.88(y7 + y10));
+z10 = (x9-mw/2, 0.85ascent);
+paths[0] = z0..z1..z2..z3 --- z4..z5.. z6.. z7.. z8..z9{dir 80}..{dir 260}z10;
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)

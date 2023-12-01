@@ -22,9 +22,9 @@ z1= (x0, 0.6m);
 z1 = (x0, m*0.6);
 z2 = ((x1 + x3)/2, m-overshoot);
 z3 = (x1 + 0.6mw, (y2+y4)/1.75);
-z4 = (x3 - 0.8mw, 0);
+z4 = (x3 - 0.8mw, m/10);
 
-paths[p] = z0 --- z1 ..z2{right}..z3{down}..{dir 175}z4;
+paths[p] = z0 --- z1 ..z2{right}..z3{down}..{dir 150}z4;
 
 pen_stroke(
     cut(middle_up_nib, 0)(0)
