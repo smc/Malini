@@ -207,11 +207,11 @@ variablefonts:
           values:
             - value: 10
               name: "10pt"
-            - value: 20
-              name: "20pt"
+            - value: 12
+              name: "12pt"
               flags: 2
-            - value: 96
-              name: "96pt"
+            - value: 48
+              name: "48pt"
         - tag: slnt
           name: Slant
           values:

@@ -25,7 +25,7 @@ Malini has the following axes:
 | Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 | Slant     | `slnt` | -12 to 0       | 0       | Upright (0°) to Slanted (about 12°)                                                |
 | Width     | `wdth` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
-| Optical Size     | `opsz` | 10 to 96  | 20     | Follows the font size to optimize the contrast and spacing |
+| Optical Size     | `opsz` | 10 to 48  | 12     | Follows the font size to optimize the contrast and spacing |
 
 ### Axis Definitions
 
@@ -40,7 +40,7 @@ Malini has the following axes:
 * **Width** `wdth`: 75 to 125%. The percentage of letter width. 75% is 'Condensed', where the letters are horizontally condensed to 75% of original width. 125% is 'Expanded' where the letters are horizontally stretched to 125% of original width.
 
     Recommended use: The condense or expand can be used to achieve precise typographic layout in a predefined rendering space. The content can be adjusted in this way to "fit" the space. Be aware of the legibility degradation when doing this.
-* **Optical size** `opsz`: 10 to 96. The contrast, spacing are adjusted to the current font size. In smaller sizes, glyphs will have less contrast and loose text. In larger font sizes, glyphs will have high contrast and tight spacing.
+* **Optical size** `opsz`: 10 to 48. The contrast, spacing are adjusted to the current font size. In smaller sizes, glyphs will have less contrast and loose text. In larger font sizes, glyphs will have high contrast and tight spacing.
 
     Recommended use: Browsers will automatically choose the the correct opsz value as per font size. To disable that `font-optical-sizing: none` can be used. It is also possible to manually set an `opsz` value to the `font-variation-settings`
 
