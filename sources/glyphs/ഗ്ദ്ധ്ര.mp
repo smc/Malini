@@ -5,11 +5,10 @@ input ./glyphs/include/ഗ;
 paths[p] := paths[p] shifted (mw/3,0);
 paths[p] := subpath (0, 5) of paths[p];
 clearxy;
-z6 = (xpart point infinity of paths[p] + mw/2.5, (m-overshoot+y7)/2);
-z7 = (x6 - mw/3, (y6+y8)/2);
-z8 = (x7 + mw/2.5, (y7+y9)/2);
-z9 = (x8 - mw/2, 2undershoot);
-paths[p] := paths[p].. z6{down}..{left}z7{right}..z8{down}..{dir 150}z9;
+z6 = (xpart point infinity of paths[p] + mw/3, (m-overshoot+y7)/2);
+z7 = (x6 - mw/3, m/1.75);
+
+paths[p] := paths[p].. z6{down}..{left}z7 ;
 paths[p] := subpath(0, 8.5) of paths[p];
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
@@ -18,23 +17,25 @@ pen_stroke(
    nib(middle_down_nib)(3, 4, 5)
    nib(top_nib)(5)
    nib(end_nib rotated 90)(7)
-   nib(middle_down_nib)(8)
-   nib(end_nib rotated terminalangle infinity of paths[p])(9)
+
 )(paths[p])(strokes[p]);
+
 
 % Connector
 clearxy;
 p:=p+1;
-z0= (xpart point 7 of paths[p-1], ypart point 2 of paths[p-1]);
-z1=(x0 + .75mw, 0.4m);
-z2=(x1, m);
-paths[1] = z0{dir -5}..{up}z1---z2;
+z0= point infinity of paths[p-1];
+z1=(x0 + mw/3, (y0 + y2)/2);
+z2=(x1 - mw/4, (y1 + y3)/2);
+z3=(x2 + mw/4, overshoot);
+z4=(x3 + mw/2.5, m/3);
+paths[p] = z0{right}.. z1.. z2 ..{right}z3..z4;
 pen_stroke(
-    cut(down_nib, 90)(0)
-    nib(thin_vertical_nib)(1)
-    nib(thin_vertical_nib)(2)
+    nib(end_nib rotated 90)(0)
+    nib(middle_down_nib rotated -30)(1,2)
+    nib(down_nib rotated 20)(3)
+    nib(thin_vertical_nib)(4)
 )(paths[p])(strokes[p]);
-
 
 clearxy;
 p:=p+1;
