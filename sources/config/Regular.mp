@@ -1,2 +1,2 @@
-thick := 0.92u;
+thick := 0.8u;
 contrast := 0.5;
