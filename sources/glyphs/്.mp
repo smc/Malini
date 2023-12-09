@@ -16,6 +16,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 absolute_position := 1;
-rbearing:= -x1 - thick;
+lbearing:= 0;
+rbearing:= (xpart point 1 of strokes[p]) - (xpart point 2 of strokes[p]);
 
 endglyph;
