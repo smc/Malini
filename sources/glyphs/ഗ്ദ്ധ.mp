@@ -3,7 +3,7 @@ beginglyph;
 
 input ./glyphs/include/ഗ;
 
-paths[p] := subpath (0, 5) of paths[p];
+paths[p] := subpath (0, 4) of paths[p];
 clearxy;
 z6 = (xpart point infinity of paths[p] + mw/3, (m-overshoot+y7)/2);
 z7 = (x6 - mw/3, m/1.75);
@@ -14,8 +14,8 @@ pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_up_nib scaled 1.2 rotated 30)(1)
    nib(down_nib rotated -20)(2)
-   nib(middle_down_nib)(3, 4, 5)
-   nib(top_nib)(5)
+   nib(middle_down_nib)(3, 5)
+   nib(top_nib)(4)
    nib(end_nib rotated 90)(7)
 )(paths[p])(strokes[p]);
 

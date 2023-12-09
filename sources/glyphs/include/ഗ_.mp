@@ -1,22 +1,22 @@
 
 clearxy;
-z0 = (x1 + mw/3.5, m);
-z1 = (0, y0 - m/2);
-z2 = ((x1 + x3)/2, undershoot);
-z3 = (x1 + 0.66mw, 0.4m);
-z4 = (x3, y5-0.4m);
-z5 = ((x4 + x6)/2, m-overshoot);
-z6 = (x3 + 0.7mw, 0.6m);
-z7 = (x6, 0);
-paths[p] = z0..z1{down}..z2..z3..z4..z5.. z6---z7;
-
+save dt;
+z0 = (mw/3 + mw/3.5, m);
+z1 = (2/3mw, undershoot);
+z2 = (x1 + mw/3.5, (y1+  y3)/2);
+z3 = (x2+mw/3.5, m-overshoot);
+z4 = (x3+mw/3, 0.6m);
+z5 = (x4, 0);
+paths[p] = z0{dir 215}..z1{right}..z2{dir 95}..z3{right}.. z4--z5;
+dt = directiontime dir 270 of subpath( 0, 1) of paths[p];
+paths[p] := insert_nodes(paths[p])(dt);
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_up_nib scaled 1.2 rotated 30)(1)
    nib(down_nib rotated -20)(2)
-   nib(middle_down_nib)(3,4)
-   nib(top_nib)(5)
+   nib(middle_down_nib)(3)
+   nib(top_nib)(4)
+   nib(thick_vertical_nib)(5)
    nib(thick_vertical_nib)(6)
-   nib(thick_vertical_nib)(7)
 )(paths[p])(strokes[p]);
