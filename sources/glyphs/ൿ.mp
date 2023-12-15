@@ -12,12 +12,13 @@ z7=(x6 + mw/3, y6 + 0.3m);
 z8=(x2 + mw/3, y7);
 z9=(x8 + mw/2.5, y6);
 z10=((x9+x11)/2, y5);
-z11=(x2 + mw/4, m/2);
-z12=(x11 + mw/3, 0.88(y10 + y13));
-z13=(x12-mw/2, 0.85ascent);
+z11=(x2 + mw/4, y10 + m/3);
+z12=(x11 + mw/4, y13 - m/4);
+z13=(x12 - mw/4, m + m/2);
+z14=(x13 - mw/4, y13 - m/6);
 
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..z11..z12{dir 80}..{dir 260}z13;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..{up}z11..{up}z12..{left}z13..z14;
 
 pen_stroke(
    nib(middle_up_nib)(0, 4)
@@ -32,7 +33,8 @@ pen_stroke(
    nib(down_nib)(10)
    nib(middle_up_nib)(11)
    nib(middle_down_nib)(12)
-   nib(end_nib scaled 2/3 rotated terminalangle infinity of paths[0])(infinity)
+   nib(top_nib)(13)
+   nib(end_nib scaled 2/3 rotated terminalangle infinity of paths[p])(infinity)
 
 )(paths[0])(strokes[0]);
 
