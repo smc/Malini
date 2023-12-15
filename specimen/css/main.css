@@ -43,9 +43,10 @@
     color: var(--text-1);
     width: var(--page-width);
     margin: 0;
-    /* background-image: var(--body-background-image); */
+    background-image: var(--body-background-image);
     background-color: var(--surface-1);
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     accent-color: var(--brand);
   }
 
@@ -230,7 +231,7 @@
     --surface-1-light: #F2F4F7;
     --surface-2-light: #fcfcfd;
     --body-background-color-light: var(--gray-0);
-    --body-background-image-light: url("../images/bg.svg");
+    --body-background-image-light: url("../images/bg-light.png");
     --text-color-light: #667085;
     --meta-text-color-light: var(--orange-7);
     --border-color-light: #E4E7EC;
