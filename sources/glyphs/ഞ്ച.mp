@@ -36,7 +36,7 @@ z1=(x0 + 1.4mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart point 5 of paths[p-1], thick*sind(45)/2);
+paths[p]:= paths[p] shifted ( xpart point 5 of paths[p-1], thick*thin_horizontal_nib_scale/2);
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

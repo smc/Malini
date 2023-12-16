@@ -33,7 +33,7 @@ z1=(x0 + 0.7mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[2] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*sind(45)/2) );
+paths[p]:= paths[2] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*thin_horizontal_nib_scale/2) );
 
 pen_stroke(
     nib(thin_horizontal_nib)(0)

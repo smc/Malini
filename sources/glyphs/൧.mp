@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 z1=(thick/2, - m/3);
-z2=(x1 + mw/4, thick*sind(45)/2);
+z2=(x1 + mw/4, thick*thin_horizontal_nib_scale/2);
 z3=(x2 + 3/4mw, y2);
 
 paths[0] = z1{up}..z2---z3 ;

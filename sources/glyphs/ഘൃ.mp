@@ -10,7 +10,7 @@ z1=(x0 + 1.25mw, y0);
 z2=(x1, m);
 
 paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( thick/4, thick*sind(45)/2) );
+paths[p]:= paths[p] shifted ( point infinity of paths[p-1] + ( thick/4, thick*thin_horizontal_nib_scale/2) );
 
 pen_stroke(
     cut(thin_horizontal_nib, 45)(0)
@@ -19,7 +19,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=point infinity of paths[p-1] - (0, thick*sind(45)/2);
+z0=point infinity of paths[p-1] - (0, thick*thin_horizontal_nib_scale/2);
 z1=(x0, y0+m/6);
 z2=((x1+x3)/2, m-overshoot);
 z3=(x0 - mw*0.8, y1);
@@ -36,7 +36,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(xpart(point infinity of paths[p-1]), thick*sind(45)/2);
+z0=(xpart(point infinity of paths[p-1]), thick*thin_horizontal_nib_scale/2);
 z1=(x0 + mw*1.2, y0);
 paths[p]:= z0--z1;
 pen_stroke(

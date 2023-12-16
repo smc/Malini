@@ -28,7 +28,7 @@ pen_stroke(
 % Bottom bar
 clearxy;
 p:=p+1;
-z0=(xpart point 0 of paths[p-1] -thin*1.1/2, thick*sind(45)/2);
+z0=(xpart point 0 of paths[p-1] -thin*1.1/2, thick*thin_horizontal_nib_scale/2);
 z1=(xpart(point 4 of paths[p-1])+thick*1.05/2, y0);
 paths[p] = z0--z1;
 pen_stroke(

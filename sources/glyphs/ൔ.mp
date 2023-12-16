@@ -5,7 +5,7 @@ z0= (0, 0);
 z1= (x0, m/2);
 z2= (x1+ mw/2, m-overshoot);
 z3= (x2+ mw/4 , y1);
-z4= (x0, thick*sind(45)/2);
+z4= (x0, thick*thin_horizontal_nib_scale/2);
 
 paths[p] = z0---z1..{right}z2..z3{dir -110}..{dir 200}z4;
 pen_stroke(
@@ -18,7 +18,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point 0 of paths[p-1] + (0, thick*sind(45)/2);
+z0=point 0 of paths[p-1] + (0, thick*thin_horizontal_nib_scale/2);
 z1=(x0+ mw, y0);
 paths[p] = z0--z1;
 pen_stroke(

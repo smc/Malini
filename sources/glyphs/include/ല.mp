@@ -11,7 +11,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*sind(45)/2);
+z0=(xpart(point 1 of paths[0]), ypart(point 1 of paths[0]) - thick*thin_horizontal_nib_scale/2);
 z1=(x0, 0.6m);
 z2=((x0+x3)/2, m-overshoot);
 z3=(0, y1);
@@ -39,7 +39,7 @@ strokes[p-1]:=point 0 of strokes[p-1]
 
 clearxy;
 p:=p+1;
-z0=(0, thick*sind(45)/2);
+z0=(0, thick*thin_horizontal_nib_scale/2);
 z1=(x0 + mw*1.2, y0);
 paths[p]:= z0--z1;
 pen_stroke(

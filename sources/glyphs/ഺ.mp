@@ -9,7 +9,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = (0, thick*sind(45)/2);
+z0 = (0, thick*thin_horizontal_nib_scale/2);
 z1=(x0+.75Xw, y0);
 
 paths[1] = z0--z1 ;

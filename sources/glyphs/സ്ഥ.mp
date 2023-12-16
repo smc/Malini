@@ -5,7 +5,7 @@ input ./glyphs/include/സ;
 
 p:=p+1;
 clearxy;
-z0=(0, thick*sind(45)/2);
+z0=(0, thick*thin_horizontal_nib_scale/2);
 z1=(mw*1.4, y0);
 paths[p]:= z0--z1 ;
 paths[p]:=paths[p] shifted (xpart point 5.4 of paths[p-1]  +  thick*0.5, 0) ;

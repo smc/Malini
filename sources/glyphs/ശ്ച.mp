@@ -11,7 +11,7 @@ z7 = (x6 - mw/4, m/4);
 z8 = (x7 - mw/4, (y7+y9)/2.2);
 z9 = (x8 + mw/2.25, 0.85m);
 z10 = (x9 + mw/2.5, (y9 + y11)/1.75);
-z11 = (x10 - mw/2, thick*sind(45)/2);
+z11 = (x10 - mw/2, thick*thin_horizontal_nib_scale/2);
 
 paths[p] = z0{dir 215}..z1..z2..z3 --- z4..z5.. z6.. z7..z8{up}..z9{right}..z10{down}..{dir 190}z11;
 
@@ -33,7 +33,7 @@ clearxy;
 z0=(0, 0);
 z1=(x0 +  1.25mw, y0);
 paths[p] := z0--z1;
-paths[p] := paths[p] shifted (xpart point 8 of paths[p-1], thick*sind(45)/2);
+paths[p] := paths[p] shifted (xpart point 8 of paths[p-1], thick*thin_horizontal_nib_scale/2);
 pen_stroke(
     nib(thin_horizontal_nib)(0,1)
 )(paths[p])(strokes[p]);

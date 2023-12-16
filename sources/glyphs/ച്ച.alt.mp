@@ -21,7 +21,7 @@ z0 = point 4 of paths[0] + (thick*0.5/2, 0);
 z1 = (x0, m*0.6);
 z2 = ((x1 + x3)/2, m-2overshoot);
 z3 = (x1 + 0.66mw, (y2+y4)/1.75);
-z4 = (x3 - 0.8mw, thick*sind(45)/2);
+z4 = (x3 - 0.8mw, thick*thin_horizontal_nib_scale/2);
 
 paths[p] = z0 --- z1 ..z2{right}..z3{down}..{dir 180}z4;
 
@@ -35,7 +35,7 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, thick*sind(45)/2);
+z0=(0, thick*thin_horizontal_nib_scale/2);
 z1=(x0 + 1.75mw, y0);
 paths[p] := z0--z1;
 

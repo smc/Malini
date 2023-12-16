@@ -45,11 +45,15 @@ if contrast = 1:
     end_nib_scale = 1;
     top_nib_scale = 1;
     down_nib_scale = 1;
+    horizontal_nib_scale = 1;
+    thin_horizontal_nib_scale = 1;
 else:
     middle_up_nib_scale = 1.2;
     end_nib_scale = 1.2;
     top_nib_scale = 1.5;
     down_nib_scale = 1.5;
+    horizontal_nib_scale = 0.8;
+    thin_horizontal_nib_scale = sind(45);
 fi;
 
 
@@ -65,8 +69,8 @@ vardef top_nib = thin_nib scaled top_nib_scale rotated 70 enddef;
 vardef middle_down_nib = thick_nib rotated 10 enddef;
 vardef down_nib = thin_nib scaled down_nib_scale rotated 110 enddef;
 vardef end_nib = thin_nib scaled end_nib_scale enddef;
-vardef thick_horizontal_nib = fix_nib(0, thick*0.8, 0) enddef;
-vardef thin_horizontal_nib = fix_nib(0, thick*sind(45), 0) enddef;
+vardef thick_horizontal_nib = fix_nib(0, thick*horizontal_nib_scale,0) enddef;
+vardef thin_horizontal_nib = fix_nib(0, thick*thin_horizontal_nib_scale,0) enddef;
 vardef thick_vertical_nib = thick_nib enddef;
 vardef thin_vertical_nib = thin_nib enddef;
 vardef serif_nib = fix_nib(serif_height, 0, 0) enddef;

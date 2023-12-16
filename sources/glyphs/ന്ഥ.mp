@@ -27,7 +27,7 @@ clearxy;
 z0=(0, 0);
 z1=(mw*1.3, y0);
 paths[p]:= z0--z1 ;
-paths[p]:=paths[p] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*sind(45)/2) );
+paths[p]:=paths[p] shifted ( point infinity of paths[p-1] + (thin*1.2/2, thick*thin_horizontal_nib_scale/2) );
 pen_stroke(
     nib(thin_horizontal_nib)(0)
     nib(thin_horizontal_nib)(1)

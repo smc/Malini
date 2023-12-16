@@ -8,7 +8,7 @@ p:=p+1;
 z0=point infinity of paths[0];
 z1=z0 + (mw,0);
 paths[p] := z0--z1;
-paths[p] := paths[p] shifted (0, thick*sind(45)/2);
+paths[p] := paths[p] shifted (0, thick*thin_horizontal_nib_scale/2);
 
 pen_stroke(
     cut(thin_horizontal_nib, 45)(0)
@@ -34,7 +34,7 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=point 0 of paths[p-1] + (0, thick*sind(45)/2);
+z0=point 0 of paths[p-1] + (0, thick*thin_horizontal_nib_scale/2);
 z1=(xpart(point 4 of paths[p-1]), y0);
 paths[p] = z0--z1;
 pen_stroke(
