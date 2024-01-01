@@ -13,9 +13,9 @@ z8=(x2 + mw/3, y7);
 z9=(x8 + mw/2.5, y6);
 z10=((x9+x11)/2, y5);
 z11=(x2 + mw/4, y10 + m/3);
-z12=(x11 + mw/4, y13 - m/4);
-z13=(x12 - mw/4, m + m/2);
-z14=(x13 - mw/4, y13 - m/6);
+z12=(x11 + mw/2.5, y13 - m/4);
+z13=((x12 +x14)/2, m + m/3);
+z14=(x12 - mw/2, m + m/4);
 
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6{up}..z7---z8..z9{down}..z10{left}..{up}z11..{up}z12..{left}z13..z14;

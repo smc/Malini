@@ -10,11 +10,11 @@ z6 = ( (x5 + x7)/2, y2); % second top
 z7 = ( x5 + mw*1.3, 0.4m);
 z8 = ( x7 - mw/4, undershoot);
 z9= (x8 - mw/4, m/3);
-z10= (x9 + mw/4, y11 - m/4);
-z11= (x10 - mw/4, m + m/2);
-z12= (x11 - mw/4, y11 - m/6);
+z10= (x9 + mw/2.5, y11 - m/4);
+z11= ((x10 + x12)/2, m + m/3);
+z12= (x10 - mw/2, m + m/4);
 
-paths[p] = z0..z1{up}..z2{right}..z3..{left}z4{left}..z5..z6..z7{down}..{left}z8..{up}z9..z10{up}..{left}z11..z12;
+paths[p] = z0..z1{up}..z2{right}..z3..{left}z4{left}..z5..z6..z7{down}..{left}z8..{up}z9..z10{dir 75}..z11{left}..z12;
 
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
@@ -27,6 +27,7 @@ pen_stroke(
     nib(middle_down_nib)(10)
     nib(top_nib)(11)
     nib(end_nib scaled 2/3 rotated terminalangle 12 of paths[p])(12)
+    ignore_directions(11l)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 4 of paths[0]);

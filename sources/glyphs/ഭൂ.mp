@@ -29,11 +29,12 @@ p:=p+1;
 clearxy;
 z0=point 7.75 of paths[p-1];
 z1=(x0 + mw/3, (y0+y2)/2);
-z2=(x1 - mw/3,  -descent*0.8);
+z2=(x1 - mw/2,  -descent*0.8);
 z3=(xpart(point 1 of paths[p-1]) - mw/3, ypart(point 1 of paths[p-1]));
 z4=(x3+mw/4, m);
-paths[p] := z0{dir -10}..z1..{dir 180}z2..z3..z4;
-paths[p] := insert_nodes(paths[p], 2.5);
+paths[p] := z0{dir -10}..z1..{dir 180}z2..z4;
+dt := directiontime dir 90 of subpath(2, 3) of paths[p];
+paths[p] := insert_nodes(paths[p])(2+ dt);
 pen_stroke(
     nib(end_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_down_nib)(1)
