@@ -21,7 +21,6 @@ const fittext = (elements, options) => {
     text.setAttribute('y', baseline);
     text.setAttribute('font-family', 'inherit');
     text.setAttribute('font-size', '1rem');
-    text.setAttribute('font-weight', 'inherit');
     text.setAttribute('style', 'text-anchor:middle;dominant-baseline:middle');
 
     for (let j = 0; j < elements[i].attributes.length; j++) {
