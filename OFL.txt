@@ -1,4 +1,4 @@
-Copyright 2023 The Malini Project Authors (https://gitlab.com/smc/fonts/Malini)
+Copyright 2024 The Malini Project Authors (https://gitlab.com/smc/fonts/Malini)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
