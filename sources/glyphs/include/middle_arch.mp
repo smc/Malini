@@ -7,7 +7,7 @@ z3=(x3, y1);
 z4=(x3, 0);
 
 paths[p] =  z0---z1..z2..z3---z4;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     cut(middle_up_nib, -45)(0)
     nib(middle_up_nib)(1)

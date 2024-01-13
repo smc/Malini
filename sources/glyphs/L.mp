@@ -34,7 +34,7 @@ z1 = (x0 - serif_height, X-s);
 z3 = (x1 - 0.08Xw,  ypart point 3 of strokes[p]*1.8);
 z4 = (x1 - 0.1Xw,  ypart point 3 of strokes[p]);
 strokes[p] := subpath(0, 1) of strokes[p]{right}
-   -- z0---z1.. controls z3 and z4 .. subpath(2.4, length(strokes[p])) of strokes[p]  -- cycle;
+   -- z0---z1.. controls z3 and z4 .. subpath(2.4, length(strokes[p])-1) of strokes[p]  -- cycle;
 
 
 anchor( "top", (xpart(point 0 of paths[0]), 1.2X));

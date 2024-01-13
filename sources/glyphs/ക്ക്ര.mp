@@ -1,58 +1,46 @@
 input glyph;
 beginglyph;
-z0=(mw/2, m/2);
-z1=((x0 + x2)/1.96, m-overshoot);
-z2=(x0 + 2/3mw, (y1 + y3)/2);
-z3=(x1, undershoot);
-z4=(x0, y0);
-z5=(x4 - mw/4, y3);
-z6=(x5 - mw/4, y5 + 0.25m);
-z7=(x6 + mw/3, y6 + 0.3m);
-z8=(x2 + mw/3, y7);
-z9=(x8 + mw/2.25, y6);
-z10=((x9+x11)/1.95, y3);
-z11=(x2 + mw/4, 0.4m);
-z12=(x9, y1);
-z13=(x12 + mw/2, m/3);
+input ./glyphs/include/ക്ക;
+for i=0 upto p:
+    paths[i] := paths[i] shifted (mw/3, 0);
+    strokes[i] := strokes[i] shifted (mw/3, 0);
+endfor;
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5{left}..z6..z7---z8..z9{down}..z10{left}..z11..z12{dir 0}..{down}z13;
-paths[p] := paths[p] shifted (mw/3,0);
+paths[p] := subpath(0, 8) of paths[p];
 pen_stroke(
-   nib(middle_up_nib)(0, 4)
-   nib(top_nib)(1)
-   nib(middle_down_nib)(2)
-   nib(down_nib)(3)
-   nib(middle_up_nib)(4)
-   nib(down_nib)(5)
-   nib(middle_down_nib scaled 0.9)(6, 9)
-   nib(thin_vertical_nib rotated 90)(7, 8)
-   nib(middle_down_nib)(9)
-   nib(down_nib)(10)
-   nib(middle_up_nib)(11)
-   nib(top_nib)(12)
-   nib(middle_down_nib)(13)
-
-)(paths[0])(strokes[0]);
+   nib(middle_up_nib)(0)
+   nib(down_nib)(1)
+   nib(middle_down_nib scaled 0.9)(2, 5)
+   nib(thin_vertical_nib rotated 90)(3, 4)
+   nib(down_nib)(6)
+   nib(middle_up_nib)(7)
+   nib(top_nib)(8)
+)(paths[p])(strokes[p]);
 
 
-p:=p+1;
 clearxy;
+p:=p+1;
 z0 = point infinity of paths[p-1];
-z1 = (xpart(point 10 of paths[p-1]), reph_sign_depth );
-z2 = (xpart(point 7 of paths[p-1]), y1);
-z3 = (xpart(point 6 of paths[p-1]) - mw/3, ypart(point 6 of paths[p-1]));
-z4 = (x3 + mw/4, m);
-paths[p] =  z0{dir angle(direction infinity of paths[p-1])}..z1{dir 190}..{dir 170}z2..z3..z4;
+z1 = (xpart point 4 of paths[p-1], reph_sign_depth);
+z2 = (xpart point 0 of paths[p-1], y1);
+z3 = (xpart point 2 of paths[p-1] -mw/6, m);
 
+paths[p] := z0{right} .. z1---z2 .. {dir 50}z3;
+dt = directiontime dir 270 of subpath( 0, 1) of paths[p];
+paths[p] := insert_nodes(paths[p])(0 + dt );
+dt := directiontime dir 90 of subpath( 3,4) of paths[p];
+paths[p] := insert_nodes(paths[p])(3+ dt);
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
-    nib(middle_down_nib)(0)
-    nib(down_nib)(1,2)
-    nib(middle_up_nib)(3)
-    nib(end_nib rotated terminalangle 4 of paths[p])(4)
+    nib(top_nib)(0)
+    nib(middle_down_nib)(1)
+    nib(thick_nib rotated terminalangle 2 of paths[p] scaled 0.8)(2,3)
+    nib(end_nib)(4)
+    nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
 )(paths[p])(strokes[p]);
 
 
 anchor( "vc", point 1 of paths[0]);
-anchor( "right", point 0.75 of paths[p]);
+anchor( "right", point 1.75 of paths[p]);
 
 endglyph;

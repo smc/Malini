@@ -1,6 +1,7 @@
 input glyph;
 beginglyph;
 clearxy;
+
 % This glyph does not slant. Reset slant value
 slant := 0;
 r = thick*1.5;

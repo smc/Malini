@@ -11,7 +11,7 @@ z6= ( x5 + mw/3, (y5+y7)/2);
 z7= ( x5, m);
 
 paths[p] = z0---z1..z2{right}..z3---z4..z5{right}..z6{up}..z7;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)

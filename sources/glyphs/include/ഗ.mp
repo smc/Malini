@@ -11,6 +11,7 @@ dt = directiontime dir 270 of subpath( 0, 1) of paths[p];
 paths[p] := insert_nodes(paths[p])(dt);
 dt := directiontime dir 270 of subpath(4, 5) of paths[p];
 paths[p] := insert_nodes(paths[p])(4 + dt );
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
    nib(middle_up_nib scaled 1.2 rotated 30)(1)

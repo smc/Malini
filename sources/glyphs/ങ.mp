@@ -20,6 +20,6 @@ pen_stroke(
 
 anchor( "vc", point 5 of paths[0]);
 
-anchor( "right", point 5.6 of paths[1]);
+anchor( "right", point 5.6 of paths[2]);
 
 endglyph;

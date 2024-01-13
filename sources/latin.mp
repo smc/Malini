@@ -19,7 +19,7 @@ vardef n_arch =
     z1=(0.64*x2, s-overshoot);
     z2=(x0 + 0.75sw, 2/3s);
     z3=(x2, 0);
-    z0{dir 60}..z1{right}..z2---z3
+    harmonize(z0{dir 60}..z1{right}..z2---z3)
 enddef;
 
 % For the loops of p and b
@@ -316,7 +316,8 @@ vardef bottom_left_serif(expr s, p ) =
 
    subpath(0, p-1) of s -- z0.. controls z6 and z7.. z1{dir 210}
       .. {dir 330}z2
-      -- subpath(p+1, length(s)) of s  -- cycle
+      -- subpath(p+1, length(s)-1) of s
+      -- cycle
 enddef;
 
 
@@ -332,7 +333,7 @@ vardef bottom_right_serif(expr s, p) =
 
    subpath(0, p) of s{dir -80}
    ..  z0{dir 20} .. {dir 10}z1 .. z2 .. controls z4 and z5 .. z3{up}
-   -- subpath(p+2,  length(s)) of s
+   -- subpath(p+2,  length(s)-1) of s
    -- cycle
 enddef;
 
@@ -359,7 +360,7 @@ vardef bottom_serif(expr s, p) =
         .. {dir 330}z2{dir 3}
         .. {dir -3}z3{dir 30}
         .. {dir 150}z4..  controls  z8 and z9 .. z5
-        -- subpath(p+2, length(s)) of s  -- cycle
+        -- subpath(p+2, length(s)-1) of s  -- cycle
 enddef;
 
 
@@ -449,7 +450,7 @@ vardef bottom_right_slanted_serif(expr stroke, t ) =
         .. {dir 330}z2{dir 3}..{dir -3}z3{dir 30}
         .. {dir 120}z4..controls z8 and z9
         .. z5
-        -- subpath(t+2, length(stroke)) of stroke
+        -- subpath(t+2, length(stroke)-1) of stroke
         -- cycle
 
 enddef;
@@ -485,7 +486,7 @@ vardef bottom_left_slanted_serif(expr stroke, t ) =
         .. {dir 150}z4
         .. controls z8 and z9
         .. z5
-        -- subpath(t+2, length(stroke)) of stroke
+        -- subpath(t+2, length(stroke)-1) of stroke
         -- cycle
 
 enddef;
@@ -497,5 +498,5 @@ vardef circle(expr radius) =
     z2 = (x0 + radius, y0);
     z3 = (x1, 0);
     z4 = (x0, y0);
-    z0{up}..{right}z1..{down}z2..z3{left}..{up}z4..cycle
+    z0{up}..{right}z1..{down}z2..z3{left}..cycle
 enddef;

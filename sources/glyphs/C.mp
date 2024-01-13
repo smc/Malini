@@ -22,7 +22,7 @@ pen_stroke(
 strokes[0] :=  subpath(0.25, 9) of strokes[0]{right} .. cycle;
 % Bottom end styling
 strokes[0] :=  subpath(0, 4) of strokes[0]{dir 120}
-   .. subpath(5.1,10) of strokes[0]
+   .. subpath(5.1,length(strokes[0])-1) of strokes[0]
    .. cycle;
 
 lbearing:=sw/3*0.4;

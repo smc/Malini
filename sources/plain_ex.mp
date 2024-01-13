@@ -1933,6 +1933,7 @@ vardef pen_stroke(text opts)(expr p)(suffix result) =
  numeric ignore_dir__[\\]; pair default_tip_, local_tip__[\\];
  path local_nib__[\\];
  pair a_, d_, z_[\\]; path p_;
+
 %%% xpart norm_ norml_ normr_ normlr_
  vardef norm_ primary n =
   if cycle p: n mod last else: if n<0: 0 elseif n>last: last else: n fi fi

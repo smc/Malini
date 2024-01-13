@@ -1,5 +1,6 @@
 input glyph;
 beginglyph;
+
 z0=(0, s);
 z1=(x0, 1/3s);
 z2=(0.4*x3, thin*1.2/4);
@@ -29,7 +30,7 @@ pen_stroke(
 strokes[p] := top_left_straight_serif(strokes[p], 0);
 % Leave some extra gap at bottom, near serif
 strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
-    .. {dir -80}subpath(3.15, 7) of strokes[p]
+    .. {dir -80}subpath(3.15, 6) of strokes[p]
     --  cycle;
 strokes[p] := bottom_right_serif(strokes[p], 4);
 

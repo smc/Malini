@@ -15,6 +15,7 @@ z12 = ( xpart (point 1 of paths[p-1]), (y11+y13)/2);
 z13 = ( x11, -descent);
 z14 = ( x9+thick/2, y13);
 paths[p] = z0..z1{up}..z2{right}..z3..{left}z4{left}..z5..z6{right}..z7{down}..{left}z8{right}..z9..z10---z11..z12..z13---z14;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
      cut(middle_up_nib, -45)(0)
     nib(middle_up_nib)(1)

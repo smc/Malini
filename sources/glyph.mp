@@ -136,6 +136,54 @@ vardef boundingbox(expr p, lbearing, rbearing) =
     fi
 enddef;
 
+% Returns the cross product between two given vectors w and z
+primarydef w crossprod z =
+    (xpart w * ypart z - ypart w * xpart z)
+enddef;
+
+
+% Hormonize curves for G2 continuity
+%
+% AUTHOR: Linus Romer
+% Ref Curvature combs and harmonized paths in METAPOST
+% https://github.com/fontforge/fontforge/files/12072466/romer-curvetools.pdf
+vardef harmonize expr p =
+    save t,u,d,l,n,q;
+    pair t,u,q[];
+
+    n = length p;
+
+    for j = if cycle p: 0 else: 1 fi upto n-1:
+        q[j] = point j of p;
+        t := unitvector(direction j of p);
+        u := unitvector(point j of p
+        - precontrol j of p);
+        if eps > abs((u dotprod t) - 1): % smooth
+            l := abs(t crossprod (precontrol j+1 of p - point j of p) );
+            d := abs(t crossprod (postcontrol j-1 of p - point j of p) );
+            if not ( (l = 0) or (d = 0) ):
+                q[j] := if (d = l): .5
+                    else:
+                        ( sqrt(d) / (sqrt(d) + sqrt(l)) )
+                    fi
+                    [precontrol j of p, postcontrol j of p];
+            fi
+        fi
+    endfor
+
+    if not cycle p:
+        q[0] = point 0 of p;
+        q[n] = point n of p;
+    fi
+
+    q[0] % start returned path
+    for j = 0 upto n-1: % define new path
+        .. controls postcontrol j of p
+        and precontrol j+1 of p .. if (j = n-1)
+        and (cycle p): cycle else: q[j+1] fi
+    endfor
+enddef;
+
 def beginglyph =
     begingroup
     % Resets
@@ -175,6 +223,10 @@ def endglyph =
                     fill softpath withcolor glyphcolor;
                 else:
                     fill strokes[i] withcolor glyphcolor;
+                fi;
+                % Harmonize
+                if harmonize_curves = 1:
+                    strokes[i] := harmonize(strokes[i]);
                 fi;
             fi;
         fi;

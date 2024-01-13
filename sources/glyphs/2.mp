@@ -13,10 +13,9 @@ pen_stroke(
     nib(middle_down_nib)(2)
     nib(middle_down_nib rotated terminalangle 3 of paths[p])(3)
 )(paths[p])(strokes[p]);
-
 % Top hanging serif styling
 strokes[p] :=  subpath(0, 6.7) of strokes[p]{dir -120}  .. {right}cycle;
-
+strokes[p] := harmonize(strokes[p]);
 p:=p+1;
 clearxy;
 z4 = (0, thick*sind(45)/2) ;
@@ -32,7 +31,7 @@ pen_stroke(
 strokes[p] := subpath(0, 1) of strokes[p]{right}
    -- (xpart point 1 of strokes[p]+0.01Xw, X-s)
    -- (xpart point 1 of strokes[p] - serif_height, X-s){down}
-  .. {left}subpath(2.3, length(strokes[p])) of strokes[p]
+  .. {left}subpath(2.3, length(strokes[p])-1) of strokes[p]
   -- cycle;
 
 

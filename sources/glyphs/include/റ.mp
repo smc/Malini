@@ -6,6 +6,7 @@ x3-x1 = 0.9mw;
 z3=(x3, (y2+y4)/2);
 z4=(x3 - mw/3, undershoot);
 paths[p] = z0..z1{up}..z2{right}..z3{down}..z4;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)

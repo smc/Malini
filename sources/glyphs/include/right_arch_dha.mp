@@ -6,7 +6,7 @@ z2=((x1 + x3)/2, undershoot);
 z3=(x0 +  3/4mw, y2 + m/2);
 z4=(x3 -  mw/3, m);
 paths[p]:= z0---z1..z2{right}..z3{up}..z4;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)

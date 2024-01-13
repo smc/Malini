@@ -1,5 +1,6 @@
 input glyph;
 beginglyph;
+
 z0= (0, X);
 z1=( x0, (y0+y2)/2);
 z2=( x1, 0);
@@ -34,7 +35,7 @@ z4 = (xpart point 0.9 of strokes[p] , 0.95y3);
 strokes[p] := subpath(0, 0.5) of strokes[p]
  ..controls z3 and z4 .. z0
  -- z1
- -- subpath(2, length(strokes[p])) of strokes[p]
+ -- subpath(2, length(strokes[p])-1) of strokes[p]
  -- cycle;
 
 

@@ -1,5 +1,6 @@
 input glyph;
 beginglyph;
+harmonize_curves:=0;
 z0=(x2 + Xw/3, y1-X/10);
 z1=((x0+x2)/2, 1.1X);
 z2=(x4  , 0.8X);

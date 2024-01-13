@@ -9,7 +9,7 @@ z6 = ( (x5 + x7)/2, y2); % second top
 z7 = ( x1 + 1.45mw, (y6+y8)/2);
 z8 = ( (x5 + x7)/1.66, 0); %
 paths[p]:=z0..z1{up}..z2{right}..z3{down}..{left}z4{left}..z5{up}..z6{right}..z7{down}..z8;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(top_nib)(2,6)

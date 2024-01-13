@@ -18,6 +18,7 @@ z3=(0, y1);
 z4=(0, thick*tand(20)/2);
 
 paths[p]:= z0{up}..z1{up}..{left}z2...z3---z4;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(middle_up_nib rotated 10)(0)
     nib(middle_up_nib )(1)

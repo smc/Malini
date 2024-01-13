@@ -9,6 +9,7 @@ z5=((x4 + x6)/2, m-overshoot);
 z6=(x4 + mw*0.75, y2);
 z7=(x6, y3);
 paths[p]:=z0{up}..z1{right}..z2{down}..z3{left}..z4..z5..{down}z6--z7;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib scaled 0.8)(1)
@@ -33,7 +34,7 @@ z6=(xpart(point 0 of paths[p-1]), (y5+y7)/2);
 z7=(x5, -thin/4);
 z8=(x2 , y4  );
 paths[p] = z0---z1..z2..z3..z4---z5..z6..z7{dir 10}..{dir 20}z8 ;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
    nib(thin_vertical_nib)(0)
     nib(thin_vertical_nib)(1)
@@ -56,7 +57,7 @@ z3=(x2 - mw/5, -thin/2);
 z4=(0, y0 );
 paths[p]:=z0{up}..z1{right}..z2{down}..z3{left}..z4;
 paths[p]:=paths[p] shifted (xpart(point 2 of paths[p-1]), 0);
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib scaled 0.8)(1)

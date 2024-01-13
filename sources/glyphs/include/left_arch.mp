@@ -6,6 +6,7 @@ x3-x1 = 0.7*mw;
 z3=(x3, 0.6m);
 z4=(x3, 0); % bottom of piller
 paths[p]=z0..z1{up}..z2{right}..{down}z3---z4;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)

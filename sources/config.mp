@@ -29,6 +29,7 @@ terminalround:= 0;            % Terminal roundness. Give 1 for round terminals. 
 outputformat := "svg";        % Output format
 
 varstroke :=     1;           % Stroke modulation. Uses pen_strokes
+harmonize_curves := 1;        % Harmonize curves or not
 
 color glyphcolor; glyphcolor := (.1, .37,.71);
 color debugcolor; debugcolor := 0.8green;

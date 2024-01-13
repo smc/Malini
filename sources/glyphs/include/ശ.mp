@@ -15,7 +15,7 @@ paths[p] := insert_nodes(paths[p])(4 + dt );
 z5 = (x4-mw/4, (y6+y4)/2);
 z6 = point 4.6 of paths[p];
 paths[p] := paths[p] .. z5.. {right}z6;
-
+paths[p]:=harmonize(paths[p]);
 
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)

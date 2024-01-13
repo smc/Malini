@@ -1,6 +1,7 @@
 input glyph;
 beginglyph;
 clearxy;
+
 paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 
 clearxy;
@@ -14,12 +15,11 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 strokes[p] := top_left_serif(strokes[p], 0);
-strokes[p] := bottom_right_serif(strokes[p], 4);
 % Leave some extra gap at bottom, near serif
-strokes[p] :=  subpath(0, 2.85) of strokes[p]
-    -- subpath(3.1, 10) of strokes[p]
+strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
+    .. {dir -80}subpath(3.15, 6) of strokes[p]
     --  cycle;
-
+strokes[p] := bottom_right_serif(strokes[p], 4);
 
 p:=p+1;
 pen_stroke(
@@ -30,6 +30,7 @@ pen_stroke(
     nib(end_nib rotated terminalangle 4 of paths[0])(4)
 
 )(paths[p])(strokes[p]);
+
 
 % cross
 clearxy;
@@ -42,4 +43,10 @@ pen_stroke(
     nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
 )(paths[p])(strokes[p]);
 
+lbearing:=sw/3*0.2;
+rbearing:=sw/3*0.1;
+
+anchor( "top", (xpart(point 1 of paths[1]), X));
+
 endglyph;
+

@@ -1,6 +1,7 @@
 input glyph;
 beginglyph;
 clearxy;
+
 paths[1]:= p_loop xyscaled(-1, -1) shifted (xpart(point 2 of p_loop), m);
 
 clearxy;
@@ -16,7 +17,7 @@ pen_stroke(
 strokes[p] := top_left_serif(strokes[p], 0);
 % Leave some extra gap at bottom, near serif
 strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
-    .. {dir -80}subpath(3.15, 7) of strokes[p]
+    .. {dir -80}subpath(3.15, 6) of strokes[p]
     --  cycle;
 strokes[p] := bottom_right_serif(strokes[p], 4);
 

@@ -1,5 +1,6 @@
 input glyph;
 beginglyph;
+
 input ./include/dotlessi;
 
 p:=p+1;
