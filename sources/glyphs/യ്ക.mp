@@ -7,19 +7,10 @@ p:=p+1;
 clearxy;
 input ./glyphs/include/ക;
 
-paths[p]:=paths[p] shifted (0.2mw, -1.1m) scaled 0.8 ;
-pen_stroke(
-   nib(middle_up_nib scaled 0.8)(0, 4)
-   nib(top_nib scaled 0.8)(1)
-   nib(middle_down_nib scaled 0.8)(2)
-   nib(down_nib scaled 0.8)(3)
-   nib(middle_up_nib scaled 0.8)(4)
-   nib(down_nib scaled 0.8)(5)
-   nib(middle_down_nib scaled 0.9)(6, 9)
-   nib(thin_vertical_nib rotated 90)(7, 8)
-   nib(end_nib scaled 0.8 rotated 90)(10)
-)(paths[p])(strokes[p]);
-
+for i=1 upto p:
+    paths[i]:=paths[i] shifted (0.3mw, -1.1m) scaled 0.8 ;
+    strokes[i]:=strokes[i] shifted (0.3mw, -1.1m) scaled 0.8 ;
+endfor;
 
 anchor( "vc", (x1,0));
 anchor( "right", point 8.25 of paths[0]);
