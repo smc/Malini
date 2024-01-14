@@ -1,6 +1,9 @@
 input glyph;
 beginglyph;
+% This glyph does not slant. Reset slant value
+slant := 0;
 
+soften:=0;
 r = thick*1.66;
 paths[p] = circle(r);
 paths[p]:= paths[p] shifted(0, s);
