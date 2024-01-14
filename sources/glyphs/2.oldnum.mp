@@ -1,40 +1,38 @@
 input glyph;
 beginglyph;
-z0 = (thick/2, 3/4y2);
-z1= (x0+0.025sw, y0+0.15s);
-z2 = ((x0+ x3)/2, s-overshoot);
-z3 = (x0+ sw/2, y0);
-z4 = (thick/2, thick*sind(45)*0.75);
-paths[p] := z0{dir 110}..z1..z2{right}..z3{down}...{dir 255}z4;
-
+z0 = (thick/2,  0.75s);
+z1 = (x0 + sw/4, s-overshoot);
+z2 = (x1 + sw/3.25, 0.66s);
+z3 = (thick/2, thick*sind(45));
+paths[p] := z0..z1..{dir 235}z2..{dir 235}z3;
+paths[p] := harmonize(paths[p]);
 pen_stroke(
-    nib(thicknib scaled 1.2 rotated terminalangle 0 of paths[p] )(0)
-    nib(thicknib  scaled 0.6  rotated terminalangle 1 of paths[p])(1)
-    nib(top_nib)(2)
-    nib(middle_down_nib)(3)
-    nib(middle_down_nib rotated terminalangle 4 of paths[p])(4)
+    nib(end_nib scaled 0.8 rotated terminalangle 0 of paths[p] )(0)
+    nib(top_nib)(1)
+    nib(middle_down_nib scaled 0.9 rotated terminalangle 2 of paths[p])(2)
+    cut(thick_nib, 0)(3)
 )(paths[p])(strokes[p]);
-
 
 p:=p+1;
 clearxy;
-z4 = (0, thick*sind(45)/2) ;
-z5 = (xpart(point 3 of paths[p-1]) + thick, y4) ;
+z4 = (xpart(point 3 of strokes[p-1]) , thick*sind(45)/2) ;
+z5 = (xpart(point 2 of paths[p-1]) + thick, y4) ;
 paths[p] = z4--z5 ;
 
 pen_stroke(
    nib(thick_horizontal_nib)(0,1)
 )(paths[p])(strokes[p]);
 
-% Bottom bar serif
-p:=p+1;
+
+% Standing serif
 clearxy;
-z0=(xpart(point 1 of paths[p-1]), ypart(point infinity of strokes[p-1]));
-z1=(x0 + 0.025sw, y0  + 1.5serif_width);
-z2=(x1 - serif_height, y1);
-z3=point 2.15 of strokes[p-1];
-paths[p] :=z0--z1--z2{down}..z3--cycle;
-strokes[p] := paths[p];
+z0 = (xpart point 1 of strokes[p]+0.04sw, 0.4s);
+z1 = (x0 - serif_height, y0);
+% Control points for joint
+z3 = (x1 - 0.06sw,  ypart point 3 of strokes[p]);
+z4 = (x1 - 0.06sw,  y3);
+strokes[p] := subpath(0, 1) of strokes[p]{right}
+   -- z0---z1.. controls z3 and z4 .. subpath(2.4, length(strokes[p])-1) of strokes[p]  -- cycle;
 
 
 endglyph;
