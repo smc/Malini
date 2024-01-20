@@ -22,15 +22,18 @@ z9 = (xpart(point 2.5 of paths[p-3]), y8);
 z10= (xpart(point 0 of paths[p-3]) - mw/3, m/2);
 z11= (x10 + mw/6, m);
 
-paths[p] := z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{right}..z7{down}..z8{dir 190}..{dir 170}z9..z10..z11 ;
+paths[p] := z0---z1..z2{right}..z3{dir -80}..z4{dir 170}..z5..z6{right}..z7{down}..z8---z9..z11 ;
+dt := directiontime dir 90 of subpath(9, 10) of paths[p];
+paths[p] := insert_nodes(paths[p])(9 + dt);
+
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3,5, 7)
     nib(top_nib)(4, 6)
-    nib(down_nib)(8,9)
-    nib(middle_up_nib)(10)
+    nib(thick_nib rotated terminalangle 2 of paths[p] scaled 0.8)(8,9)
+    nib(end_nib)(10)
     nib(end_nib rotated terminalangle 11 of paths[p])(11)
 )(paths[p])(strokes[p]);
 

@@ -4,24 +4,34 @@ input ./glyphs/include/left_arch;
 paths[p]:=paths[p] shifted (mw/3, 0) ;
 strokes[p]:=strokes[p] shifted (mw/3, 0) ;
 
-
 clearxy;
 p:=p+1;
-paths[p]:=subpath (0, 5) of right_da shifted (xpart(point infinity of paths[p-1]), 0) ;
-z0=(xpart(point infinity of paths[p]) - mw/2 , -m/3);
-z1=(xpart(point 2 of paths[p-1]) , y0);
-z2=(xpart(point 1 of paths[p-1]) - mw/3 , ypart(point 1 of paths[p-1]));
-z3=(x2 + mw/6 , ypart(point 2 of paths[p-1]));
-paths[p]:=paths[p]{dir angle(direction 5 of paths[p])}..{dir 190}z0..{dir 170}z1..z2..z3;
+input ./glyphs/include/_ദ;
+paths[p]:=subpath(0,4) of paths[p] shifted (xpart(point infinity of paths[p-1]), 0) ;
 pen_stroke(
     cut(thin_vertical_nib, -45)(0)
     nib(thin_vertical_nib)(1)
     nib(top_nib)(2)
-    nib(thin_vertical_nib rotated 90)(4)
-    nib(middle_down_nib scaled 0.9)(5)
-    nib(down_nib)(6,7)
-    nib(middle_up_nib)(8)
-    nib(end_nib rotated terminalangle 9 of paths[p])(9)
+    nib(end_nib rotated 90)(4)
+)(paths[p])(strokes[p]);
+
+clearxy;
+p:=p+1;
+z0 = point infinity of paths[p-1];
+z1=(x0 + 0.4mw, 0);
+z2=(xpart(point 2 of paths[p-1]), reph_sign_depth);
+z3=(xpart(point 0 of paths[0]), y2);
+z5=(xpart point 1 of paths[0] - mw/6, m);
+paths[p] := z0{right}..z1{down}..z2---z3.. {dir 50}z5;
+dt := directiontime dir 90 of subpath( 3, 4) of paths[p];
+paths[p] := insert_nodes(paths[p])(3 + dt);
+
+pen_stroke(
+    nib(end_nib rotated terminalangle 0 of paths[p])(0)
+    nib(middle_down_nib)(1)
+    nib(thick_nib rotated terminalangle 2 of paths[p] scaled 0.8)(2,3)
+     nib(end_nib)(4)
+    nib(end_nib rotated terminalangle infinity of paths[p])(infinity)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", point 0 of paths[p]);
