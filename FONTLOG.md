@@ -31,6 +31,6 @@ tracker.
 * [Latin letter construction](https://www.kellscraft.com/EssentialsofLettering/EssentialsofLetteringCh02.html)
 * [FontFeatures](https://github.com/simoncozens/fontFeatures) python library by Simon Cozens helped programmatic generation of Opentype feature files.
 * Jonathan Hoefler for [the latin kerning tests](https://github.com/hoeflerco/proofs)
-* Curvature combs and harmonized paths in - METAPOST - Linus Romer. Harmonization for curves in this font is based on this work.
+* [Curvature combs and harmonized paths in METAPOST - Linus Romer](https://github.com/fontforge/fontforge/files/12072466/romer-curvetools.pdf). Harmonization for curves in this font is based on this work.
 
 For a complete list of authors who contributed to the project, see CONTRIBUTORS.md
