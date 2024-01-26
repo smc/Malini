@@ -16,12 +16,10 @@ babelfont==3.0.1
     # via
     #   collidoscope
     #   fontbakery
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
     # via fontbakery
 beziers==0.5.0
     # via fontbakery
-black==23.12.1
-    # via youseedee
 booleanoperations==0.9.0
     # via ufo2ft
 brotli==1.1.0
@@ -30,13 +28,11 @@ certifi==2023.11.17
     # via requests
 cffi==1.16.0
     # via cmarkgfm
-cffsubr==0.2.9.post1
+cffsubr==0.3.0
     # via ufo2ft
 charset-normalizer==3.3.2
     # via requests
-click==8.1.7
-    # via black
-cmarkgfm==2022.10.27
+cmarkgfm==2024.1.14
     # via fontbakery
 collidoscope==0.6.5
     # via fontbakery
@@ -58,17 +54,17 @@ filelock==3.13.1
     # via youseedee
 font-v==2.1.0
     # via fontbakery
-fontbakery[googlefonts,ufo-sources]==0.10.8
+fontbakery[googlefonts,ufo-sources]==0.10.9
     # via malini (pyproject.toml)
 fontfeatures==1.8.0
     # via
     #   babelfont
     #   malini (pyproject.toml)
-fontmake==3.7.1
+fontmake==3.7.2
     # via malini (pyproject.toml)
 fontmath==0.9.3
     # via fontmake
-fonttools[lxml,ufo,unicode]==4.47.0
+fonttools[lxml,ufo,unicode]==4.47.2
     # via
     #   axisregistry
     #   babelfont
@@ -97,17 +93,17 @@ fs==2.4.16
     # via
     #   fontfeatures
     #   fonttools
-gflanguages==0.5.13
+gflanguages==0.5.16
     # via
     #   fontbakery
     #   shaperglot
 gitdb==4.0.11
     # via gitpython
-gitpython==3.1.40
+gitpython==3.1.41
     # via font-v
 glyphsets==0.6.11
     # via fontbakery
-glyphslib==6.6.0
+glyphslib==6.6.1
     # via
     #   babelfont
     #   fontmake
@@ -128,8 +124,6 @@ munch==4.0.0
     # via malini (pyproject.toml)
 munkres==1.1.4
     # via fontbakery
-mypy-extensions==1.0.0
-    # via black
 num2words==0.5.13
     # via shaperglot
 openstep-plist==0.3.1
@@ -140,18 +134,12 @@ opentype-sanitizer==9.1.0
     # via fontbakery
 opentypespec==1.9.1
     # via fontbakery
-orjson==3.9.10
+orjson==3.9.12
     # via babelfont
 packaging==23.2
-    # via
-    #   black
-    #   fontbakery
-pathspec==0.12.1
-    # via black
+    # via fontbakery
 pip-api==0.0.30
     # via fontbakery
-platformdirs==4.1.0
-    # via black
 protobuf==3.20.3
     # via
     #   axisregistry
@@ -180,7 +168,7 @@ rich==13.7.0
     # via fontbakery
 rstr==3.2.2
     # via stringbrewer
-ruff==0.1.11
+ruff==0.1.14
     # via malini (pyproject.toml)
 shaperglot==0.3.1
     # via fontbakery
@@ -205,9 +193,7 @@ termcolor==2.4.0
 toml==0.10.2
     # via fontbakery
 tqdm==4.66.1
-    # via
-    #   collidoscope
-    #   youseedee
+    # via collidoscope
 ufo2ft[compreffor]==2.33.4
     # via
     #   fontbakery
@@ -236,7 +222,7 @@ vharfbuzz==0.2.0
     # via
     #   fontbakery
     #   shaperglot
-youseedee==0.5.2
+youseedee==0.5.3
     # via shaperglot
 
 # The following packages are considered to be unsafe in a requirements file:
