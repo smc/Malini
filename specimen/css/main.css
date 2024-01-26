@@ -16,6 +16,13 @@
     --playground-font-weight: 400;
     --playground-font-width: 100%;
     --playground-font-slant: 0;
+    --background-gradient-image:  radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.15) 0px, transparent 0%),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.15) 0px, transparent 50%);
   }
 
   *,
@@ -48,6 +55,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     accent-color: var(--brand);
+    transition: background-color 0.25s, color 0.25s, border 0.25s, box-shadow 0.25s;
   }
 
   main {
@@ -232,8 +240,8 @@
     --text-1-light: #667085;
     --surface-1-light: #F2F4F7;
     --surface-2-light: #fcfcfd;
-    --body-background-color-light: var(--gray-0);
-    --body-background-image-light: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    --body-background-color-light: hsl(0 0% 100%);
+    --body-background-image-light: var(--background-gradient-image);
     --text-color-light: #667085;
     --meta-text-color-light: var(--orange-7);
     --border-color-light: #E4E7EC;
@@ -243,7 +251,8 @@
     --text-1-dark: var(--gray-0);
     --surface-1-dark: #101828;
     --surface-2-dark: #1d2939;
-    --body-background-image-dark: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+    --body-background-color-dark: hsl(0 0% 10%);
+    --body-background-image-dark: var(--background-gradient-image);
     --text-color-dark: var(--gray-0);
     --border-color-dark: #475467;
     --meta-text-color-dark: var(--blue-4);
