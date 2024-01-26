@@ -421,4 +421,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for policies around contributing to the p
 
 ## License
 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org

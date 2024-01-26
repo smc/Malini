@@ -25,3 +25,8 @@ overrides:
     outdated-fontbakery: WARN
   com.google.fonts/check/glyphsets/shape_languages:
     failed-language-shaping: WARN
+  com.google.fonts/check/name/license:
+    wrong: WARN # Till license url in FB changed to https://openfontlicense.org
+  com.google.fonts/check/license/OFL_body_text:
+    incorrect-ofl-body-text: WARN # Till license url in FB changed to https://openfontlicense.org
+

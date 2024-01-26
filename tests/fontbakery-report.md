@@ -47,6 +47,7 @@ fontbakery version: 0.10.4
 |  ^  | Shaper didn't attach acutecmb to j |
 | mh_Latn (Marshallese) | Some base glyphs were missing: Ḷ, ḷ, Ṃ, ṃ, Ṇ, ṇ, Ọ, ọ |
 |  ^  | Some mark glyphs were missing: ◌̣ |
+|  ^  | Shaper didn't attach macroncmb to N |
 |  ^  | Shaper produced a .notdef |
 | qu_Latn (Quechua) | Some base glyphs were missing: CHʼ, Kʼ, Pʼ, Qʼ, Tʼ, chʼ, kʼ, pʼ, qʼ, tʼ |
 |  ^  | Shaper produced a .notdef |
@@ -215,13 +216,13 @@ fontbakery version: 0.10.4
     subset declarations to METADATA.pb, or by editing the glyphset
     definitions.
 
- * U+02C7 CARON: try adding one of: canadian-aboriginal, yi, tifinagh
+ * U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi
  * U+02D8 BREVE: try adding one of: canadian-aboriginal, yi
  * U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi
  * U+02DB OGONEK: try adding one of: canadian-aboriginal, yi
  * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, math, coptic, tifinagh
- * U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: tifinagh, cherokee, coptic, math
+ * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
  * U+030A COMBINING RING ABOVE: try adding syriac
  * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
  * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
@@ -229,14 +230,40 @@ fontbakery version: 0.10.4
  * U+0326 COMBINING COMMA BELOW: not included in any glyphset definition
  * U+0327 COMBINING CEDILLA: not included in any glyphset definition
  * U+0328 COMBINING OGONEK: not included in any glyphset definition
- * U+03A9 GREEK CAPITAL LETTER OMEGA: try adding one of: math, elbasan, greek
- * U+03C0 GREEK SMALL LETTER PI: try adding one of: yi, math, greek
- * U+0951 DEVANAGARI STRESS SIGN UDATTA: try adding one of: telugu, tirhuta, sharada, grantha, devanagari
- * U+0952 DEVANAGARI STRESS SIGN ANUDATTA: try adding one of: telugu, devanagari, tirhuta, grantha
+ * U+03A9 GREEK CAPITAL LETTER OMEGA: try adding one of: math, greek, elbasan
+ * U+03C0 GREEK SMALL LETTER PI: try adding one of: yi, greek, math
+ * U+0951 DEVANAGARI STRESS SIGN UDATTA: try adding one of: sharada, telugu, devanagari, grantha, tirhuta
+ * U+0952 DEVANAGARI STRESS SIGN ANUDATTA: try adding one of: grantha, telugu, devanagari, tirhuta
  * U+0D60 MALAYALAM LETTER VOCALIC RR: not included in any glyphset definition
  * U+2E42 DOUBLE LOW-REVERSED-9 QUOTATION MARK: not included in any glyphset definition
 
 Or you can add the above codepoints to one of the subsets supported by the font: `latin`, `latin-ext`, `malayalam` [code: unreachable-subsetting]
+</div></details><details><summary>⚠ <b>WARN:</b> Check OFL body text is correct. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_body_text">com.google.fonts/check/license/OFL_body_text</a>)</summary><div>
+
+>
+>Check OFL body text is correct. Often users will accidently delete parts of the body text.
+>
+* ⚠ **WARN** The OFL.txt body text is incorrect. Please use https://github.com/googlefonts/Unified-Font-Repository/blob/main/OFL.txt as a template. You should only modify the first line. [code: incorrect-ofl-body-text]
+</div></details><details><summary>⚠ <b>WARN:</b> Check copyright namerecords match license file. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license">com.google.fonts/check/name/license</a>)</summary><div>
+
+>
+>A known licensing description must be provided in the NameID 14 (LICENSE DESCRIPTION) entries of the name table.
+>
+>The source of truth for this check (to determine which license is in use) is a file placed side-by-side to your font project including the licensing terms.
+>
+>Depending on the chosen license, one of the following string snippets is expected to be found on the NameID 13 (LICENSE DESCRIPTION) entries of the name table:
+>
+>- "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+>
+>- "Licensed under the Apache License, Version 2.0"
+>
+>- "Licensed under the Ubuntu Font Licence 1.0."
+>
+>Currently accepted licenses are Apache or Open Font License. For a small set of legacy families the Ubuntu Font License may be acceptable as well.
+>
+>When in doubt, please choose OFL for new font projects.
+>
+* ⚠ **WARN** License file OFL.txt exists but NameID 13 (LICENSE DESCRIPTION) value on platform 3 (WINDOWS) is not specified for that. Value was: "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org" Must be changed to "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL" [code: wrong]
 </div></details><details><summary>⚠ <b>WARN:</b> Check a font's STAT table contains compulsory Axis Values. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/STAT">com.google.fonts/check/STAT</a>)</summary><div>
 
 >
@@ -274,43 +301,43 @@ Or you can add the above codepoints to one of the subsets supported by the font:
 
 | Name | current | expected |
 | :--- | :--- | :--- |
-| ExtraLight Display | wght=200.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Thin Text | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed ExtraLight | wght=200.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded ExtraLight | wght=200.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Oblique Thin Display | wght=100.0, wdth=100.0, slnt=-12.0, opsz=48.0 | N/A |
-| Light Oblique | wght=300.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
 | SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0 | N/A |
+| Light Oblique | wght=300.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Medium Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Thin Text | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | N/A |
+| Black Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Expanded ExtraLight | wght=200.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
 | Condensed Bold | wght=700.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
 | Oblique | wght=400.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| ExtraLight Display | wght=200.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Black Oblique | wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-12.0, opsz=12.0 | N/A |
+| Condensed ExtraLight | wght=200.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
+| ExtraLight Oblique | wght=200.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| ExtraBold Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Oblique Thin | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Oblique Thin Display | wght=100.0, wdth=100.0, slnt=-12.0, opsz=48.0 | N/A |
+| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
 | SemiBold Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
 | Bold Display | wght=700.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-12.0, opsz=12.0 | N/A |
-| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| ExtraLight Oblique | wght=200.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
-| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
-| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
-| Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Oblique Thin | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
 | Condensed Thin | wght=100.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Medium Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Black Oblique | wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
 | Medium Oblique | wght=500.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| ExtraBold Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
 | Bold Oblique | wght=700.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Black Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
 | Thin Italic | N/A | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 |
 | Thin | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 |
 | ExtraLight Italic | N/A | wght=200.0, wdth=100.0, slnt=-12.0, opsz=12.0 |
@@ -781,7 +808,7 @@ ml_da_virama_dha_virama_ra_sign_u, ml_da_virama_dha_virama_ra_sign_uu, ml_fracti
 The following math glyphs have a different width, though:
 
 Width = 326:
-less, greater
+greater, less
 
 Width = 488:
 multiply
@@ -940,6 +967,26 @@ divide
 
 
 * 💤 **SKIP** Unfulfilled Conditions: gfonts_repo_structure
+</div></details><details><summary>💤 <b>SKIP:</b> License URL matches License text on name table? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license_url">com.google.fonts/check/name/license_url</a>)</summary><div>
+
+>
+>A known license URL must be provided in the NameID 14 (LICENSE INFO URL) entry of the name table.
+>
+>The source of truth for this check is the licensing text found on the NameID 13 entry (LICENSE DESCRIPTION).
+>
+>The string snippets used for detecting licensing terms are:
+>
+>- "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
+>
+>- "Licensed under the Apache License, Version 2.0"
+>
+>- "Licensed under the Ubuntu Font Licence 1.0."
+>
+>Currently accepted licenses are Apache or Open Font License. For a small set of legacy families the Ubuntu Font License may be acceptable as well.
+>
+>When in doubt, please choose OFL for new font projects.
+>
+* 💤 **SKIP** Could not infer the font license. Please ensure NameID 13 (LICENSE DESCRIPTION) is properly set.
 </div></details><details><summary>💤 <b>SKIP:</b> Font has ttfautohint params? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/has_ttfautohint_params">com.google.fonts/check/has_ttfautohint_params</a>)</summary><div>
 
 
@@ -1440,8 +1487,8 @@ You'll also need to use the `--configuration` flag when invoking fontbakery.
 
  |               | fonts/Malini/ttf-variable/Malini-VF.ttf          |
  |:------------- | ---------------:|
- | Dehinted Size | 852.9kb |
- | Hinted Size   | 852.9kb   |
+ | Dehinted Size | 852.0kb |
+ | Hinted Size   | 852.1kb   |
  | Increase      | 24 bytes      |
  | Change        | 0.0 %  |
  [code: size-impact]
@@ -1585,52 +1632,6 @@ The version string must ideally include a git commit hash and either a "dev" or 
 >An OFL.txt file's first line should be the font copyright e.g: "Copyright 2019 The Montserrat Project Authors (https://github.com/julietaula/montserrat)"
 >
 * 🍞 **PASS** looks good
-</div></details><details><summary>🍞 <b>PASS:</b> Check OFL body text is correct. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_body_text">com.google.fonts/check/license/OFL_body_text</a>)</summary><div>
-
->
->Check OFL body text is correct. Often users will accidently delete parts of the body text.
->
-* 🍞 **PASS** OFL license body text is correct
-</div></details><details><summary>🍞 <b>PASS:</b> Check copyright namerecords match license file. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license">com.google.fonts/check/name/license</a>)</summary><div>
-
->
->A known licensing description must be provided in the NameID 14 (LICENSE DESCRIPTION) entries of the name table.
->
->The source of truth for this check (to determine which license is in use) is a file placed side-by-side to your font project including the licensing terms.
->
->Depending on the chosen license, one of the following string snippets is expected to be found on the NameID 13 (LICENSE DESCRIPTION) entries of the name table:
->
->- "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
->
->- "Licensed under the Apache License, Version 2.0"
->
->- "Licensed under the Ubuntu Font Licence 1.0."
->
->Currently accepted licenses are Apache or Open Font License. For a small set of legacy families the Ubuntu Font License may be acceptable as well.
->
->When in doubt, please choose OFL for new font projects.
->
-* 🍞 **PASS** Licensing entry on name table is correctly set.
-</div></details><details><summary>🍞 <b>PASS:</b> License URL matches License text on name table? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license_url">com.google.fonts/check/name/license_url</a>)</summary><div>
-
->
->A known license URL must be provided in the NameID 14 (LICENSE INFO URL) entry of the name table.
->
->The source of truth for this check is the licensing text found on the NameID 13 entry (LICENSE DESCRIPTION).
->
->The string snippets used for detecting licensing terms are:
->
->- "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL"
->
->- "Licensed under the Apache License, Version 2.0"
->
->- "Licensed under the Ubuntu Font Licence 1.0."
->
->Currently accepted licenses are Apache or Open Font License. For a small set of legacy families the Ubuntu Font License may be acceptable as well.
->
->When in doubt, please choose OFL for new font projects.
->
-* 🍞 **PASS** Font has a valid license URL in NAME table.
 </div></details><details><summary>🍞 <b>PASS:</b> Description strings in the name table must not exceed 200 characters. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/description_max_length">com.google.fonts/check/name/description_max_length</a>)</summary><div>
 
 >
@@ -2459,5 +2460,5 @@ The version string must ideally include a git commit hash and either a "dev" or 
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 0 | 0 | 21 | 95 | 8 | 127 | 0 |
-| 0% | 0% | 8% | 38% | 3% | 51% | 0% |
+| 0 | 0 | 23 | 96 | 8 | 124 | 0 |
+| 0% | 0% | 9% | 38% | 3% | 49% | 0% |
