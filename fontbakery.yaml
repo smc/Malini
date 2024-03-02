@@ -29,4 +29,7 @@ overrides:
     wrong: WARN # Till license url in FB changed to https://openfontlicense.org
   com.google.fonts/check/license/OFL_body_text:
     incorrect-ofl-body-text: WARN # Till license url in FB changed to https://openfontlicense.org
+  com.google.fonts/check/case_mapping:
+    missing-case-counterparts: WARN # Missing U+0134: LATIN CAPITAL LETTER J WITH CIRCUMFLEX
+
 
