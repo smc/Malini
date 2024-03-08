@@ -45,6 +45,7 @@ glyphs:
       "Ĝ","Ġ","Ģ", "Ğ",
       "Ĥ",
       "Í","Î","Ï","Ì","Ī","Ĩ", "Į", "İ",
+      "Ĵ",
       "Ķ",
       "Ĺ", "Ļ", "Ľ",
       "Ń","Ň","Ñ","Ņ",
@@ -237,9 +238,9 @@ variablefonts:
               name: Light
             - value: 400
               name: Regular
+              flags: 2
               linkedValue: 700
             - value: 500
-              flags: 2
               name: Medium
             - value: 600
               name: SemiBold
