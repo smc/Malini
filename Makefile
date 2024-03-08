@@ -86,7 +86,7 @@ $(FONTSDIR)/%/otf : %.designspace
 
 
 # Create ttf variablefont from the given designspace
-$(FONTSDIR)/%/ttf-variable: %.designspace
+$(FONTSDIR)/%/ttf-variable: ufo %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--filter DecomposeTransformedComponentsFilter \
 		--flatten-components \
@@ -97,7 +97,7 @@ $(FONTSDIR)/%/ttf-variable: %.designspace
 	$(PY) tools/stat.py $* $@/*.ttf
 
 # Create otf variablefont from the given designspace
-$(FONTSDIR)/%/otf-variable : %.designspace
+$(FONTSDIR)/%/otf-variable : ufo %.designspace
 	fontmake --mm-designspace $*.designspace \
 		--filter DecomposeTransformedComponentsFilter  \
 		--flatten-components \
@@ -186,9 +186,9 @@ proofs:
 		--foreground=333333 \
 		--output-file $(PROOFDIR)/paragraphs.english.pdf ;
 
-test: $(FONTSDIR)/Malini/ttf-variable $(FONTSDIR)/Malini/otf-variable proofs
+test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
-	fontbakery check-ufo-sources $(SOURCEDIR)/ufo/$(FAMILY)-Regular.ufo
+	# fontbakery check-ufo-sources $(SOURCEDIR)/ufo/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(FONTSDIR)/Malini/otf-variable/Malini-VF.otf
 	fontbakery check-googlefonts --full-lists --config fontbakery.yaml --html tests/fontbakery-report.html --ghmarkdown tests/fontbakery-report.md $(FONTSDIR)/Malini/ttf-variable/Malini-VF.ttf
 

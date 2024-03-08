@@ -2,7 +2,17 @@
 
 fontbakery version: 0.11.2
 
-<h2>Check results</h2><details><summary><b>[19] Malini-VF.ttf</b></summary><div><details><summary>⚠ <b>WARN:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
+<h2>Check results</h2><details><summary><b>[20] Malini-VF.ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Checking OS/2 usWinAscent & usWinDescent. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/family/win_ascent_and_descent">com.google.fonts/check/family/win_ascent_and_descent</a>)</summary><div>
+
+>
+>A font's winAscent and winDescent values should be greater than or equal to the head table's yMax, abs(yMin) values. If they are less than these values, clipping can occur on Windows platforms (https://github.com/RedHatBrand/Overpass/issues/33).
+>
+>If the font includes tall/deep writing systems such as Arabic or Devanagari, the winAscent and winDescent can be greater than the yMax and absolute yMin values to accommodate vowel marks.
+>
+>When the 'win' Metrics are significantly greater than the UPM, the linespacing can appear too loose. To counteract this, enabling the OS/2 fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2 'typo' values instead. This means the font developer can control the linespacing with the 'typo' values, whilst avoiding clipping by setting the 'win' values to values greater than the yMax and absolute yMin.
+>
+* 🔥 **FAIL** OS/2.usWinAscent value should be equal or greater than 1047, but got 1032 instead [code: ascent]
+</div></details><details><summary>⚠ <b>WARN:</b> Checking file is named canonically. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/canonical_filename">com.google.fonts/check/canonical_filename</a>)</summary><div>
 
 >
 >A font's filename must be composed as "<familyname>-<stylename>.ttf":
@@ -31,16 +41,16 @@ fontbakery version: 0.11.2
     subset declarations to METADATA.pb, or by editing the glyphset
     definitions.
 
- * U+02C7 CARON: try adding one of: tifinagh, yi, canadian-aboriginal
- * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
- * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
- * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
+ * U+02C7 CARON: try adding one of: canadian-aboriginal, tifinagh, yi
+ * U+02D8 BREVE: try adding one of: canadian-aboriginal, yi
+ * U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi
+ * U+02DB OGONEK: try adding one of: canadian-aboriginal, yi
  * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: tifinagh, coptic, math, cherokee
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: math, coptic, cherokee, tifinagh
  * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
  * U+030A COMBINING RING ABOVE: try adding syriac
- * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
- * U+030C COMBINING CARON: try adding one of: tai-le, cherokee
+ * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee
+ * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
  * U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition
  * U+0326 COMBINING COMMA BELOW: not included in any glyphset definition
  * U+0327 COMBINING CEDILLA: not included in any glyphset definition
@@ -72,42 +82,42 @@ Or you can add the above codepoints to one of the subsets supported by the font:
 
 | Name | current | expected |
 | :--- | :--- | :--- |
-| ExtraBold Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Thin Text | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | N/A |
-| Medium Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| SemiBold Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Condensed Bold | wght=700.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
 | Expanded Bold | wght=700.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed Thin | wght=100.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Light Oblique | wght=300.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Medium Oblique | wght=500.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
-| Black Oblique | wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Bold Oblique | wght=700.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Oblique Thin Display | wght=100.0, wdth=100.0, slnt=-12.0, opsz=48.0 | N/A |
-| Oblique | wght=400.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
-| ExtraLight Display | wght=200.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded ExtraLight | wght=200.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
-| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| Condensed ExtraLight | wght=200.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
-| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
-| Bold Display | wght=700.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
-| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-12.0, opsz=12.0 | N/A |
-| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0 | N/A |
-| Oblique Thin | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
-| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| SemiBold Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
 | Black Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Display | wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Expanded Light | wght=300.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| SemiCondensed Bold | wght=700.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
+| Thin Display | wght=100.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Text | wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0 | N/A |
+| Expanded Medium | wght=500.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Condensed ExtraLight | wght=200.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Thin Text | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | N/A |
+| Bold Display | wght=700.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Expanded ExtraLight | wght=200.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Condensed Light | wght=300.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Oblique Thin Display | wght=100.0, wdth=100.0, slnt=-12.0, opsz=48.0 | N/A |
+| Condensed Bold | wght=700.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Light Display | wght=300.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Oblique | wght=400.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| ExtraBold Display | wght=800.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| ExtraBold Oblique | wght=800.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Expanded Thin | wght=100.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| ExtraLight Display | wght=200.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| SemiExpanded | wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0 | N/A |
+| Medium Display | wght=500.0, wdth=100.0, slnt=0.0, opsz=48.0 | N/A |
+| Black Oblique | wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Oblique Thin | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Expanded | wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0 | N/A |
+| Light Oblique | wght=300.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Bold Oblique | wght=700.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Condensed Thin | wght=100.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| SemiCondensed | wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0 | N/A |
+| SemiBold Oblique | wght=600.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Condensed Oblique | wght=400.0, wdth=75.0, slnt=-12.0, opsz=12.0 | N/A |
+| Medium Oblique | wght=500.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
+| Condensed | wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
+| Condensed Medium | wght=500.0, wdth=75.0, slnt=0.0, opsz=12.0 | N/A |
 | ExtraLight Oblique | wght=200.0, wdth=100.0, slnt=-12.0, opsz=12.0 | N/A |
 | Thin Italic | N/A | wght=100.0, wdth=100.0, slnt=-12.0, opsz=12.0 |
 | Thin | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 | wght=100.0, wdth=100.0, slnt=0.0, opsz=12.0 |
@@ -465,8 +475,8 @@ divide
 
 | 💔 ERROR | ☠ FATAL | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| 0 | 0 | 0 | 19 | 97 | 8 | 132 | 0 |
-| 0% | 0% | 0% | 7% | 38% | 3% | 52% | 0% |
+| 0 | 0 | 1 | 19 | 97 | 8 | 131 | 0 |
+| 0% | 0% | 0% | 7% | 38% | 3% | 51% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
