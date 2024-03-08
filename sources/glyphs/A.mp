@@ -45,5 +45,5 @@ strokes[1] := bottom_right_slanted_serif(strokes[1], 1);
 
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;
-anchor( "top", (xpart(point 1 of paths[0]), 1.1X));
+anchor( "top", (xpart(point 0 of paths[0]), 1.2X));
 endglyph;
