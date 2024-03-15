@@ -132,61 +132,179 @@ glyphs:
   # Kern pairs
   kern:
     classes:
-      # Right Rounds
-      1.U_ROUNDS: OQD
-      1.L_ROUNDS: opbe
-      # Left rounds
-      2.L_ROUNDS:  ["e", "ee", "c", "d", "q", "g", "o"]
-      2.U_ROUNDS: CGOQ
-      1.V: vVYwyTL
-      2.V: VYT
-      1.MOUTH: KCkcF
-      1.ARM: r
-      2.j: j
+      # Lower cases
+      # Pair - Left
+      1.a: a
+      1.c: c
       1.f: ["f", "ff"]
-      2.f: ["f", "ff"]
+      1.g: g
+      1.r: r
+      1.rounds: opbe
+      1.k: k
+      1.j: j
       1.t: ["t","tt"]
+      1.v: vwy
+      1.verticals_lower: imnquh
+      1.verticals_tall: dl
+      1.z: z
+
+      # Pair - Right
+      2.a: a
+      2.f: ["f", "ff"]
+      2.i: i
+      2.j: j
+      2.r: r
+      2.rounds: ["e", "ee", "c", "d", "q", "g", "o"]
+      2.s: s
       2.t: ["t","tt"]
-      1.A: A
-      2.A: A
+      2.u: u
+      2.x: x
       2.v: vwy
-      2.QUOTES: ["'","\"","‘","’","“","”"]
+      2.verticals_tall: bl
+      2.verticals: ["m", "n", "p"]
+
+      # Upper cases
+      1.A: AÆ
+      1.B: B
+      1.C: C
+      1.F: F
+      1.G: G
+      1.K: K
+      1.L: L
+      1.P: P
+      1.ROUNDS: OQD
+      1.S: S
+      1.T: T
+      1.U: U
+      1.V: VYW
+      1.X: X
+
+      2.A: AÆ
+      2.J: J
       2.PARANTHESIS: "()"
-      1.L_VERTICALS_TALL: dl
-      1.L_VERTICALS_LOWER: aijmnqu
-      2.L_VERTICALS:  ["i", "r", "m", "n", "p", "b"]
+      2.QUOTES: ["'","\"","‘","’","“","”"]
+      2.ROUNDS: CGOQ
+      2.S: S
+      2.T: T
+      2.V: VYW
+      2.X: X
+
     latin: # script
-      - ["1.U_ROUNDS", "2.U_ROUNDS", -10] # Examples: OO, OC
-      - ["1.U_ROUNDS", "2.L_ROUNDS", -20]
-      # - ["1.L_ROUNDS", "2.L_ROUNDS", -10]
-      # - ["1.L_ROUNDS", "2.V", -20]
-      # - ["1.L_VERTICALS_LOWER", "2.L_ROUNDS", -20] # Examples: mo, ne
-      # - ["1.L_VERTICALS_TALL", "2.L_ROUNDS", -20] # Examples: lo, de
-      # - ["1.L_VERTICALS_LOWER", "2.t", -30] # Examples: at, it, mt, nt
-      # - ["1.A", "2.V", -100]
-      # - ["1.A", "2.U_ROUNDS", -50]
-      # - ["1.A", "2.L_ROUNDS", -50]
-      # - ["1.MOUTH", "2.U_ROUNDS", -40]
-      # - ["1.MOUTH", "2.L_ROUNDS", -40]
-      - ["1.ARM", "2.L_ROUNDS", -10] # Examples: ro re
-      - ["1.V", "2.U_ROUNDS", -30]
-      - ["1.V", "2.L_ROUNDS", -40]
-      - ["1.V", "2.A", -100]
-      - ["1.V", "a", -40]
-      - ["1.f", "2.L_ROUNDS", -40] # Examples: fo
-      - ["1.f", "a", -20] # Examples: fa
-      # - ["1.f", "2.f", -50] # Examples: ff
-      - ["1.f", "r", -20] # Examples: fr
-      - ["1.f", "2.v", -20]
-      # - ["1.L_ROUNDS", "2.t", -30]
-      # - ["1.L_ROUNDS", "2.f", -30]
-      - ["a", "2.t", -10]
-      - ["a", "2.v", -40]
-      # - ["u", "2.t", -10]
-      - ["u", "2.v", -50]
-      # - ["r", "a", -10]
-      # - ["k", "2.L_ROUNDS", -20]
-      # - ["j", "j", 50]
+
+      - ["1.verticals_lower", "2.v", -40] #  hy hv hw, uv nv dy
+      - ["1.verticals_tall", "2.v", -40] #  lv, dv dy
+      - ["1.r", "2.rounds", -10] #  ro re
+      - ["1.v", "2.rounds", -30]
+      - ["1.v", "2.verticals_tall", -40] # vl vb
+      - ["1.v", "2.s", -40]
+      - ["1.a", "2.t", -10]
+      - ["1.a", "2.v", -40]
+
+      - ["1.c", "2.v", -40]  #  cv
+
+      - ["1.f", "2.f", -10] #  ff
+      - ["1.f", "2.rounds", -40] #  fo
+      - ["1.f", "2.u", -40] #  fu
+      - ["1.f", "2.a", -20] #  fa
+      - ["1.i", "2.v", -40] #  iv
+      - ["1.f", "2.r", -20] #  fr
+      - ["1.f", "2.v", -60]
+      - ["1.f", "2.verticals", -40]
+      - ["1.f", "2.i", -80]
+      - ["1.f", "2.z", -60]
+
+      - ["1.g", "2.j", 120] # gj
+      - ["1.g", "2.s", -50] # fs
+
+      - ["1.j", "2.j", 80] # jj
+
+      - ["1.t", "2.t", -20]
+      - ["1.t", "2.v", -40]  #  tv, ty,tw
+
+      - ["1.A", "2.u", -40]  #  Au
+      - ["1.A", "2.t", -40]  #  At
+      - ["1.A", "2.T", -100]  #  At
+      - ["1.A", "2.V", -100]  #  Av Ay
+      - ["1.A", "2.v", -80]  #  Av Ay
+      - ["1.A", "2.ROUNDS", -50]  #  AO AC
+
+      - ["1.B", "2.V", -70]  #  BV
+
+      - ["1.C", "2.v", -50]  #  Cv
+      - ["1.C", "2.V", -70]  #  CV
+
+      - ["1.F", "2.rounds", -40]  #  Fo
+      - ["1.F", "2.A", -100]  #  FA
+      - ["1.F", "2.a", -40]  #  Fa
+      - ["1.F", "2.J", -100]  #  FJ
+
+      - ["1.G", "2.v", -40]  #  Gv Gy
+      - ["1.G", "2.V", -70]  #  GV GY
+      - ["1.G", "2.X", -60]  #  GV GY
+
+      - ["1.K", "2.rounds", -50]  #  Ko Ke
+      - ["1.K", "2.u", -60]  #  Ku
+      - ["1.K", "2.v", -100]  #  Kv Kw
+      - ["1.K", "2.ROUNDS", -70]  #  KO KG KC
+      - ["1.K", "2.s", -40]  #  Ks
+      - ["1.K", "2.V", -70]  #  Ks
+      - ["1.K", "2.T", -60]  #  Ks
+
+      - ["1.L", "2.T", -110]  #  LT
+      - ["1.L", "2.V", -130]  #  LV
+      - ["1.L", "2.v", -80]  #  LV
+
+      - ["1.P", "2.A", -90]  #  PA
+      - ["1.P", "2.J", -100]  #  PJ
+      - ["1.P", "2.X", -60]  #  PJ
+
+      - ["1.R", "2.V", -70]  #  RV
+
+      - ["1.T", "2.rounds", -90]  #  To Te
+      - ["1.T", "2.A", -110]  #  TA
+      - ["1.T", "2.a", -80]  #  TA
+      - ["1.T", "2.ROUNDS", -40]  #  TO
+      - ["1.T", "2.r", -60]  #  Tr
+      - ["1.T", "2.u", -70]  #  Tu
+      - ["1.T", "2.v", -80]  #  Tv Ty
+      - ["1.T", "2.V", -40]  #  TV
+      - ["1.T", "2.J", -100]  #  TJ
+      - ["1.T", "2.s", -80]  #  Ts
+      - ["1.T", "2.x", -70]  #  Tx
+
+      - ["1.ROUNDS", "2.ROUNDS", -10] #  OO, OC
+      - ["1.ROUNDS", "2.V", -70] #  OV, OW
+      - ["1.ROUNDS", "2.A", -50] # DA OA
+      - ["1.ROUNDS", "2.rounds", -20]
+      - ["1.ROUNDS", "2.X", -60]
+
+      - ["1.S", "2.v", -60]
+
+      - ["1.U", "2.A", -60]
+
+      - ["1.V", "2.ROUNDS", -80]
+      - ["1.V", "2.rounds", -110]
+      - ["1.V", "2.A", -140]
+      - ["1.V", "2.i", -50] #  Vi
+      - ["1.V", "2.a", -100]
+      - ["1.V", "2.s", -110]
+      - ["1.V", "2.r", -80]
+      - ["1.V", "2.u", -90]
+      - ["1.V", "2.J", -120]
+      - ["1.V", "2.v", -100]
+      - ["1.V", "2.V", -50]
+      - ["1.V", "2.verticals", -80]
+      - ["1.V", "2.J", -100]
+
+      - ["1.X", "2.rounds", -50]
+      - ["1.X", "2.u", -60]
+      - ["1.X", "2.s", -40]
+      - ["1.X", "2.t", -50]
+      - ["1.X", "2.T", -40]
+      - ["1.X", "2.V", -50]
+      - ["1.X", "2.v", -90]
+      - ["1.X", "2.ROUNDS", -60]
+
     malayalam:
       - ['്',"2.QUOTES", 125 ]
       - ['്',"2.PARANTHESIS", 100 ]
