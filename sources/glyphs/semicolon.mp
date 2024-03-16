@@ -1,14 +1,35 @@
 input glyph;
 beginglyph;
 soften:=0;
-paths[0] = fullcircle scaled (thick*1.5) shifted(thick/2, .8s);
-strokes[0] = paths[0];
+% This glyph does not slant. Reset slant value
+slant := 0;
+r = thick*1.66;
+
+paths[p] = circle(r) shifted(0, .6s);
+strokes[p] = paths[p];
+
 clearxy;
-z0 = (thick/4, -m/6);
-z1 = (x0, y0 + m/2);
-paths[1] = z0{dir 45}..z1;
+p:=p+1;
+paths[p] = circle(r);
+strokes[p] = paths[p];
+
+
+clearxy;
+p:=p+1;
+z0 = (x1, -descent*0.66);
+z1 = (xpart point 4 of paths[p-1] + r/2, ypart point 3 of paths[p-1]+r/2);
+paths[p] = z0{dir 30}..{dir 190}z1;
 pen_stroke(
-    nib(end_nib rotated terminalangle 0 of paths[1])(0)
-    nib(middle_down_nib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
+    nib(thinterminalnib rotated terminalangle 0 of paths[p])(0,1)
+    nib(thick_nib scaled 1.2 rotated terminalangle infinity of paths[0])(infinity)
+)(paths[p])(strokes[p]);
+
+strokes[p] := point 0 of strokes[p]{dir 30}
+    .. {left}point 1 of strokes[p-1]
+    -- point 2.56 of strokes[p-1] {dir -30}
+    .. {dir 210}point 3 of strokes[p]
+    -- cycle;
+
+strokes[p] := reverse strokes[p];
+
 endglyph;

@@ -8,7 +8,7 @@ paths[p] := z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
-strokes[p] := top_left_serif(strokes[p], 0);
+strokes[p] := top_serif(strokes[p], 0);
 strokes[p] := bottom_left_serif(strokes[p], 3);
 
 % Top curl
