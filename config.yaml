@@ -192,6 +192,7 @@ glyphs:
     latin: # script
 
       - ["1.verticals_lower", "2.v", -40] #  hy hv hw, uv nv dy
+      - ["1.verticals_lower", "2.t", -20] #  hy hv hw, uv nv dy
       - ["1.verticals_tall", "2.v", -40] #  lv, dv dy
       - ["1.r", "2.rounds", -10] #  ro re
       - ["1.v", "2.rounds", -30]
@@ -199,6 +200,7 @@ glyphs:
       - ["1.v", "2.s", -40]
       - ["1.a", "2.t", -10]
       - ["1.a", "2.v", -40]
+      - ["1.a", "2.verticals_tall", -20]
 
       - ["1.c", "2.v", -40]  #  cv
 
@@ -218,6 +220,8 @@ glyphs:
 
       - ["1.j", "2.j", 80] # jj
 
+      - ["1.k", "2.s", -20] # ks
+
       - ["1.t", "2.t", -20]
       - ["1.t", "2.v", -40]  #  tv, ty,tw
 
@@ -229,9 +233,13 @@ glyphs:
       - ["1.A", "2.ROUNDS", -50]  #  AO AC
 
       - ["1.B", "2.V", -70]  #  BV
+      - ["1.B", "2.v", -40]  #  By
 
       - ["1.C", "2.v", -50]  #  Cv
       - ["1.C", "2.V", -70]  #  CV
+
+      - ["1.E", "2.v", -50]  #  Ev
+      - ["1.E", "2.s", -10]  #  Ev
 
       - ["1.F", "2.rounds", -40]  #  Fo
       - ["1.F", "2.A", -100]  #  FA
