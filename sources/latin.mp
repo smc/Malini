@@ -177,7 +177,6 @@ vardef serif_bottom_right_slanted =
     z0{dir 45}..{right}z1
 enddef;
 
-
 vardef top_left_serif(expr s, p ) =
     clearxy;
     z0 = (point p of s) + (-1.2serif_width+thick/2, -3/4serif_height); % Move to left
@@ -188,10 +187,10 @@ vardef top_left_serif(expr s, p ) =
     z4 = (xpart point p of s, y1);
     z5 = (x4, y4);
     if p = 0:
-        z0{dir 250}
-        .. {dir 300}z1.. controls z4 and z5 .. z2
+        z0{dir 190}
+        .. {right}z1.. controls z4 and z5 .. z2
         -- subpath(p+1, length(s)-1) of s
-        .. z3{dir 200}..{dir 190}cycle
+        .. z3{dir 190}.. cycle
     else:
         subpath(0, p-1) of s
         -- (point p of s) + (-serif_width+thick/2, 0) % Move to left
@@ -231,10 +230,10 @@ vardef top_left_straight_serif(expr s, p ) =
     z4 = (xpart point p of s - sw*0.02, y1);
     z5 = (xpart point p of s, y1*0.98);
 
-    serif = z0{dir 250}
-    .. {dir 300}z1.. controls z4 and z5 .. z2
+    serif = z0{dir 177}
+    .. {right}z1.. controls z4 and z5 .. z2
     -- subpath(p+1, length(s)-1) of s{dir 183}
-    .. {dir 177}cycle;
+    ..  cycle;
 
     soften_node(serif, u/10, length(s)+1)
 enddef;
@@ -247,6 +246,7 @@ vardef top_right_serif(expr s, p) =
     -- subpath(p+1, length(s)) of s
     -- cycle
 enddef;
+
 
 
 vardef top_serif(expr s, p ) =
@@ -270,11 +270,11 @@ vardef top_serif(expr s, p ) =
 
 
     if p = 0:
-        z0{dir 210}
-        .. {dir 330}z1.. controls z4 and z5 .. z2
+        z0{dir 177}
+        .. {dir 350}z1.. controls z4 and z5 .. z2
         -- subpath(p+1, length(s)-2) of s
-        -- z6 .. controls z9 and z10.. z7{dir 30}
-        .. {dir 150}z8{dir 183} .. {dir 177}cycle
+        -- z6 .. controls z9 and z10.. z7{dir 10}
+        .. {dir 183}z8 .. cycle
     else:
 
         z14 = (point p of s) + (-1.2serif_width, 0); % Move to left
@@ -291,13 +291,13 @@ vardef top_serif(expr s, p ) =
         z17 = z16;
 
         subpath(0, p-1) of s
-        -- z6 .. controls z16 and z17.. z7{dir 30}
-        .. {dir 150}z8{dir 183}
-        .. {dir 177}z14{dir 210}
-        .. {dir 330}z15
+        -- z6 .. controls z16 and z17.. z7{dir 3}
+        .. {dir 183}z8
+        .. {dir 177}z14
+        .. {dir -3}z15
         .. controls z12 and z13..z11
         -- subpath(p+2, length(s)-1) of s
-        -- cycle
+        .. cycle
     fi
 enddef;
 
@@ -356,11 +356,11 @@ vardef bottom_serif(expr s, p) =
     control_t := arctime serif_height of subpath(p+1, p+2) of s;
     z8 = point p + 1 + control_t of s;
     z9 = z8;
-    subpath(0, p-1) of s -- z0 .. controls z6 and z7.. z1{dir 210}
-        .. {dir 330}z2{dir 3}
-        .. {dir -3}z3{dir 30}
-        .. {dir 150}z4..  controls  z8 and z9 .. z5
-        -- subpath(p+2, length(s)-1) of s  -- cycle
+    subpath(0, p-1) of s -- z0 .. controls z6 and z7.. z1
+        .. {dir 3}z2{dir 3}
+        .. {dir -3}z3{dir -3}
+        ..  z4..  controls  z8 and z9 .. z5
+        -- subpath(p+2, length(s)-1) of s .. cycle
 enddef;
 
 
