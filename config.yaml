@@ -198,7 +198,7 @@ glyphs:
       - ["1.v", "2.rounds", -30]
       - ["1.v", "2.verticals_tall", -40] # vl vb
       - ["1.v", "2.s", -40]
-      - ["1.a", "2.t", -10]
+      - ["1.a", "2.t", -30]
       - ["1.a", "2.v", -40]
       - ["1.a", "2.verticals_tall", -20]
 
@@ -223,6 +223,7 @@ glyphs:
       - ["1.k", "2.s", -20] # ks
 
       - ["1.rounds", "2.v", -20] # ov ew
+      - ["1.rounds", "2.verticals_tall", -10] # el ol
 
       - ["1.t", "2.t", -20]
       - ["1.t", "2.v", -40]  #  tv, ty,tw
