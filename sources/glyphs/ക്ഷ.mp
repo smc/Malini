@@ -49,7 +49,7 @@ z0=(xpart point infinity of strokes[3] - thin/2, m);
 z1=((x0+x2)/2.1, ypart(point 0.45 of paths[3]));
 z2=(xpart(point 0.225 of paths[2]), (y1+y3)/2);
 z3=(x2 + mw/4, m-overshoot);
-z4=(x3 + mw/6, 2/3m);
+z4=(x3 + mw/6, 0.75m);
 z5=(x4,  ypart(point 0  of paths[2]));
 paths[p] = z0{down}..z1{left}..z2{up}..z3{right}..z4---z5;
 pen_stroke(
@@ -61,8 +61,6 @@ pen_stroke(
     nib(thick_vertical_nib)(5)
     ignore_directions(1, 2)
 )(paths[p])(strokes[p]);
-
-
 
 anchor( "vc", point 0.5 of paths[2]);
 anchor( "right", (xpart(point 1 of paths[2]) - mw/5,0));

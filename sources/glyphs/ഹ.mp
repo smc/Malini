@@ -19,8 +19,8 @@ strokes[p]:= (xpart point infinity of strokes[p-1], ypart(point 0 of strokes[p])
 p:=p+1;
 input ./glyphs/include/റ;
 xshift = xpart(point 1 of paths[p-1]) - mw/4;
-paths[p] := paths[p]  shifted (xshift, 0);
-strokes[p] := strokes[p]   shifted (xshift, 0);
+paths[p] := paths[p] shifted (xshift, 0);
+strokes[p] := strokes[p] shifted (xshift, 0);
 
 anchor( "vc", point 0.5 of paths[1]);
 anchor( "bottom",(xpart(point 3 of paths[2]), 0));

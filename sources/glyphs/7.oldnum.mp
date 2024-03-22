@@ -1,17 +1,20 @@
 input glyph;
 beginglyph;
+
+% Top bar
 z0=(0, s - thick*0.7/2);
 z1=(x0 + .5Xw, y0);
 
-paths[0] = z0--z1;
+paths[p] = z0--z1;
 pen_stroke(
     nib(top_nib)(0)
     nib(top_nib)(1)
-)(paths[0])(strokes[0]);
+)(paths[p])(strokes[p]);
 
+% Vertical bar
 p:=p+1;
 clearxy;
-z0=(.5Xw - thick*0./2, s);
+z0= point 2 of strokes[p-1];
 z1=(x0 - Xw/4, -descent);
 paths[p] = z0..{dir -100}z1;
 pen_stroke(
@@ -23,8 +26,8 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0=(xpart(point 0 of paths[0]) , y1 - thick/2 - u);
-z1=(x0+thick/2, ypart(point 0 of paths[1]));
+z0=(xpart(point 0 of strokes[p-2]) , y1 - thick/2 - u);
+z1=point 3 of strokes[p-2];
 paths[p]=z0--z1;
 pen_stroke(
     cut(serif_nib rotated terminalangle 0 of paths[p], 0)(0 )

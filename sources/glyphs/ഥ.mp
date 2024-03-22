@@ -21,7 +21,7 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0=(xpart(point infinity of paths[p-1]), 0);
-z1=(x0, (y0+ y2)/2);
+z1=(x0, (y0+ y2)/1.75);
 z2=((x1+x3)/2, m-overshoot);
 z3=(x0 - mw*0.8, (y2+ y4)/2);
 z4=(x3,ypart(point infinity of paths[p-1]));

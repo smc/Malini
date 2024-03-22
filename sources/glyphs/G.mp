@@ -22,27 +22,22 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-z0 = point infinity of paths[0];
-z1 = (x0, 0.5X);
+z0 = (x1, 0.5X);
+z1 =point infinity of paths[0];
 paths[1]:=z0--z1;
 pen_stroke(
     nib(thick_vertical_nib)(0, 1)
 )(paths[p])(strokes[p]);
-
+strokes[p] := top_serif(strokes[p], 0);
 
 strokes[0] :=  subpath(0, 3) of strokes[0]{right}
-    .. point 0 of strokes[1]
+    .. point 4 of strokes[1]
     -- point 3 of strokes[1]
     .. {left}subpath(6, 9) of strokes[0]
     .. cycle;
-% Top hanging serif styling
-strokes[0] :=  subpath(0.15, 9) of strokes[0]{right} .. cycle;
-strokes[0] := harmonize(strokes[0]);
 
-p:=p+1;
-clearxy;
-paths[p] := serif_top_thick shifted (point infinity of paths[1]);
-strokes[p] := serif_stroke_top(paths[p]);
+strokes[0] := subpath(0.15, 9) of strokes[0]{right} .. cycle;
+strokes[0] := harmonize(strokes[0]);
 
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
 anchor( "bottom", (xpart(point 3 of paths[0]), 0));

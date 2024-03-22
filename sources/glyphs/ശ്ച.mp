@@ -36,10 +36,9 @@ pen_stroke(
 
 p:=p+1;
 clearxy;
-z0=(0, 0);
-z1=(x0 + mw, y0);
+z0=(xpart point 6.8 of paths[p-1], thick*thin_horizontal_nib_scale/2);
+z1=(xpart point 9 of paths[0] + mw/3, y0);
 paths[p] := z0--z1;
-paths[p] := paths[p] shifted (xpart point 7.8 of paths[p-1], thick*thin_horizontal_nib_scale/2);
 pen_stroke(
     nib(thin_horizontal_nib)(0,1)
 )(paths[p])(strokes[p]);
