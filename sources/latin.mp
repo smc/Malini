@@ -179,7 +179,7 @@ enddef;
 
 vardef top_left_serif(expr s, p ) =
     clearxy;
-    z0 = (point p of s) + (-1.2serif_width+thick/2, -3/4serif_height); % Move to left
+    z0 = (point p of s) + (-serif_width+thick/2, -3/4serif_height); % Move to left
     z1 = (x0+0.05u , y0  -3/4serif_height); % Move to left
     z2 = (xpart point p of s, y1-serif_height); % Move to right
     z3 = point length(s)-1 of s - (thick/4, -thick/4);
@@ -363,6 +363,49 @@ vardef bottom_serif(expr s, p) =
         -- subpath(p+2, length(s)-1) of s .. cycle
 enddef;
 
+
+vardef top_left_straight_serif_MN(expr s, p ) =
+    path serif;
+
+    numeric l_control_t;
+    clearxy;
+    z0 = (point p of s) + (-serif_width+thick/2, 0); % Move to left
+    z1 = (x0, y0  -3/4serif_height);
+    z2 = point ( arctime serif_width of subpath(p, p+1) of s ) of s;
+
+    l_control_t = arctime serif_height of subpath(p, p+1) of s ;
+    z4 =  point (p + l_control_t ) of s;
+    z5 = z4;
+
+    serif = z0 .. z1.. controls z4 and z5 .. z2
+     -- subpath(p+1, length(s)-1) of s-- cycle;
+    soften_node(serif, u/10, 5)
+enddef;
+
+
+
+vardef top_right_straight_serif_MN(expr s, p ) =
+    path serif;
+    numeric r_control_t;
+    numeric t_on_right_slant;
+    clearxy;
+
+    t_on_right_slant =  arctime serif_width of subpath(p, p-1)  of s;
+    z0 = point (p - t_on_right_slant ) of s;
+    z1 = (xpart point 1 of s + serif_width  , y2 - 3/4serif_height);
+    z2 = (x1, ypart point p of s);
+
+    % control
+    r_control_t =  arctime serif_height of subpath(p, p-1) of s ;
+    z6 = point (p - r_control_t ) of s;
+    z7 = z6;
+
+    serif = subpath(0, p-1) of s
+        --  z0 .. controls z6 and z7
+        .. z1{right} .. {left}z2
+        -- subpath(p+1, length(s) -1 ) of s --  cycle;
+    soften_node(serif, u/10, 4)
+enddef;
 
 vardef top_left_slanted_serif(expr s, p ) =
     numeric t_on_left_slant;

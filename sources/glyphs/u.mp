@@ -13,7 +13,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 
-strokes[p] := top_left_straight_serif(strokes[p], 0);
+strokes[p] := top_left_serif(strokes[p], 0);
 
 p:=p+1;
 clearxy;
@@ -25,7 +25,7 @@ pen_stroke(
     nib(thick_vertical_nib)(0,1)
 )(paths[p])(strokes[p]);
 
-strokes[p] := top_left_straight_serif(strokes[p], 0);
+strokes[p] := top_left_serif(strokes[p], 0);
 % Leave some extra gap at bottom, near serif
 strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
     .. {dir -80}subpath(3.15, 6) of strokes[p]
