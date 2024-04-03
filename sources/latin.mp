@@ -1,6 +1,6 @@
 % This file contains reusable, common glyph shapes for Latin script
 % for the current font.
-% Copyright 2022 Santhosh Thottingal
+% Copyright 2024 Santhosh Thottingal
 % Licensed under MIT License
 
 vardef r_vstem =
