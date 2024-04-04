@@ -407,6 +407,7 @@ vardef top_right_straight_serif_MN(expr s, p ) =
     soften_node(serif, u/10, 4)
 enddef;
 
+
 vardef top_left_slanted_serif(expr s, p ) =
     numeric t_on_left_slant;
     numeric l_control_t;
@@ -429,11 +430,11 @@ vardef top_left_slanted_serif(expr s, p ) =
     z10=z9;
 
 
-     z0{dir 250}
-     .. {dir 300}z1.. controls z4 and z5 .. z2
+     z0{dir 177}
+     .. {dir -3}z1.. controls z4 and z5 .. z2
      -- subpath(p+1, length(s)-2) of s
-     -- z6 .. controls z9 and z10.. z7{dir 30}
-     ..{dir 150}z8{dir 183} .. {dir 177}cycle
+     -- z6 .. controls z9 and z10.. z7{dir 3}
+     ..z8{dir 183} .. {dir 177}cycle
 
 enddef;
 
@@ -459,11 +460,11 @@ vardef top_right_slanted_serif(expr s, p ) =
     z9= point (length(s) - 1 - r_control_t ) of s;
     z10=z9;
 
-    z0{dir 210}
-     .. {dir 330}z1.. controls z4 and z5 .. z2
+    z0{dir 177}
+     .. {dir -3}z1.. controls z4 and z5 .. z2
      -- subpath(p+1, length(s)-2) of s
-     -- z6 .. controls z9 and z10.. z7{dir 30}
-     ..{dir 150}z8{dir 183} .. {dir 177}cycle
+     -- z6 .. controls z9 and z10.. z7{dir 3}
+     ..z8{dir 183} .. {dir 177}cycle
 
 enddef;
 
@@ -489,13 +490,13 @@ vardef bottom_right_slanted_serif(expr stroke, t ) =
     z8 = point t + 1+ r_control_t of stroke;
     z9 = z8;
 
-    subpath(0, t-1) of stroke -- z0..controls z6 and z7 ..z1{dir 210}
-        .. {dir 330}z2{dir 3}..{dir -3}z3{dir 30}
-        .. {dir 120}z4..controls z8 and z9
+
+    subpath(0, t-1) of stroke -- z0..controls z6 and z7 ..z1{dir 183}
+        .. z2{dir 3}..{dir -3}z3
+        .. {dir 177}z4..controls z8 and z9
         .. z5
         -- subpath(t+2, length(stroke)-1) of stroke
-        -- cycle
-
+        .. cycle
 enddef;
 
 
@@ -523,10 +524,10 @@ vardef bottom_left_slanted_serif(expr stroke, t ) =
 
     subpath(0, t-1) of stroke -- z0
         .. controls z6 and z7
-        .. z1{dir 210}
-        .. {dir 330}z2{dir 3}
-        .. {dir -3}z3{dir 30}
-        .. {dir 150}z4
+        .. z1{dir 183}
+        .. {dir 3}z2{dir 3}
+        .. {dir -3}z3{dir 3}
+        .. {dir 177}z4
         .. controls z8 and z9
         .. z5
         -- subpath(t+2, length(stroke)-1) of stroke
