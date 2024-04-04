@@ -26,9 +26,9 @@ clearxy;
 z0 = point 3 of paths[p-1];
 z1 = (x0 - 0.75mw, -descent);
 
-paths[p] = z0{dir -90}.. {left}z1 ;
+paths[p] = z0{dir angle(direction infinity of paths[p-1])}.. {left}z1 ;
 pen_stroke(
-    nib(thick_vertical_nib)(0)
+    nib(middle_down_nib)(0)
     nib(end_nib rotated terminalangle 1 of paths[p])(1)
 )(paths[p])(strokes[p]);
 

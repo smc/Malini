@@ -18,20 +18,19 @@ strokes[p] := top_left_serif(strokes[p], 0);
 p:=p+1;
 clearxy;
 z0=(0, s);
-z1=(x0, 0);
-paths[p] := z0--z1;
+z1=(x0, s/4) ;
+z2=((x1+x3)/2, undershoot);
+z3=(x1 + sw*0.3,  0.125s);
+paths[p] := z0...z1{down}..z2{right}..{dir 60}z3;
 paths[p] := paths[p] shifted(xpart(point infinity of paths[0]), 0);
 pen_stroke(
-    nib(thick_vertical_nib)(0,1)
+    nib(thick_vertical_nib)(0)
+    nib(middle_down_nib)(1)
+    nib(down_nib rotated -40 scaled 0.8)(2)
+    cut(end_nib scaled 0.5, rel 90)(3)
 )(paths[p])(strokes[p]);
 
 strokes[p] := top_left_serif(strokes[p], 0);
-% Leave some extra gap at bottom, near serif
-strokes[p] :=  subpath(0, 2.75) of strokes[p]{down}
-    .. {dir -80}subpath(3.15, 6) of strokes[p]
-    --  cycle;
-strokes[p] := bottom_right_serif(strokes[p], 4);
-
 
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;

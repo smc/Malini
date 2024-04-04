@@ -11,6 +11,8 @@ pen_stroke(
     cut(thick_vertical_nib rotated terminalangle 1 of paths[p], 0)(1)
 )(paths[0])(strokes[0]);
 
+
+
 % Serifs
 strokes[0] := top_left_slanted_serif(strokes[0], 0);
 strokes[0] := bottom_right_slanted_serif(strokes[0], 3);
@@ -36,6 +38,7 @@ pen_stroke(
     cut(thin_vertical_nib rotated terminalangle 0 of paths[p], 0)(0)
     cut(thin_vertical_nib rotated terminalangle 1 of paths[p], 0)(1)
 )(paths[p])(strokes[p]);
+
 
 strokes[1] := bottom_left_slanted_serif(strokes[1], 1);
 strokes[2] := top_right_slanted_serif(strokes[2],0 );
