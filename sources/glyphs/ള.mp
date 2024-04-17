@@ -9,6 +9,7 @@ z4=(x0, y0);
 
 paths[p] = z0{up}..z1{right}..z2{down}..z3{left}..{up}z4;
 paths[p]:=paths[p] shifted (0, m/8);
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
@@ -32,7 +33,7 @@ z8 = (xpart(point 0 of paths[p-1]), (y7+y9)/2);
 z9= (x7, -descent*0.75);
 z10 = (x5+ thick/2, y9);
 paths[p]= z0..z1..z2..z3..{left}z4{right}..z5..z6---z7..z8..z9---z10;
-
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)

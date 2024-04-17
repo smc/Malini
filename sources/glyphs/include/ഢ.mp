@@ -10,6 +10,7 @@ z5=(x4+mw/4, undershoot);
 z6=(x5+mw/4, 0.4m);
 z7=(x6,  m-thin/2);
 paths[p] := z0..z1{up}..z2{right}.. {down}z3..{down}z4..{right}z5..{up}z6--z7;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
@@ -31,6 +32,7 @@ z3 = (x2+mw/4, y2 - m/4);
 z4 = (x3+mw/4, y3 + m/4);
 paths[p]:=paths[p]{right} ..z0{dir 100}..z1..z2..z3..{up}z4;
 paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(thick_vertical_nib)(0)
     nib(thick_vertical_nib)(1)

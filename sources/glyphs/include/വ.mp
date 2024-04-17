@@ -1,5 +1,6 @@
 
 paths[p] := va_mouth;
+paths[p]:=harmonize(paths[p]);
 strokes[p] := pa_mouth_stroke(paths[p]);
 % Horizontal stem
 p:=p+1;

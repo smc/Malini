@@ -24,6 +24,7 @@ z7=(x6 + mw/2, m/2);
 z8=(x7 - mw/4+ thin*1.2/2, thin/2);
 z9=(x8, 0);
 paths[1]= z4{up}..z5{up} ..z6{right}..{down}z7..z8--z9;
+
 pen_stroke(
     nib(middle_up_nib rotated terminalangle 4 of paths[0])(0)
     nib(middle_up_nib)(1)
