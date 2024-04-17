@@ -42,7 +42,7 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(down_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(down_nib)(7)
     nib(end_nib rotated terminalangle 8 of paths[p])(8)
 )(paths[p])(strokes[p]);
@@ -98,7 +98,7 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(thin_horizontal_nib)(4)
     nib(thin_horizontal_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(end_nib rotated 90)(7)
     nib(end_nib scaled 0.5rotated terminalangle 8 of paths[p])(8)
 
@@ -141,7 +141,7 @@ pen_stroke(
     nib(down_nib)(3)
     nib(middle_down_nib scaled 0.8)(2)
     nib(down_nib)(3,4)
-    nib(down_nib rotated 90)(5)
+    nib(down_nib rotated 70)(5)
     nib(thick_horizontal_nib)(6,7)
 )(paths[p])(strokes[p]);
 

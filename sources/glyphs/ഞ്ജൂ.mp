@@ -52,7 +52,7 @@ pen_stroke(
     nib(end_nib scaled 0.8 rotated 90)(3)
     nib(middle_down_nib scaled 0.8)(2, 4)
     nib(down_nib)(5,6)
-    nib(down_nib rotated 90)(7)
+    nib(down_nib rotated 70)(7)
     nib(thick_horizontal_nib)(8,9)
 )(paths[p])(strokes[p]);
 

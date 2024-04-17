@@ -41,6 +41,6 @@ strokes[p] :=  subpath(0,  8) of strokes[p]
 anchor( "vc", (xpart(point 2 of paths[0]),0));
 anchor( "bottom", (xpart(point 0 of paths[p]),0));
 
-anchor( "right", point infinity of paths[p-1] - (mw/5,0) );
+anchor( "right", (xpart point infinity of paths[p-1] - u_drop_sign_radius,u_drop_sign_vshift) );
 
 endglyph;

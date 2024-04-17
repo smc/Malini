@@ -42,7 +42,7 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(thin_horizontal_nib)(4)
     nib(thin_horizontal_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(end_nib rotated 90)(7)
     nib(end_nib scaled 0.5rotated terminalangle 8 of paths[p])(8)
 

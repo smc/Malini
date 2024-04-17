@@ -40,10 +40,11 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(down_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(thick_vertical_nib rotated 90)(7,8)
 )(paths[1])(strokes[1]);
 
+% Au sign
 clearxy;
 z0 = (x1 + mw*0.1, 0.4m);
 z1 = (0, (y0+y2)/2);
@@ -61,7 +62,7 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 clearxy;
-z0 =  point 4 of paths[2] + (thick/2-thin/2,  thin*tand(30)/2);
+z0 =  point 4 of paths[2] +(thick/2-thin/2*middle_up_nib_scale,0) ;
 z1 = (x0, m*0.6);
 z2 = ((x1 + x3)/2, m-overshoot);
 z3 = (x1 + 0.66mw, (y2+y4)/1.75);
@@ -70,8 +71,8 @@ z4 = (x3 - 0.8mw, 0);
 paths[3] =  z0 --- z1 ..z2{right}..z3{down}..{dir 175}z4;
 
 pen_stroke(
-    cut(thin_vertical_nib, -30)(0)
-    nib(thin_vertical_nib)(1)
+    cut(middle_up_nib, 0)(0)
+    nib(middle_up_nib)(1)
     nib(top_nib)(2)
     nib(middle_down_nib)(3)
     nib(end_nib rotated 90)(4)

@@ -82,16 +82,6 @@ vardef serif_right_thin =
     serif_bottom_thin rotated 90
 enddef;
 
-vardef serif_stroke_bottom (expr spath) =
-    clearxy;
-    path s_stroke;
-    pen_stroke(
-        nib(thick_vertical_nib)(0)
-        nib(thick_vertical_nib scaled 2.6)(1,2)
-    )(spath)(s_stroke);
-    s_stroke:=point 0 of s_stroke{down}..{left}(subpath (1,4) of s_stroke){left}..{up}point 5 of s_stroke--cycle;
-    s_stroke
-enddef;
 
 vardef serif_stroke_top (expr spath) =
     clearxy;
@@ -116,17 +106,6 @@ vardef serif_stroke_top_thin (expr spath) =
     s_stroke
 enddef;
 
-vardef serif_stroke_bottom_thin (expr spath) =
-    clearxy;
-    path s_stroke;
-    pen_stroke(
-        nib(thin_vertical_nib rotated terminalangle 0 of spath)(0)
-        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 1 of spath)(1)
-        nib(thick_vertical_nib scaled 2.6 rotated terminalangle 2 of spath)(2)
-    )(spath)(s_stroke);
-    s_stroke:=point 0 of s_stroke{down}..{left}(subpath (1,4) of s_stroke){left}..{up}point 5 of s_stroke--cycle;
-    s_stroke
-enddef;
 
 vardef serif_stroke_right_thin (expr spath) =
     clearxy;
@@ -141,41 +120,6 @@ vardef serif_stroke_right_thin (expr spath) =
 enddef;
 
 
-vardef serif_stroke_slanted (expr spath) =
-    clearxy;
-    path s_stroke;
-    pen_stroke(
-        nib(serif_nib rotated terminalangle 0  of spath)(0, 1)
-        nib(serif_nib rotated terminalangle 2  of spath)(2)
-        nib(serif_nib rotated terminalangle 3  of spath)(3)
-        nib(serif_nib)(4)
-    )(spath)(s_stroke);
-    s_stroke
-enddef;
-
-vardef serif_bottom_thin =
-    serif_bottom_thick
-enddef;
-
-
-vardef serif_bottom_right =
-    reverse serif_top_right xyscaled(1,-1)
-enddef;
-
-vardef serif_hanging_top_left =
-   serif_bottom_right crotated(-95) shifted  (-thick/4, -thick)
-enddef;
-
-vardef serif_hanging_top_right =
-   serif_bottom_left crotated(95) shifted  (thick/4, -thick)
-enddef;
-
-vardef serif_bottom_right_slanted =
-    clearxy;
-    z0= ( - thick/2 + thin*1.2*sind(45)/2, -thin*1.2*sind(45)/2 );
-    z1= (x0+thick/2+ u, y0+thick/2);
-    z0{dir 45}..{right}z1
-enddef;
 
 vardef top_left_serif(expr s, p ) =
     clearxy;

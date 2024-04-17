@@ -58,5 +58,5 @@ pen_stroke(
     nib(end_nib rotated terminalangle 4 of paths[p])(4)
 )(paths[p])(strokes[p]);
 
-anchor( "right", point infinity of paths[p-1] - (mw/5,0) );
+anchor( "right", point infinity of paths[p-1] - (u_drop_sign_radius,0) );
 endglyph;

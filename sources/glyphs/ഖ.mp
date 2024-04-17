@@ -59,6 +59,6 @@ pen_stroke(
 )(paths[3])(strokes[3]);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
-anchor( "right", (xpart(point 1 of paths[2])-mw/5,0));
+anchor( "right", (xpart(point 1 of paths[2])-u_drop_sign_radius,u_drop_sign_vshift));
 
 endglyph;

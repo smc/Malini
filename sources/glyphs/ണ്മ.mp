@@ -41,5 +41,5 @@ pen_stroke(
     cut(end_nib scaled 0.8 rotated terminalangle 2 of paths[p], -90 )(2)
 )(paths[p])(strokes[p]);
 
-anchor( "right", point 1 of paths[4] - (mw/5,0));
+anchor( "right", (xpart point 1 of paths[4] - u_drop_sign_radius,u_drop_sign_vshift));
 endglyph;

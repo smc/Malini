@@ -22,7 +22,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0=point 7 of paths[0] + (thick/2-thin/2*middle_up_nib_scale,  thin/2);
+z0=point 7 of paths[0] + (thick/2-thin/2*middle_up_nib_scale,  thin/2*middle_up_nib_scale);
 z1=(x0, 0.6m);
 z2=((x1+x3)/2.06, ypart(point 5 of paths[0])); % Top of second arch
 x3-x1 = mw*0.75;
@@ -41,7 +41,7 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(down_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(thick_horizontal_nib)(7,8)
 )(paths[1])(strokes[1]);
 

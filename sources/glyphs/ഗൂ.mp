@@ -23,7 +23,7 @@ pen_stroke(
    nib(end_nib rotated 90)(6)
    nib(middle_down_nib scaled 0.95)(7)
    nib(down_nib)(8, 9)
-   nib(down_nib rotated 90)(10)
+   nib(down_nib rotated 70)(10)
    nib(thick_horizontal_nib)(11,12)
 )(paths[p])(strokes[p]);
 anchor( "vc", point 3 of paths[p]);

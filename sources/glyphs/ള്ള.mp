@@ -19,7 +19,8 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 clearxy;
-z0 = point 3.8 of paths[0];
+p:=p+1;
+z0 = point 3.8 of paths[p-1];
 z1 = ( x0, (y0 + y2)/2);
 z2 = ( x1 + mw/1.66, m - overshoot); % top
 z3 = ( x2 + mw/3, y2 - m/4);
@@ -40,22 +41,25 @@ pen_stroke(
     nib(middle_down_nib)(5)
     nib(down_nib)(6)
     nib(down_nib)(7)
-    nib(down_nib rotated 90)(8)
+    nib(down_nib rotated 70)(8)
     nib(thick_horizontal_nib)(9,10)
-)(paths[1])(strokes[1]);
+)(paths[p])(strokes[p]);
 
 shift = xpart(point infinity of paths[1]) - mw/5;
-paths[2] = paths[0] shifted (shift, 0);
-% We need to cut the extra elongation we gave for first ള
-paths[3] := subpath (0, 9.62) of paths[1] shifted (shift, 0);
+p:=p+1;
+paths[p] = paths[0] shifted (shift, 0);
 pen_stroke(
     nib(middle_up_nib)(0)
     nib(top_nib)(1)
     nib(middle_down_nib)(2)
     nib(down_nib)(3)
     nib(middle_up_nib)(4)
-)(paths[2])(strokes[2]);
+)(paths[p])(strokes[p]);
 
+% We need to cut the extra elongation we gave for first ള
+clearxy;
+p:=p+1;
+paths[p] := subpath (0, 9.62) of paths[p-2] shifted (shift, 0);
 pen_stroke(
     nib(start_up_nib rotated terminalangle 0 of paths[p])(0)
     nib(middle_up_nib)(1)
@@ -64,11 +68,11 @@ pen_stroke(
     nib(middle_down_nib)(5)
     nib(down_nib)(6)
     nib(down_nib)(7)
-    nib(down_nib rotated 90)(8)
+    nib(down_nib rotated 70)(8)
     nib(thick_horizontal_nib)(9,10)
-)(paths[3])(strokes[3]);
+)(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart(point 0 of paths[2]),0));
-anchor( "right", point infinity of paths[3] - (mw/5,0));
+anchor( "right", (xpart point 11 of paths[p] - u_drop_sign_radius, ypart point 11 of strokes[p] + u_drop_sign_vshift));
 
 endglyph;

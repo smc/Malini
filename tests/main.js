@@ -1,3 +1,5 @@
+import {Pane} from 'https://cdn.jsdelivr.net/npm/tweakpane@4.0.3/dist/tweakpane.min.js';
+
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.

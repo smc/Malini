@@ -5,7 +5,9 @@
 
 % Depth of reph sign in ക്ര, പ്ര , സ്ര etc
 reph_sign_depth   := -descent*0.8;
-
+u_drop_sign_radius:= condense*(descent-thick/2)/2;
+% ഉ sign proper overlap with horizontal strokes like ല, പ
+u_drop_sign_vshift:=thick*0.8*contrast*0.75;
 
 vardef left_arch_dha =
     clearxy;

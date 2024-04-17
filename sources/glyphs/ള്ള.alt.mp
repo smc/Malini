@@ -30,11 +30,12 @@ pen_stroke(
     nib(middle_down_nib)(3)
     nib(down_nib)(4)
     nib(down_nib)(5)
-    nib(down_nib rotated 90)(6)
+    nib(down_nib rotated 70)(6)
     nib(thick_horizontal_nib)(7,8)
 )(paths[p])(strokes[p]);
 
 anchor( "vc", (xpart(point 0 of paths[2]),0));
-anchor( "right", point infinity of paths[p] - (mw/5,0));
+
+anchor( "right", (xpart point 8 of paths[p] - u_drop_sign_radius, ypart  point 8 of strokes[p] + u_drop_sign_vshift));
 
 endglyph;
