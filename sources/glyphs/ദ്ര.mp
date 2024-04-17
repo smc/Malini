@@ -1,7 +1,9 @@
 input glyph;
 beginglyph;
 
-paths[0] := subpath(0, 4) of da shifted(mw/3,0);
+input ./glyphs/include/ദ;
+clearxy;
+paths[p] := subpath(0, 4) of paths[p] shifted(mw/3,0);
 z5=(xpart(point infinity of paths[0]) + 0.4mw, 0);
 z6=(xpart(point 1.8 of paths[0]), reph_sign_depth);
 z8=(xpart point 1 of paths[0] - mw/6, m);

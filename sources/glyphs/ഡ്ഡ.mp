@@ -1,12 +1,11 @@
 input glyph;
 beginglyph;
 input ./glyphs/include/ഡ;
-p:=p+1;
-input ./glyphs/include/ഡ;
-for i=p-1 upto p:
-    paths[i]:=paths[i] shifted (mw*0.7, -1.1m) xscaled 0.75  yscaled 0.75;
-    strokes[i]:=strokes[i] shifted (mw*0.7, -1.1m) xscaled 0.75  yscaled 0.75;
-endfor;
+
+paths[2] := paths[0] shifted (0.56mw, -1.1m) xscaled 0.8 yscaled 0.75 ;
+strokes[2] := strokes[0] shifted (0.56mw, -1.1m) xscaled 0.8 yscaled 0.75 ;
+paths[3] := paths[1] shifted (0.56mw, -1.1m) xscaled 0.8 yscaled 0.75;
+strokes[3] := strokes[1] shifted (0.56mw, -1.1m) xscaled 0.8 yscaled 0.75;
 
 anchor( "vc", point 5 of paths[0]);
 

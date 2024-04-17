@@ -26,16 +26,10 @@ pen_stroke(
 
 clearxy;
 p:=p+1;
-paths[p]:=right_arch_dha;
+input ./glyphs/include/right_arch_dha;
 paths[p]:=paths[p] shifted (xpart(point infinity of paths[p-1]), 0);
-paths[p]:=harmonize(paths[p]);
-pen_stroke(
-    nib(thick_vertical_nib)(0)
-    nib(thick_vertical_nib)(1)
-    nib(down_nib)(2)
-    nib(middle_up_nib)(3)
-    nib(end_nib rotated terminalangle 4 of paths[p])(4)
-)(paths[p])(strokes[p]);
+strokes[p]:=strokes[p] shifted (xpart(point infinity of paths[p-1]), 0);
+
 anchor( "vc", (xpart(point 1 of paths[3]),0));
 anchor( "right", point 2.25 of paths[4]);
 endglyph;
