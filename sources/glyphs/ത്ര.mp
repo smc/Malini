@@ -6,9 +6,8 @@ clearxy;
 z8 = (xpart point 4 of paths[p], reph_sign_depth); % ra sign starts
 z9 = (xpart point 1 of paths[p] -mw/6, m);
 
-paths[p] := (subpath(0, 6) of paths[p]) .. z8{left} .. {dir 50}z9;
-dt = directiontime dir 270 of subpath( 6, 8) of paths[p];
-paths[p] := insert_nodes(paths[p])(6 + dt );
+cut:=6.8;
+paths[p] := (subpath(0, cut) of paths[p]){dir angle(direction cut of paths[p])} .. z8{left} .. {dir 50}z9;
 dt := directiontime dir 90 of subpath( 8, 9) of paths[p];
 paths[p] := insert_nodes(paths[p])(8 + dt);
 
