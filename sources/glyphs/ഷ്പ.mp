@@ -3,44 +3,18 @@ beginglyph;
 input ./glyphs/include/ഷ;
 
 p:=p+1;
-paths[p] := pa_mouth;
+input ./glyphs/include/പ;
 
-p:=p+1;
-clearxy;
-z0=  (0,0);
-z1=(x0 + 0.75mw, y0);
-z2=(x1, m);
+xshift := 0.75mw;
+yshift := -0.75m;
 
-paths[p]:= z0--z1 ;
-paths[p]:= paths[p] shifted ( xpart(point infinity of paths[p-1]) +thick/4, thick*thin_horizontal_nib_scale/2 );
+for i=4 upto 6:
+  paths[i] := paths[i] shifted (xshift, yshift) xscaled 0.8 yscaled 0.75;
+  strokes[i] := strokes[i] shifted (xshift, yshift) xscaled 0.8 yscaled 0.75;
+endfor;
 
-p:=p+1;
-clearxy;
-z0=(0, 0);
-z1=(x0, m);
-
-paths[p]:= z0--z1;
-paths[p]:= paths[p] shifted (xpart(point 1 of paths[p-1]), 0);
-
-paths[p-2] := paths[p-2] shifted (0.65mw, -0.8m) xscaled 0.9 yscaled 0.75 ;
-pen_stroke(
-    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p-2])(0)
-    nib(middle_up_nib scaled 0.8)(1)
-    nib(top_nib scaled 0.8)(2)
-    nib(middle_down_nib scaled 0.8)(3)
-    nib(end_nib scaled 0.8)(4,5)
-)(paths[p-2])(strokes[p-2]);
-
-paths[p-1] := paths[p-1] shifted (0.65mw, -0.8m) xscaled 0.9 yscaled 0.75 ;
-pen_stroke(
-    cut(thin_horizontal_nib scaled 0.8, 45)(0)
-    nib(thin_horizontal_nib scaled 0.8)(1)
-)(paths[p-1])(strokes[p-1]);
-
-paths[p] := paths[p] shifted (0.65mw, -0.8m) xscaled 0.9 yscaled 0.75 ;
-pen_stroke(
-    nib(thick_vertical_nib scaled 0.8)(0, 1)
-)(paths[p])(strokes[p]);
+xoffset = xpart point 0 of strokes[p]- xpart point 0 of strokes[2];
+strokes[p] := strokes[p] shifted (-xoffset, 0);
 
 anchor( "vc", point 0.5 of paths[1]);
 

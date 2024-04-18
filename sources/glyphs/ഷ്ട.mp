@@ -15,7 +15,7 @@ z5 = ((x4 + x6)/1.8, undershoot);
 z6 = (x2 - down_nib_width/2, y5+0.12m);
 
 paths[p] = z0..z1{left} ..z2{down}..z3{right}..z4{down}..z5{left} ..z6;
-paths[p] := paths[p] shifted (mw*1.33, -0.93m) xscaled 0.8 yscaled 0.7;
+paths[p] := paths[p] shifted (mw*1.33, -1.1m) xscaled 0.8 yscaled 0.8;
 pen_stroke(
   nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
   nib(top_nib  rotated 30 scaled 0.8)(1)

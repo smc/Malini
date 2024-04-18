@@ -17,7 +17,7 @@ z7 = (x6 + mw/6, m);
 
 paths[p] =  z0..z1{left}..z2{down}..z3..z4{down}..z5{left}..z6..z7;
 paths[p] := paths[p] shifted (mw/3, 0);
-paths[p] := paths[p] shifted (0.95mw, -0.92m) xscaled 0.8 yscaled 0.7;
+paths[p] := paths[p] shifted (0.95mw, -1.1m) xscaled 0.8 yscaled 0.8;
 pen_stroke(
    nib(start_up_nib scaled 0.8 rotated terminalangle 0 of paths[p])(0)
    nib(top_nib scaled 0.8)(1)
