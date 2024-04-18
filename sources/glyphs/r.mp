@@ -32,28 +32,6 @@ strokes[p] :=  subpath(0, 3) of strokes[p]{left}
     .. {dir 250}point 5 of strokes[p]
     -- cycle;
 
-
-vardef top_left_serif(expr s, p ) =
-    clearxy;
-    z0 = (point p of s) + (-1.2serif_width+thick/2, -3/4serif_height); % Move to left
-    z1 = (x0+0.05u , y0  -3/4serif_height); % Move to left
-    z2 = (xpart point p of s, y1-serif_height); % Move to right
-    z3 = point length(s)-2 of s - (thick/4, -thick/4);
-    z4 = (xpart point p of s, y1);
-    z5 = (x4, y4);
-
-        z0{dir 250}
-        .. {dir 300}z1.. controls z4 and z5 .. z2
-        -- subpath(p+1, length(s)-2) of s
-        .. z3{dir 200}..{dir 190}cycle
-
-enddef;
-
-
-% Leave some extra gap at top, near serif
-strokes[0] :=  subpath(0, 2.65) of strokes[0]
-    -- subpath(3.15, 4) of strokes[0]
-    --  cycle;
 % Serifs
 strokes[0] := top_left_serif(strokes[0], 0);
 strokes[0] := bottom_serif(strokes[0], 3);

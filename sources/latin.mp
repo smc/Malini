@@ -3,16 +3,6 @@
 % Copyright 2024 Santhosh Thottingal
 % Licensed under MIT License
 
-vardef r_vstem =
-    clearxy;
-    path stem;
-    z0=(x1-thick, s);
-    z1=(0,y0-thick);
-    z2=(0, y3+thick/2);
-    z3=(x1,0);
-    z0{right}..z1---z2---z3
-enddef;
-
 vardef n_arch =
     clearxy;
     z0=(0, 0.6s);
@@ -30,7 +20,7 @@ vardef p_loop =
     z2=(x0 + 0.8sw, 0.52s);
     z3=(0.46*x2, undershoot);
     z4=(x0, y3 + 0.2s);
-    z0{dir 60}..z1{right}..z2{down}..z3{left}..z4
+    harmonize(z0{dir 60}..z1{right}..z2{down}..z3{left}..z4)
 enddef;
 
 vardef a_loop =
@@ -42,7 +32,7 @@ vardef a_loop =
     z2=(0, s/3);
     z3=(r*sw/3, undershoot);
     z4=(x0, y0);
-    z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4
+    harmonize(z0..z1{dir 190}..{dir -80}z2{dir -80}..z3..{dir 80}z4)
 enddef;
 
 vardef serif_bottom_thick =
