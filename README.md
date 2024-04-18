@@ -2,7 +2,7 @@
 
 A Malayalam variable typeface optimized for body text
 
-![](./docs/sample-1.jpg)
+![](./docs/sample-1-dark.jpg)
 
 Taking full advantage of variable font technology, Malini offers an unprecedented level of flexibility, all from a single font file. Malini has 4 variable axes: `Weight`, `Width`, `Slant` and `Optical Size`.
 
