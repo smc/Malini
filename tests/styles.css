@@ -100,8 +100,8 @@
       --tp-base-shadow-color: hsla(220, 16%, 20%, 1);
       --tp-button-background-color: hsla(220, 16%, 26%, 1);
       --tp-button-background-color-active: hsla(220, 16%, 29%, 1);
-      --tp-button-background-color-focus: hsla(220, 16%, 85%, 1);
-      --tp-button-background-color-hover: hsla(220, 16%, 90%, 1);
+      --tp-button-background-color-focus: hsla(220, 16%, 26%, 1);
+      --tp-button-background-color-hover: hsla(220, 16%, 29%, 1);
       --tp-button-foreground-color: hsla(220, 16%, 92%, 1);
       --tp-container-background-color: hsla(220, 16%, 29%, 1);
       --tp-container-background-color-active: hsla(220, 16%, 20%, 1);
@@ -129,6 +129,8 @@
     --tp-base-shadow-color: hsla(220, 16%, 90%, 1);
     --tp-button-background-color: hsla(220, 16%, 70%, 1);
     --tp-button-background-color-hover: hsla(220, 16%, 70%, 1);
+    --tp-button-background-color-active: hsla(220, 16%, 65%, 1);
+    --tp-button-background-color-focus: hsla(220, 16%, 60%, 1);
     --tp-button-foreground-color: hsla(220, 16%, 10%, 1);
     --tp-container-background-color: hsla(220, 16%, 85%, 1);
     --tp-container-background-color-active: hsla(220, 16%, 80%, 1);
