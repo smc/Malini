@@ -1,5 +1,5 @@
-import {Pane} from 'https://cdn.jsdelivr.net/npm/tweakpane@4.0.3/dist/tweakpane.min.js';
-
+import { Pane } from 'https://cdn.jsdelivr.net/npm/tweakpane@4.0.3/dist/tweakpane.min.js';
+import * as tweakpanepluginEssentials from 'https://cdn.jsdelivr.net/npm/@tweakpane/plugin-essentials@0.2.1/+esm'
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.
@@ -28,10 +28,11 @@ const otFeatures = {
     'onum': false,
     'sups': false,
     'abvm': true,
-    'calt': true,
+    'salt': true,
 }
 
-function listen() {
+
+function init() {
     const contentArea = document.querySelector('.content')
     let testLines = [];
     let paragraphsMl = []
@@ -41,212 +42,242 @@ function listen() {
     let ligaturesMl = []
     let currentTestIndex = 0;
     let testContents = []
-    fetch('./content.txt').then(response => response.text()).then((content) => {
-        testLines = shuffle(content.split("\n"));
-        testLines = testLines.filter(testLine => !!testLine.trim())
+    const fetchAndProcess = (url, callback) => {
+        return fetch(url)
+            .then(response => response.text())
+            .then(content => {
+                const lines = shuffle(content.split("\n"));
+                const filteredLines = lines.filter(line => !!line.trim());
+                callback(filteredLines);
+            });
+    };
 
-    })
+    const fetchAndProcessAll = () => {
+        const fetchPromises = [
+            fetchAndProcess('./content.txt', lines => {
+                testLines = lines;
+            }),
+            fetchAndProcess('./paragraphs.malayalam.txt', paragraphs => {
+                paragraphsMl = paragraphs;
+                testContents = paragraphsMl;
+                contentArea.innerHTML = paragraphsMl[currentTestIndex];
+            }),
+            fetchAndProcess('./paragraphs.english.txt', paragraphs => {
+                paragraphsEn = paragraphs;
+            }),
+            fetchAndProcess('./pangrams.txt', paragraphs => {
+                pangramsEn = paragraphs;
+            }),
+            fetchAndProcess('./kerning.txt', paragraphs => {
+                kerning = paragraphs;
+            }),
+            fetchAndProcess('./ligatures.txt', paragraphs => {
+                ligaturesMl = paragraphs;
+            })
+        ];
 
-    fetch('./paragraphs.malayalam.txt').then(response => response.text()).then((content) => {
-        paragraphsMl = shuffle(content.split("\n"));
-        paragraphsMl = paragraphsMl.filter(paragraph => !!paragraph.trim())
-        testContents = paragraphsMl;
-        contentArea.innerHTML = paragraphsMl[currentTestIndex];
+        return Promise.all(fetchPromises);
+    };
+
+    fetchAndProcessAll().then(() => {
+        // Code to execute after all fetches are completed
     });
 
-    fetch('./paragraphs.english.txt').then(response => response.text()).then((content) => {
-        paragraphsEn = shuffle(content.split("\n"));
-        paragraphsEn = paragraphsEn.filter(paragraph => !!paragraph.trim())
+    const pane = new Pane({
+        title: "Malini",
+        container: document.getElementById('controls')
     });
+    pane.registerPlugin(tweakpanepluginEssentials);
+    const config = {
 
-    fetch('./pangrams.txt').then(response => response.text()).then((content) => {
-        pangramsEn = shuffle(content.split("\n"));
-        pangramsEn = pangramsEn.filter(paragraph => !!paragraph.trim())
-    });
+        sample: "paragraphsMl",
+        theme: "dark",
+        "font-size": 20,
+        "font-line-height": 1.5,
+        "font-letter-spacing": 0,
+        "font-weight": 400,
+        "font-width": 100,
+        "font-slant": 0,
+        "font-opsz-enabled": "auto",
+        "text-align": "left",
+        opentypeFeatures: {
+            kern: true,
+            blwf: true,
+            blws: true,
+            akhn: true,
+            pref: true,
+            pres: true,
+            pstf: true,
+            psts: true,
+            abvm: true,
+            blwm: true,
+            calt: true,
+            liga: true,
+            onum: true,
+            sups: true,
+            salt: 1
+        }
+    };
 
 
-    fetch('./kerning.txt').then(response => response.text()).then((content) => {
-        kerning = shuffle(content.split("\n\n"))
-    });
-
-    fetch('./ligatures.txt').then(response => response.text()).then((content) => {
-        ligaturesMl = shuffle(content.split("\n\n"))
-    });
-
-    document.getElementById('test-content').addEventListener('change', function () {
-        const selected = this.options[this.selectedIndex].value;
-        if (selected == 'paragraphsEn') {
-            testContents = paragraphsEn;
+    pane.addBinding(config, "sample", {
+        label: "Sample",
+        options: {
+            "ഖണ്ഡികകൾ": "paragraphsMl",
+            "Paragraphs": "paragraphsEn",
+            "സിനിമാപ്പേരുകൾ": "lines",
+            "Pangrams": "pangrams",
+            "Kerning": "kerning",
+            "കൂട്ടക്ഷരങ്ങൾ": "ligaturesMl",
         }
-        if (selected == 'paragraphsMl') {
-            testContents = paragraphsMl;
-        }
-        if (selected == 'lines') {
-            testContents = testLines;
-        }
-        if (selected == 'pangrams') {
-            testContents = pangramsEn;
-        }
-        if (selected == 'kerning') {
-            testContents = kerning;
-        }
-        if (selected == 'ligaturesMl') {
-            testContents = ligaturesMl;
+    }).on('change', (ev) => {
+        const selected = ev.value;
+        switch (selected) {
+            case 'paragraphsEn':
+                testContents = paragraphsEn;
+                break;
+            case 'paragraphsMl':
+                testContents = paragraphsMl;
+                break;
+            case 'lines':
+                testContents = testLines;
+                break;
+            case 'pangrams':
+                testContents = pangramsEn;
+                break;
+            case 'kerning':
+                testContents = kerning;
+                break;
+            case 'ligaturesMl':
+                testContents = ligaturesMl;
+                break;
+            default:
+                // Handle default case here
+                break;
         }
         contentArea.innerHTML = testContents[0];
     });
 
-    document.getElementById('salt').addEventListener('change', function () {
-        const selected = this.options[this.selectedIndex].value;
-        contentArea.style.fontFeatureSettings = "\"salt\" " + selected
+    pane.addBlade({
+        view: 'buttongrid',
+        size: [2, 1],
+        cells: (x, y) => ({
+            title: [
+                ['Prev', 'Next'],
+            ][y][x],
+        }),
+        label: 'Go',
+    }).on('click', (ev) => {
+        if (ev.index[0] == 0) {
+            currentTestIndex = (currentTestIndex - 1 + testContents.length) % testContents.length;
+        } else {
+            currentTestIndex = (currentTestIndex + 1) % testContents.length;
+        }
+        contentArea.innerHTML = testContents[currentTestIndex];
+    });
+
+
+    const themeCtrl = pane.addBinding(config, "theme", {
+        label: "Theme",
+        options: {
+            Light: "light", Dark: "dark"
+        }
+    });
+    pane.addBinding(config, "font-size", {
+        label: "Font size",
+        min: 8,
+        max: 148,
+    });
+    pane.addBinding(config, "font-line-height", {
+        label: "Line height",
+        min: 0,
+        max: 3,
+    });
+    pane.addBinding(config, "font-letter-spacing", {
+        label: "Letter spacing",
+        min: -3,
+        max: 3,
+    });
+    pane.addBinding(config, "text-align", {
+        options: {
+            left: "left", center: "center", right: "right", justify: "justify"
+        }
+    });
+    const varFolder = pane
+        .addFolder({ title: "Font variations" })
+
+    varFolder.addBinding(config, "font-weight", {
+        label: "Weight",
+        min: 0,
+        max: 900,
+    });
+    varFolder.addBinding(config, "font-width", {
+        label: "Width",
+        min: 75,
+        max: 125,
+    });
+    varFolder.addBinding(config, "font-slant",
+        {
+            label: "Slant",
+            min: -12,
+            max: 0,
+        });
+    varFolder.addBinding(config, "font-opsz-enabled", {
+        label: "Optical Size",
+        options: { none: "none", auto: "auto" }
+    });
+
+
+    const otFolder = pane
+        .addFolder({ title: "Opentype features", expanded: false })
+
+    otFolder.addBinding(config.opentypeFeatures, "kern", { label: "Kerning" })
+    otFolder.addBinding(config.opentypeFeatures, "blwf", { label: "Below base form" })
+    otFolder.addBinding(config.opentypeFeatures, "blws", { label: "Below base substitution" })
+    otFolder.addBinding(config.opentypeFeatures, "akhn", { label: "Above base mark positioning" })
+    otFolder.addBinding(config.opentypeFeatures, "pref", { label: "Pre-base form" })
+    otFolder.addBinding(config.opentypeFeatures, "pres", { label: "Pre-base positioning" })
+    otFolder.addBinding(config.opentypeFeatures, "pstf", { label: "Post-base form" })
+    otFolder.addBinding(config.opentypeFeatures, "psts", { label: "Post-base substitution" })
+    otFolder.addBinding(config.opentypeFeatures, "abvm", { label: "Above base mark" })
+    otFolder.addBinding(config.opentypeFeatures, "blwm", { label: "Below base mark" })
+    otFolder.addBinding(config.opentypeFeatures, "calt", { label: "Contextual alternates" })
+    otFolder.addBinding(config.opentypeFeatures, "liga", { label: "Ligatures" })
+    otFolder.addBinding(config.opentypeFeatures, "onum", { label: "Oldstyle figures" })
+    otFolder.addBinding(config.opentypeFeatures, "sups", { label: "Superscript" })
+    otFolder.addBinding(config.opentypeFeatures, "salt", { options: { ss01: 1, ss02: 2 } });
+
+    // Event handlers
+    themeCtrl.on('change', (ev) => {
+        root.setAttribute('color-scheme', ev.value)
     })
 
-    document.getElementById('test-font').addEventListener('change', function () {
-        const selected = this.options[this.selectedIndex].value;
 
-        document.getElementById('var-weight').style.display = "none"
-        document.getElementById('var-width').style.display = "none"
-        document.getElementById('var-slant').style.display = "none"
-        document.getElementById('var-optical').style.display = "none"
-        root.style.setProperty('--font', selected);
-
-
-        if (selected === 'Malini') {
-            document.getElementById('var-values').style.display = "grid"
-            document.getElementById('var-weight').style.display = "contents"
-            document.getElementById('var-width').style.display = "contents"
-            document.getElementById('var-slant').style.display = "contents"
-            document.getElementById('var-optical').style.display = "contents"
-        }
-
-
-    });
-
-
-    document.getElementById('next-test').addEventListener('click', () => {
-        if (currentTestIndex + 1 >= testContents.length) {
-            currentTestIndex = 0;
-        }
-        contentArea.innerHTML = testContents[++currentTestIndex];
-    });
-    document.getElementById('prev-test').addEventListener('click', () => {
-        if (currentTestIndex - 1 <= 0) {
-            currentTestIndex = testContents.length;
-        }
-        contentArea.innerHTML = testContents[--currentTestIndex];
-    });
-    document.querySelectorAll('.alignments > span').forEach((element) => {
-        element.addEventListener('click', () => {
-            contentArea.style.textAlign = element.dataset.align;
-        });
-    });
-
-    document.querySelectorAll("[data-id='fontSize']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const fontSize = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-fontSize').value = fontSize;
-            } else {
-                document.querySelector('#font-size > input[type="range"]').value = fontSize;
-            }
-            root.style.setProperty('--font-size', `${fontSize}px`);
-        });
-    });
-
-
-    document.querySelectorAll("[data-id='fontWeight']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const fontWeight = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-fontWeight').value = fontWeight;
-            } else {
-                document.querySelector('#font-weight > input[type="range"]').value = fontWeight;
-            }
-            root.style.setProperty('--weight', fontWeight);
-        });
-    });
-
-    document.querySelectorAll("[data-id='fontWidth']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const fontWidth = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-fontWidth').value = fontWidth;
-            } else {
-                document.querySelector('#font-width > input[type="range"]').value = fontWidth;
-            }
-            root.style.setProperty('--width', fontWidth);
-        });
-    });
-
-    document.querySelectorAll("[data-id='fontSlant']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const fontSlant = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-fontSlant').value = fontSlant;
-            } else {
-                document.querySelector('#font-slant > input[type="range"]').value = fontSlant;
-            }
-            root.style.setProperty('--slant', fontSlant);
-        });
-    });
-
-    document.querySelectorAll("[data-id='fontOptical']").forEach((element) => {
-        element.addEventListener('change', function () {
-            root.style.setProperty('--opsz-enabled', element.checked ? "auto" : "none");
-        });
-    });
-
-
-    document.querySelectorAll("[data-id='lineHeight']").forEach((element) => {
-        element.addEventListener('input', () => {
-            const lineHeight = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-lineHeight').value = lineHeight;
-            } else {
-                document.querySelector('#line-height > input[type="range"]').value = lineHeight;
-            }
-            contentArea.style.lineHeight = lineHeight;
-            root.style.setProperty('--font-line-height', lineHeight);
-        });
-    });
-
-    document.querySelectorAll("[data-id='letterSpacing']").forEach((element) => {
-        element.addEventListener('input', () => {
-            const letterSpacing = element.value;
-            if (element.type == 'range') {
-                document.querySelector('#font-letterSpacing').value = letterSpacing;
-            } else {
-                document.querySelector('#letter-spacing > input[type="range"]').value =
-                    letterSpacing;
-            }
-            root.style.setProperty('--font-letter-spacing', `${letterSpacing}px`);
-        });
-    });
-
-    const onFeatureChange = function () {
+    otFolder.on('change', () => {
         const fontFeatureSettings = [];
         for (let otFeature in otFeatures) {
-            let checked = document.getElementById(otFeature).checked;
-            if (otFeatures[otFeature] !== checked) {
-                fontFeatureSettings.push(`"${otFeature}" ${checked ? 1 : 0}`);
+            let value = config.opentypeFeatures[otFeature];
+            let changed = otFeatures[otFeature] !== value;
+            if (changed) {
+                if (otFeature === 'salt') {
+                    fontFeatureSettings.push(`"${otFeature}" ${value}`);
+                } else {
+                    fontFeatureSettings.push(`"${otFeature}" ${value ? 1 : 0}`);
+                }
             }
+
         }
         contentArea.style.fontFeatureSettings = fontFeatureSettings.join(', ');
-    }
+    })
+    const updateConfg = () => {
+        for (const key of Object.keys(config)) {
+            root.style.setProperty(`--${key}`, config[key])
+        }
+    };
 
-    document.querySelectorAll("[name=opentype]").forEach((element) => {
-        element.addEventListener('change', onFeatureChange);
-    });
-
-    const switcher = document.querySelector('#theme-switcher')
-
-
-    switcher.addEventListener('input', e =>
-        setTheme(e.target.value))
-
-    const setTheme = theme =>
-        root.setAttribute('color-scheme', theme)
-}
+    pane.on('change', updateConfg)
+    updateConfg();
+};
 
 
-document.addEventListener("DOMContentLoaded", listen);
+document.addEventListener("DOMContentLoaded", init);

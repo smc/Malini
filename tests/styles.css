@@ -1,17 +1,25 @@
-@import "https://unpkg.com/open-props" layer(base);
-@import "https://unpkg.com/open-props/normalize.min.css" layer(base);
 @import "./fonts.css" layer(fonts);
 
 @layer proof {
   :root {
-    --weight: 400;
-    --slant: 0;
-    --opsz-enabled: "auto";
-    --width: 100;
-    --font: "Malini";
-    --font-size: 20px;
+    --font-weight: 400;
+    --font-slant: 0;
+    --font-opsz-enabled: "auto";
+    --font-width: 100;
+    --font-family-name: "Malini";
+    --font-size: 20;
     --font-letter-spacing: 0;
     --font-line-height: 1.5;
+    --text-align: left;
+    /* light */
+
+    --text-1-light: hsla(220, 16%, 16%, 1);
+    --surface-1-light: hsla(220, 16%, 92%, 1);
+
+    /* dark */
+
+    --text-1-dark: hsla(220, 16%, 92%, 1);
+    --surface-1-dark: hsla(220, 16%, 16%, 1);
   }
 
   html {
@@ -21,66 +29,37 @@
     accent-color: var(--brand);
   }
 
-  header {
-    padding: var(--size-2);
-    display: grid;
-    position: sticky;
-    top: 0;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--size-3);
-    font-size: var(--font-size-0);
-    align-items: center;
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-7);
-    background-color: var(--surface-1);
- }
-
   .text-samples {
     display: grid;
     grid-template-columns: 3fr 7fr 2fr;
     align-items: center;
   }
 
-  select,
-  input,
-  details,
-  summary {
-    color: unset;
-    background-color: var(--surface-2);
-  }
-
-  .opentype-features > div {
-    line-height: 2;
-    display: grid;
-    grid-template-columns: 10fr 2fr;
-    align-items: center;
-    max-width: 400px;
-  }
-
   main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
     overflow: auto;
-    height: 100%;
+    height: 100vh;
   }
 
   .content {
     display: grid;
     align-content: start;
-    text-align: left;
-    font-family: var(--font), sans;
+    text-align: var(--text-align);
+    font-family: var(--font-family-name), sans;
     line-height: var(--font-line-height);
-    letter-spacing: var(--font-letter-spacing);
-    font-size: var(--font-size);
+    letter-spacing: calc(var(--font-letter-spacing) * 1px);
+    font-size: calc(var(--font-size) * 1px);
     padding: 4rem;
+
     margin-left: auto;
     margin-right: auto;
     outline: none;
     max-width: 75%;
     width: 75%;
-    font-variation-settings: "wght" var(--weight), "slnt" var(--slant),
-      "wdth" var(--width);
-    font-optical-sizing: var(--opsz-enabled);
+    font-variation-settings: "wght" var(--font-weight), "slnt" var(--font-slant),
+      "wdth" var(--font-width);
+    font-optical-sizing: var(--font-opsz-enabled);
     hyphens: auto;
     -webkit-hyphenate-character: "";
     hyphenate-character: "";
@@ -96,128 +75,81 @@
     text-wrap: pretty;
   }
 
-  .font-name {
-    display: grid;
-    grid-template-columns: 3fr 9fr;
-    align-items: center;
-  }
-
-  .text-align {
-    display: grid;
-    grid-template-columns: 4fr 9fr;
-    align-items: center;
-  }
-
-  .cols-3 {
-    display: grid;
-    grid-template-columns: 3fr 6fr 1fr;
-    align-items: center;
-  }
-
-  .cols-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-
-
-  .sample-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  input[type="number"] {
-    width: var(--size-10);
-  }
-
-  @media print {
-    body {
-      color: #333;
-      background-color: #ffffff;
-    }
-    header {
-      display: none;
-    }
-    main {
-      grid-template-columns: auto;
-    }
-  }
-
-  @media only screen and (max-width: 600px) {
-    header {
-      grid-template-columns: 1fr;
-    }
-    .content {
-      padding: 1px;
-      width: 99%;
-      max-width: 99%;
-    }
-  }
-
-  @media only screen and (min-width: 1200px) {
-    body {
-      display: grid;
-      grid-template-columns: 9fr 3fr;
-      height: 100vh;
-    }
-
-    header {
-      align-items: start;
-      height: 100%;
-      align-content: start;
-      grid-template-columns: 1fr;
-      padding: 1rem;
-      line-height: 2;
-      order: 2;
-    }
-  }
-
-  html {
-    /* light */
-    --brand-light: var(--blue-6);
-    --text-1-light: var(--gray-8);
-    --surface-1-light: var(--gray-0);
-    --surface-2-light: var(--gray-2);
-
-    /* dark */
-    --brand-dark: var(--blue-3);
-    --text-1-dark: var(--gray-3);
-    --surface-1-dark: var(--gray-9);
-    --surface-2-dark: var(--gray-7);
-  }
-
   :root {
-    color-scheme: light;
+    color-scheme: dark;
     /* set defaults */
-    --brand: var(--brand-light);
+
     --text-1: var(--text-1-light);
     --surface-1: var(--surface-1-light);
-    --surface-2: var(--surface-2-light);
+  }
+
+  @media (max-width: 600px) {
+    main {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      --brand: var(--brand-dark);
+
       --text-1: var(--text-1-dark);
       --surface-1: var(--surface-1-dark);
-      --surface-2: var(--surface-2-dark);
+
+      --tp-base-background-color: hsla(220, 16%, 16%, 1);
+      --tp-base-shadow-color: hsla(220, 16%, 20%, 1);
+      --tp-button-background-color: hsla(220, 16%, 26%, 1);
+      --tp-button-background-color-active: hsla(220, 16%, 29%, 1);
+      --tp-button-background-color-focus: hsla(220, 16%, 85%, 1);
+      --tp-button-background-color-hover: hsla(220, 16%, 90%, 1);
+      --tp-button-foreground-color: hsla(220, 16%, 92%, 1);
+      --tp-container-background-color: hsla(220, 16%, 29%, 1);
+      --tp-container-background-color-active: hsla(220, 16%, 20%, 1);
+      --tp-container-background-color-focus: hsla(220, 16%, 26%, 1);
+      --tp-container-background-color-hover: hsla(220, 16%, 29%, 1);
+      --tp-container-foreground-color: hsla(220, 16%, 92%, 1);
+      --tp-groove-foreground-color: hsla(220, 16%, 20%, 1);
+      --tp-input-background-color: hsla(220, 16%, 16%, 1);
+      --tp-input-background-color-active: hsla(220, 16%, 20%, 1);
+      --tp-input-background-color-focus: hsla(220, 16%, 26%, 1);
+      --tp-input-background-color-hover: hsla(220, 16%, 29%, 1);
+      --tp-input-foreground-color: hsla(220, 16%, 92%, 1);
+      --tp-label-foreground-color: hsla(220, 16%, 92%, 1);
+      --tp-monitor-background-color: hsla(220, 16%, 16%, 1);
+      --tp-monitor-foreground-color: hsla(220, 16%, 92%, 1);
     }
   }
 
   [color-scheme="light"] {
     color-scheme: light;
-    --brand: var(--brand-light);
     --text-1: var(--text-1-light);
     --surface-1: var(--surface-1-light);
-    --surface-2: var(--surface-2-light);
+
+    --tp-base-background-color: hsla(220, 16%, 95%, 1);
+    --tp-base-shadow-color: hsla(220, 16%, 90%, 1);
+    --tp-button-background-color: hsla(220, 16%, 70%, 1);
+    --tp-button-background-color-hover: hsla(220, 16%, 70%, 1);
+    --tp-button-foreground-color: hsla(220, 16%, 10%, 1);
+    --tp-container-background-color: hsla(220, 16%, 85%, 1);
+    --tp-container-background-color-active: hsla(220, 16%, 80%, 1);
+    --tp-container-background-color-focus: hsla(220, 16%, 75%, 1);
+    --tp-container-background-color-hover: hsla(220, 16%, 80%, 1);
+    --tp-container-foreground-color: hsla(220, 16%, 10%, 1);
+    --tp-groove-foreground-color: hsla(220, 16%, 80%, 1);
+    --tp-input-background-color: hsla(220, 16%, 90%, 1);
+    --tp-input-background-color-active: hsla(220, 16%, 80%, 1);
+    --tp-input-background-color-focus: hsla(220, 16%, 75%, 1);
+    --tp-input-background-color-hover: hsla(220, 16%, 80%, 1);
+    --tp-input-foreground-color: hsla(220, 16%, 10%, 1);
+    --tp-label-foreground-color: hsla(220, 16%, 10%, 1);
+    --tp-monitor-background-color: hsla(220, 16%, 90%, 1);
+    --tp-monitor-foreground-color: hsla(220, 16%, 10%, 1);
   }
 
   [color-scheme="dark"] {
     color-scheme: dark;
-    --brand: var(--brand-dark);
+
     --text-1: var(--text-1-dark);
     --surface-1: var(--surface-1-dark);
-    --surface-2: var(--surface-2-dark);
   }
 }
