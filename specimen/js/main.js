@@ -6,6 +6,7 @@ const setTheme = theme => {
   root.setAttribute('color-scheme', theme)
   localStorage.setItem(storageKey, theme)
 }
+
 const fittext = (elements, options) => {
   const { baseline = '50%', paddingY = 0, doc = document } = options || {};
   const bounding = typeof doc.createElementNS('http://www.w3.org/2000/svg', 'svg').getBoundingClientRect === 'function';
@@ -109,6 +110,20 @@ const init = () => {
 
   const nodes = document.querySelectorAll('[data-fit-text]');
   fittext(nodes);
+
+
+ // Pauses animations in elements with the class .animate, when they're not on screen:
+ var observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      // Pause/Play the animation
+      if (entry.isIntersecting) entry.target.style.animationPlayState = "running"
+      else entry.target.style.animationPlayState = "paused"
+    });
+  });
+
+
+  document.querySelectorAll(".animate").forEach(function(el) { observer.observe(el); });
+
 }
 
 
