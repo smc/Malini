@@ -58,7 +58,7 @@
     max-width: 75%;
     width: 75%;
     font-variation-settings: "wght" var(--font-weight), "slnt" var(--font-slant),
-      "wdth" var(--font-width);
+      "wdth" var(--font-width), "opsz" var(--font-opsz);
     font-optical-sizing: var(--font-opsz-enabled);
     hyphens: auto;
     -webkit-hyphenate-character: "";
@@ -73,6 +73,11 @@
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     text-wrap: pretty;
+  }
+
+  .malini .content {
+    font-variation-settings: "wght" var(--font-weight), "slnt" var(--font-slant),
+    "wdth" var(--font-width);
   }
 
   :root {

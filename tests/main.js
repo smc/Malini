@@ -14,6 +14,286 @@ function shuffle(a) {
 
 let root = document.documentElement;
 
+const fontVariations = {
+    "malini-thin": {
+        "weight": 100,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-oblique-thin": {
+        "weight": 100,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed-thin": {
+        "weight": 100,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-expanded-thin": {
+        "weight": 100,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-thin-text": {
+        "weight": 100,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-thin-display": {
+        "weight": 100,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-oblique-thin-display": {
+        "weight": 100,
+        "width": 100,
+        "slant": -12,
+        "opsz": 48
+    },
+    "malini-extralight": {
+        "weight": 200,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-extralight-oblique": {
+        "weight": 200,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed-extralight": {
+        "weight": 200,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-expanded-extralight": {
+        "weight": 200,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-extralight-display": {
+        "weight": 200,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-light": {
+        "weight": 300,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-light-oblique": {
+        "weight": 300,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed-light": {
+        "weight": 300,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-expanded-light": {
+        "weight": 300,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-light-display": {
+        "weight": 300,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-regular": {
+        "weight": 400,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-oblique": {
+        "weight": 400,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed": {
+        "weight": 400,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-semicondensed": {
+        "weight": 400,
+        "width": 87.501,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-condensed-oblique": {
+        "weight": 400,
+        "width": 75,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-expanded": {
+        "weight": 400,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-semiexpanded": {
+        "weight": 400,
+        "width": 112.501,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-medium": {
+        "weight": 500,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-medium-oblique": {
+        "weight": 500,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed-medium": {
+        "weight": 500,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-expanded-medium": {
+        "weight": 500,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-semibold": {
+        "weight": 600,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-semibold-oblique": {
+        "weight": 600,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-bold": {
+        "weight": 700,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-bold-oblique": {
+        "weight": 700,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-condensed-bold": {
+        "weight": 700,
+        "width": 75,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-semicondensed-bold": {
+        "weight": 700,
+        "width": 87.501,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-expanded-bold": {
+        "weight": 700,
+        "width": 125,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-extrabold": {
+        "weight": 800,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-extrabold-oblique": {
+        "weight": 800,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-black": {
+        "weight": 900,
+        "width": 100,
+        "slant": 0,
+        "opsz": 12
+    },
+    "malini-black-oblique": {
+        "weight": 900,
+        "width": 100,
+        "slant": -12,
+        "opsz": 12
+    },
+    "malini-text": {
+        "weight": 400,
+        "width": 100,
+        "slant": 0,
+        "opsz": 10
+    },
+    "malini-display": {
+        "weight": 400,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-medium-display": {
+        "weight": 500,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-semibold-display": {
+        "weight": 500,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-bold-display": {
+        "weight": 700,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-extrabold-display": {
+        "weight": 800,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    },
+    "malini-black-display": {
+        "weight": 800,
+        "width": 100,
+        "slant": 0,
+        "opsz": 48
+    }
+}
+
+
 const otFeatures = {
     'kern': true,
     'blwf': true,
@@ -116,9 +396,61 @@ function init() {
             onum: true,
             sups: true,
             salt: 1
-        }
+        },
+        "font-name": "malini",//must be at last in array to override variation props
     };
-
+    pane.addBinding(config, "font-name", {
+        label: "Font name",
+        options: {
+            "Malini Variable": "malini",
+            "Malini Thin": "malini-thin",
+            "Malini Oblique Thin": "malini-oblique-thin",
+            "Malini Condensed Thin": "malini-condensed-thin",
+            "Malini Expanded Thin": "malini-expanded-thin",
+            "Malini Thin Text": "malini-thin-text",
+            "Malini Thin Display": "malini-thin-display",
+            "Malini Oblique Thin Display": "malini-oblique-thin-display",
+            "Malini Extra Light": "malini-extralight",
+            "Malini Extra Light Oblique": "malini-extralight-oblique",
+            "Malini Condensed Extra Light": "malini-condensed-extralight",
+            "Malini Expanded Extra Light": "malini-expanded-extralight",
+            "Malini Extra Light Display": "malini-extralight-display",
+            "Malini Light": "malini-light",
+            "Malini Light Oblique": "malini-light-oblique",
+            "Malini Condensed Light": "malini-condensed-light",
+            "Malini Expanded Light": "malini-expanded-light",
+            "Malini Light Display": "malini-light-display",
+            "Malini Regular": "malini-regular",
+            "Malini Oblique": "malini-oblique",
+            "Malini Condensed": "malini-condensed",
+            "Malini Semi Condensed": "malini-semicondensed",
+            "Malini Condensed Oblique": "malini-condensed-oblique",
+            "Malini Expanded": "malini-expanded",
+            "Malini Semi Expanded": "malini-semiexpanded",
+            "Malini Medium": "malini-medium",
+            "Malini Medium Oblique": "malini-medium-oblique",
+            "Malini Condensed Medium": "malini-condensed-medium",
+            "Malini Expanded Medium": "malini-expanded-medium",
+            "Malini Semi Bold": "malini-semibold",
+            "Malini Semi Bold Oblique": "malini-semibold-oblique",
+            "Malini Bold": "malini-bold",
+            "Malini Bold Oblique": "malini-bold-oblique",
+            "Malini Condensed Bold": "malini-condensed-bold",
+            "Malini Semi Condensed Bold": "malini-semicondensed-bold",
+            "Malini Expanded Bold": "malini-expanded-bold",
+            "Malini Extra Bold": "malini-extrabold",
+            "Malini Extra Bold Oblique": "malini-extrabold-oblique",
+            "Malini Black": "malini-black",
+            "Malini Black Oblique": "malini-black-oblique",
+            "Malini Text": "malini-text",
+            "Malini Display": "malini-display",
+            "Malini Medium Display": "malini-medium-display",
+            "Malini Semi Bold Display": "malini-semibold-display",
+            "Malini Bold Display": "malini-bold-display",
+            "Malini Extra Bold Display": "malini-extrabold-display",
+            "Malini Black Display": "malini-black-display"
+        }
+    })
 
     pane.addBinding(config, "sample", {
         label: "Sample",
@@ -206,23 +538,23 @@ function init() {
     const varFolder = pane
         .addFolder({ title: "Font variations" })
 
-    varFolder.addBinding(config, "font-weight", {
+    const weightCtrl = varFolder.addBinding(config, "font-weight", {
         label: "Weight",
         min: 0,
         max: 900,
     });
-    varFolder.addBinding(config, "font-width", {
+    const widthCtrl = varFolder.addBinding(config, "font-width", {
         label: "Width",
         min: 75,
         max: 125,
     });
-    varFolder.addBinding(config, "font-slant",
+    const slantCtrl =  varFolder.addBinding(config, "font-slant",
         {
             label: "Slant",
             min: -12,
             max: 0,
         });
-    varFolder.addBinding(config, "font-opsz-enabled", {
+    const opszCtrl =  varFolder.addBinding(config, "font-opsz-enabled", {
         label: "Optical Size",
         options: { none: "none", auto: "auto" }
     });
@@ -271,7 +603,28 @@ function init() {
     })
     const updateConfg = () => {
         for (const key of Object.keys(config)) {
-            root.style.setProperty(`--${key}`, config[key])
+            if (key == 'font-name') {
+                if (config[key] !== "malini"){
+                    fontVariations[config[key]] && Object.entries(fontVariations[config[key]])
+                        .forEach(([key, value]) => {
+                            root.style.setProperty(`--font-${key}`, value)
+                        });
+                    root.style.setProperty(`--font-opsz-enabled`, 'none')
+                    document.body.classList.remove('malini')
+                    weightCtrl.disabled = true;
+                    widthCtrl.disabled = true;
+                    opszCtrl.disabled = true;
+                    slantCtrl.disabled = true;
+                } else {
+                    document.body.classList.add('malini')
+                    weightCtrl.disabled = false;
+                    widthCtrl.disabled = false;
+                    opszCtrl.disabled = false;
+                    slantCtrl.disabled = false;
+                }
+            } else {
+                root.style.setProperty(`--${key}`, config[key])
+            }
         }
     };
 
