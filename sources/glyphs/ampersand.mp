@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0= (0.7Xw, 0.5X);
+z0= (x2+ 2/3Xw, 0.5X);
 z1 =((x0+x2)/2.5, undershoot);
 z2 =(0, (y1+y3)/2);
 z3 =(0.8x1, 0.55X);

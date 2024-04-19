@@ -23,7 +23,7 @@ pen_stroke(
 % Serif
 clearxy;
 z0= point 0 of paths[0] + (thick/2, 0);
-z1=(x0, 0.9X);
+z1=(x0, 1.2s);
 z2=(x1-thick/2, y1);
 z3= point 0 of paths[1] + (0, thick/4);
 paths[2] =  z0--z1--z2{down}..{left}z3--cycle;
@@ -34,6 +34,6 @@ strokes[2] = paths[2];
 lbearing:=sw/3*0.25;
 rbearing:=sw/3*0.3;
 
-anchor( "top", (xpart(point 2 of paths[0]), X));
-anchor( "bottom", (xpart(point 2 of paths[0]), 0));
+anchor( "top", (xpart(point 0 of paths[0]), X));
+anchor( "bottom", (xpart(point 0 of paths[0]), 0));
 endglyph;

@@ -5,12 +5,12 @@ beginglyph;
 z0=(x1+mw/3, 0);
 z1=(0, y0 + m/2);
 z2=(x1 + mw/3, m-overshoot);
-z3=(x2 + mw/3, m/2);
-z4=(x3 + mw/3, undershoot);
+z3=(x2 + mw/4, m/2);
+z4=(x3 + mw/4, undershoot);
 z5=(x4 + mw/4, m/2);
-z6=(x5 + mw/3, m-overshoot);
+z6=(x5 + mw/4, m-overshoot);
 z7=(x6 + mw/4, m/2);
-z8=(x7 + mw/3, undershoot);
+z8=(x7 + mw/4, undershoot);
 z9=(x8 + mw/3, m/2);
 z10=(x9-mw/4 , m);
 

@@ -5,26 +5,28 @@ beginglyph;
 
 z0=(0,0);
 z1=(x0 +mw/4, m/3);
-z2=(x1+mw/6, m-overshoot); % pillar top
+z2=(x1+mw/6, m); % pillar top
 paths[p] = z0..z1..z2;
 pen_stroke(
    nib(end_nib rotated terminalangle 0 of paths[p])(0)
-   nib(middle_down_nib)(1, 2)
+   nib(middle_down_nib)(1)
+   nib(thick_vertical_nib)(2)
 )(paths[p])(strokes[p]);
 
 p:=p+1;
 z3=(x2, m/2);
-z4=(x3 + mw/3, undershoot);
+z4=(x3 + mw/4, undershoot);
 z5=(x4 + mw/4, y0 + m/2);
-z6=(x5 + mw/3, m-overshoot); % first peak
-z7=(x6 + mw/3, m/2);
-z8=(x7 + mw/3, undershoot);
+z6=(x5 + mw/4, m-overshoot); % first peak
+z7=(x6 + mw/4, m/2);
+z8=(x7 + mw/4, undershoot);
 z9=(x8 + mw/4, m/2);
 z10=(x9 + mw/3, m-overshoot); % Second peak
 z11=(x10 + mw/4, m/3);
 paths[p] = z2---z3..z4{right}..z5..z6{right}..z7..z8{right}..z9..z10{right}..{down}z11  ;
 pen_stroke(
-    nib(middle_down_nib)(0, 1, 3,5,7)
+    nib(thick_vertical_nib)(0)
+    nib(middle_down_nib)(1, 3,5,7)
     nib(top_nib)(4,8, 10)
     nib(down_nib)(2, 6)
     nib(end_nib)(9)

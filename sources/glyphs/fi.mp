@@ -39,6 +39,7 @@ strokes[0] := bottom_serif(strokes[0], 4);
 strokes[0] :=  subpath(0.4, 13) of strokes[0]{right} .. cycle;
 
 strokes[1] := bottom_serif(strokes[1], 2);
+strokes[1] := subpath (0, length(strokes[1])-1) of strokes[1] -- cycle;
 
 rbearing:=0.5*rbearing;
 lbearing:=0;

@@ -6,7 +6,7 @@ z0 = (r*Xw, s);
 z1 = ((x0 + x2)/1.75, X - overshoot);
 z2 = (0, (y1+y3)/2.5);
 z3 = ((x2+x4)/1.75, undershoot);
-z4 = (x0, 0.15X);
+z4 = (x0, 0.1X);
 
 paths[p]:=z0{dir 80}..z1{left}..z2{down}..z3{right} ..{dir 30}z4;
 paths[p] := harmonize(paths[p]);

@@ -46,7 +46,7 @@ p:=p+1;
 z0= point 0 of paths[2] + (thick/2, 0);
 z1=(x0, 0.9X);
 z2=(x1-thick/2, y1);
-z3= point 0 of paths[1] + (0, thick/4);
+z3= point 0.5 of paths[1] + (0, thick/4);
 paths[p] =  z0--z1--z2{down}..{left}z3--cycle;
 strokes[p] = paths[p];
 

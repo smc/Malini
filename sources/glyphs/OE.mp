@@ -23,14 +23,11 @@ pen_stroke(
    nib(thick_vertical_nib)(0,1,2)
 )(paths[p])(strokes[p]);
 
-strokes[p] := top_left_straight_serif(strokes[p], 0);
-strokes[p] := bottom_left_serif(strokes[p], 3);
-
 % Top bar
 p:=p+1;
 clearxy;
 z0 = (xpart point 8 of strokes[p-1] , ypart point 8 of strokes[p-1]  -thin/2*1.2);
-z1 = (x0 + sw*0.75, y0);
+z1 = (x0 + Xw*0.6, y0);
 
 paths[p] = z0--z1 ;
 

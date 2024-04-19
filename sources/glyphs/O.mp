@@ -6,8 +6,8 @@ z2=(x1 + 0.4Xw, y0);
 z3=(x1, undershoot);
 z4=(x0, y2);
 
-paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
-
+paths[p] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
+paths[p] := harmonize(paths[p]);
 pen_stroke(
    nib(middle_down_nib rotated -12)(0, 2, 4)
    nib(top_nib rotated 20)(1)

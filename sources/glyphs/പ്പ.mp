@@ -18,5 +18,6 @@ strokes[p] := strokes[p] shifted (-xoffset, 0);
 
 anchor( "vc", (xpart(point 2 of paths[0]),0));
 anchor( "bottom", point 1 of paths[4]);
+anchor( "right", (point 0 of paths[p] - (u_drop_sign_radius, 0)));
 
 endglyph;

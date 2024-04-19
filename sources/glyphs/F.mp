@@ -30,8 +30,8 @@ clearxy;
 z0 = (x1- serif_height , s);
 z1 = (xpart point 1 of strokes[p] + serif_height, s);
 % Control points
-z3 = (xpart point 0.8 of strokes[p] , ypart point 0 of strokes[p] );
-z4 = (xpart point 0.9 of strokes[p] , 0.95y3);
+z3 = (xpart point 0.75 of strokes[p] , ypart point 0 of strokes[p] );
+z4 = (xpart point 0.85 of strokes[p] , 0.9y3);
 strokes[p] := subpath(0, 0.5) of strokes[p]
  ..controls z3 and z4 .. z0
  -- z1
@@ -43,7 +43,7 @@ strokes[p] := subpath(0, 0.5) of strokes[p]
 p:=p+1;
 clearxy;
 z0 = point 0.5 of paths[0];
-z1 = (x0 + Xw*0.45, y0);
+z1 = (x0 + Xw*0.4, y0);
 paths[p] = z0--z1;
 pen_stroke(
     nib(thin_nib rotated 90)(0,1)

@@ -41,6 +41,6 @@ strokes[p] := soften_nodes(strokes[p], u/5, 3);
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;
 
-anchor( "top", (xpart(point 0.5 of paths[1]), 0.9X));
+anchor( "top", (xpart(point 0.5 of paths[1]), 1.2s));
 anchor( "bottom", (xpart(point 0.5 of paths[1]), 0));
 endglyph;

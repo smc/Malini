@@ -27,6 +27,6 @@ strokes[1] := bottom_serif(strokes[1], 3);
 lbearing:=sw/3*0.1;
 rbearing:=sw/3*0.1;
 
-anchor( "top", (xpart(point 1 of paths[1]), 0.9X));
+anchor( "top", (xpart(point 1 of paths[1]), 1.2s));
 anchor( "bottom", (xpart(point 1 of paths[1]), 0));
 endglyph;

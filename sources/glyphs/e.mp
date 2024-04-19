@@ -30,5 +30,5 @@ pen_stroke(
 
 lbearing:=sw/3*0.2;
 rbearing:=sw/3*0.2;
-anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
+anchor( "top", (xpart(point 1 of paths[0]), 1.2s));
 endglyph;

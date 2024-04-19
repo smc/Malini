@@ -8,14 +8,15 @@ z2 = (0, s/2);
 z3 = ((x0 + x2)/1.75, undershoot);
 z4 = (x0+thin*1.2/2, y3+ s/4);
 paths[0]:=z0{dir 80}..z1{left}..z2{down}..z3{right}..z4;
-
+paths[p]:=z0{dir 80}..z1{left}..z2{down} ..z3 ..z4;
+paths[p]:=harmonize(paths[p]);
 pen_stroke(
     nib(thick_nib scaled 1.1)(0)
     nib(middle_down_nib)(2)
     nib(top_nib)(1)
     nib(down_nib scaled 1.2 )(3)
     nib(end_nib scaled 1.2 rotated terminalangle 4 of paths[0])(4)
-    ignore_directions(0,1l,2,3,4)
+
 )(paths[0])(strokes[0]);
 
 % Top hanging serif styling
@@ -27,5 +28,5 @@ strokes[0] :=  subpath(0, 4) of strokes[0]{dir 120}
 
 lbearing:=sw/3*0.3;
 rbearing:=sw/3*0.3;
-anchor( "top", (xpart(point 1 of paths[0]), 0.9X));
+anchor( "top", (xpart(point 1 of paths[0]), 1.2s));
 endglyph;
