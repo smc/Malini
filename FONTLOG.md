@@ -33,5 +33,8 @@ tracker.
 * Jonathan Hoefler for [the latin kerning tests](https://github.com/hoeflerco/proofs)
 * [Curvature combs and harmonized paths in METAPOST - Linus Romer](https://github.com/fontforge/fontforge/files/12072466/romer-curvetools.pdf). Harmonization for curves in this font is based on this work.
 * [halfken](https://github.com/behdad/halfkern) by Behdad Esfahbod for semi-automating the latin kerning.
+* [On Diacritics](https://ilovetypography.com/2009/01/24/on-diacritics/) - article By David Březina
+* [Fontbakery](https://github.com/fonttools/fontbakery) for the extensive QA on the fonts.
+
 
 For a complete list of authors who contributed to the project, see CONTRIBUTORS.md
