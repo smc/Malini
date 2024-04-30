@@ -608,9 +608,10 @@ class MalayalamFont(Font):
     def build(self, design_dir):
         empty_glyphs = {
             ".null": 0,
-            "nonmarkingreturn": 0,
+            # "nonmarkingreturn": 0,
             "uni00A0": 0x00A0,  # NBSP
-            "uni00AD": 0x00AD,  # Soft hyphen
+            # See https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar
+            # "uni00AD": 0x00AD,  # Soft hyphen
             "zwnj": 0x200C,
             "zwj": 0x200D,
         }
@@ -740,13 +741,13 @@ class MalayalamFont(Font):
                 if base_name in ["i", "j"]:
                     base_name = "dotless" + base_name
                 if base_name == "t" and diacritc_name == "caron":
-                    diacritc_name = "quotesingle"
+                    diacritc_name = "caroncmbalt"
                 if base_name == "L" and diacritc_name == "cedilla":
                     diacritc_name = "commaaccent"
                 if base_name == "L" and diacritc_name == "caron":
-                    diacritc_name = "quoteright"
+                    diacritc_name = "caroncmbalt"
                 if base_name == "l" and diacritc_name == "caron":
-                    diacritc_name = "quoteright"
+                    diacritc_name = "caroncmbalt"
                 if base_name == "n" and diacritc_name == "cedilla":
                     diacritc_name = "commaaccent"
                 if base_name == "g" and diacritc_name == "cedilla":
