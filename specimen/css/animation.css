@@ -54,13 +54,13 @@
 
 @keyframes slntvars {
   0% {
-    font-variation-settings: "slnt" -15;
+    font-variation-settings: "slnt" -12;
   }
   50% {
     font-variation-settings: "slnt" 0;
   }
   100% {
-    font-variation-settings: "slnt" -15;
+    font-variation-settings: "slnt" -12;
   }
 }
 
