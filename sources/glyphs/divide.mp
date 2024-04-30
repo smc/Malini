@@ -2,9 +2,9 @@ input glyph;
 beginglyph;
 % This glyph does not slant. Reset slant value
 slant := 0;
-paths[0] = (0, s/2)--(sw, s/2);
-paths[1] = fullcircle scaled (thick*1.2) shifted(sw/2, 0.75s);
-paths[2] = fullcircle scaled (thick*1.2) shifted(sw/2, 0.25s);
+paths[0] = (0, s/2)--(sw*0.8, s/2);
+paths[1] = fullcircle scaled (thick*1.2) shifted(xpart point 0.5 of paths[0], 0.75s);
+paths[2] = fullcircle scaled (thick*1.2) shifted(xpart point 0.5 of paths[0], 0.25s);
 
 pen_stroke(
     nib(end_nib rotated terminalangle 0 of paths[p])(0)
