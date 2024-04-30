@@ -204,7 +204,7 @@ The following math glyphs have a different width, though:</p>
 less, greater</p>
 <p>Width = 488:
 multiply</p>
-<p>Width = 535:
+<p>Width = 446:
 divide</p>
  [code: width-outliers]
 
@@ -319,15 +319,15 @@ be served. You can solve this by either manually adding additional
 subset declarations to METADATA.pb, or by editing the glyphset
 definitions.</p>
 <ul>
-<li>U+02C7 CARON: try adding one of: canadian-aboriginal, yi, tifinagh</li>
+<li>U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi</li>
 <li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, coptic, math, tifinagh</li>
-<li>U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: tifinagh, cherokee, coptic, math</li>
+<li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
 <li>U+030A COMBINING RING ABOVE: try adding syriac</li>
-<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
 <li>U+030C COMBINING CARON: try adding one of: cherokee, tai-le</li>
 <li>U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition</li>
 <li>U+0326 COMBINING COMMA BELOW: not included in any glyphset definition</li>
@@ -374,11 +374,11 @@ definitions.</p>
 <tbody>
 <tr>
 <td align="left">nl_Latn (Dutch)</td>
-<td align="left">Shaper didn't attach acutecmb to j</td>
+<td align="left">Shaper didn't attach acutecmb to J</td>
 </tr>
 <tr>
 <td align="left">^</td>
-<td align="left">Shaper didn't attach acutecmb to J</td>
+<td align="left">Shaper didn't attach acutecmb to j</td>
 </tr>
 </tbody>
 </table>
@@ -465,23 +465,8 @@ overridden by the configuration file.</p>
 </thead>
 <tbody>
 <tr>
-<td align="left">Text</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">SemiCondensed</td>
-<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
 <td align="left">Display</td>
 <td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">SemiExpanded</td>
-<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -490,8 +475,23 @@ overridden by the configuration file.</p>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">Black Oblique</td>
-<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">SemiCondensed</td>
+<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">Text</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">SemiExpanded</td>
+<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">Oblique</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -500,8 +500,8 @@ overridden by the configuration file.</p>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">Oblique</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">Black Oblique</td>
+<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
