@@ -146,6 +146,7 @@ glyphs:
       1.verticals_lower: imnquh
       1.verticals_tall: dl
       1.z: z
+      1.forwardslash: /
 
       # Pair - Right
       2.a: a
@@ -161,6 +162,7 @@ glyphs:
       2.v: vwy
       2.verticals_tall: bl
       2.verticals: ["m", "n", "p"]
+      2.forwardslash: /
 
       # Upper cases
       1.A: AÆ
@@ -226,6 +228,9 @@ glyphs:
 
       - ["1.t", "2.t", -20]
       - ["1.t", "2.v", -40]  #  tv, ty,tw
+
+      - ["1.forwardslash", "2.forwardslash", -120]  # //
+
 
       - ["1.A", "2.u", -40]  #  Au
       - ["1.A", "2.t", -40]  #  At
