@@ -77,9 +77,9 @@ vardef serif_nib = fix_nib(serif_height, 0, 0) enddef;
 
 vardef terminalnib =
     if terminalround = 0:
-        fix_nib(thick*xthick, 0, 0)
+        fix_nib(thick, 0, 0)
     else:
-        fix_nib(thick*xthick, thick*terminalround, 0) xyscaled(xthick, terminalround)
+        fix_nib(thick, thick*terminalround, 0) xyscaled(1, terminalround)
     fi
 enddef;
 

@@ -15,8 +15,6 @@ Xheight :=      0.94*ascent;  % Height of English capital letters
 rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines
 contrast :=     0.56;         % Thickness of thinnest lines, ratio to this thick value.
-subthick :=     0.666u;       % Thickness of thickest lines in subscribed characters
-xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
 
