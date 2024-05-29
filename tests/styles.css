@@ -14,7 +14,7 @@
     /* light */
 
     --text-1-light: hsla(220, 16%, 16%, 1);
-    --surface-1-light: hsla(220, 16%, 92%, 1);
+    --surface-1-light: #fff;
 
     /* dark */
 
