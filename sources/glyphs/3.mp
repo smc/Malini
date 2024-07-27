@@ -6,7 +6,7 @@ z2=(x0 + Xw/2.25, (y1+y3)/2);
 z3=(x2 - Xw/3, 0.55y1);
 z4=(x2 + thick/2, (y3+y5)/2);
 z5=((x4+x6)/2, undershoot);
-z6=(x0,y5+m/6);
+z6=(x0,y5+m/3);
 
 paths[p] = z0..z1{right}..{down}z2..{left}z3{right}..z4{down}..{left}z5..z6;
 
@@ -16,7 +16,7 @@ pen_stroke(
     nib(middle_down_nib)(2,4)
     nib(end_nib rotated 90)(3)
     nib(down_nib)(5)
-    nib(thicknib rotated terminalangle infinity of paths[p])(6)
+    nib(thick_nib rotated terminalangle infinity of paths[p])(6)
 )(paths[p])(strokes[p]);
 
 

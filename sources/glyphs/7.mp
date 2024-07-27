@@ -15,11 +15,11 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0= point 2 of strokes[p-1];
-z1=(x0 - Xw/3, overshoot);
+z1=(x0 - Xw/3, 0);
 paths[p] = z0..{dir -100}z1;
 pen_stroke(
    nib(middle_up_nib rotated 10)(0)
-   nib(thicknib rotated terminalangle infinity of paths[p])(1)
+   cut(thick_nib scaled 1.1 rotated terminalangle infinity of paths[p], 0)(1)
 )(paths[p])(strokes[p]);
 % strokes[p]:=point 0 of strokes[p]--point 1 of strokes[p]--point 2 of strokes[p]--point 3 of strokes[p]--cycle;
 

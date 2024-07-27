@@ -20,7 +20,7 @@ pen_stroke(
 )(paths[p])(strokes[p]);
 
 % Top hanging serif styling
-strokes[p] := soften_node(strokes[p], u*condense*0.2, 11 );
+% strokes[p] := soften_node(strokes[p], u*condense*0.2, 11 );
 % strokes[p] := soften_node(strokes[p], u*condense*0.1, 12 );
 
 p:=p+1;

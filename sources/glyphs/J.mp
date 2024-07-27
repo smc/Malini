@@ -10,7 +10,7 @@ paths[p] = z0---z2..z3{left}..z4;
 pen_stroke(
     nib(thick_vertical_nib)(0,1)
     nib(down_nib)(2)
-    nib(thicknib scaled 1.2 rotated terminalangle 3 of paths[p])(3)
+    cut(thick_nib scaled 1.1 rotated terminalangle 3 of paths[p], 20)(3)
 )(paths[p])(strokes[p]);
 
 %serif

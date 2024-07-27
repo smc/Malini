@@ -12,20 +12,20 @@ z6 = (0, y5+s/3.5);
 paths[p] = z0{dir 90}  ..z1{left}..z2{down} ..z3..z4{down} ..z5{left} ..  z6;
 
 pen_stroke(
-   nib(thick_nib scaled 1.1 rotated terminalangle 0 of paths[p] )(0)
-   nib(top_nib scaled 0.85)(1)
+   cut(thick_nib rotated terminalangle 0 of paths[p] , 10)(0)
+   nib(top_nib )(1)
    nib(middle_down_nib)(2,4)
    nib(middle_down_nib rotated 90)(3)
-   nib(down_nib scaled 0.85)(5)
-   nib(thick_nib scaled 1.1  rotated terminalangle 6 of paths[0] )(6)
+   nib(down_nib  )(5)
+   cut(thick_nib rotated terminalangle 6 of paths[0], 15 )(6)
    ignore_directions(1, 3, 5)
 )(paths[p])(strokes[p]);
 
 % Serif styling
 
-strokes[p] :=  subpath(0.25, 6) of strokes[p]{left}
-    ..subpath(7.25, 13) of strokes[p]{right}
-    .. cycle;
+% strokes[p] :=  subpath(0.25, 6) of strokes[p]{left}
+%     ..subpath(7.25, 13) of strokes[p]{right}
+%     .. cycle;
 
 
 

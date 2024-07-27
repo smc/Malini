@@ -19,7 +19,7 @@ z1=(x0 - Xw/4, -descent);
 paths[p] = z0..{dir -100}z1;
 pen_stroke(
    nib(middle_up_nib rotated 10)(0)
-   nib(thicknib rotated terminalangle infinity of paths[p])(1)
+    cut(thick_nib scaled 1.1rotated terminalangle infinity of paths[p], 0)(1)
 )(paths[p])(strokes[p]);
 
 % strokes[p]:=point 0 of strokes[p]--point 1 of strokes[p]--point 2 of strokes[p]--point 3 of strokes[p]--cycle;

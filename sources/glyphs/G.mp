@@ -8,10 +8,10 @@ z2 = (0, (y1+y3)/2.5);
 z3 = ((x2+x4)/1.75, undershoot);
 z4 = (x0, 0.1X);
 
-paths[p]:=z0{dir 80}..z1{left}..z2{down}..z3{right} ..{dir 30}z4;
+paths[p]:=z0{dir 90}..z1{left}..z2{down}..z3{right} ..{dir 30}z4;
 paths[p] := harmonize(paths[p]);
 pen_stroke(
-    nib(thick_nib scaled 1.2)(0)
+    cut(thick_nib scaled 1.2, 10)(0)
     nib(middle_down_nib)(2)
     nib(top_nib  rotated 10)(1)
     nib(down_nib rotated -40)(3)
@@ -34,9 +34,9 @@ strokes[0] :=  subpath(0, 3) of strokes[0]{right}
     .. point 4 of strokes[1]
     -- point 3 of strokes[1]
     .. {left}subpath(6, 9) of strokes[0]
-    .. cycle;
+    -- cycle;
 
-strokes[0] := subpath(0.15, 9) of strokes[0]{right} .. cycle;
+% strokes[0] := subpath(0, 10) of strokes[0]{right} .. cycle;
 strokes[0] := harmonize(strokes[0]);
 
 anchor( "top", (xpart(point 1 of paths[0]), 1.2X));
