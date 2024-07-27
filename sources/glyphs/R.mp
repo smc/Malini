@@ -33,14 +33,12 @@ pen_stroke(
 p:=p+1;
 clearxy;
 z0 =  point 3 of paths[p-1];
-z1 =  ((x0+x2)/2,(y0+y2)/2);
-z2 = (x0+0.4Xw ,0);
-paths[p] = z0{dir -10}..z1..{dir 10}z2;
+z1 = (x0+0.3Xw ,0);
+paths[p] = z0--z1;
 
 pen_stroke(
-     nib(end_nib rotated 15)(0)
-     nib(thick_vertical_nib)(1)
-     nib(end_nib rotated 15)(2)
+     nib(thick_nib)(0)
+     cut(thick_nib, 0)(2)
 )(paths[p])(strokes[p]);
 
 rbearing:=0;

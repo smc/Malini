@@ -7,7 +7,7 @@ z3=(x4, 3/4s);
 z4=(sw/4, 0);
 paths[0] = z0{dir 120}..z1{left}..{down}z2 ..{down}z3---z4;
 pen_stroke(
-    nib(thicknib rotated terminalangle 0 of paths[p])(0)
+    nib(thick_nib rotated terminalangle 0 of paths[p])(0)
     nib(thick_vertical_nib)(3,4)
     nib(top_nib)(1)
     nib(thick_vertical_nib)(2)
@@ -34,11 +34,11 @@ pen_stroke(
 
 strokes[0] := bottom_serif(strokes[0], 4);
 % Top hanging serif styling
-strokes[0] :=  subpath(0.4, 13) of strokes[0]{right} .. cycle;
+strokes[0] :=  subpath(0, 13) of strokes[0] --cycle;
 
 strokes[2] := bottom_serif(strokes[2], 4);
 % Top hanging serif styling
-strokes[2] :=  subpath(0.4, 13) of strokes[2]{right} .. cycle;
+strokes[2] :=  subpath(0, 13) of strokes[2]-- cycle;
 
 rbearing:=0.5*rbearing;
 lbearing:=0;
