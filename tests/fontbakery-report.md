@@ -1,6 +1,6 @@
 ## FontBakery report
 
-fontbakery version: 0.12.4
+fontbakery version: 0.12.9
 
 
 
@@ -12,17 +12,19 @@ These won't break the CI job for now, but will become effective after some time 
 <details><summary>[1] Malini-VF.ttf</summary>
 <div>
 <details>
-    <summary>⚠️ <b>WARN</b> Validate location, size and resolution of article images. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.article.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Validate size, and resolution of article images, and ensure article page has minimum length and includes visual assets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.article.html#"></a></summary>
     <div>
 
 
 > 
 > The purpose of this check is to ensure images (either raster or vector files)
-> are placed on the correct directory (an `images` subdirectory inside `article`) and
-> they they are not excessively large in filesize and resolution.
+> are not excessively large in filesize and resolution.
 > 
 > These constraints are loosely based on infrastructure limitations under
 > default configurations.
+> 
+> It also ensures that the article page has a minimum length and includes
+> at least one visual asset.
 > 
 
 
@@ -51,7 +53,7 @@ These won't break the CI job for now, but will become effective after some time 
 
 
 
-<details><summary>[16] Malini-VF.ttf</summary>
+<details><summary>[17] Malini-VF.ttf</summary>
 <div>
 <details>
     <summary>⚠️ <b>WARN</b> Check glyphs in mark glyph class are non-spacing. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/opentype.gdef.html#"></a></summary>
@@ -200,7 +202,7 @@ U+0D4E</p>
 
 * ⚠️ **WARN** <p>The most common width is 424 among a set of 5 math glyphs.
 The following math glyphs have a different width, though:</p>
-<p>Width = 326:
+<p>Width = 324:
 less, greater</p>
 <p>Width = 488:
 multiply</p>
@@ -214,7 +216,7 @@ divide</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Check correctness of STAT table strings <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Check correctness of STAT table strings <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.stat.html#"></a></summary>
     <div>
 
 
@@ -244,7 +246,7 @@ overridden by the configuration file.</p>
 </details>
 
 <details>
-    <summary>⚠️ <b>WARN</b> Glyph names are all valid? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <summary>⚠️ <b>WARN</b> Glyph names are all valid? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.glyphnames.html#"></a></summary>
     <div>
 
 
@@ -288,6 +290,133 @@ ml_da_virama_dha_virama_ra_sign_u, ml_da_virama_dha_virama_ra_sign_uu, ml_fracti
 </details>
 
 <details>
+    <summary>⚠️ <b>WARN</b> Check the direction of the outermost contour in each glyph <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/outline.html#"></a></summary>
+    <div>
+
+
+> 
+> In TrueType fonts, the outermost contour of a glyph should be oriented
+> clockwise, while the inner contours should be oriented counter-clockwise.
+> Getting the path direction wrong can lead to rendering issues in some
+> software.
+> 
+
+
+
+
+> Original proposal: https://github.com/fonttools/fontbakery/issues/2056
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs have a counter-clockwise outer contour:</p>
+<pre><code>* Cdotaccent (U+010A) has a counter-clockwise outer contour
+
+* Edotaccent (U+0116) has a counter-clockwise outer contour
+
+* Gdotaccent (U+0120) has a counter-clockwise outer contour
+
+* Idotaccent (U+0130) has a counter-clockwise outer contour
+
+* Lcaron (U+013D) has a counter-clockwise outer contour
+
+* Lcedilla (U+013B) has a counter-clockwise outer contour
+
+* Lcedilla (U+013B) has a counter-clockwise outer contour
+
+* Scommaaccent (U+0218) has a counter-clockwise outer contour
+
+* Scommaaccent (U+0218) has a counter-clockwise outer contour
+
+* Tcommaaccent (U+021A) has a counter-clockwise outer contour
+
+* Tcommaaccent (U+021A) has a counter-clockwise outer contour
+
+* Zdotaccent (U+017B) has a counter-clockwise outer contour
+
+* caroncmbalt has a counter-clockwise outer contour
+
+* cdotaccent (U+010B) has a counter-clockwise outer contour
+
+* comma (U+002C) has a counter-clockwise outer contour
+
+* comma (U+002C) has a counter-clockwise outer contour
+
+* commaaccent (U+0326) has a counter-clockwise outer contour
+
+* commaaccent (U+0326) has a counter-clockwise outer contour
+
+* dotaccent (U+02D9) has a counter-clockwise outer contour
+
+* dotaccentcmb (U+0307) has a counter-clockwise outer contour
+
+* edotaccent (U+0117) has a counter-clockwise outer contour
+
+* gdotaccent (U+0121) has a counter-clockwise outer contour
+
+* lcaron (U+013E) has a counter-clockwise outer contour
+
+* ml_dot_reph (U+0D4E) has a counter-clockwise outer contour
+
+* ncedilla (U+0146) has a counter-clockwise outer contour
+
+* ncedilla (U+0146) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quoteleft (U+2018) has a counter-clockwise outer contour
+
+* quoteleft (U+2018) has a counter-clockwise outer contour
+
+* quoteright (U+2019) has a counter-clockwise outer contour
+
+* quoteright (U+2019) has a counter-clockwise outer contour
+
+* quotesinglbase (U+201A) has a counter-clockwise outer contour
+
+* quotesinglbase (U+201A) has a counter-clockwise outer contour
+
+* scommaaccent (U+0219) has a counter-clockwise outer contour
+
+* scommaaccent (U+0219) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* tcaron (U+0165) has a counter-clockwise outer contour
+
+* tcommaaccent (U+021B) has a counter-clockwise outer contour
+
+* tcommaaccent (U+021B) has a counter-clockwise outer contour
+
+* zdotaccent (U+017C) has a counter-clockwise outer contour
+</code></pre>
+ [code: ccw-outer-contour]
+
+
+
+</div>
+</details>
+
+<details>
     <summary>⚠️ <b>WARN</b> Check for codepoints not covered by METADATA subsets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.subsets.html#"></a></summary>
     <div>
 
@@ -319,23 +448,25 @@ be served. You can solve this by either manually adding additional
 subset declarations to METADATA.pb, or by editing the glyphset
 definitions.</p>
 <ul>
-<li>U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi</li>
-<li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
-<li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
-<li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02C7 CARON: try adding one of: yi, tifinagh, canadian-aboriginal</li>
+<li>U+02D8 BREVE: try adding one of: yi, canadian-aboriginal</li>
+<li>U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal</li>
+<li>U+02DB OGONEK: try adding one of: yi, canadian-aboriginal</li>
 <li>U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: tifinagh, cherokee, coptic, math</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, coptic, math</li>
 <li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
 <li>U+030A COMBINING RING ABOVE: try adding syriac</li>
-<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
 <li>U+030C COMBINING CARON: try adding one of: cherokee, tai-le</li>
 <li>U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition</li>
 <li>U+0326 COMBINING COMMA BELOW: not included in any glyphset definition</li>
 <li>U+0327 COMBINING CEDILLA: not included in any glyphset definition</li>
 <li>U+0328 COMBINING OGONEK: not included in any glyphset definition</li>
+<li>U+03A9 GREEK CAPITAL LETTER OMEGA: try adding one of: math, elbasan, greek</li>
+<li>U+03C0 GREEK SMALL LETTER PI: try adding one of: math, yi, greek</li>
 <li>U+2E42 DOUBLE LOW-REVERSED-9 QUOTATION MARK: not included in any glyphset definition</li>
 </ul>
-<p>Or you can add the above codepoints to one of the subsets supported by the font: <code>cyrillic-ext</code>, <code>greek-ext</code>, <code>latin</code>, <code>latin-ext</code>, <code>malayalam</code></p>
+<p>Or you can add the above codepoints to one of the subsets supported by the font: <code>latin</code>, <code>latin-ext</code>, <code>malayalam</code></p>
  [code: unreachable-subsetting]
 
 
@@ -374,11 +505,11 @@ definitions.</p>
 <tbody>
 <tr>
 <td align="left">nl_Latn (Dutch)</td>
-<td align="left">Shaper didn't attach acutecmb to J</td>
+<td align="left">Shaper didn't attach acutecmb to j</td>
 </tr>
 <tr>
 <td align="left">^</td>
-<td align="left">Shaper didn't attach acutecmb to j</td>
+<td align="left">Shaper didn't attach acutecmb to J</td>
 </tr>
 </tbody>
 </table>
@@ -465,28 +596,13 @@ overridden by the configuration file.</p>
 </thead>
 <tbody>
 <tr>
-<td align="left">Display</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
 <td align="left">Expanded</td>
 <td align="left">wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">SemiCondensed</td>
-<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">Text</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">SemiExpanded</td>
-<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
+<td align="left">Display</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -495,13 +611,28 @@ overridden by the configuration file.</p>
 <td align="left">N/A</td>
 </tr>
 <tr>
+<td align="left">Black Oblique</td>
+<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">Text</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">SemiCondensed</td>
+<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
 <td align="left">Condensed</td>
 <td align="left">wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">Black Oblique</td>
-<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">SemiExpanded</td>
+<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -824,8 +955,8 @@ overridden by the configuration file.</p>
 
 | 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
 | ---|---|---|---|---|---|---|---|
-| 0 | 0 | 0 | 17 | 88 | 7 | 134 | 0 | 
-| 0% | 0% | 0% | 7% | 36% | 3% | 54% | 0% | 
+| 0 | 0 | 0 | 18 | 90 | 8 | 133 | 0 | 
+| 0% | 0% | 0% | 7% | 36% | 3% | 53% | 0% | 
 
 
 

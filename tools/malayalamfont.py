@@ -985,9 +985,9 @@ class MalayalamFont(Font):
         self.info.openTypeOS2Type = []
         # The TypoAscender minus the TypoDescender should equal the unit square.
         # the height of the ascenders in units
-        self.info.openTypeOS2TypoAscender = round(self.info.ascender * 1.2)
+        self.info.openTypeOS2TypoAscender = round(self.info.ascender * 1.25)
         # the depth of the descenders in units (negative value)
-        self.info.openTypeOS2TypoDescender = -round(self.info.descender * 1.2)
+        self.info.openTypeOS2TypoDescender = -round(self.info.descender * 1.25)
         self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)

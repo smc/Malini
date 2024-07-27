@@ -273,10 +273,10 @@ you're checking.</p>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td>17</td>
-        <td>88</td>
-        <td>7</td>
-        <td>134</td>
+        <td>18</td>
+        <td>90</td>
+        <td>8</td>
+        <td>133</td>
     </tr>
     <tr>
         <td>0%</td>
@@ -285,7 +285,7 @@ you're checking.</p>
         <td>7%</td>
         <td>36%</td>
         <td>3%</td>
-        <td>54%</td>
+        <td>53%</td>
     </tr>
 </table>
         
@@ -310,80 +310,1061 @@ immediately.
 <p>(but other kinds of bug reports and/or feature requests
     are also always welcome, of course!)</p>
 
-<p>FontBakery version: 0.12.4</p>
+<p>FontBakery version: 0.12.9</p>
         
             
                 <h2>OpenType Specification Checks</h2>
 <span class='section__emoji'>
-    ⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩
+    ⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩
 </span>
 
+    <h3>
     
+    Fonts have consistent underline thickness?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/underline_thickness&gt;</div>
+
+
+    <p>Dave C Lemon (Adobe Type Team) recommends setting the underline thickness to be consistent across the family.</p>
+<p>If thicknesses are not family consistent, words set on the same line which have different styles look strange.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/008">legacy:check/008</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Fonts have consistent PANOSE family type?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/panose_familytype&gt;</div>
+
+
+    <p>The <a href="https://monotype.github.io/panose/">PANOSE value</a> in the OS/2 table is a way of classifying a font based on its visual appearance and characteristics.</p>
+<p>The first field in the PANOSE classification is the family type: 2 means Latin Text, 3 means Latin Script, 4 means Latin Decorative, 5 means Latin Symbol. This check ensures that within a family, all fonts have the same family type.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/010">legacy:check/010</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Make sure all font files have the same version value.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/equal_font_versions&gt;</div>
+
+
+    <p>Within a family released at the same time, all members of the family should have the same version number in the head table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/014">legacy:check/014</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check that OS/2.fsSelection bold &amp; italic settings are unique for each NameID1
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/family/bold_italic_unique_for_nameid1&gt;</div>
+
+
+    <p>Per the OpenType spec: name ID 1 'is used in combination with Font Subfamily name (name ID 2), and should be shared among at most four fonts that differ only in weight or style.</p>
+<p>This four-way distinction should also be reflected in the OS/2.fsSelection field, using bits 0 and 5.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2388">https://github.com/fonttools/fontbakery/pull/2388</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Verify that each group of fonts with the same nameID 1 has maximum of 4 fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/family/max_4_fonts_per_family_name&gt;</div>
+
+
+    <p>Per the OpenType spec:</p>
+<p>'The Font Family name [...] should be shared among at most four fonts that differ only in weight or style [...]'</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2372">https://github.com/fonttools/fontbakery/pull/2372</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Verify that family names in the name table are consistent across all fonts in the family. Checks Typographic Family name (nameID 16) if present, otherwise uses Font Family name (nameID 1)
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/family/consistent_family_name&gt;</div>
+
+
+    <p>Per the OpenType spec:</p>
+<ul>
+<li>
+<p>&quot;...many existing applications that use this pair of names assume that a Font Family name is shared by at most four fonts that form a font style-linking group&quot;</p>
+</li>
+<li>
+<p>&quot;For extended typographic families that includes fonts other than the four basic styles(regular, italic, bold, bold italic), it is strongly recommended that name IDs 16 and 17 be used in fonts to create an extended, typographic grouping.&quot;</p>
+</li>
+<li>
+<p>&quot;If name ID 16 is absent, then name ID 1 is considered to be the typographic family name.&quot;</p>
+</li>
+</ul>
+<p><a href="https://learn.microsoft.com/en-us/typography/opentype/spec/name">https://learn.microsoft.com/en-us/typography/opentype/spec/name</a></p>
+<p>Fonts within a font family all must have consistent names in the Typographic Family name (nameID 16) or Font Family name (nameID 1), depending on which it uses.</p>
+<p>Inconsistent font/typographic family names across fonts in a family can result in unexpected behaviors, such as broken style linking.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4112">https://github.com/fonttools/fontbakery/issues/4112</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    CFF table FontName must match name table ID 6 (PostScript name).
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/name/postscript_vs_cff&gt;</div>
+
+
+    <p>The PostScript name entries in the font's 'name' table should match the FontName string in the 'CFF ' table.</p>
+<p>The 'CFF ' table has a lot of information that is duplicated in other tables. This information should be consistent across tables, because there's no guarantee which table an app will get the data from.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2229">https://github.com/fonttools/fontbakery/pull/2229</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Name table ID 6 (PostScript name) must be consistent across platforms.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/name/postscript_name_consistency&gt;</div>
+
+
+    <p>The PostScript name entries in the font's 'name' table should be consistent across platforms.</p>
+<p>This is the TTF/CFF2 equivalent of the CFF 'name/postscript_vs_cff' check.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2394">https://github.com/fonttools/fontbakery/pull/2394</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
-        <h3>
+    Check name table for empty records.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/name/empty_records&gt;</div>
+
+
+    <p>Check the name table for empty records, as this can cause problems in Adobe apps.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2369">https://github.com/fonttools/fontbakery/pull/2369</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Description strings in the name table must not contain copyright info.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/no_copyright_on_description&gt;</div>
+
+
+    <p>The name table in a font file contains strings about the font; there are entries for a copyright field and a description. If the copyright entry is being used correctly, then there should not be any copyright information in the description entry.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/031">legacy:check/031</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does full font name begin with the font family name?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/match_familyname_fullfont&gt;</div>
+
+
+    <p>The FULL_FONT_NAME entry in the ‘name’ table should start with the same string as the Family Name (FONT_FAMILY_NAME, TYPOGRAPHIC_FAMILY_NAME or WWS_FAMILY_NAME).</p>
+<p>If the Family Name is not included as the first part of the Full Font Name, and the user embeds the font in a document using a Microsoft Office app, the app will fail to render the font when it opens the document again.</p>
+<p>NOTE: Up until version 1.5, the OpenType spec included the following exception in the definition of Full Font Name:</p>
+<p>&quot;An exception to the [above] definition of Full font name is for Microsoft platform strings for CFF OpenType fonts: in this case, the Full font name string must be identical to the PostScript FontName in the CFF Name INDEX.&quot;</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/otspec150/name#name-ids">https://docs.microsoft.com/en-us/typography/opentype/otspec150/name#name-ids</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/068">legacy:check/068</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;wght&#39; (Weight) axis coordinate must be 400 on the &#39;Regular&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/regular_wght_coord&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'wght' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght</a></p>
+<p>If a variable font has a 'wght' (Weight) axis, then the coordinate of its 'Regular' instance is required to be 400.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;wdth&#39; (Width) axis coordinate must be 100 on the &#39;Regular&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/regular_wdth_coord&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'wdth' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wdth">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wdth</a></p>
+<p>If a variable font has a 'wdth' (Width) axis, then the coordinate of its 'Regular' instance is required to be 100.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;slnt&#39; (Slant) axis coordinate must be zero on the &#39;Regular&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/regular_slnt_coord&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'slnt' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_slnt">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_slnt</a></p>
+<p>If a variable font has a 'slnt' (Slant) axis, then the coordinate of its 'Regular' instance is required to be zero.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;ital&#39; (Italic) axis coordinate must be zero on the &#39;Regular&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/regular_ital_coord&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'ital' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_ital">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_ital</a></p>
+<p>If a variable font has a 'ital' (Italic) axis, then the coordinate of its 'Regular' instance is required to be zero.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;opsz&#39; (Optical Size) axis coordinate should be between 10 and 16 on the &#39;Regular&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/regular_opsz_coord&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'opsz' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_opsz">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_opsz</a></p>
+<p>If a variable font has an 'opsz' (Optical Size) axis, then the coordinate of its 'Regular' instance is recommended to be a value in the range 10 to 16.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;slnt&#39; (Slant) axis coordinate specifies positive values in its range?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/slnt_range&gt;</div>
+
+
+    <p>The OpenType spec says at <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt</a> that:</p>
+<p>[...] the scale for the Slant axis is interpreted as the angle of slant in counter-clockwise degrees from upright. This means that a typical, right-leaning oblique design will have a negative slant value. This matches the scale used for the italicAngle field in the post table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2572">https://github.com/fonttools/fontbakery/issues/2572</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;ital&#39; (Italic) axis coordinates is in a valid range?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.typenetwork/check/varfont/ital_range&gt;</div>
+
+
+    <p>The OpenType spec says at <a href="https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_ital">https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_ital</a> that:</p>
+<p>[...] Valid numeric range: Values must be in the range 0 to 1.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="None">None</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;wght&#39; (Weight) axis coordinate must be within spec range of 1 to 1000 on all instances.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/wght_valid_range&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'wght' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght</a></p>
+<p>On the 'wght' (Weight) axis, the valid coordinate range is 1-1000.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2264">https://github.com/fonttools/fontbakery/issues/2264</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The variable font &#39;wdth&#39; (Width) axis coordinate must strictly greater than zero.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/wdth_valid_range&gt;</div>
+
+
+    <p>According to the Open-Type spec's registered design-variation tag 'wdth' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wdth">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wdth</a></p>
+<p>On the 'wdth' (Width) axis, the valid numeric range is strictly greater than zero.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2520">https://github.com/fonttools/fontbakery/pull/2520</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    All fvar axes have a correspondent Axis Record on STAT table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/stat_axis_record_for_each_axis&gt;</div>
+
+
+    <p>According to the OpenType spec, there must be an Axis Record for every axis defined in the fvar table.</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/stat#axis-records">https://docs.microsoft.com/en-us/typography/opentype/spec/stat#axis-records</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3017">https://github.com/fonttools/fontbakery/pull/3017</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the number of glyphs in the loca table match the maxp table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/loca/maxp_num_glyphs&gt;</div>
+
+
+    <p>The 'maxp' table contains various statistics about the font, including the number of glyphs in the font. The 'loca' table contains the offsets to the locations of the glyphs in the font. The number of offsets in the 'loca' table should match the number of glyphs in the 'maxp' table. A failure here indicates a problem with the font compiler.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/180">legacy:check/180</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Jun/20</div>
+    
+    Does the font&#39;s CFF table top dict strings fit into the ASCII range?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/cff_ascii_strings&gt;</div>
+
+
+    <p>All CFF Table top dict string chars should fit into the ASCII range.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4619">https://github.com/fonttools/fontbakery/issues/4619</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Is the CFF subr/gsubr call depth &gt; 10?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/cff_call_depth&gt;</div>
+
+
+    <p>Per &quot;The Type 2 Charstring Format, Technical Note #5177&quot;, the &quot;Subr nesting, stack limit&quot; is 10.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2425">https://github.com/fonttools/fontbakery/pull/2425</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font use deprecated CFF operators or operations?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/cff_deprecated_operators&gt;</div>
+
+
+    <p>The 'dotsection' operator and the use of 'endchar' to build accented characters from the Adobe Standard Encoding Character Set (&quot;seac&quot;) are deprecated in CFF. Adobe recommends repairing any fonts that use these, especially endchar-as-seac, because a rendering issue was discovered in Microsoft Word with a font that makes use of this operation. The check treats that usage as a FAIL. There are no known ill effects of using dotsection, so that check is a WARN.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3033">https://github.com/fonttools/fontbakery/pull/3033</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Is the CFF2 subr/gsubr call depth &gt; 10?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/cff2_call_depth&gt;</div>
+
+
+    <p>Per &quot;The CFF2 CharString Format&quot;, the &quot;Subr nesting, stack limit&quot; is 10.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2425">https://github.com/fonttools/fontbakery/pull/2425</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking font version fields (head and name table).
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/font_version&gt;</div>
+
+
+    <p>The OpenType specification provides for two fields which contain the version number of the font: fontRevision in the head table, and nameID 5 in the name table. If these fields do not match, different applications will report different version numbers for the font.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/044">legacy:check/044</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font has correct post table version?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/post_table_version&gt;</div>
+
+
+    <p>Format 2.5 of the 'post' table was deprecated in OpenType 1.3 and should not be used.</p>
+<p>According to Thomas Phinney, the possible problem with post format 3 is that under the right combination of circumstances, one can generate PDF from a font with a post format 3 table, and not have accurate backing store for any text that has non-default glyphs for a given codepoint.</p>
+<p>It will look fine but not be searchable. This can affect Latin text with high-end typography, and some complex script writing systems, especially with higher-quality fonts. Those circumstances generally involve creating a PDF by first printing a PostScript stream to disk, and then creating a PDF from that stream without reference to the original source document. There are some workflows where this applies,but these are not common use cases.</p>
+<p>Apple recommends against use of post format version 4 as &quot;no longer necessary and should be avoided&quot;. Please see the Apple TrueType reference documentation for additional details.</p>
+<p><a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6post.html">https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6post.html</a></p>
+<p>Acceptable post format versions are 2 and 3 for TTF and OTF CFF2 builds, and post format 3 for CFF builds.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/015">legacy:check/015</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/google/fonts/issues/215">https://github.com/google/fonts/issues/215</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/2638">https://github.com/fonttools/fontbakery/issues/2638</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3635">https://github.com/fonttools/fontbakery/issues/3635</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking correctness of monospaced metadata.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/monospace&gt;</div>
+
+
+    <p>There are various metadata in the OpenType spec to specify if a font is monospaced or not. If the font is not truly monospaced, then no monospaced metadata should be set (as sometimes they mistakenly are...)</p>
+<p>Requirements for monospace fonts:</p>
+<ul>
+<li>
+<p>post.isFixedPitch - &quot;Set to 0 if the font is proportionally spaced, non-zero if the font is not proportionally spaced (monospaced)&quot; (<a href="https://www.microsoft.com/typography/otspec/post.htm">https://www.microsoft.com/typography/otspec/post.htm</a>)</p>
+</li>
+<li>
+<p>hhea.advanceWidthMax must be correct, meaning no glyph's width value is greater. (<a href="https://www.microsoft.com/typography/otspec/hhea.htm">https://www.microsoft.com/typography/otspec/hhea.htm</a>)</p>
+</li>
+<li>
+<p>OS/2.panose.bProportion must be set to 9 (monospace) on latin text fonts.</p>
+</li>
+<li>
+<p>OS/2.panose.bSpacing must be set to 3 (monospace) on latin hand written or latin symbol fonts.</p>
+</li>
+<li>
+<p>Spec says: &quot;The PANOSE definition contains ten digits each of which currently describes up to sixteen variations. Windows uses bFamilyType, bSerifStyle and bProportion in the font mapper to determine family type. It also uses bProportion to determine if the font is monospaced.&quot; (<a href="https://www.microsoft.com/typography/otspec/os2.htm#pan">https://www.microsoft.com/typography/otspec/os2.htm#pan</a> <a href="https://monotypecom-test.monotype.de/services/pan2">https://monotypecom-test.monotype.de/services/pan2</a>)</p>
+</li>
+<li>
+<p>OS/2.xAvgCharWidth must be set accurately. &quot;OS/2.xAvgCharWidth is used when rendering monospaced fonts, at least by Windows GDI&quot; (<a href="http://typedrawers.com/discussion/comment/15397/#Comment_15397">http://typedrawers.com/discussion/comment/15397/#Comment_15397</a>)</p>
+</li>
+</ul>
+<p>Also we should report an error for glyphs not of average width.</p>
+<p>Please also note:</p>
+<p>Thomas Phinney told us that a few years ago (as of December 2019), if you gave a font a monospace flag in Panose, Microsoft Word would ignore the actual advance widths and treat it as monospaced.</p>
+<p>Source: <a href="https://typedrawers.com/discussion/comment/45140/#Comment_45140">https://typedrawers.com/discussion/comment/45140/#Comment_45140</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/033">legacy:check/033</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check if OS/2 xAvgCharWidth is correct.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/xavgcharwidth&gt;</div>
+
+
+    <p>The OS/2.xAvgCharWidth field is used to calculate the width of a string of characters. It is the average width of all non-zero width glyphs in the font.</p>
+<p>This check ensures that the value is correct. A failure here may indicate a bug in the font compiler, rather than something that the designer can do anything about.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/034">legacy:check/034</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check if OS/2 fsSelection matches head macStyle bold and italic bits.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/fsselection_matches_macstyle&gt;</div>
+
+
+    <p>The bold and italic bits in OS/2.fsSelection must match the bold and italic bits in head.macStyle per the OpenType spec.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2382">https://github.com/fonttools/fontbakery/pull/2382</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking unitsPerEm value is reasonable.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unitsperem&gt;</div>
+
+
+    <p>According to the OpenType spec:</p>
+<p>The value of unitsPerEm at the head table must be a value between 16 and 16384. Any value in this range is valid.</p>
+<p>In fonts that have TrueType outlines, a power of 2 is recommended as this allows performance optimizations in some rasterizers.</p>
+<p>But 1000 is a commonly used value. And 2000 may become increasingly more common on Variable Fonts.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/043">legacy:check/043</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font have a DSIG table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/dsig&gt;</div>
+
+
+    <p>Microsoft Office 2013 and below products expect fonts to have a digital signature declared in a DSIG table in order to implement OpenType features. The EOL date for Microsoft Office 2013 products is 4/11/2023. This issue does not impact Microsoft Office 2016 and above products.</p>
+<p>As we approach the EOL date, it is now considered better to completely remove the table.</p>
+<p>But if you still want your font to support OpenType features on Office 2013, then you may find it handy to add a fake signature on a placeholder DSIG table by running one of the helper scripts provided at <a href="https://github.com/googlefonts/gftools">https://github.com/googlefonts/gftools</a></p>
+<p>Reference: <a href="https://github.com/fonttools/fontbakery/issues/1845">https://github.com/fonttools/fontbakery/issues/1845</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/045">legacy:check/045</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3398">https://github.com/fonttools/fontbakery/issues/3398</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Check glyphs in mark glyph class are non-spacing.
 </h3>
@@ -440,10 +1421,8 @@ acutecmb (U+0301), brevecmb (U+0306), caroncmb (U+030C), cedillacmb (U+0327), ci
         </details>
     
 
-    
 
-    
-        <h3>
+    <h3>
     
     Check mark characters are in GDEF mark glyph class.
 </h3>
@@ -499,10 +1478,8 @@ ml_sign_u (U+0D41), ml_sign_uu (U+0D42), ml_sign_vocalic_l (U+0D62), ml_sign_voc
         </details>
     
 
-    
 
-    
-        <h3>
+    <h3>
     
     Check GDEF mark glyph class doesn&#39;t have characters that are not marks.
 </h3>
@@ -559,67 +1536,908 @@ U+0D4E</p>
         </details>
     
 
+
+    <h3>
     
+    Does GPOS table have kerning information? This check skips monospaced fonts as defined by post.isFixedPitch value
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gpos_kerning_info&gt;</div>
+
+
+    <p>Well-designed fonts use kerning to improve the spacing between specific pairs of glyphs. This check ensures that the font has kerning information in the GPOS table. It can be ignored if the design or writing system does not require kerning.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/063">legacy:check/063</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Is there a usable &#34;kern&#34; table declared in the font?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/kern_table&gt;</div>
+
+
+    <p>Even though all fonts should have their kerning implemented in the GPOS table, there may be kerning info at the kern table as well.</p>
+<p>Some applications such as MS PowerPoint require kerning info on the kern table. More specifically, they require a format 0 kern subtable from a kern table version 0 with only glyphs defined in the cmap table, which is the only one that Windows understands (and which is also the simplest and more limited of all the kern subtables).</p>
+<p>Google Fonts ingests fonts made for download and use on desktops, and does all web font optimizations in the serving pipeline (using libre libraries that anyone can replicate.)</p>
+<p>Ideally, TTFs intended for desktop users (and thus the ones intended for Google Fonts) should have both KERN and GPOS tables.</p>
+<p>Given all of the above, we currently treat kerning on a v0 kern table as a good-to-have (but optional) feature.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/066">legacy:check/066</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/1675">https://github.com/fonttools/fontbakery/issues/1675</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3148">https://github.com/fonttools/fontbakery/issues/3148</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Is there any unused data at the end of the glyf table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/glyf_unused_data&gt;</div>
+
+
+    <p>This check validates the structural integrity of the glyf table, by checking that all glyphs referenced in the loca table are actually present in the glyf table and that there is no unused data at the end of the glyf table. A failure here indicates a problem with the font compiler.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/069">legacy:check/069</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Font follows the family naming recommendations?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family_naming_recommendations&gt;</div>
+
+
+    <p>This check ensures that the length of various family name and style name strings in the name table are within the maximum length recommended by the OpenType specification.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/071">legacy:check/071</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    MaxAdvanceWidth is consistent with values in the Hmtx and Hhea tables?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/maxadvancewidth&gt;</div>
+
+
+    <p>The 'hhea' table contains a field which specifies the maximum advance width. This value should be consistent with the maximum advance width of all glyphs specified in the 'hmtx' table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/073">legacy:check/073</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    PostScript name follows OpenType specification requirements?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/postscript_name&gt;</div>
+
+
+    <p>The PostScript name is used by some applications to identify the font. It should only consist of characters from the set A-Z, a-z, 0-9, and hyphen.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/miguelsousa/openbakery/issues/62">https://github.com/miguelsousa/openbakery/issues/62</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check for points out of bounds.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/points_out_of_bounds&gt;</div>
+
+
+    <p>The glyf table specifies a bounding box for each glyph. This check ensures that all points in all glyph paths are within the bounding box. Glyphs with out-of-bounds points can cause rendering issues in some software, and should be corrected.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/735">https://github.com/fonttools/fontbakery/issues/735</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check glyphs do not have duplicate components which have the same x,y coordinates.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/glyf_non_transformed_duplicate_components&gt;</div>
+
+
+    <p>There have been cases in which fonts had faulty double quote marks, with each of them containing two single quote marks as components with the same x, y coordinates which makes them visually look like single quote marks.</p>
+<p>This check ensures that glyphs do not contain duplicate components which have the same x,y coordinates.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2709">https://github.com/fonttools/fontbakery/pull/2709</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
+</div>
+
+
     
+
+
+    <h3>
+    
+    Check code page character ranges
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/code_pages&gt;</div>
+
+
+    <p>At least some programs (such as Word and Sublime Text) under Windows 7 do not recognize fonts unless code page bits are properly set on the ulCodePageRange1 (and/or ulCodePageRange2) fields of the OS/2 table.</p>
+<p>More specifically, the fonts are selectable in the font menu, but whichever Windows API these applications use considers them unsuitable for any character set, so anything set in these fonts is rendered with Arial as a fallback font.</p>
+<p>This check currently does not identify which code pages should be set. Auto-detecting coverage is not trivial since the OpenType specification leaves the interpretation of whether a given code page is &quot;functional&quot; or not open to the font developer to decide.</p>
+<p>So here we simply detect as a FAIL when a given font has no code page declared at all.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2474">https://github.com/fonttools/fontbakery/issues/2474</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font have any invalid feature tags?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/layout_valid_feature_tags&gt;</div>
+
+
+    <p>Incorrect tags can be indications of typos, leftover debugging code or questionable approaches, or user error in the font editor. Such typos can cause features and language support to fail to work as intended.</p>
+<p>Font vendors may use private tags to identify private features. These tags must be four uppercase letters (A-Z) with no punctuation, spaces, or numbers.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3355">https://github.com/fonttools/fontbakery/issues/3355</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font have any invalid script tags?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/layout_valid_script_tags&gt;</div>
+
+
+    <p>Incorrect script tags can be indications of typos, leftover debugging code or questionable approaches, or user error in the font editor. Such typos can cause features and language support to fail to work as intended.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3355">https://github.com/fonttools/fontbakery/issues/3355</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font have any invalid language tags?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/layout_valid_language_tags&gt;</div>
+
+
+    <p>Incorrect language tags can be indications of typos, leftover debugging code or questionable approaches, or user error in the font editor. Such typos can cause features and language support to fail to work as intended.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3355">https://github.com/fonttools/fontbakery/issues/3355</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking post.italicAngle value.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/italic_angle&gt;</div>
+
+
+    <p>The 'post' table italicAngle property should be a reasonable amount, likely not more than 30°. Note that in the OpenType specification, the value is negative for a rightward lean.</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/post">https://docs.microsoft.com/en-us/typography/opentype/spec/post</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/130">legacy:check/130</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking head.macStyle value.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/mac_style&gt;</div>
+
+
+    <p>The values of the flags on the macStyle entry on the 'head' OpenType table that describe whether a font is bold and/or italic must be coherent with the actual style of the font as inferred by its filename.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/131">legacy:check/131</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking OS/2 fsSelection value.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fsselection&gt;</div>
+
+
+    <p>The OS/2.fsSelection field is a bit field used to specify the stylistic qualities of the font - in particular, it specifies to some operating systems whether the font is italic (bit 0), bold (bit 5) or regular (bit 6).</p>
+<p>This check verifies that the fsSelection field is set correctly for the font style. For a family of static fonts created in GlyphsApp, this is set by using the style linking checkboxes in the exports settings.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/129">legacy:check/129</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check name table IDs 1, 2, 16, 17 to conform to Italic style.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/italic_names&gt;</div>
+
+
+    <p>This check ensures that several entries in the name table conform to the font's Upright or Italic style, namely IDs 1 &amp; 2 as well as 16 &amp; 17 if they're present.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3666">https://github.com/fonttools/fontbakery/issues/3666</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that the value of axisNameID used by each VariationAxisRecord is greater than 255 and less than 32768.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/valid_axis_nameid&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>The axisNameID field provides a name ID that can be used to obtain strings from the 'name' table that can be used to refer to the axis in application user interfaces. The name ID must be greater than 255 and less than 32768.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3702">https://github.com/fonttools/fontbakery/issues/3702</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that the value of subfamilyNameID used by each InstanceRecord is 2, 17, or greater than 255 and less than 32768.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/valid_subfamily_nameid&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>The subfamilyNameID field provides a name ID that can be used to obtain strings from the 'name' table that can be treated as equivalent to name ID 17 (typographic subfamily) strings for the given instance. Values of 2 or 17 can be used; otherwise, values must be greater than 255 and less than 32768.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3703">https://github.com/fonttools/fontbakery/issues/3703</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that the value of postScriptNameID used by each InstanceRecord is 6, 0xFFFF, or greater than 255 and less than 32768.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/valid_postscript_nameid&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>The postScriptNameID field provides a name ID that can be used to obtain strings from the 'name' table that can be treated as equivalent to name ID 6 (PostScript name) strings for the given instance. Values of 6 and 0xFFFF can be used; otherwise, values must be greater than 255 and less than 32768.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3704">https://github.com/fonttools/fontbakery/issues/3704</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that when an instance record is included for the default instance, its subfamilyNameID value is set to a name ID whose string is equal to the string of either name ID 2 or 17, and its postScriptNameID value is set to a name ID whose string is equal to the string of name ID 6.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/valid_default_instance_nameids&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9.1 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>The default instance of a font is that instance for which the coordinate value of each axis is the defaultValue specified in the corresponding variation axis record. An instance record is not required for the default instance, though an instance record can be provided. When enumerating named instances, the default instance should be enumerated even if there is no corresponding instance record. If an instance record is included for the default instance (that is, an instance record has coordinates set to default values), then the nameID value should be set to either 2 or 17 or to a name ID with the same value as name ID 2 or 17. Also, if a postScriptNameID is included in instance records, and the postScriptNameID value should be set to 6 or to a name ID with the same value as name ID 6.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3708">https://github.com/fonttools/fontbakery/issues/3708</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that all of the instance records in a given font have the same size.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/same_size_instance_records&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>All of the instance records in a given font must be the same size, with all either including or omitting the postScriptNameID field. [...] If the value is 0xFFFF, then the value is ignored, and no PostScript name equivalent is provided for the instance.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3705">https://github.com/fonttools/fontbakery/issues/3705</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validates that all of the instance records in a given font have distinct data.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/distinct_instance_records&gt;</div>
+
+
+    <p>According to the 'fvar' documentation in OpenType spec v1.9 <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/fvar">https://docs.microsoft.com/en-us/typography/opentype/spec/fvar</a></p>
+<p>All of the instance records in a font should have distinct coordinates and distinct subfamilyNameID and postScriptName ID values. If two or more records share the same coordinates, the same nameID values or the same postScriptNameID values, then all but the first can be ignored.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3706">https://github.com/fonttools/fontbakery/issues/3706</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validate foundry-defined design-variation axis tag names.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/varfont/foundry_defined_tag_name&gt;</div>
+
+
+    <p>According to the Open-Type spec's syntactic requirements for foundry-defined design-variation axis tags available at <a href="https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg">https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg</a></p>
+<p>Foundry-defined tags must begin with an uppercase letter and must use only uppercase letters or digits.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4043">https://github.com/fonttools/fontbakery/issues/4043</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check that family axis ranges are indentical
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/family_axis_ranges&gt;</div>
+
+
+    <p>Between members of a family (such as Roman &amp; Italic), the ranges of variable axes must be identical.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4445">https://github.com/fonttools/fontbakery/issues/4445</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    STAT table has Axis Value tables?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/stat_has_axis_value_tables&gt;</div>
+
+
+    <p>According to the OpenType spec, in a variable font, it is strongly recommended that axis value tables be included for every element of typographic subfamily names for all of the named instances defined in the 'fvar' table.</p>
+<p>Axis value tables are particularly important for variable fonts, but can also be used in non-variable fonts. When used in non-variable fonts, axis value tables for particular values should be implemented consistently across fonts in the family.</p>
+<p>If present, Format 4 Axis Value tables are checked to ensure they have more than one AxisValueRecord (a strong recommendation from the OpenType spec).</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/stat#axis-value-tables">https://docs.microsoft.com/en-us/typography/opentype/spec/stat#axis-value-tables</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3090">https://github.com/fonttools/fontbakery/issues/3090</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking OS/2 achVendID against configuration.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.thetypefounders/check/vendor_id&gt;</div>
+
+
+    <p>When a font project's Vendor ID is specified explicitly on FontBakery's configuration file, all binaries must have a matching vendor identifier value in the OS/2 table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3941">https://github.com/fonttools/fontbakery/pull/3941</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check hhea.caretSlopeRise and hhea.caretSlopeRun
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/caret_slope&gt;</div>
+
+
+    <p>Checks whether hhea.caretSlopeRise and hhea.caretSlopeRun match with post.italicAngle.</p>
+<p>For Upright fonts, you can set hhea.caretSlopeRise to 1 and hhea.caretSlopeRun to 0.</p>
+<p>For Italic fonts, you can set hhea.caretSlopeRise to head.unitsPerEm and calculate hhea.caretSlopeRun like this: round(math.tan( math.radians(-1 * font[&quot;post&quot;].italicAngle)) * font[&quot;head&quot;].unitsPerEm)</p>
+<p>This check allows for a 0.1° rounding difference between the Italic angle as calculated by the caret slope and post.italicAngle</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3670">https://github.com/fonttools/fontbakery/issues/3670</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure VFs have &#39;ital&#39; STAT axis.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/italic_axis_in_stat&gt;</div>
+
+
+    <p>Check that related Upright and Italic VFs have a 'ital' axis in STAT table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2934">https://github.com/fonttools/fontbakery/issues/2934</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure &#39;ital&#39; STAT axis is boolean value
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/italic_axis_in_stat_is_boolean&gt;</div>
+
+
+    <p>Check that the value of the 'ital' STAT axis is boolean (either 0 or 1), and elided for the Upright and not elided for the Italic, and that the Upright is linked to the Italic.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3668">https://github.com/fonttools/fontbakery/issues/3668</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure &#39;ital&#39; STAT axis is last.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/italic_axis_last&gt;</div>
+
+
+    <p>Check that the 'ital' STAT axis is last in axis order.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3669">https://github.com/fonttools/fontbakery/issues/3669</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
 
             
         
@@ -628,11 +2446,10 @@ U+0D4E</p>
             
                 <h2>Universal Profile Checks</h2>
 <span class='section__emoji'>
-    ⚠️⚠️⚠️⚠️⏩⏩⏩⏩ℹ️
+    ⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩ℹ️
 </span>
 
-    
-        <h3>
+    <h3>
     
     Check accent of Lcaron, dcaron, lcaron, tcaron
 </h3>
@@ -700,38 +2517,497 @@ U+0D4E</p>
         </details>
     
 
+
+    <h3>
     
+    Check that glyph for U+0675 ARABIC LETTER HIGH HAMZA is not a mark.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/arabic_high_hamza&gt;</div>
+
+
+    <p>Many fonts incorrectly treat ARABIC LETTER HIGH HAMZA (U+0675) as a variant of ARABIC HAMZA ABOVE (U+0654) and make it a combining mark of the same size.</p>
+<p>But U+0675 is a base letter and should be a variant of ARABIC LETTER HAMZA (U+0621) but raised slightly above baseline.</p>
+<p>Not doing so effectively makes the font useless for Jawi and possibly Kazakh as well.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/fontbakery/issues/4290">https://github.com/googlefonts/fontbakery/issues/4290</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check that Arabic spacing symbols U+FBB2–FBC1 aren&#39;t classified as marks.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/arabic_spacing_symbols&gt;</div>
+
+
+    <p>Unicode has a few spacing symbols representing Arabic dots and other marks, but they are purposefully not classified as marks.</p>
+<p>Many fonts mistakenly classify them as marks, making them unsuitable for their original purpose as stand-alone symbols to used in pedagogical contexts discussing Arabic consonantal marks.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/fontbakery/issues/4295">https://github.com/googlefonts/fontbakery/issues/4295</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Ensure the font supports case swapping for all its glyphs.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/case_mapping&gt;</div>
+
+
+    <p>Ensure that no glyph lacks its corresponding upper or lower counterpart (but only when unicode supports case-mapping).</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/fontbakery/issues/3230">https://github.com/googlefonts/fontbakery/issues/3230</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Does the font contain chws and vchw features?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/cjk_chws_feature&gt;</div>
+
+
+    <p>The W3C recommends the addition of chws and vchw features to CJK fonts to enhance the spacing of glyphs in environments which do not fully support JLREQ layout rules.</p>
+<p>The chws_tool utility (<a href="https://github.com/googlefonts/chws_tool">https://github.com/googlefonts/chws_tool</a>) can be used to add these features automatically.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3363">https://github.com/fonttools/fontbakery/issues/3363</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
-        <h3>
+
+
+    <h3>
+    
+    Check if each glyph has the recommended amount of contours.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/contour_count&gt;</div>
+
+
+    <p>Visually QAing thousands of glyphs by hand is tiring. Most glyphs can only be constructured in a handful of ways. This means a glyph's contour count will only differ slightly amongst different fonts, e.g a 'g' could either be 2 or 3 contours, depending on whether its double story or single story.</p>
+<p>However, a quotedbl should have 2 contours, unless the font belongs to a display family.</p>
+<p>This check currently does not cover variable fonts because there's plenty of alternative ways of constructing glyphs with multiple outlines for each feature in a VarFont. The expected contour count data for this check is currently optimized for the typical construction of glyphs in static fonts.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/153">legacy:check/153</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking all files are in the same directory.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/single_directory&gt;</div>
+
+
+    <p>If the set of font files passed in the command line is not all in the same directory, then we warn the user since the tool will interpret the set of files as belonging to a single family (and it is unlikely that the user would store the files from a single family spreaded in several separate directories).</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/002">legacy:check/002</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Each font in a family must have the same set of vertical metrics values.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/vertical_metrics&gt;</div>
+
+
+    <p>We want all fonts within a family to have the same vertical metrics so their line spacing is consistent across the family.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1487">https://github.com/fonttools/fontbakery/issues/1487</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking OS/2 usWinAscent &amp; usWinDescent.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/family/win_ascent_and_descent&gt;</div>
+
+
+    <p>A font's winAscent and winDescent values should be greater than or equal to the head table's yMax, abs(yMin) values. If they are less than these values, clipping can occur on Windows platforms (<a href="https://github.com/RedHatBrand/Overpass/issues/33">https://github.com/RedHatBrand/Overpass/issues/33</a>).</p>
+<p>If the font includes tall/deep writing systems such as Arabic or Devanagari, the winAscent and winDescent can be greater than the yMax and absolute yMin values to accommodate vowel marks.</p>
+<p>When the 'win' Metrics are significantly greater than the UPM, the linespacing can appear too loose. To counteract this, enabling the OS/2 fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2 'typo' values instead. This means the font developer can control the linespacing with the 'typo' values, whilst avoiding clipping by setting the 'win' values to values greater than the yMax and absolute yMin.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/040">legacy:check/040</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Do we have the latest version of FontBakery installed?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fontbakery_version&gt;</div>
+
+
+    <p>Running old versions of FontBakery can lead to a poor report which may include false WARNs and FAILs due do bugs, as well as outdated quality assurance criteria.</p>
+<p>Older versions will also not report problems that are detected by new checks added to the tool in more recent updates.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2093">https://github.com/fonttools/fontbakery/issues/2093</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure that the font can be rasterized by FreeType.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/freetype_rasterizer&gt;</div>
+
+
+    <p>Malformed fonts can cause FreeType to crash.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3642">https://github.com/fonttools/fontbakery/issues/3642</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure no GPOS7 lookups are present.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gpos7&gt;</div>
+
+
+    <p>Versions of fonttools &gt;=4.14.0 (19 August 2020) perform an optimisation on chained contextual lookups, expressing GSUB6 as GSUB5 and GPOS8 and GPOS7 where possible (when there are no suffixes/prefixes for all rules in the lookup).</p>
+<p>However, makeotf has never generated these lookup types and they are rare in practice. Perhaps because of this, Mac's CoreText shaper does not correctly interpret GPOS7, meaning that these lookups will be ignored by the shaper, and fonts containing these lookups will have unintended positioning errors.</p>
+<p>To fix this warning, rebuild the font with a recent version of fonttools.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3643">https://github.com/fonttools/fontbakery/issues/3643</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Jun/10</div>
+    
+    Ensure &#39;smcp&#39; (small caps) lookups are defined before ligature lookups in the &#39;GSUB&#39; table.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gsub/smallcaps_before_ligatures&gt;</div>
+
+
+    <p>OpenType small caps should be defined before ligature lookups to ensure proper functionality.</p>
+<p>Rainer Erich Scheichelbauer (a.k.a. MekkaBlue) pointed out in a tweet (<a href="https://twitter.com/mekkablue/status/1297486769668132865">https://twitter.com/mekkablue/status/1297486769668132865</a>) that the ordering of small caps and ligature lookups can lead to bad results such as the example he provided of the word &quot;WAFFLES&quot; in small caps, but with an unfortunate lowercase ffl ligature substitution.</p>
+<p>This check attempts to detect this kind of mistake.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3020">https://github.com/fonttools/fontbakery/issues/3020</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Detect any interpolation issues in the font.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/interpolation_issues&gt;</div>
+
+
+    <p>When creating a variable font, the designer must make sure that corresponding paths have the same start points across masters, as well as that corresponding component shapes are placed in the same order within a glyph across masters. If this is not done, the glyph will not interpolate correctly.</p>
+<p>Here we check for the presence of potential interpolation errors using the fontTools.varLib.interpolatable module.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3930">https://github.com/fonttools/fontbakery/issues/3930</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check that legacy accents aren&#39;t used in composite glyphs.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/legacy_accents&gt;</div>
+
+
+    <p>Legacy accents should not have anchors and should have positive width. They are often used independently of a letter, either as a placeholder for an expected combined mark+letter combination in MacOS, or separately. For instance, U+00B4 (ACUTE ACCENT) is often mistakenly used as an apostrophe, U+0060 (GRAVE ACCENT) is used in Markdown to notify code blocks, and ^ is used as an exponential operator in maths.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/fontbakery/issues/4310">https://github.com/googlefonts/fontbakery/issues/4310</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking Vertical Metric Linegaps.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/linegaps&gt;</div>
+
+
+    <p>The LineGap value is a space added to the line height created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment.</p>
+<p>This leading value will be added above the text line in most desktop apps. It will be shared above and under in web browsers, and ignored in Windows if Use_Typo_Metrics is disabled.</p>
+<p>For better linespacing consistency across platforms, (typo/hhea)LineGap values must be 0.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4133">https://github.com/fonttools/fontbakery/issues/4133</a></li>
+        
+    
+        
+            <li>See also: <a href="https://googlefonts.github.io/gf-guide/metrics.html">https://googlefonts.github.io/gf-guide/metrics.html</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font contains &#39;.notdef&#39; as its first glyph?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/mandatory_glyphs&gt;</div>
+
+
+    <p>The OpenType specification v1.8.2 recommends that the first glyph is the '.notdef' glyph without a codepoint assigned and with a drawing:</p>
+<p>The .notdef glyph is very important for providing the user feedback that a glyph is not found in the font. This glyph should not be left without an outline as the user will only see what looks like a space if a glyph is missing and not be aware of the active font’s limitation.</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/recom#glyph-0-the-notdef-glyph">https://docs.microsoft.com/en-us/typography/opentype/spec/recom#glyph-0-the-notdef-glyph</a></p>
+<p>Pre-v1.8, it was recommended that fonts should also contain 'space', 'CR' and '.null' glyphs. This might have been relevant for MacOS 9 applications.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/046">legacy:check/046</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Check math signs have the same width.
 </h3>
@@ -776,7 +3052,7 @@ U+0D4E</p>
                             <span class='details_text'>
                             <p>The most common width is 424 among a set of 5 math glyphs.
 The following math glyphs have a different width, though:</p>
-<p>Width = 326:
+<p>Width = 324:
 less, greater</p>
 <p>Width = 488:
 multiply</p>
@@ -794,26 +3070,279 @@ divide</p>
         </details>
     
 
+
+    <h3>
     
+    Name table records must not have trailing spaces.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/trailing_spaces&gt;</div>
+
+
+    <p>This check ensures that no entries in the name table end in spaces; trailing spaces, particularly in font names, can be confusing to users. In most cases this can be fixed by removing trailing spaces from the metadata fields in the font editor.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2417">https://github.com/fonttools/fontbakery/issues/2417</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Checking OS/2 Metrics match hhea Metrics.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/os2_metrics_match_hhea&gt;</div>
+
+
+    <p>OS/2 and hhea vertical metric values should match. This will produce the same linespacing on Mac, GNU+Linux and Windows.</p>
+<ul>
+<li>Mac OS X uses the hhea values. - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.</li>
+</ul>
+<p>When OS/2 and hhea vertical metrics match, the same linespacing results on macOS, GNU+Linux and Windows. Note that fixing this issue in a previously released font may cause reflow in user documents and unhappy users.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/042">legacy:check/042</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Checking with ots-sanitize.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/ots&gt;</div>
+
+
+    <p>The OpenType Sanitizer (OTS) is a tool that checks that the font is structually well-formed and passes various sanity checks. It is used by many web browsers to check web fonts before using them; fonts which fail such checks are blocked by browsers.</p>
+<p>This check runs OTS on the font and reports any errors or warnings that it finds.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/036">legacy:check/036</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
-        <h3>
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font contains all required tables?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/required_tables&gt;</div>
+
+
+    <p>According to the OpenType spec <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/otff#required-tables">https://docs.microsoft.com/en-us/typography/opentype/spec/otff#required-tables</a></p>
+<p>Whether TrueType or CFF outlines are used in an OpenType font, the following tables are required for the font to function correctly:</p>
+<ul>
+<li>cmap (Character to glyph mapping)</li>
+<li>head (Font header)</li>
+<li>hhea (Horizontal header)</li>
+<li>hmtx (Horizontal metrics)</li>
+<li>maxp (Maximum profile)</li>
+<li>name (Naming table)</li>
+<li>OS/2 (OS/2 and Windows specific metrics)</li>
+<li>post (PostScript information)</li>
+</ul>
+<p>The spec also documents that variable fonts require the following table:</p>
+<ul>
+<li>STAT (Style attributes)</li>
+</ul>
+<p>Depending on the typeface and coverage of a font, certain tables are recommended for optimum quality.</p>
+<p>For example:</p>
+<ul>
+<li>the performance of a non-linear font is improved if the VDMX, LTSH, and hdmx tables are present.</li>
+<li>Non-monospaced Latin fonts should have a kern table.</li>
+<li>A gasp table is necessary if a designer wants to influence the sizes at which grayscaling is used under Windows. Etc.</li>
+</ul>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/052">legacy:check/052</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure indic fonts have the Indian Rupee Sign glyph.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/rupee&gt;</div>
+
+
+    <p>Per Bureau of Indian Standards every font supporting one of the official Indian languages needs to include Unicode Character “₹” (U+20B9) Indian Rupee Sign.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2967">https://github.com/fonttools/fontbakery/issues/2967</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font has the proper sfntVersion value?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.adobe.fonts/check/sfnt_version&gt;</div>
+
+
+    <p>OpenType fonts that contain TrueType outlines should use the value of 0x00010000 for the sfntVersion. OpenType fonts containing CFF data (version 1 or 2) should use 0x4F54544F ('OTTO', when re-interpreted as a Tag) for sfntVersion.</p>
+<p>Fonts with the wrong sfntVersion value are rejected by FreeType.</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/otff#table-directory">https://docs.microsoft.com/en-us/typography/opentype/spec/otff#table-directory</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3388">https://github.com/fonttools/fontbakery/issues/3388</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Does the font contain a soft hyphen?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/soft_hyphen&gt;</div>
+
+
+    <p>The 'Soft Hyphen' character (codepoint 0x00AD) is used to mark a hyphenation possibility within a word in the absence of or overriding dictionary hyphenation.</p>
+<p>It is sometimes designed empty with no width (such as a control character), sometimes the same as the traditional hyphen, sometimes double encoded with the hyphen.</p>
+<p>That being said, it is recommended to not include it in the font at all, because discretionary hyphenation should be handled at the level of the shaping engine, not the font. Also, even if present, the software would not display that character.</p>
+<p>More discussion at: <a href="https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar">https://typedrawers.com/discussion/2046/special-dash-things-softhyphen-horizontalbar</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4046">https://github.com/fonttools/fontbakery/issues/4046</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3486">https://github.com/fonttools/fontbakery/issues/3486</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking STAT table entries in static fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/STAT_in_statics&gt;</div>
+
+
+    <p>Adobe feature syntax allows for the definition of a STAT table. Fonts built with a hand-coded STAT table in feature syntax may be built either as static or variable, but will end up with the same STAT table.</p>
+<p>This is a problem, because a STAT table which works on variable fonts will not be appropriate for static instances. The examples in the OpenType spec of non-variable fonts with a STAT table show that the table entries must be restricted to those entries which refer to the static font's position in the designspace. i.e. a Regular weight static should only have the following entry for the weight axis:</p>
+<p><AxisIndex value="0"/> <Flags value="2"/>  <!-- ElidableAxisValueName --> <ValueNameID value="265"/>  <!-- Regular --> <Value value="400.0"/></p>
+<p>However, if the STAT table intended for a variable font is compiled into a static, it will have many entries for this axis. In this case, Windows will read the first entry only, causing all instances to report themselves as &quot;Thin Condensed&quot;.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4149">https://github.com/fonttools/fontbakery/issues/4149</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Check correctness of STAT table strings
 </h3>
@@ -871,22 +3400,227 @@ overridden by the configuration file.</p>
         </details>
     
 
+
+    <h3>
     
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Jun/04</div>
+    
+    Check tabular widths don&#39;t have kerning.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/tabular_kerning&gt;</div>
+
+
+    <p>Tabular glyphs should not have kerning, as they are meant to be used in tables.</p>
+<p>This check looks for kerning in: - all glyphs in a font in combination with tabular numerals; - tabular symbols in combination with tabular numerals.</p>
+<p>&quot;Tabular symbols&quot; is defined as: - for fonts with a &quot;tnum&quot; feature, all &quot;tnum&quot; substitution target glyphs; - for fonts without a &quot;tnum&quot; feature, all glyphs that have the same width as the tabular numerals, but limited to numbers, math and currency symbols.</p>
+<p>This check may produce false positives for fonts with no &quot;tnum&quot; feature and with equal-width numerals (and other same-width symbols) that are not intended to be used as tabular numerals.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4440">https://github.com/fonttools/fontbakery/issues/4440</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Ensure component transforms do not perform scaling or rotation.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/transformed_components&gt;</div>
+
+
+    <p>Some families have glyphs which have been constructed by using transformed components e.g the 'u' being constructed from a flipped 'n'.</p>
+<p>From a designers point of view, this sounds like a win (less work). However, such approaches can lead to rasterization issues, such as having the 'u' not sitting on the baseline at certain sizes after running the font through ttfautohint.</p>
+<p>Other issues are outlines that end up reversed when only one dimension is flipped while the other isn't.</p>
+<p>As of July 2019, Marc Foley observed that ttfautohint assigns cvt values to transformed glyphs as if they are not transformed and the result is they render very badly, and that vttLib does not support flipped components.</p>
+<p>When building the font with fontmake, the problem can be fixed by adding this to the command line:</p>
+<p>--filter DecomposeTransformedComponentsFilter</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2011">https://github.com/fonttools/fontbakery/issues/2011</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
-        <h3>
+
+
+    <h3>
+    
+    Checking with fontTools.ttx
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/ttx_roundtrip&gt;</div>
+
+
+    <p>One way of testing whether or not fonts are well-formed at the binary level is to convert them to TTX and then back to binary. Structural problems within the binary font will show up as errors during conversion. This is not necessarily something that a designer will be able to address but is evidence of a potential bug in the font compiler used to generate the binary.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1763">https://github.com/fonttools/fontbakery/issues/1763</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Jul/17</div>
+    
+    Checking that the typoAscender exceeds the yMax of the /Agrave.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.arrowtype.fonts/check/typoascender_exceeds_Agrave&gt;</div>
+
+
+    <p>MacOS uses OS/2.sTypoAscender/Descender values to determine the line height of a font. If the sTypoAscender value is smaller than the maximum height of the uppercase /Agrave, the font’s sTypoAscender value is ignored, and a very tall line height is used instead.</p>
+<p>This happens on a per-font, per-style basis, so it’s possible for a font to have a good sTypoAscender value in one style but not in another. This can lead to inconsistent line heights across a typeface family.</p>
+<p>So, it is important to ensure that the sTypoAscender value is greater than the maximum height of the uppercase /Agrave in all styles of a type family.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3170">https://github.com/fonttools/fontbakery/issues/3170</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font contains unique glyph names?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unique_glyphnames&gt;</div>
+
+
+    <p>Duplicate glyph names prevent font installation on Mac OS X.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/059">legacy:check/059</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check font contains no unreachable glyphs
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unreachable_glyphs&gt;</div>
+
+
+    <p>Glyphs are either accessible directly through Unicode codepoints or through substitution rules.</p>
+<p>In Color Fonts, glyphs are also referenced by the COLR table. And mathematical fonts also reference glyphs via the MATH table.</p>
+<p>Any glyphs not accessible by these means are redundant and serve only to increase the font's file size.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3160">https://github.com/fonttools/fontbakery/issues/3160</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Are there unwanted tables?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unwanted_tables&gt;</div>
+
+
+    <p>Some font editors store source data in their own SFNT tables, and these can sometimes sneak into final release files, which should only have OpenType spec tables.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/053">legacy:check/053</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Glyph names are all valid?
 </h3>
@@ -951,18 +3685,444 @@ ml_da_virama_dha_virama_ra_sign_u, ml_da_virama_dha_virama_ra_sign_uu, ml_fracti
         </details>
     
 
+
+    <h3>
     
+    Font has **proper** whitespace glyph names?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/whitespace_glyphnames&gt;</div>
+
+
+    <p>This check enforces adherence to recommended whitespace (codepoints 0020 and 00A0) glyph names according to the Adobe Glyph List.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/048">legacy:check/048</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Font contains glyphs for whitespace characters?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/whitespace_glyphs&gt;</div>
+
+
+    <p>The OpenType specification recommends that fonts should contain glyphs for the following whitespace characters:</p>
+<ul>
+<li>U+0020 SPACE - U+00A0 NO-BREAK SPACE</li>
+</ul>
+<p>The space character is required for text processing, and the no-break space is useful to prevent line breaks at its position. It is also recommended to have a glyph for the tab character (U+0009) and the soft hyphen (U+00AD), but these are not mandatory.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/047">legacy:check/047</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Whitespace glyphs have ink?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/whitespace_ink&gt;</div>
+
+
+    <p>This check ensures that certain whitespace glyphs are empty. Certain text layout engines will assume that these glyphs are empty, and will not draw them; if they were in fact not designed to be empty, the result will be text layout that is not as expected.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/049">legacy:check/049</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Space and non-breaking space have the same width?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/whitespace_widths&gt;</div>
+
+
+    <p>If the space and nbspace glyphs have different widths, then Google Workspace has problems with the font.</p>
+<p>The nbspace is used to replace the space character in multiple situations in documents; such as the space before punctuation in languages that do that. It avoids the punctuation to be separated from the last word and go to next line.</p>
+<p>This is automatic substitution by the text editors, not by fonts. It's also used by designers in text composition practice to create nicely shaped paragraphs. If the space and the nbspace are not the same width, it breaks the text composition of documents.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3843">https://github.com/fonttools/fontbakery/issues/3843</a></li>
+        
+    
+        
+            <li>See also: <a href="legacy:check/050">legacy:check/050</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
 
             
         
+            
+                <h2>Outline Checks</h2>
+<span class='section__emoji'>
+    ⚠️⏩⏩⏩⏩
+</span>
+
+    <h3>
+    
+    Are there any misaligned on-curve points?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_alignment_miss&gt;</div>
+
+
+    <p>This check heuristically looks for on-curve points which are close to, but do not sit on, significant boundary coordinates. For example, a point which has a Y-coordinate of 1 or -1 might be a misplaced baseline point. As well as the baseline, here we also check for points near the x-height (but only for lowercase Latin letters), cap-height, ascender and descender Y coordinates.</p>
+<p>Not all such misaligned curve points are a mistake, and sometimes the design may call for points in locations near the boundaries. As this check is liable to generate significant numbers of false positives, it will pass if there are more than 100 reported misalignments.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3088">https://github.com/fonttools/fontbakery/pull/3088</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Are any segments inordinately short?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_short_segments&gt;</div>
+
+
+    <p>This check looks for outline segments which seem particularly short (less than 0.6% of the overall path length).</p>
+<p>This check is not run for variable fonts, as they may legitimately have short segments. As this check is liable to generate significant numbers of false positives, it will pass if there are more than 100 reported short segments.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3088">https://github.com/fonttools/fontbakery/pull/3088</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Do any segments have colinear vectors?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_colinear_vectors&gt;</div>
+
+
+    <p>This check looks for consecutive line segments which have the same angle. This normally happens if an outline point has been added by accident.</p>
+<p>This check is not run for variable fonts, as they may legitimately have colinear vectors.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3088">https://github.com/fonttools/fontbakery/pull/3088</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Do outlines contain any jaggy segments?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_jaggy_segments&gt;</div>
+
+
+    <p>This check heuristically detects outline segments which form a particularly small angle, indicative of an outline error. This may cause false positives in cases such as extreme ink traps, so should be regarded as advisory and backed up by manual inspection.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3064">https://github.com/fonttools/fontbakery/issues/3064</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Do outlines contain any semi-vertical or semi-horizontal lines?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_semi_vertical&gt;</div>
+
+
+    <p>This check detects line segments which are nearly, but not quite, exactly horizontal or vertical. Sometimes such lines are created by design, but often they are indicative of a design error.</p>
+<p>This check is disabled for italic styles, which often contain nearly-upright lines.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3088">https://github.com/fonttools/fontbakery/pull/3088</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check the direction of the outermost contour in each glyph
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/outline_direction&gt;</div>
+
+
+    <p>In TrueType fonts, the outermost contour of a glyph should be oriented clockwise, while the inner contours should be oriented counter-clockwise. Getting the path direction wrong can lead to rendering issues in some software.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2056">https://github.com/fonttools/fontbakery/issues/2056</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+        <details>
+            <summary>
+                ⚠️
+                Malini-VF.ttf
+                
+            </summary>
+            <div>
+                <ul>
+                
+                        <li class='details_item'>
+                            <span class='details_indicator'>
+                            ⚠️ WARN
+                            </span>
+
+                            <span class='details_text'>
+                            <p>The following glyphs have a counter-clockwise outer contour:</p>
+<pre><code>* Cdotaccent (U+010A) has a counter-clockwise outer contour
+
+* Edotaccent (U+0116) has a counter-clockwise outer contour
+
+* Gdotaccent (U+0120) has a counter-clockwise outer contour
+
+* Idotaccent (U+0130) has a counter-clockwise outer contour
+
+* Lcaron (U+013D) has a counter-clockwise outer contour
+
+* Lcedilla (U+013B) has a counter-clockwise outer contour
+
+* Lcedilla (U+013B) has a counter-clockwise outer contour
+
+* Scommaaccent (U+0218) has a counter-clockwise outer contour
+
+* Scommaaccent (U+0218) has a counter-clockwise outer contour
+
+* Tcommaaccent (U+021A) has a counter-clockwise outer contour
+
+* Tcommaaccent (U+021A) has a counter-clockwise outer contour
+
+* Zdotaccent (U+017B) has a counter-clockwise outer contour
+
+* caroncmbalt has a counter-clockwise outer contour
+
+* cdotaccent (U+010B) has a counter-clockwise outer contour
+
+* comma (U+002C) has a counter-clockwise outer contour
+
+* comma (U+002C) has a counter-clockwise outer contour
+
+* commaaccent (U+0326) has a counter-clockwise outer contour
+
+* commaaccent (U+0326) has a counter-clockwise outer contour
+
+* dotaccent (U+02D9) has a counter-clockwise outer contour
+
+* dotaccentcmb (U+0307) has a counter-clockwise outer contour
+
+* edotaccent (U+0117) has a counter-clockwise outer contour
+
+* gdotaccent (U+0121) has a counter-clockwise outer contour
+
+* lcaron (U+013E) has a counter-clockwise outer contour
+
+* ml_dot_reph (U+0D4E) has a counter-clockwise outer contour
+
+* ncedilla (U+0146) has a counter-clockwise outer contour
+
+* ncedilla (U+0146) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblleft (U+201C) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quotedblright (U+201D) has a counter-clockwise outer contour
+
+* quoteleft (U+2018) has a counter-clockwise outer contour
+
+* quoteleft (U+2018) has a counter-clockwise outer contour
+
+* quoteright (U+2019) has a counter-clockwise outer contour
+
+* quoteright (U+2019) has a counter-clockwise outer contour
+
+* quotesinglbase (U+201A) has a counter-clockwise outer contour
+
+* quotesinglbase (U+201A) has a counter-clockwise outer contour
+
+* scommaaccent (U+0219) has a counter-clockwise outer contour
+
+* scommaaccent (U+0219) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* semicolon (U+003B) has a counter-clockwise outer contour
+
+* tcaron (U+0165) has a counter-clockwise outer contour
+
+* tcommaaccent (U+021B) has a counter-clockwise outer contour
+
+* tcommaaccent (U+021B) has a counter-clockwise outer contour
+
+* zdotaccent (U+017C) has a counter-clockwise outer contour
+</code></pre>
+
+                            
+                             [code: ccw-outer-contour]
+                            
+                            </span>
+                        </li>
+                
+                </ul>
+            </div>
+        </details>
+    
+
+
             
         
             
@@ -973,18 +4133,18 @@ ml_da_virama_dha_virama_ra_sign_u, ml_da_virama_dha_virama_ra_sign_uu, ml_fracti
     ⚠️
 </span>
 
-    
-        <h3>
+    <h3>
     
     <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Mar/25</div>
     
-    Validate location, size and resolution of article images.
+    Validate size, and resolution of article images, and ensure article page has minimum length and includes visual assets.
 </h3>
 <div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/article/images&gt;</div>
 
 
-    <p>The purpose of this check is to ensure images (either raster or vector files) are placed on the correct directory (an <code>images</code> subdirectory inside <code>article</code>) and they they are not excessively large in filesize and resolution.</p>
+    <p>The purpose of this check is to ensure images (either raster or vector files) are not excessively large in filesize and resolution.</p>
 <p>These constraints are loosely based on infrastructure limitations under default configurations.</p>
+<p>It also ensures that the article page has a minimum length and includes at least one visual asset.</p>
 
 
 
@@ -1032,102 +4192,1291 @@ ml_da_virama_dha_virama_ra_sign_u, ml_da_virama_dha_virama_ra_sign_uu, ml_fracti
         </details>
     
 
-    
 
             
         
             
                 <h2>Metadata Checks</h2>
 <span class='section__emoji'>
-    ⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩
+    ⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩
 </span>
 
+    <h3>
     
+    Does METADATA.pb copyright field contain broken links?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/broken_links&gt;</div>
+
+
+    <p>This check ensures that any URLs found within the copyright field of the METADATA.pb file are valid.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2550">https://github.com/fonttools/fontbakery/issues/2550</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/4110">https://github.com/fonttools/fontbakery/issues/4110</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb: Font styles are named canonically?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/canonical_style_names&gt;</div>
+
+
+    <p>If the style is set to 'normal' in the METADATA.pb file, we expect a non-italic font - i.e. the font's macStyle bit 1 should be set to 0, and the font's fullname should not end with &quot;Italic&quot;; similarly if the style is set to 'italic', we expect a font with the macStyle bit 1 set to 1, and the font's fullname ending with &quot;Italic&quot;. If this is not the case, it can indicate an italic font was incorrectly marked as 'normal' in the METADATA.pb file or vice versa.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/115">legacy:check/115</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb: Check that font weight has a canonical value.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/canonical_weight_value&gt;</div>
+
+
+    <p>This check ensures that the font weight declared in the METADATA.pb file has a canonical value. The canonical values are multiples of 100 between 100 and 900.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/111">legacy:check/111</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check samples can be rendered.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/can_render_samples&gt;</div>
+
+
+    <p>In order to prevent tofu from being seen on fonts.google.com, this check verifies that all samples specified by METADATA.pb can be properly rendered by the font.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3419">https://github.com/fonttools/fontbakery/issues/3419</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3605">https://github.com/fonttools/fontbakery/issues/3605</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Ensure METADATA.pb category field is valid.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/category&gt;</div>
+
+
+    <p>There are only five acceptable values for the category field in a METADATA.pb file:</p>
+<ul>
+<li>
+<p>MONOSPACE</p>
+</li>
+<li>
+<p>SANS_SERIF</p>
+</li>
+<li>
+<p>SERIF</p>
+</li>
+<li>
+<p>DISPLAY</p>
+</li>
+<li>
+<p>HANDWRITING</p>
+</li>
+</ul>
+<p>This check is meant to avoid typos in this field.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2972">https://github.com/fonttools/fontbakery/issues/2972</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check if category on METADATA.pb matches what can be inferred from the family name.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/category_hints&gt;</div>
+
+
+    <p>Sometimes the font familyname contains words that hint at which is the most likely correct category to be declared on METADATA.pb</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3624">https://github.com/fonttools/fontbakery/issues/3624</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Validate VF axes match the ones declared on METADATA.pb.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/consistent_axis_enumeration&gt;</div>
+
+
+    <p>All font variation axes present in the font files must be properly declared on METADATA.pb so that they can be served by the GFonts API.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3051">https://github.com/fonttools/fontbakery/issues/3051</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb: Check URL on copyright string is the same as in repository_url field.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/consistent_repo_urls&gt;</div>
+
+
+    <p>Sometimes, perhaps due to copy-pasting, projects may declare different URLs between the font.coyright and the family.sources.repository_url fields.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4056">https://github.com/fonttools/fontbakery/issues/4056</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb: Copyright notice is the same in all fonts?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/copyright&gt;</div>
+
+
+    <p>The METADATA.pb file includes a copyright field for each font file in the family. The value of this field should be the same for all fonts in the family.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/088">legacy:check/088</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/May/22</div>
+    
+    Validate &#39;date_added&#39; field on METADATA.pb.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/date_added&gt;</div>
+
+
+    <p>The date_added field must not be empty or malformed.</p>
+<p>Expected format is &quot;YYYY-MM-DD&quot;</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4729">https://github.com/fonttools/fontbakery/issues/4729</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb: Designers are listed correctly on the Google Fonts catalog?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/designer_profiles&gt;</div>
+
+
+    <p>Google Fonts has a catalog of designers.</p>
+<p>This check ensures that the online entries of the catalog can be found based on the designer names listed on the METADATA.pb file.</p>
+<p>It also validates the URLs and file formats are all correctly set.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3083">https://github.com/fonttools/fontbakery/issues/3083</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
+</div>
+
+
     
-        <h3>
+
+
+    <h3>
+    
+    Multiple values in font designer field in METADATA.pb must be separated by commas.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/designer_values&gt;</div>
+
+
+    <p>We must use commas instead of forward slashes because the server-side code at the fonts.google.com directory will segment the string on the commas into a list of names and display the first item in the list as the &quot;principal designer&quot; while the remaining names are identified as &quot;contributors&quot;.</p>
+<p>See eg <a href="https://fonts.google.com/specimen/Rubik">https://fonts.google.com/specimen/Rubik</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2479">https://github.com/fonttools/fontbakery/issues/2479</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    At least one designer is declared in METADATA.pb
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/empty_designer&gt;</div>
+
+
+    <p>Any font published on Google Fonts must credit one or several authors, foundry and/or individuals.</p>
+<p>Ideally, all authors listed in the upstream repository's AUTHORS.txt should be mentioned in the designer field.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3961">https://github.com/fonttools/fontbakery/issues/3961</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure METADATA.pb does not use escaped strings.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/escaped_strings&gt;</div>
+
+
+    <p>In some cases we've seen designer names and other fields with escaped strings in METADATA files (such as &quot;Juli\303\241n&quot;).</p>
+<p>Nowadays the strings can be full unicode strings (such as &quot;Julián&quot;) and do not need escaping.</p>
+<p>Escaping quotes or double-quotes is fine, though.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2932">https://github.com/fonttools/fontbakery/issues/2932</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check font family directory name.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/family_directory_name&gt;</div>
+
+
+    <p>We want the directory name of a font family to be predictable and directly derived from the family name, all lowercased and removing spaces.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3421">https://github.com/fonttools/fontbakery/issues/3421</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check that METADATA.pb family values are all the same.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/familyname&gt;</div>
+
+
+    <p>The METADATA.pb file includes a family name field for each font file in the family. The value of this field should be the same for all fonts in the family.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/089">legacy:check/089</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: Font filenames match font.filename entries?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/filenames&gt;</div>
+
+
+    <p>Note: This check only looks for files in the current directory.</p>
+<p>Font files in subdirectories are checked by these other two checks: - com.google.fonts/check/metadata/undeclared_fonts - com.google.fonts/check/repo/vf_has_static_fonts</p>
+<p>We may want to merge them all into a single check.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2597">https://github.com/fonttools/fontbakery/issues/2597</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validate METADATA.pb axes values are within gf_axisregistry bounds.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/gf_axisregistry_bounds&gt;</div>
+
+
+    <p>Each axis range in a METADATA.pb file must be registered, and within the bounds of the axis definition in the Google Fonts Axis Registry, available at <a href="https://github.com/google/fonts/tree/main/axisregistry">https://github.com/google/fonts/tree/main/axisregistry</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3010">https://github.com/fonttools/fontbakery/issues/3010</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Validate METADATA.pb axes tags are defined in gf_axisregistry.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/gf_axisregistry_valid_tags&gt;</div>
+
+
+    <p>Ensure all axes in a METADATA.pb file are registered in the Google Fonts Axis Registry, available at <a href="https://github.com/google/fonts/tree/main/axisregistry">https://github.com/google/fonts/tree/main/axisregistry</a></p>
+<p>Why does Google Fonts have its own Axis Registry?</p>
+<p>We support a superset of the OpenType axis registry axis set, and use additional metadata for each axis. Axes present in a font file but not in this registry will not function via our API. No variable font is expected to support all of the axes here.</p>
+<p>Any font foundry or distributor library that offers variable fonts has a implicit, latent, de-facto axis registry, which can be extracted by scanning the library for axes' tags, labels, and min/def/max values. While in 2016 Microsoft originally offered to include more axes in the OpenType 1.8 specification (github.com/microsoft/OpenTypeDesignVariationAxisTags), as of August 2020, this effort has stalled. We hope more foundries and distributors will publish documents like this that make their axes explicit, to encourage of adoption of variable fonts throughout the industry, and provide source material for a future update to the OpenType specification's axis registry.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3022">https://github.com/fonttools/fontbakery/issues/3022</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure there is a regular style defined in METADATA.pb.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/has_regular&gt;</div>
+
+
+    <p>According to Google Fonts standards, families should have a Regular style.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/090">legacy:check/090</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    The font has tags in the GF Tags spreadsheet
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/has_tags&gt;</div>
+
+
+    <p>Any font published on Google Fonts must be listed in the tags spreadsheet.</p>
+<p><a href="https://forms.gle/jcp3nDv63LaV1rxH6">https://forms.gle/jcp3nDv63LaV1rxH6</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4465">https://github.com/fonttools/fontbakery/issues/4465</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check METADATA.pb includes production subsets.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/includes_production_subsets&gt;</div>
+
+
+    <p>Check METADATA.pb file includes the same subsets as the family in production.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2989">https://github.com/fonttools/fontbakery/issues/2989</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check METADATA.pb file only contains a single CJK subset.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/single_cjk_subset&gt;</div>
+
+
+    <p>Check METADATA.pb file only contains a single CJK subset since the Google Fonts backend doesn't support multiple CJK subsets.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4779">https://github.com/fonttools/fontbakery/issues/4779</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb license is &#34;APACHE2&#34;, &#34;UFL&#34; or &#34;OFL&#34;?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/license&gt;</div>
+
+
+    <p>The license field in METADATA.pb must contain one of the three values &quot;APACHE2&quot;, &quot;UFL&quot; or &quot;OFL&quot;. (New fonts should generally be OFL unless there are special circumstances.)</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/085">legacy:check/085</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb font.filename and font.post_script_name fields have equivalent values?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/match_filename_postscript&gt;</div>
+
+
+    <p>For static fonts, this checks that the font filename as declared in the METADATA.pb file matches the post_script_name field. i.e. SomeFont-Regular.ttf should have a PostScript name of SomeFont-Regular.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/097">legacy:check/097</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb font.full_name and font.post_script_name fields have equivalent values ?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/match_fullname_postscript&gt;</div>
+
+
+    <p>The font.full_name and font.post_script_name fields in the METADATA.pb file should be consistent - i.e. when all non-alphabetic characters are removed, they should be the same. This is to prevent inconsistencies when one or the other value has been manually edited in the METADATA.pb file.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/096">legacy:check/096</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: Check font name is the same as family name.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/match_name_familyname&gt;</div>
+
+
+    <p>This check ensures that the 'name' field in each font's entry in the METADATA.pb file matches the 'name' field at the top level of the METADATA.pb.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/110">legacy:check/110</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb weight matches postScriptName for static fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/match_weight_postscript&gt;</div>
+
+
+    <p>The METADATA.pb file has a field for each font file called 'weight', with a numeric value from 100 to 900. This check ensures that the weight value seems appropriate given the style name in the font's postScriptName. For example, a font with a postScriptName ending in 'Bold' should have a weight value of 700.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/113">legacy:check/113</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb should contain at least &#34;menu&#34; and &#34;latin&#34; subsets.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/menu_and_latin&gt;</div>
+
+
+    <p>The 'menu' and 'latin' subsets are mandatory in METADATA.pb for the font to display correctly on the Google Fonts website.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/086">legacy:check/086</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/912#issuecomment-237935444">https://github.com/fonttools/fontbakery/issues/912#issuecomment-237935444</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: Validate family.minisite_url field.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/minisite_url&gt;</div>
+
+
+    <p>Validate family.minisite_url field.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4504">https://github.com/fonttools/fontbakery/issues/4504</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb font.name and font.full_name fields match the values declared on the name table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/nameid/family_and_full_names&gt;</div>
+
+
+    <p>This check ensures that the family name declared in the METADATA.pb file matches the family name declared in the name table of the font file, and that the font full name declared in the METADATA.pb file matches the font full name declared in the name table of the font file. If the font was uploaded by the packager, this should always be the case. But if there were manual changes to the METADATA.pb file, a mismatch could occur.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/108">legacy:check/108</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb font.name value should be same as the family name declared on the name table.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/nameid/font_name&gt;</div>
+
+
+    <p>This check ensures consistency between the font name declared on the name table and the contents of the METADATA.pb file.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4086">https://github.com/fonttools/fontbakery/issues/4086</a></li>
+        
+    
+        
+            <li>See also: <a href="legacy:check/095">legacy:check/095</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checks METADATA.pb font.post_script_name matches postscript name declared on the name table.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/nameid/post_script_name&gt;</div>
+
+
+    <p>This check ensures that the PostScript name declared in the METADATA.pb file matches the PostScript name declared in the name table of the font file. If the font was uploaded by the packager, this should always be the case. But if there were manual changes to the METADATA.pb file, a mismatch could occur.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:093">legacy:093</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check METADATA.pb font weights are correct.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/os2_weightclass&gt;</div>
+
+
+    <p>Check METADATA.pb font weights are correct.</p>
+<p>For static fonts, the metadata weight should be the same as the static font's OS/2 usWeightClass.</p>
+<p>For variable fonts, the weight value should be 400 if the font's wght axis range includes 400, otherwise it should be the value closest to 400.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/112">legacy:check/112</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/2683">https://github.com/fonttools/fontbakery/issues/2683</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check METADATA.pb parse correctly.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/parses&gt;</div>
+
+
+    <p>The purpose of this check is to ensure that the METADATA.pb file is not malformed.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2248">https://github.com/fonttools/fontbakery/issues/2248</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: Check for primary_script
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/primary_script&gt;</div>
+
+
+    <p>Try to guess font's primary script and see if that's set in METADATA.pb. This is an educated guess based on the number of glyphs per script in the font and should be taken with caution.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/4109">https://github.com/fonttools/fontbakery/issues/4109</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: Regular should be 400.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/regular_is_400&gt;</div>
+
+
+    <p>The weight of the regular style should be set to 400.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/091">legacy:check/091</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Copyright notice on METADATA.pb should not contain &#39;Reserved Font Name&#39;.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/reserved_font_name&gt;</div>
+
+
+    <p>Unless an exception has been granted, we expect fonts on Google Fonts not to use the &quot;Reserved Font Name&quot; clause in their copyright information. This is because fonts with RFNs are difficult to modify in a libre ecosystem; anyone who forks the font (with a view to changing it) must first rename the font, which makes it difficult to pass changes back to upstream.</p>
+<p>There is also a potential licensing difficulty, in that Google Fonts web service subsets the font - a modification of the original - but then delivers the font with the same name, which could be seen as a violation of the reserved font name clause.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/103">legacy:check/103</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb subsets should be alphabetically ordered.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/subsets_order&gt;</div>
+
+
+    <p>The subsets listed in the METADATA.pb file should be sorted in alphabetical order.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/087">legacy:check/087</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure METADATA.pb lists all font binaries.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/undeclared_fonts&gt;</div>
+
+
+    <p>The set of font binaries available, except the ones on a &quot;static&quot; subdir, must match exactly those declared on the METADATA.pb file.</p>
+<p>Also, to avoid confusion, we expect that font files (other than statics) are not placed on subdirectories.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2575">https://github.com/fonttools/fontbakery/issues/2575</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: check if fonts field only has unique &#34;full_name&#34; values.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/unique_full_name_values&gt;</div>
+
+
+    <p>Each font field in the METADATA.pb file should have a unique &quot;full_name&quot; value. If this is not the case, it may indicate that the font files have been incorrectly named, or that the METADATA.pb file has been incorrectly edited.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/083">legacy:check/083</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb: check if fonts field only contains unique style:weight pairs.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/unique_weight_style_pairs&gt;</div>
+
+
+    <p>Each font field in the METADATA.pb file should have a unique style and weight. If there are duplications, it may indicate that that the METADATA.pb file has been incorrectly edited.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/084">legacy:check/084</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Check for codepoints not covered by METADATA subsets.
 </h3>
@@ -1180,23 +5529,25 @@ be served. You can solve this by either manually adding additional
 subset declarations to METADATA.pb, or by editing the glyphset
 definitions.</p>
 <ul>
-<li>U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi</li>
-<li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
-<li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
-<li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02C7 CARON: try adding one of: yi, tifinagh, canadian-aboriginal</li>
+<li>U+02D8 BREVE: try adding one of: yi, canadian-aboriginal</li>
+<li>U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal</li>
+<li>U+02DB OGONEK: try adding one of: yi, canadian-aboriginal</li>
 <li>U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: tifinagh, cherokee, coptic, math</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, coptic, math</li>
 <li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
 <li>U+030A COMBINING RING ABOVE: try adding syriac</li>
-<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
 <li>U+030C COMBINING CARON: try adding one of: cherokee, tai-le</li>
 <li>U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition</li>
 <li>U+0326 COMBINING COMMA BELOW: not included in any glyphset definition</li>
 <li>U+0327 COMBINING CEDILLA: not included in any glyphset definition</li>
 <li>U+0328 COMBINING OGONEK: not included in any glyphset definition</li>
+<li>U+03A9 GREEK CAPITAL LETTER OMEGA: try adding one of: math, elbasan, greek</li>
+<li>U+03C0 GREEK SMALL LETTER PI: try adding one of: math, yi, greek</li>
 <li>U+2E42 DOUBLE LOW-REVERSED-9 QUOTATION MARK: not included in any glyphset definition</li>
 </ul>
-<p>Or you can add the above codepoints to one of the subsets supported by the font: <code>cyrillic-ext</code>, <code>greek-ext</code>, <code>latin</code>, <code>latin-ext</code>, <code>malayalam</code></p>
+<p>Or you can add the above codepoints to one of the subsets supported by the font: <code>latin</code>, <code>latin-ext</code>, <code>malayalam</code></p>
 
                             
                              [code: unreachable-subsetting]
@@ -1209,19 +5560,160 @@ definitions.</p>
         </details>
     
 
+
+    <h3>
     
+    Check for METADATA subsets with zero support.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/unsupported_subsets&gt;</div>
+
+
+    <p>This check ensures that the subsets specified on a METADATA.pb file are actually supported (even if only partially) by the font files.</p>
+<p>Subsets for which none of the codepoints are supported will cause the check to FAIL.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3533">https://github.com/fonttools/fontbakery/issues/3533</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    METADATA.pb font.filename field contains font name in right format?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/valid_filename_values&gt;</div>
+
+
+    <p>This check ensures that the font.filename field in the METADATA.pb is correct and well-formatted; we check well-formatting because we have a condition called 'style', and if that is true, then the font's filename correctly reflects its style. If a correctly formatted filename appears in the font.filename field in METADATA.pb, then all is good.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/100">legacy:check/100</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
+</div>
+
+
     
+
+
+    <h3>
+    
+    METADATA.pb font.full_name field contains font name in right format?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/valid_full_name_values&gt;</div>
+
+
+    <p>This check ensures that the font.full_name field in the METADATA.pb file contains the family name of the font.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/099">legacy:check/099</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check name ID 25 to end with &#34;Italic&#34; for Italic VFs.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/valid_nameid25&gt;</div>
+
+
+    <p>Due to a bug in (at least) Adobe Indesign, name ID 25 needs to be different for Italic VFs than their Upright counterparts. Google Fonts chooses to append &quot;Italic&quot; here.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3024">https://github.com/fonttools/fontbakery/issues/3024</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/googlefonts/gftools/issues/297">https://github.com/googlefonts/gftools/issues/297</a></li>
+        
+    
+        
+            <li>See also: <a href="https://typo.social/@arrowtype/110430680157544757">https://typo.social/@arrowtype/110430680157544757</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    METADATA.pb font.post_script_name field contains font name in right format?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/metadata/valid_post_script_name_values&gt;</div>
+
+
+    <p>Ensures that the postscript name in METADATA.pb contains the font's family name (with no spaces) as detected from the font binary.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/101">legacy:check/101</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
 
             
         
@@ -1231,8 +5723,7 @@ definitions.</p>
     ⚠️
 </span>
 
-    
-        <h3>
+    <h3>
     
     Shapes languages in all GF glyphsets.
 </h3>
@@ -1285,11 +5776,11 @@ definitions.</p>
 <tbody>
 <tr>
 <td align="left">nl_Latn (Dutch)</td>
-<td align="left">Shaper didn't attach acutecmb to J</td>
+<td align="left">Shaper didn't attach acutecmb to j</td>
 </tr>
 <tr>
 <td align="left">^</td>
-<td align="left">Shaper didn't attach acutecmb to j</td>
+<td align="left">Shaper didn't attach acutecmb to J</td>
 </tr>
 </tbody>
 </table>
@@ -1307,7 +5798,6 @@ overridden by the configuration file.</p>
         </details>
     
 
-    
 
             
         
@@ -1325,10 +5815,37 @@ overridden by the configuration file.</p>
     ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️
 </span>
 
+    <h3>
     
+    Are there unwanted Apple tables?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/aat&gt;</div>
+
+
+    <p>Apple's TrueType reference manual [1] describes SFNT tables not in the Microsoft OpenType specification [2] and these can sometimes sneak into final release files, but Google Fonts should only have OpenType tables.</p>
+<p>[1] <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6.html">https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6.html</a> [2] <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/">https://docs.microsoft.com/en-us/typography/opentype/spec/</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2190">https://github.com/fonttools/fontbakery/pull/2190</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
-        <h3>
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Checking file is named canonically.
 </h3>
@@ -1402,32 +5919,381 @@ overridden by the configuration file.</p>
         </details>
     
 
+
+    <h3>
     
+    Does the font contain less than 150 CJK characters?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/cjk_not_enough_glyphs&gt;</div>
+
+
+    <p>Kana has 150 characters and it's the smallest CJK writing system.</p>
+<p>If a font contains less CJK glyphs than this writing system, we inform the user that some glyphs may be encoded incorrectly.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3214">https://github.com/fonttools/fontbakery/pull/3214</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check font follows the Google Fonts CJK vertical metric schema
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/cjk_vertical_metrics&gt;</div>
+
+
+    <p>CJK fonts have different vertical metrics when compared to Latin fonts. We follow the schema developed by dr Ken Lunde for Source Han Sans and the Noto CJK fonts.</p>
+<p>Our documentation includes further information: <a href="https://github.com/googlefonts/gf-docs/tree/main/Spec#cjk-vertical-metrics">https://github.com/googlefonts/gf-docs/tree/main/Spec#cjk-vertical-metrics</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2797">https://github.com/fonttools/fontbakery/pull/2797</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check if the vertical metrics of a CJK family are similar to the same family hosted on Google Fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/cjk_vertical_metrics_regressions&gt;</div>
+
+
+    <p>Check CJK family has the same vertical metrics as the same family hosted on Google Fonts.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3244">https://github.com/fonttools/fontbakery/pull/3244</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
-        <h3>
+    Color layers should have a minimum brightness
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/color_cpal_brightness&gt;</div>
+
+
+    <p>Layers of a COLRv0 font should not be too dark or too bright. When layer colors are set explicitly, they can't be changed and they may turn out illegible against dark or bright backgrounds.</p>
+<p>While traditional color-less fonts can be colored in design apps or CSS, a black color definition in a COLRv0 font actually means that that layer will be rendered in black regardless of the background color. This leads to text becoming invisible against a dark background, for instance when using a dark theme in a web browser or operating system.</p>
+<p>This check ensures that layer colors are at least 10% bright and at most 90% bright, when not already set to the current color (0xFFFF).</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3908">https://github.com/fonttools/fontbakery/pull/3908</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check font has the expected color font tables.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/colorfont_tables&gt;</div>
+
+
+    <p>COLR v0 fonts are widely supported in most browsers so they do not require an SVG color table. However, some environments (e.g. Safari, Adobe apps) do not currently support COLR v1 so we need to add an SVG table to these fonts, except in the case of variable fonts, since SVG does not support OpenType Variations.</p>
+<p>To automatically generate compatible SVG/COLR tables, run the maximum_color tool in nanoemoji: <a href="https://github.com/googlefonts/nanoemoji">https://github.com/googlefonts/nanoemoji</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://googlefonts.github.io/gf-guide/color.html">https://googlefonts.github.io/gf-guide/color.html</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3886">https://github.com/fonttools/fontbakery/issues/3886</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3888">https://github.com/fonttools/fontbakery/issues/3888</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/pull/3889">https://github.com/fonttools/fontbakery/pull/3889</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/4131">https://github.com/fonttools/fontbakery/issues/4131</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Put an empty glyph on GID 1 right after the .notdef glyph for COLRv0 fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/empty_glyph_on_gid1_for_colrv0&gt;</div>
+
+
+    <p>A rendering bug in Windows 10 paints whichever glyph is on GID 1 on top of some glyphs, colored or not. This only occurs for COLR version 0 fonts.</p>
+<p>Having a glyph with no contours on GID 1 is a practical workaround for that.</p>
+<p>See <a href="https://github.com/googlefonts/gftools/issues/609">https://github.com/googlefonts/gftools/issues/609</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/gftools/issues/609">https://github.com/googlefonts/gftools/issues/609</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/pull/3905">https://github.com/fonttools/fontbakery/pull/3905</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    EPAR table present in font?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/epar&gt;</div>
+
+
+    <p>The EPAR table is/was a way of expressing common licensing permissions and restrictions in metadata; while almost nothing supported it, Dave Crossland wonders that adding it to everything in Google Fonts could help make it more popular.</p>
+<p>More info is available at: <a href="https://davelab6.github.io/epar/">https://davelab6.github.io/epar/</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/226">https://github.com/fonttools/fontbakery/issues/226</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure files are not too large.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/file_size&gt;</div>
+
+
+    <p>Serving extremely large font files on Google Fonts causes usability issues. This check ensures that file sizes are reasonable.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3320">https://github.com/fonttools/fontbakery/issues/3320</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Copyright notices match canonical pattern in fonts
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/font_copyright&gt;</div>
+
+
+    <p>This check aims at ensuring a uniform and legally accurate copyright statement on the name table entries and METADATA.pb files of font files across the Google Fonts library.</p>
+<p>We also check that the copyright field in METADATA.pb matches the contents of the name table nameID 0 (Copyright), and that the copyright notice within the METADATA.pb file is not too long; if it is more than 500 characters, this may be an indication that either a full license or the font's description has been included in this field by mistake.</p>
+<p>The expected pattern for the copyright string adheres to the following rules:</p>
+<ul>
+<li>
+<p>It must say &quot;Copyright&quot; followed by a 4 digit year (optionally followed by a hyphen and another 4 digit year)</p>
+</li>
+<li>
+<p>Additional years or year ranges are also valid.</p>
+</li>
+<li>
+<p>An optional comma can be placed here.</p>
+</li>
+<li>
+<p>Then it must say &quot;The <familyname> Project Authors&quot; and, within parentheses, a URL for a git repository must be provided. But we have an exception for the fonts from the Noto project, that simply have &quot;google llc. all rights reserved&quot; here.</p>
+</li>
+<li>
+<p>The check is case insensitive and does not validate whether the familyname is correct, even though we'd obviously expect it to be.</p>
+</li>
+</ul>
+<p>Here is an example of a valid copyright string:</p>
+<p>&quot;Copyright 2017 The Archivo Black Project Authors (<a href="https://github.com/Omnibus-Type/ArchivoBlack">https://github.com/Omnibus-Type/ArchivoBlack</a>)&quot;</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2383">https://github.com/fonttools/fontbakery/pull/2383</a></li>
+        
+    
+        
+            <li>See also: <a href="legacy:check/155">legacy:check/155</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Familyname must be unique according to namecheck.fontdata.com
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fontdata_namecheck&gt;</div>
+
+
+    <p>We need to check names are not already used, and today the best place to check that is <a href="http://namecheck.fontdata.com">http://namecheck.fontdata.com</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/494">https://github.com/fonttools/fontbakery/issues/494</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking OS/2 fsType does not impose restrictions.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fstype&gt;</div>
+
+
+    <p>The fsType in the OS/2 table is a legacy DRM-related field. Fonts in the Google Fonts collection must have it set to zero (also known as &quot;Installable Embedding&quot;). This setting indicates that the fonts can be embedded in documents and permanently installed by applications on remote systems.</p>
+<p>More detailed info is available at: <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/os2#fstype">https://docs.microsoft.com/en-us/typography/opentype/spec/os2#fstype</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/016">legacy:check/016</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Check variable font instances
 </h3>
@@ -1484,28 +6350,13 @@ overridden by the configuration file.</p>
 </thead>
 <tbody>
 <tr>
-<td align="left">Display</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
 <td align="left">Expanded</td>
 <td align="left">wght=400.0, wdth=125.0, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">SemiCondensed</td>
-<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">Text</td>
-<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
-<td align="left">N/A</td>
-</tr>
-<tr>
-<td align="left">SemiExpanded</td>
-<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
+<td align="left">Display</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=48.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -1514,13 +6365,28 @@ overridden by the configuration file.</p>
 <td align="left">N/A</td>
 </tr>
 <tr>
+<td align="left">Black Oblique</td>
+<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">Text</td>
+<td align="left">wght=400.0, wdth=100.0, slnt=0.0, opsz=10.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
+<td align="left">SemiCondensed</td>
+<td align="left">wght=400.0, wdth=87.5, slnt=0.0, opsz=12.0</td>
+<td align="left">N/A</td>
+</tr>
+<tr>
 <td align="left">Condensed</td>
 <td align="left">wght=400.0, wdth=75.0, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
-<td align="left">Black Oblique</td>
-<td align="left">wght=900.0, wdth=100.0, slnt=-12.0, opsz=12.0</td>
+<td align="left">SemiExpanded</td>
+<td align="left">wght=400.0, wdth=112.5, slnt=0.0, opsz=12.0</td>
 <td align="left">N/A</td>
 </tr>
 <tr>
@@ -1629,26 +6495,248 @@ overridden by the configuration file.</p>
         </details>
     
 
+
+    <h3>
     
+    All name entries referenced by fvar instances exist on the name table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/fvar_name_entries&gt;</div>
+
+
+    <p>The purpose of this check is to make sure that all name entries referenced by variable font instances do exist in the name table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2069">https://github.com/fonttools/fontbakery/issues/2069</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Is the Grid-fitting and Scan-conversion Procedure (&#39;gasp&#39;) table set to optimize rendering?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gasp&gt;</div>
+
+
+    <p>Traditionally version 0 'gasp' tables were set so that font sizes below 8 ppem had no grid fitting but did have antialiasing. From 9-16 ppem, just grid fitting. And fonts above 17ppem had both antialiasing and grid fitting toggled on. The use of accelerated graphics cards and higher resolution screens make this approach obsolete. Microsoft's DirectWrite pushed this even further with much improved rendering built into the OS and apps.</p>
+<p>In this scenario it makes sense to simply toggle all 4 flags ON for all font sizes.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/062">legacy:check/062</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Validate defaults on fvar table match registered fallback names in GFAxisRegistry.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/gf_axisregistry/fvar_axis_defaults&gt;</div>
+
+
+    <p>Check that axis defaults have a corresponding fallback name registered at the Google Fonts Axis Registry, available at <a href="https://github.com/google/fonts/tree/main/axisregistry">https://github.com/google/fonts/tree/main/axisregistry</a></p>
+<p>This is necessary for the following reasons:</p>
+<p>To get ZIP files downloads on Google Fonts to be accurate — otherwise the chosen default font is not generated. The Newsreader family, for instance, has a default value on the 'opsz' axis of 16pt. If 16pt was not a registered fallback position, then the ZIP file would instead include another position as default (such as 14pt).</p>
+<p>For the Variable fonts to display the correct location on the specimen page.</p>
+<p>For VF with no weight axis to be displayed at all. For instance, Ballet, which has no weight axis, was not appearing in sandbox because default position on 'opsz' axis was 16pt, and it was not yet a registered fallback positon.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3141">https://github.com/fonttools/fontbakery/issues/3141</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
-        <h3>
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check glyphs do not have components which are themselves components.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/glyf_nested_components&gt;</div>
+
+
+    <p>There have been bugs rendering variable fonts with nested components. Additionally, some static fonts with nested components have been reported to have rendering and printing issues.</p>
+<p>For more info, see: * <a href="https://github.com/fonttools/fontbakery/issues/2961">https://github.com/fonttools/fontbakery/issues/2961</a> * <a href="https://github.com/arrowtype/recursive/issues/412">https://github.com/arrowtype/recursive/issues/412</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2961">https://github.com/fonttools/fontbakery/issues/2961</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check Google Fonts glyph coverage.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/glyph_coverage&gt;</div>
+
+
+    <p>Google Fonts expects that fonts in its collection support at least the minimal set of characters defined in the <code>GF-latin-core</code> glyph-set.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/2488">https://github.com/fonttools/fontbakery/pull/2488</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font has ttfautohint params?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/has_ttfautohint_params&gt;</div>
+
+
+    <p>It is critically important that all static TTFs in the API which were autohinted with ttfautohint store their TTFAutohint args in the 'name' table, so that an automated solution can be made to replicate the hinting on subsets, etc.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1773">https://github.com/fonttools/fontbakery/issues/1773</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Show hinting filesize impact.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/hinting_impact&gt;</div>
+
+
+    <p>This check is merely informative, displaying and useful comparison of filesizes of hinted versus unhinted font files.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/054">legacy:check/054</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    PPEM must be an integer on hinted fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/integer_ppem_if_hinted&gt;</div>
+
+
+    <p>Hinted fonts must have head table flag bit 3 set.</p>
+<p>Per <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/head">https://docs.microsoft.com/en-us/typography/opentype/spec/head</a>, bit 3 of Head::flags decides whether PPEM should be rounded. This bit should always be set for hinted fonts.</p>
+<p>Note: Bit 3 = Force ppem to integer values for all internal scaler math; May use fractional ppem sizes if this bit is clear;</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2338">https://github.com/fonttools/fontbakery/issues/2338</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Is there kerning info for non-ligated sequences?
 </h3>
@@ -1713,10 +6801,8 @@ overridden by the configuration file.</p>
         </details>
     
 
-    
 
-    
-        <h3>
+    <h3>
     
     Are there caret positions declared for every ligature?
 </h3>
@@ -1772,10 +6858,8 @@ overridden by the configuration file.</p>
         </details>
     
 
-    
 
-    
-        <h3>
+    <h3>
     
     Ensure variable fonts include an avar table.
 </h3>
@@ -1832,10 +6916,8 @@ overridden by the configuration file.</p>
         </details>
     
 
-    
 
-    
-        <h3>
+    <h3>
     
     Ensure fonts have ScriptLangTags declared on the &#39;meta&#39; table.
 </h3>
@@ -1904,38 +6986,403 @@ overridden by the configuration file.</p>
         </details>
     
 
+
+    <h3>
     
+    Check small caps glyphs are available.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/missing_small_caps_glyphs&gt;</div>
+
+
+    <p>Ensure small caps glyphs are available if a font declares smcp or c2sc OT features.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3154">https://github.com/fonttools/fontbakery/issues/3154</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Are there non-ASCII characters in ASCII-only NAME table entries?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/ascii_only_entries&gt;</div>
+
+
+    <p>The OpenType spec requires ASCII for the POSTSCRIPT_NAME (nameID 6).</p>
+<p>For COPYRIGHT_NOTICE (nameID 0) ASCII is required because that string should be the same in CFF fonts which also have this requirement in the OpenType spec.</p>
+<p>Note: A common place where we find non-ASCII strings is on name table entries with NameID &gt; 18, which are expressly for localising the ASCII-only IDs into Hindi / Arabic / etc.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/074">legacy:check/074</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/1663">https://github.com/fonttools/fontbakery/issues/1663</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Description strings in the name table must not exceed 200 characters.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/description_max_length&gt;</div>
+
+
+    <p>An old FontLab version had a bug which caused it to store copyright notices in nameID 10 entries.</p>
+<p>In order to detect those and distinguish them from actual legitimate usage of this name table entry, we expect that such strings do not exceed a reasonable length of 200 chars.</p>
+<p>Longer strings are likely instances of the FontLab bug.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/032">legacy:check/032</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Make sure family name does not begin with a digit.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/familyname_first_char&gt;</div>
+
+
+    <p>Font family names which start with a numeral are often not discoverable in Windows applications.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/067">legacy:check/067</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
-        <h3>
+
+
+    <h3>
+    
+    Font has all mandatory &#39;name&#39; table entries?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/mandatory_entries&gt;</div>
+
+
+    <p>We require all fonts to have values for their font family name, font subfamily name, full font name, and postscript name. For RIBBI fonts, we also require values for the typographic family name and typographic subfamily name.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/156">legacy:check/156</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Version format is correct in &#39;name&#39; table?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/name/version_format&gt;</div>
+
+
+    <p>For Google Fonts, the version string must be in the format &quot;Version X.Y&quot;. The version number must be greater than or equal to 1.000. (Additional information following the numeric version number is acceptable.)</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/055">legacy:check/055</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure fonts do not contain any pre-production tables.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/no_debugging_tables&gt;</div>
+
+
+    <p>Tables such as <code>Debg</code> are useful in the pre-production stages of font development, but add unnecessary bloat to a production font and should be removed before release.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3357">https://github.com/fonttools/fontbakery/issues/3357</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font has old ttfautohint applied?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/old_ttfautohint&gt;</div>
+
+
+    <p>Check if font has been hinted with an outdated version of ttfautohint.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/056">legacy:check/056</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    OS/2.fsSelection bit 7 (USE_TYPO_METRICS) is set in all fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/os2/use_typo_metrics&gt;</div>
+
+
+    <p>All fonts on the Google Fonts collection should have OS/2.fsSelection bit 7 (USE_TYPO_METRICS) set. This requirement is part of the vertical metrics scheme established as a Google Fonts policy aiming at a common ground supported by all major font rendering environments.</p>
+<p>For more details, read: <a href="https://github.com/googlefonts/gf-docs/blob/main/VerticalMetrics/README.md">https://github.com/googlefonts/gf-docs/blob/main/VerticalMetrics/README.md</a></p>
+<p>Below is the portion of that document that is most relevant to this check:</p>
+<p>Use_Typo_Metrics must be enabled. This will force MS Applications to use the OS/2 Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3241">https://github.com/fonttools/fontbakery/issues/3241</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check font can render its own name.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/render_own_name&gt;</div>
+
+
+    <p>A base expectation is that a font family's regular/default (400 roman) style can render its 'menu name' (nameID 1) in itself.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3159">https://github.com/fonttools/fontbakery/issues/3159</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking direction of slnt axis angles
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/slant_direction&gt;</div>
+
+
+    <p>The 'slnt' axis values are defined as negative values for a clockwise (right) lean, and positive values for counter-clockwise lean. This is counter-intuitive for many designers who are used to think of a positive slant as a lean to the right.</p>
+<p>This check ensures that the slant axis direction is consistent with the specs.</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt">https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_slnt</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3910">https://github.com/fonttools/fontbakery/pull/3910</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Font enables smart dropout control in &#34;prep&#34; table instructions?
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/smart_dropout&gt;</div>
+
+
+    <p>This setup is meant to ensure consistent rendering quality for fonts across all devices (with different rendering/hinting capabilities).</p>
+<p>Below is the snippet of instructions we expect to see in the fonts: B8 01 FF    PUSHW 0x01FF 85          SCANCTRL (unconditinally turn on dropout control mode) B0 04       PUSHB 0x04 8D          SCANTYPE (enable smart dropout control)</p>
+<p>&quot;Smart dropout control&quot; means activating rules 1, 2 and 5: Rule 1: If a pixel's center falls within the glyph outline, that pixel is turned on. Rule 2: If a contour falls exactly on a pixel's center, that pixel is turned on. Rule 5: If a scan line between two adjacent pixel centers (either vertical or horizontal) is intersected by both an on-Transition contour and an off-Transition contour and neither of the pixels was already turned on by rules 1 and 2, turn on the pixel which is closer to the midpoint between the on-Transition contour and off-Transition contour. This is &quot;Smart&quot; dropout control.</p>
+<p>For more detailed info (such as other rules not enabled in this snippet), please refer to the TrueType Instruction Set documentation.</p>
+<p>Generally this occurs with unhinted fonts; if you are not using autohinting, use gftools-fix-nonhinting (or just gftools-fix-font) to fix this issue.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/072">legacy:check/072</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check axis ordering on the STAT table.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/STAT/axis_order&gt;</div>
+
+
+    <p>This is (for now) a merely informative check to detect what's the axis ordering declared on the STAT table of fonts in the Google Fonts collection.</p>
+<p>We may later update this to enforce some unified axis ordering scheme, yet to be determined.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3049">https://github.com/fonttools/fontbakery/issues/3049</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
     
     Validate STAT particle names and values match the fallback names in GFAxisRegistry.
 </h3>
@@ -2008,37 +7455,511 @@ overridden by the configuration file.</p>
         </details>
     
 
+
+    <h3>
     
+    Ensure Stylistic Sets have description.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/stylisticset_description&gt;</div>
+
+
+    <p>Stylistic sets should provide description text. Programs such as InDesign, TextEdit and Inkscape use that info to display to the users so that they know what a given stylistic set offers.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3155">https://github.com/fonttools/fontbakery/issues/3155</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Stricter unitsPerEm criteria for Google Fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/unitsperem_strict&gt;</div>
+
+
+    <p>Even though the OpenType spec allows unitsPerEm to be any value between 16 and 16384, the Google Fonts project aims at a narrower set of reasonable values.</p>
+<p>Values above 4000 would likely result in unreasonable filesize increases.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/116">legacy:check/116</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    Check the OS/2 usWeightClass is appropriate for the font&#39;s best SubFamily name.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/usweightclass&gt;</div>
+
+
+    <p>Google Fonts expects variable fonts, static ttfs and static otfs to have differing OS/2 usWeightClass values.</p>
+<ul>
+<li>
+<p>For Variable Fonts, Thin-Black must be 100-900</p>
+</li>
+<li>
+<p>For static ttfs, Thin-Black can be 100-900 or 250-900</p>
+</li>
+<li>
+<p>For static otfs, Thin-Black must be 250-900</p>
+</li>
+</ul>
+<p>If static otfs are set lower than 250, text may appear blurry in legacy Windows applications.</p>
+<p>Glyphsapp users can change the usWeightClass value of an instance by adding a 'weightClass' customParameter.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/020">legacy:check/020</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
 
+
+    <h3>
     
+    The variable font &#39;wght&#39; (Weight) axis coordinate must be 700 on the &#39;Bold&#39; instance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/bold_wght_coord&gt;</div>
+
+
+    <p>The Open-Type spec's registered design-variation tag 'wght' available at <a href="https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght">https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxistag_wght</a> does not specify a required value for the 'Bold' instance of a variable font.</p>
+<p>But Dave Crossland suggested that we should enforce a required value of 700 in this case (NOTE: a distinction is made between &quot;no bold instance present&quot; vs &quot;bold instance is present but its wght coordinate is not == 700&quot;).</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1707">https://github.com/fonttools/fontbakery/issues/1707</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
 
     
 
-    
+</div>
+
 
     
+
+
+    <h3>
+    
+    Ensure that all variable font files have the same set of axes and axis ranges.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/consistent_axes&gt;</div>
+
+
+    <p>In order to facilitate the construction of intuitive and friendly user interfaces, all variable font files in a given family should have the same set of variation axes. Also, each axis must have a consistent setting of min/max value ranges accross all the files.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2810">https://github.com/fonttools/fontbakery/issues/2810</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure VFs with duplexed axes do not vary horizontal advance.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/duplexed_axis_reflow&gt;</div>
+
+
+    <p>Certain axes, such as grade (GRAD) or roundness (ROND), should not change any advanceWidth or kerning data across the font's design space. This is because altering the advance width of glyphs can cause text reflow.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/3187">https://github.com/fonttools/fontbakery/issues/3187</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check variable font instances don&#39;t have duplicate names
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont_duplicate_instance_names&gt;</div>
+
+
+    <p>This check's purpose is to detect duplicate named instances names in a given variable font. Repeating instance names may be the result of instances for several VF axes defined in <code>fvar</code>, but since currently only weight+italic tokens are allowed in instance names as per GF specs, they ended up repeating. Instead, only a base set of fonts for the most default representation of the family can be defined through instances in the <code>fvar</code> table, all other instances will have to be left to access through the <code>STAT</code> table.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2986">https://github.com/fonttools/fontbakery/issues/2986</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check a static ttf can be generated from a variable font.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/generate_static&gt;</div>
+
+
+    <p>Google Fonts may serve static fonts which have been generated from variable fonts. This test will attempt to generate a static ttf using fontTool's varLib mutator.</p>
+<p>The target font will be the mean of each axis e.g:</p>
+<p><strong>VF font axes</strong></p>
+<ul>
+<li>
+<p>min weight, max weight = 400, 800</p>
+</li>
+<li>
+<p>min width, max width = 50, 100</p>
+</li>
+</ul>
+<p><strong>Target Instance</strong></p>
+<ul>
+<li>
+<p>weight = 600</p>
+</li>
+<li>
+<p>width = 75</p>
+</li>
+</ul>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1727">https://github.com/fonttools/fontbakery/issues/1727</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    <div style='color:#88c'>EXPERIMENTAL CHECK - Since 2024/Mar/27</div>
+    
+    Ensure the font&#39;s instances are in the correct order.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/instances_in_order&gt;</div>
+
+
+    <p>Ensure that the fvar table instances are in ascending order of weight. Some software, such as Canva, displays the instances in the order they are defined in the fvar table, which can lead to confusion if the instances are not in order of weight.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/googlefonts/fontbakery/issues/3334">https://github.com/googlefonts/fontbakery/issues/3334</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check that variable fonts have an HVAR table.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/has_HVAR&gt;</div>
+
+
+    <p>Not having a HVAR table can lead to costly text-layout operations on some platforms, which we want to avoid.</p>
+<p>So, all variable fonts on the Google Fonts collection should have an HVAR with valid values.</p>
+<p>More info on the HVAR table can be found at: <a href="https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview#variation-data-tables-and-miscellaneous-requirements">https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview#variation-data-tables-and-miscellaneous-requirements</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2119">https://github.com/fonttools/fontbakery/issues/2119</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Ensure VFs do not contain the ital axis.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/varfont/unsupported_axes&gt;</div>
+
+
+    <p>The 'ital' axis is not supported yet in Google Chrome.</p>
+<p>For the time being, we need to ensure that VFs do not contain this axis. Once browser support is better, we can deprecate this check.</p>
+<p>For more info regarding browser support, see: <a href="https://arrowtype.github.io/vf-slnt-test/">https://arrowtype.github.io/vf-slnt-test/</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2866">https://github.com/fonttools/fontbakery/issues/2866</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Checking OS/2 achVendID.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/vendor_id&gt;</div>
+
+
+    <p>Microsoft keeps a list of font vendors and their respective contact info. This list is updated regularly and is indexed by a 4-char &quot;Vendor ID&quot; which is stored in the achVendID field of the OS/2 table.</p>
+<p>Registering your ID is not mandatory, but it is a good practice since some applications may display the type designer / type foundry contact info on some dialog and also because that info will be visible on Microsoft's website:</p>
+<p><a href="https://docs.microsoft.com/en-us/typography/vendors/">https://docs.microsoft.com/en-us/typography/vendors/</a></p>
+<p>This check verifies whether or not a given font's vendor ID is registered in that list or if it has some of the default values used by the most common font editors.</p>
+<p>Each new FontBakery release includes a cached copy of that list of vendor IDs. If you registered recently, you're safe to ignore warnings emitted by this check, since your ID will soon be included in one of our upcoming releases.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="legacy:check/018">legacy:check/018</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/issues/3943">https://github.com/fonttools/fontbakery/issues/3943</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check font follows the Google Fonts vertical metric schema
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/vertical_metrics&gt;</div>
+
+
+    <p>This check generally enforces Google Fonts’ vertical metrics specifications. In particular: * lineGap must be 0 * Sum of hhea ascender + abs(descender) + linegap must be between 120% and 200% of UPM * Warning if sum is over 150% of UPM</p>
+<p>The threshold levels 150% (WARN) and 200% (FAIL) are somewhat arbitrarily chosen and may hint at a glaring mistake in the metrics calculations or UPM settings.</p>
+<p>Our documentation includes further information: <a href="https://github.com/googlefonts/gf-docs/tree/main/VerticalMetrics">https://github.com/googlefonts/gf-docs/tree/main/VerticalMetrics</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/pull/3762">https://github.com/fonttools/fontbakery/pull/3762</a></li>
+        
+    
+        
+            <li>See also: <a href="https://github.com/fonttools/fontbakery/pull/3921">https://github.com/fonttools/fontbakery/pull/3921</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    Check if the vertical metrics of a family are similar to the same family hosted on Google Fonts.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/vertical_metrics_regressions&gt;</div>
+
+
+    <p>If the family already exists on Google Fonts, we need to ensure that the checked family's vertical metrics are similar. This check will test the following schema which was outlined in Font Bakery issue #1162 [1]:</p>
+<ul>
+<li>
+<p>The family should visually have the same vertical metrics as the Regular style hosted on Google Fonts.</p>
+</li>
+<li>
+<p>If the family on Google Fonts has differing hhea and typo metrics, the family being checked should use the typo metrics for both the hhea and typo entries.</p>
+</li>
+<li>
+<p>If the family on Google Fonts has use typo metrics not enabled and the family being checked has it enabled, the hhea and typo metrics should use the family on Google Fonts winAscent and winDescent values.</p>
+</li>
+<li>
+<p>If the upms differ, the values must be scaled so the visual appearance is the same.</p>
+</li>
+</ul>
+<p>[1] <a href="https://github.com/fonttools/fontbakery/issues/1162">https://github.com/fonttools/fontbakery/issues/1162</a></p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/1162">https://github.com/fonttools/fontbakery/issues/1162</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
+
+    <h3>
+    
+    There must not be VTT Talk sources in the font.
+</h3>
+<div class='check__idlabel'>Check ID: &lt;FontBakeryCheck:com.google.fonts/check/vttclean&gt;</div>
+
+
+    <p>The goal here is to reduce filesizes and improve pageloading when dealing with webfonts.</p>
+<p>The VTT Talk sources are not necessary at runtime and endup being just dead weight when left embedded in the font binaries. The sources should be kept on the project files but stripped out when building release binaries.</p>
+
+
+
+    <ul>
+    
+        
+            <li>Original proposal: <a href="https://github.com/fonttools/fontbakery/issues/2059">https://github.com/fonttools/fontbakery/issues/2059</a></li>
+        
+    
+    </ul>
+
+<div style="background-color:#ee8">
+
+    
+
+</div>
+
+
+    
+
 
             
         
