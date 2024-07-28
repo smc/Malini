@@ -262,7 +262,9 @@ def endglyph =
         % The difference in width change is the slant shift
         slant_xshift := ( xpart (urcorner currentpicture)) - xmax;
         % Cancel the slant shift
-        rbearing := rbearing - slant_xshift;
+        % FIXME: This is not accurate. The slant shift should be applied to the left bearing too?
+        % Currently it causes unbalanced spacing
+        rbearing := 0.5*(rbearing - slant_xshift);
     fi;
 
     % Place the whole drawing at x=0
