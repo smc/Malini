@@ -254,19 +254,6 @@ def endglyph =
         fi;
     endfor;
 
-    if slant <> 0:
-        % Find out current x-maximum
-        xmax := xpart (urcorner currentpicture);
-        currentpicture := currentpicture slanted tand(slant);
-        % After slanting the width of currentpicture will increase. Find current x-maximum
-        % The difference in width change is the slant shift
-        slant_xshift := ( xpart (urcorner currentpicture)) - xmax;
-        % Cancel the slant shift
-        % FIXME: This is not accurate. The slant shift should be applied to the left bearing too?
-        % Currently it causes unbalanced spacing
-        rbearing := 0.5*(rbearing - slant_xshift);
-    fi;
-
     % Place the whole drawing at x=0
     if absolute_position <> 1:
         xmin:= xpart (llcorner currentpicture);
@@ -275,12 +262,41 @@ def endglyph =
         currentpicture := currentpicture shifted (0, descent);
     fi;
 
-
     % Place the drawing at the svg canvas with left and right bearing.
     pair ur; ur:=urcorner currentpicture;
     path bbox; bbox = boundingbox(currentpicture, lbearing, rbearing);
     setbounds currentpicture to bbox;
     currentpicture := currentpicture shifted (lbearing, 0);
+
+
+    if slant <> 0:
+        path orig_bbox, slanted_bbox;
+        orig_bbox := boundingbox(currentpicture, 0, 0);
+        xmax_orig := xpart (urcorner orig_bbox);
+
+        % slant the original bounding box
+        slanted_bbox := orig_bbox slanted tand(slant);
+        xmax := xpart (urcorner slanted_bbox);
+        % After slanting the width of currentpicture will increase. Find current x-maximum
+        % The difference in width change is the slant shift
+        slant_shift := xmax- xmax_orig;
+
+        % We need to add 1 to circumvent the zero width glyph issues
+        % see https://github.com/googlefonts/fontmake/issues/894
+        slant_left_xshift = slant_shift/2 + 1;
+        slant_right_xshift = slant_shift/2;
+        currentpicture := currentpicture slanted tand(slant);
+        % Cancel the slant shift
+        currentpicture := currentpicture shifted (-slant_left_xshift, 0);
+        % Set the bounding box to the slanted one - clip it
+        bbox := (0, 0)
+            -- (0,em)
+            -- (xpart(urcorner currentpicture) - slant_right_xshift, em)
+            -- (xpart(urcorner currentpicture) - slant_right_xshift, 0)
+            -- cycle;
+        setbounds currentpicture to bbox;
+    fi;
+
     if showgrids = 1:
         % Debug points are hard to see. Change the fontsize
         defaultscale := 2;
